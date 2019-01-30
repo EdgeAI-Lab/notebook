@@ -1,0 +1,69 @@
+site_name: Wiki
+
+# Repository
+repo_name: Wiki
+repo_url: https://github.com/FanHongchuang/wiki
+
+# 404 page
+static_templates:
+    - 404.html
+
+nav:
+    - Home: index.md
+    - About Me: about.md
+    - Android:
+      - android开机自启:
+        - Launcher: Android/android_launcher.md
+        - 开机广播: Android/android_broadcast_boot.md
+      - Android6.0源码修改:
+        - 去掉USB权限申请对话框: Android/android_remove_usb_permission_dialog.md
+        - 修改屏幕默认亮度: Android/android_screen_brightness.md
+        - 彻底隐藏虚拟导航键: Android/android_hide_virtual_navigation_key.md
+        - 默认开启USB调试功能: Android/android_enable_usb_debug.md
+        
+    - ARM-Linux:
+      - linux: ARM-Linux/arm-linux.md
+      
+    - Computer Vision:
+      - Computer Vision: Computer Vision/Computer Vision.md
+      
+    - Multimedia:
+      - Multimedia: Multimedia/Multimedia.md
+      
+    - Design Pattern:
+      - Design Pattern: Design Patterns/Design Patterns.md
+      
+    - Hardware:
+      - Hardware: Hardware/hardware.md
+   
+   
+
+# Copyright
+copyright: 'Copyright &copy; 2019 - 2020 Fan Hongchaung'
+    
+# Configuration
+theme:
+  name: 'material'
+  language: 'en'
+  palette:
+    primary: 'indigo'
+    accent: 'indigo'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+  feature:
+    tabs: true
+    
+extra:
+  social:
+    - type: 'github'
+      link: 'https://github.com/FanHongchuang'
+      
+# Extensions
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+      linenums: true
+  - toc:
+      permalink: true
