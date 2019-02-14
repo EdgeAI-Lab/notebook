@@ -1,8 +1,8 @@
-site_name: Wiki
+site_name: Notebook
 
 # Repository
-repo_name: Wiki
-repo_url: https://github.com/FanHongchuang/wiki
+repo_name: Notebook
+repo_url: https://github.com/FanHongchuang/notebook
 
 # 404 page
 static_templates:
@@ -35,6 +35,9 @@ nav:
       
     - Hardware:
       - Hardware: Hardware/hardware.md
+      
+    - Tools:
+      - Tools: Tools/PlantUML.md
    
    
 

@@ -31,11 +31,13 @@ git push origin master
 ```bash
 mkdocs gh-deploy
 ```
+* So your site(html files) on the gh-pages branch, and your site(markdown files) on the master branch
 
-## Put you site on the github pages
-* Create a new github repository
-* Push your site to the github repository
-* Set the github pages "Settings->GitHub Pages->source->master branch"
+It is master branch:
+![git_master_branch](assets/images/git_master_branch.png)
+
+It is gh-pages branch:
+![git_gh-pages_branch](assets/images/git_gh-pages_branch.png)
 
 !!! success
     It is OK.
