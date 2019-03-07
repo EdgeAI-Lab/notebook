@@ -45,7 +45,7 @@ java -jar plantuml.jar test_uml.txt
 
 * The result is:
 
-![test_uml](../../assets/images/test_uml.png)
+![test_uml](../assets/images/test_uml.png)
 
 !!! note
     It only is sytax highlighting support for PlantUML user defined language defined for Notepad++, the real program is plantuml.jar.
@@ -60,4 +60,4 @@ java -jar plantuml.jar test_uml.txt
 * File -> New -> UML Use Case -> "test.puml"
 
 * The result is:
-![android_studio_uml](../../assets/images/android_studio_uml.png)
+![android_studio_uml](../assets/images/android_studio_uml.png)

@@ -47,6 +47,8 @@ nav:
     - Tools:
       - UML: Tools/PlantUML.md
       - git command: Tools/git_command.md
+      - Python三角函数: Tools/python_trigonometric.md
+      - Shadowsock: Tools/Shadowsock.md
    
    
 
