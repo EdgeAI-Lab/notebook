@@ -30,6 +30,8 @@ nav:
         - samba服务配置: ARM-Linux/samba.md
         - Linux Shell脚本编程: ARM-Linux/linux_shell_program.md
       - Zigbee: ARM-Linux/zigbee_keys.md
+      - Python: 
+        - 三角函数: Tools/python_trigonometric.md
       
       
     - Computer Vision:
@@ -47,7 +49,6 @@ nav:
     - Tools:
       - UML: Tools/PlantUML.md
       - git command: Tools/git_command.md
-      - Python三角函数: Tools/python_trigonometric.md
       - Shadowsock: Tools/Shadowsock.md
    
    
