@@ -14,3 +14,6 @@
 * Email: fanhongchaung@gmail.com
 * QQ: 847923458
 * WeChat: shoujimaizi2289
+
+## 扫码关注小编微信公众号
+![weixingongzhonghao](/assets/images/weixingongzhonghao.jpg)
