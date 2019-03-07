@@ -12,7 +12,7 @@ nav:
     - Home: index.md
     - About Me: about.md
     - Android:
-      - android开机自启:
+      - Android开机自启:
         - Launcher: Android/android_launcher.md
         - 开机广播: Android/android_broadcast_boot.md
       - Android6.0源码修改:
@@ -20,9 +20,17 @@ nav:
         - 修改屏幕默认亮度: Android/android_screen_brightness.md
         - 彻底隐藏虚拟导航键: Android/android_hide_virtual_navigation_key.md
         - 默认开启USB调试功能: Android/android_enable_usb_debug.md
+      - Android 屏幕适配: Android/android_screen_adapter.md
         
     - ARM-Linux:
-      - linux: ARM-Linux/arm-linux.md
+      - C/C++: ARM-Linux/c_memory_layout.md
+      - Linux:
+        - 构建内核源码树: ARM-Linux/build_linux_source_tree.md
+        - 常用shell命令: ARM-Linux/linux_shell_cmd.md
+        - samba服务配置: ARM-Linux/samba.md
+        - Linux Shell脚本编程: ARM-Linux/linux_shell_program.md
+      - Zigbee: ARM-Linux/zigbee_keys.md
+      
       
     - Computer Vision:
       - Computer Vision: Computer Vision/Computer Vision.md
@@ -37,12 +45,13 @@ nav:
       - Hardware: Hardware/hardware.md
       
     - Tools:
-      - Tools: Tools/PlantUML.md
+      - UML: Tools/PlantUML.md
+      - git command: Tools/git_command.md
    
    
 
 # Copyright
-copyright: 'Copyright &copy; 2019 - 2020 Fan Hongchaung'
+copyright: 'Copyright &copy; 2019 - 2020 Hongchaung Fan'
     
 # Configuration
 theme:
