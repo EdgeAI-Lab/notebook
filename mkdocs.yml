@@ -32,13 +32,16 @@ nav:
       - Zigbee: ARM-Linux/zigbee_keys.md
       - Python: 
         - 三角函数: Tools/python_trigonometric.md
+        - 录音与播放: ARM-Linux/python_record_play.md
+      - Java:
+        - Swing: ARM-Linux/java_ui_swing.md
       
       
     - Computer Vision:
       - Computer Vision: Computer Vision/Computer Vision.md
       
     - Multimedia:
-      - Multimedia: Multimedia/Multimedia.md
+      - FFMPEG: Multimedia/ffmpeg_command.md
       
     - Design Pattern:
       - Design Pattern: Design Patterns/Design Patterns.md
