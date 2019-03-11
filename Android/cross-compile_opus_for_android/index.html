@@ -36,7 +36,7 @@
     
     
       
-        <title>Launcher - Notebook</title>
+        <title>Cross-Compile OPUS for Android - Notebook</title>
       
     
     
@@ -102,7 +102,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#android-applauncher" tabindex="1" class="md-skip">
+      <a href="#cross-compile-opus-for-android" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -127,7 +127,7 @@
               Notebook
             </span>
             <span class="md-header-nav__topic">
-              Launcher
+              Cross-Compile OPUS for Android
             </span>
           
         </div>
@@ -194,16 +194,14 @@
       
         
 
-  
-
-<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+<nav class="md-tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="../.." title="Home" class="md-tabs__link">
+      <a href="../.." title="Home" class="md-tabs__link md-tabs__link--active">
         Home
       </a>
     
@@ -221,7 +219,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="./" title="Android" class="md-tabs__link md-tabs__link--active">
+        <a href="../android_launcher/" title="Android" class="md-tabs__link">
           Android
         </a>
       
@@ -380,12 +378,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
       Android
@@ -401,12 +397,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
     
     <label class="md-nav__link" for="nav-3-1">
       Android开机自启
@@ -422,20 +416,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="Launcher" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../android_launcher/" title="Launcher" class="md-nav__link">
       Launcher
     </a>
-    
   </li>
 
         
@@ -970,6 +955,36 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-create-standalone-toolchains-for-arm-android" title="1. Create Standalone Toolchains for ARM-Android" class="md-nav__link">
+    1. Create Standalone Toolchains for ARM-Android
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-configure-the-environment-variable" title="2. Configure the Environment variable" class="md-nav__link">
+    2. Configure the Environment variable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-compile" title="3. compile" class="md-nav__link">
+    3. compile
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -980,24 +995,49 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/FanHongchuang/notebook/edit/master/docs/Android/android_launcher.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/FanHongchuang/notebook/edit/master/docs/Android/cross-compile_opus_for_android.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="android-applauncher">Android App开机自启之Launcher<a class="headerlink" href="#android-applauncher" title="Permanent link">&para;</a></h1>
-<p>1.1. 在AndroidManifest.xml文件中加入以下语句，使App成为Launcher</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">category</span> <span class="na">android:name</span><span class="o">=</span><span class="s">&quot;android.intent.category.HOME&quot;</span> <span class="p">/&gt;</span>
-<span class="p">&lt;</span><span class="nt">category</span> <span class="na">android:name</span><span class="o">=</span><span class="s">&quot;android.intent.category.DEFAULT&quot;</span> <span class="p">/&gt;</span> 
+                <h1 id="cross-compile-opus-for-android">Cross-Compile OPUS for Android<a class="headerlink" href="#cross-compile-opus-for-android" title="Permanent link">&para;</a></h1>
+<h2 id="1-create-standalone-toolchains-for-arm-android">1. Create Standalone Toolchains for ARM-Android<a class="headerlink" href="#1-create-standalone-toolchains-for-arm-android" title="Permanent link">&para;</a></h2>
+<p><a href="https://developer.android.com/ndk/guides/standalone_toolchain">Standalone Toolchains</a></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>/build/tools/make_standalone_toolchain.py --arch arm --api <span class="m">21</span> --install-dir /tmp/my-android-toolchain
 </pre></div>
 </td></tr></table>
 
-<p>1.2. 将系统默认Launcher删除</p>
-<p>1.3. 将App（.apk文件）放进/system/app目录</p>
-<p>1.4. 将App所使用的.so文件全部放进/system/lib目录</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>“/system/app” 目录下的应用都是系统已经预装完成的不会再次安装，所以不能把so打包到apk里面</p>
-</div>
+<h2 id="2-configure-the-environment-variable">2. Configure the Environment variable<a class="headerlink" href="#2-configure-the-environment-variable" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:your_ndk_bin_path
+<span class="nb">export</span> <span class="nv">CC</span><span class="o">=</span>your_ndk_gcc_name
+<span class="nb">export</span> <span class="nv">CXX</span><span class="o">=</span>your_ndk_g++_name
+</pre></div>
+</td></tr></table>
+
+<h2 id="3-compile">3. compile<a class="headerlink" href="#3-compile" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install autoconf libtool-bin automake
+
+git clone https://git.xiph.org/opus.git
+
+./autogen.sh
+
+./configure --host<span class="o">=</span>arm-linux --prefix<span class="o">=</span>your_install_absolute_path
+
+make
+
+make install
+</pre></div>
+</td></tr></table>
                 
                   
                 
@@ -1014,41 +1054,6 @@
       
         
 <footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-        
-          <a href="../../about/" title="About Me" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                About Me
-              </span>
-            </div>
-          </a>
-        
-        
-          <a href="../android_broadcast_boot/" title="开机广播" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                开机广播
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
