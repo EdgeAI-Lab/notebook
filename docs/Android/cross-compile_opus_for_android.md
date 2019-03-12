@@ -1,4 +1,4 @@
-# Cross-Compile OPUS for Android
+# Cross-Compile OPUS
 
 ## 1. Create Standalone Toolchains for ARM-Android
 
@@ -38,5 +38,15 @@ make
 make install
 
 ```
+
+gcc src/opus_demo.c -L./local_build/lib -lopus -I./local_build/include -I./local_build/include/opus -I./silk -I./celt -I./include -lm
+
+* OPUS官方已经提供了对Android的支持
+./configure --host=arm-linux-androideabi --prefix=/home/fhc/opus/android_build
+
+
+
+
+
 
 
