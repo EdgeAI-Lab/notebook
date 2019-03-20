@@ -53,6 +53,7 @@ nav:
       - UML: Tools/PlantUML.md
       - git command: Tools/git_command.md
       - Shadowsock: Tools/Shadowsock.md
+      - Shadowsock命令行配置: Tools/Shadowsock_CML.md
    
    
 

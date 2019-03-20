@@ -44,10 +44,15 @@ file:///home/fhc/autoproxy.pac
 ![Firefox_Configure_System_Proxy](../assets/images/Firefox_configure_system_proxy.png)
 
 ## 5. 命令行使用系统代理
-```bash
-sudo apt-get install proxychains4
 
+```bash
+
+sudo apt-get install proxychains4
 proxychains4 curl www.google.com
 
-
 ```
+
+
+
+
+
