@@ -36,7 +36,7 @@
     
     
       
-        <title>Cross-Compile OPUS for Android - Notebook</title>
+        <title>Cross-Compile OPUS - Notebook</title>
       
     
     
@@ -102,7 +102,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#cross-compile-opus-for-android" tabindex="1" class="md-skip">
+      <a href="#cross-compile-opus" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -127,7 +127,7 @@
               Notebook
             </span>
             <span class="md-header-nav__topic">
-              Cross-Compile OPUS for Android
+              Cross-Compile OPUS
             </span>
           
         </div>
@@ -933,6 +933,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Tools/Shadowsock_CML/" title="Shadowsock命令行配置" class="md-nav__link">
+      Shadowsock命令行配置
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -998,7 +1010,7 @@
                   <a href="https://github.com/FanHongchuang/notebook/edit/master/docs/Android/cross-compile_opus_for_android.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="cross-compile-opus-for-android">Cross-Compile OPUS for Android<a class="headerlink" href="#cross-compile-opus-for-android" title="Permanent link">&para;</a></h1>
+                <h1 id="cross-compile-opus">Cross-Compile OPUS<a class="headerlink" href="#cross-compile-opus" title="Permanent link">&para;</a></h1>
 <h2 id="1-create-standalone-toolchains-for-arm-android">1. Create Standalone Toolchains for ARM-Android<a class="headerlink" href="#1-create-standalone-toolchains-for-arm-android" title="Permanent link">&para;</a></h2>
 <p><a href="https://developer.android.com/ndk/guides/standalone_toolchain">Standalone Toolchains</a></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>/build/tools/make_standalone_toolchain.py --arch arm --api <span class="m">21</span> --install-dir /tmp/my-android-toolchain
@@ -1038,6 +1050,12 @@ make
 make install
 </pre></div>
 </td></tr></table>
+
+<p>gcc src/opus_demo.c -L./local_build/lib -lopus -I./local_build/include -I./local_build/include/opus -I./silk -I./celt -I./include -lm</p>
+<ul>
+<li>OPUS官方已经提供了对Android的支持
+./configure --host=arm-linux-androideabi --prefix=/home/fhc/opus/android_build</li>
+</ul>
                 
                   
                 
