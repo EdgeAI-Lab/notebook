@@ -21,7 +21,14 @@ nav:
         - 彻底隐藏虚拟导航键: Android/android_hide_virtual_navigation_key.md
         - 默认开启USB调试功能: Android/android_enable_usb_debug.md
       - Android 屏幕适配: Android/android_screen_adapter.md
-        
+      - Android NDK开发:
+        - NDK知识点: Android/android_ndk.md
+        - GCC&Clang&LLVM的关系: ARM-Linux/gcc_clang_llvm.md
+        - 交叉编译示例OPUS: Android/cross-compile_opus_for_android.md
+        - JNI知识点: Android/jni.md
+        - ART: Android/android_art.md
+        - Android CMake知识点: Android/android_cmake.md
+
     - ARM-Linux:
       - C/C++: ARM-Linux/c_memory_layout.md
       - Linux:
@@ -29,7 +36,7 @@ nav:
         - 常用shell命令: ARM-Linux/linux_shell_cmd.md
         - samba服务配置: ARM-Linux/samba.md
         - Linux Shell脚本编程: ARM-Linux/linux_shell_program.md
-        - 编译器: ARM-Linux/compiler.md
+        - GCC&Clang&LLVM的关系: ARM-Linux/gcc_clang_llvm.md
       - Zigbee: ARM-Linux/zigbee_keys.md
       - Python: 
         - 三角函数: Tools/python_trigonometric.md
@@ -78,6 +85,9 @@ extra:
   social:
     - type: 'github'
       link: 'https://github.com/FanHongchuang'
+# Chinese is not supported  
+  search:
+    language: 'en'
       
 # Extensions
 markdown_extensions:
