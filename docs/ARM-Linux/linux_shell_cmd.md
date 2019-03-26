@@ -11,29 +11,22 @@ sudo dd if=/xx/xx/xx.img of=/dev/sdc bs=512M
 
 
 ##2. rm
-* 除file之外的文件全部删除
-```shell
-rm -f !(file)
-```
 
-* 除file1,file2,...之外的文件全部删除
 ```shell
+# 除file之外的文件全部删除
+rm -f !(file)
+
+# 除file1,file2,...之外的文件全部删除
 rm -f !(file1|file2|...)
 ```
 
 ##3. 硬盘分区格式化
 
-* 分区
 ```bash
-
+# 分区
 sudo fdisk /dev/sdx
 
-```
-
-* 格式化
-
-```bash
-
+# 格式化
 sudo mkfs.vfat /dev/sdx
 
 ```
@@ -52,5 +45,12 @@ wget ftp://username:paswword@192.168.10.100/fhc/wuhuanWiki/site.zip
 
 ```
 
+* scp
+
+```bash
+
+scp source_file username@host:/path
+
+```
 
 

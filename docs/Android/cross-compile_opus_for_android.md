@@ -40,7 +40,7 @@ make install
 ```
 
 gcc src/opus_demo.c -L./local_build/lib -lopus -I./local_build/include -I./local_build/include/opus -I./silk -I./celt -I./include -lm
-
+gcc tcp_opus.c -o tcp_opus `pkg-config --libs --cflags opus`
 * OPUS官方已经提供了对Android的支持
 ./configure --host=arm-linux-androideabi --prefix=/home/fhc/opus/android_build
 

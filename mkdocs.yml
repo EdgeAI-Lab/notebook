@@ -29,6 +29,7 @@ nav:
         - 常用shell命令: ARM-Linux/linux_shell_cmd.md
         - samba服务配置: ARM-Linux/samba.md
         - Linux Shell脚本编程: ARM-Linux/linux_shell_program.md
+        - 编译器: ARM-Linux/compiler.md
       - Zigbee: ARM-Linux/zigbee_keys.md
       - Python: 
         - 三角函数: Tools/python_trigonometric.md
