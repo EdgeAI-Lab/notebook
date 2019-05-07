@@ -50,6 +50,8 @@ nav:
       
     - Multimedia:
       - FFMPEG: Multimedia/ffmpeg_command.md
+      - PCM: Multimedia/pcm.md
+      - OPUS: Multimedia/opus.md
       
     - Design Pattern:
       - Design Pattern: Design Patterns/Design Patterns.md

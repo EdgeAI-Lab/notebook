@@ -1,5 +1,5 @@
 # PCM音频文件
-1. What is PCM?
+## 1. What is PCM?
 PCM(Pulse-code-modulation)是模拟信号以固定的采样频率转换成数字信号后的表现形式。
 
 Sample Rate : 
@@ -19,30 +19,29 @@ Number of Channels :
 
 通过以上五个数据我们就可以描述一个PCM数据，播放一个PCM数据需要的就是以上五个数据。
 
-2. What does a PCM stream look like?
+## 2. What does a PCM stream look like?
+
 单声道：
 
-+------+------+------+------+------+------+------+------+------+
-|  500 |  300 | -100 | -20  | -300 |  900 | -200 |  -50 |  250 |      
-+------+------+------+------+------+------+------+------+------+
+![pcm_1ch](../assets/images/pcm_1ch.png)
 
 每个整数占据2个字节(16-bit)，9个采样也就是18字节的数据。每个采样的整数大小最小为 -32768，最大为 32768 。根据采样数据的位置和值画一个图的话，就会得到像播放器上那样的波浪形图。
 
 我们可以像下面伪代码示例这样将数据读入一个C语言数组 :
 
+```c
 FILE *pcmfile
 int16_t *pcmdata;
 pcmfile = fopen(your pcm data file);
 pcmdata = malloc(size of the file);
-fread(pcmdata, sizeof(int16_t), size of file / sizeof(int16_t), pcmfile);  
+fread(pcmdata, sizeof(int16_t), size of file / sizeof(int16_t), pcmfile); 
+``` 
 
 如果我们将这些数据送入声卡，我们就可以听到声音。当然我们需要告诉声卡这些数据的采样率。若我们告知声卡的采样率大于数据本身的采样率，那么这些数据的播放速度会高于其原始的速度。就是快放的功能。
 
 立体声：
 
- +----------+----------+---------+----------+---------+----------+---------+----------+----------+
- |  LFrame1 |  RFrame1 | LFrame2 | RFrame2  | LFrame3 |  RFrame3 | LFrame4 |  RFrame4 |  LFrame5 |      
- +----------+----------+---------+----------+---------+----------+---------+----------+----------+
+![pcm_2ch](../assets/images/pcm_2ch.png)
 
 每一个frame是一个16-bit的采样点。左右声道的数据交叉存放。
 

@@ -15,3 +15,7 @@
 
 
 ## 4.Compile
+cmake \
+-DCMAKE_TOOLCHAIN_FILE=../platforms/android/android.toolchain.cmake \
+-DANDROID_STL=gnustl_shared \
+-DANDROID_NATIVE_API_LEVEL=23 ..
