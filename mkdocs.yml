@@ -47,6 +47,8 @@ nav:
       
     - Computer Vision:
       - Computer Vision: Computer Vision/Computer Vision.md
+      - caffe: Computer Vision/caffe.md
+      - cv_library: Computer Vision/cv_library.md
       
     - Multimedia:
       - FFMPEG: Multimedia/ffmpeg_command.md
@@ -64,6 +66,7 @@ nav:
       - git command: Tools/git_command.md
       - Shadowsock: Tools/Shadowsock.md
       - Shadowsock命令行配置: Tools/Shadowsock_CML.md
+      - 局域网访问Jupyter Notebook: Tools/JupyterNotebook.md
    
    
 
