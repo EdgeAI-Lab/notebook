@@ -49,6 +49,7 @@ nav:
       - Computer Vision: Computer Vision/Computer Vision.md
       - caffe: Computer Vision/caffe.md
       - cv_library: Computer Vision/cv_library.md
+      - OpenCV4Android: Computer Vision/OpenCV4Android_001.md
       
     - Multimedia:
       - FFMPEG: Multimedia/ffmpeg_command.md
