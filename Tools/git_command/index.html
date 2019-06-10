@@ -899,6 +899,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Computer Vision/OpenCV4Android_001/" title="OpenCV4Android" class="md-nav__link">
+      OpenCV4Android
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1102,8 +1114,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#git_1" title="git子模块" class="md-nav__link">
-    git子模块
+  <a href="#1git" title="1.git子模块" class="md-nav__link">
+    1.git子模块
   </a>
   
 </li>
@@ -1112,6 +1124,40 @@
   <a href="#_1" title="获取远程指定分支" class="md-nav__link">
     获取远程指定分支
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" title="2.以图形的方式查看分支之间的关系" class="md-nav__link">
+    2.以图形的方式查看分支之间的关系
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3git" title="3.Git创建空白（孤儿）分支" class="md-nav__link">
+    3.Git创建空白（孤儿）分支
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" title="3.1 创建一个空白分支" class="md-nav__link">
+    3.1 创建一个空白分支
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" title="3.2 创建一个以当前节点为基础的独立分支" class="md-nav__link">
+    3.2 创建一个以当前节点为基础的独立分支
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1188,8 +1234,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#git_1" title="git子模块" class="md-nav__link">
-    git子模块
+  <a href="#1git" title="1.git子模块" class="md-nav__link">
+    1.git子模块
   </a>
   
 </li>
@@ -1198,6 +1244,40 @@
   <a href="#_1" title="获取远程指定分支" class="md-nav__link">
     获取远程指定分支
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" title="2.以图形的方式查看分支之间的关系" class="md-nav__link">
+    2.以图形的方式查看分支之间的关系
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3git" title="3.Git创建空白（孤儿）分支" class="md-nav__link">
+    3.Git创建空白（孤儿）分支
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" title="3.1 创建一个空白分支" class="md-nav__link">
+    3.1 创建一个空白分支
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" title="3.2 创建一个以当前节点为基础的独立分支" class="md-nav__link">
+    3.2 创建一个以当前节点为基础的独立分支
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1221,12 +1301,58 @@
                 
                 
                 <h1 id="git">Git<a class="headerlink" href="#git" title="Permanent link">&para;</a></h1>
-<h2 id="git_1">git子模块<a class="headerlink" href="#git_1" title="Permanent link">&para;</a></h2>
+<h2 id="1git">1.git子模块<a class="headerlink" href="#1git" title="Permanent link">&para;</a></h2>
 <h2 id="_1">获取远程指定分支<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>从远程仓库里拉取一条本地不存在的分支时</p>
 </blockquote>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>git checkout -b new_local_branch_name origin/remote_branch_name
+</pre></div>
+</td></tr></table>
+
+<h2 id="2">2.以图形的方式查看分支之间的关系<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>gitk --simplify-by-decoration --all
+</pre></div>
+</td></tr></table>
+
+<h2 id="3git">3.Git创建空白（孤儿）分支<a class="headerlink" href="#3git" title="Permanent link">&para;</a></h2>
+<h3 id="31">3.1 创建一个空白分支<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>// 创建并切换到新分支
+git checkout --orphan &lt;branch_name&gt;
+
+// 创建一个空的独立分支
+git rm -rf .
+
+// 创建文件并提交（如果没有提交orphan分支将不会生效）
+vim README.md
+
+git add README.md
+
+git commit -m &quot;add README.md&quot;
+</pre></div>
+</td></tr></table>
+
+<h3 id="32">3.2 创建一个以当前节点为基础的独立分支<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>// 创建并切换到新分支
+git checkout --orphan &lt;branch_name&gt;
+
+// 将当前所有文件提交
+git commit -a
 </pre></div>
 </td></tr></table>
                 
