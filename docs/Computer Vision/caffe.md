@@ -45,6 +45,26 @@ modify the BLAS_INCLUDE & BLAS_LIB
 BLAS_INCLUDE := /opt/OpenBLAS/include 
 BLAS_LIB := /opt/OpenBLAS/lib
 ```
+### Install hdf5
+```bash
 
+sudo apt-get install libhdf5-dev
+
+```
+
+然后将hdf5的路径添加到Makefile.config,Example:
+```
+INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/include/hdf5/serial/
+
+```
+
+### Error
+
+```bash
+
+undefined reference to `cv::imread(cv::String const&, int)'
+
+```
+修改Makefile.config,将OPENCV_VERSION := 3
 
 
