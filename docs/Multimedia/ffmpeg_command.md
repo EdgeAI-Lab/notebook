@@ -21,5 +21,19 @@ ffmpeg -f alsa -i hw:0 alsaout.wav
 
 ```
 
+* FFMPEG录像命令
+```bash
+// record
+ffmpeg -f video4linux2 -s 320*300 -i /dev/video0 test.asf
+
+// play
+ffplay test.asf
+
+// record and play
+ffplay -f video4linux2 -framerate 30 -video_size hd720 /dev/video0
+
+
+```
+
 
 
