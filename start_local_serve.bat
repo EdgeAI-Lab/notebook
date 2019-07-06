@@ -1,0 +1,1 @@
+mkdcos serve
