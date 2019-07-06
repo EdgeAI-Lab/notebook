@@ -38,12 +38,13 @@ nav:
         - Linux Shell脚本编程: ARM-Linux/linux_shell_program.md
         - GCC&Clang&LLVM的关系: ARM-Linux/gcc_clang_llvm.md
       - Zigbee: ARM-Linux/zigbee_keys.md
-      - Python: 
-        - 三角函数: Tools/python_trigonometric.md
-        - 录音与播放: ARM-Linux/python_record_play.md
+      
       - Java:
         - Swing: ARM-Linux/java_ui_swing.md
-      
+        
+    - Python: 
+        - 三角函数: Tools/python_trigonometric.md
+        - 录音与播放: ARM-Linux/python_record_play.md  
       
     - Computer Vision:
       - Computer Vision: Computer Vision/Computer Vision.md
