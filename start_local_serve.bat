@@ -1,1 +1,3 @@
-mkdcos serve
+e:
+cd MyNotebook
+mkdocs serve
