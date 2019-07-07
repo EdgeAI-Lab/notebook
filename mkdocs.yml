@@ -35,6 +35,7 @@ nav:
         - 构建内核源码树: ARM-Linux/build_linux_source_tree.md
         - 常用shell命令: ARM-Linux/linux_shell_cmd.md
         - samba服务配置: ARM-Linux/samba.md
+        - FTP服务配置: ARM-Linux/ftp_server_build.md
         - Linux Shell脚本编程: ARM-Linux/linux_shell_program.md
         - GCC&Clang&LLVM的关系: ARM-Linux/gcc_clang_llvm.md
       - Zigbee: ARM-Linux/zigbee_keys.md
@@ -47,7 +48,6 @@ nav:
         - 录音与播放: ARM-Linux/python_record_play.md  
       
     - Computer Vision:
-      - Computer Vision: Computer Vision/Computer Vision.md
       - caffe: Computer Vision/caffe.md
       - cv_library: Computer Vision/cv_library.md
       - OpenCV4Android: Computer Vision/OpenCV4Android_001.md
