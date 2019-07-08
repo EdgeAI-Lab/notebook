@@ -1,5 +1,5 @@
 e:
-cd MyNotebook
+cd notebook
 git pull
 git add .
 git commit -m "update"
