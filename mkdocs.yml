@@ -30,7 +30,9 @@ nav:
         - Android CMake知识点: Android/android_cmake.md
 
     - ARM-Linux:
-      - C/C++: ARM-Linux/c_memory_layout.md
+      - C/C++: 
+        - C内存模型: ARM-Linux/c_memory_layout.md
+        - CRC16: ARM-Linux/crc16.md
       - Linux:
         - 构建内核源码树: ARM-Linux/build_linux_source_tree.md
         - 常用shell命令: ARM-Linux/linux_shell_cmd.md
@@ -44,8 +46,10 @@ nav:
         - Swing: ARM-Linux/java_ui_swing.md
         
     - Python: 
-        - 三角函数: Tools/python_trigonometric.md
-        - 录音与播放: ARM-Linux/python_record_play.md  
+        - 三角函数: Python/python_trigonometric.md
+        - 录音与播放: Python/python_record_play.md  
+        - CRC16: Python/crc16.md
+        - Python字符串格式化: Python/python_string_format.md
       
     - Computer Vision:
       - caffe: Computer Vision/caffe.md
