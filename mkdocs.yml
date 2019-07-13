@@ -64,9 +64,6 @@ nav:
       - PCM: Multimedia/pcm.md
       - OPUS: Multimedia/opus.md
       
-    - Design Pattern:
-      - Design Pattern: Design Patterns/Design Patterns.md
-      
     - Hardware:
       - Hardware: Hardware/hardware.md
       
