@@ -73,4 +73,4 @@
 [^2]: 这个应该就是补码的来历
 
 ## 更多资讯，请扫码关注！
-![weixingongzhonghao](assets/images/weixingongzhonghao.jpg)
+![weixingongzhonghao](../assets/images/weixingongzhonghao.jpg)
