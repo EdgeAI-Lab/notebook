@@ -1,2 +1,2 @@
 ## 扭矩
-![torque](assets/images/MotorControl/torque.jpg)
+![torque](../assets/images/MotorControl/torque.jpg)
