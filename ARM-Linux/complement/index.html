@@ -1392,7 +1392,7 @@
 要找出一个与它相加后结果等于0的数还是要略加思考一下的，因为要计算进位。</p>
 <p>所以，为何不找出一个与它相加后结果是<code>1111 1111 1111 1111</code>的数<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup>，
 然后该数+1（+1溢出，所以相加的和就是0）即是我们所要的答案<sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup>。</p>
-<p>于是，很容易的:</p>
+<p>于是，很容易得出:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -1405,7 +1405,7 @@
 </pre></div>
 </td></tr></table>
 
-<p>一目了然，补码<code>1111 1111 1111 0001</code> 就是我们想要的答案了。</p>
+<p>一目了然，补码<code>1111 1111 1111 0001</code> 就是我们想要的答案。</p>
 <h2 id="3">3. 总结<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <ul>
 <li>补码是用来解决负数在计算机中的表示问题的</li>
