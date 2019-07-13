@@ -8,6 +8,7 @@
 ## 了解我
 * [我的GitHub](https://github.com/FanHongchuang)
 * [我的CSDN博客](https://blog.csdn.net/jiasike)
+* [我的知乎](https://www.zhihu.com/people/fhc2019/activities)
 
 !!! 提示
     有一段时间没有更新过我的CSDN博客了，因为平时工作就比较忙。从现在开始我将时常在这个站点更新我的学习笔记。

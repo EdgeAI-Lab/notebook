@@ -10,6 +10,7 @@ Now I'm getting into image processing(Use OpenCV), audio and video processing(Us
 ## Know Me
 * [My GitHub](https://github.com/FanHongchuang)
 * [My CSDN Blog](https://blog.csdn.net/jiasike)
+* [My Zhihu](https://www.zhihu.com/people/fhc2019/activities)
 
 !!! note
     I haven't update my CSDN blog for a long time,because I am very busy with my job.But I will update my konwledge on this wiki site from now on.
