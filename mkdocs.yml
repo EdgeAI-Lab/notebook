@@ -67,11 +67,14 @@ nav:
     - STM32:
       - STM32串口: 
         - STM32串口编程之中断方式: STM32/stm32_hal_uart.md
-		
+
       - STM32定时器:
         - STM32定时器编程之定时中断: STM32/stm32_hal_uart.md
         - STM32定时器编程之PWM: STM32/stm32_hal_uart.md
-      
+
+      - STM32电机控制:
+        - STM32控制42步进电机: STM32/stm32_io_drive_42stepper_l298n.md
+
     - Tools:
       - UML: Tools/PlantUML.md
       - git command: Tools/git_command.md
