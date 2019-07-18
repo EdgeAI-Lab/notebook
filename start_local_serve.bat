@@ -1,3 +1,3 @@
 e:
-cd MyNotebook
+cd notebook
 mkdocs serve
