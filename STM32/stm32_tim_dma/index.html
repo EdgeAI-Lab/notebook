@@ -36,7 +36,7 @@
     
     
       
-        <title>Hardware - Notebook</title>
+        <title>Stm32 tim dma - Notebook</title>
       
     
     
@@ -99,6 +99,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="#method-1" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -121,7 +125,7 @@
                 Notebook
               </span>
               <span class="md-header-nav__topic">
-                Hardware
+                Stm32 tim dma
               </span>
             
           
@@ -295,7 +299,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../STM32/stm32_hal_uart/" title="STM32" class="md-tabs__link">
+        <a href="../stm32_hal_uart/" title="STM32" class="md-tabs__link">
           STM32
         </a>
       
@@ -1115,7 +1119,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../STM32/stm32_hal_uart/" title="STM32串口编程之中断方式" class="md-nav__link">
+    <a href="../stm32_hal_uart/" title="STM32串口编程之中断方式" class="md-nav__link">
       STM32串口编程之中断方式
     </a>
   </li>
@@ -1151,7 +1155,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../STM32/stm32_hal_uart/" title="STM32定时器编程之定时中断" class="md-nav__link">
+    <a href="../stm32_hal_uart/" title="STM32定时器编程之定时中断" class="md-nav__link">
       STM32定时器编程之定时中断
     </a>
   </li>
@@ -1163,7 +1167,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../STM32/stm32_hal_uart/" title="STM32定时器编程之PWM" class="md-nav__link">
+    <a href="../stm32_hal_uart/" title="STM32定时器编程之PWM" class="md-nav__link">
       STM32定时器编程之PWM
     </a>
   </li>
@@ -1199,7 +1203,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../STM32/stm32_io_drive_42stepper_l298n/" title="STM32控制42步进电机" class="md-nav__link">
+    <a href="../stm32_io_drive_42stepper_l298n/" title="STM32控制42步进电机" class="md-nav__link">
       STM32控制42步进电机
     </a>
   </li>
@@ -1306,17 +1310,59 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#method-1" title="Method 1" class="md-nav__link">
+    Method 1
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/FanHongchuang/notebook/edit/master/docs/Hardware/hardware.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/FanHongchuang/notebook/edit/master/docs/STM32/stm32_tim_dma.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Hardware</h1>
+                  <h1>Stm32 tim dma</h1>
                 
-                
+                <h2 id="method-1">Method 1<a class="headerlink" href="#method-1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>配置TIM</li>
+<li>配置DAM for TIM</li>
+<li>start DAM，流程如下：</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>                         <span class="c1">// enable </span>
+<span class="n">HAL_TIM_PWM_Start_DMA</span> <span class="o">-&gt;</span> <span class="n">HAL_DMA_Start_IT</span> <span class="o">-&gt;</span> <span class="n">__HAL_TIM_ENABLE_DMA</span>
+</pre></div>
+</td></tr></table>
+
+<p>HAL_TIM_DMABurst_WriteStart
+HAL_DMA_Start</p>
                 
                   
                 
