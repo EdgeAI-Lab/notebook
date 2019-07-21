@@ -605,6 +605,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../Android/ijkpalyer_for_rtsp_compile/" title="交叉编译ijkplayer" class="md-nav__link">
+      交叉编译ijkplayer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../Android/jni/" title="JNI知识点" class="md-nav__link">
       JNI知识点
     </a>
@@ -818,8 +830,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" title="3. 硬盘分区格式化" class="md-nav__link">
-    3. 硬盘分区格式化
+  <a href="#3" title="3. 硬盘相关" class="md-nav__link">
+    3. 硬盘相关
   </a>
   
 </li>
@@ -1403,8 +1415,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" title="3. 硬盘分区格式化" class="md-nav__link">
-    3. 硬盘分区格式化
+  <a href="#3" title="3. 硬盘相关" class="md-nav__link">
+    3. 硬盘相关
   </a>
   
 </li>
@@ -1458,7 +1470,10 @@ rm -f !<span class="o">(</span>file1<span class="p">|</span>file2<span class="p"
 </pre></div>
 </td></tr></table>
 
-<h2 id="3">3. 硬盘分区格式化<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<h2 id="3">3. 硬盘相关<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>硬盘分区格式化</li>
+</ul>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -1468,6 +1483,21 @@ sudo fdisk /dev/sdx
 
 <span class="c1"># 格式化</span>
 sudo mkfs.vfat /dev/sdx
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>查看硬盘容量使用情况</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># 查看硬盘容量使用情况 -h --human-readable</span>
+df -hl /dev/sda1
+
+<span class="c1"># 查看文件或者文件夹的大小</span>
+du -hl xxx
 </pre></div>
 </td></tr></table>
 
