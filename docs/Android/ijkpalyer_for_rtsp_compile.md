@@ -38,7 +38,7 @@ ndk-build
 
 ```
 
-### 3.修改支持RTSP
+## 3.修改支持RTSP
 
 * vim ijkplayer-android/config/module-lite.sh
 
@@ -83,8 +83,9 @@ static int packet_queue_get_or_buffering(FFPlayer *ffp, PacketQueue *q, AVPacket
 
 ```
 
-### 4.编译
+## 4.编译
 
+* 编译
 ```bash
 
 cd ijkplayer-android/android/contrib
@@ -96,9 +97,16 @@ cd ..
 ./compile-ijk.sh all
 
 ```
+* 将ijkplayer项目导入Android studio
+```
+# Android Studio:
+#     Open an existing Android Studio project
+#     Select android/ijkplayer/ and import
+
+```
 
 
-### 5.配置ijkplayer相应参数，解决卡顿、延迟
+## 5.配置ijkplayer相应参数，解决卡顿、延迟
 
 [参考链接](https://blog.csdn.net/u013270727/article/details/83900062)
 
