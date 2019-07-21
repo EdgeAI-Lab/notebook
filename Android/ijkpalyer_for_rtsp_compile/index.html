@@ -651,22 +651,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#2rtsp" title="2.修改支持RTSP" class="md-nav__link">
-    2.修改支持RTSP
+  <a href="#3rtsp" title="3.修改支持RTSP" class="md-nav__link">
+    3.修改支持RTSP
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3" title="3.编译" class="md-nav__link">
-    3.编译
+  <a href="#4" title="4.编译" class="md-nav__link">
+    4.编译
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4ijkplayer" title="4.配置ijkplayer相应参数，解决卡顿、延迟" class="md-nav__link">
-    4.配置ijkplayer相应参数，解决卡顿、延迟
+  <a href="#5ijkplayer" title="5.配置ijkplayer相应参数，解决卡顿、延迟" class="md-nav__link">
+    5.配置ijkplayer相应参数，解决卡顿、延迟
   </a>
   
 </li>
@@ -1429,22 +1429,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#2rtsp" title="2.修改支持RTSP" class="md-nav__link">
-    2.修改支持RTSP
+  <a href="#3rtsp" title="3.修改支持RTSP" class="md-nav__link">
+    3.修改支持RTSP
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3" title="3.编译" class="md-nav__link">
-    3.编译
+  <a href="#4" title="4.编译" class="md-nav__link">
+    4.编译
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4ijkplayer" title="4.配置ijkplayer相应参数，解决卡顿、延迟" class="md-nav__link">
-    4.配置ijkplayer相应参数，解决卡顿、延迟
+  <a href="#5ijkplayer" title="5.配置ijkplayer相应参数，解决卡顿、延迟" class="md-nav__link">
+    5.配置ijkplayer相应参数，解决卡顿、延迟
   </a>
   
 </li>
@@ -1475,8 +1475,8 @@
                 
                 <h1 id="ubuntuijkplayer">Ubuntu编译ijkplayer<a class="headerlink" href="#ubuntuijkplayer" title="Permanent link">&para;</a></h1>
 <h2 id="1">1.安装依赖工具<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<p><a href="https://blog.csdn.net/qq372848728/article/details/62170288">参考链接1</a>
-<a href="https://github.com/bilibili/ijkplayer">参考链接2</a></p>
+<p><a href="https://blog.csdn.net/qq372848728/article/details/62170288">参考链接1</a></p>
+<p><a href="https://github.com/bilibili/ijkplayer">参考链接2</a></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt install git
 sudo apt install yasm
@@ -1505,7 +1505,7 @@ sudo apt install yasm
 </pre></div>
 </td></tr></table>
 
-<p>添加之后执行 source .profile立即生效</p>
+<p>添加之后执行 <code>source .profile</code>立即生效</p>
 <ul>
 <li>测试Android NDK工具链是否安装成功</li>
 </ul>
@@ -1513,7 +1513,7 @@ sudo apt install yasm
 </pre></div>
 </td></tr></table>
 
-<h3 id="2rtsp">2.修改支持RTSP<a class="headerlink" href="#2rtsp" title="Permanent link">&para;</a></h3>
+<h3 id="3rtsp">3.修改支持RTSP<a class="headerlink" href="#3rtsp" title="Permanent link">&para;</a></h3>
 <ul>
 <li>vim ijkplayer-android/config/module-lite.sh</li>
 </ul>
@@ -1584,7 +1584,7 @@ export COMMON_FF_CFG_FLAGS<span class="p">=</span><span class="s2">&quot;$COMMON
 </pre></div>
 </td></tr></table>
 
-<h3 id="3">3.编译<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<h3 id="4">4.编译<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -1601,7 +1601,7 @@ export COMMON_FF_CFG_FLAGS<span class="p">=</span><span class="s2">&quot;$COMMON
 </pre></div>
 </td></tr></table>
 
-<h3 id="4ijkplayer">4.配置ijkplayer相应参数，解决卡顿、延迟<a class="headerlink" href="#4ijkplayer" title="Permanent link">&para;</a></h3>
+<h3 id="5ijkplayer">5.配置ijkplayer相应参数，解决卡顿、延迟<a class="headerlink" href="#5ijkplayer" title="Permanent link">&para;</a></h3>
 <p><a href="https://blog.csdn.net/u013270727/article/details/83900062">参考链接</a></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -1655,59 +1655,59 @@ export COMMON_FF_CFG_FLAGS<span class="p">=</span><span class="s2">&quot;$COMMON
 50
 51
 52
-53</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>  <span class="c1">// 支持硬解 1：开启 O:关闭</span>
-  <span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_PLAYER</span><span class="o">,</span> <span class="s">&quot;mediacodec-hevc&quot;</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
-  <span class="c1">// 设置播放前的探测时间 1,达到首屏秒开效果</span>
-  <span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_FORMAT</span><span class="o">,</span> <span class="s">&quot;analyzeduration&quot;</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
+53</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">// 支持硬解 1：开启 O:关闭</span>
+<span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_PLAYER</span><span class="o">,</span> <span class="s">&quot;mediacodec-hevc&quot;</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
+<span class="c1">// 设置播放前的探测时间 1,达到首屏秒开效果</span>
+<span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_FORMAT</span><span class="o">,</span> <span class="s">&quot;analyzeduration&quot;</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
 
-  <span class="cm">/**</span>
-<span class="cm">   * 播放延时的解决方案</span>
-<span class="cm">   */</span>
-  <span class="c1">// 如果是rtsp协议，可以优先用tcp(默认是用udp)</span>
-  <span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_FORMAT</span><span class="o">,</span> <span class="s">&quot;rtsp_transport&quot;</span><span class="o">,</span> <span class="s">&quot;tcp&quot;</span><span class="o">);</span>
-  <span class="c1">// 设置播放前的最大探测时间 （100未测试是否是最佳值）</span>
-  <span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_FORMAT</span><span class="o">,</span> <span class="s">&quot;analyzemaxduration&quot;</span><span class="o">,</span> <span class="mi">100L</span><span class="o">);</span>
-  <span class="c1">// 每处理一个packet之后刷新io上下文</span>
-  <span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_FORMAT</span><span class="o">,</span> <span class="s">&quot;flush_packets&quot;</span><span class="o">,</span> <span class="mi">1L</span><span class="o">);</span>
-  <span class="c1">// 需要准备好后自动播放</span>
-  <span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_PLAYER</span><span class="o">,</span> <span class="s">&quot;start-on-prepared&quot;</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
-  <span class="c1">// 不额外优化（使能非规范兼容优化，默认值0 ）</span>
-  <span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_PLAYER</span><span class="o">,</span> <span class="s">&quot;fast&quot;</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
-  <span class="c1">// 是否开启预缓冲，一般直播项目会开启，达到秒开的效果，不过带来了播放丢帧卡顿的体验</span>
-  <span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_PLAYER</span><span class="o">,</span> <span class="s">&quot;packet-buffering&quot;</span><span class="o">,</span>  <span class="mi">0</span><span class="o">);</span>
-  <span class="c1">// 自动旋屏</span>
-  <span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_PLAYER</span><span class="o">,</span> <span class="s">&quot;mediacodec-auto-rotate&quot;</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
-  <span class="c1">// 处理分辨率变化</span>
-  <span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_PLAYER</span><span class="o">,</span> <span class="s">&quot;mediacodec-handle-resolution-change&quot;</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
-  <span class="c1">// 最大缓冲大小,单位kb</span>
-  <span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_FORMAT</span><span class="o">,</span> <span class="s">&quot;max-buffer-size&quot;</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
-  <span class="c1">// 默认最小帧数2</span>
-  <span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_PLAYER</span><span class="o">,</span> <span class="s">&quot;min-frames&quot;</span><span class="o">,</span> <span class="mi">2</span><span class="o">);</span>
-  <span class="c1">// 最大缓存时长</span>
-  <span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_PLAYER</span><span class="o">,</span>  <span class="s">&quot;max_cached_duration&quot;</span><span class="o">,</span> <span class="mi">3</span><span class="o">);</span> <span class="c1">//300</span>
-  <span class="c1">// 是否限制输入缓存数</span>
-  <span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_PLAYER</span><span class="o">,</span>  <span class="s">&quot;infbuf&quot;</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
-  <span class="c1">// 缩短播放的rtmp视频延迟在1s内</span>
-  <span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_FORMAT</span><span class="o">,</span> <span class="s">&quot;fflags&quot;</span><span class="o">,</span> <span class="s">&quot;nobuffer&quot;</span><span class="o">);</span>
-  <span class="c1">// 播放前的探测Size，默认是1M, 改小一点会出画面更快</span>
-  <span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_FORMAT</span><span class="o">,</span> <span class="s">&quot;probesize&quot;</span><span class="o">,</span> <span class="mi">200</span><span class="o">);</span> <span class="c1">//1024L)</span>
-  <span class="c1">// 播放重连次数</span>
-  <span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_PLAYER</span><span class="o">,</span><span class="s">&quot;reconnect&quot;</span><span class="o">,</span><span class="mi">5</span><span class="o">);</span>
-  <span class="c1">// TODO:</span>
-  <span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_FORMAT</span><span class="o">,</span> <span class="s">&quot;http-detect-range-support&quot;</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
-  <span class="c1">// 设置是否开启环路过滤: 0开启，画面质量高，解码开销大，48关闭，画面质量差点，解码开销小</span>
-  <span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_CODEC</span><span class="o">,</span> <span class="s">&quot;skip_loop_filter&quot;</span><span class="o">,</span> <span class="mi">48L</span><span class="o">);</span>
-  <span class="c1">// 跳过帧 ？？</span>
-  <span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_CODEC</span><span class="o">,</span> <span class="s">&quot;skip_frame&quot;</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
-  <span class="c1">// 视频帧处理不过来的时候丢弃一些帧达到同步的效果</span>
-  <span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_PLAYER</span><span class="o">,</span> <span class="s">&quot;framedrop&quot;</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span>
+<span class="cm">/**</span>
+<span class="cm">* 播放延时的解决方案</span>
+<span class="cm">*/</span>
+<span class="c1">// 如果是rtsp协议，可以优先用tcp(默认是用udp)</span>
+<span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_FORMAT</span><span class="o">,</span> <span class="s">&quot;rtsp_transport&quot;</span><span class="o">,</span> <span class="s">&quot;tcp&quot;</span><span class="o">);</span>
+<span class="c1">// 设置播放前的最大探测时间 （100未测试是否是最佳值）</span>
+<span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_FORMAT</span><span class="o">,</span> <span class="s">&quot;analyzemaxduration&quot;</span><span class="o">,</span> <span class="mi">100L</span><span class="o">);</span>
+<span class="c1">// 每处理一个packet之后刷新io上下文</span>
+<span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_FORMAT</span><span class="o">,</span> <span class="s">&quot;flush_packets&quot;</span><span class="o">,</span> <span class="mi">1L</span><span class="o">);</span>
+<span class="c1">// 需要准备好后自动播放</span>
+<span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_PLAYER</span><span class="o">,</span> <span class="s">&quot;start-on-prepared&quot;</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
+<span class="c1">// 不额外优化（使能非规范兼容优化，默认值0 ）</span>
+<span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_PLAYER</span><span class="o">,</span> <span class="s">&quot;fast&quot;</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
+<span class="c1">// 是否开启预缓冲，一般直播项目会开启，达到秒开的效果，不过带来了播放丢帧卡顿的体验</span>
+<span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_PLAYER</span><span class="o">,</span> <span class="s">&quot;packet-buffering&quot;</span><span class="o">,</span>  <span class="mi">0</span><span class="o">);</span>
+<span class="c1">// 自动旋屏</span>
+<span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_PLAYER</span><span class="o">,</span> <span class="s">&quot;mediacodec-auto-rotate&quot;</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+<span class="c1">// 处理分辨率变化</span>
+<span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_PLAYER</span><span class="o">,</span> <span class="s">&quot;mediacodec-handle-resolution-change&quot;</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+<span class="c1">// 最大缓冲大小,单位kb</span>
+<span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_FORMAT</span><span class="o">,</span> <span class="s">&quot;max-buffer-size&quot;</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+<span class="c1">// 默认最小帧数2</span>
+<span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_PLAYER</span><span class="o">,</span> <span class="s">&quot;min-frames&quot;</span><span class="o">,</span> <span class="mi">2</span><span class="o">);</span>
+<span class="c1">// 最大缓存时长</span>
+<span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_PLAYER</span><span class="o">,</span>  <span class="s">&quot;max_cached_duration&quot;</span><span class="o">,</span> <span class="mi">3</span><span class="o">);</span> <span class="c1">//300</span>
+<span class="c1">// 是否限制输入缓存数</span>
+<span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_PLAYER</span><span class="o">,</span>  <span class="s">&quot;infbuf&quot;</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
+<span class="c1">// 缩短播放的rtmp视频延迟在1s内</span>
+<span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_FORMAT</span><span class="o">,</span> <span class="s">&quot;fflags&quot;</span><span class="o">,</span> <span class="s">&quot;nobuffer&quot;</span><span class="o">);</span>
+<span class="c1">// 播放前的探测Size，默认是1M, 改小一点会出画面更快</span>
+<span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_FORMAT</span><span class="o">,</span> <span class="s">&quot;probesize&quot;</span><span class="o">,</span> <span class="mi">200</span><span class="o">);</span> <span class="c1">//1024L)</span>
+<span class="c1">// 播放重连次数</span>
+<span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_PLAYER</span><span class="o">,</span><span class="s">&quot;reconnect&quot;</span><span class="o">,</span><span class="mi">5</span><span class="o">);</span>
+<span class="c1">// TODO:</span>
+<span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_FORMAT</span><span class="o">,</span> <span class="s">&quot;http-detect-range-support&quot;</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+<span class="c1">// 设置是否开启环路过滤: 0开启，画面质量高，解码开销大，48关闭，画面质量差点，解码开销小</span>
+<span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_CODEC</span><span class="o">,</span> <span class="s">&quot;skip_loop_filter&quot;</span><span class="o">,</span> <span class="mi">48L</span><span class="o">);</span>
+<span class="c1">// 跳过帧 ？？</span>
+<span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_CODEC</span><span class="o">,</span> <span class="s">&quot;skip_frame&quot;</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+<span class="c1">// 视频帧处理不过来的时候丢弃一些帧达到同步的效果</span>
+<span class="n">ijkMediaPlayer</span><span class="o">.</span><span class="na">setOption</span><span class="o">(</span><span class="n">IjkMediaPlayer</span><span class="o">.</span><span class="na">OPT_CATEGORY_PLAYER</span><span class="o">,</span> <span class="s">&quot;framedrop&quot;</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span>
 
-  <span class="cm">/* 暂未使用</span>
-<span class="cm">  // 超时时间，timeout参数只对http设置有效，若果你用rtmp设置timeout，ijkplayer内部会忽略timeout参数。rtmp的timeout参数含义和http的不一样。</span>
-<span class="cm">  ijkMediaPlayer.setOption(IjkMediaPlayer.OPT_CATEGORY_FORMAT, &quot;timeout&quot;, 10000000);</span>
-<span class="cm">  // 因为项目中多次调用播放器，有网络视频，resp，本地视频，还有wifi上http视频，所以得清空DNS才能播放WIFI上的视频</span>
-<span class="cm">  ijkMediaPlayer.setOption(IjkMediaPlayer.OPT_CATEGORY_FORMAT, &quot;dns_cache_clear&quot;, 1);</span>
-<span class="cm">  */</span>
+<span class="cm">/* 暂未使用</span>
+<span class="cm">// 超时时间，timeout参数只对http设置有效，若果你用rtmp设置timeout，ijkplayer内部会忽略timeout参数。rtmp的timeout参数含义和http的不一样。</span>
+<span class="cm">ijkMediaPlayer.setOption(IjkMediaPlayer.OPT_CATEGORY_FORMAT, &quot;timeout&quot;, 10000000);</span>
+<span class="cm">// 因为项目中多次调用播放器，有网络视频，resp，本地视频，还有wifi上http视频，所以得清空DNS才能播放WIFI上的视频</span>
+<span class="cm">ijkMediaPlayer.setOption(IjkMediaPlayer.OPT_CATEGORY_FORMAT, &quot;dns_cache_clear&quot;, 1);</span>
+<span class="cm">*/</span>
 </pre></div>
 </td></tr></table>
                 
