@@ -20,8 +20,9 @@ rm -f !(file)
 rm -f !(file1|file2|...)
 ```
 
-##3. 硬盘分区格式化
+##3. 硬盘相关
 
+* 硬盘分区格式化
 ```bash
 # 分区
 sudo fdisk /dev/sdx
@@ -30,6 +31,21 @@ sudo fdisk /dev/sdx
 sudo mkfs.vfat /dev/sdx
 
 ```
+
+* 查看硬盘容量使用情况
+```bash
+# 查看硬盘容量使用情况 -h --human-readable
+df -hl /dev/sda1
+
+# 查看文件或者文件夹的大小
+du -hl xxx
+
+
+
+```
+
+
+
 
 ##4. 网络传输相关命令
 

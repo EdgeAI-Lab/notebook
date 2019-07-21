@@ -25,6 +25,7 @@ nav:
         - NDK知识点: Android/android_ndk.md
         - GCC&Clang&LLVM的关系: ARM-Linux/gcc_clang_llvm.md
         - 交叉编译示例OPUS: Android/cross-compile_opus_for_android.md
+        - 交叉编译ijkplayer: Android/ijkpalyer_for_rtsp_compile.md
         - JNI知识点: Android/jni.md
         - ART: Android/android_art.md
         - Android CMake知识点: Android/android_cmake.md
