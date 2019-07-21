@@ -2,7 +2,8 @@
 
 ## 1.安装依赖工具
 
-[参考链接](https://blog.csdn.net/qq372848728/article/details/62170288)
+[参考链接1](https://blog.csdn.net/qq372848728/article/details/62170288)
+[参考链接2](https://github.com/bilibili/ijkplayer)
 
 ```bash
 
@@ -96,7 +97,7 @@ cd ..
 ```
 
 
-### 4.
+### 4.配置ijkplayer相应参数，解决卡顿、延迟
 
 [参考链接](https://blog.csdn.net/u013270727/article/details/83900062)
 
