@@ -1423,13 +1423,47 @@
 <p><img alt="" src="../../assets/images/STM32/UART/usart1_IT_configure.png" /></p>
 <h2 id="2">2.开启中断<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p>在main.c中添加</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>  <span class="cm">/* USER CODE BEGIN 2 */</span>
-   <span class="c1">// </span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>  <span class="cm">/* USER CODE BEGIN 2 */</span>
+   <span class="c1">// 中断方式接收  最后一个参数10表示接收到10个字节才会调用回调函数</span>
    <span class="n">HAL_UART_Receive_IT</span><span class="p">(</span><span class="o">&amp;</span><span class="n">huart1</span><span class="p">,</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="p">)</span><span class="n">aRxBuffer</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+
+   <span class="c1">// DMA方式接收 最后一个参数10表示接收到10个字节才会调用回调函数</span>
   <span class="cm">/* USER CODE END 2 */</span>
+  <span class="n">HAL_UART_Receive_DMA</span><span class="p">(</span><span class="o">&amp;</span><span class="n">huart1</span><span class="p">,</span> <span class="n">usart1_rx_buff</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+
+
+  <span class="p">......</span>
+
+  <span class="cm">/* USER CODE BEGIN 4 */</span>
+
+<span class="c1">// 串口接收回调函数</span>
+<span class="kt">void</span> <span class="n">HAL_UART_RxCpltCallback</span><span class="p">(</span><span class="n">UART_HandleTypeDef</span> <span class="o">*</span><span class="n">huart</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">HAL_GPIO_TogglePin</span><span class="p">(</span><span class="n">GPIOD</span><span class="p">,</span><span class="n">GPIO_PIN_7</span><span class="p">);</span>
+<span class="p">}</span>
+
+
+<span class="cm">/* USER CODE END 4 */</span>
 </pre></div>
 </td></tr></table>
                 
