@@ -36,6 +36,7 @@ nav:
         - CRC16: ARM-Linux/crc16.md
         - C宏定义#与##: ARM-Linux/c_micro_jing.md
         - 补码: ARM-Linux/complement.md
+        - pragma pack(): ARM-Linux/c_pragma.md
 
       - Linux:
         - 构建内核源码树: ARM-Linux/build_linux_source_tree.md

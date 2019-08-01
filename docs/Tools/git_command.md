@@ -61,3 +61,17 @@ git push -f origin master // 强推
 
 ```
 
+### 5.git强制拉取远程分支更新
+
+> 假设你工作在master分支
+
+```bash
+# 获取远程分支的内容
+git fetch -all 
+
+# 指向新的分支
+git reset --hard origin/master  
+
+```
+
+
