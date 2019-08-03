@@ -36,6 +36,7 @@ nav:
         - CRC16: ARM-Linux/crc16.md
         - C宏定义#与##: ARM-Linux/c_micro_jing.md
         - 补码: ARM-Linux/complement.md
+        - C指针: ARM-Linux/c_pointer.md
 
       - Linux:
         - 构建内核源码树: ARM-Linux/build_linux_source_tree.md
@@ -61,6 +62,7 @@ nav:
       - OpenCV4Android: Computer Vision/OpenCV4Android_001.md
       
     - Multimedia:
+      - 彻底理解YUV格式: Multimedia/yuv.md
       - FFMPEG: Multimedia/ffmpeg_command.md
       - PCM: Multimedia/pcm.md
       - OPUS: Multimedia/opus.md
