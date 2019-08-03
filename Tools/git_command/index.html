@@ -755,6 +755,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ARM-Linux/c_pragma/" title="pragma pack()" class="md-nav__link">
+      pragma pack()
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1365,6 +1377,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#4git" title="4.git删除已经提交的文件" class="md-nav__link">
+    4.git删除已经提交的文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5git" title="5.git强制拉取远程分支更新" class="md-nav__link">
+    5.git强制拉取远程分支更新
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1485,6 +1511,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#4git" title="4.git删除已经提交的文件" class="md-nav__link">
+    4.git删除已经提交的文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5git" title="5.git强制拉取远程分支更新" class="md-nav__link">
+    5.git强制拉取远程分支更新
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1562,6 +1602,33 @@ git checkout --orphan &lt;branch_name&gt;
 
 // 将当前所有文件提交
 git commit -a
+</pre></div>
+</td></tr></table>
+
+<h3 id="4git">4.git删除已经提交的文件<a class="headerlink" href="#4git" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">git</span> <span class="n">rm</span> <span class="o">-</span><span class="n">r</span> <span class="o">--</span><span class="n">cached</span> <span class="n">xxx</span> <span class="c1">// xxx是你要删除的文件，本命令执行完之后，在.gitignore文件中添加上该需要删除的文件</span>
+<span class="n">git</span> <span class="n">add</span> <span class="p">.</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s">&quot;update .gitignore&quot;</span>
+<span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">f</span> <span class="n">origin</span> <span class="n">master</span> <span class="c1">// 强推</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="5git">5.git强制拉取远程分支更新<a class="headerlink" href="#5git" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>假设你工作在master分支</p>
+</blockquote>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># 获取远程分支的内容</span>
+git fetch -all 
+
+<span class="c1"># 指向新的分支</span>
+git reset --hard origin/master  
 </pre></div>
 </td></tr></table>
                 
