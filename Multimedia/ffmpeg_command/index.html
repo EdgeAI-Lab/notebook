@@ -1480,6 +1480,13 @@ ffplay test.asf
 ffplay -f video4linux2 -framerate <span class="m">30</span> -video_size hd720 /dev/video0
 </pre></div>
 </td></tr></table>
+
+<ul>
+<li>FFMPEG 从MP4中抽取H264文件</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ffmpeg -i test.mp4 -an -vcodec libx264 -crf 23 test.h264
+</pre></div>
+</td></tr></table>
                 
                   
                 
