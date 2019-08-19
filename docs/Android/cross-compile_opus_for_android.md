@@ -62,7 +62,6 @@ git clone https://git.xiph.org/opus.git
 
 ```bash
 ./configure --host=aarch64-linux-androideabi --prefix=/home/fhc/opus/android_build
-```
 
 make
 
@@ -79,8 +78,9 @@ gcc src/opus_demo.c -L./local_build/lib -lopus -I./local_build/include -I./local
 gcc tcp_opus.c -o tcp_opus `pkg-config --libs --cflags opus`
 ```
 
+## 5.参考Demo
 
-
+* doc/trivial_example.c 例程比较简单，适合入门参考
 
 
 

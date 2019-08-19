@@ -65,6 +65,7 @@ nav:
     - Multimedia:
       - 彻底理解YUV格式: Multimedia/yuv.md
       - FFMPEG: Multimedia/ffmpeg_command.md
+      - EasyDarwin: Multimedia/opus.md
       - PCM: Multimedia/pcm.md
       - OPUS: Multimedia/opus.md
       
