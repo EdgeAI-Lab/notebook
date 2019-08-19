@@ -36,7 +36,7 @@
     
     
       
-        <title>EasyDarwin RTSP - Notebook</title>
+        <title>EasyDarwin - Notebook</title>
       
     
     
@@ -125,7 +125,7 @@
                 Notebook
               </span>
               <span class="md-header-nav__topic">
-                EasyDarwin RTSP
+                EasyDarwin
               </span>
             
           
@@ -197,14 +197,16 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="../.." title="Home" class="md-tabs__link md-tabs__link--active">
+      <a href="../.." title="Home" class="md-tabs__link">
         Home
       </a>
     
@@ -282,7 +284,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../yuv/" title="Multimedia" class="md-tabs__link">
+        <a href="../yuv/" title="Multimedia" class="md-tabs__link md-tabs__link--active">
           Multimedia
         </a>
       
@@ -1055,10 +1057,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
     
     <label class="md-nav__link" for="nav-7">
       Multimedia
@@ -1098,11 +1102,56 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../opus/" title="EasyDarwin" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        EasyDarwin
+      </label>
+    
+    <a href="./" title="EasyDarwin" class="md-nav__link md-nav__link--active">
       EasyDarwin
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1easydarwin" title="1.EasyDarwin" class="md-nav__link">
+    1.EasyDarwin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2ffmpeg" title="2.使用FFMPEG推流" class="md-nav__link">
+    2.使用FFMPEG推流
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1456,6 +1505,41 @@ ffmpeg -re -stream_loop -1 -i test.mp4 -rtsp_transport tcp -vcodec h264 -f rtsp 
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../ffmpeg_command/" title="FFMPEG" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                FFMPEG
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../pcm/" title="PCM" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                PCM
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
