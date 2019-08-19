@@ -644,6 +644,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#4compile-demo" title="4.Compile Demo" class="md-nav__link">
+    4.Compile Demo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5demo" title="5.参考Demo" class="md-nav__link">
+    5.参考Demo
+  </a>
+  
+</li>
+      
       
       
       
@@ -1158,6 +1172,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../Multimedia/opus/" title="EasyDarwin" class="md-nav__link">
+      EasyDarwin
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../Multimedia/pcm/" title="PCM" class="md-nav__link">
       PCM
     </a>
@@ -1450,6 +1476,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#4compile-demo" title="4.Compile Demo" class="md-nav__link">
+    4.Compile Demo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5demo" title="5.参考Demo" class="md-nav__link">
+    5.参考Demo
+  </a>
+  
+</li>
+      
       
       
       
@@ -1555,7 +1595,11 @@
  7
  8
  9
-10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install autoconf libtool-bin automake
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install autoconf libtool-bin automake
 
 git clone https://git.xiph.org/opus.git
 
@@ -1565,26 +1609,30 @@ git clone https://git.xiph.org/opus.git
 
 <span class="sb">```</span>bash
 ./configure --host<span class="o">=</span>aarch64-linux-androideabi --prefix<span class="o">=</span>/home/fhc/opus/android_build
+
+make
+
+make install
 </pre></div>
 </td></tr></table>
 
-<p>make</p>
-<p>make install</p>
+<h2 id="4compile-demo">4.Compile Demo<a class="headerlink" href="#4compile-demo" title="Permanent link">&para;</a></h2>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
-5
-6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## 4.Compile Demo
-```bash
-# 手动链接库和头文件
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># 手动链接库和头文件</span>
 gcc src/opus_demo.c -L./local_build/lib -lopus -I./local_build/include -I./local_build/include/opus -I./silk -I./celt -I./include -lm
 
-# 使用pkg-config
-gcc tcp_opus.c -o tcp_opus `pkg-config --libs --cflags opus`
+<span class="c1"># 使用pkg-config</span>
+gcc tcp_opus.c -o tcp_opus <span class="sb">`</span>pkg-config --libs --cflags opus<span class="sb">`</span>
 </pre></div>
 </td></tr></table>
+
+<h2 id="5demo">5.参考Demo<a class="headerlink" href="#5demo" title="Permanent link">&para;</a></h2>
+<ul>
+<li>doc/trivial_example.c 例程比较简单，适合入门参考</li>
+</ul>
                 
                   
                 
