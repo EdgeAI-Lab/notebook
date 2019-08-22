@@ -24,4 +24,4 @@
 
 * 示例
 
-![wav_format](../assets/images/wav_format.jpg)
+![wav_format](../assets/images/wav_format.png)
