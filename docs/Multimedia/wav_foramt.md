@@ -5,6 +5,7 @@
 * WAV头格式如下：
 
 |offset address|size|type|content|
+|--------------|----|----|-------|
 |00H~03H|4|char|资源交换文件标志（RIFF）|
 |04H~07H|4|int32|从下个地址开始到文件尾的总字节数
 |08H~0BH|4|char|WAV文件标志（WAVE）
