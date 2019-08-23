@@ -50,6 +50,7 @@ nav:
       
       - Java:
         - Swing: ARM-Linux/java_ui_swing.md
+      - ASCII Table: ARM-Linux/ascii_table.md
         
     - Python: 
         - 三角函数: Python/python_trigonometric.md
@@ -67,8 +68,9 @@ nav:
       - FFMPEG: Multimedia/ffmpeg_command.md
       - EasyDarwin: Multimedia/easydarwin.md
       - PCM: Multimedia/pcm.md
-      - OPUS: Multimedia/opus.md
       - WAV: Multimedia/wav_foramt.md
+      - OPUS: Multimedia/opus.md
+      - Ogg: Multimedia/Ogg.md
       
     - STM32:
       - STM32串口: 
