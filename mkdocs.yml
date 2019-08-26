@@ -66,6 +66,7 @@ nav:
     - Multimedia:
       - 彻底理解YUV格式: Multimedia/yuv.md
       - 音视频同步: Multimedia/av_synchronization.md
+      - nginx: Multimedia/compile_install_nginx.md
       - FFMPEG: Multimedia/ffmpeg_command.md
       - EasyDarwin: Multimedia/easydarwin.md
       - PCM: Multimedia/pcm.md
