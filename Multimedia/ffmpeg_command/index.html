@@ -313,6 +313,19 @@
   
     <li class="md-tabs__item">
       
+        <a href="../../Hardware/battery_work_time/" title="Hardware" class="md-tabs__link">
+          Hardware
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
         <a href="../../Tools/PlantUML/" title="Tools" class="md-tabs__link">
           Tools
         </a>
@@ -1386,10 +1399,46 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
     
     <label class="md-nav__link" for="nav-9">
-      Tools
+      Hardware
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-9">
+        Hardware
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Hardware/battery_work_time/" title="电池工作时间的计算" class="md-nav__link">
+      电池工作时间的计算
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Tools
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
         Tools
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1552,6 +1601,13 @@ ffplay -f video4linux2 -framerate <span class="m">30</span> -video_size hd720 /d
 <li>FFMPEG 从MP4中抽取H264文件</li>
 </ul>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ffmpeg -i test.mp4 -an -vcodec libx264 -crf 23 test.h264
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>FFMPEG为视频添加Log</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ffmpeg -i linuxidc.mp4 -i linuxidc.com.png -filter_complex overlay linuxidc.com.mp4
 </pre></div>
 </td></tr></table>
                 
