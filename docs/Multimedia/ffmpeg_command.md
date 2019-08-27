@@ -41,5 +41,12 @@ ffmpeg -i test.mp4 -an -vcodec libx264 -crf 23 test.h264
 
 ```
 
+* FFMPEG为视频添加Log
+
+```
+ffmpeg -i linuxidc.mp4 -i linuxidc.com.png -filter_complex overlay linuxidc.com.mp4
+
+```
+
 
 

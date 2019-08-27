@@ -85,6 +85,9 @@ nav:
       - STM32电机控制:
         - STM32控制42步进电机: STM32/stm32_io_drive_42stepper_l298n.md
 
+    - Hardware:
+      - 电池工作时间的计算: Hardware/battery_work_time.md
+
     - Tools:
       - UML: Tools/PlantUML.md
       - git command: Tools/git_command.md
