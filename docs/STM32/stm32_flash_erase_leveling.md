@@ -5,7 +5,7 @@
 * 芯片：STM32F103ZET6
 * 软件：STM32CubeHAL
 * Flash Page Size：2K
-* 使用Flash的一页Page60(0x0x0801E000 ~ 0x0801E800(不包含))进行磨损均衡算法试验
+* 使用Flash的一页Page60(0x0801E000 ~ 0x0801E800(不包含))进行磨损均衡算法试验
 * 数据帧格式：``` |0x5A|data1|data2|0xA5| ```
 
 * 本实验Flash存储模型如下：
