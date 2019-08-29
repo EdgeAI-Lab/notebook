@@ -1805,9 +1805,7 @@ void write_word_to_flash(writer_u writer);
 84
 85
 86
-87
-88
-89</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>#include &lt;drv_flash.h&gt;
+87</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>#include &lt;drv_flash.h&gt;
 extern void FLASH_PageErase(uint32_t PageAddress);
 
 static flasher_t flasher;
@@ -1839,7 +1837,6 @@ void easer_flash(void)
 
 void find_new_entry(void)
 {
-    flasher.current_addr = flasher.flash_start_address;
     while(flasher.current_addr &lt; flasher.flash_start_address+flasher.page_size)
     {
         flasher.buff.data = read_word_from_flash(flasher.current_addr);
@@ -1862,7 +1859,6 @@ void find_new_entry(void)
 
 uint32_t find_used_entry(void)
 {
-    flasher.current_addr = flasher.flash_start_address;
     while(flasher.current_addr &lt; flasher.flash_start_address+flasher.page_size)
     {
         flasher.buff.data = read_word_from_flash(flasher.current_addr);
