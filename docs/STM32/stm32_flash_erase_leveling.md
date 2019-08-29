@@ -108,7 +108,6 @@ void easer_flash(void)
 
 void find_new_entry(void)
 {
-	flasher.current_addr = flasher.flash_start_address;
 	while(flasher.current_addr < flasher.flash_start_address+flasher.page_size)
 	{
 		flasher.buff.data = read_word_from_flash(flasher.current_addr);
@@ -131,7 +130,6 @@ void find_new_entry(void)
 
 uint32_t find_used_entry(void)
 {
-	flasher.current_addr = flasher.flash_start_address;
 	while(flasher.current_addr < flasher.flash_start_address+flasher.page_size)
 	{
 		flasher.buff.data = read_word_from_flash(flasher.current_addr);
