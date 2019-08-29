@@ -84,6 +84,8 @@ nav:
 
       - STM32电机控制:
         - STM32控制42步进电机: STM32/stm32_io_drive_42stepper_l298n.md
+      - STM32 Flash操作:
+        - Flash 磨损均衡算法: STM32/stm32_flash_erase_leveling.md
 
     - Hardware:
       - 电池工作时间的计算: Hardware/battery_work_time.md
