@@ -36,7 +36,7 @@
     
     
       
-        <title>类linux驱动模块框架module_init(init_fun)在STM32上的实现 - Notebook</title>
+        <title>初始化函数的另一种写法 - Notebook</title>
       
     
     
@@ -127,7 +127,7 @@
               Notebook
             </span>
             <span class="md-header-nav__topic">
-              类linux驱动模块框架module_init(init_fun)在STM32上的实现
+              初始化函数的另一种写法
             </span>
           
         </div>
@@ -194,14 +194,16 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="../.." title="Home" class="md-tabs__link md-tabs__link--active">
+      <a href="../.." title="Home" class="md-tabs__link">
         Home
       </a>
     
@@ -290,19 +292,13 @@
         
   
   
-    
-    
-  
-  
     <li class="md-tabs__item">
       
-        <a href="../stm32_hal_uart/" title="STM32" class="md-tabs__link">
+        <a href="../stm32_hal_uart/" title="STM32" class="md-tabs__link md-tabs__link--active">
           STM32
         </a>
       
     </li>
-  
-
   
 
       
@@ -1207,10 +1203,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
     
     <label class="md-nav__link" for="nav-8">
       STM32
@@ -1227,55 +1225,12 @@
           
 
 
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-1" type="checkbox" id="nav-8-1">
-    
-    <label class="md-nav__link" for="nav-8-1">
-      STM32串口
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-8-1">
-        STM32串口
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
   <li class="md-nav__item">
     <a href="../stm32_hal_uart/" title="STM32串口编程之中断方式" class="md-nav__link">
       STM32串口编程之中断方式
     </a>
   </li>
 
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-2" type="checkbox" id="nav-8-2">
-    
-    <label class="md-nav__link" for="nav-8-2">
-      STM32定时器
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-8-2">
-        STM32定时器
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
         
           
           
@@ -1301,30 +1256,6 @@
   </li>
 
         
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-3" type="checkbox" id="nav-8-3">
-    
-    <label class="md-nav__link" for="nav-8-3">
-      STM32电机控制
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-8-3">
-        STM32电机控制
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
           
           
           
@@ -1336,30 +1267,6 @@
     </a>
   </li>
 
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-4" type="checkbox" id="nav-8-4">
-    
-    <label class="md-nav__link" for="nav-8-4">
-      STM32 Flash操作
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-8-4">
-        STM32 Flash操作
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
         
           
           
@@ -1373,8 +1280,80 @@
   </li>
 
         
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        初始化函数的另一种写法
+      </label>
+    
+    <a href="./" title="初始化函数的另一种写法" class="md-nav__link md-nav__link--active">
+      初始化函数的另一种写法
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="试验环境" class="md-nav__link">
+    试验环境
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" title="1. 修改链接脚本" class="md-nav__link">
+    1. 修改链接脚本
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" title="1.1 内存分配" class="md-nav__link">
+    1.1 内存分配
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" title="1.2" class="md-nav__link">
+    1.2
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1688,6 +1667,41 @@ LR_IROM1 0x08000000 0x00080000  {    ; load region size_region
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../stm32_flash_erase_leveling/" title="Flash 磨损均衡算法" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Flash 磨损均衡算法
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../Hardware/battery_work_time/" title="电池工作时间的计算" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                电池工作时间的计算
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
