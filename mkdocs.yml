@@ -74,18 +74,13 @@ nav:
       - OPUS: Multimedia/opus.md
       - Ogg: Multimedia/Ogg.md
       
-    - STM32:
-      - STM32串口: 
-        - STM32串口编程之中断方式: STM32/stm32_hal_uart.md
-
-      - STM32定时器:
-        - STM32定时器编程之定时中断: STM32/stm32_hal_uart.md
-        - STM32定时器编程之PWM: STM32/stm32_hal_uart.md
-
-      - STM32电机控制:
-        - STM32控制42步进电机: STM32/stm32_io_drive_42stepper_l298n.md
-      - STM32 Flash操作:
-        - Flash 磨损均衡算法: STM32/stm32_flash_erase_leveling.md
+    - STM32: 
+      - STM32串口编程之中断方式: STM32/stm32_hal_uart.md
+      - STM32定时器编程之定时中断: STM32/stm32_hal_uart.md
+      - STM32定时器编程之PWM: STM32/stm32_hal_uart.md
+      - STM32控制42步进电机: STM32/stm32_io_drive_42stepper_l298n.md
+      - Flash 磨损均衡算法: STM32/stm32_flash_erase_leveling.md
+      - 初始化函数的另一种写法: STM32/stm32_module_init_like.linux.md
 
     - Hardware:
       - 电池工作时间的计算: Hardware/battery_work_time.md
