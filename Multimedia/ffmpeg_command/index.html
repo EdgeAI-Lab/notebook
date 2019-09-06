@@ -36,7 +36,7 @@
     
     
       
-        <title>FFMPEG - Notebook</title>
+        <title>FFMPEG命令 - Notebook</title>
       
     
     
@@ -127,7 +127,7 @@
               Notebook
             </span>
             <span class="md-header-nav__topic">
-              FFMPEG
+              FFMPEG命令
             </span>
           
         </div>
@@ -1139,11 +1139,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        FFMPEG
+        FFMPEG命令
       </label>
     
-    <a href="./" title="FFMPEG" class="md-nav__link md-nav__link--active">
-      FFMPEG
+    <a href="./" title="FFMPEG命令" class="md-nav__link md-nav__link--active">
+      FFMPEG命令
     </a>
     
       
@@ -1171,6 +1171,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ffmpeg_api.md" title="FFMPEG API" class="md-nav__link">
+      FFMPEG API
+    </a>
   </li>
 
         
@@ -1546,7 +1558,9 @@ ffplay -f video4linux2 -framerate <span class="m">30</span> -video_size hd720 /d
 <ul>
 <li>FFMPEG 从MP4中抽取H264文件</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ffmpeg -i test.mp4 -an -vcodec libx264 -crf 23 test.h264
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ffmpeg -i test.mp4 -an -vcodec libx264 -crf 23 test.h264
+ffmpeg -i test.mp4 -codec copy -bsf h264_mp4toannexb -f h264 test.h264
 </pre></div>
 </td></tr></table>
 
@@ -1554,6 +1568,13 @@ ffplay -f video4linux2 -framerate <span class="m">30</span> -video_size hd720 /d
 <li>FFMPEG为视频添加Log</li>
 </ul>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ffmpeg -i linuxidc.mp4 -i linuxidc.com.png -filter_complex overlay linuxidc.com.mp4
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li></li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ffprobe  -i example.mp4 -print_format json -show_frames
 </pre></div>
 </td></tr></table>
                 
