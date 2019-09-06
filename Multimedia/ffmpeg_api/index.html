@@ -36,7 +36,7 @@
     
     
       
-        <title>Ffmpeg api - Notebook</title>
+        <title>FFMPEG API - Notebook</title>
       
     
     
@@ -127,7 +127,7 @@
               Notebook
             </span>
             <span class="md-header-nav__topic">
-              Ffmpeg api
+              FFMPEG API
             </span>
           
         </div>
@@ -194,14 +194,16 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="../.." title="Home" class="md-tabs__link md-tabs__link--active">
+      <a href="../.." title="Home" class="md-tabs__link">
         Home
       </a>
     
@@ -279,7 +281,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../yuv/" title="Multimedia" class="md-tabs__link">
+        <a href="../yuv/" title="Multimedia" class="md-tabs__link md-tabs__link--active">
           Multimedia
         </a>
       
@@ -1069,10 +1071,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
     
     <label class="md-nav__link" for="nav-7">
       Multimedia
@@ -1136,11 +1140,72 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../ffmpeg_api.md" title="FFMPEG API" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        FFMPEG API
+      </label>
+    
+    <a href="./" title="FFMPEG API" class="md-nav__link md-nav__link--active">
       FFMPEG API
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ffmpeg-api" title="FFMPEG API使用介绍" class="md-nav__link">
+    FFMPEG API使用介绍
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" title="1.源码编译" class="md-nav__link">
+    1.源码编译
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2pkg-config" title="2.pkg-config使用" class="md-nav__link">
+    2.pkg-config使用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" title="3.编译使用例程" class="md-nav__link">
+    3.编译使用例程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1493,10 +1558,10 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/FanHongchuang/notebook/edit/master/docs/Multimedia/ffmpeg api.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/FanHongchuang/notebook/edit/master/docs/Multimedia/ffmpeg_api.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Ffmpeg api</h1>
+                  <h1>FFMPEG API</h1>
                 
                 <h2 id="ffmpeg-api">FFMPEG API使用介绍<a class="headerlink" href="#ffmpeg-api" title="Permanent link">&para;</a></h2>
 <h3 id="1">1.源码编译<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
@@ -1556,6 +1621,41 @@ gcc -o transcode_aac transcode_aac.c `pkg-config --libs --cflags libavcodec liba
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../ffmpeg_command/" title="FFMPEG命令" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                FFMPEG命令
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../easydarwin/" title="EasyDarwin" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                EasyDarwin
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
