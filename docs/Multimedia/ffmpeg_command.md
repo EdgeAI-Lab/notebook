@@ -38,6 +38,7 @@ ffplay -f video4linux2 -framerate 30 -video_size hd720 /dev/video0
 * FFMPEG 从MP4中抽取H264文件
 ```
 ffmpeg -i test.mp4 -an -vcodec libx264 -crf 23 test.h264
+ffmpeg -i test.mp4 -codec copy -bsf h264_mp4toannexb -f h264 test.h264
 
 ```
 
@@ -47,6 +48,13 @@ ffmpeg -i test.mp4 -an -vcodec libx264 -crf 23 test.h264
 ffmpeg -i linuxidc.mp4 -i linuxidc.com.png -filter_complex overlay linuxidc.com.mp4
 
 ```
+
+* 
+```
+ffprobe  -i example.mp4 -print_format json -show_frames
+
+```
+
 
 
 
