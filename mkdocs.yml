@@ -47,6 +47,7 @@ nav:
         - Linux Shell脚本编程: ARM-Linux/linux_shell_program.md
         - GCC&Clang&LLVM的关系: ARM-Linux/gcc_clang_llvm.md
       - Zigbee: ARM-Linux/zigbee_keys.md
+      - NanoPC RK3399:  ARM-Linux/nanopc_m4.md
       
       - Java:
         - Swing: ARM-Linux/java_ui_swing.md
