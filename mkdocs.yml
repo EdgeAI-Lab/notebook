@@ -68,6 +68,7 @@ nav:
       - 彻底理解YUV格式: Multimedia/yuv.md
       - 音视频同步: Multimedia/av_synchronization.md
       - nginx: Multimedia/compile_install_nginx.md
+      - Linux Shell命令: Multimedia/linux_shell_cmd_for_multimedia.md
       - FFMPEG编译: Multimedia/ffmpeg_compile.md
       - FFMPEG命令: Multimedia/ffmpeg_command.md
       - FFMPEG API: Multimedia/ffmpeg_api.md
