@@ -1133,15 +1133,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" title="1.颜色编码方式" class="md-nav__link">
-    1.颜色编码方式
+  <a href="#1rgb" title="1.颜色编码方式：RGB" class="md-nav__link">
+    1.颜色编码方式：RGB
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2yuv" title="2.YUV采样格式" class="md-nav__link">
+  <a href="#2yuv" title="2.颜色编码方式：YUV" class="md-nav__link">
+    2.颜色编码方式：YUV
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2yuv_1" title="2.YUV采样格式" class="md-nav__link">
     2.YUV采样格式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3yuv" title="3.YUV存储格式" class="md-nav__link">
+    3.YUV存储格式
   </a>
   
 </li>
@@ -1177,6 +1191,18 @@
   <li class="md-nav__item">
     <a href="../compile_install_nginx/" title="nginx" class="md-nav__link">
       nginx
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../linux_shell_cmd_for_multimedia/" title="Linux Shell命令" class="md-nav__link">
+      Linux Shell命令
     </a>
   </li>
 
@@ -1519,15 +1545,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" title="1.颜色编码方式" class="md-nav__link">
-    1.颜色编码方式
+  <a href="#1rgb" title="1.颜色编码方式：RGB" class="md-nav__link">
+    1.颜色编码方式：RGB
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2yuv" title="2.YUV采样格式" class="md-nav__link">
+  <a href="#2yuv" title="2.颜色编码方式：YUV" class="md-nav__link">
+    2.颜色编码方式：YUV
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2yuv_1" title="2.YUV采样格式" class="md-nav__link">
     2.YUV采样格式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3yuv" title="3.YUV存储格式" class="md-nav__link">
+    3.YUV存储格式
   </a>
   
 </li>
@@ -1552,9 +1592,13 @@
                 
                 
                 <h1 id="yuv">一文读懂YUV采样原理<a class="headerlink" href="#yuv" title="Permanent link">&para;</a></h1>
-<h2 id="1">1.颜色编码方式<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<h2 id="2yuv">2.YUV采样格式<a class="headerlink" href="#2yuv" title="Permanent link">&para;</a></h2>
+<h2 id="1rgb">1.颜色编码方式：RGB<a class="headerlink" href="#1rgb" title="Permanent link">&para;</a></h2>
+<h2 id="2yuv">2.颜色编码方式：YUV<a class="headerlink" href="#2yuv" title="Permanent link">&para;</a></h2>
+<p>从电视系统中衍生的，黑白电视使用的就是Y数据（明亮值），后来出现了彩色格式，电视节目既需要在黑白电视上播放，又需要在彩色电视上播放，就需要做格式兼容，方法就是增加U和V分量，U和V表示的是色度，起作用是描述影像的色彩及饱和度，它们用于指定像素的颜色。</p>
+<p>摄像机录出来的数据就是YUV</p>
+<h2 id="2yuv_1">2.YUV采样格式<a class="headerlink" href="#2yuv_1" title="Permanent link">&para;</a></h2>
 <p><a href="https://blog.csdn.net/qq_39575835/article/details/86498161">参考链接</a></p>
+<h2 id="3yuv">3.YUV存储格式<a class="headerlink" href="#3yuv" title="Permanent link">&para;</a></h2>
 <p>plannar 平面格式
 先连续存储所有像素点的Y分量，然后存储所有的U分量，最后存储所有的V分量</p>
 <p>packed 打包格式

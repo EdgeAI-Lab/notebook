@@ -1142,6 +1142,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../linux_shell_cmd_for_multimedia/" title="Linux Shell命令" class="md-nav__link">
+      Linux Shell命令
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../ffmpeg_compile/" title="FFMPEG编译" class="md-nav__link">
       FFMPEG编译
     </a>
@@ -1162,38 +1174,9 @@
       
     
     
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        FFMPEG命令
-      </label>
-    
     <a href="./" title="FFMPEG命令" class="md-nav__link md-nav__link--active">
       FFMPEG命令
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-linuxffmpeg" title="1. Linux下使用FFMPEG命令录音" class="md-nav__link">
-    1. Linux下使用FFMPEG命令录音
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
     
   </li>
 
@@ -1508,22 +1491,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-linuxffmpeg" title="1. Linux下使用FFMPEG命令录音" class="md-nav__link">
-    1. Linux下使用FFMPEG命令录音
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1538,67 +1505,66 @@
                 
                 
                 <h1 id="ffmpeg">FFMPEG常用命令<a class="headerlink" href="#ffmpeg" title="Permanent link">&para;</a></h1>
-<h2 id="1-linuxffmpeg">1. Linux下使用FFMPEG命令录音<a class="headerlink" href="#1-linuxffmpeg" title="Permanent link">&para;</a></h2>
-<ul>
-<li>查看声卡设备</li>
-</ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cat /proc/asound/cards
-</pre></div>
-</td></tr></table>
+<p><a href="http://ffmpeg.org/ffmpeg-devices.html#alsa">声卡-FFMPEG官方文档</a></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># 查看声卡设备</span>
+cat /proc/asound/cards
 
-<ul>
-<li>FFMPEG录音命令</li>
-</ul>
-<p><a href="http://ffmpeg.org/ffmpeg-devices.html#alsa">FFMPEG官方文档</a></p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>hw:CARD<span class="o">[</span>,DEV<span class="o">[</span>,SUBDEV<span class="o">]]</span>
+<span class="c1"># FFMPEG录音命令</span>
+hw:CARD<span class="o">[</span>,DEV<span class="o">[</span>,SUBDEV<span class="o">]]</span>
 
 ffmpeg -f alsa -i hw:0 alsaout.wav
-</pre></div>
-</td></tr></table>
 
-<ul>
-<li>FFMPEG录像命令</li>
-</ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>// record
+<span class="c1"># record</span>
 ffmpeg -f video4linux2 -s <span class="m">320</span>*300 -i /dev/video0 test.asf
 
-// play
+<span class="c1"># play</span>
 ffplay test.asf
 
-// record and play
+<span class="c1"># record and play</span>
 ffplay -f video4linux2 -framerate <span class="m">30</span> -video_size hd720 /dev/video0
-</pre></div>
-</td></tr></table>
 
-<ul>
-<li>FFMPEG 从MP4中抽取H264文件</li>
-</ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ffmpeg -i test.mp4 -an -vcodec libx264 -crf 23 test.h264
+<span class="c1"># FFMPEG 从MP4中抽取H264文件</span>
+ffmpeg -i test.mp4 -an -vcodec libx264 -crf <span class="m">23</span> test.h264
 ffmpeg -i test.mp4 -codec copy -bsf h264_mp4toannexb -f h264 test.h264
-</pre></div>
-</td></tr></table>
 
-<ul>
-<li>FFMPEG为视频添加Log</li>
-</ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ffmpeg -i linuxidc.mp4 -i linuxidc.com.png -filter_complex overlay linuxidc.com.mp4
-</pre></div>
-</td></tr></table>
+<span class="c1"># FFMPEG为视频添加Log</span>
+ffmpeg -i linuxidc.mp4 -i linuxidc.com.png -filter_complex overlay linuxidc.com.mp4
 
-<ul>
-<li></li>
-</ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ffprobe  -i example.mp4 -print_format json -show_frames
+<span class="c1"># FFMPEG以帧的方式查看MP4封装信息</span>
+ffprobe  -i example.mp4 -print_format json -show_frames
+
+<span class="c1"># FFMPEG查看YUV图像 / YUV视频</span>
+<span class="c1"># 图片的尺寸必须写对，否则可能无法正常播放</span>
+ffplay -video_size 1280x720 test.yuv
 </pre></div>
 </td></tr></table>
                 
