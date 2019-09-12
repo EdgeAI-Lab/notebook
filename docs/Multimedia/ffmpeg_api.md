@@ -6,7 +6,7 @@
 
 ```
 # make install会将编译出的库、头文件和.pc文件都安装到local_build
-./config --prefix=$PWD/local_build
+./configure --prefix=$PWD/local_build
 
 make
 
