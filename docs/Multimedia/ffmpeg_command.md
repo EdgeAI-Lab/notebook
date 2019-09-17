@@ -1,6 +1,10 @@
 # FFMPEG常用命令
 
-[声卡-FFMPEG官方文档](http://ffmpeg.org/ffmpeg-devices.html#alsa)
+## 参考文档
+* [声卡-FFMPEG官方文档](http://ffmpeg.org/ffmpeg-devices.html#alsa)
+
+
+## 常用命令
 
 ```bash
 # 查看声卡设备

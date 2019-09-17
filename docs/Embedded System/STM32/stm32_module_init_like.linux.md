@@ -71,7 +71,7 @@ LR_IROM1 0x08000000 0x00080000  {    ; load region size_region
 
 ```
 友情提示：keil中链接脚本的修改方法如下图所示
-![](../assets/images/STM32/module_init/modify_sct_file.png)
+![](../../assets/images/STM32/module_init/modify_sct_file.png)
 
 
 ### 1.2 将指定的函数存放到指定的内存区域
@@ -98,7 +98,7 @@ typedef void (*init_function_list)(uint8_t taskID);
 怎么解决了？其实很简单，统一调用初始化函数时，我们是根据内存地址顺序调用的，那么将Log模块的初始化函数放在其前面就可以了。
 
 在Keil中可以这么做：
-![](../assets/images/STM32/module_init/fun_addr_order.png)
+![](../../assets/images/STM32/module_init/fun_addr_order.png)
 
 
 ### 1.3 使用举例

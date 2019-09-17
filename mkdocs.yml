@@ -23,37 +23,54 @@ nav:
       - Android 屏幕适配: Android/android_screen_adapter.md
       - Android NDK开发:
         - NDK知识点: Android/android_ndk.md
-        - GCC&Clang&LLVM的关系: ARM-Linux/gcc_clang_llvm.md
+        - GCC&Clang&LLVM的关系: Embedded System/gcc_clang_llvm.md
         - 交叉编译示例OPUS: Android/cross-compile_opus_for_android.md
         - 交叉编译ijkplayer: Android/ijkpalyer_for_rtsp_compile.md
         - JNI知识点: Android/jni.md
         - ART: Android/android_art.md
         - Android CMake知识点: Android/android_cmake.md
-
-    - ARM-Linux:
-      - C/C++: 
-        - C内存模型: ARM-Linux/c_memory_layout.md
-        - CRC16: ARM-Linux/crc16.md
-        - C宏定义#与##: ARM-Linux/c_micro_jing.md
-        - 补码: ARM-Linux/complement.md
-        - C指针: ARM-Linux/c_pointer.md
-        - pragma pack(): ARM-Linux/c_pragma.md
-
-      - Linux:
-        - 构建内核源码树: ARM-Linux/build_linux_source_tree.md
-        - 常用shell命令: ARM-Linux/linux_shell_cmd.md
-        - samba服务配置: ARM-Linux/samba.md
-        - FTP服务配置: ARM-Linux/ftp_server_build.md
-        - Linux Shell脚本编程: ARM-Linux/linux_shell_program.md
-        - GCC&Clang&LLVM的关系: ARM-Linux/gcc_clang_llvm.md
-      - Zigbee: ARM-Linux/zigbee_keys.md
-      - NanoPC RK3399:  ARM-Linux/nanopc_m4.md
+        - Android交叉编译OpenCV: Android/cross-compile_opencv_for_android.md
+        - Ubuntu中配置Java: Android/ubuntu_config_java.md
       
       - Java:
-        - Swing: ARM-Linux/java_ui_swing.md
-      - ASCII Table: ARM-Linux/ascii_table.md
+        - Swing: Android/java_ui_swing.md
+
+    - Embedded System:
+      - C/C++: 
+        - C内存模型: Embedded System/c_memory_layout.md
+        - CRC16: Embedded System/crc16.md
+        - C宏定义#与##: Embedded System/c_micro_jing.md
+        - 补码: Embedded System/complement.md
+        - C指针: Embedded System/c_pointer.md
+        - pragma pack(): Embedded System/c_pragma.md
+        - pkg-config: Embedded System/pkg_config.md
+        - typedef使用注意: Embedded System/typedef_tips.md
+
+      - ESP8266: Embedded System/ESP8266.md
+
+      - STM32: 
+        - STM32串口编程之中断方式: Embedded System/STM32/stm32_hal_uart.md
+        - STM32定时器编程之定时中断: Embedded System/STM32/stm32_hal_uart.md
+        - STM32定时器编程之PWM: Embedded System/STM32/stm32_hal_uart.md
+        - STM32 SPI: Embedded System/STM32/stm32_spi.md
+        - STM32控制42步进电机: Embedded System/STM32/stm32_io_drive_42stepper_l298n.md
+        - Flash 磨损均衡算法: Embedded System/STM32/stm32_flash_erase_leveling.md
+        - 初始化函数的另一种写法: Embedded System/STM32/stm32_module_init_like.linux.md
+
+      - Linux:
+        - 构建内核源码树: Embedded System/build_linux_source_tree.md
+        - 常用shell命令: Embedded System/linux_shell_cmd.md
+        - samba服务配置: Embedded System/samba.md
+        - FTP服务配置: Embedded System/ftp_server_build.md
+        - Linux Shell脚本编程: Embedded System/linux_shell_program.md
+        - GCC&Clang&LLVM的关系: Embedded System/gcc_clang_llvm.md
+      - Zigbee: Embedded System/zigbee_keys.md
+      - NanoPC RK3399:  Embedded System/nanopc_m4.md
+      
+      - ASCII Table: Embedded System/ascii_table.md
         
     - Python: 
+        - matplotlib使用: Python/matplotlib.md
         - 三角函数: Python/python_trigonometric.md
         - 录音与播放: Python/python_record_play.md  
         - CRC16: Python/crc16.md
@@ -65,6 +82,7 @@ nav:
       - OpenCV4Android: Computer Vision/OpenCV4Android_001.md
       
     - Multimedia:
+      - 光学知识点: Multimedia/optical.md
       - 彻底理解YUV格式: Multimedia/yuv.md
       - 音视频同步: Multimedia/av_synchronization.md
       - nginx: Multimedia/compile_install_nginx.md
@@ -77,14 +95,6 @@ nav:
       - WAV: Multimedia/wav_foramt.md
       - OPUS: Multimedia/opus.md
       - Ogg: Multimedia/Ogg.md
-      
-    - STM32: 
-      - STM32串口编程之中断方式: STM32/stm32_hal_uart.md
-      - STM32定时器编程之定时中断: STM32/stm32_hal_uart.md
-      - STM32定时器编程之PWM: STM32/stm32_hal_uart.md
-      - STM32控制42步进电机: STM32/stm32_io_drive_42stepper_l298n.md
-      - Flash 磨损均衡算法: STM32/stm32_flash_erase_leveling.md
-      - 初始化函数的另一种写法: STM32/stm32_module_init_like.linux.md
 
     - Hardware:
       - 电池工作时间的计算: Hardware/battery_work_time.md

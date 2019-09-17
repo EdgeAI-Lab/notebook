@@ -5,7 +5,7 @@
 !!! Note
     System Core配置略
 	
-![](../assets/images/STM32/UART/usart1_IT_configure.png)
+![](../../assets/images/STM32/UART/usart1_IT_configure.png)
 
 
 
