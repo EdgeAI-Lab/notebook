@@ -58,6 +58,7 @@ nav:
         - 初始化函数的另一种写法: Embedded System/STM32/stm32_module_init_like.linux.md
 
       - Linux:
+        - GCC编译动态链接库: Embedded System/gcc_dynamic_linking_library.md
         - 构建内核源码树: Embedded System/build_linux_source_tree.md
         - 常用shell命令: Embedded System/linux_shell_cmd.md
         - samba服务配置: Embedded System/samba.md
