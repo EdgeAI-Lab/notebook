@@ -31,6 +31,7 @@ nav:
         - Android CMake知识点: Android/android_cmake.md
         - Android交叉编译OpenCV: Android/cross-compile_opencv_for_android.md
         - Ubuntu中配置Java: Android/ubuntu_config_java.md
+      - Android编译系统: Android/android_compile_system.md
       
       - Java:
         - Swing: Android/java_ui_swing.md

@@ -81,7 +81,7 @@ sudo ldconfig
 
 ```
 
-## 3.查看库的引用情况
+## 3.查看程序的依赖库
 
 ```shell
 $ ldd test

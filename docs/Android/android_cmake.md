@@ -5,7 +5,7 @@
 > 只有将第三方.so文件打包进APK，程序在运行时才能使用
 
 * 方法一
-创建src/jinLibs文件夹，并将各个架构的.so文件放在这个文件夹下，默认情况下gradle构建系统会去src/jinLib文件夹
+创建src/main/jniLibs文件夹，并将各个架构的.so文件放在这个文件夹下，默认情况下gradle构建系统会去src/main/jniLib文件夹
 下寻找.so文件。
 
 ![jniLibs](../assets/images/jniLibs.png)
