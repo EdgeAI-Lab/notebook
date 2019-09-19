@@ -24,11 +24,10 @@ nav:
         - Android 屏幕适配: Android/android_screen_adapter/android_screen_adapter.md
 
       - Android NDK开发:
-        - NDK知识点: Android/android_ndk/android_ndk.md
+        - NDK开发: Android/android_ndk/android_ndk.md
         - GCC&Clang&LLVM的关系: Embedded System/gcc_clang_llvm.md
         - 交叉编译示例OPUS: Android/android_ndk/cross-compile_opus_for_android.md
         - 交叉编译ijkplayer: Android/android_ndk/ijkpalyer_for_rtsp_compile.md
-        - JNI知识点: Android/android_ndk/jni.md
         - ART: Android/android_ndk/android_art.md
         - Android CMake知识点: Android/android_ndk/android_cmake.md
         - Android交叉编译OpenCV: Android/android_ndk/cross-compile_opencv_for_android.md
