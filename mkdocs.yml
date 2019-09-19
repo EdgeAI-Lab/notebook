@@ -13,28 +13,34 @@ nav:
     - About Me: about.md
     - Android:
       - Android开机自启:
-        - Launcher: Android/android_launcher.md
-        - 开机广播: Android/android_broadcast_boot.md
+        - Launcher: Android/android_source_code/android_launcher.md
+        - 开机广播: Android/android_source_code/android_broadcast_boot.md
       - Android6.0源码修改:
-        - 去掉USB权限申请对话框: Android/android_remove_usb_permission_dialog.md
-        - 修改屏幕默认亮度: Android/android_screen_brightness.md
-        - 彻底隐藏虚拟导航键: Android/android_hide_virtual_navigation_key.md
-        - 默认开启USB调试功能: Android/android_enable_usb_debug.md
-      - Android 屏幕适配: Android/android_screen_adapter.md
+        - 去掉USB权限申请对话框: Android/android_source_code/android_remove_usb_permission_dialog.md
+        - 修改屏幕默认亮度: Android/android_source_code/android_screen_brightness.md
+        - 彻底隐藏虚拟导航键: Android/android_source_code/android_hide_virtual_navigation_key.md
+        - 默认开启USB调试功能: Android/android_source_code/android_enable_usb_debug.md
+      
+        - Android 屏幕适配: Android/android_screen_adapter/android_screen_adapter.md
+
       - Android NDK开发:
-        - NDK知识点: Android/android_ndk.md
+        - NDK知识点: Android/android_ndk/android_ndk.md
         - GCC&Clang&LLVM的关系: Embedded System/gcc_clang_llvm.md
-        - 交叉编译示例OPUS: Android/cross-compile_opus_for_android.md
-        - 交叉编译ijkplayer: Android/ijkpalyer_for_rtsp_compile.md
-        - JNI知识点: Android/jni.md
-        - ART: Android/android_art.md
-        - Android CMake知识点: Android/android_cmake.md
-        - Android交叉编译OpenCV: Android/cross-compile_opencv_for_android.md
-        - Ubuntu中配置Java: Android/ubuntu_config_java.md
-      - Android编译系统: Android/android_compile_system.md
+        - 交叉编译示例OPUS: Android/android_ndk/cross-compile_opus_for_android.md
+        - 交叉编译ijkplayer: Android/android_ndk/ijkpalyer_for_rtsp_compile.md
+        - JNI知识点: Android/android_ndk/jni.md
+        - ART: Android/android_ndk/android_art.md
+        - Android CMake知识点: Android/android_ndk/android_cmake.md
+        - Android交叉编译OpenCV: Android/android_ndk/cross-compile_opencv_for_android.md
+        
+      - Android编译系统: Android/android_compiler_system/android_compile_system.md
       
       - Java:
-        - Swing: Android/java_ui_swing.md
+        - Swing: Android/java/java_ui_swing.md
+        - Ubuntu中配置Java: Android/java/ubuntu_config_java.md
+
+    - ML:
+      - 机器学习基础: ML/ml_basics.md
 
     - Embedded System:
       - C/C++: 

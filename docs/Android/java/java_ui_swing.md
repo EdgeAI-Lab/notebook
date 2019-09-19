@@ -83,7 +83,7 @@ public class MainFrame extends JFrame {
 ```
 
 ## 3. 结果如下
-![java_swing_ui](../assets/images/java_swing_ui.png)
+![java_swing_ui](../../assets/images/java_swing_ui.png)
 
 
 

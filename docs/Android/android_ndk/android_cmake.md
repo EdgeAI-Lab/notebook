@@ -8,7 +8,7 @@
 创建src/main/jniLibs文件夹，并将各个架构的.so文件放在这个文件夹下，默认情况下gradle构建系统会去src/main/jniLib文件夹
 下寻找.so文件。
 
-![jniLibs](../assets/images/jniLibs.png)
+![jniLibs](../../assets/images/jniLibs.png)
 
 当然也可以只放你用到的架构，就如上图所示，我只会用到arm64-v8a。
 但是gradle构建时默认会去寻找所有的架构，如果缺少就会报错，所以我们还需要告诉gradle构建系统，
