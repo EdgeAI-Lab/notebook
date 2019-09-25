@@ -90,6 +90,7 @@ nav:
       
     - Multimedia:
       - 光学知识点: Multimedia/optical.md
+      - AAC编码: Multimedia/aac.md
       - 彻底理解YUV格式: Multimedia/yuv.md
       - 音视频同步: Multimedia/av_synchronization.md
       - nginx: Multimedia/compile_install_nginx.md

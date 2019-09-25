@@ -55,6 +55,10 @@ Java_com_fhc_ndktest_MainActivity_add(JNIEnv *env, jobject thiz, jint a, jint b)
 
 ## 2. 使用带JNI接口的.so文件
 
+使用时要注意包名！！！
+
+
+
 ## 1. 使用现有的C/C++库
 
 可以直接编译成.so（不带JNI接口）文件然后在Android Studio中引用，这种方法需要编写JNI接口，java层才能调用
