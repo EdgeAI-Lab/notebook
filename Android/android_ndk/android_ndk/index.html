@@ -36,7 +36,7 @@
     
     
       
-        <title>NDK知识点 - Notebook</title>
+        <title>NDK开发 - Notebook</title>
       
     
     
@@ -127,7 +127,7 @@
               Notebook
             </span>
             <span class="md-header-nav__topic">
-              NDK知识点
+              NDK开发
             </span>
           
         </div>
@@ -584,11 +584,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        NDK知识点
+        NDK开发
       </label>
     
-    <a href="./" title="NDK知识点" class="md-nav__link md-nav__link--active">
-      NDK知识点
+    <a href="./" title="NDK开发" class="md-nav__link md-nav__link--active">
+      NDK开发
     </a>
     
       
@@ -600,6 +600,34 @@
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-jniso" title="1. 使用不带JNI接口的.so文件" class="md-nav__link">
+    1. 使用不带JNI接口的.so文件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-android-studioaddcso" title="1.1 在Android Studio中将add.c编译为.so文件" class="md-nav__link">
+    1.1 在Android Studio中将add.c编译为.so文件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-jnilibaddso" title="1.2 通过JNI接口调用libadd.so文件中的函数" class="md-nav__link">
+    1.2 通过JNI接口调用libadd.so文件中的函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-jniso" title="2. 使用带JNI接口的.so文件" class="md-nav__link">
+    2. 使用带JNI接口的.so文件
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#1-cc" title="1. 使用现有的C/C++库" class="md-nav__link">
@@ -658,18 +686,6 @@
   <li class="md-nav__item">
     <a href="../ijkpalyer_for_rtsp_compile/" title="交叉编译ijkplayer" class="md-nav__link">
       交叉编译ijkplayer
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../jni/" title="JNI知识点" class="md-nav__link">
-      JNI知识点
     </a>
   </li>
 
@@ -1405,6 +1421,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../Multimedia/aac/" title="AAC编码" class="md-nav__link">
+      AAC编码
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../Multimedia/yuv/" title="彻底理解YUV格式" class="md-nav__link">
       彻底理解YUV格式
     </a>
@@ -1689,6 +1717,34 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#1-jniso" title="1. 使用不带JNI接口的.so文件" class="md-nav__link">
+    1. 使用不带JNI接口的.so文件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-android-studioaddcso" title="1.1 在Android Studio中将add.c编译为.so文件" class="md-nav__link">
+    1.1 在Android Studio中将add.c编译为.so文件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-jnilibaddso" title="1.2 通过JNI接口调用libadd.so文件中的函数" class="md-nav__link">
+    1.2 通过JNI接口调用libadd.so文件中的函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-jniso" title="2. 使用带JNI接口的.so文件" class="md-nav__link">
+    2. 使用带JNI接口的.so文件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#1-cc" title="1. 使用现有的C/C++库" class="md-nav__link">
     1. 使用现有的C/C++库
   </a>
@@ -1722,6 +1778,76 @@
                 
                 
                 <h1 id="android-ndk">Android NDK开发<a class="headerlink" href="#android-ndk" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>注意：Java通过JNI调用C/C++程序，其效率并不一定会提高，甚至会比纯java还低</p>
+</blockquote>
+<h2 id="1-jniso">1. 使用不带JNI接口的.so文件<a class="headerlink" href="#1-jniso" title="Permanent link">&para;</a></h2>
+<p>不带JNI接口的.so文件，一般是直接由现有C/C++代码编译成的</p>
+<p>eg: add.c</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">// add.c</span>
+<span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="11-android-studioaddcso">1.1 在Android Studio中将add.c编译为.so文件<a class="headerlink" href="#11-android-studioaddcso" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Android Studio中新建JNI工程，然后在CMakeList.txt文件中添加如下内容：</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>add_library( # Sets the name of the library.
+        add
+
+        # Sets the library as a shared library.
+        SHARED
+
+        # Provides a relative path to your source file(s).
+        add.c)
+</pre></div>
+</td></tr></table>
+
+<p>在生成的apk文件中可以找到libadd.so文件</p>
+<h2 id="12-jnilibaddso">1.2 通过JNI接口调用libadd.so文件中的函数<a class="headerlink" href="#12-jnilibaddso" title="Permanent link">&para;</a></h2>
+<ul>
+<li>在native-lib.cpp中添加如下内容：</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">#ifdef __cplusplus</span>
+<span class="k">extern</span> <span class="s">&quot;C&quot;</span>
+<span class="cp">#endif </span><span class="c1">// __cplusplus</span>
+<span class="kt">int</span> <span class="n">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
+
+<span class="k">extern</span> <span class="s">&quot;C&quot;</span>
+<span class="n">JNIEXPORT</span> <span class="n">jint</span> <span class="n">JNICALL</span>
+<span class="n">Java_com_fhc_ndktest_MainActivity_add</span><span class="p">(</span><span class="n">JNIEnv</span> <span class="o">*</span><span class="n">env</span><span class="p">,</span> <span class="n">jobject</span> <span class="n">thiz</span><span class="p">,</span> <span class="n">jint</span> <span class="n">a</span><span class="p">,</span> <span class="n">jint</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table>
+
+<p>在MainActivity.java中就可以使用了</p>
+<h2 id="2-jniso">2. 使用带JNI接口的.so文件<a class="headerlink" href="#2-jniso" title="Permanent link">&para;</a></h2>
+<p>使用时要注意包名！！！</p>
 <h2 id="1-cc">1. 使用现有的C/C++库<a class="headerlink" href="#1-cc" title="Permanent link">&para;</a></h2>
 <p>可以直接编译成.so（不带JNI接口）文件然后在Android Studio中引用，这种方法需要编写JNI接口，java层才能调用</p>
 <p>java调用C/C++代码必须通过JNI接口</p>
