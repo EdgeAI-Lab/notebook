@@ -75,6 +75,7 @@ nav:
       - NanoPC RK3399:  Embedded System/nanopc_m4.md
       
       - ASCII Table: Embedded System/ascii_table.md
+      - ARM交叉编译工具: Embedded System/arm_compiler.md
         
     - Python: 
         - matplotlib使用: Python/matplotlib.md
