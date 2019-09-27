@@ -1772,15 +1772,28 @@ pts(ms) = audio_index++ * time_interval (ms)
 </pre></div>
 </td></tr></table>
 
-<p>eg:<br />
-48k 2ch 16bit  frame size 为10ms  </p>
-<p>那么<br />
-frame_byte_size = 10ms/1000ms * 48k = 480 byte<br />
-channel_num = 2<br />
-sample_resolution = 16</p>
-<p>time_interval(ms)<br />
-= frame_byte_size/channel_num/(sample_resolution/8) * 1000 / sample_rate (ms)<br />
-= 480/2/(16/2)*1000/48000 (ms)</p>
+<p>eg:  </p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>48k 2ch 16bit  frame size 为10ms  
+</pre></div>
+</td></tr></table>
+
+<p>那么  </p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>frame_byte_size = 10ms/1000ms * 48k = 480 byte  
+channel_num = 2  
+sample_resolution = 16
+
+time_interval(ms)  
+= frame_byte_size/channel_num/(sample_resolution/8) * 1000 / sample_rate (ms)  
+= 480/2/(16/2)*1000/48000 (ms)
+</pre></div>
+</td></tr></table>
+
 <h3 id="12">1.2 视频时间戳<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
 <ul>
 <li>fps: 视频帧率</li>
