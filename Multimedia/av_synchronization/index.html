@@ -1751,25 +1751,36 @@
 <li>DTS: decoding time stamp 解码时间戳</li>
 <li>PTS: presentation time stamp 显示时间戳</li>
 </ul>
-<p>视频采用H264编码，其解码和显示顺序可能是不一样的，所以其DTS和PTS是不一样的；音频不存在这个问题，音频的DTS和PTS是一样的，
-对于音频通常我们只说PTS。</p>
+<p>视频采用H264编码，其解码和显示顺序可能是不一样的，所以其DTS和PTS是不一样的；音频不存在这个问题，音频的DTS和PTS是一样的，对于音频通常我们只说PTS。</p>
 <h3 id="11">1.1 音频时间戳<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
 <ul>
 <li>frame_size: 音频帧的大小，音频的帧是以时间为单位的，比如2.5, 5, 10, 20, 40 or 60 ms</li>
+<li>frame_byte_size：一帧音频按照字节存储的大小</li>
 <li>sample_rate: 音频的采样率，常用的有：8000,16000,44100,48000</li>
+<li>sample_resolution：采样位数</li>
+<li>channel_num：通道数</li>
 <li>time_interval: 时间间隔，可以理解为播放frame_size大小的音频数据需要的时间</li>
 <li>pts: 时间戳</li>
 </ul>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>time_interval(ms) = frame_size * 1000 / sample_rate (ms)
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>time_interval(ms) = frame_byte_size/channel_num/(sample_resolution/8) * 1000 / sample_rate (ms)
 
 pts(ms) = audio_index++ * time_interval (ms)
         = audio_index++ * (frame_size * 1000) / sample_rate (ms)
 </pre></div>
 </td></tr></table>
 
+<p>eg:<br />
+48k 2ch 16bit  frame size 为10ms  </p>
+<p>那么<br />
+frame_byte_size = 10ms/1000ms * 48k = 480 byte<br />
+channel_num = 2<br />
+sample_resolution = 16</p>
+<p>time_interval(ms)<br />
+= frame_byte_size/channel_num/(sample_resolution/8) * 1000 / sample_rate (ms)<br />
+= 480/2/(16/2)*1000/48000 (ms)</p>
 <h3 id="12">1.2 视频时间戳<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
 <ul>
 <li>fps: 视频帧率</li>
