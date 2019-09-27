@@ -27,9 +27,14 @@ pts(ms) = audio_index++ * time_interval (ms)
 
 ```
 eg:  
+
+```
 48k 2ch 16bit  frame size 为10ms  
+```
 
 那么  
+
+```
 frame_byte_size = 10ms/1000ms * 48k = 480 byte  
 channel_num = 2  
 sample_resolution = 16
@@ -37,6 +42,8 @@ sample_resolution = 16
 time_interval(ms)  
 = frame_byte_size/channel_num/(sample_resolution/8) * 1000 / sample_rate (ms)  
 = 480/2/(16/2)*1000/48000 (ms)
+
+```
 
 
 
