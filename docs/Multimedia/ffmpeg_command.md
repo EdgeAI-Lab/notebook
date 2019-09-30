@@ -38,6 +38,50 @@ ffprobe  -i example.mp4 -print_format json -show_frames
 # 图片的尺寸必须写对，否则可能无法正常播放
 ffplay -video_size 1280x720 test.yuv
 
+# mp4转flv
+ffmpeg -i example.mp4 -c:v libx264 -crf 24 example.flv
+
+## FFMPEG视频HLS推流
+ffmpeg -re -i example.flv -vcodec copy -acodec copy -f flv rtmp://localhost:1935/hls/stream
+
+# FFMPEG摄像头HLS推流
+ffmpeg -f video4linux2 -i /dev/video0 -c:v libx264 -preset ultrafast  -acodec libmp3lame -ar 44100 -ac 1  -f flv rtmp://localhost:1935/hls/stream
+
 
 ```
 
+## 命令参数
+
+|参数|含义|
+|----|----|
+|-f |强迫采用格式fmt
+|-i |filename 输入文件
+|-s |size 设置帧大小 默认是160x128
+|-r |设置帧频，默认25  （待验证，确认非标准桢率会导致音画不同步，所以只能设定为15或者29.97）
+|-ab |bitrate设置音频码率
+|-ar |freq 设置音频采样率
+|-ac |channels设置通道，默认为1
+|-vd |device 设置视频捕获设备 eg:/dev/video0
+|-av |device 设置音频设备 eg:/dev/dsp
+|-vcodec|
+
+
+c:v is an abbreviated version of codec:v
+
+vcodec is an alias of codec:v
+
+So all 3 function the same, but are not limited to 'copy' only. It is used to specify the codec, or copy.
+
+For example
+
+ffmpeg -i INPUT -map 0 -c:v libx264 -c:a copy OUTPUT
+
+encodes all video streams with libx264 and copies all audio streams.
+
+This could also be written as
+
+ffmpeg -i INPUT -map 0 -codec:v libx264 -acodec copy OUTPUT
+
+or
+
+ffmpeg -i INPUT -map 0 -vcodec libx264 -codec:a copy OUTPUT

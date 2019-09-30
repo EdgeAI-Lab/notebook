@@ -90,6 +90,7 @@ nav:
       - OpenCV4Android: Computer Vision/OpenCV4Android_001.md
       
     - Multimedia:
+      - VOD: Multimedia/AliyunVOD/get_play_url.md
       - 光学知识点: Multimedia/optical.md
       - AAC编码: Multimedia/aac.md
       - 彻底理解YUV格式: Multimedia/yuv.md
