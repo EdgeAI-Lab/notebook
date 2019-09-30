@@ -1121,6 +1121,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#5" title="5.网络管理" class="md-nav__link">
+    5.网络管理
+  </a>
+  
+</li>
+      
       
       
       
@@ -1455,7 +1462,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Multimedia/compile_install_nginx/" title="nginx" class="md-nav__link">
+    <a href="../../Multimedia/nginx/" title="nginx" class="md-nav__link">
       nginx
     </a>
   </li>
@@ -1742,6 +1749,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#5" title="5.网络管理" class="md-nav__link">
+    5.网络管理
+  </a>
+  
+</li>
+      
       
       
       
@@ -1839,6 +1853,34 @@ wget ftp://username:paswword@192.168.10.100/fhc/wuhuanWiki/site.zip
 <li>scp</li>
 </ul>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>scp source_file username@host:/path
+</pre></div>
+</td></tr></table>
+
+<h2 id="5">5.网络管理<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<ul>
+<li>wifi连接相关操作</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># 安装nmcli网络管理工具</span>
+sudo apt-get install nmcli
+
+<span class="c1"># 打开或者关闭wifi</span>
+sudo nmcli r wifi on/off
+
+<span class="c1"># 扫描附近wifi热点</span>
+sudo nmcli dev wifi
+
+<span class="c1"># 连接到指定的wifi热点</span>
+sudo nmcli dev wifi connect <span class="s2">&quot;SSID&quot;</span> password <span class="s2">&quot;PASSWORD&quot;</span> ifname wlan0
 </pre></div>
 </td></tr></table>
                 
