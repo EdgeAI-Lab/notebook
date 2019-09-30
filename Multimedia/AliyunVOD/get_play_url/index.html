@@ -1,0 +1,2439 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.1">
+    
+    
+      
+        <title>VOD - Notebook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.982221ab.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#url" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../.." title="Notebook" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Notebook
+            </span>
+            <span class="md-header-nav__topic">
+              VOD
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/FanHongchuang/notebook/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Notebook
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." title="Home" class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../Android/android_source_code/android_launcher/" title="Android" class="md-tabs__link">
+          Android
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../ML/ml_basics/" title="ML" class="md-tabs__link">
+          ML
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../Embedded System/c_memory_layout/" title="Embedded System" class="md-tabs__link">
+          Embedded System
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../Python/matplotlib/" title="Python" class="md-tabs__link">
+          Python
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../Computer Vision/caffe/" title="Computer Vision" class="md-tabs__link">
+          Computer Vision
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" title="Multimedia" class="md-tabs__link md-tabs__link--active">
+          Multimedia
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../Hardware/battery_work_time/" title="Hardware" class="md-tabs__link">
+          Hardware
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../Tools/PlantUML/" title="Tools" class="md-tabs__link">
+          Tools
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../.." title="Notebook" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Notebook
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/FanHongchuang/notebook/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Notebook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../about/" title="About Me" class="md-nav__link">
+      About Me
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Android
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Android
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Android开机自启
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        Android开机自启
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Android/android_source_code/android_launcher/" title="Launcher" class="md-nav__link">
+      Launcher
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Android/android_source_code/android_broadcast_boot/" title="开机广播" class="md-nav__link">
+      开机广播
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Android6.0源码修改
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        Android6.0源码修改
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Android/android_source_code/android_remove_usb_permission_dialog/" title="去掉USB权限申请对话框" class="md-nav__link">
+      去掉USB权限申请对话框
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Android/android_source_code/android_screen_brightness/" title="修改屏幕默认亮度" class="md-nav__link">
+      修改屏幕默认亮度
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Android/android_source_code/android_hide_virtual_navigation_key/" title="彻底隐藏虚拟导航键" class="md-nav__link">
+      彻底隐藏虚拟导航键
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Android/android_source_code/android_enable_usb_debug/" title="默认开启USB调试功能" class="md-nav__link">
+      默认开启USB调试功能
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Android/android_screen_adapter/android_screen_adapter/" title="Android 屏幕适配" class="md-nav__link">
+      Android 屏幕适配
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Android NDK开发
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        Android NDK开发
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Android/android_ndk/android_ndk/" title="NDK开发" class="md-nav__link">
+      NDK开发
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Embedded System/gcc_clang_llvm/" title="GCC&Clang&LLVM的关系" class="md-nav__link">
+      GCC&Clang&LLVM的关系
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Android/android_ndk/cross-compile_opus_for_android/" title="交叉编译示例OPUS" class="md-nav__link">
+      交叉编译示例OPUS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Android/android_ndk/ijkpalyer_for_rtsp_compile/" title="交叉编译ijkplayer" class="md-nav__link">
+      交叉编译ijkplayer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Android/android_ndk/android_art/" title="ART" class="md-nav__link">
+      ART
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Android/android_ndk/android_cmake/" title="Android CMake知识点" class="md-nav__link">
+      Android CMake知识点
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Android/android_ndk/cross-compile_opencv_for_android/" title="Android交叉编译OpenCV" class="md-nav__link">
+      Android交叉编译OpenCV
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Android/android_compiler_system/android_compile_system/" title="Android编译系统" class="md-nav__link">
+      Android编译系统
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
+    
+    <label class="md-nav__link" for="nav-3-5">
+      Java
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-5">
+        Java
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Android/java/java_ui_swing/" title="Swing" class="md-nav__link">
+      Swing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Android/java/ubuntu_config_java/" title="Ubuntu中配置Java" class="md-nav__link">
+      Ubuntu中配置Java
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      ML
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        ML
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../ML/ml_basics/" title="机器学习基础" class="md-nav__link">
+      机器学习基础
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Embedded System
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Embedded System
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1">
+    
+    <label class="md-nav__link" for="nav-5-1">
+      C/C++
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-1">
+        C/C++
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Embedded System/c_memory_layout/" title="C内存模型" class="md-nav__link">
+      C内存模型
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Embedded System/crc16/" title="CRC16" class="md-nav__link">
+      CRC16
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Embedded System/c_micro_jing/" title="C宏定义#与##" class="md-nav__link">
+      C宏定义#与##
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Embedded System/complement/" title="补码" class="md-nav__link">
+      补码
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Embedded System/c_pointer/" title="C指针" class="md-nav__link">
+      C指针
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Embedded System/c_pragma/" title="pragma pack()" class="md-nav__link">
+      pragma pack()
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Embedded System/pkg_config/" title="pkg-config" class="md-nav__link">
+      pkg-config
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Embedded System/typedef_tips/" title="typedef使用注意" class="md-nav__link">
+      typedef使用注意
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Embedded System/ESP8266/" title="ESP8266" class="md-nav__link">
+      ESP8266
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3" type="checkbox" id="nav-5-3">
+    
+    <label class="md-nav__link" for="nav-5-3">
+      STM32
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-3">
+        STM32
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Embedded System/STM32/stm32_hal_uart/" title="STM32串口编程之中断方式" class="md-nav__link">
+      STM32串口编程之中断方式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Embedded System/STM32/stm32_hal_uart/" title="STM32定时器编程之定时中断" class="md-nav__link">
+      STM32定时器编程之定时中断
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Embedded System/STM32/stm32_hal_uart/" title="STM32定时器编程之PWM" class="md-nav__link">
+      STM32定时器编程之PWM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Embedded System/STM32/stm32_spi/" title="STM32 SPI" class="md-nav__link">
+      STM32 SPI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Embedded System/STM32/stm32_io_drive_42stepper_l298n/" title="STM32控制42步进电机" class="md-nav__link">
+      STM32控制42步进电机
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Embedded System/STM32/stm32_flash_erase_leveling/" title="Flash 磨损均衡算法" class="md-nav__link">
+      Flash 磨损均衡算法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Embedded System/STM32/stm32_module_init_like.linux/" title="初始化函数的另一种写法" class="md-nav__link">
+      初始化函数的另一种写法
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-4" type="checkbox" id="nav-5-4">
+    
+    <label class="md-nav__link" for="nav-5-4">
+      Linux
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-4">
+        Linux
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Embedded System/gcc_dynamic_linking_library/" title="GCC编译动态链接库" class="md-nav__link">
+      GCC编译动态链接库
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Embedded System/build_linux_source_tree/" title="构建内核源码树" class="md-nav__link">
+      构建内核源码树
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Embedded System/linux_shell_cmd/" title="常用shell命令" class="md-nav__link">
+      常用shell命令
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Embedded System/samba/" title="samba服务配置" class="md-nav__link">
+      samba服务配置
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Embedded System/ftp_server_build/" title="FTP服务配置" class="md-nav__link">
+      FTP服务配置
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Embedded System/linux_shell_program/" title="Linux Shell脚本编程" class="md-nav__link">
+      Linux Shell脚本编程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Embedded System/gcc_clang_llvm/" title="GCC&Clang&LLVM的关系" class="md-nav__link">
+      GCC&Clang&LLVM的关系
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Embedded System/zigbee_keys/" title="Zigbee" class="md-nav__link">
+      Zigbee
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Embedded System/nanopc_m4/" title="NanoPC RK3399" class="md-nav__link">
+      NanoPC RK3399
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Embedded System/ascii_table/" title="ASCII Table" class="md-nav__link">
+      ASCII Table
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Embedded System/arm_compiler/" title="ARM交叉编译工具" class="md-nav__link">
+      ARM交叉编译工具
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Python
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Python
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Python/matplotlib/" title="matplotlib使用" class="md-nav__link">
+      matplotlib使用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Python/python_trigonometric/" title="三角函数" class="md-nav__link">
+      三角函数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Python/python_record_play/" title="录音与播放" class="md-nav__link">
+      录音与播放
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Python/crc16/" title="CRC16" class="md-nav__link">
+      CRC16
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Python/python_string_format/" title="Python字符串格式化" class="md-nav__link">
+      Python字符串格式化
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Computer Vision
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Computer Vision
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Computer Vision/caffe/" title="caffe" class="md-nav__link">
+      caffe
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Computer Vision/cv_library/" title="cv_library" class="md-nav__link">
+      cv_library
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Computer Vision/OpenCV4Android_001/" title="OpenCV4Android" class="md-nav__link">
+      OpenCV4Android
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
+    
+    <label class="md-nav__link" for="nav-8">
+      Multimedia
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Multimedia
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        VOD
+      </label>
+    
+    <a href="./" title="VOD" class="md-nav__link md-nav__link--active">
+      VOD
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" title="1. 开通阿里云点播服务" class="md-nav__link">
+    1. 开通阿里云点播服务
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2accesskey" title="2.获取AccessKey" class="md-nav__link">
+    2.获取AccessKey
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3url" title="3.使用代码获取播放URL" class="md-nav__link">
+    3.使用代码获取播放URL
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" title="3.1 说明" class="md-nav__link">
+    3.1 说明
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../optical/" title="光学知识点" class="md-nav__link">
+      光学知识点
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../aac/" title="AAC编码" class="md-nav__link">
+      AAC编码
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../yuv/" title="彻底理解YUV格式" class="md-nav__link">
+      彻底理解YUV格式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../av_synchronization/" title="音视频同步" class="md-nav__link">
+      音视频同步
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nginx/" title="nginx" class="md-nav__link">
+      nginx
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../linux_shell_cmd_for_multimedia/" title="Linux Shell命令" class="md-nav__link">
+      Linux Shell命令
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ffmpeg_compile/" title="FFMPEG编译" class="md-nav__link">
+      FFMPEG编译
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ffmpeg_command/" title="FFMPEG命令" class="md-nav__link">
+      FFMPEG命令
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ffmpeg_api/" title="FFMPEG API" class="md-nav__link">
+      FFMPEG API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../easydarwin/" title="EasyDarwin" class="md-nav__link">
+      EasyDarwin
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../pcm/" title="PCM" class="md-nav__link">
+      PCM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wav_foramt/" title="WAV" class="md-nav__link">
+      WAV
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../opus/" title="OPUS" class="md-nav__link">
+      OPUS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Ogg/" title="Ogg" class="md-nav__link">
+      Ogg
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Hardware
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Hardware
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Hardware/battery_work_time/" title="电池工作时间的计算" class="md-nav__link">
+      电池工作时间的计算
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Tools
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Tools
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Tools/PlantUML/" title="UML" class="md-nav__link">
+      UML
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Tools/git_command/" title="git command" class="md-nav__link">
+      git command
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Tools/Shadowsock/" title="Shadowsock" class="md-nav__link">
+      Shadowsock
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Tools/Shadowsock_CML/" title="Shadowsock命令行配置" class="md-nav__link">
+      Shadowsock命令行配置
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Tools/JupyterNotebook/" title="局域网访问Jupyter Notebook" class="md-nav__link">
+      局域网访问Jupyter Notebook
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" title="1. 开通阿里云点播服务" class="md-nav__link">
+    1. 开通阿里云点播服务
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2accesskey" title="2.获取AccessKey" class="md-nav__link">
+    2.获取AccessKey
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3url" title="3.使用代码获取播放URL" class="md-nav__link">
+    3.使用代码获取播放URL
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" title="3.1 说明" class="md-nav__link">
+    3.1 说明
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/FanHongchuang/notebook/edit/master/docs/Multimedia/AliyunVOD/get_play_url.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="url">获取播放URL<a class="headerlink" href="#url" title="Permanent link">&para;</a></h1>
+<h2 id="1">1. 开通阿里云点播服务<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://help.aliyun.com/document_detail/51512.html?spm=a2c4g.11186623.6.553.61b84bd7xuDBcI">开始使用视频点播</a></li>
+</ul>
+<p>根据上面文档的提示上传视频</p>
+<h2 id="2accesskey">2.获取AccessKey<a class="headerlink" href="#2accesskey" title="Permanent link">&para;</a></h2>
+<p>登录阿里云后，鼠标移动到用户头像点击AccessKey -&gt; 新建</p>
+<h2 id="3url">3.使用代码获取播放URL<a class="headerlink" href="#3url" title="Permanent link">&para;</a></h2>
+<p>须通过HTTP GET请求并传递相应参数才能获取到播放URL，并且参数需要计算，所以使用代码进行获取比较方便。</p>
+<ul>
+<li><a href="https://help.aliyun.com/document_detail/44435.html?spm=a2c4g.11186623.6.703.4f713d44xGaeZA">官方调用示例</a></li>
+</ul>
+<h3 id="31">3.1 说明<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<ul>
+<li>access_key_id和access_key_secret为必须项</li>
+<li><code>Action</code>的值根据需求改变，此处使用GetPlayInfo（获取播放URL）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Action</td>
+<td>GetPlayInfo</td>
+<td>获取播放URL</td>
+</tr>
+<tr>
+<td>Action</td>
+<td>GetVideoPlayAuth</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>下面是官方代码（修改了Action的值）</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>org.apache.httpcomponents<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>httpclient<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>4.5.1<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">org.apache.http.HttpResponse</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.http.client.ClientProtocolException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.http.client.config.RequestConfig</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.http.client.methods.HttpGet</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.http.impl.client.CloseableHttpClient</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.http.impl.client.HttpClients</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.http.util.EntityUtils</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">sun.misc.BASE64Encoder</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.crypto.Mac</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.crypto.spec.SecretKeySpec</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.UnsupportedEncodingException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.net.URI</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.net.URISyntaxException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.net.URLEncoder</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.security.SignatureException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.text.SimpleDateFormat</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.logging.Logger</span><span class="o">;</span>
+<span class="cm">/**</span>
+<span class="cm"> * 视频点播OpenAPI调用示例</span>
+<span class="cm"> * 以GetVideoPlayAuth接口为例，其他接口请替换相应接口名称及私有参数</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="c1">//账号AccessKey信息请填写(必选)</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">access_key_id</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="o">;</span>
+    <span class="c1">//账号AccessKey信息请填写(必选)</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">access_key_secret</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="o">;</span>
+    <span class="c1">//STS临时授权方式访问时该参数为必选，使用主账号AccessKey和RAM子账号AccessKey不需要填写</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">security_token</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="o">;</span>
+    <span class="c1">//以下参数不需要修改</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">VOD_DOMAIN</span> <span class="o">=</span> <span class="s">&quot;http://vod.cn-shanghai.aliyuncs.com&quot;</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">ISO8601_DATE_FORMAT</span> <span class="o">=</span> <span class="s">&quot;yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;&quot;</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">HTTP_METHOD</span> <span class="o">=</span> <span class="s">&quot;GET&quot;</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">HMAC_SHA1_ALGORITHM</span> <span class="o">=</span> <span class="s">&quot;HmacSHA1&quot;</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">UTF_8</span> <span class="o">=</span> <span class="s">&quot;utf-8&quot;</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="n">Logger</span> <span class="n">LOG</span> <span class="o">=</span> <span class="n">Logger</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">Main</span><span class="o">.</span><span class="na">class</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+    <span class="c1">//生成私有参数，不同API需要修改</span>
+    <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">privateParams</span> <span class="o">=</span> <span class="n">generatePrivateParamters</span><span class="o">();</span>
+    <span class="c1">//生成公共参数，不需要修改</span>
+    <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">publicParams</span> <span class="o">=</span> <span class="n">generatePublicParamters</span><span class="o">();</span>
+    <span class="c1">//生成OpenAPI地址，不需要修改</span>
+    <span class="n">String</span> <span class="n">URL</span> <span class="o">=</span> <span class="n">generateOpenAPIURL</span><span class="o">(</span><span class="n">publicParams</span><span class="o">,</span> <span class="n">privateParams</span><span class="o">);</span>
+    <span class="c1">//发送HTTP GET 请求</span>
+    <span class="n">httpGet</span><span class="o">(</span><span class="n">URL</span><span class="o">);</span>
+<span class="o">}</span>
+  <span class="cm">/**</span>
+<span class="cm">    * 生成视频点播OpenAPI私有参数</span>
+<span class="cm">    * 不同API需要修改此方法中的参数</span>
+<span class="cm">    * @return</span>
+<span class="cm">   */</span>
+<span class="kd">private</span> <span class="kd">static</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="nf">generatePrivateParamters</span><span class="o">()</span> <span class="o">{</span>
+    <span class="c1">// 接口私有参数列表, 不同API请替换相应参数</span>
+    <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">privateParams</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;();</span>
+    <span class="c1">// 视频ID</span>
+    <span class="n">privateParams</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;VideoId&quot;</span><span class="o">,</span><span class="s">&quot;24c5334a35a841f099456f2b39108b8e&quot;</span><span class="o">);</span>
+    <span class="c1">// API名称</span>
+    <span class="n">privateParams</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;Action&quot;</span><span class="o">,</span> <span class="s">&quot;GetPlayInfo&quot;</span><span class="o">);</span>
+    <span class="k">return</span> <span class="n">privateParams</span><span class="o">;</span>
+<span class="o">}</span>
+  <span class="cm">/**</span>
+<span class="cm">   * 生成视频点播OpenAPI公共参数</span>
+<span class="cm">   * 不需要修改</span>
+<span class="cm">   * @return</span>
+<span class="cm">   */</span>
+<span class="kd">private</span> <span class="kd">static</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="nf">generatePublicParamters</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">publicParams</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;();</span>
+    <span class="n">publicParams</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;Format&quot;</span><span class="o">,</span> <span class="s">&quot;JSON&quot;</span><span class="o">);</span>
+    <span class="n">publicParams</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;Version&quot;</span><span class="o">,</span> <span class="s">&quot;2017-03-21&quot;</span><span class="o">);</span>
+    <span class="n">publicParams</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;AccessKeyId&quot;</span><span class="o">,</span> <span class="n">access_key_id</span><span class="o">);</span>
+    <span class="n">publicParams</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;SignatureMethod&quot;</span><span class="o">,</span> <span class="s">&quot;HMAC-SHA1&quot;</span><span class="o">);</span>
+    <span class="n">publicParams</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;Timestamp&quot;</span><span class="o">,</span> <span class="n">generateTimestamp</span><span class="o">());</span>
+    <span class="n">publicParams</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;SignatureVersion&quot;</span><span class="o">,</span> <span class="s">&quot;1.0&quot;</span><span class="o">);</span>
+    <span class="n">publicParams</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;SignatureNonce&quot;</span><span class="o">,</span> <span class="n">generateRandom</span><span class="o">());</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">security_token</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">security_token</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">publicParams</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;SecurityToken&quot;</span><span class="o">,</span> <span class="n">security_token</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">publicParams</span><span class="o">;</span>
+<span class="o">}</span>
+ <span class="cm">/**</span>
+<span class="cm">   * 生成OpenAPI地址</span>
+<span class="cm">   * @param privateParams</span>
+<span class="cm">   * @return</span>
+<span class="cm">   * @throws Exception</span>
+<span class="cm">   */</span>
+<span class="kd">private</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">generateOpenAPIURL</span><span class="o">(</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">publicParams</span><span class="o">,</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">privateParams</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">generateURL</span><span class="o">(</span><span class="n">VOD_DOMAIN</span><span class="o">,</span> <span class="n">HTTP_METHOD</span><span class="o">,</span> <span class="n">publicParams</span><span class="o">,</span> <span class="n">privateParams</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="cm">/**</span>
+<span class="cm">  * @param domain        请求地址</span>
+<span class="cm">  * @param httpMethod    HTTP请求方式GET，POST等</span>
+<span class="cm">  * @param publicParams  公共参数</span>
+<span class="cm">  * @param privateParams 接口的私有参数</span>
+<span class="cm">  * @return 最后的url</span>
+<span class="cm"> */</span>
+<span class="kd">private</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">generateURL</span><span class="o">(</span><span class="n">String</span> <span class="n">domain</span><span class="o">,</span> <span class="n">String</span> <span class="n">httpMethod</span><span class="o">,</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">publicParams</span><span class="o">,</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">privateParams</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">allEncodeParams</span> <span class="o">=</span> <span class="n">getAllParams</span><span class="o">(</span><span class="n">publicParams</span><span class="o">,</span> <span class="n">privateParams</span><span class="o">);</span>
+    <span class="n">String</span> <span class="n">cqsString</span> <span class="o">=</span> <span class="n">getCQS</span><span class="o">(</span><span class="n">allEncodeParams</span><span class="o">);</span>
+    <span class="n">out</span><span class="o">(</span><span class="s">&quot;CanonicalizedQueryString = &quot;</span> <span class="o">+</span> <span class="n">cqsString</span><span class="o">);</span>
+    <span class="n">String</span> <span class="n">stringToSign</span> <span class="o">=</span> <span class="n">httpMethod</span> <span class="o">+</span> <span class="s">&quot;&amp;&quot;</span> <span class="o">+</span> <span class="n">percentEncode</span><span class="o">(</span><span class="s">&quot;/&quot;</span><span class="o">)</span> <span class="o">+</span> <span class="s">&quot;&amp;&quot;</span> <span class="o">+</span> <span class="n">percentEncode</span><span class="o">(</span><span class="n">cqsString</span><span class="o">);</span>
+    <span class="n">out</span><span class="o">(</span><span class="s">&quot;StringtoSign = &quot;</span> <span class="o">+</span> <span class="n">stringToSign</span><span class="o">);</span>
+    <span class="n">String</span> <span class="n">signature</span> <span class="o">=</span> <span class="n">hmacSHA1Signature</span><span class="o">(</span><span class="n">access_key_secret</span><span class="o">,</span> <span class="n">stringToSign</span><span class="o">);</span>
+    <span class="n">out</span><span class="o">(</span><span class="s">&quot;Signature = &quot;</span> <span class="o">+</span> <span class="n">signature</span><span class="o">);</span>
+    <span class="k">return</span> <span class="n">domain</span> <span class="o">+</span> <span class="s">&quot;?&quot;</span> <span class="o">+</span> <span class="n">cqsString</span> <span class="o">+</span> <span class="s">&quot;&amp;&quot;</span> <span class="o">+</span> <span class="n">percentEncode</span><span class="o">(</span><span class="s">&quot;Signature&quot;</span><span class="o">)</span> <span class="o">+</span> <span class="s">&quot;=&quot;</span> <span class="o">+</span> <span class="n">percentEncode</span><span class="o">(</span><span class="n">signature</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="kd">private</span> <span class="kd">static</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">getAllParams</span><span class="o">(</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">publicParams</span><span class="o">,</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">privateParams</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">encodeParams</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">publicParams</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="n">key</span> <span class="o">:</span> <span class="n">publicParams</span><span class="o">.</span><span class="na">keySet</span><span class="o">())</span> <span class="o">{</span>
+              <span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">publicParams</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">key</span><span class="o">);</span>
+            <span class="c1">//将参数和值都urlEncode一下。</span>
+            <span class="n">String</span> <span class="n">encodeKey</span> <span class="o">=</span> <span class="n">percentEncode</span><span class="o">(</span><span class="n">key</span><span class="o">);</span>
+            <span class="n">String</span> <span class="n">encodeVal</span> <span class="o">=</span> <span class="n">percentEncode</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+            <span class="n">encodeParams</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">encodeKey</span> <span class="o">+</span> <span class="s">&quot;=&quot;</span> <span class="o">+</span> <span class="n">encodeVal</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">privateParams</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="n">key</span> <span class="o">:</span> <span class="n">privateParams</span><span class="o">.</span><span class="na">keySet</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">privateParams</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">key</span><span class="o">);</span>
+            <span class="c1">//将参数和值都urlEncode一下。</span>
+            <span class="n">String</span> <span class="n">encodeKey</span> <span class="o">=</span> <span class="n">percentEncode</span><span class="o">(</span><span class="n">key</span><span class="o">);</span>
+            <span class="n">String</span> <span class="n">encodeVal</span> <span class="o">=</span> <span class="n">percentEncode</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+            <span class="n">encodeParams</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">encodeKey</span> <span class="o">+</span> <span class="s">&quot;=&quot;</span> <span class="o">+</span> <span class="n">encodeVal</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">encodeParams</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="cm">/**</span>
+<span class="cm">* 参数urlEncode</span>
+<span class="cm">*</span>
+<span class="cm">* @param value</span>
+<span class="cm">* @return</span>
+<span class="cm">*/</span>
+<span class="kd">private</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">percentEncode</span><span class="o">(</span><span class="n">String</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">try</span> <span class="o">{</span>
+        <span class="n">String</span> <span class="n">urlEncodeOrignStr</span> <span class="o">=</span> <span class="n">URLEncoder</span><span class="o">.</span><span class="na">encode</span><span class="o">(</span><span class="n">value</span><span class="o">,</span> <span class="s">&quot;UTF-8&quot;</span><span class="o">);</span>
+        <span class="n">String</span> <span class="n">plusReplaced</span> <span class="o">=</span> <span class="n">urlEncodeOrignStr</span><span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="s">&quot;+&quot;</span><span class="o">,</span> <span class="s">&quot;%20&quot;</span><span class="o">);</span>
+        <span class="n">String</span> <span class="n">starReplaced</span> <span class="o">=</span> <span class="n">plusReplaced</span><span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="s">&quot;*&quot;</span><span class="o">,</span> <span class="s">&quot;%2A&quot;</span><span class="o">);</span>
+        <span class="n">String</span> <span class="n">waveReplaced</span> <span class="o">=</span> <span class="n">starReplaced</span><span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="s">&quot;%7E&quot;</span><span class="o">,</span> <span class="s">&quot;~&quot;</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">waveReplaced</span><span class="o">;</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">UnsupportedEncodingException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">value</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="cm">/**</span>
+<span class="cm">* 获取CQS 的字符串</span>
+<span class="cm">*</span>
+<span class="cm">* @param allParams</span>
+<span class="cm">* @return</span>
+<span class="cm">*/</span>
+<span class="kd">private</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">getCQS</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">allParams</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">ParamsComparator</span> <span class="n">paramsComparator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ParamsComparator</span><span class="o">();</span>
+    <span class="n">Collections</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">allParams</span><span class="o">,</span> <span class="n">paramsComparator</span><span class="o">);</span>
+    <span class="n">String</span> <span class="n">cqString</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="o">;</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">allParams</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+        <span class="n">cqString</span> <span class="o">+=</span> <span class="n">allParams</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">!=</span> <span class="n">allParams</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">cqString</span> <span class="o">+=</span> <span class="s">&quot;&amp;&quot;</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">cqString</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="kd">private</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">ParamsComparator</span> <span class="kd">implements</span> <span class="n">Comparator</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">compare</span><span class="o">(</span><span class="n">String</span> <span class="n">lhs</span><span class="o">,</span> <span class="n">String</span> <span class="n">rhs</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">lhs</span><span class="o">.</span><span class="na">compareTo</span><span class="o">(</span><span class="n">rhs</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+<span class="kd">private</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">hmacSHA1Signature</span><span class="o">(</span><span class="n">String</span> <span class="n">accessKeySecret</span><span class="o">,</span> <span class="n">String</span> <span class="n">stringtoSign</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">try</span> <span class="o">{</span>
+        <span class="n">String</span> <span class="n">key</span> <span class="o">=</span> <span class="n">accessKeySecret</span> <span class="o">+</span> <span class="s">&quot;&amp;&quot;</span><span class="o">;</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">SecretKeySpec</span> <span class="n">signKey</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SecretKeySpec</span><span class="o">(</span><span class="n">key</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(),</span> <span class="n">HMAC_SHA1_ALGORITHM</span><span class="o">);</span>
+            <span class="n">Mac</span> <span class="n">mac</span> <span class="o">=</span> <span class="n">Mac</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">HMAC_SHA1_ALGORITHM</span><span class="o">);</span>
+            <span class="n">mac</span><span class="o">.</span><span class="na">init</span><span class="o">(</span><span class="n">signKey</span><span class="o">);</span>
+            <span class="kt">byte</span><span class="o">[]</span> <span class="n">rawHmac</span> <span class="o">=</span> <span class="n">mac</span><span class="o">.</span><span class="na">doFinal</span><span class="o">(</span><span class="n">stringtoSign</span><span class="o">.</span><span class="na">getBytes</span><span class="o">());</span>
+            <span class="c1">//按照Base64 编码规则把上面的 HMAC 值编码成字符串，即得到签名值（Signature）</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="k">new</span> <span class="n">BASE64Encoder</span><span class="o">().</span><span class="na">encode</span><span class="o">(</span><span class="n">rawHmac</span><span class="o">));</span>
+            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="n">SignatureException</span><span class="o">(</span><span class="s">&quot;Failed to generate HMAC : &quot;</span> <span class="o">+</span> <span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+        <span class="o">}</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">SignatureException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="s">&quot;&quot;</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="cm">/**</span>
+<span class="cm">* 生成随机数</span>
+<span class="cm">*</span>
+<span class="cm">* @return</span>
+<span class="cm">*/</span>
+<span class="kd">private</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">generateRandom</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">String</span> <span class="n">signatureNonce</span> <span class="o">=</span> <span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">();</span>
+    <span class="k">return</span> <span class="n">signatureNonce</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="cm">/**</span>
+<span class="cm">* 生成当前UTC时间戳</span>
+<span class="cm">*</span>
+<span class="cm">* @return</span>
+<span class="cm">*/</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">generateTimestamp</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">Date</span> <span class="n">date</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Date</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">());</span>
+    <span class="n">SimpleDateFormat</span> <span class="n">df</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleDateFormat</span><span class="o">(</span><span class="n">ISO8601_DATE_FORMAT</span><span class="o">);</span>
+    <span class="n">df</span><span class="o">.</span><span class="na">setTimeZone</span><span class="o">(</span><span class="k">new</span> <span class="n">SimpleTimeZone</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="s">&quot;GMT&quot;</span><span class="o">));</span>
+    <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">date</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="kd">private</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">httpGet</span><span class="o">(</span><span class="n">String</span> <span class="n">url</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+    <span class="n">CloseableHttpClient</span> <span class="n">httpClient</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="k">try</span> <span class="o">{</span>
+        <span class="n">httpClient</span> <span class="o">=</span> <span class="n">HttpClients</span><span class="o">.</span><span class="na">createDefault</span><span class="o">();</span>
+        <span class="n">HttpGet</span> <span class="n">httpGet</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HttpGet</span><span class="o">();</span>
+        <span class="n">httpGet</span><span class="o">.</span><span class="na">setURI</span><span class="o">(</span><span class="k">new</span> <span class="n">URI</span><span class="o">(</span><span class="n">url</span><span class="o">));</span>
+        <span class="n">RequestConfig</span> <span class="n">requestConfig</span> <span class="o">=</span> <span class="n">RequestConfig</span><span class="o">.</span><span class="na">custom</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">setConnectTimeout</span><span class="o">(</span><span class="mi">3000</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">setSocketTimeout</span><span class="o">(</span><span class="mi">3000</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+        <span class="n">httpGet</span><span class="o">.</span><span class="na">setConfig</span><span class="o">(</span><span class="n">requestConfig</span><span class="o">);</span>
+        <span class="n">HttpResponse</span> <span class="n">result</span> <span class="o">=</span> <span class="n">httpClient</span><span class="o">.</span><span class="na">execute</span><span class="o">(</span><span class="n">httpGet</span><span class="o">);</span>
+        <span class="n">String</span> <span class="n">str</span><span class="o">;</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="cm">/**读取服务器返回过来的json字符串数据**/</span>
+            <span class="n">str</span> <span class="o">=</span> <span class="n">EntityUtils</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">result</span><span class="o">.</span><span class="na">getEntity</span><span class="o">());</span>
+            <span class="n">EntityUtils</span><span class="o">.</span><span class="na">consume</span><span class="o">(</span><span class="n">result</span><span class="o">.</span><span class="na">getEntity</span><span class="o">());</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+            <span class="k">throw</span> <span class="n">e</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="n">out</span><span class="o">(</span><span class="n">str</span><span class="o">);</span>
+        <span class="c1">// 这里可以解析视频云点播服务端的响应结果</span>
+        <span class="k">return</span> <span class="n">str</span><span class="o">;</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">URISyntaxException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="k">throw</span> <span class="n">e</span><span class="o">;</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">ClientProtocolException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="k">throw</span> <span class="n">e</span><span class="o">;</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="k">throw</span> <span class="n">e</span><span class="o">;</span>
+    <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">httpClient</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span>
+                <span class="n">httpClient</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+            <span class="k">throw</span> <span class="n">e</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+<span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">out</span><span class="o">(</span><span class="n">String</span> <span class="n">newLine</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">newLine</span><span class="o">);</span>
+    <span class="n">LOG</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="n">newLine</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td></tr></table>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../../Computer Vision/OpenCV4Android_001/" title="OpenCV4Android" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                OpenCV4Android
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../optical/" title="光学知识点" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                光学知识点
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 - 2020 Hongchaung Fan
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/FanHongchuang" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.b806dc00.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+    
+  </body>
+</html>

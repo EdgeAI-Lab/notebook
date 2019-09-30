@@ -294,7 +294,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../optical/" title="Multimedia" class="md-tabs__link md-tabs__link--active">
+        <a href="../AliyunVOD/get_play_url/" title="Multimedia" class="md-tabs__link md-tabs__link--active">
           Multimedia
         </a>
       
@@ -1346,6 +1346,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../AliyunVOD/get_play_url/" title="VOD" class="md-nav__link">
+      VOD
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../optical/" title="光学知识点" class="md-nav__link">
       光学知识点
     </a>
@@ -1466,6 +1478,13 @@
         <li class="md-nav__item">
   <a href="#_2" title="常用命令" class="md-nav__link">
     常用命令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="命令参数" class="md-nav__link">
+    命令参数
   </a>
   
 </li>
@@ -1712,6 +1731,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" title="命令参数" class="md-nav__link">
+    命令参数
+  </a>
+  
+</li>
+      
       
       
       
@@ -1766,7 +1792,16 @@
 27
 28
 29
-30</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># 查看声卡设备</span>
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># 查看声卡设备</span>
 cat /proc/asound/cards
 
 <span class="c1"># FFMPEG录音命令</span>
@@ -1796,8 +1831,79 @@ ffprobe  -i example.mp4 -print_format json -show_frames
 <span class="c1"># FFMPEG查看YUV图像 / YUV视频</span>
 <span class="c1"># 图片的尺寸必须写对，否则可能无法正常播放</span>
 ffplay -video_size 1280x720 test.yuv
+
+<span class="c1"># mp4转flv</span>
+ffmpeg -i example.mp4 -c:v libx264 -crf <span class="m">24</span> example.flv
+
+<span class="c1">## FFMPEG视频HLS推流</span>
+ffmpeg -re -i example.flv -vcodec copy -acodec copy -f flv rtmp://localhost:1935/hls/stream
+
+<span class="c1"># FFMPEG摄像头HLS推流</span>
+ffmpeg -f video4linux2 -i /dev/video0 -c:v libx264 -preset ultrafast  -acodec libmp3lame -ar <span class="m">44100</span> -ac <span class="m">1</span>  -f flv rtmp://localhost:1935/hls/stream
 </pre></div>
 </td></tr></table>
+
+<h2 id="_3">命令参数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-f</td>
+<td>强迫采用格式fmt</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>filename 输入文件</td>
+</tr>
+<tr>
+<td>-s</td>
+<td>size 设置帧大小 默认是160x128</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>设置帧频，默认25  （待验证，确认非标准桢率会导致音画不同步，所以只能设定为15或者29.97）</td>
+</tr>
+<tr>
+<td>-ab</td>
+<td>bitrate设置音频码率</td>
+</tr>
+<tr>
+<td>-ar</td>
+<td>freq 设置音频采样率</td>
+</tr>
+<tr>
+<td>-ac</td>
+<td>channels设置通道，默认为1</td>
+</tr>
+<tr>
+<td>-vd</td>
+<td>device 设置视频捕获设备 eg:/dev/video0</td>
+</tr>
+<tr>
+<td>-av</td>
+<td>device 设置音频设备 eg:/dev/dsp</td>
+</tr>
+<tr>
+<td>-vcodec</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>c:v is an abbreviated version of codec:v</p>
+<p>vcodec is an alias of codec:v</p>
+<p>So all 3 function the same, but are not limited to 'copy' only. It is used to specify the codec, or copy.</p>
+<p>For example</p>
+<p>ffmpeg -i INPUT -map 0 -c:v libx264 -c:a copy OUTPUT</p>
+<p>encodes all video streams with libx264 and copies all audio streams.</p>
+<p>This could also be written as</p>
+<p>ffmpeg -i INPUT -map 0 -codec:v libx264 -acodec copy OUTPUT</p>
+<p>or</p>
+<p>ffmpeg -i INPUT -map 0 -vcodec libx264 -codec:a copy OUTPUT</p>
                 
                   
                 
