@@ -45,8 +45,6 @@ du -hl xxx
 ```
 
 
-
-
 ##4. 网络传输相关命令
 
 * wget
@@ -70,3 +68,22 @@ scp source_file username@host:/path
 ```
 
 
+## 5.网络管理
+
+* wifi连接相关操作
+
+```shell
+
+# 安装nmcli网络管理工具
+sudo apt-get install nmcli
+
+# 打开或者关闭wifi
+sudo nmcli r wifi on/off
+
+# 扫描附近wifi热点
+sudo nmcli dev wifi
+
+# 连接到指定的wifi热点
+sudo nmcli dev wifi connect "SSID" password "PASSWORD" ifname wlan0
+
+```
