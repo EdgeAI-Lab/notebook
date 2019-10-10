@@ -4,7 +4,7 @@
 
 ![ew_project_recycleview](../../assets\images\Android\Application\RecycleView\new_project_recycleview.png)
 
-## 2.添加RecycleView依赖
+## 2.添加RecycleView库依赖
 
 鼠标右击选择 " Open Module Settings "选项，然后进行如下操作：
 
@@ -72,5 +72,72 @@
 
 
 
-## 6.使用RecycleView组件
+```java
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+
+    @NonNull
+    @Override
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycleview_item,parent,false);
+        return new ViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+
+        holder.icon.setImageResource(R.drawable.ic_launcher_foreground);
+        holder.content.setText("Hello it is a test!");
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return 1024;
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder{
+
+        private ImageView icon;
+        private TextView content;
+
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+            icon = itemView.findViewById(R.id.imageView2);
+            content = itemView.findViewById(R.id.textView2);
+
+        }
+    }
+
+
+}
+```
+
+
+## 6.在Activity中使用RecycleView组件
+
+```java
+
+public class MainActivity extends AppCompatActivity {
+
+    private RecyclerView recyclerView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        recyclerView = findViewById(R.id.recycleview);
+
+        MyAdapter myAdapter = new MyAdapter();
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerView.setAdapter(myAdapter);
+
+    }
+}
+```
+
+
 

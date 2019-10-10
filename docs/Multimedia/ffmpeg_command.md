@@ -3,6 +3,12 @@
 ## 参考文档
 * [声卡-FFMPEG官方文档](http://ffmpeg.org/ffmpeg-devices.html#alsa)
 
+## FFMPEG的安装方式
+
+* Ubuntu中通过``` sudo apt-get install ffmpeg ``` 安装
+* Ubuntu中通过源码编译安装
+* Windows直接使用[FFMPEG官方预编译版本](https://ffmpeg.zeranoe.com/builds/)
+
 
 ## 常用命令
 
@@ -47,6 +53,24 @@ ffmpeg -re -i example.flv -vcodec copy -acodec copy -f flv rtmp://localhost:1935
 # FFMPEG摄像头HLS推流
 ffmpeg -f video4linux2 -i /dev/video0 -c:v libx264 -preset ultrafast  -acodec libmp3lame -ar 44100 -ac 1  -f flv rtmp://localhost:1935/hls/stream
 
+
+# FFMPEG 从MP4中抽取音频并保存为MP3文件
+# 参数解释：
+#  -i 表示input，即输入文件
+#  -f 表示format，即输出格式
+#  -vn表示vedio not，即输出不包含视频
+#
+
+fmpeg -i example.mp4 -f mp3 -vn example.mp3
+
+# FFMPEG切割MP3文件
+# 参数解释：
+#  -i 表示input，即输入文件
+#  -ss 开始切割时间点
+#  -t 需要切割的时长
+
+# 从1分00秒开始，切割50秒
+ffmpeg -i input.mp3 -ss 00:01:00 -t 00:00:50 -acodec copy output.mp3
 
 ```
 

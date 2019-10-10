@@ -21,6 +21,8 @@ nav:
         - 彻底隐藏虚拟导航键: Android/android_source_code/android_hide_virtual_navigation_key.md
         - 默认开启USB调试功能: Android/android_source_code/android_enable_usb_debug.md
       
+      - Android应用开发:
+        - RecycleView: Android/Application/RecycleView.md
         - Android 屏幕适配: Android/android_screen_adapter/android_screen_adapter.md
 
       - Android NDK开发:
