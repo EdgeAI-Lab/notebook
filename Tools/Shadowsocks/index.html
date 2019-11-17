@@ -36,7 +36,7 @@
     
     
       
-        <title>Shadowsocks for Ubuntu - Notebook</title>
+        <title>Shadowsocks - Notebook</title>
       
     
     
@@ -111,7 +111,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Shadowsocks for Ubuntu
+                Shadowsocks
               
             </span>
           
@@ -179,14 +179,16 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="../.." class="md-tabs__link md-tabs__link--active">
+      <a href="../.." class="md-tabs__link">
         Home
       </a>
     
@@ -303,7 +305,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../PlantUML.md" class="md-tabs__link">
+        <a href="../PlantUML.md" class="md-tabs__link md-tabs__link--active">
           Tools
         </a>
       
@@ -1582,10 +1584,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10" checked>
     
     <label class="md-nav__link" for="nav-10">
       Tools
@@ -1625,23 +1629,77 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../Shadowsock.md" title="Shadowsocks" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Shadowsocks
+      </label>
+    
+    <a href="./" title="Shadowsocks" class="md-nav__link md-nav__link--active">
       Shadowsocks
     </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Shadowsock_CML/" title="Shadowsocks命令行配置" class="md-nav__link">
-      Shadowsocks命令行配置
-    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-install-shadowsocks" class="md-nav__link">
+    1. Install Shadowsocks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-shadowsocks-qt5" class="md-nav__link">
+    2. 启动Shadowsocks-qt5并配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 配置系统代理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 在浏览器中配置使用系统代理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5. 命令行使用系统代理
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1824,6 +1882,41 @@ proxychains4 curl www.google.com
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../git_command/" title="git command" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                git command
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../ShadowsocksR/" title="ShadowsocksR命令行配置" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                ShadowsocksR命令行配置
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
