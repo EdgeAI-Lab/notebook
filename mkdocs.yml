@@ -114,8 +114,7 @@ nav:
     - Tools:
       - UML: Tools/PlantUML.md
       - git command: Tools/git_command.md
-      - Shadowsocks: Tools/Shadowsock.md
-      - Shadowsocks命令行配置: Tools/Shadowsock_CML.md
+      - Shadowsocks: Tools/Shadowsocks.md
       - ShadowsocksR命令行配置: Tools/ShadowsocksR.md
       - 局域网访问Jupyter Notebook: Tools/JupyterNotebook.md
    
