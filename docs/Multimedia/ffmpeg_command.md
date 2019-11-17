@@ -72,6 +72,9 @@ fmpeg -i example.mp4 -f mp3 -vn example.mp3
 # 从1分00秒开始，切割50秒
 ffmpeg -i input.mp3 -ss 00:01:00 -t 00:00:50 -acodec copy output.mp3
 
+# 压制字幕
+ffmpeg -i input.mp4 -vf subtitles=subtitle.srt out.mp4
+
 ```
 
 ## 命令参数

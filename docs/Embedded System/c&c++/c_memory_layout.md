@@ -1,6 +1,6 @@
 # C语言内存分布（Memory Layout）
 
-![test_uml](../assets/images/c_memory_layout.png)
+![test_uml](../../assets/images/c_memory_layout.png)
 
 ## 1. 静态区域
 

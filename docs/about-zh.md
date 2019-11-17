@@ -20,4 +20,4 @@
 * 微信: shoujimaizi2289
 
 ## 更多资讯，请扫码关注！
-![weixingongzhonghao](assets/images/weixingongzhonghao.jpg)
+![weixingongzhonghao](assets/images/weixingongzhonghao.png)

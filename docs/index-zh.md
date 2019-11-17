@@ -71,4 +71,4 @@ https://user_name.github.io/repository_name/
     现在你的WiKi已经成功部署。
 
 ## 更多精彩资讯，请扫码关注！
-![weixingongzhonghao](assets/images/weixingongzhonghao.jpg)
+![weixingongzhonghao](assets/images/weixingongzhonghao.png)

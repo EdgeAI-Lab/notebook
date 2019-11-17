@@ -38,7 +38,7 @@ sudo service vsftpd restart
 
 ![8uftp](../assets/images/FTP/8uftp_ui.jpg)
 ## 更多精彩资讯，请扫码关注。
-![weixingongzhonghao](../assets/images/weixingongzhonghao.jpg)
+![weixingongzhonghao](../assets/images/weixingongzhonghao.png)
 
 
 

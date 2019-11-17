@@ -22,4 +22,4 @@ Now I'm getting into image processing(Use OpenCV), audio and video processing(Us
 * WeChat: shoujimaizi2289
 
 ## Scan code attention my WeChat official account
-![weixingongzhonghao](assets/images/weixingongzhonghao.jpg)
+![weixingongzhonghao](assets/images/weixingongzhonghao.png)

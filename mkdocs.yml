@@ -45,14 +45,15 @@ nav:
 
     - Embedded System:
       - C/C++: 
-        - C内存模型: Embedded System/c_memory_layout.md
-        - CRC16: Embedded System/crc16.md
-        - C宏定义#与##: Embedded System/c_micro_jing.md
-        - 补码: Embedded System/complement.md
-        - C指针: Embedded System/c_pointer.md
-        - pragma pack(): Embedded System/c_pragma.md
-        - pkg-config: Embedded System/pkg_config.md
-        - typedef使用注意: Embedded System/typedef_tips.md
+        - C内存模型: Embedded System/c&c++/c_memory_layout.md
+        - CRC16: Embedded System/c&c++/crc16.md
+        - C宏定义#与##: Embedded System/c&c++/c_micro_jing.md
+        - 补码: Embedded System/c&c++/complement.md
+        - C指针: Embedded System/c&c++/c_pointer.md
+        - pragma pack(): Embedded System/c&c++/c_pragma.md
+        - pkg-config: Embedded System/c&c++/pkg_config.md
+        - typedef使用注意: Embedded System/c&c++/typedef_tips.md
+        - ASCII Table: Embedded System/c&c++/ascii_table.md
 
       - ESP8266: Embedded System/ESP8266.md
 
@@ -76,7 +77,6 @@ nav:
       - Zigbee: Embedded System/zigbee_keys.md
       - NanoPC RK3399:  Embedded System/nanopc_m4.md
       
-      - ASCII Table: Embedded System/ascii_table.md
       - ARM交叉编译工具: Embedded System/arm_compiler.md
         
     - Python: 
@@ -114,8 +114,9 @@ nav:
     - Tools:
       - UML: Tools/PlantUML.md
       - git command: Tools/git_command.md
-      - Shadowsock: Tools/Shadowsock.md
-      - Shadowsock命令行配置: Tools/Shadowsock_CML.md
+      - Shadowsocks: Tools/Shadowsock.md
+      - Shadowsocks命令行配置: Tools/Shadowsock_CML.md
+      - ShadowsocksR命令行配置: Tools/ShadowsocksR.md
       - 局域网访问Jupyter Notebook: Tools/JupyterNotebook.md
    
    

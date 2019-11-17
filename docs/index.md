@@ -72,4 +72,4 @@ https://user_name.github.io/repository_name/
     It is OK.
 
 ## Scan code attention my WeChat official account
-![weixingongzhonghao](assets/images/weixingongzhonghao.jpg)
+![weixingongzhonghao](assets/images/weixingongzhonghao.png)

@@ -31,7 +31,12 @@ socks5 127.0.0.1 1080
 
 ```
 
-### 5.测试
+### 5.安装curl
+```bash
+sudo apt-get install curl
+```
+
+### 6.测试
 
 大功告成，测试一下。
 

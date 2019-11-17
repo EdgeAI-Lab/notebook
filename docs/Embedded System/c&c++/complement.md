@@ -15,13 +15,13 @@
 
 半加器电路是指对两个输入数据位相加，输出一个结果位和进位，没有进位输入的加法器电路。 是实现两个一位二进制数的加法运算电路。
 
-![half_adder](../assets/images/Complement/half_adder.jpg)
+![half_adder](../../assets/images/Complement/half_adder.jpg)
 
 * 全加器
 
 全加器是能够计算低位进位的二进制加法电路。与半加器相比，全加器不只考虑本位计算结果是否有进位，也考虑上一位对本位的进位，可以把多个一位全加器级联后做成多位全加器。
 
-![full_adder](../assets/images/Complement/full_adder.jpg)
+![full_adder](../../assets/images/Complement/full_adder.jpg)
 
 乘法运算依赖于加法运算，除法运算依赖于减法运算（乘除法的计算原理请自行百度）。
 
@@ -73,4 +73,4 @@
 [^2]: 这个应该就是补码的来历
 
 ## 更多资讯，请扫码关注！
-![weixingongzhonghao](../assets/images/weixingongzhonghao.jpg)
+![weixingongzhonghao](../../assets/images/weixingongzhonghao.png)
