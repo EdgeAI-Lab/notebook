@@ -32,17 +32,17 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.1">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
       
-        <title>Shadowsock命令行配置 - Notebook</title>
+        <title>Shadowsocks命令行配置 - Notebook</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.982221ab.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.224b79ff.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -51,12 +51,12 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -77,24 +77,7 @@
       <defs>
         
         
-          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
-    viewBox="0 0 416 448" id="__github">
-  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
-        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
-        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
-        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
-        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
-        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
-        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
-        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
-        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
-        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
-        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
-        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
-        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
-        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
-        99.5z" />
-</svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
         
       </defs>
     </svg>
@@ -127,7 +110,9 @@
               Notebook
             </span>
             <span class="md-header-nav__topic">
-              Shadowsock命令行配置
+              
+                Shadowsocks命令行配置
+              
             </span>
           
         </div>
@@ -203,7 +188,7 @@
         
   <li class="md-tabs__item">
     
-      <a href="../.." title="Home" class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         Home
       </a>
     
@@ -221,7 +206,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../Android/android_source_code/android_launcher/" title="Android" class="md-tabs__link">
+        <a href="../../Android/android_source_code/android_launcher/" class="md-tabs__link">
           Android
         </a>
       
@@ -236,7 +221,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../ML/ml_basics/" title="ML" class="md-tabs__link">
+        <a href="../../ML/ml_basics/" class="md-tabs__link">
           ML
         </a>
       
@@ -253,7 +238,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../Embedded System/c_memory_layout/" title="Embedded System" class="md-tabs__link">
+        <a href="../../Embedded System/c&c++/c_memory_layout/" class="md-tabs__link">
           Embedded System
         </a>
       
@@ -268,7 +253,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../Python/matplotlib/" title="Python" class="md-tabs__link">
+        <a href="../../Python/matplotlib/" class="md-tabs__link">
           Python
         </a>
       
@@ -281,7 +266,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../Computer Vision/caffe/" title="Computer Vision" class="md-tabs__link">
+        <a href="../../Computer Vision/caffe/" class="md-tabs__link">
           Computer Vision
         </a>
       
@@ -294,7 +279,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../Multimedia/AliyunVOD/get_play_url/" title="Multimedia" class="md-tabs__link">
+        <a href="../../Multimedia/AliyunVOD/get_play_url/" class="md-tabs__link">
           Multimedia
         </a>
       
@@ -307,7 +292,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../Hardware/battery_work_time/" title="Hardware" class="md-tabs__link">
+        <a href="../../Hardware/battery_work_time/" class="md-tabs__link">
           Hardware
         </a>
       
@@ -320,7 +305,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../PlantUML/" title="Tools" class="md-tabs__link md-tabs__link--active">
+        <a href="../PlantUML.md" class="md-tabs__link md-tabs__link--active">
           Tools
         </a>
       
@@ -332,7 +317,7 @@
   </div>
 </nav>
       
-      <main class="md-main">
+      <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
             
@@ -835,7 +820,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Embedded System/c_memory_layout/" title="C内存模型" class="md-nav__link">
+    <a href="../../Embedded System/c&c++/c_memory_layout/" title="C内存模型" class="md-nav__link">
       C内存模型
     </a>
   </li>
@@ -847,7 +832,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Embedded System/crc16/" title="CRC16" class="md-nav__link">
+    <a href="../../Embedded System/c&c++/crc16/" title="CRC16" class="md-nav__link">
       CRC16
     </a>
   </li>
@@ -859,7 +844,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Embedded System/c_micro_jing/" title="C宏定义#与##" class="md-nav__link">
+    <a href="../../Embedded System/c&c++/c_micro_jing/" title="C宏定义#与##" class="md-nav__link">
       C宏定义#与##
     </a>
   </li>
@@ -871,7 +856,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Embedded System/complement/" title="补码" class="md-nav__link">
+    <a href="../../Embedded System/c&c++/complement/" title="补码" class="md-nav__link">
       补码
     </a>
   </li>
@@ -883,7 +868,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Embedded System/c_pointer/" title="C指针" class="md-nav__link">
+    <a href="../../Embedded System/c&c++/c_pointer/" title="C指针" class="md-nav__link">
       C指针
     </a>
   </li>
@@ -895,7 +880,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Embedded System/c_pragma/" title="pragma pack()" class="md-nav__link">
+    <a href="../../Embedded System/c&c++/c_pragma/" title="pragma pack()" class="md-nav__link">
       pragma pack()
     </a>
   </li>
@@ -907,7 +892,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Embedded System/pkg_config/" title="pkg-config" class="md-nav__link">
+    <a href="../../Embedded System/c&c++/pkg_config/" title="pkg-config" class="md-nav__link">
       pkg-config
     </a>
   </li>
@@ -919,8 +904,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../Embedded System/typedef_tips/" title="typedef使用注意" class="md-nav__link">
+    <a href="../../Embedded System/c&c++/typedef_tips/" title="typedef使用注意" class="md-nav__link">
       typedef使用注意
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Embedded System/c&c++/ascii_table/" title="ASCII Table" class="md-nav__link">
+      ASCII Table
     </a>
   </li>
 
@@ -1178,18 +1175,6 @@
   <li class="md-nav__item">
     <a href="../../Embedded System/nanopc_m4/" title="NanoPC RK3399" class="md-nav__link">
       NanoPC RK3399
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../Embedded System/ascii_table/" title="ASCII Table" class="md-nav__link">
-      ASCII Table
     </a>
   </li>
 
@@ -1622,7 +1607,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../PlantUML/" title="UML" class="md-nav__link">
+    <a href="../PlantUML.md" title="UML" class="md-nav__link">
       UML
     </a>
   </li>
@@ -1646,8 +1631,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../Shadowsock/" title="Shadowsock" class="md-nav__link">
-      Shadowsock
+    <a href="../Shadowsock.md" title="Shadowsocks" class="md-nav__link">
+      Shadowsocks
     </a>
   </li>
 
@@ -1665,11 +1650,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Shadowsock命令行配置
+        Shadowsocks命令行配置
       </label>
     
-    <a href="./" title="Shadowsock命令行配置" class="md-nav__link md-nav__link--active">
-      Shadowsock命令行配置
+    <a href="./" title="Shadowsocks命令行配置" class="md-nav__link md-nav__link--active">
+      Shadowsocks命令行配置
     </a>
     
       
@@ -1681,7 +1666,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#shadowsocks" title="命令行配置Shadowsocks并使用" class="md-nav__link">
+  <a href="#shadowsocks" class="md-nav__link">
     命令行配置Shadowsocks并使用
   </a>
   
@@ -1689,36 +1674,43 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1shadowsocks" title="1.安装Shadowsocks" class="md-nav__link">
+  <a href="#1shadowsocks" class="md-nav__link">
     1.安装Shadowsocks
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2shadowsocks" title="2.配置Shadowsocks" class="md-nav__link">
+  <a href="#2shadowsocks" class="md-nav__link">
     2.配置Shadowsocks
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3proxychains4" title="3.安装proxychains4" class="md-nav__link">
+  <a href="#3proxychains4" class="md-nav__link">
     3.安装proxychains4
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4proxychains4" title="4.修改proxychains4配置文件" class="md-nav__link">
+  <a href="#4proxychains4" class="md-nav__link">
     4.修改proxychains4配置文件
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#5" title="5.测试" class="md-nav__link">
-    5.测试
+  <a href="#5curl" class="md-nav__link">
+    5.安装curl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6.测试
   </a>
   
 </li>
@@ -1736,6 +1728,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ShadowsocksR/" title="ShadowsocksR命令行配置" class="md-nav__link">
+      ShadowsocksR命令行配置
+    </a>
   </li>
 
         
@@ -1775,7 +1779,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#shadowsocks" title="命令行配置Shadowsocks并使用" class="md-nav__link">
+  <a href="#shadowsocks" class="md-nav__link">
     命令行配置Shadowsocks并使用
   </a>
   
@@ -1783,36 +1787,43 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1shadowsocks" title="1.安装Shadowsocks" class="md-nav__link">
+  <a href="#1shadowsocks" class="md-nav__link">
     1.安装Shadowsocks
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2shadowsocks" title="2.配置Shadowsocks" class="md-nav__link">
+  <a href="#2shadowsocks" class="md-nav__link">
     2.配置Shadowsocks
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3proxychains4" title="3.安装proxychains4" class="md-nav__link">
+  <a href="#3proxychains4" class="md-nav__link">
     3.安装proxychains4
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4proxychains4" title="4.修改proxychains4配置文件" class="md-nav__link">
+  <a href="#4proxychains4" class="md-nav__link">
     4.修改proxychains4配置文件
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#5" title="5.测试" class="md-nav__link">
-    5.测试
+  <a href="#5curl" class="md-nav__link">
+    5.安装curl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6.测试
   </a>
   
 </li>
@@ -1841,7 +1852,7 @@
                   <a href="https://github.com/FanHongchuang/notebook/edit/master/docs/Tools/Shadowsock_CML.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Shadowsock命令行配置</h1>
+                  <h1>Shadowsocks命令行配置</h1>
                 
                 <h2 id="shadowsocks">命令行配置Shadowsocks并使用<a class="headerlink" href="#shadowsocks" title="Permanent link">&para;</a></h2>
 <h3 id="1shadowsocks">1.安装Shadowsocks<a class="headerlink" href="#1shadowsocks" title="Permanent link">&para;</a></h3>
@@ -1874,7 +1885,12 @@ socks5 <span class="m">127</span>.0.0.1 <span class="m">1080</span>
 </pre></div>
 </td></tr></table>
 
-<h3 id="5">5.测试<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<h3 id="5curl">5.安装curl<a class="headerlink" href="#5curl" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install curl
+</pre></div>
+</td></tr></table>
+
+<h3 id="6">6.测试<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
 <p>大功告成，测试一下。</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1904,7 +1920,7 @@ ping用的是ICMP协议，不以tcp或udp为基础，所以用不了。</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../Shadowsock/" title="Shadowsock" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../git_command/" title="git command" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1913,19 +1929,19 @@ ping用的是ICMP协议，不以tcp或udp为基础，所以用不了。</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Shadowsock
+                git command
               </span>
             </div>
           </a>
         
         
-          <a href="../JupyterNotebook/" title="局域网访问Jupyter Notebook" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../ShadowsocksR/" title="ShadowsocksR命令行配置" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                局域网访问Jupyter Notebook
+                ShadowsocksR命令行配置
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -1964,7 +1980,7 @@ ping用的是ICMP协议，不以tcp或udp为基础，所以用不了。</p>
       
     </div>
     
-      <script src="../../assets/javascripts/application.b806dc00.js"></script>
+      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
