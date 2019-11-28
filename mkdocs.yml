@@ -42,6 +42,11 @@ nav:
 
     - ML:
       - 机器学习基础: ML/ml_basics.md
+      - Tensorflow安装: ML\tensorflow_install.md
+      - Tensorflow模型转换: ML\tensorflow_model.md
+      - 嵌入式机器学习: 
+        - 00~STM32图像分类: ML\how_to_run_dl_model_on_stm32.md
+      
 
     - Embedded System:
       - C/C++: 
@@ -54,6 +59,7 @@ nav:
         - pkg-config: Embedded System/c&c++/pkg_config.md
         - typedef使用注意: Embedded System/c&c++/typedef_tips.md
         - ASCII Table: Embedded System/c&c++/ascii_table.md
+        - CMake用法: Embedded System\c&c++\cmake_usage.md
 
       - ESP8266: Embedded System/ESP8266.md
 
@@ -67,17 +73,25 @@ nav:
         - 初始化函数的另一种写法: Embedded System/STM32/stm32_module_init_like.linux.md
 
       - Linux:
+        - 开发环境相关: 
+          - VirtualBox开发环境搭建: Embedded System\linux\embedded_linux_dev_env\virtual_box_env.md
+          - samba服务配置: Embedded System\linux\embedded_linux_dev_env\samba.md
+          - FTP服务配置: Embedded System\linux\embedded_linux_dev_env\ftp_server_build.md
+          - NFS: Embedded System\linux\embedded_linux_dev_env\nfs.md
+          - ARM交叉编译工具: Embedded System\linux\embedded_linux_dev_env\arm_compiler.md
+
+        - JZ2440开发:
+          - 关于交叉编译工具链: Embedded System\linux\jz2440\cross_compile.md
+          
         - GCC编译动态链接库: Embedded System/gcc_dynamic_linking_library.md
         - 构建内核源码树: Embedded System/build_linux_source_tree.md
         - 常用shell命令: Embedded System/linux_shell_cmd.md
-        - samba服务配置: Embedded System/samba.md
-        - FTP服务配置: Embedded System/ftp_server_build.md
         - Linux Shell脚本编程: Embedded System/linux_shell_program.md
         - GCC&Clang&LLVM的关系: Embedded System/gcc_clang_llvm.md
       - Zigbee: Embedded System/zigbee_keys.md
       - NanoPC RK3399:  Embedded System/nanopc_m4.md
       
-      - ARM交叉编译工具: Embedded System/arm_compiler.md
+      
         
     - Python: 
         - matplotlib使用: Python/matplotlib.md
@@ -115,7 +129,7 @@ nav:
       - UML: Tools/PlantUML.md
       - git command: Tools/git_command.md
       - Shadowsocks: Tools/Shadowsocks.md
-      - ShadowsocksR命令行配置: Tools/ShadowsocksR.md
+      - ShadowsocksR: Tools/ShadowsocksR.md
       - 局域网访问Jupyter Notebook: Tools/JupyterNotebook.md
    
    
