@@ -1,7 +1,7 @@
 # Wiki Create Guide
 [中文请点击这里](index-zh.md)
 
-Welcome to My WiKi!OKKK
+Welcome to My WiKi!
 
 If you want to build a wiki like this. Please follow me.
 

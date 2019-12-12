@@ -9,7 +9,7 @@ static_templates:
     - 404.html
 
 nav:
-    - Home: index.md
+    - Home: about.md
     # - About Me: about.md
     - Android:
       - Android开机自启:
@@ -55,7 +55,7 @@ nav:
         - Python字符串格式化: Python/python_string_format.md
 
 
-    - Embedded System:
+    - Embedded:
       - C/C++: 
         - C内存模型: Embedded System/c&c++/c_memory_layout.md
         - CRC16: Embedded System/c&c++/crc16.md
@@ -101,6 +101,11 @@ nav:
       - Hardware:
         - 电池工作时间的计算: Hardware/battery_work_time.md
       
+    - CV:
+      - caffe: Computer Vision/caffe.md
+      - cv_library: Computer Vision/cv_library.md
+      - OpenCV4Android: Computer Vision/OpenCV4Android_001.md
+
     - Multimedia:
       - VOD: Multimedia/AliyunVOD/get_play_url.md
       - 光学知识点: Multimedia/optical.md
@@ -118,22 +123,18 @@ nav:
       - OPUS: Multimedia/opus.md
       - Ogg: Multimedia/Ogg.md
 
-    # - Computer Vision:
-    #   - caffe: Computer Vision/caffe.md
-    #   - cv_library: Computer Vision/cv_library.md
-    #   - OpenCV4Android: Computer Vision/OpenCV4Android_001.md
-
     - Tools:
-      - UML: Tools/PlantUML.md
+      - 嵌入式开发神兵利器: Tools\embedded_develop_tools.md
       - git command: Tools/git_command.md
       - Shadowsocks: Tools/Shadowsocks.md
       - ShadowsocksR: Tools/ShadowsocksR.md
       - 局域网访问Jupyter Notebook: Tools/JupyterNotebook.md
+      - UML: Tools/PlantUML.md
    
    
 
 # Copyright
-copyright: 'Copyright &copy; 2019 - 2020 Hongchaung Fan'
+copyright: 'Copyright &copy; 2019 - 2020 Frank'
     
 # Configuration
 theme:

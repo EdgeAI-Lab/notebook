@@ -1,14 +1,14 @@
 # Wikier Info
-[中文请点击这里](about-zh.md)
+[`中文请点击这里`](about-zh.md)
 
 ## About Me
 I am a Software Engineer, I konw abou C/C++, Java and Python program language.
-I am good at embedded programming for MCU(example: STM32) and Android.
+I am good at embedded programming for MCU(example: STM32) ,embedded linux and Android.
 
-Now I'm getting into image processing(Use OpenCV), audio and video processing(Use FFMPEG and WebRTC).
+Now I'm getting into image processing(Use OpenCV), audio and video processing(Use FFMPEG and WebRTC), Embedded Machine Learning.
 
 ## Know Me
-* [My GitHub](https://github.com/FanHongchuang)
+* [My GitHub](https://github.com/edgeML)
 * [My CSDN Blog](https://blog.csdn.net/jiasike)
 * [My Zhihu](https://www.zhihu.com/people/fhc2019/activities)
 
@@ -21,5 +21,8 @@ Now I'm getting into image processing(Use OpenCV), audio and video processing(Us
 * QQ: 847923458
 * WeChat: shoujimaizi2289
 
-## Scan code attention my WeChat official account
+## WeChat Official Account
+
+Scan code attention my WeChat official account
+
 ![weixingongzhonghao](assets/images/weixingongzhonghao.png)

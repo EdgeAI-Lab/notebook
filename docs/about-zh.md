@@ -1,12 +1,12 @@
 # WiKi站长介绍
 ## 关于我
 我是一名软件工程师，了解C/C++、Java和Python编程语言。
-我擅长嵌入式MCU编程（比如：STM32）和Android
+我擅长嵌入式MCU编程（比如：STM32）、嵌入式Linux和Android。
 
-现在我开始涉足图像处理（使用OpenCV），音视频处理（使用FFMPEG和WebRTC）
+现在我开始涉足图像处理（使用OpenCV），音视频处理（使用FFMPEG和WebRTC）和嵌入式机器学习。
 
 ## 了解我
-* [我的GitHub](https://github.com/FanHongchuang)
+* [我的GitHub](https://github.com/edgeML)
 * [我的CSDN博客](https://blog.csdn.net/jiasike)
 * [我的知乎](https://www.zhihu.com/people/fhc2019/activities)
 
@@ -19,5 +19,8 @@
 * QQ: 847923458
 * 微信: shoujimaizi2289
 
-## 更多资讯，请扫码关注！
+## 微信公众账号
+
+更多精彩资讯，请扫码关注！
+
 ![weixingongzhonghao](assets/images/weixingongzhonghao.png)
