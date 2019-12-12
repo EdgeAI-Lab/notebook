@@ -20,9 +20,11 @@ c.NotebookApp.port =8888
 ```
 
 ## 4.启动Jupyter Notebook
-```bash
+
+```
 jupyter notebook  --ip=0.0.0.0 --no-browser --allow-root
 ```
+
 然后根据命令行提示的URL登录即可
 
 

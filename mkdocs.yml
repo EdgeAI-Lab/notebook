@@ -2,7 +2,7 @@ site_name: Notebook
 
 # Repository
 repo_name: Notebook
-repo_url: https://github.com/FanHongchuang/notebook
+repo_url: https://github.com/edgeML/notebook
 
 # 404 page
 static_templates:
@@ -82,6 +82,7 @@ nav:
       - Linux:
         - 开发环境相关: 
           - VirtualBox开发环境搭建: Embedded System\linux\embedded_linux_dev_env\virtual_box_env.md
+          - 构建内核源码树: Embedded System\linux\embedded_linux_dev_env\ubuntu_get_kernel_tree.md
           - samba服务配置: Embedded System\linux\embedded_linux_dev_env\samba.md
           - FTP服务配置: Embedded System\linux\embedded_linux_dev_env\ftp_server_build.md
           - NFS: Embedded System\linux\embedded_linux_dev_env\nfs.md
@@ -91,7 +92,6 @@ nav:
           - 关于交叉编译工具链: Embedded System\linux\jz2440\cross_compile.md
           
         - GCC编译动态链接库: Embedded System/gcc_dynamic_linking_library.md
-        - 构建内核源码树: Embedded System/build_linux_source_tree.md
         - 常用shell命令: Embedded System/linux_shell_cmd.md
         - Linux Shell脚本编程: Embedded System/linux_shell_program.md
         - GCC&Clang&LLVM的关系: Embedded System/gcc_clang_llvm.md
@@ -137,6 +137,7 @@ copyright: 'Copyright &copy; 2019 - 2020 Hongchaung Fan'
     
 # Configuration
 theme:
+  # name: 'mkdocs'
   # name: 'flatly'
   name: 'united'
   language: 'en'
@@ -163,9 +164,11 @@ extra:
 markdown_extensions:
   - admonition
   - footnotes
-  - codehilite:
-      guess_lang: false
-      linenums: true
+
+  # code style
+  # - codehilite:
+  #     guess_lang: false
+  #     linenums: false
   - toc:
       permalink: '#'
 
