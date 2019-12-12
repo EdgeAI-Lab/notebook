@@ -310,6 +310,10 @@
 </li>
             
 <li >
+    <a href="../../linux/embedded_linux_dev_env/ubuntu_get_kernel_tree/">构建内核源码树</a>
+</li>
+            
+<li >
     <a href="../../linux/embedded_linux_dev_env/samba/">samba服务配置</a>
 </li>
             
@@ -339,10 +343,6 @@
             
 <li >
     <a href="../../gcc_dynamic_linking_library/">GCC编译动态链接库</a>
-</li>
-            
-<li >
-    <a href="../../build_linux_source_tree.md">构建内核源码树</a>
 </li>
             
 <li >
@@ -487,7 +487,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/FanHongchuang/notebook/edit/master/docs/Embedded System/c&c++/c_pointer.md">Edit on Notebook</a>
+                                <a href="https://github.com/edgeML/notebook/edit/master/docs/Embedded System/c&c++/c_pointer.md">Edit on Notebook</a>
                             </li>
                     </ul>
                 </div>
@@ -505,45 +505,28 @@
 
 <h1 id="c">C语言指针系列<a class="headerlink" href="#c" title="Permanent link">#</a></h1>
 <h2 id="1">1.指针的指针(二级指针)<a class="headerlink" href="#1" title="Permanent link">#</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
-    <span class="kt">int</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>
-<span class="p">}</span> <span class="n">point_t</span><span class="p">;</span>
+<pre><code class="c">
+typedef struct {
+    int *p;
+} point_t;
 
 
-<span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
-    <span class="n">point_t</span> <span class="o">*</span><span class="n">point</span><span class="p">;</span>
-<span class="p">}</span> <span class="n">test_t</span><span class="p">;</span>
+typedef struct {
+    point_t *point;
+} test_t;
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">test_t</span> <span class="n">test</span><span class="p">;</span>
-    <span class="c1">// 这么做是错误的，程序会崩溃，</span>
-    <span class="c1">// 因为test.point指针指向的值是随机的，</span>
-    <span class="c1">// 所以test.point-&gt;p = 0x61ff2c是对一个随机地址进行赋值，</span>
-    <span class="c1">// 这是不正确的</span>
-    <span class="n">test</span><span class="p">.</span><span class="n">point</span><span class="o">-&gt;</span><span class="n">p</span> <span class="o">=</span> <span class="mh">0x61ff2c</span><span class="p">;</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</td></tr></table></div>
+int main()
+{
+    test_t test;
+    // 这么做是错误的，程序会崩溃，
+    // 因为test.point指针指向的值是随机的，
+    // 所以test.point-&gt;p = 0x61ff2c是对一个随机地址进行赋值，
+    // 这是不正确的
+    test.point-&gt;p = 0x61ff2c;
+    return 0;
+}
+
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">

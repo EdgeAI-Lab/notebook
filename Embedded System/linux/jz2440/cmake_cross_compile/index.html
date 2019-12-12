@@ -310,6 +310,10 @@
 </li>
             
 <li >
+    <a href="../../embedded_linux_dev_env/ubuntu_get_kernel_tree/">构建内核源码树</a>
+</li>
+            
+<li >
     <a href="../../embedded_linux_dev_env/samba/">samba服务配置</a>
 </li>
             
@@ -339,10 +343,6 @@
             
 <li >
     <a href="../../../gcc_dynamic_linking_library/">GCC编译动态链接库</a>
-</li>
-            
-<li >
-    <a href="../../../build_linux_source_tree.md">构建内核源码树</a>
 </li>
             
 <li >
@@ -477,7 +477,7 @@
                             </a>
                         </li>
                             <li>
-                                <a href="https://github.com/FanHongchuang/notebook/edit/master/docs/Embedded System/linux/jz2440/cmake_cross_compile.md">Edit on Notebook</a>
+                                <a href="https://github.com/edgeML/notebook/edit/master/docs/Embedded System/linux/jz2440/cmake_cross_compile.md">Edit on Notebook</a>
                             </li>
                     </ul>
                 </div>
@@ -498,50 +498,25 @@
 
 <h1 id="cmake">CMake交叉编译<a class="headerlink" href="#cmake" title="Permanent link">#</a></h1>
 <h2 id="1helloc">1.创建测试文件hello.c<a class="headerlink" href="#1helloc" title="Permanent link">#</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello ARM CMake!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</td></tr></table>
+<pre><code class="c">#include&lt;stdio.h&gt;
+int main()
+{
+    printf(&quot;Hello ARM CMake!\n&quot;);
+    return 0;
+}
+
+</code></pre>
 
 <h2 id="2cmakelisttxt">2.创建CMakeList.txt文件<a class="headerlink" href="#2cmakelisttxt" title="Permanent link">#</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span> <span class="s">3.0.0</span><span class="p">)</span>
-<span class="nb">project</span><span class="p">(</span><span class="s">hello_cmake</span> <span class="s">VERSION</span> <span class="s">0.1.0</span><span class="p">)</span>
+<pre><code class="cmake">cmake_minimum_required(VERSION 3.0.0)
+project(hello_cmake VERSION 0.1.0)
 
-<span class="nb">add_executable</span><span class="p">(</span><span class="s">hello_cmake</span> <span class="s">hello.c</span><span class="p">)</span>
-</pre></div>
-</td></tr></table>
+add_executable(hello_cmake hello.c)
+</code></pre>
 
 <h2 id="3toolchaincmake">3.创建toolchain.cmake文件<a class="headerlink" href="#3toolchaincmake" title="Permanent link">#</a></h2>
 <p>该文件指明了交叉编译器信息</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>### toolchain.cmake ###
+<pre><code>### toolchain.cmake ###
 # this is required
 SET(CMAKE_SYSTEM_NAME Linux)
 
@@ -558,8 +533,7 @@ SET(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 # for libraries and headers in the target directories
 SET(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
 SET(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
-</pre></div>
-</td></tr></table>
+</code></pre>
 
 <h2 id="4cmakemakefile">4.执行CMake指令生成Makefile<a class="headerlink" href="#4cmakemakefile" title="Permanent link">#</a></h2>
 <p>有两种方式：</p>
@@ -574,9 +548,8 @@ SET(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 <ul>
 <li>命令行</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cmake -DCMAKE_TOOLCHAIN_FILE=../toolchain/toolchain.cmake ..
-</pre></div>
-</td></tr></table></div>
+<pre><code>cmake -DCMAKE_TOOLCHAIN_FILE=../toolchain/toolchain.cmake ..
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">

@@ -310,6 +310,10 @@
 </li>
             
 <li >
+    <a href="../../Embedded System/linux/embedded_linux_dev_env/ubuntu_get_kernel_tree/">构建内核源码树</a>
+</li>
+            
+<li >
     <a href="../../Embedded System/linux/embedded_linux_dev_env/samba/">samba服务配置</a>
 </li>
             
@@ -339,10 +343,6 @@
             
 <li >
     <a href="../../Embedded System/gcc_dynamic_linking_library/">GCC编译动态链接库</a>
-</li>
-            
-<li >
-    <a href="../../Embedded System/build_linux_source_tree.md">构建内核源码树</a>
 </li>
             
 <li >
@@ -477,7 +477,7 @@
                             </a>
                         </li>
                             <li>
-                                <a href="https://github.com/FanHongchuang/notebook/edit/master/docs/Computer Vision/OpenCV4Android_001.md">Edit on Notebook</a>
+                                <a href="https://github.com/edgeML/notebook/edit/master/docs/Computer Vision/OpenCV4Android_001.md">Edit on Notebook</a>
                             </li>
                     </ul>
                 </div>
@@ -507,17 +507,14 @@
 Source directory: select this "sdk" directory
 Module name: ":opencv"</p>
 <h2 id="4appbuildgradleopencv">4.在APP模块的build.gradle文件中添加Opencv依赖<a class="headerlink" href="#4appbuildgradleopencv" title="Permanent link">#</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>dependencies {
-       implementation fileTree(dir: &#39;libs&#39;, include: [&#39;*.jar&#39;])
+<pre><code class="gradle">
+dependencies {
+       implementation fileTree(dir: 'libs', include: ['*.jar'])
        ...
-       implementation project(&#39;:opencv&#39;)
+       implementation project(':opencv')
    }
-</pre></div>
-</td></tr></table>
+
+</code></pre>
 
 <h2 id="5android-camera-preview">5.Android Camera Preview示例测试<a class="headerlink" href="#5android-camera-preview" title="Permanent link">#</a></h2>
 <p>将OpenCV-android-sdk\samples\tutorial-1-camerapreview项目移植到APP中（复制MainActivity.java文件、layout文件，在AndroidManifest.xml添加访问摄像头的权限）</p></div>

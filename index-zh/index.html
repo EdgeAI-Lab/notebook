@@ -310,6 +310,10 @@
 </li>
             
 <li >
+    <a href="../Embedded System/linux/embedded_linux_dev_env/ubuntu_get_kernel_tree/">构建内核源码树</a>
+</li>
+            
+<li >
     <a href="../Embedded System/linux/embedded_linux_dev_env/samba/">samba服务配置</a>
 </li>
             
@@ -339,10 +343,6 @@
             
 <li >
     <a href="../Embedded System/gcc_dynamic_linking_library/">GCC编译动态链接库</a>
-</li>
-            
-<li >
-    <a href="../Embedded System/build_linux_source_tree.md">构建内核源码树</a>
 </li>
             
 <li >
@@ -477,7 +477,7 @@
                             </a>
                         </li>
                             <li>
-                                <a href="https://github.com/FanHongchuang/notebook/edit/master/docs/index-zh.md">Edit on Notebook</a>
+                                <a href="https://github.com/edgeML/notebook/edit/master/docs/index-zh.md">Edit on Notebook</a>
                             </li>
                     </ul>
                 </div>
@@ -525,42 +525,34 @@
 <p><img alt="mkdocs_site" src="../assets/images/mkdocs_site.png" /></p>
 <h2 id="3-wikigithub">3. 将你的WiKi网站托管到Github<a class="headerlink" href="#3-wikigithub" title="Permanent link">#</a></h2>
 <h3 id="31-my-projectgit">3.1 将你的“my-project”文件夹，初始化为一个本地Git仓库<a class="headerlink" href="#31-my-projectgit" title="Permanent link">#</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">cd</span> my-project
+<pre><code class="bash">cd my-project
 git init
-</pre></div>
-</td></tr></table>
+</code></pre>
 
 <ul>
 <li>git仓库初始化成功后，看上去就像这样：</li>
 </ul>
 <p><img alt="mkdocs_site" src="../assets/images/mkdocs_site_git.png" /></p>
 <h3 id="32-githuburl">3.2 创建一个新GitHub的仓库，获取仓库的URL。像这样:<a class="headerlink" href="#32-githuburl" title="Permanent link">#</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>https://github.com/user_name/repository_name
-</pre></div>
-</td></tr></table>
+<pre><code>https://github.com/user_name/repository_name
+</code></pre>
 
 <h3 id="33">3.3 在本地仓库中添加远程仓库链接<a class="headerlink" href="#33" title="Permanent link">#</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>git add remote https://github.com/user_name/repository_name
-</pre></div>
-</td></tr></table>
+<pre><code class="bash">git add remote https://github.com/user_name/repository_name
+</code></pre>
 
 <h3 id="34-git">3.4 将本地git仓库推送到远端（可选）<a class="headerlink" href="#34-git" title="Permanent link">#</a></h3>
 <blockquote>
 <p>将你的源文件推送到远程仓库是可选的，因为部署你的WiKi网站只需要将HTML网页文件推送到远端即可</p>
 </blockquote>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>git add .
-git commit -m <span class="s2">&quot;first commit&quot;</span>
+<pre><code class="bash">git add .
+git commit -m &quot;first commit&quot;
 git push origin master
-</pre></div>
-</td></tr></table>
+</code></pre>
 
 <h3 id="35-wikigithub">3.5 将你的WiKi站点部署到GitHub<a class="headerlink" href="#35-wikigithub" title="Permanent link">#</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>mkdocs gh-deploy
-</pre></div>
-</td></tr></table>
+<pre><code class="bash">mkdocs gh-deploy
+</code></pre>
 
 <ul>
 <li>
@@ -578,9 +570,8 @@ git push origin master
 <ul>
 <li>现在使用类似下面的URL，你就可以访问你的Wiki站点了</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>https://user_name.github.io/repository_name/
-</pre></div>
-</td></tr></table>
+<pre><code>https://user_name.github.io/repository_name/
+</code></pre>
 
 <div class="admonition 恭喜">
 <p class="admonition-title">恭喜</p>

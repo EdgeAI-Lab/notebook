@@ -310,6 +310,10 @@
 </li>
             
 <li >
+    <a href="../linux/embedded_linux_dev_env/ubuntu_get_kernel_tree/">构建内核源码树</a>
+</li>
+            
+<li >
     <a href="../linux/embedded_linux_dev_env/samba/">samba服务配置</a>
 </li>
             
@@ -339,10 +343,6 @@
             
 <li >
     <a href="../gcc_dynamic_linking_library/">GCC编译动态链接库</a>
-</li>
-            
-<li >
-    <a href="../build_linux_source_tree.md">构建内核源码树</a>
 </li>
             
 <li >
@@ -487,7 +487,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/FanHongchuang/notebook/edit/master/docs/Embedded System/ESP8266.md">Edit on Notebook</a>
+                                <a href="https://github.com/edgeML/notebook/edit/master/docs/Embedded System/ESP8266.md">Edit on Notebook</a>
                             </li>
                     </ul>
                 </div>
@@ -509,21 +509,15 @@
 <li>根据文档中的指引，下载espressif做好的虚拟机（下载包中的VirtualBox在我电脑上）这是一个32位的操作系统</li>
 <li>一定要从github官网下载espressif源码</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>mkdir /mnt/myshare
+<pre><code>mkdir /mnt/myshare
 mount -t vboxsf shared  /mnt/Share
-</pre></div>
-</td></tr></table>
+</code></pre>
 
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install libncurses5-dev libncursesw5-dev gperf bison flex
+<pre><code>sudo apt-get install libncurses5-dev libncursesw5-dev gperf bison flex
 
 // Warn
 不要安装python-serial，要安装pysreial
-</pre></div>
-</td></tr></table>
+</code></pre>
 
 <ul>
 <li>ttyUSB0的权限</li>

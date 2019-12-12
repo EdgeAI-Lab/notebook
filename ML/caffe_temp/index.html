@@ -310,6 +310,10 @@
 </li>
             
 <li >
+    <a href="../../Embedded System/linux/embedded_linux_dev_env/ubuntu_get_kernel_tree/">构建内核源码树</a>
+</li>
+            
+<li >
     <a href="../../Embedded System/linux/embedded_linux_dev_env/samba/">samba服务配置</a>
 </li>
             
@@ -339,10 +343,6 @@
             
 <li >
     <a href="../../Embedded System/gcc_dynamic_linking_library/">GCC编译动态链接库</a>
-</li>
-            
-<li >
-    <a href="../../Embedded System/build_linux_source_tree.md">构建内核源码树</a>
 </li>
             
 <li >
@@ -477,7 +477,7 @@
                             </a>
                         </li>
                             <li>
-                                <a href="https://github.com/FanHongchuang/notebook/edit/master/docs/ML/caffe_temp.md">Edit on Notebook</a>
+                                <a href="https://github.com/edgeML/notebook/edit/master/docs/ML/caffe_temp.md">Edit on Notebook</a>
                             </li>
                     </ul>
                 </div>
@@ -496,23 +496,18 @@
 <h1 id="caffe">Caffe相关临时目录<a class="headerlink" href="#caffe" title="Permanent link">#</a></h1>
 <h2 id="caffe_1">Caffe模型可视化<a class="headerlink" href="#caffe_1" title="Permanent link">#</a></h2>
 <h3 id="1-pycaffe">1. 编译pycaffe<a class="headerlink" href="#1-pycaffe" title="Permanent link">#</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>make pycaffe
-</pre></div>
-</td></tr></table>
+<pre><code>make pycaffe
+</code></pre>
 
 <h3 id="2">2.安装依赖<a class="headerlink" href="#2" title="Permanent link">#</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pip install pydot
+<pre><code>pip install pydot
 sudo apt-get install graphviz
-</pre></div>
-</td></tr></table>
+</code></pre>
 
 <h3 id="3">3.可视化模型<a class="headerlink" href="#3" title="Permanent link">#</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cd $(CAFFE_ROOT)/python/
+<pre><code>cd $(CAFFE_ROOT)/python/
 $ ./draw_net.py ../models/bvlc_googlenet/deploy.prototxt bvlc_googlenet.caffemodel.jpg
-</pre></div>
-</td></tr></table></div>
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">

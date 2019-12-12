@@ -310,6 +310,10 @@
 </li>
             
 <li >
+    <a href="../ubuntu_get_kernel_tree/">构建内核源码树</a>
+</li>
+            
+<li >
     <a href="../samba/">samba服务配置</a>
 </li>
             
@@ -339,10 +343,6 @@
             
 <li >
     <a href="../../../gcc_dynamic_linking_library/">GCC编译动态链接库</a>
-</li>
-            
-<li >
-    <a href="../../../build_linux_source_tree.md">构建内核源码树</a>
 </li>
             
 <li >
@@ -482,12 +482,12 @@
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../samba/">
+                                <a rel="prev" href="../ubuntu_get_kernel_tree/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/FanHongchuang/notebook/edit/master/docs/Embedded System/linux/embedded_linux_dev_env/virtual_box_env.md">Edit on Notebook</a>
+                                <a href="https://github.com/edgeML/notebook/edit/master/docs/Embedded System/linux/embedded_linux_dev_env/virtual_box_env.md">Edit on Notebook</a>
                             </li>
                     </ul>
                 </div>
@@ -517,20 +517,15 @@
 <p>重启后请卸载掉“Guest Additions.iso”光盘。</p>
 <h3 id="14">1.4 可能遇到的问题<a class="headerlink" href="#14" title="Permanent link">#</a></h3>
 <p>如果挂载“Guest Additions.iso”光盘后再次挂载，VirtualBox会报错崩溃，并且导致无法再次启动系统。报错信息如下：</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>Cannot attach medium &#39;C:\Program Files\Oracle\VirtualBox\VBoxGuestAdditions.iso&#39;...
-</pre></div>
-</td></tr></table>
+<pre><code>Cannot attach medium 'C:\Program Files\Oracle\VirtualBox\VBoxGuestAdditions.iso'...
+</code></pre>
 
 <p>此时使用文本编辑器打开虚拟机文件xxx.vbox，将下面这个删除：</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">&lt;DVDImages&gt;</span>
-    <span class="nt">&lt;Image</span> <span class="na">uuid=</span><span class="s">&quot;{49c18a29-332b-4b24-b7e5-d88f63fd4733}&quot;</span> <span class="na">location=</span><span class="s">&quot;C:/Program Files/Oracle/VirtualBox/VBoxGuestAdditions.iso&quot;</span><span class="nt">/&gt;</span>
+<pre><code class="xml">&lt;DVDImages&gt;
+    &lt;Image uuid=&quot;{49c18a29-332b-4b24-b7e5-d88f63fd4733}&quot; location=&quot;C:/Program Files/Oracle/VirtualBox/VBoxGuestAdditions.iso&quot;/&gt;
     ...
-<span class="nt">&lt;/DVDImages&gt;</span>
-</pre></div>
-</td></tr></table>
+&lt;/DVDImages&gt;
+</code></pre>
 
 <h2 id="virtualbox_1">二、 VirtualBox双网卡配置<a class="headerlink" href="#virtualbox_1" title="Permanent link">#</a></h2>
 <p>电脑有两块物理网卡，请按照下面步骤操作：</p>
@@ -552,36 +547,25 @@
 <ul>
 <li>在Ubuntu中挂载共享文件夹</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># 命令行手动挂载</span>
+<pre><code class="bash"># 命令行手动挂载
 sudo mount -t vboxsf sharename mountpoint
 
-<span class="c1"># 开机自动挂载 </span>
-<span class="c1"># 在/etc/fstab末尾添加</span>
-sharename mountpoint vboxsf defaults <span class="m">0</span> <span class="m">0</span>
-</pre></div>
-</td></tr></table>
+# 开机自动挂载 
+# 在/etc/fstab末尾添加
+sharename mountpoint vboxsf defaults 0 0
+
+</code></pre>
 
 <p><a href="https://www.virtualbox.org/manual/ch04.html#sharedfolders">VirtualBox共享文件夹官方文档</a>，手动挂载共享文件夹节选：</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># In a Linux guest, use the following command:</span>
+<pre><code class="bash"># In a Linux guest, use the following command:
 
-mount -t vboxsf <span class="o">[</span>-o OPTIONS<span class="o">]</span> sharename mountpoint
+mount -t vboxsf [-o OPTIONS] sharename mountpoint
 
-<span class="c1"># To mount a shared folder during boot, add the following entry to /etc/fstab:</span>
+# To mount a shared folder during boot, add the following entry to /etc/fstab:
 
-sharename   mountpoint   vboxsf   defaults  <span class="m">0</span>   <span class="m">0</span>
-</pre></div>
-</td></tr></table>
+sharename   mountpoint   vboxsf   defaults  0   0
+
+</code></pre>
 
 <h3 id="32">3.2 自动挂载<a class="headerlink" href="#32" title="Permanent link">#</a></h3>
 <p>自动挂载到/media目录，且文件的权限是 root vboxsf，使用起来非常不方便，所以不建议使用自动挂载。</p>

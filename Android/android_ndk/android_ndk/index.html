@@ -310,6 +310,10 @@
 </li>
             
 <li >
+    <a href="../../../Embedded System/linux/embedded_linux_dev_env/ubuntu_get_kernel_tree/">构建内核源码树</a>
+</li>
+            
+<li >
     <a href="../../../Embedded System/linux/embedded_linux_dev_env/samba/">samba服务配置</a>
 </li>
             
@@ -339,10 +343,6 @@
             
 <li >
     <a href="../../../Embedded System/gcc_dynamic_linking_library/">GCC编译动态链接库</a>
-</li>
-            
-<li >
-    <a href="../../../Embedded System/build_linux_source_tree.md">构建内核源码树</a>
 </li>
             
 <li >
@@ -487,7 +487,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/FanHongchuang/notebook/edit/master/docs/Android/android_ndk/android_ndk.md">Edit on Notebook</a>
+                                <a href="https://github.com/edgeML/notebook/edit/master/docs/Android/android_ndk/android_ndk.md">Edit on Notebook</a>
                             </li>
                     </ul>
                 </div>
@@ -515,30 +515,20 @@
 <h2 id="1-jniso">1. 使用不带JNI接口的.so文件<a class="headerlink" href="#1-jniso" title="Permanent link">#</a></h2>
 <p>不带JNI接口的.so文件，一般是直接由现有C/C++代码编译成的。在Android使用时需自己编写JNI层。</p>
 <p>eg: add.c</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">// add.c</span>
-<span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</td></tr></table>
+<pre><code class="c">// add.c
+int add(int a,int b)
+{
+  return a+b;
+}
+
+</code></pre>
 
 <h2 id="11-android-studioaddcso">1.1 在Android Studio中将add.c编译为.so文件<a class="headerlink" href="#11-android-studioaddcso" title="Permanent link">#</a></h2>
 <ul>
 <li>Android Studio中新建JNI工程，然后在CMakeList.txt文件中添加如下内容：</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>add_library( # Sets the name of the library.
+<pre><code class="camke">
+add_library( # Sets the name of the library.
         add
 
         # Sets the library as a shared library.
@@ -546,35 +536,26 @@
 
         # Provides a relative path to your source file(s).
         add.c)
-</pre></div>
-</td></tr></table>
+
+</code></pre>
 
 <p>在生成的apk文件中可以找到libadd.so文件</p>
 <h2 id="12-jnilibaddso">1.2 通过JNI接口调用libadd.so文件中的函数<a class="headerlink" href="#12-jnilibaddso" title="Permanent link">#</a></h2>
 <ul>
 <li>在native-lib.cpp中添加如下内容：</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">#ifdef __cplusplus</span>
-<span class="k">extern</span> <span class="s">&quot;C&quot;</span>
-<span class="cp">#endif </span><span class="c1">// __cplusplus</span>
-<span class="kt">int</span> <span class="n">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
+<pre><code class="c++">
+#ifdef __cplusplus
+extern &quot;C&quot;
+#endif // __cplusplus
+int add(int a,int b);
 
-<span class="k">extern</span> <span class="s">&quot;C&quot;</span>
-<span class="n">JNIEXPORT</span> <span class="n">jint</span> <span class="n">JNICALL</span>
-<span class="n">Java_com_fhc_ndktest_MainActivity_add</span><span class="p">(</span><span class="n">JNIEnv</span> <span class="o">*</span><span class="n">env</span><span class="p">,</span> <span class="n">jobject</span> <span class="n">thiz</span><span class="p">,</span> <span class="n">jint</span> <span class="n">a</span><span class="p">,</span> <span class="n">jint</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-</td></tr></table>
+extern &quot;C&quot;
+JNIEXPORT jint JNICALL
+Java_com_fhc_ndktest_MainActivity_add(JNIEnv *env, jobject thiz, jint a, jint b) {
+    return add(a,b);
+}
+</code></pre>
 
 <p>在MainActivity.java中就可以使用了</p>
 <h2 id="2-jniso">2. 使用带JNI接口的.so文件<a class="headerlink" href="#2-jniso" title="Permanent link">#</a></h2>

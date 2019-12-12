@@ -310,6 +310,10 @@
 </li>
             
 <li >
+    <a href="../ubuntu_get_kernel_tree/">构建内核源码树</a>
+</li>
+            
+<li >
     <a href="../samba/">samba服务配置</a>
 </li>
             
@@ -339,10 +343,6 @@
             
 <li >
     <a href="../../../gcc_dynamic_linking_library/">GCC编译动态链接库</a>
-</li>
-            
-<li >
-    <a href="../../../build_linux_source_tree.md">构建内核源码树</a>
 </li>
             
 <li >
@@ -487,7 +487,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/FanHongchuang/notebook/edit/master/docs/Embedded System/linux/embedded_linux_dev_env/ftp_server_build.md">Edit on Notebook</a>
+                                <a href="https://github.com/edgeML/notebook/edit/master/docs/Embedded System/linux/embedded_linux_dev_env/ftp_server_build.md">Edit on Notebook</a>
                             </li>
                     </ul>
                 </div>
@@ -514,28 +514,24 @@
 <hr />
 <h3 id="linuxftp">一、首先配置Linux中的FTP服务<a class="headerlink" href="#linuxftp" title="Permanent link">#</a></h3>
 <h3 id="1-ftp">1. 安装FTP服务<a class="headerlink" href="#1-ftp" title="Permanent link">#</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install vsftpd
-</pre></div>
-</td></tr></table>
+<pre><code>sudo apt-get install vsftpd
+</code></pre>
 
 <h3 id="2-ftp">2. 打开FTP配置文件<a class="headerlink" href="#2-ftp" title="Permanent link">#</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo vim /etc/vsftpd.conf 
-</pre></div>
-</td></tr></table>
+<pre><code>sudo vim /etc/vsftpd.conf 
+</code></pre>
 
 <h3 id="3-write_enableyes">3. 将 ” write_enable=YES “前的注释符号“#”去掉，保存退出<a class="headerlink" href="#3-write_enableyes" title="Permanent link">#</a></h3>
 <p><img alt="vsftpd.conf" src="../../../../assets/images/FTP/ftp_vsftpd_conf.jpg" /></p>
 <h3 id="4-linux-ip">4. 查看Linux IP地址<a class="headerlink" href="#4-linux-ip" title="Permanent link">#</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ifconfig
-</pre></div>
-</td></tr></table>
+<pre><code>ifconfig
+</code></pre>
 
 <p><img alt="ifconfig" src="../../../../assets/images/FTP/ip_config.jpg" /></p>
 <p>如果ifconfig后，没有出现IP地址，请先配置IP，然后继续下面步骤</p>
 <h3 id="5-ftp">5. 启动FTP服务<a class="headerlink" href="#5-ftp" title="Permanent link">#</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo service vsftpd restart
-</pre></div>
-</td></tr></table>
+<pre><code>sudo service vsftpd restart
+</code></pre>
 
 <h3 id="ftplinux">二、使用FTP工具登陆Linux<a class="headerlink" href="#ftplinux" title="Permanent link">#</a></h3>
 <p>常用FTP工具有很多款，去网上找到你喜欢的就好，下面以“8uftp“工具为例介绍使用方法</p>

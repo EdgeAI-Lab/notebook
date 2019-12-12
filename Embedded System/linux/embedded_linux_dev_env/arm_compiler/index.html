@@ -310,6 +310,10 @@
 </li>
             
 <li >
+    <a href="../ubuntu_get_kernel_tree/">构建内核源码树</a>
+</li>
+            
+<li >
     <a href="../samba/">samba服务配置</a>
 </li>
             
@@ -339,10 +343,6 @@
             
 <li >
     <a href="../../../gcc_dynamic_linking_library/">GCC编译动态链接库</a>
-</li>
-            
-<li >
-    <a href="../../../build_linux_source_tree.md">构建内核源码树</a>
 </li>
             
 <li >
@@ -487,7 +487,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/FanHongchuang/notebook/edit/master/docs/Embedded System/linux/embedded_linux_dev_env/arm_compiler.md">Edit on Notebook</a>
+                                <a href="https://github.com/edgeML/notebook/edit/master/docs/Embedded System/linux/embedded_linux_dev_env/arm_compiler.md">Edit on Notebook</a>
                             </li>
                     </ul>
                 </div>
@@ -525,19 +525,13 @@
 </ul>
 <p>GNU Toolchain for the Cortex-R/M是基于GCC开发的，免费软件，适用于Cortex-R/M作为内核的MCU。</p>
 <p>一般它们是这个样子的:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>arm-none-eabi-gcc
+<pre><code>arm-none-eabi-gcc
 arm-none-eabi-g++
 arm-none-eabi-ar
 arm-none-eabi-as
 
 ...
-</pre></div>
-</td></tr></table>
+</code></pre>
 
 <h3 id="12-cortex-a">1.2 适用于Cortex-A内核的编译器<a class="headerlink" href="#12-cortex-a" title="Permanent link">#</a></h3>
 <ul>
@@ -553,15 +547,13 @@ arm-none-eabi-as
 <li><a href="https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-a/downloads">The GNU Toolchain for the Cortex-A Family</a></li>
 </ul>
 <p>GNU Toolchain for the Cortex-A是基于GCC开发的，免费软件，适用于Cortex-A作为内核的处理器。一本分为编译裸机程序的和编译Linux应用程序的（详情参考上面的链接）。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># 可以编译裸机程序和Linux应用程序</span>
+<pre><code class="shell"># 可以编译裸机程序和Linux应用程序
 aarch64-linux-gnu-gcc
 
-<span class="c1"># 仅可以编译裸机程序</span>
-</pre></div>
-</td></tr></table>
+# 仅可以编译裸机程序
+
+
+</code></pre>
 
 <ul>
 <li><a href="https://developer.android.google.cn/ndk">Android NDK</a></li>
@@ -607,9 +599,9 @@ aarch64-linux-gnu-gcc
 <blockquote>
 <p>注意：其命名规则并不是十分严格规范，大概做个参考吧</p>
 </blockquote>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>arch [-vendor] [-os] [-(gnu)eabi] [-gcc]
-</pre></div>
-</td></tr></table>
+<pre><code>arch [-vendor] [-os] [-(gnu)eabi] [-gcc]
+
+</code></pre>
 
 <table>
 <thead>

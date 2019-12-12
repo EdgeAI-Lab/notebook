@@ -310,6 +310,10 @@
 </li>
             
 <li >
+    <a href="../../Embedded System/linux/embedded_linux_dev_env/ubuntu_get_kernel_tree/">构建内核源码树</a>
+</li>
+            
+<li >
     <a href="../../Embedded System/linux/embedded_linux_dev_env/samba/">samba服务配置</a>
 </li>
             
@@ -339,10 +343,6 @@
             
 <li >
     <a href="../../Embedded System/gcc_dynamic_linking_library/">GCC编译动态链接库</a>
-</li>
-            
-<li >
-    <a href="../../Embedded System/build_linux_source_tree.md">构建内核源码树</a>
 </li>
             
 <li >
@@ -487,7 +487,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/FanHongchuang/notebook/edit/master/docs/Tools/Shadowsocks.md">Edit on Notebook</a>
+                                <a href="https://github.com/edgeML/notebook/edit/master/docs/Tools/Shadowsocks.md">Edit on Notebook</a>
                             </li>
                     </ul>
                 </div>
@@ -512,26 +512,19 @@
 <ul>
 <li>Ubuntu16.04 and above</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo add-apt-repository ppa:hzwhuang/ss-qt5
+<pre><code class="bash">sudo add-apt-repository ppa:hzwhuang/ss-qt5
 sudo apt-get update
 sudo apt-get install shadowsocks-qt5
-</pre></div>
-</td></tr></table>
+</code></pre>
 
 <ul>
 <li>Ubuntu18.04</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo vim /etc/apt/sources.list.d/hzwhuang-ubuntu-ss-qt5-bionic.list
+<pre><code class="bash">sudo vim /etc/apt/sources.list.d/hzwhuang-ubuntu-ss-qt5-bionic.list
 
 deb http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu xenial main
-<span class="c1"># deb-src http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu xenial main</span>
-</pre></div>
-</td></tr></table>
+# deb-src http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu xenial main
+</code></pre>
 
 <h2 id="2-shadowsocks-qt5">2. 启动Shadowsocks-qt5并配置<a class="headerlink" href="#2-shadowsocks-qt5" title="Permanent link">#</a></h2>
 <div class="admonition note">
@@ -540,33 +533,28 @@ deb http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu xenial main
 </div>
 <p><img alt="Shadowsocks-qt5" src="../../assets/images/Shadowsocks-QT5_configure.png" /></p>
 <h2 id="3">3. 配置系统代理<a class="headerlink" href="#3" title="Permanent link">#</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>// 直接从gfwlist网站获取gfwlist.txt文件
-genpac --pac-proxy <span class="s2">&quot;SOCKS5 127.0.0.1:8123&quot;</span> --gfwlist-proxy<span class="o">=</span><span class="s2">&quot;SOCKS5 127.0.0.1:8123&quot;</span> --gfwlist-url<span class="o">=</span>https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt --output<span class="o">=</span><span class="s2">&quot;autoproxy.pac&quot;</span>
+<pre><code class="bash">// 直接从gfwlist网站获取gfwlist.txt文件
+genpac --pac-proxy &quot;SOCKS5 127.0.0.1:8123&quot; --gfwlist-proxy=&quot;SOCKS5 127.0.0.1:8123&quot; --gfwlist-url=https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt --output=&quot;autoproxy.pac&quot;
 
 // 假如无法访问gfwlist，直接使用浏览器访问其网址，下载gfwlist.txt文件，然后执行下面的命令
-genpac --pac-proxy <span class="s2">&quot;SOCKS5 127.0.0.1:8123&quot;</span> --gfwlist-proxy<span class="o">=</span><span class="s2">&quot;SOCKS5 127.0.0.1:8123&quot;</span> --gfwlist-local<span class="o">=</span>./gfwlist.txt --output<span class="o">=</span><span class="s2">&quot;autoproxy.pac&quot;</span>
-</pre></div>
-</td></tr></table>
+genpac --pac-proxy &quot;SOCKS5 127.0.0.1:8123&quot; --gfwlist-proxy=&quot;SOCKS5 127.0.0.1:8123&quot; --gfwlist-local=./gfwlist.txt --output=&quot;autoproxy.pac&quot;
+
+</code></pre>
 
 <ul>
 <li>Network -&gt; Network Proxy -&gt; Automatic 在Configuration URL中</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>file:///home/fhc/autoproxy.pac
-</pre></div>
-</td></tr></table>
+<pre><code>file:///home/fhc/autoproxy.pac
+</code></pre>
 
 <h2 id="4">4. 在浏览器中配置使用系统代理<a class="headerlink" href="#4" title="Permanent link">#</a></h2>
 <p><img alt="Firefox_Configure_System_Proxy" src="../../assets/images/Firefox_configure_system_proxy.png" /></p>
 <h2 id="5">5. 命令行使用系统代理<a class="headerlink" href="#5" title="Permanent link">#</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install proxychains4
+<pre><code class="bash">
+sudo apt-get install proxychains4
 proxychains4 curl www.google.com
-</pre></div>
-</td></tr></table></div>
+
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">

@@ -310,6 +310,10 @@
 </li>
             
 <li >
+    <a href="../../Embedded System/linux/embedded_linux_dev_env/ubuntu_get_kernel_tree/">构建内核源码树</a>
+</li>
+            
+<li >
     <a href="../../Embedded System/linux/embedded_linux_dev_env/samba/">samba服务配置</a>
 </li>
             
@@ -339,10 +343,6 @@
             
 <li >
     <a href="../../Embedded System/gcc_dynamic_linking_library/">GCC编译动态链接库</a>
-</li>
-            
-<li >
-    <a href="../../Embedded System/build_linux_source_tree.md">构建内核源码树</a>
 </li>
             
 <li >
@@ -487,7 +487,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/FanHongchuang/notebook/edit/master/docs/Multimedia/ffmpeg_compile.md">Edit on Notebook</a>
+                                <a href="https://github.com/edgeML/notebook/edit/master/docs/Multimedia/ffmpeg_compile.md">Edit on Notebook</a>
                             </li>
                     </ul>
                 </div>
@@ -507,15 +507,12 @@
 
 <h1 id="ffmpeg">FFMPEG编译<a class="headerlink" href="#ffmpeg" title="Permanent link">#</a></h1>
 <h2 id="ubuntuffmpeg">一、卸载Ubuntu预装FFMPEG<a class="headerlink" href="#ubuntuffmpeg" title="Permanent link">#</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get --purge remove ffmpeg
+<pre><code class="shell">sudo apt-get --purge remove ffmpeg
 
-<span class="c1"># 如果无法卸载干净，那么找到ffmpeg的可执行文件，将其删除</span>
+# 如果无法卸载干净，那么找到ffmpeg的可执行文件，将其删除
 which ffmpeg
-</pre></div>
-</td></tr></table>
+
+</code></pre>
 
 <h2 id="_1">二、编译安装<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
 <h3 id="21">2.1.源码编译<a class="headerlink" href="#21" title="Permanent link">#</a></h3>
@@ -523,19 +520,13 @@ which ffmpeg
 <li><a href="https://ffmpeg.org/download.html">下载源码</a></li>
 <li>使用下面的命令编译FFMPEG源码</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span># make install会将编译出的库、头文件和.pc文件都安装到local_build
+<pre><code># make install会将编译出的库、头文件和.pc文件都安装到local_build
 ./configure --prefix=$PWD/local_build
 
 make
 
 make install
-</pre></div>
-</td></tr></table>
+</code></pre>
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -546,34 +537,25 @@ make install
 <li><a href="https://www.libsdl.org/download-2.0.php">下载SDL2.0</a></li>
 <li>使用下面的命令编译SDL源码</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>./configure
+<pre><code>./configure
 
 make 
 
 
 make install
-</pre></div>
-</td></tr></table>
+
+</code></pre>
 
 <ul>
 <li>配置使能SDL<code>--enable-sdl</code>，然后重新编译FFMPEG</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>./configure --enable-sdl --prefix=$PWD/local_build
+<pre><code>./configure --enable-sdl --prefix=$PWD/local_build
 
 make
 
 make install
-</pre></div>
-</td></tr></table>
+
+</code></pre>
 
 <h2 id="ffmpeg_1">使用自己编译的FFMPEG遇到的问题<a class="headerlink" href="#ffmpeg_1" title="Permanent link">#</a></h2>
 <ul>
@@ -581,17 +563,13 @@ make install
 </ul>
 <p>原因：编译的时候没有使能 <code>libx264</code></p>
 <p>解决：</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>./configure --enable-libx264 --enable-gpl
+<pre><code>./configure --enable-libx264 --enable-gpl
 
 make
 
 sudo make install
-</pre></div>
-</td></tr></table>
+
+</code></pre>
 
 <hr /></div>
         </div>

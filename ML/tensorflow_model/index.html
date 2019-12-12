@@ -310,6 +310,10 @@
 </li>
             
 <li >
+    <a href="../../Embedded System/linux/embedded_linux_dev_env/ubuntu_get_kernel_tree/">构建内核源码树</a>
+</li>
+            
+<li >
     <a href="../../Embedded System/linux/embedded_linux_dev_env/samba/">samba服务配置</a>
 </li>
             
@@ -339,10 +343,6 @@
             
 <li >
     <a href="../../Embedded System/gcc_dynamic_linking_library/">GCC编译动态链接库</a>
-</li>
-            
-<li >
-    <a href="../../Embedded System/build_linux_source_tree.md">构建内核源码树</a>
 </li>
             
 <li >
@@ -487,7 +487,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/FanHongchuang/notebook/edit/master/docs/ML/tensorflow_model.md">Edit on Notebook</a>
+                                <a href="https://github.com/edgeML/notebook/edit/master/docs/ML/tensorflow_model.md">Edit on Notebook</a>
                             </li>
                     </ul>
                 </div>
@@ -513,32 +513,23 @@
 <li>concrete functions（还没搞懂）</li>
 </ul>
 <h3 id="savedmodel-directories">SavedModel directories<a class="headerlink" href="#savedmodel-directories" title="Permanent link">#</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span># 将模型保存到./saved文件夹下
-tf.saved_model.save(model,&#39;saved&#39;)
-</pre></div>
-</td></tr></table>
+<pre><code># 将模型保存到./saved文件夹下
+tf.saved_model.save(model,'saved')
+</code></pre>
 
 <h3 id="tfkeras-models">tf.keras models<a class="headerlink" href="#tfkeras-models" title="Permanent link">#</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span># 将模型保存为./model.h5文件
-model.save(&#39;model.h5&#39;)
-</pre></div>
-</td></tr></table>
+<pre><code># 将模型保存为./model.h5文件
+model.save('model.h5')
+</code></pre>
 
 <h2 id="2">2.模型转换<a class="headerlink" href="#2" title="Permanent link">#</a></h2>
 <h3 id="savedmodel-directories_1">SavedModel directories<a class="headerlink" href="#savedmodel-directories_1" title="Permanent link">#</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span># 注意：必须使用TensorFlow2.0
-converter = tf.lite.TFLiteConverter.from_saved_model(&#39;saved&#39;)
+<pre><code># 注意：必须使用TensorFlow2.0
+converter = tf.lite.TFLiteConverter.from_saved_model('saved')
 converter.optimizations = [tf.lite.Optimize.DEFAULT]
 tflite_quant_model = converter.convert()
 open(&quot;sine_savedmodel_quantized.tflite&quot;, &quot;wb&quot;).write(tflite_quant_model)
-</pre></div>
-</td></tr></table>
+</code></pre>
 
 <h3 id="tfkeras-models_1">tf.keras models<a class="headerlink" href="#tfkeras-models_1" title="Permanent link">#</a></h3></div>
         </div>

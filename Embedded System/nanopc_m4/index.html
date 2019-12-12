@@ -310,6 +310,10 @@
 </li>
             
 <li >
+    <a href="../linux/embedded_linux_dev_env/ubuntu_get_kernel_tree/">构建内核源码树</a>
+</li>
+            
+<li >
     <a href="../linux/embedded_linux_dev_env/samba/">samba服务配置</a>
 </li>
             
@@ -339,10 +343,6 @@
             
 <li >
     <a href="../gcc_dynamic_linking_library/">GCC编译动态链接库</a>
-</li>
-            
-<li >
-    <a href="../build_linux_source_tree.md">构建内核源码树</a>
 </li>
             
 <li >
@@ -487,7 +487,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/FanHongchuang/notebook/edit/master/docs/Embedded System/nanopc_m4.md">Edit on Notebook</a>
+                                <a href="https://github.com/edgeML/notebook/edit/master/docs/Embedded System/nanopc_m4.md">Edit on Notebook</a>
                             </li>
                     </ul>
                 </div>
@@ -508,38 +508,33 @@
 <ul>
 <li>切换到root账户</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ su root
-</pre></div>
-</td></tr></table>
+<pre><code>$ su root
+</code></pre>
 
 <ul>
 <li>查看网络设备列表</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ nmcli dev
-</pre></div>
-</td></tr></table>
+<pre><code>$ nmcli dev
+</code></pre>
 
 <p>注意，如果列出的设备状态是 unmanaged 的，说明网络设备不受NetworkManager管理，你需要清空 /etc/network/interfaces下的网络设置,然后重启.</p>
 <ul>
 <li>开启WiFi</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ nmcli r wifi on
-</pre></div>
-</td></tr></table>
+<pre><code>$ nmcli r wifi on
+</code></pre>
 
 <ul>
 <li>扫描附近的 WiFi 热点</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ nmcli dev wifi
-</pre></div>
-</td></tr></table>
+<pre><code>$ nmcli dev wifi
+</code></pre>
 
 <ul>
 <li>连接到指定的 WiFi 热点</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ nmcli dev wifi connect &quot;SSID&quot; password &quot;PASSWORD&quot; ifname wlan0
-</pre></div>
-</td></tr></table>
+<pre><code>$ nmcli dev wifi connect &quot;SSID&quot; password &quot;PASSWORD&quot; ifname wlan0
+</code></pre>
 
 <p>请将 SSID和 PASSWORD 替换成实际的 WiFi名称和密码。
 连接成功后，下次开机，WiFi 也会自动连接。</p></div>

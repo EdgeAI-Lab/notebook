@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../../../img/favicon.ico">
-        <title>Ubuntu get kernel tree - Notebook</title>
+        <title>构建内核源码树 - Notebook</title>
         <link href="../../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../../css/base.css" rel="stylesheet">
@@ -209,7 +209,7 @@
   </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Embedded System <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -309,6 +309,10 @@
     <a href="../virtual_box_env/">VirtualBox开发环境搭建</a>
 </li>
             
+<li class="active">
+    <a href="./">构建内核源码树</a>
+</li>
+            
 <li >
     <a href="../samba/">samba服务配置</a>
 </li>
@@ -339,10 +343,6 @@
             
 <li >
     <a href="../../../gcc_dynamic_linking_library/">GCC编译动态链接库</a>
-</li>
-            
-<li >
-    <a href="../../../build_linux_source_tree.md">构建内核源码树</a>
 </li>
             
 <li >
@@ -476,8 +476,18 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li >
+                                <a rel="next" href="../virtual_box_env/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../samba/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                             <li>
-                                <a href="https://github.com/FanHongchuang/notebook/edit/master/docs/Embedded System/linux/embedded_linux_dev_env/ubuntu_get_kernel_tree.md">Edit on Notebook</a>
+                                <a href="https://github.com/edgeML/notebook/edit/master/docs/Embedded System/linux/embedded_linux_dev_env/ubuntu_get_kernel_tree.md">Edit on Notebook</a>
                             </li>
                     </ul>
                 </div>
@@ -487,11 +497,20 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#ubuntu">Ubuntu 内核源码树</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-</div>
+<h1 id="ubuntu">Ubuntu 内核源码树<a class="headerlink" href="#ubuntu" title="Permanent link">#</a></h1>
+<p>查看Ubuntu正在使用的Linux内核版本</p>
+<pre><code>uname -r
+</code></pre>
+
+<p>一般在/usr/src 目录下就会有内核源码树，如果没有，使用下面的命令安装</p>
+<pre><code>sudo apt-get install linux-source
+sudo apt-get install linux-headers-`uanem -r`
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">

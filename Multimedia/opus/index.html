@@ -310,6 +310,10 @@
 </li>
             
 <li >
+    <a href="../../Embedded System/linux/embedded_linux_dev_env/ubuntu_get_kernel_tree/">构建内核源码树</a>
+</li>
+            
+<li >
     <a href="../../Embedded System/linux/embedded_linux_dev_env/samba/">samba服务配置</a>
 </li>
             
@@ -339,10 +343,6 @@
             
 <li >
     <a href="../../Embedded System/gcc_dynamic_linking_library/">GCC编译动态链接库</a>
-</li>
-            
-<li >
-    <a href="../../Embedded System/build_linux_source_tree.md">构建内核源码树</a>
 </li>
             
 <li >
@@ -487,7 +487,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/FanHongchuang/notebook/edit/master/docs/Multimedia/opus.md">Edit on Notebook</a>
+                                <a href="https://github.com/edgeML/notebook/edit/master/docs/Multimedia/opus.md">Edit on Notebook</a>
                             </li>
                     </ul>
                 </div>
@@ -511,49 +511,30 @@
 <p><img alt="int_store" src="../../assets/images/int_store.png" /></p>
 <p>如上图所示，一个整数0x11223344，在内存中、写入文件中、从文件中读出，从字节的角度看，其存储方式是一样的。</p>
 <p>示例程序如下：</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mh">0x11223344</span><span class="p">;</span>
+<pre><code class="c">
+unsigned int a = 0x11223344;
 
-<span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">;</span>
+unsigned char *p = &amp;a;
 
-<span class="c1">// 查看在内存中的存储情况</span>
-<span class="n">printf</span><span class="p">(</span><span class="s">&quot;%x,%x,%x,%x</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="o">*</span><span class="n">p</span><span class="p">,</span><span class="o">*</span><span class="p">(</span><span class="n">p</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="o">*</span><span class="p">(</span><span class="n">p</span><span class="o">+</span><span class="mi">2</span><span class="p">),</span><span class="o">*</span><span class="p">(</span><span class="n">p</span><span class="o">+</span><span class="mi">3</span><span class="p">));</span>
+// 查看在内存中的存储情况
+printf(&quot;%x,%x,%x,%x\n&quot;,*p,*(p+1),*(p+2),*(p+3));
 
-<span class="kt">FILE</span> <span class="o">*</span><span class="n">fp</span><span class="p">;</span>
-<span class="n">fp</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">&quot;int.bin&quot;</span><span class="p">,</span><span class="s">&quot;w+&quot;</span><span class="p">);</span>
+FILE *fp;
+fp = fopen(&quot;int.bin&quot;,&quot;w+&quot;);
 
-<span class="c1">// 写入文件后，通过二进制查看工具查看，其在文件中的存储情况</span>
-<span class="n">fwrite</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">),</span><span class="mi">1</span><span class="p">,</span><span class="n">fp</span><span class="p">);</span>
+// 写入文件后，通过二进制查看工具查看，其在文件中的存储情况
+fwrite(&amp;a,sizeof(int),1,fp);
 
-<span class="n">fseek</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">SEEK_SET</span><span class="p">);</span>
+fseek(fp,0,SEEK_SET);
 
-<span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="n">buf</span> <span class="o">=</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+unsigned char *buf = (unsigned char *)malloc(4);
 
-<span class="n">fread</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">),</span><span class="mi">1</span><span class="p">,</span><span class="n">fp</span><span class="p">);</span>
+fread(buf,sizeof(int),1,fp);
 
-<span class="c1">// 查看从文件读出后的存储情况</span>
-<span class="n">printf</span><span class="p">(</span><span class="s">&quot;%x,%x,%x,%x</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">buf</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">buf</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">buf</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">buf</span><span class="p">[</span><span class="mi">3</span><span class="p">]);</span>
-</pre></div>
-</td></tr></table>
+// 查看从文件读出后的存储情况
+printf(&quot;%x,%x,%x,%x\n&quot;,buf[0],buf[1],buf[2],buf[3]);
+
+</code></pre>
 
 <p>在文件中的存储情况如下图所示：</p>
 <p><img alt="int_store_file" src="../../assets/images/int_store_file.png" /></p>
@@ -562,50 +543,37 @@
 <p>如果你将int或者short类型的数据以二进制写入文件，然后以字节读出。然后在将字节数据转换为int或者short的时候，
 请注意字节序问题（<strong>不推荐这种做法</strong>），示例如下：</p>
 </div>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">#define FRAME_SIZE 960</span>
-<span class="cp">#define CHANNELS 1</span>
-<span class="cp">#define MAX_FRAME_SIZE 6*960</span>
+<pre><code class="c">#define FRAME_SIZE 960
+#define CHANNELS 1
+#define MAX_FRAME_SIZE 6*960
 
-<span class="n">opus_int16</span> <span class="n">in</span><span class="p">[</span><span class="n">FRAME_SIZE</span><span class="o">*</span><span class="n">CHANNELS</span><span class="p">];</span>
-<span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">pcm_bytes</span><span class="p">[</span><span class="n">MAX_FRAME_SIZE</span><span class="o">*</span><span class="n">CHANNELS</span><span class="o">*</span><span class="mi">2</span><span class="p">];</span>
+opus_int16 in[FRAME_SIZE*CHANNELS];
+unsigned char pcm_bytes[MAX_FRAME_SIZE*CHANNELS*2];
 
-<span class="cm">/* Convert from little-endian ordering. */</span>
-<span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">CHANNELS</span><span class="o">*</span><span class="n">FRAME_SIZE</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
- <span class="n">in</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">pcm_bytes</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="mi">8</span><span class="o">|</span><span class="n">pcm_bytes</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">];</span>
-</pre></div>
-</td></tr></table>
+/* Convert from little-endian ordering. */
+for (i=0;i&lt;CHANNELS*FRAME_SIZE;i++)
+ in[i]=pcm_bytes[2*i+1]&lt;&lt;8|pcm_bytes[2*i];
+</code></pre>
 
 <blockquote>
 <p><strong>一般直接将指向字节数组的指针（char *）转换为指向int或者short的指针即可。示例如下：</strong></p>
 </blockquote>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kt">unsigned</span> <span class="kt">short</span> <span class="o">*</span><span class="n">short_buf</span> <span class="o">=</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">short</span> <span class="o">*</span><span class="p">)</span><span class="n">pcm_bytes</span><span class="p">;</span>
-</pre></div>
-</td></tr></table>
+<pre><code class="c">
+unsigned short *short_buf = (unsigned short *)pcm_bytes;
+
+</code></pre>
 
 <p>如果是16bit采样，那么一个样本需要用2个字节（short）去存储。</p>
 <p>OPUS的编码函数原型如下所示：</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">opus_int32</span> <span class="n">opus_encode</span>  <span class="p">(</span><span class="n">OpusEncoder</span> <span class="o">*</span>      <span class="n">st</span><span class="p">,</span>
-                         <span class="k">const</span> <span class="n">opus_int16</span> <span class="o">*</span> <span class="n">pcm</span><span class="p">,</span>
-                         <span class="kt">int</span>                <span class="n">frame_size</span><span class="p">,</span>
-                         <span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span>    <span class="n">data</span><span class="p">,</span>
-                         <span class="n">opus_int32</span>     <span class="n">max_data_bytes</span> 
-<span class="p">)</span>   
-</pre></div>
-</td></tr></table></div>
+<pre><code class="c">
+opus_int32 opus_encode  (OpusEncoder *      st,
+                         const opus_int16 * pcm,
+                         int                frame_size,
+                         unsigned char *    data,
+                         opus_int32     max_data_bytes 
+)   
+
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">

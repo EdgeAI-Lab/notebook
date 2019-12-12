@@ -310,6 +310,10 @@
 </li>
             
 <li >
+    <a href="../../Embedded System/linux/embedded_linux_dev_env/ubuntu_get_kernel_tree/">构建内核源码树</a>
+</li>
+            
+<li >
     <a href="../../Embedded System/linux/embedded_linux_dev_env/samba/">samba服务配置</a>
 </li>
             
@@ -339,10 +343,6 @@
             
 <li >
     <a href="../../Embedded System/gcc_dynamic_linking_library/">GCC编译动态链接库</a>
-</li>
-            
-<li >
-    <a href="../../Embedded System/build_linux_source_tree.md">构建内核源码树</a>
 </li>
             
 <li >
@@ -487,7 +487,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/FanHongchuang/notebook/edit/master/docs/ML/how_to_run_dl_model_on_stm32.md">Edit on Notebook</a>
+                                <a href="https://github.com/edgeML/notebook/edit/master/docs/ML/how_to_run_dl_model_on_stm32.md">Edit on Notebook</a>
                             </li>
                     </ul>
                 </div>
@@ -551,14 +551,12 @@
 <p><img alt="" src="../../assets/images/ml/how_to_run_dl_model_on_stm32/stm32_image_classifier_output_result.png" /></p>
 <p>细心的同学可能要问了，为什么这里的输出是127，而不是一个0~1之间的数？</p>
 <p>这个跟我们使用的Softmax函数有关，一般Softmax函数的公式是这样的：</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>y_i = e^(x_i) / sum(e^x_j)
-</pre></div>
-</td></tr></table>
+<pre><code>y_i = e^(x_i) / sum(e^x_j)
+</code></pre>
 
 <p>而在STM32上我们采用的是以2为底Softmax函数，所以其输出会有所不同。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>y_i = 2^(x_i) / sum(2^x_j)
-</pre></div>
-</td></tr></table>
+<pre><code>y_i = 2^(x_i) / sum(2^x_j)
+</code></pre>
 
 <p>众所周知，微控制器的计算性能有限，这样做可以大大减小计算量，并且从数学上来讲梯度是一样的，我们依然能够很好地分辨出目标图像的所属类别。</p>
 <h3 id="25">2.5 使用说明：<a class="headerlink" href="#25" title="Permanent link">#</a></h3>

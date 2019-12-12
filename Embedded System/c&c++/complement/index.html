@@ -310,6 +310,10 @@
 </li>
             
 <li >
+    <a href="../../linux/embedded_linux_dev_env/ubuntu_get_kernel_tree/">构建内核源码树</a>
+</li>
+            
+<li >
     <a href="../../linux/embedded_linux_dev_env/samba/">samba服务配置</a>
 </li>
             
@@ -339,10 +343,6 @@
             
 <li >
     <a href="../../gcc_dynamic_linking_library/">GCC编译动态链接库</a>
-</li>
-            
-<li >
-    <a href="../../build_linux_source_tree.md">构建内核源码树</a>
 </li>
             
 <li >
@@ -487,7 +487,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/FanHongchuang/notebook/edit/master/docs/Embedded System/c&c++/complement.md">Edit on Notebook</a>
+                                <a href="https://github.com/edgeML/notebook/edit/master/docs/Embedded System/c&c++/complement.md">Edit on Notebook</a>
                             </li>
                     </ul>
                 </div>
@@ -532,9 +532,9 @@
 <h2 id="2">2. 补码<a class="headerlink" href="#2" title="Permanent link">#</a></h2>
 <p>减去一个数相当于加上这个数的负数，这样减法就转换成了加法。</p>
 <p>比如：</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>0x33 - 0x11  ====&gt;  0x33 + (-0x11)  // 那么在计算机中怎么表示-0x11呢？
-</pre></div>
-</td></tr></table>
+<pre><code>0x33 - 0x11  ====&gt;  0x33 + (-0x11)  // 那么在计算机中怎么表示-0x11呢？
+
+</code></pre>
 
 <p>所以解决减法问题，其实就是解决<strong>负数的表示问题</strong>，而众所周知，绝对值相等的两个正负数之和为0。</p>
 <p>假设我们有正数 <code>0000 0000 0000 1111</code>，我们如何表示其相反数呢？</p>
@@ -543,17 +543,13 @@
 <p>所以，为何不找出一个与它相加后结果是<code>1111 1111 1111 1111</code>的数<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>，
 然后该数+1（+1溢出，所以相加的和就是0）即是我们所要的答案<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>。</p>
 <p>于是，很容易得出:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>  0000 0000 0000 1111 
+<pre><code>  0000 0000 0000 1111 
 + 1111 1111 1111 0000  // 先找出相加为1111 1111 1111 1111的数，既是反码
 + 1                    // 然后再加1，既是补码
 
 = 1111 1111 1111 1111 + 1 = (1)0000 0000 0000 0000
-</pre></div>
-</td></tr></table>
+
+</code></pre>
 
 <p>一目了然，补码<code>1111 1111 1111 0001</code> 就是我们想要的答案。</p>
 <h2 id="3">3. 总结<a class="headerlink" href="#3" title="Permanent link">#</a></h2>

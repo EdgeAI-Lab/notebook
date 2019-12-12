@@ -310,6 +310,10 @@
 </li>
             
 <li >
+    <a href="../../Embedded System/linux/embedded_linux_dev_env/ubuntu_get_kernel_tree/">构建内核源码树</a>
+</li>
+            
+<li >
     <a href="../../Embedded System/linux/embedded_linux_dev_env/samba/">samba服务配置</a>
 </li>
             
@@ -339,10 +343,6 @@
             
 <li >
     <a href="../../Embedded System/gcc_dynamic_linking_library/">GCC编译动态链接库</a>
-</li>
-            
-<li >
-    <a href="../../Embedded System/build_linux_source_tree.md">构建内核源码树</a>
 </li>
             
 <li >
@@ -487,7 +487,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/FanHongchuang/notebook/edit/master/docs/Multimedia/pcm.md">Edit on Notebook</a>
+                                <a href="https://github.com/edgeML/notebook/edit/master/docs/Multimedia/pcm.md">Edit on Notebook</a>
                             </li>
                     </ul>
                 </div>
@@ -523,17 +523,12 @@
 <p><img alt="pcm_1ch" src="../../assets/images/pcm_1ch.png" /></p>
 <p>每个整数占据2个字节(16-bit)，9个采样也就是18字节的数据。每个采样的整数大小最小为 -32768，最大为 32768 。根据采样数据的位置和值画一个图的话，就会得到像播放器上那样的波浪形图。</p>
 <p>我们可以像下面伪代码示例这样将数据读入一个C语言数组 :</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kt">FILE</span> <span class="o">*</span><span class="n">pcmfile</span>
-<span class="kt">int16_t</span> <span class="o">*</span><span class="n">pcmdata</span><span class="p">;</span>
-<span class="n">pcmfile</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="n">your</span> <span class="n">pcm</span> <span class="n">data</span> <span class="n">file</span><span class="p">);</span>
-<span class="n">pcmdata</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="n">size</span> <span class="n">of</span> <span class="n">the</span> <span class="n">file</span><span class="p">);</span>
-<span class="n">fread</span><span class="p">(</span><span class="n">pcmdata</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int16_t</span><span class="p">),</span> <span class="n">size</span> <span class="n">of</span> <span class="n">file</span> <span class="o">/</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int16_t</span><span class="p">),</span> <span class="n">pcmfile</span><span class="p">);</span> 
-</pre></div>
-</td></tr></table>
+<pre><code class="c">FILE *pcmfile
+int16_t *pcmdata;
+pcmfile = fopen(your pcm data file);
+pcmdata = malloc(size of the file);
+fread(pcmdata, sizeof(int16_t), size of file / sizeof(int16_t), pcmfile); 
+</code></pre>
 
 <p>如果我们将这些数据送入声卡，我们就可以听到声音。当然我们需要告诉声卡这些数据的采样率。若我们告知声卡的采样率大于数据本身的采样率，那么这些数据的播放速度会高于其原始的速度。就是快放的功能。</p>
 <p>立体声：</p>

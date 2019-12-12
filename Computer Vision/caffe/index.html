@@ -310,6 +310,10 @@
 </li>
             
 <li >
+    <a href="../../Embedded System/linux/embedded_linux_dev_env/ubuntu_get_kernel_tree/">构建内核源码树</a>
+</li>
+            
+<li >
     <a href="../../Embedded System/linux/embedded_linux_dev_env/samba/">samba服务配置</a>
 </li>
             
@@ -339,10 +343,6 @@
             
 <li >
     <a href="../../Embedded System/gcc_dynamic_linking_library/">GCC编译动态链接库</a>
-</li>
-            
-<li >
-    <a href="../../Embedded System/build_linux_source_tree.md">构建内核源码树</a>
 </li>
             
 <li >
@@ -477,7 +477,7 @@
                             </a>
                         </li>
                             <li>
-                                <a href="https://github.com/FanHongchuang/notebook/edit/master/docs/Computer Vision/caffe.md">Edit on Notebook</a>
+                                <a href="https://github.com/edgeML/notebook/edit/master/docs/Computer Vision/caffe.md">Edit on Notebook</a>
                             </li>
                     </ul>
                 </div>
@@ -501,147 +501,103 @@
 <p>下面以小编自己的理解，在Ubuntu18.04中进行Caffe安装。</p>
 <p>Caffe官网介绍</p>
 <h2 id="1">1.安装依赖<a class="headerlink" href="#1" title="Permanent link">#</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler
+<pre><code>sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler
 
 sudo apt-get install --no-install-recommends libboost-all-dev
 
 sudo apt-get install libatlas-base-dev
 
 sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev
-</pre></div>
-</td></tr></table>
+</code></pre>
 
 <h2 id="2">2.配置文件<a class="headerlink" href="#2" title="Permanent link">#</a></h2>
 <p>将caffe源码根目录下的Makefile.config.example文件复制一份，并命名为
 Makefile.config</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cp Makefile.config.example Makefile.config
-</pre></div>
-</td></tr></table>
+<pre><code>cp Makefile.config.example Makefile.config
+</code></pre>
 
 <p>修改Makefile.config文件</p>
 <ul>
 <li>CPU版本</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>CPU_ONLY := 1
-</pre></div>
-</td></tr></table>
+<pre><code>CPU_ONLY := 1
+</code></pre>
 
 <ul>
 <li>OpenCV版本</li>
 </ul>
 <p>查看系统中安装的OpenCV版本</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pkg-config --modversion opencv
-</pre></div>
-</td></tr></table>
+<pre><code>pkg-config --modversion opencv
+</code></pre>
 
 <p>如果上面指令的打印结果是：3.x.x(Ubuntu18.04 默认是3.2.0)</p>
 <p>请去掉OPENCV_VERSION的注释</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span># Uncomment if you&#39;re using OpenCV 3
+<pre><code># Uncomment if you're using OpenCV 3
 OPENCV_VERSION := 3
-</pre></div>
-</td></tr></table>
+</code></pre>
 
 <ul>
 <li>将HDF5的头文件和库路径添加进来</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/include/hdf5/serial
+<pre><code>INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/include/hdf5/serial
 
 LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib /usr/lib/x86_64-linux-gnu/hdf5/serial
-</pre></div>
-</td></tr></table>
+</code></pre>
 
 <ul>
 <li>如果你使用的是OpenBLAS</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># 将BLAS的值修改为open，因为我们将使用openBLAS</span>
-BLAS :<span class="o">=</span> open
+<pre><code class="bash"># 将BLAS的值修改为open，因为我们将使用openBLAS
+BLAS := open
 
-<span class="c1"># 如果你使用的OpenBLAS没有安装在自定义目录，请添加头文件路径和库文件路径</span>
-<span class="c1"># Whatever else you find you need goes here.</span>
-INCLUDE_DIRS :<span class="o">=</span> <span class="k">$(</span>PYTHON_INCLUDE<span class="k">)</span> /usr/local/include /home/fhc/caffe/openblas_install/include
-LIBRARY_DIRS :<span class="o">=</span> <span class="k">$(</span>PYTHON_LIB<span class="k">)</span> /usr/local/lib /usr/lib /home/fhc/caffe/openblas_install/lib
-</pre></div>
-</td></tr></table>
+# 如果你使用的OpenBLAS没有安装在自定义目录，请添加头文件路径和库文件路径
+# Whatever else you find you need goes here.
+INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /home/fhc/caffe/openblas_install/include
+LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib /home/fhc/caffe/openblas_install/lib
+
+</code></pre>
 
 <ul>
 <li>Install OpenBLAS(Base Linear Algebra Subprograms)
 modify the BLAS := open in the Makefile.config</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>git clone https://github.com/xianyi/OpenBLAS.git
+<pre><code class="bash">git clone https://github.com/xianyi/OpenBLAS.git
 make 
 make install
-</pre></div>
-</td></tr></table>
+</code></pre>
 
 <p>modify the BLAS_INCLUDE &amp; BLAS_LIB</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>BLAS_INCLUDE :<span class="o">=</span> /opt/OpenBLAS/include 
-BLAS_LIB :<span class="o">=</span> /opt/OpenBLAS/lib
-</pre></div>
-</td></tr></table>
+<pre><code class="bash">BLAS_INCLUDE := /opt/OpenBLAS/include 
+BLAS_LIB := /opt/OpenBLAS/lib
+</code></pre>
 
 <h2 id="3">3.编译<a class="headerlink" href="#3" title="Permanent link">#</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cd $caffe_root
+<pre><code>cd $caffe_root
 make all
-</pre></div>
-</td></tr></table>
+</code></pre>
 
 <p>如果需要在python中使用，首先安装numpy库</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo pip install numpy
-</pre></div>
-</td></tr></table>
+<pre><code>sudo pip install numpy
+</code></pre>
 
 <p>然后在make all结束后，执行如下指令：</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>make pycaffe
-</pre></div>
-</td></tr></table>
+<pre><code>make pycaffe
+</code></pre>
 
 <p>最后将pycaffe的路径添加到PYTHONPATH</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span># 这种方式是临时添加，再次启动终端需要重新添加
+<pre><code># 这种方式是临时添加，再次启动终端需要重新添加
 export PYTHONPATH=/path/to/caffe/python:$PYTHONPATH
-</pre></div>
-</td></tr></table>
+</code></pre>
 
 <h2 id="4">4. 可能会遇到的错误<a class="headerlink" href="#4" title="Permanent link">#</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span># 错误信息
-undefined reference to `cv::imread(cv::String const&amp;, int)&#39;
+<pre><code># 错误信息
+undefined reference to `cv::imread(cv::String const&amp;, int)'
 
 # 解决方法
 修改Makefile.config,将OPENCV_VERSION := 3
-</pre></div>
-</td></tr></table>
+</code></pre>
 
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span># 错误信心
+<pre><code># 错误信心
 ImportError: No module named _caffe
 
 # 解决方法
@@ -649,38 +605,17 @@ make pycaffe
 
 # 并将pycaffe路径添加到PYTHONPATH
 export PYTHONPATH=/path/to/caffe/python:$PYTHONPATH
-</pre></div>
-</td></tr></table>
 
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span># 错误信息
+</code></pre>
+
+<pre><code># 错误信息
 ImportError: No module named skimage.io
 
 # 解决方法
 pip install scikit-image
-</pre></div>
-</td></tr></table>
+</code></pre>
 
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17</pre></div></td><td class="code"><div class="codehilite"><pre><span></span># 错误信息
+<pre><code># 错误信息
 python/caffe/_caffe.cpp:10:10: fatal error: numpy/arrayobject.h: No such file or directory
  #include &lt;numpy/arrayobject.h&gt;
           ^~~~~~~~~~~~~~~~~~~~~
@@ -688,7 +623,7 @@ compilation terminated.
 
 # 解决方法
 
-使用help(&#39;numpy&#39;)可以查看到numpy的实际安装位置，然后在Makefile.config中配置numpy的真实路径
+使用help('numpy')可以查看到numpy的实际安装位置，然后在Makefile.config中配置numpy的真实路径
 
 PYTHON_INCLUDE := ... /home/your_name/.local/lib/python2.7/site-packages/numpy/core/include
 
@@ -697,16 +632,12 @@ PYTHON_INCLUDE := ... /home/your_name/.local/lib/python2.7/site-packages/numpy/c
 caffe编译系统没有找到你安装的numpy，通常是因为你安装numpy的方法是：
 pip install numpy
 pip前不加sudo的话，python库会被安装到/home/your_name/.local/lib/python2.7/site-packages/中
-</pre></div>
-</td></tr></table>
+</code></pre>
 
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ImportError: No module named google.protobuf.internal
+<pre><code>ImportError: No module named google.protobuf.internal
 
 pip install protobuf
-</pre></div>
-</td></tr></table></div>
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">

@@ -310,6 +310,10 @@
 </li>
             
 <li >
+    <a href="../../Embedded System/linux/embedded_linux_dev_env/ubuntu_get_kernel_tree/">构建内核源码树</a>
+</li>
+            
+<li >
     <a href="../../Embedded System/linux/embedded_linux_dev_env/samba/">samba服务配置</a>
 </li>
             
@@ -339,10 +343,6 @@
             
 <li >
     <a href="../../Embedded System/gcc_dynamic_linking_library/">GCC编译动态链接库</a>
-</li>
-            
-<li >
-    <a href="../../Embedded System/build_linux_source_tree.md">构建内核源码树</a>
 </li>
             
 <li >
@@ -487,7 +487,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/FanHongchuang/notebook/edit/master/docs/Multimedia/av_synchronization.md">Edit on Notebook</a>
+                                <a href="https://github.com/edgeML/notebook/edit/master/docs/Multimedia/av_synchronization.md">Edit on Notebook</a>
                             </li>
                     </ul>
                 </div>
@@ -520,45 +520,36 @@
 <li>time_interval: 时间间隔，可以理解为播放frame_size大小的音频数据需要的时间</li>
 <li>pts: 时间戳</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>time_interval(ms) = frame_byte_size/channel_num/(sample_resolution/8) * 1000 / sample_rate (ms)
+<pre><code>time_interval(ms) = frame_byte_size/channel_num/(sample_resolution/8) * 1000 / sample_rate (ms)
 
 pts(ms) = audio_index++ * time_interval (ms)
         = audio_index++ * (frame_size * 1000) / sample_rate (ms)
-</pre></div>
-</td></tr></table>
+
+</code></pre>
 
 <p>eg:  </p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>48k 2ch 16bit  frame size 为10ms  
-</pre></div>
-</td></tr></table>
+<pre><code>48k 2ch 16bit  frame size 为10ms  
+</code></pre>
 
 <p>那么  </p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>frame_byte_size = 10ms/1000ms * 48k = 480 byte  
+<pre><code>frame_byte_size = 10ms/1000ms * 48k = 480 byte  
 channel_num = 2  
 sample_resolution = 16
 
 time_interval(ms)  
 = frame_byte_size/channel_num/(sample_resolution/8) * 1000 / sample_rate (ms)  
 = 480/2/(16/2)*1000/48000 (ms)
-</pre></div>
-</td></tr></table>
+
+</code></pre>
 
 <h3 id="12">1.2 视频时间戳<a class="headerlink" href="#12" title="Permanent link">#</a></h3>
 <ul>
 <li>fps: 视频帧率</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pts(ms) = video_index++ * 1000 / fps (ms)
-</pre></div>
-</td></tr></table></div>
+<pre><code>
+pts(ms) = video_index++ * 1000 / fps (ms)
+
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">

@@ -310,6 +310,10 @@
 </li>
             
 <li >
+    <a href="../../Embedded System/linux/embedded_linux_dev_env/ubuntu_get_kernel_tree/">构建内核源码树</a>
+</li>
+            
+<li >
     <a href="../../Embedded System/linux/embedded_linux_dev_env/samba/">samba服务配置</a>
 </li>
             
@@ -339,10 +343,6 @@
             
 <li >
     <a href="../../Embedded System/gcc_dynamic_linking_library/">GCC编译动态链接库</a>
-</li>
-            
-<li >
-    <a href="../../Embedded System/build_linux_source_tree.md">构建内核源码树</a>
 </li>
             
 <li >
@@ -477,7 +477,7 @@
                             </a>
                         </li>
                             <li>
-                                <a href="https://github.com/FanHongchuang/notebook/edit/master/docs/Python/tensorflow_install_on_windows.md">Edit on Notebook</a>
+                                <a href="https://github.com/edgeML/notebook/edit/master/docs/Python/tensorflow_install_on_windows.md">Edit on Notebook</a>
                             </li>
                     </ul>
                 </div>
@@ -493,36 +493,27 @@
                 <div class="col-md-9" role="main">
 
 <h1 id="tensorflow">安装Tensorflow<a class="headerlink" href="#tensorflow" title="Permanent link">#</a></h1>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># Current stable release for CPU-only</span>
+<pre><code class="shell">
+# Current stable release for CPU-only
 pip install tensorflow
 
-<span class="c1"># Preview nightly build for CPU-only (unstable)</span>
+# Preview nightly build for CPU-only (unstable)
 pip install tf-nightly
 
-<span class="c1"># Install TensorFlow 2.0 Beta</span>
-pip install <span class="nv">tensorflow</span><span class="o">==</span><span class="m">2</span>.0.0-beta1
-</pre></div>
-</td></tr></table>
+# Install TensorFlow 2.0 Beta
+pip install tensorflow==2.0.0-beta1
+
+</code></pre>
 
 <p>如果报错，那么请升级您的pip，numpy和matplotlib</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>python -m install --upgrade pip
+<pre><code class="shell">
+python -m install --upgrade pip
 
 pip install -U numpy
 
 pip install -U matplotlib
-</pre></div>
-</td></tr></table></div>
+
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">

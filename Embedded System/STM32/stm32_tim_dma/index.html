@@ -310,6 +310,10 @@
 </li>
             
 <li >
+    <a href="../../linux/embedded_linux_dev_env/ubuntu_get_kernel_tree/">构建内核源码树</a>
+</li>
+            
+<li >
     <a href="../../linux/embedded_linux_dev_env/samba/">samba服务配置</a>
 </li>
             
@@ -339,10 +343,6 @@
             
 <li >
     <a href="../../gcc_dynamic_linking_library/">GCC编译动态链接库</a>
-</li>
-            
-<li >
-    <a href="../../build_linux_source_tree.md">构建内核源码树</a>
 </li>
             
 <li >
@@ -477,7 +477,7 @@
                             </a>
                         </li>
                             <li>
-                                <a href="https://github.com/FanHongchuang/notebook/edit/master/docs/Embedded System/STM32/stm32_tim_dma.md">Edit on Notebook</a>
+                                <a href="https://github.com/edgeML/notebook/edit/master/docs/Embedded System/STM32/stm32_tim_dma.md">Edit on Notebook</a>
                             </li>
                     </ul>
                 </div>
@@ -498,11 +498,11 @@
 <li>配置DAM for TIM</li>
 <li>start DAM，流程如下：</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>                         <span class="c1">// enable </span>
-<span class="n">HAL_TIM_PWM_Start_DMA</span> <span class="o">-&gt;</span> <span class="n">HAL_DMA_Start_IT</span> <span class="o">-&gt;</span> <span class="n">__HAL_TIM_ENABLE_DMA</span>
-</pre></div>
-</td></tr></table>
+<pre><code class="c">                         // enable 
+HAL_TIM_PWM_Start_DMA -&gt; HAL_DMA_Start_IT -&gt; __HAL_TIM_ENABLE_DMA
+
+
+</code></pre>
 
 <p>HAL_TIM_DMABurst_WriteStart
 HAL_DMA_Start</p></div>

@@ -310,6 +310,10 @@
 </li>
             
 <li >
+    <a href="../../linux/embedded_linux_dev_env/ubuntu_get_kernel_tree/">构建内核源码树</a>
+</li>
+            
+<li >
     <a href="../../linux/embedded_linux_dev_env/samba/">samba服务配置</a>
 </li>
             
@@ -339,10 +343,6 @@
             
 <li >
     <a href="../../gcc_dynamic_linking_library/">GCC编译动态链接库</a>
-</li>
-            
-<li >
-    <a href="../../build_linux_source_tree.md">构建内核源码树</a>
 </li>
             
 <li >
@@ -487,7 +487,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/FanHongchuang/notebook/edit/master/docs/Embedded System/c&c++/c_pragma.md">Edit on Notebook</a>
+                                <a href="https://github.com/edgeML/notebook/edit/master/docs/Embedded System/c&c++/c_pragma.md">Edit on Notebook</a>
                             </li>
                     </ul>
                 </div>
@@ -506,114 +506,71 @@
 
 <h1 id="pragma-pack"><code>#pragma pack</code><a class="headerlink" href="#pragma-pack" title="Permanent link">#</a></h1>
 <h2 id="1pragma-pack">1.#pragma pack使用说明<a class="headerlink" href="#1pragma-pack" title="Permanent link">#</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">#pragma pack(1)</span>
+<pre><code class="c">#pragma pack(1)
 
-<span class="cp">#pragma pack()</span>
-</pre></div>
-</td></tr></table>
+#pragma pack()
+
+</code></pre>
 
 <p>这是给编译器用的参数设置，有关结构体字节对齐方式设置， #pragma pack是指定数据在内存中的对齐方式。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">#pragma pack (n) </span><span class="c1">// C编译器将按照n个字节对齐。</span>
-<span class="cp">#pragma pack ()  </span><span class="c1">// 取消自定义字节对齐方式。</span>
-</pre></div>
-</td></tr></table>
+<pre><code class="c">#pragma pack (n) // C编译器将按照n个字节对齐。
+#pragma pack ()  // 取消自定义字节对齐方式。
+</code></pre>
 
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">#pragma pack (push,1) </span><span class="c1">// 是指把原来对齐方式设置压栈，并设新的对齐方式设置为一个字节对齐</span>
-<span class="cp">#pragma pack(pop)      </span><span class="c1">// 恢复对齐状态</span>
-</pre></div>
-</td></tr></table>
+<pre><code class="c">#pragma pack (push,1) // 是指把原来对齐方式设置压栈，并设新的对齐方式设置为一个字节对齐
+#pragma pack(pop)      // 恢复对齐状态
+
+</code></pre>
 
 <p>因此可见，加入push和pop可以使对齐恢复到原来状态，而不是编译器默认。</p>
 <h2 id="2">2.示例<a class="headerlink" href="#2" title="Permanent link">#</a></h2>
 <h3 id="21pragma-pack">2.1不使用#pragma pack<a class="headerlink" href="#21pragma-pack" title="Permanent link">#</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<pre><code class="c">#include &lt;stdio.h&gt;
 
-<span class="k">struct</span> <span class="n">sample</span><span class="p">{</span>
-    <span class="kt">char</span> <span class="n">a</span><span class="p">;</span>
-    <span class="kt">double</span> <span class="n">b</span><span class="p">;</span>
-<span class="p">};</span>
+struct sample{
+    char a;
+    double b;
+};
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
+int main()
+{
 
-    <span class="k">struct</span> <span class="n">sample</span> <span class="n">sple</span><span class="p">;</span>
-    <span class="n">sple</span><span class="p">.</span><span class="n">a</span> <span class="o">=</span> <span class="sc">&#39;O&#39;</span><span class="p">;</span>
-    <span class="n">sple</span><span class="p">.</span><span class="n">b</span> <span class="o">=</span> <span class="mf">12.445</span><span class="p">;</span>
+    struct sample sple;
+    sple.a = 'O';
+    sple.b = 12.445;
 
-    <span class="c1">// 结果是16，因为结构体在存储时，是以结构体成员中占内存最多的数据类型所占的字节数为标准，</span>
-    <span class="c1">// 所有的成员在分配内存时都要与这个长度对齐，所以本例中char占8个字节，double占8字节</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">sple</span><span class="p">));</span> 
+    // 结果是16，因为结构体在存储时，是以结构体成员中占内存最多的数据类型所占的字节数为标准，
+    // 所有的成员在分配内存时都要与这个长度对齐，所以本例中char占8个字节，double占8字节
+    printf(&quot;%d\n&quot;,sizeof(sple)); 
 
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</pre></div>
-</td></tr></table>
+    return 0;
+
+</code></pre>
 
 <h3 id="22pragma-pack">2.2使用#pragma pack<a class="headerlink" href="#22pragma-pack" title="Permanent link">#</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<pre><code class="c">#include &lt;stdio.h&gt;
 
-<span class="cp">#pragma pack(1)  </span><span class="c1">// 使结构体按1字节方式对齐</span>
-<span class="k">struct</span> <span class="n">sample</span><span class="p">{</span>
-    <span class="kt">char</span> <span class="n">a</span><span class="p">;</span>
-    <span class="kt">double</span> <span class="n">b</span><span class="p">;</span>
-<span class="p">};</span>
-<span class="cp">#pragma pack()</span>
+#pragma pack(1)  // 使结构体按1字节方式对齐
+struct sample{
+    char a;
+    double b;
+};
+#pragma pack()
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
+int main()
+{
 
-    <span class="k">struct</span> <span class="n">sample</span> <span class="n">sple</span><span class="p">;</span>
-    <span class="n">sple</span><span class="p">.</span><span class="n">a</span> <span class="o">=</span> <span class="sc">&#39;O&#39;</span><span class="p">;</span>
-    <span class="n">sple</span><span class="p">.</span><span class="n">b</span> <span class="o">=</span> <span class="mf">12.445</span><span class="p">;</span>
+    struct sample sple;
+    sple.a = 'O';
+    sple.b = 12.445;
 
-    <span class="c1">// 结果是9，因为使用#pragma pack(1)后，</span>
-    <span class="c1">// 结构体sample为1字节对齐，char占1字节，double占8字节</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">sple</span><span class="p">));</span> 
+    // 结果是9，因为使用#pragma pack(1)后，
+    // 结构体sample为1字节对齐，char占1字节，double占8字节
+    printf(&quot;%d\n&quot;,sizeof(sple)); 
 
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</pre></div>
-</td></tr></table></div>
+    return 0;
+
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">

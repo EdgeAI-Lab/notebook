@@ -310,6 +310,10 @@
 </li>
             
 <li >
+    <a href="../linux/embedded_linux_dev_env/ubuntu_get_kernel_tree/">构建内核源码树</a>
+</li>
+            
+<li >
     <a href="../linux/embedded_linux_dev_env/samba/">samba服务配置</a>
 </li>
             
@@ -339,10 +343,6 @@
             
 <li >
     <a href="../gcc_dynamic_linking_library/">GCC编译动态链接库</a>
-</li>
-            
-<li >
-    <a href="../build_linux_source_tree.md">构建内核源码树</a>
 </li>
             
 <li >
@@ -487,7 +487,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/FanHongchuang/notebook/edit/master/docs/Embedded System/linux_shell_program.md">Edit on Notebook</a>
+                                <a href="https://github.com/edgeML/notebook/edit/master/docs/Embedded System/linux_shell_program.md">Edit on Notebook</a>
                             </li>
                     </ul>
                 </div>
@@ -506,23 +506,15 @@
 
 <h1 id="linux-shell-script-program">Linux Shell Script Program<a class="headerlink" href="#linux-shell-script-program" title="Permanent link">#</a></h1>
 <h2 id="_1">分支语句<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">dir</span><span class="o">=</span>/home/fhc/dir               <span class="c1"># dir和=之间不能有空格</span>
+<pre><code class="shell">dir=/home/fhc/dir               # dir和=之间不能有空格
 
-<span class="k">if</span> <span class="o">[</span> -d <span class="s2">&quot;</span><span class="nv">$dir</span><span class="s2">&quot;</span> <span class="o">]</span>                <span class="c1"># if和[之间必须有一个空格，[和-d之间必须有一个空格，   &quot;$dir&quot;和]之间必须有一个空格</span>
-<span class="k">then</span>                            <span class="c1"># then必须另起一行（或者 f [ -d &quot;$dir&quot; ];then ）</span>
-    <span class="nb">echo</span> <span class="s2">&quot;dir is existed!&quot;</span>
-<span class="k">else</span>
-    <span class="nb">echo</span> <span class="s2">&quot;dir isn&#39;t existed!&quot;</span>
-<span class="k">fi</span>
-</pre></div>
-</td></tr></table>
+if [ -d &quot;$dir&quot; ]                # if和[之间必须有一个空格，[和-d之间必须有一个空格，   &quot;$dir&quot;和]之间必须有一个空格
+then                            # then必须另起一行（或者 f [ -d &quot;$dir&quot; ];then ）
+    echo &quot;dir is existed!&quot;
+else
+    echo &quot;dir isn't existed!&quot;
+fi
+</code></pre>
 
 <ul>
 <li>-d 判断一个文件夹是否存在</li>
@@ -531,15 +523,11 @@
 <blockquote>
 <p>上一条指令执行完毕才执行下一条指令</p>
 </blockquote>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># 将指令的返回值赋给一个变量，这样本条指令执行完毕，才会继续向下执行</span>
-<span class="nv">rm_ok</span><span class="o">=</span><span class="sb">`</span>sudo rm /var/www/html/*<span class="sb">`</span> 
+<pre><code class="shell"># 将指令的返回值赋给一个变量，这样本条指令执行完毕，才会继续向下执行
+rm_ok=`sudo rm /var/www/html/*` 
 
-<span class="nv">cp_ok</span><span class="o">=</span><span class="sb">`</span>sudo cp xxx xxx<span class="sb">`</span>
-</pre></div>
-</td></tr></table></div>
+cp_ok=`sudo cp xxx xxx`
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">

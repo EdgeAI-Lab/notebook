@@ -310,6 +310,10 @@
 </li>
             
 <li >
+    <a href="../../Embedded System/linux/embedded_linux_dev_env/ubuntu_get_kernel_tree/">构建内核源码树</a>
+</li>
+            
+<li >
     <a href="../../Embedded System/linux/embedded_linux_dev_env/samba/">samba服务配置</a>
 </li>
             
@@ -339,10 +343,6 @@
             
 <li >
     <a href="../../Embedded System/gcc_dynamic_linking_library/">GCC编译动态链接库</a>
-</li>
-            
-<li >
-    <a href="../../Embedded System/build_linux_source_tree.md">构建内核源码树</a>
 </li>
             
 <li >
@@ -487,7 +487,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/FanHongchuang/notebook/edit/master/docs/ML/tensorflow_install.md">Edit on Notebook</a>
+                                <a href="https://github.com/edgeML/notebook/edit/master/docs/ML/tensorflow_install.md">Edit on Notebook</a>
                             </li>
                     </ul>
                 </div>
@@ -509,14 +509,7 @@
 <ul>
 <li>安装指令</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span># Requires the latest pip
+<pre><code># Requires the latest pip
 pip install --upgrade pip
 
 # Current stable release for CPU-only
@@ -524,65 +517,43 @@ pip install tensorflow
 
 # Or preview build for CPU/GPU (unstable)
 pip install tf-nightly
-</pre></div>
-</td></tr></table>
+</code></pre>
 
 <ul>
 <li>安装后查看版本</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="kn">as</span> <span class="nn">tf</span>
-<span class="k">print</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
-</pre></div>
-</td></tr></table>
+<pre><code class="python">import tensorflow as tf
+print(tf.__version__)
+</code></pre>
 
 <h2 id="2">2. 可能会遇到的问题<a class="headerlink" href="#2" title="Permanent link">#</a></h2>
 <ul>
 <li>pip升级后使用报错</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span># Error: from pip import main ImportError: cannot import name main
+<pre><code># Error: from pip import main ImportError: cannot import name main
 
 # solved
 hash -d pip
-</pre></div>
-</td></tr></table>
+
+</code></pre>
 
 <ul>
 <li>pip安装无权限</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span># ERROR: Could not install packages due to an EnvironmentError: [Errno 13] Permission denied: &#39;/usr/local/lib/python3.6/dist-packages/rsa&#39;
+<pre><code># ERROR: Could not install packages due to an EnvironmentError: [Errno 13] Permission denied: '/usr/local/lib/python3.6/dist-packages/rsa'
 
 # solved
 pip install --user tensorflow
 
 # or
 sudo pip install tensorflow
-</pre></div>
-</td></tr></table>
+
+</code></pre>
 
 <ul>
 <li>sudo pip报错</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span># Error: from pip import main ImportError: cannot import name main
+<pre><code># Error: from pip import main ImportError: cannot import name main
 
 # solved:
 
@@ -593,15 +564,13 @@ sudo pip install tensorflow
 3. sudo pip一般使用的是/usr/bin等系统目录下的pip
 
 4. 将测试正确的pip复制到系统目录，比如/usr/bin
-</pre></div>
-</td></tr></table>
+</code></pre>
 
 <ul>
 <li>安装后查看Tensorflow不是最新版本</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pip install --upgrade tensorflow
-</pre></div>
-</td></tr></table></div>
+<pre><code>pip install --upgrade tensorflow
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">
