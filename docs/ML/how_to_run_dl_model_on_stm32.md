@@ -67,7 +67,7 @@ CIFAR-10数据集官网：https://www.cs.toronto.edu/~kriz/cifar.html
 
 ### 2.4 项目的输出
 
-输出是测试图像所属的类别的概率，概率值最大的就是目标图像的所属类，输出结果如下图所示：
+输出是测试图像所属的类别的概率，概率值最大的就是目标图像的所属类别，输出结果如下图所示：
 
 ![](..\assets\images\ml\how_to_run_dl_model_on_stm32\stm32_image_classifier_output_result.png)
 
@@ -101,6 +101,8 @@ y_i = 2^(x_i) / sum(2^x_j)
 
 
 ### 4. 相关链接
+
+* https://mp.weixin.qq.com/s/KUaZlZa6GuHJkKwhGmzczw
 * https://github.com/BVLC/caffe
 * https://github.com/ARM-software/ML-examples/tree/master/cmsisnn-cifar10
 * https://github.com/ARM-software/CMSIS_5/tree/develop/CMSIS/NN/Examples/ARM/arm_nn_examples/cifar10

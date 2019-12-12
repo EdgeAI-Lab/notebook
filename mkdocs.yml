@@ -10,7 +10,7 @@ static_templates:
 
 nav:
     - Home: index.md
-    - About Me: about.md
+    # - About Me: about.md
     - Android:
       - Android开机自启:
         - Launcher: Android/android_source_code/android_launcher.md
@@ -46,7 +46,14 @@ nav:
       - Tensorflow模型转换: ML\tensorflow_model.md
       - 嵌入式机器学习: 
         - 00~STM32图像分类: ML\how_to_run_dl_model_on_stm32.md
-      
+
+      - Python:
+        - matplotlib使用: Python/matplotlib.md
+        - 三角函数: Python/python_trigonometric.md
+        - 录音与播放: Python/python_record_play.md  
+        - CRC16: Python/crc16.md
+        - Python字符串格式化: Python/python_string_format.md
+
 
     - Embedded System:
       - C/C++: 
@@ -90,20 +97,9 @@ nav:
         - GCC&Clang&LLVM的关系: Embedded System/gcc_clang_llvm.md
       - Zigbee: Embedded System/zigbee_keys.md
       - NanoPC RK3399:  Embedded System/nanopc_m4.md
-      
-      
-        
-    - Python: 
-        - matplotlib使用: Python/matplotlib.md
-        - 三角函数: Python/python_trigonometric.md
-        - 录音与播放: Python/python_record_play.md  
-        - CRC16: Python/crc16.md
-        - Python字符串格式化: Python/python_string_format.md
-      
-    - Computer Vision:
-      - caffe: Computer Vision/caffe.md
-      - cv_library: Computer Vision/cv_library.md
-      - OpenCV4Android: Computer Vision/OpenCV4Android_001.md
+
+      - Hardware:
+        - 电池工作时间的计算: Hardware/battery_work_time.md
       
     - Multimedia:
       - VOD: Multimedia/AliyunVOD/get_play_url.md
@@ -122,8 +118,10 @@ nav:
       - OPUS: Multimedia/opus.md
       - Ogg: Multimedia/Ogg.md
 
-    - Hardware:
-      - 电池工作时间的计算: Hardware/battery_work_time.md
+    # - Computer Vision:
+    #   - caffe: Computer Vision/caffe.md
+    #   - cv_library: Computer Vision/cv_library.md
+    #   - OpenCV4Android: Computer Vision/OpenCV4Android_001.md
 
     - Tools:
       - UML: Tools/PlantUML.md
@@ -139,7 +137,8 @@ copyright: 'Copyright &copy; 2019 - 2020 Hongchaung Fan'
     
 # Configuration
 theme:
-  name: 'material'
+  # name: 'flatly'
+  name: 'united'
   language: 'en'
   palette:
     primary: 'indigo'
@@ -153,10 +152,12 @@ theme:
 extra:
   social:
     - type: 'github'
-      link: 'https://github.com/FanHongchuang'
+      link: 'https://github.com/edgeML'
 # Chinese is not supported  
   search:
     language: 'en'
+
+  theme_inverse: true
       
 # Extensions
 markdown_extensions:
@@ -166,4 +167,8 @@ markdown_extensions:
       guess_lang: false
       linenums: true
   - toc:
-      permalink: true
+      permalink: '#'
+
+plugins:
+    - search
+    
