@@ -8,11 +8,12 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>00~STM32图像分类 - Notebook</title>
+        <title>00：STM32图像分类 - Notebook</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/extra.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -174,7 +175,7 @@
     <ul class="dropdown-menu">
             
 <li class="active">
-    <a href="./">00~STM32图像分类</a>
+    <a href="./">00：STM32图像分类</a>
 </li>
     </ul>
   </li>
@@ -524,17 +525,17 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#embeddedml00stm32">EmbeddedML系列00：在STM32上运行机器学习模型</a></li>
-            <li><a href="#_1">前言</a></li>
-            <li><a href="#1">1.机器学习技术简介</a></li>
-            <li><a href="#2-stm32">2. 在STM32上进行图像分类试验</a></li>
-            <li><a href="#3">3. 使用来自物联网的图片进行测试</a></li>
+        <li class="main active"><a href="#stm32">STM32图像分类</a></li>
+            <li><a href="#1">1.前言</a></li>
+            <li><a href="#2">2.机器学习技术简介</a></li>
+            <li><a href="#3-stm32">3. 在STM32上进行图像分类试验</a></li>
+            <li><a href="#4">4. 使用来自物联网的图片进行测试</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="embeddedml00stm32">EmbeddedML系列00：在STM32上运行机器学习模型<a class="headerlink" href="#embeddedml00stm32" title="Permanent link">#</a></h1>
-<h2 id="_1">前言<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<h1 id="stm32">STM32图像分类<a class="headerlink" href="#stm32" title="Permanent link">#</a></h1>
+<h2 id="1">1.前言<a class="headerlink" href="#1" title="Permanent link">#</a></h2>
 <p>嵌入式机器学习(EmbeddedML)是一个很大的话题，涉及到的技术很多：</p>
 <ul>
 <li>嵌入式软硬件技术：ARM、C/C++、Linux、Android等</li>
@@ -545,35 +546,35 @@
 </ul>
 <p>不是一两篇文章就能表述清楚的，所以我们决定做一个嵌入式机器学习(EmbeddedML)专栏，通过一系列的文章和视频，带你走进这个新奇的世界！</p>
 <p>亲自动手尝试，是了解一个新事物最好的方式。我们为你准备了一个实际可运行的项目，不需要开发板，只要你有一台电脑就能运行。下面开始！</p>
-<h2 id="1">1.机器学习技术简介<a class="headerlink" href="#1" title="Permanent link">#</a></h2>
+<h2 id="2">2.机器学习技术简介<a class="headerlink" href="#2" title="Permanent link">#</a></h2>
 <p>机器学习可以认为是一种新的编程方式，一种让机器能够具有学习能力的编程方式。</p>
 <p>我们来看看传统的编程方式与机器学习这种编程方式有何不同：</p>
-<p><img alt="" src="../../assets/images/ml/how_to_run_dl_model_on_stm32/traditional_programing.png" />
-传统的编程方式是：使用规则（由程序要编写）和数据生成结果。</p>
+<p><img alt="" src="../../assets/images/ml/how_to_run_dl_model_on_stm32/traditional_programing.png" /></p>
+<p>传统的编程方式是：使用规则（由程序要编写）和数据生成结果。</p>
 <p><img alt="" src="../../assets/images/ml/how_to_run_dl_model_on_stm32/machine_learning.png" /></p>
 <p>机器学习：与传统的编程方式相反，我们输入的是结果和数据，得到的是规则，这个规则是通过机器学习技术得到的，而不是由程序员编写的。</p>
-<h3 id="11">1.1 为什么要使用机器学习技术呢？<a class="headerlink" href="#11" title="Permanent link">#</a></h3>
+<h3 id="21">2.1 为什么要使用机器学习技术呢？<a class="headerlink" href="#21" title="Permanent link">#</a></h3>
 <p>在某些应用场景中，使用机器学习技术的好处是显而易见的。对于计算机来说，实际生活中的很多应用场景都非常的复杂，比如分辨猫和狗，大多数时候，我们无法事先编写一套规则让计算机分辨出哪个是猫哪个是狗，此时机器学习技术的优越性就显现出来了，我们使用大量已标记的猫狗图片，去训练深度网络，得到一个识别猫狗的规则，计算机利用这个规则就能识别猫和狗了。</p>
-<h3 id="12">1.2 机器学习的过程<a class="headerlink" href="#12" title="Permanent link">#</a></h3>
+<h3 id="22">2.2 机器学习的过程<a class="headerlink" href="#22" title="Permanent link">#</a></h3>
 <p>机器学习应用一般分为两个过程：</p>
 <ul>
 <li>一是模型的训练，这个过程需要大量的数据和计算量，一般在计算能力很强的计算机上进行</li>
 <li>二是使用训练所得的模型对输入进行预测，这个过程计算量相对就会小很多，可以在手机上，甚至是在MCU上进行</li>
 </ul>
-<h2 id="2-stm32">2. 在STM32上进行图像分类试验<a class="headerlink" href="#2-stm32" title="Permanent link">#</a></h2>
+<h2 id="3-stm32">3. 在STM32上进行图像分类试验<a class="headerlink" href="#3-stm32" title="Permanent link">#</a></h2>
 <p>这里仅介绍如何在STM32上运行机器学习模型，从而对输入图像的类别进行预测。至于模型的网络搭建、训练和转换将在后续文章中介绍。</p>
 <p>项目地址：https://github.com/edgeML/cifar10_image_classifier_on_stm32</p>
-<h3 id="21">2.1 项目简介<a class="headerlink" href="#21" title="Permanent link">#</a></h3>
+<h3 id="31">3.1 项目简介<a class="headerlink" href="#31" title="Permanent link">#</a></h3>
 <p>本项目实现了在STM32上进行图像分类的任务。使用CIFAR-10数据集，通过Caffe机器学习框架搭建和训练神经网络模型，然后将所得模型进行转换，使其能够运行在STM32上。本项目运行在Keil的模拟器中，所以无需开发板即可体验机器学习在STM32上的应用效果。</p>
-<h3 id="22-cifar-10">2.2 CIFAR-10数据集介绍<a class="headerlink" href="#22-cifar-10" title="Permanent link">#</a></h3>
+<h3 id="32-cifar-10">3.2 CIFAR-10数据集介绍<a class="headerlink" href="#32-cifar-10" title="Permanent link">#</a></h3>
 <p>CIFAR-10数据集由10类32x32的彩色图片组成，一共包含60000张图片，每一类包含6000图片。其中50000张图片作为训练集，10000张图片作为测试集。</p>
 <p>有了CIFAR-10数据集我们就不用自己到处去收集照片了，可以直接开始训练模型，然后使用模型。</p>
 <p>CIFAR-10数据集官网：https://www.cs.toronto.edu/~kriz/cifar.html</p>
 <p><img alt="" src="../../assets/images/ml/how_to_run_dl_model_on_stm32/CIFAR10_images_random.png" /></p>
-<h3 id="23">2.3 项目的输入<a class="headerlink" href="#23" title="Permanent link">#</a></h3>
+<h3 id="33">3.3 项目的输入<a class="headerlink" href="#33" title="Permanent link">#</a></h3>
 <p><img alt="" src="../../assets/images/ml/how_to_run_dl_model_on_stm32/input_image.png" /></p>
 <p>一幅宽32像素高32像素的彩色图像，为方便STM32实验操作，事先将图像转换为像素值数组，存放在arm_nnexamples_cifar10_inputs.h中。</p>
-<h3 id="24">2.4 项目的输出<a class="headerlink" href="#24" title="Permanent link">#</a></h3>
+<h3 id="34">3.4 项目的输出<a class="headerlink" href="#34" title="Permanent link">#</a></h3>
 <p>输出是测试图像所属的类别的概率，概率值最大的就是目标图像的所属类别，输出结果如下图所示：</p>
 <p><img alt="" src="../../assets/images/ml/how_to_run_dl_model_on_stm32/stm32_image_classifier_output_result.png" /></p>
 <p>细心的同学可能要问了，为什么这里的输出是127，而不是一个0~1之间的数？</p>
@@ -586,14 +587,14 @@
 </code></pre>
 
 <p>众所周知，微控制器的计算性能有限，这样做可以大大减小计算量，并且从数学上来讲梯度是一样的，我们依然能够很好地分辨出目标图像的所属类别。</p>
-<h3 id="25">2.5 使用说明：<a class="headerlink" href="#25" title="Permanent link">#</a></h3>
+<h3 id="35">3.5 使用说明：<a class="headerlink" href="#35" title="Permanent link">#</a></h3>
 <p>编译 -&gt; Debug调试运行 -&gt;  打开Debug (printf) Viewer (View-&gt;Serial Windows-&gt;Debug (printf) Viewer)</p>
 <p><img alt="" src="../../assets/images/ml/how_to_run_dl_model_on_stm32/arm_nn_cifar_debug.png" /></p>
-<h2 id="3">3. 使用来自物联网的图片进行测试<a class="headerlink" href="#3" title="Permanent link">#</a></h2>
+<h2 id="4">4. 使用来自物联网的图片进行测试<a class="headerlink" href="#4" title="Permanent link">#</a></h2>
 <p>首先在互联网下载图片，然后使用脚本对图片尺寸调整为32x32，然后再将32x32图片转换成一维数组供STM32使用。大概过程如下所示：</p>
 <p><img alt="" src="../../assets/images/ml/how_to_run_dl_model_on_stm32/resize_and_convert_array.png" /></p>
 <p>图片处理的脚本可在本项目Github仓库获取，项目地址：https://github.com/edgeML/cifar10_image_classifier_on_stm32</p>
-<h3 id="4">4. 相关链接<a class="headerlink" href="#4" title="Permanent link">#</a></h3>
+<h3 id="5">5. 相关链接<a class="headerlink" href="#5" title="Permanent link">#</a></h3>
 <ul>
 <li>https://mp.weixin.qq.com/s/KUaZlZa6GuHJkKwhGmzczw</li>
 <li>https://github.com/BVLC/caffe</li>

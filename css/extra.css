@@ -1,0 +1,23 @@
+h2 {
+  font-size:20pt;
+  margin-top:40px;
+  margin-bottom:20px;
+}
+
+h3 {
+  font-size:17pt;
+  margin-top:25px;
+  margin-bottom:20px;
+}
+
+p {
+  /* color:blue; */
+  font-family:"consolas","宋体";
+  font-size:13pt;
+	/* text-align:justify; */
+	line-height:200%;
+}
+
+ul {
+	line-height:200%;
+}

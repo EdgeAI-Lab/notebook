@@ -13,6 +13,7 @@
         <link href="../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../../css/extra.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -174,7 +175,7 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../../ML/how_to_run_dl_model_on_stm32/">00~STM32图像分类</a>
+    <a href="../../../ML/how_to_run_dl_model_on_stm32/">00：STM32图像分类</a>
 </li>
     </ul>
   </li>
@@ -535,30 +536,50 @@
 
 <h1 id="_1">字符集<a class="headerlink" href="#_1" title="Permanent link">#</a></h1>
 <h2 id="unicode">Unicode<a class="headerlink" href="#unicode" title="Permanent link">#</a></h2>
-<p><code>Unicode provides a unique number for every character, no matter what the platform, program, or language is.</code></p>
+<p>Unicode provides a unique number for every character, no matter what the platform, program, or language is.</p>
 <p><a href="https://home.unicode.org/basic-info/overview/"><code>更多信息请访问Unicode官网</code></a></p>
 <p>Unicode为世界上的每一个字符提供唯一的二进制编码。但是并没有规定这些编码在互联网中的传输和存储方式。</p>
 <p>所以随之出现了UTF-8, UTF-16,UTF-32等，针对Unicode字符集的编码方案，他们解决了Unicode字符在互联网中的传输和存储问题。</p>
 <p>其中应用最多的就是UTF-8。</p>
+<p><a href="https://unicode-table.com">Unicode字符表查询1</a></p>
+<p><a href="https://unicodelookup.com">Unicode字符表查询2</a></p>
+<p><a href="https://unicode.org/charts">Unicode字符表查询2</a></p>
 <h2 id="utf-8">UTF-8<a class="headerlink" href="#utf-8" title="Permanent link">#</a></h2>
-<p>UTF-8采用变长编码（1~4个字节）。</p>
+<p>UTF是 Unicode transformation format 的缩写。</p>
+<p>UTF-8是一种变长的编码方式，一般用 1~4 个字节序列来表示 Unicode 字符，也是目前应用最广泛的一种 Unicode 编码方式。</p>
+<h3 id="utf-8_1">UTF-8编码规则：<a class="headerlink" href="#utf-8_1" title="Permanent link">#</a></h3>
+<ol>
+<li>
+<p>首字节码用来区分采用的编码字节数：如果首字节以 0 开头，表示单字节编码；如果首字节以 110 开头，表示双字节编码；如果首字节以 1110 开头，表示三字节编码，以此类推；</p>
+</li>
+<li>
+<p>除了首字节码外，用 10 开头表示多字节编码的后续字节，下图列出了 UTF-8 用 1~6 个字节所表示的编码方式和码点范围（实际上 1~4 个字节基本可以覆盖大部分 Unicode 码点）；</p>
+</li>
+<li>
+<p>与 ASCII 编码方式完全兼容：U+0000 到 U+007F 范围内(十进制为 0~127)的 Unicode 码点值所对应的字符就是 ASCII 字符集中的字符，用一个字节表示，编码方式和 ASCII 编码一致；</p>
+</li>
+<li>
+<p>从以上UTF-8的编码规则中，可以看出UTF-8是无字节序的（是一个字节一个字节顺序存储的）。</p>
+</li>
+</ol>
+<p><img alt="" src="../../../assets/images/EmbeddedSystem/cs/utf_8_foramt.jpg" /></p>
+<h3 id="utf-8_2">UTF-8解码过程<a class="headerlink" href="#utf-8_2" title="Permanent link">#</a></h3>
+<p>在实际的解码过程中：</p>
 <ul>
 <li>
-<p>UTF-8编码规则：</p>
+<p>情况 1：读取到一个字节的首位为 0，表示这是一个单字节编码的 ASCII 字符；</p>
 </li>
 <li>
-<p>对于单字节的符号，字节的第一位设为0，后面7位为这个符号的 Unicode 码。因此对于英语字母，UTF-8 编码和 ASCII 码是相同的。</p>
+<p>情况 2：读取到一个字节的首位为 1，表示这是一个多字节编码的字符，如继续读到 1，则确定这是首字节，在继续读取直到遇到 0 为止，一共读取了几个 1，就表示在字符为几个字节的编码；</p>
 </li>
 <li>
-<p>对于n字节的符号（n &gt; 1），第一个字节的前n位都设为1，第n + 1位设为0，后面字节的前两位一律设为10。剩下的没有提及的二进制位，全部为这个符号的 Unicode 码。</p>
+<p>情况 3：当读取到一个字节的首位为 1，紧接着读取到一个 0，则该字节是多字节编码的后续字节。</p>
 </li>
 </ul>
-<p>所以UTF-8编码方案<strong>不需要考虑字节序</strong>。</p>
 <h2 id="utf-8-bom">UTF-8 BOM<a class="headerlink" href="#utf-8-bom" title="Permanent link">#</a></h2>
-<p>相比于UTF-8，UTF-8 BOM</p>
-<p>BOM即byte order mark，具体含义可百度百科或维基百科，UTF-8文件中放置BOM主要是微软的习惯，但是放在别的系统上会出现问题。</p>
-<p>不含BOM的UTF-8才是标准形式，UTF-8不需要BOM</p>
-<p>带BOM的UTF-8文件的开头会有U+FEFF，所以我新建的空文件会有3字节的大小。</p>
+<p>BOM即Byte Order Mark（字节序标记）。</p>
+<p>带BOM的UTF-8文件的开头会有一个Unicode字符<code>U+FEFF</code>，该字符在UTF-8下的编码是<code>EF BB BF</code>。</p>
+<p>UTF-8 不需要 BOM 来表明字节顺序，但是可以用 BOM（EF BB BF 称为零宽无间断间隔）来表明编码方式，如果接收者收到以 EF BB BF 开头的字节流，就知道这是 UTF-8 编码。</p>
 <h2 id="_2">参考链接<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
 <p><a href="https://www.ibm.com/developerworks/cn/java/unicode-programming-language/index.html">Unicode 及编码方式概述</a></p></div>
         </div>
