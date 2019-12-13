@@ -17,6 +17,7 @@ Windows平台下的二进制文件编辑器。
 
 ![](..\assets\images\tools\embedded_dev_tools\winhex.png)
 
+
 [`WinHex19.8下载地址`](https://pan.baidu.com/s/1aKSVuxW4hvD_mAy6XLzPzw)
 
 ## 3.思维导图
@@ -26,5 +27,6 @@ MindManger是一款非常优秀的思维导图软件。
 [`MindManger官网`](https://www.mindjet.com)
 
 ![](..\assets\images\tools\embedded_dev_tools\mindmanger.png)
+
 
 [`MindManger19下载地址`](https://pan.baidu.com/s/1skX6hymkSluORLItEQM8Sg)

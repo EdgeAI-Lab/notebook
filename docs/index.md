@@ -1,75 +1,28 @@
-# Wiki Create Guide
-[中文请点击这里](index-zh.md)
-
-Welcome to My WiKi!
-
-If you want to build a wiki like this. Please follow me.
-
-##1. Use Notepad++(Optional)
-Notepad++ is a very useful editor, and very small, recommended to use!
-
-* [Notepad++ Download](https://notepad-plus-plus.org/download)
-* [Explorer Plug](https://github.com/funap/npp-explorer-plugin/releases)
-
-##2. Install MKDocs
-* [MKDocs Office Website](https://www.mkdocs.org)
-> MKDocs is a program that converts Markdown files into HTML web page files
-* [Material Theme Office Website](https://squidfunk.github.io/mkdocs-material)
-> The Material Theme is a beautiful web page style
-* Config your site according to official instructions, and add something
-
-* Now your site looks like this:
-
-![mkdocs_site](assets/images/mkdocs_site.png)
+# 本站简介
 
 
-##3. Host Your Site To Github
-###3.1 Init a local Git repository in "my-project" folder
-```bash
-cd my-project
-git init
-```
-* After success, it looks like it：
 
-![mkdocs_site](assets/images/mkdocs_site_git.png)
+## 关于站长
+我是一名软件工程师，了解C/C++、Java和Python编程语言。
 
-###3.2 Create a new GitHub repository，and get the URL.Look like it: 
-```
-https://github.com/user_name/repository_name
-```
+我擅长嵌入式MCU编程（比如：STM32）、嵌入式Linux和Android。
 
-###3.3 Add a remote repository link for your local repository
-```bash
-git add remote https://github.com/user_name/repository_name
-```
-###3.4 Push local repository to remote（Optional）
-> It is optional,because deploy your WiKi site only need to push HTML files to remote.
-```bash
-git add .
-git commit -m "first commit"
-git push origin master
-```
-###3.5 Deploy your WiKi site on the GitHub
-```bash
-mkdocs gh-deploy
-```
-* After deploy,the HTML files of your WiKi site is deployed on the gh-pages branch,and the Markdown files is deployed on the master branch(if you push it).
+现在我开始涉足图像处理（使用OpenCV），音视频处理（使用FFMPEG和WebRTC）和嵌入式机器学习。
 
-* It is master branch:
+## 了解站长
+* [我的GitHub](https://github.com/edgeML)
+* [我的CSDN博客](https://blog.csdn.net/jiasike)
+* [我的知乎](https://www.zhihu.com/people/fhc2019/activities)
 
-![git_master_branch](assets/images/git_master_branch.png)
+!!! 提示
+    有一段时间没有更新过我的CSDN博客了，因为平时工作就比较忙。从现在开始我将时常在这个站点更新我的学习笔记。
 
-* It is gh-pages branch:
 
-![git_gh-pages_branch](assets/images/git_gh-pages_branch.png)
+## 联系方式
+* 邮箱: fanhongchaung@foxmail.com
+* QQ: 847923458
+* 微信: shoujimaizi2289
 
-* Now you can access your WiKi site use the URL like this:
-```
-https://user_name.github.io/repository_name/
-```
+## 微信公众账号
 
-!!! success
-    It is OK.
-
-## Scan code attention my WeChat official account
 ![weixingongzhonghao](assets/images/weixingongzhonghao.png)

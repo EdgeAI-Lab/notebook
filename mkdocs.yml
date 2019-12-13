@@ -45,7 +45,7 @@ nav:
       - Tensorflow安装: ML\tensorflow_install.md
       - Tensorflow模型转换: ML\tensorflow_model.md
       - 嵌入式机器学习: 
-        - 00~STM32图像分类: ML\how_to_run_dl_model_on_stm32.md
+        - 00：STM32图像分类: ML\how_to_run_dl_model_on_stm32.md
 
     - Python:
       - matplotlib使用: Python/matplotlib.md
@@ -144,6 +144,7 @@ theme:
   # name: 'mkdocs'
   # name: 'flatly'
   name: 'united'
+  # name: 'simplex'
   language: 'en'
   palette:
     primary: 'indigo'
@@ -175,6 +176,9 @@ markdown_extensions:
   #     linenums: false
   - toc:
       permalink: '#'
+
+extra_css:
+    - css/extra.css
 
 plugins:
     - search
