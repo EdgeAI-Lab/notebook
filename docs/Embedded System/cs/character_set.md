@@ -2,9 +2,9 @@
 
 ## Unicode
 
-Unicode provides a unique number for every character, no matter what the platform, program, or language is.
+`Unicode provides a unique number for every character, no matter what the platform, program, or language is.`
 
-[更多信息请访问Unicode官网](https://home.unicode.org/basic-info/overview/)
+[`更多信息请访问Unicode官网`](https://home.unicode.org/basic-info/overview/)
 
 Unicode为世界上的每一个字符提供唯一的二进制编码。但是并没有规定这些编码在互联网中的传输和存储方式。
 
@@ -38,3 +38,6 @@ BOM即byte order mark，具体含义可百度百科或维基百科，UTF-8文件
 带BOM的UTF-8文件的开头会有U+FEFF，所以我新建的空文件会有3字节的大小。
 
 
+## 参考链接
+
+[Unicode 及编码方式概述](https://www.ibm.com/developerworks/cn/java/unicode-programming-language/index.html)

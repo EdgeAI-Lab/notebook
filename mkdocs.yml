@@ -9,7 +9,7 @@ static_templates:
     - 404.html
 
 nav:
-    - Home: about.md
+    # - Home: about.md
     # - About Me: about.md
     - Android:
       - Android开机自启:
@@ -47,15 +47,18 @@ nav:
       - 嵌入式机器学习: 
         - 00~STM32图像分类: ML\how_to_run_dl_model_on_stm32.md
 
-      - Python:
-        - matplotlib使用: Python/matplotlib.md
-        - 三角函数: Python/python_trigonometric.md
-        - 录音与播放: Python/python_record_play.md  
-        - CRC16: Python/crc16.md
-        - Python字符串格式化: Python/python_string_format.md
+    - Python:
+      - matplotlib使用: Python/matplotlib.md
+      - 三角函数: Python/python_trigonometric.md
+      - 录音与播放: Python/python_record_play.md  
+      - CRC16: Python/crc16.md
+      - Python字符串格式化: Python/python_string_format.md
 
 
     - Embedded:
+      - CS:
+        - 字符集: Embedded System\cs\character_set.md
+
       - C/C++: 
         - C内存模型: Embedded System/c&c++/c_memory_layout.md
         - CRC16: Embedded System/c&c++/crc16.md
