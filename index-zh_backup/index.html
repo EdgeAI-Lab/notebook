@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Wiki创建向导 - Notebook</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/extra.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="..">Notebook</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Android <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Android开机自启</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../Android/android_source_code/android_launcher/">Launcher</a>
+</li>
+            
+<li >
+    <a href="../Android/android_source_code/android_broadcast_boot/">开机广播</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Android6.0源码修改</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../Android/android_source_code/android_remove_usb_permission_dialog/">去掉USB权限申请对话框</a>
+</li>
+            
+<li >
+    <a href="../Android/android_source_code/android_screen_brightness/">修改屏幕默认亮度</a>
+</li>
+            
+<li >
+    <a href="../Android/android_source_code/android_hide_virtual_navigation_key/">彻底隐藏虚拟导航键</a>
+</li>
+            
+<li >
+    <a href="../Android/android_source_code/android_enable_usb_debug/">默认开启USB调试功能</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Android应用开发</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../Android/Application/RecycleView/">RecycleView</a>
+</li>
+            
+<li >
+    <a href="../Android/android_screen_adapter/android_screen_adapter/">Android 屏幕适配</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Android NDK开发</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../Android/android_ndk/android_ndk/">NDK开发</a>
+</li>
+            
+<li >
+    <a href="../Embedded System/gcc_clang_llvm/">GCC&Clang&LLVM的关系</a>
+</li>
+            
+<li >
+    <a href="../Android/android_ndk/cross-compile_opus_for_android/">交叉编译示例OPUS</a>
+</li>
+            
+<li >
+    <a href="../Android/android_ndk/ijkpalyer_for_rtsp_compile/">交叉编译ijkplayer</a>
+</li>
+            
+<li >
+    <a href="../Android/android_ndk/android_art/">ART</a>
+</li>
+            
+<li >
+    <a href="../Android/android_ndk/android_cmake/">Android CMake知识点</a>
+</li>
+            
+<li >
+    <a href="../Android/android_ndk/cross-compile_opencv_for_android/">Android交叉编译OpenCV</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li >
+    <a href="../Android/android_compiler_system/android_compile_system/">Android编译系统</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Java</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../Android/java/java_ui_swing/">Swing</a>
+</li>
+            
+<li >
+    <a href="../Android/java/ubuntu_config_java/">Ubuntu中配置Java</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">ML <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../ML/ml_basics/">机器学习基础</a>
+</li>
+                                    
+<li >
+    <a href="../ML/tensorflow_install/">Tensorflow安装</a>
+</li>
+                                    
+<li >
+    <a href="../ML/tensorflow_model/">Tensorflow模型转换</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">嵌入式机器学习</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../ML/how_to_run_dl_model_on_stm32/">00：STM32图像分类</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Python <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../Python/matplotlib/">matplotlib使用</a>
+</li>
+                                    
+<li >
+    <a href="../Python/python_trigonometric/">三角函数</a>
+</li>
+                                    
+<li >
+    <a href="../Python/python_record_play/">录音与播放</a>
+</li>
+                                    
+<li >
+    <a href="../Python/crc16/">CRC16</a>
+</li>
+                                    
+<li >
+    <a href="../Python/python_string_format/">Python字符串格式化</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Embedded <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">CS</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../Embedded System/cs/character_set/">字符集</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">C/C++</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../Embedded System/c&c++/c_memory_layout/">C内存模型</a>
+</li>
+            
+<li >
+    <a href="../Embedded System/c&c++/crc16/">CRC16</a>
+</li>
+            
+<li >
+    <a href="../Embedded System/c&c++/c_micro_jing/">C宏定义#与##</a>
+</li>
+            
+<li >
+    <a href="../Embedded System/c&c++/complement/">补码</a>
+</li>
+            
+<li >
+    <a href="../Embedded System/c&c++/c_pointer/">C指针</a>
+</li>
+            
+<li >
+    <a href="../Embedded System/c&c++/c_pragma/">pragma pack()</a>
+</li>
+            
+<li >
+    <a href="../Embedded System/c&c++/pkg_config/">pkg-config</a>
+</li>
+            
+<li >
+    <a href="../Embedded System/c&c++/typedef_tips/">typedef使用注意</a>
+</li>
+            
+<li >
+    <a href="../Embedded System/c&c++/ascii_table/">ASCII Table</a>
+</li>
+            
+<li >
+    <a href="../Embedded System/c&c++/cmake_usage/">CMake用法</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li >
+    <a href="../Embedded System/ESP8266/">ESP8266</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">STM32</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../Embedded System/STM32/stm32_hal_uart/">STM32串口编程之中断方式</a>
+</li>
+            
+<li >
+    <a href="../Embedded System/STM32/stm32_hal_uart/">STM32定时器编程之定时中断</a>
+</li>
+            
+<li >
+    <a href="../Embedded System/STM32/stm32_hal_uart/">STM32定时器编程之PWM</a>
+</li>
+            
+<li >
+    <a href="../Embedded System/STM32/stm32_spi/">STM32 SPI</a>
+</li>
+            
+<li >
+    <a href="../Embedded System/STM32/stm32_io_drive_42stepper_l298n/">STM32控制42步进电机</a>
+</li>
+            
+<li >
+    <a href="../Embedded System/STM32/stm32_flash_erase_leveling/">Flash 磨损均衡算法</a>
+</li>
+            
+<li >
+    <a href="../Embedded System/STM32/stm32_module_init_like.linux/">初始化函数的另一种写法</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Linux</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#">开发环境相关</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../Embedded System/linux/embedded_linux_dev_env/virtual_box_env/">VirtualBox开发环境搭建</a>
+</li>
+            
+<li >
+    <a href="../Embedded System/linux/embedded_linux_dev_env/ubuntu_get_kernel_tree/">构建内核源码树</a>
+</li>
+            
+<li >
+    <a href="../Embedded System/linux/embedded_linux_dev_env/samba/">samba服务配置</a>
+</li>
+            
+<li >
+    <a href="../Embedded System/linux/embedded_linux_dev_env/ftp_server_build/">FTP服务配置</a>
+</li>
+            
+<li >
+    <a href="../Embedded System/linux/embedded_linux_dev_env/nfs/">NFS</a>
+</li>
+            
+<li >
+    <a href="../Embedded System/linux/embedded_linux_dev_env/arm_compiler/">ARM交叉编译工具</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">JZ2440开发</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../Embedded System/linux/jz2440/cross_compile/">关于交叉编译工具链</a>
+</li>
+    </ul>
+  </li>
+            
+<li >
+    <a href="../Embedded System/gcc_dynamic_linking_library/">GCC编译动态链接库</a>
+</li>
+            
+<li >
+    <a href="../Embedded System/linux_shell_cmd/">常用shell命令</a>
+</li>
+            
+<li >
+    <a href="../Embedded System/linux_shell_program/">Linux Shell脚本编程</a>
+</li>
+            
+<li >
+    <a href="../Embedded System/gcc_clang_llvm/">GCC&Clang&LLVM的关系</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li >
+    <a href="../Embedded System/zigbee_keys/">Zigbee</a>
+</li>
+                                    
+<li >
+    <a href="../Embedded System/nanopc_m4/">NanoPC RK3399</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Hardware</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../Hardware/battery_work_time/">电池工作时间的计算</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">CV <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../Computer Vision/caffe/">caffe</a>
+</li>
+                                    
+<li >
+    <a href="../Computer Vision/cv_library/">cv_library</a>
+</li>
+                                    
+<li >
+    <a href="../Computer Vision/OpenCV4Android_001/">OpenCV4Android</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Multimedia <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../Multimedia/AliyunVOD/get_play_url/">VOD</a>
+</li>
+                                    
+<li >
+    <a href="../Multimedia/optical/">光学知识点</a>
+</li>
+                                    
+<li >
+    <a href="../Multimedia/aac/">AAC编码</a>
+</li>
+                                    
+<li >
+    <a href="../Multimedia/yuv/">彻底理解YUV格式</a>
+</li>
+                                    
+<li >
+    <a href="../Multimedia/av_synchronization/">音视频同步</a>
+</li>
+                                    
+<li >
+    <a href="../Multimedia/nginx/">nginx</a>
+</li>
+                                    
+<li >
+    <a href="../Multimedia/linux_shell_cmd_for_multimedia/">Linux Shell命令</a>
+</li>
+                                    
+<li >
+    <a href="../Multimedia/ffmpeg_compile/">FFMPEG编译</a>
+</li>
+                                    
+<li >
+    <a href="../Multimedia/ffmpeg_command/">FFMPEG命令</a>
+</li>
+                                    
+<li >
+    <a href="../Multimedia/ffmpeg_api/">FFMPEG API</a>
+</li>
+                                    
+<li >
+    <a href="../Multimedia/easydarwin/">EasyDarwin</a>
+</li>
+                                    
+<li >
+    <a href="../Multimedia/pcm/">PCM</a>
+</li>
+                                    
+<li >
+    <a href="../Multimedia/wav_foramt/">WAV</a>
+</li>
+                                    
+<li >
+    <a href="../Multimedia/opus/">OPUS</a>
+</li>
+                                    
+<li >
+    <a href="../Multimedia/Ogg/">Ogg</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tools <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">MkDocs搭建个人WiKi知识管理系统</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../Tools/mkdocs/mkdocs_intro/">1.MkDocs - 初识</a>
+</li>
+            
+<li >
+    <a href="../Tools/mkdocs/mkdocs_deploy_githubpages/">2.MkDocs - 部署Github Pages</a>
+</li>
+            
+<li >
+    <a href="../Tools/mkdocs/mkdocs_deploy_nginx/">3.MkDocs - 部署Nginx</a>
+</li>
+            
+<li >
+    <a href="../Tools/mkdocs/mkdocs_theme/">3.MkDocs - 主题</a>
+</li>
+            
+<li >
+    <a href="../Tools/mkdocs/mkdocs_custom/">4.MkDocs - 定制</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li >
+    <a href="../Tools/embedded_develop_tools/">嵌入式开发神兵利器</a>
+</li>
+                                    
+<li >
+    <a href="../Tools/git_command/">git command</a>
+</li>
+                                    
+<li >
+    <a href="../Tools/Shadowsocks/">Shadowsocks</a>
+</li>
+                                    
+<li >
+    <a href="../Tools/ShadowsocksR/">ShadowsocksR</a>
+</li>
+                                    
+<li >
+    <a href="../Tools/JupyterNotebook/">局域网访问Jupyter Notebook</a>
+</li>
+                                    
+<li >
+    <a href="../Tools/PlantUML/">UML</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li>
+                                <a href="https://github.com/edgeML/notebook/edit/master/docs/index-zh_backup.md">Edit on Notebook</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#wiki">Wiki创建向导</a></li>
+            <li><a href="#1-notepad">1. 使用Notepad++(可选)</a></li>
+            <li><a href="#2-mkdocsmaterial">2. 安装MKDocs和Material主题</a></li>
+            <li><a href="#3-wikigithub">3. 将你的WiKi网站托管到Github</a></li>
+            <li><a href="#_1">更多精彩资讯，请扫码关注！</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="wiki">Wiki创建向导<a class="headerlink" href="#wiki" title="Permanent link">#</a></h1>
+<p>欢迎来到我的WiKi。</p>
+<p>假如你也想搭建这样一个WiKi，请往下看。</p>
+<h2 id="1-notepad">1. 使用Notepad++(可选)<a class="headerlink" href="#1-notepad" title="Permanent link">#</a></h2>
+<p>Notepad++是一款非常实用的编辑器，并且十分小巧，推荐大家使用！</p>
+<ul>
+<li><a href="https://notepad-plus-plus.org/download">Notepad++ Download</a></li>
+<li><a href="https://github.com/funap/npp-explorer-plugin/releases">Explorer Plug</a></li>
+</ul>
+<h2 id="2-mkdocsmaterial">2. 安装MKDocs和Material主题<a class="headerlink" href="#2-mkdocsmaterial" title="Permanent link">#</a></h2>
+<ul>
+<li><a href="https://www.mkdocs.org">MKDocs官方网站</a><blockquote>
+<p>MKDocs是一个可以将Markdown文件转换成HTML网页文件的程序</p>
+</blockquote>
+</li>
+<li><a href="https://squidfunk.github.io/mkdocs-material">Material主题官方网站</a><blockquote>
+<p>Material主题是一个漂亮的网页样式</p>
+</blockquote>
+</li>
+<li>
+<p>根据官方的指导配置你的网站, 并添加内容</p>
+</li>
+<li>
+<p>现在你的WiKi看上去将会是这个样子:</p>
+</li>
+</ul>
+<p><img alt="mkdocs_site" src="assets/images/mkdocs_site.png" /></p>
+<h2 id="3-wikigithub">3. 将你的WiKi网站托管到Github<a class="headerlink" href="#3-wikigithub" title="Permanent link">#</a></h2>
+<h3 id="31-my-projectgit">3.1 将你的“my-project”文件夹，初始化为一个本地Git仓库<a class="headerlink" href="#31-my-projectgit" title="Permanent link">#</a></h3>
+<pre><code class="bash">cd my-project
+git init
+</code></pre>
+
+<ul>
+<li>git仓库初始化成功后，看上去就像这样：</li>
+</ul>
+<p><img alt="mkdocs_site" src="assets/images/mkdocs_site_git.png" /></p>
+<h3 id="32-githuburl">3.2 创建一个新GitHub的仓库，获取仓库的URL。像这样:<a class="headerlink" href="#32-githuburl" title="Permanent link">#</a></h3>
+<pre><code>https://github.com/user_name/repository_name
+</code></pre>
+
+<h3 id="33">3.3 在本地仓库中添加远程仓库链接<a class="headerlink" href="#33" title="Permanent link">#</a></h3>
+<pre><code class="bash">git add remote https://github.com/user_name/repository_name
+</code></pre>
+
+<h3 id="34-git">3.4 将本地git仓库推送到远端（可选）<a class="headerlink" href="#34-git" title="Permanent link">#</a></h3>
+<blockquote>
+<p>将你的源文件推送到远程仓库是可选的，因为部署你的WiKi网站只需要将HTML网页文件推送到远端即可</p>
+</blockquote>
+<pre><code class="bash">git add .
+git commit -m &quot;first commit&quot;
+git push origin master
+</code></pre>
+
+<h3 id="35-wikigithub">3.5 将你的WiKi站点部署到GitHub<a class="headerlink" href="#35-wikigithub" title="Permanent link">#</a></h3>
+<pre><code class="bash">mkdocs gh-deploy
+</code></pre>
+
+<ul>
+<li>
+<p>完成部署之后，你的WiKi网站的HTML文件都部署在了gh-pages分支；markdown文件都部署在了master分支（假如你提交了的话）</p>
+</li>
+<li>
+<p>这是master分支:</p>
+</li>
+</ul>
+<p><img alt="git_master_branch" src="assets/images/git_master_branch.png" /></p>
+<ul>
+<li>这是gh-pages分支:</li>
+</ul>
+<p><img alt="git_gh-pages_branch" src="assets/images/git_gh-pages_branch.png" /></p>
+<ul>
+<li>现在使用类似下面的URL，你就可以访问你的Wiki站点了</li>
+</ul>
+<pre><code>https://user_name.github.io/repository_name/
+</code></pre>
+
+<div class="admonition 恭喜">
+<p class="admonition-title">恭喜</p>
+<p>现在你的WiKi已经成功部署。</p>
+</div>
+<h2 id="_1">更多精彩资讯，请扫码关注！<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<p><img alt="weixingongzhonghao" src="../assets/images/weixingongzhonghao.png" /></p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2019 - 2020 Frank</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
