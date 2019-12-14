@@ -1,28 +1,43 @@
-# 本站简介
+# WiKi Intro
+[中文请点击这里](index-zh)
 
+Hello! Welcome to my WiKi site.
 
+This is a knowledge management system based on <font color="red">embedded system</font> development. It was meant to be a record of what was learned, but it was also intended to help others.
 
-## 关于站长
-我是一名软件工程师，了解C/C++、Java和Python编程语言。
+![](assets\images\happy_boy_origin.jpg)
 
-我擅长嵌入式MCU编程（比如：STM32）、嵌入式Linux和Android。
+The current technical column has:
 
-现在我开始涉足图像处理（使用OpenCV），音视频处理（使用FFMPEG和WebRTC）和嵌入式机器学习。
+* Android
+* Machine Learning
+* Python
+* Embedded System
+* Computer Vision
+* Multimedia
+* Tools
 
-## 了解站长
-* [我的GitHub](https://github.com/edgeML)
-* [我的CSDN博客](https://blog.csdn.net/jiasike)
-* [我的知乎](https://www.zhihu.com/people/fhc2019/activities)
+The site is gradually improving, welcome to continue to pay attention.
 
-!!! 提示
-    有一段时间没有更新过我的CSDN博客了，因为平时工作就比较忙。从现在开始我将时常在这个站点更新我的学习笔记。
+## 1.About Me
+I am a Software Engineer, I konw abou C/C++, Java and Python program language.
 
+I am good at embedded system development: MCU, embedded linux and Android.
 
-## 联系方式
-* 邮箱: fanhongchaung@foxmail.com
+Now I'm getting into image processing(Use OpenCV), audio and video processing(Use FFMPEG and WebRTC) and Embedded Machine Learning.
+
+## 2.Know Me
+* [My GitHub](https://github.com/edgeML)
+* [My CSDN Blog](https://blog.csdn.net/jiasike)
+* [My Zhihu](https://www.zhihu.com/people/fhc2019/activities)
+
+## 3.Connect Me
+* Email: fanhongchaung@foxmail.com
 * QQ: 847923458
-* 微信: shoujimaizi2289
+* WeChat: shoujimaizi2289
 
-## 微信公众账号
+## 4.WeChat Official Account
+
+Scan code attention my WeChat official account
 
 ![weixingongzhonghao](assets/images/weixingongzhonghao.png)

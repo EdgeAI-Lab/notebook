@@ -1,3 +1,7 @@
+h1 {
+  margin-bottom:20px;
+}
+
 h2 {
   font-size:20pt;
   margin-top:40px;
@@ -12,7 +16,7 @@ h3 {
 
 p {
   /* color:blue; */
-  font-family:"consolas","宋体";
+  font-family:"Arial","Microsoft YaHei","黑体","宋体","sans-serif";
   font-size:13pt;
 	/* text-align:justify; */
 	line-height:200%;

@@ -127,6 +127,12 @@ nav:
       - Ogg: Multimedia/Ogg.md
 
     - Tools:
+      - MkDocs搭建个人WiKi知识管理系统: 
+        - 1.MkDocs - 初识: Tools\mkdocs\mkdocs_intro.md
+        - 2.MkDocs - 部署Github Pages: Tools\mkdocs\mkdocs_deploy_githubpages.md
+        - 3.MkDocs - 部署Nginx: Tools\mkdocs\mkdocs_deploy_nginx.md
+        - 3.MkDocs - 主题: Tools\mkdocs\mkdocs_theme.md
+        - 4.MkDocs - 定制: Tools\mkdocs\mkdocs_custom.md
       - 嵌入式开发神兵利器: Tools\embedded_develop_tools.md
       - git command: Tools/git_command.md
       - Shadowsocks: Tools/Shadowsocks.md
