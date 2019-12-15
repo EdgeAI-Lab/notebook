@@ -6,19 +6,19 @@
 
 ## 1. 写作工具
 
-工欲善其事必先利其器，推荐大家使用VSCode，VSCode对Markdown的支持十分友好，并且支持目录打开，是一款写作利器。
+工欲善其事必先利其器，推荐大家使用VSCode，VSCode对Markdown的支持十分友好，支持工作空间、Markdown预览和命令行终端等功能，是一款写作利器。
 
 [VSCode开源免费点击下载](https://code.visualstudio.com/)
 
 ## 2. 安装MkDocs
 
-使用pip安装`mkdocs`软件包
+使用pip安装 `mkdocs` 软件包
 
 ```
 pip install mkdocs
 ```
 
-检测MkDocs是否安装成功
+检测 `MkDocs` 是否安装成功
 
 ```
 $ mkdocs -V
@@ -35,9 +35,9 @@ cd my-project
 
 ![mkdocs_site](../../\assets\images\tools\mkdocs_build_wiki_site\mkdocs_site.png)
 
-* docs文件夹下存放的就是自己写的Markdown文章，系统默认会生成一个index.md文件
+* `docs` 文件夹下存放的就是自己写的Markdown文章，系统默认会生成一个index.md文件
 
-* mkdocs.yml是wiki网站的配置文件（主题、目录、语言等）
+* `mkdocs.yml` 是wiki网站的配置文件（主题、目录、语言等）
 
 ## 4.预览WiKi
 
@@ -64,7 +64,7 @@ INFO    -  Cleaning site directory
 
 ### 5.1 添加新的文字内容
 
-首先在my-project/docs文件夹下面创建first.md文件，并使用你喜欢的markdown编辑器写入内容：
+首先在 `my-project/docs` 文件夹下面创建 `first.md` 文件，并使用你喜欢的markdown编辑器写入内容：
 
 ```
 This is a new page.
@@ -76,7 +76,7 @@ This is a new page.
 ### 三级标题
 ```
 
-然后编辑my-project/mkdocs.yml文件（WiKi网站配置文件），在末尾添加以下内容：
+然后编辑 `my-project/mkdocs.yml` 文件（WiKi网站配置文件），在末尾添加以下内容：
 
 ```
 nav:
@@ -90,11 +90,11 @@ nav:
 
 ### 5.2 添加新的图片内容
 
-建立my-project/docs/images文件夹，并将image.jpg放入此文件夹。
+建立 `my-project/docs/images` 文件夹，并将    `image.jpg` 放入此文件夹。
 
 ![](../../\assets\images\tools\mkdocs_build_wiki_site\images_folder.png)
 
-然后在my-project/docs/first.md文件中插入该图片：
+然后在 `my-project/docs/first.md` 文件中插入该图片：
 
 ```
 This is a new page.

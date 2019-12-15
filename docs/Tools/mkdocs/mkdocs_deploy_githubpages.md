@@ -1,6 +1,10 @@
-# MkDocs - 部署WiKi站点
+# MkDocs - 部署WiKi站点到Github Pages
 
-上期：[MkDocs - 初识](mkdocs_intro.md)，我们介绍了如何使用MkDocs创建一个WiKi，如何在浏览器中预览该WiKi以及如何创建新的WiKi页面。
+<font size="2pt">往期回顾：</font>
+
+<font size="2pt">第一期：[MkDocs - 初识](mkdocs_intro.md)</font>
+
+--------
 
 本期小编将带你了解如何将你的WiKi部署到Web服务器，使你的WiKi能够在互联网中被访问。
 

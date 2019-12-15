@@ -21,7 +21,6 @@ sudo apt-get --purge remove nginx-core
 ### 2.1.下载源码
 * [nginx官网下载地址](http://nginx.org/en/download.html)
 
-
 ### 2.2.编译安装
 
 * 使用nginx默认配置

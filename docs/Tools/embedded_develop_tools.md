@@ -39,3 +39,15 @@ Windows平台截屏取色录屏工具FastStone Capture。
 
 
 [FS Capture下载地址](https://pan.baidu.com/s/1odCv8qPHHsiQkr2utDsiAw)
+
+
+## x.持续更新中...
+
+神兵利器历练中，敬请关注！
+
+
+----------------------------------------
+
+<center><font size="3pt">更多精彩资讯，请扫码关注！</font></center>
+
+<center><p>![weixingongzhonghao](../assets/images/weixingongzhonghao.png)</p></center>

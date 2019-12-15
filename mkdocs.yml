@@ -90,6 +90,10 @@ nav:
           - FTP服务配置: Embedded System\linux\embedded_linux_dev_env\ftp_server_build.md
           - NFS: Embedded System\linux\embedded_linux_dev_env\nfs.md
           - ARM交叉编译工具: Embedded System\linux\embedded_linux_dev_env\arm_compiler.md
+          - Ubuntu启动错误: Embedded System\linux\embedded_linux_dev_env\ubuntu_boot_error.md
+
+        - GNU make:
+          - GNU make中的2种变量: Embedded System\linux\makefile\two_flavors_of_variables.md
 
         - JZ2440开发:
           - 关于交叉编译工具链: Embedded System\linux\jz2440\cross_compile.md
