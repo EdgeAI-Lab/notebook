@@ -335,6 +335,20 @@
 <li >
     <a href="../../../Embedded System/linux/embedded_linux_dev_env/arm_compiler/">ARM交叉编译工具</a>
 </li>
+            
+<li >
+    <a href="../../../Embedded System/linux/embedded_linux_dev_env/ubuntu_boot_error/">Ubuntu启动错误</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">GNU make</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../Embedded System/linux/makefile/two_flavors_of_variables/">GNU make中的2种变量</a>
+</li>
     </ul>
   </li>
             
@@ -551,11 +565,111 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#mkdocs-wikinginx-web">MkDocs - 部署WiKi站点到Nginx Web服务器</a></li>
+            <li><a href="#1nginx">1.下载Nginx源码</a></li>
+            <li><a href="#2">2.编译安装</a></li>
+            <li><a href="#3nginx">3.配置Nginx</a></li>
+            <li><a href="#4nginx">4.启动nginx</a></li>
+            <li><a href="#5nginx">5.查看nginx是否正确运行</a></li>
+            <li><a href="#6">6. 生成静态网站</a></li>
+            <li><a href="#7wikinginx">7.将Wiki站点部署到Nginx</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-</div>
+<h1 id="mkdocs-wikinginx-web">MkDocs - 部署WiKi站点到Nginx Web服务器<a class="headerlink" href="#mkdocs-wikinginx-web" title="Permanent link">#</a></h1>
+<p><font size="2pt">往期回顾：</font></p>
+<p><font size="2pt">第一期：<a href="../mkdocs_intro/">MkDocs - 初识</a></font></p>
+<p><font size="2pt">第二期：<a href="../mkdocs_deploy_githubpages/">MkDocs - 部署WiKi站点到Github Pages</a></font></p>
+<hr />
+<p>本期小编将带你了解如何将你的WiKi部署到Web服务器，使你的WiKi能够在互联网中被访问。</p>
+<p>本期我们选择的Web服务器是Nginx。</p>
+<h2 id="1nginx">1.下载Nginx源码<a class="headerlink" href="#1nginx" title="Permanent link">#</a></h2>
+<ul>
+<li><a href="http://nginx.org/en/download.html">点击下载Nginx源码</a></li>
+</ul>
+<p>解压Nginx源码：</p>
+<pre><code>tar -xzvf nginx-1.x.x.tar.gz
+</code></pre>
+
+<h2 id="2">2.编译安装<a class="headerlink" href="#2" title="Permanent link">#</a></h2>
+<pre><code># 进入Nginx源码根目录
+cd path/to/nginx
+
+# 使用nginx默认配置即可
+./configure
+
+# 编译安装
+make &amp;&amp; make install
+</code></pre>
+
+<p>Nginx相关路径：</p>
+<ul>
+<li>nginx安装路径: "/usr/local/nginx"</li>
+<li>nginx可执行文件路径: "/usr/local/nginx/sbin/nginx"</li>
+<li>nginx配置文件路径: "/usr/local/nginx/conf/nginx.conf"</li>
+</ul>
+<h2 id="3nginx">3.配置Nginx<a class="headerlink" href="#3nginx" title="Permanent link">#</a></h2>
+<p>打开配置文件：</p>
+<pre><code>sudo vim /user/local/nginx/conf/nginx.conf 
+</code></pre>
+
+<p>修改端口号和域名：</p>
+<pre><code># 此处省略n行代码
+http {
+
+    # 此处省略n行代码
+
+    server {
+        listen       80;         # 修改端口号
+        server_name  localhost;  # 修改域名
+
+        location / {
+            root   html;         # 此处为存放网站的目录path/to/nginx/html/
+            index  index.html index.htm;
+        }
+
+        # 此处省略n行代码
+
+    }
+
+    # 此处省略n行代码
+}
+
+</code></pre>
+
+<p>Nginx配置说明：</p>
+<ul>
+<li><code>listen 80;</code> 服务器监听的端口号为80</li>
+<li><code>server_name  localhost;</code> 以Nginx服务器的IP地址作为host</li>
+<li><code>root   html;</code> 网站存放的目录</li>
+</ul>
+<h2 id="4nginx">4.启动nginx<a class="headerlink" href="#4nginx" title="Permanent link">#</a></h2>
+<pre><code>cd /user/local/nginx/sbin
+sudo ./nginx
+</code></pre>
+
+<h2 id="5nginx">5.查看nginx是否正确运行<a class="headerlink" href="#5nginx" title="Permanent link">#</a></h2>
+<p>打开浏览器输入服务器IP地址，如果Nginx正常启动，你将看到如下界面：</p>
+<p><img alt="" src="../../../assets/images/tools/mkdocs_build_wiki_site/nginx_start.png" /></p>
+<h2 id="6">6. 生成静态网站<a class="headerlink" href="#6" title="Permanent link">#</a></h2>
+<p>利用MkDocs将WiKi源文件（Markdown文件）转成HTML静态网站。</p>
+<p>此处以第一期：<a href="../mkdocs_intro/">MkDocs - 初识</a>中我们创建的wiki项目为例。</p>
+<pre><code># 进入wiki项目目录
+cd my-project
+
+# 生产静态网站
+mkdocs build
+</code></pre>
+
+<p><code>mkdocs build</code> 命令执行后，将会在wiki项目目录下生成 <code>site</code> 文件夹，该文件夹中包含的就是静态网站。</p>
+<p><img alt="" src="../../../assets/images/tools/mkdocs_build_wiki_site/mkdocs_site_folder.png" /></p>
+<h2 id="7wikinginx">7.将Wiki站点部署到Nginx<a class="headerlink" href="#7wikinginx" title="Permanent link">#</a></h2>
+<p>将 <code>site</code> 文件夹中的内容复制到Nginx服务器上的 <code>/user/local/nginx/html</code> 目录下即可。</p>
+<p><img alt="" src="../../../assets/images/tools/mkdocs_build_wiki_site/mv_wiki_html_to_server.png" /></p>
+<hr />
+<p><center><font size="3pt">更多精彩资讯，请扫码关注！</font></center></p>
+<p><center><p><img alt="weixingongzhonghao" src="../../../assets/images/weixingongzhonghao.png" /></p></center></p></div>
         </div>
 
         <footer class="col-md-12">

@@ -335,6 +335,20 @@
 <li >
     <a href="../../../Embedded System/linux/embedded_linux_dev_env/arm_compiler/">ARM交叉编译工具</a>
 </li>
+            
+<li >
+    <a href="../../../Embedded System/linux/embedded_linux_dev_env/ubuntu_boot_error/">Ubuntu启动错误</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">GNU make</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../Embedded System/linux/makefile/two_flavors_of_variables/">GNU make中的2种变量</a>
+</li>
     </ul>
   </li>
             
@@ -566,14 +580,14 @@
 <p>简单的说MKDocs就是一个可以将Markdown文件转换成HTML网页文件的Python程序。</p>
 <p>本期小编将带领你从零到一创建一个属于你自己的Wiki知识管理系统。</p>
 <h2 id="1">1. 写作工具<a class="headerlink" href="#1" title="Permanent link">#</a></h2>
-<p>工欲善其事必先利其器，推荐大家使用VSCode，VSCode对Markdown的支持十分友好，并且支持目录打开，是一款写作利器。</p>
+<p>工欲善其事必先利其器，推荐大家使用VSCode，VSCode对Markdown的支持十分友好，支持工作空间、Markdown预览和命令行终端等功能，是一款写作利器。</p>
 <p><a href="https://code.visualstudio.com/">VSCode开源免费点击下载</a></p>
 <h2 id="2-mkdocs">2. 安装MkDocs<a class="headerlink" href="#2-mkdocs" title="Permanent link">#</a></h2>
-<p>使用pip安装<code>mkdocs</code>软件包</p>
+<p>使用pip安装 <code>mkdocs</code> 软件包</p>
 <pre><code>pip install mkdocs
 </code></pre>
 
-<p>检测MkDocs是否安装成功</p>
+<p>检测 <code>MkDocs</code> 是否安装成功</p>
 <pre><code>$ mkdocs -V
 mkdocs, version 1.0.4 from \path\to\python-site-packages\mkdocs(Python3.7)
 </code></pre>
@@ -587,10 +601,10 @@ cd my-project
 <p><img alt="mkdocs_site" src="../../../assets/images/tools/mkdocs_build_wiki_site/mkdocs_site.png" /></p>
 <ul>
 <li>
-<p>docs文件夹下存放的就是自己写的Markdown文章，系统默认会生成一个index.md文件</p>
+<p><code>docs</code> 文件夹下存放的就是自己写的Markdown文章，系统默认会生成一个index.md文件</p>
 </li>
 <li>
-<p>mkdocs.yml是wiki网站的配置文件（主题、目录、语言等）</p>
+<p><code>mkdocs.yml</code> 是wiki网站的配置文件（主题、目录、语言等）</p>
 </li>
 </ul>
 <h2 id="4wiki">4.预览WiKi<a class="headerlink" href="#4wiki" title="Permanent link">#</a></h2>
@@ -609,7 +623,7 @@ INFO    -  Cleaning site directory
 <p>至此，一个wiki系统已经搭建完成，下面我们来学习一下如何向wiki系统中添加新的内容吧!</p>
 <h2 id="5">5.添加新内容<a class="headerlink" href="#5" title="Permanent link">#</a></h2>
 <h3 id="51">5.1 添加新的文字内容<a class="headerlink" href="#51" title="Permanent link">#</a></h3>
-<p>首先在my-project/docs文件夹下面创建first.md文件，并使用你喜欢的markdown编辑器写入内容：</p>
+<p>首先在 <code>my-project/docs</code> 文件夹下面创建 <code>first.md</code> 文件，并使用你喜欢的markdown编辑器写入内容：</p>
 <pre><code>This is a new page.
 
 # 一级标题
@@ -619,7 +633,7 @@ INFO    -  Cleaning site directory
 ### 三级标题
 </code></pre>
 
-<p>然后编辑my-project/mkdocs.yml文件（WiKi网站配置文件），在末尾添加以下内容：</p>
+<p>然后编辑 <code>my-project/mkdocs.yml</code> 文件（WiKi网站配置文件），在末尾添加以下内容：</p>
 <pre><code>nav:
     - Home: index.md
     - First: first.md
@@ -628,9 +642,9 @@ INFO    -  Cleaning site directory
 <p>保存以上编辑的文件，并刷新预览页面，你将看到如下界面：</p>
 <p><img alt="" src="../../../assets/images/tools/mkdocs_build_wiki_site/mkdocs_preview_add_content.png" /></p>
 <h3 id="52">5.2 添加新的图片内容<a class="headerlink" href="#52" title="Permanent link">#</a></h3>
-<p>建立my-project/docs/images文件夹，并将image.jpg放入此文件夹。</p>
+<p>建立 <code>my-project/docs/images</code> 文件夹，并将    <code>image.jpg</code> 放入此文件夹。</p>
 <p><img alt="" src="../../../assets/images/tools/mkdocs_build_wiki_site/images_folder.png" /></p>
-<p>然后在my-project/docs/first.md文件中插入该图片：</p>
+<p>然后在 <code>my-project/docs/first.md</code> 文件中插入该图片：</p>
 <pre><code>This is a new page.
 
 # 一级标题
