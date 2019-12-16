@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../../../img/favicon.ico">
-        <title>关于交叉编译工具链 - Notebook</title>
+        <title>安全的使用rm - Notebook</title>
         <link href="../../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../../css/base.css" rel="stylesheet">
@@ -282,37 +282,37 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../embedded_linux_dev_env/virtual_box_env/">VirtualBox开发环境搭建</a>
+    <a href="../virtual_box_env/">VirtualBox开发环境搭建</a>
 </li>
             
 <li >
-    <a href="../../embedded_linux_dev_env/ubuntu_get_kernel_tree/">构建内核源码树</a>
+    <a href="../ubuntu_get_kernel_tree/">构建内核源码树</a>
 </li>
             
 <li >
-    <a href="../../embedded_linux_dev_env/samba/">samba服务配置</a>
+    <a href="../samba/">samba服务配置</a>
 </li>
             
 <li >
-    <a href="../../embedded_linux_dev_env/ftp_server_build/">FTP服务配置</a>
+    <a href="../ftp_server_build/">FTP服务配置</a>
 </li>
             
 <li >
-    <a href="../../embedded_linux_dev_env/nfs/">NFS</a>
+    <a href="../nfs/">NFS</a>
 </li>
             
 <li >
-    <a href="../../embedded_linux_dev_env/arm_compiler/">ARM交叉编译工具</a>
+    <a href="../arm_compiler/">ARM交叉编译工具</a>
 </li>
             
 <li >
-    <a href="../../embedded_linux_dev_env/ubuntu_boot_error/">Ubuntu启动错误</a>
+    <a href="../ubuntu_boot_error/">Ubuntu启动错误</a>
 </li>
     </ul>
   </li>
             
-<li >
-    <a href="../../embedded_linux_dev_env/rm/">安全的使用rm</a>
+<li class="active">
+    <a href="./">安全的使用rm</a>
 </li>
             
   <li class="dropdown-submenu">
@@ -329,8 +329,8 @@
     <a href="#">JZ2440开发</a>
     <ul class="dropdown-menu">
             
-<li class="active">
-    <a href="./">关于交叉编译工具链</a>
+<li >
+    <a href="../../jz2440/cross_compile/">关于交叉编译工具链</a>
 </li>
     </ul>
   </li>
@@ -552,17 +552,17 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../../makefile/two_flavors_of_variables/">
+                                <a rel="next" href="../ubuntu_boot_error/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../../../STM32/stm32_hal_uart/">
+                                <a rel="prev" href="../../makefile/two_flavors_of_variables/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/edgeML/notebook/edit/master/docs/Embedded System/linux/jz2440/cross_compile.md">Edit on Notebook</a>
+                                <a href="https://github.com/edgeML/notebook/edit/master/docs/Embedded System/linux/embedded_linux_dev_env/rm.md">Edit on Notebook</a>
                             </li>
                     </ul>
                 </div>
@@ -572,19 +572,38 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#jz2440">JZ2440开发</a></li>
-            <li><a href="#1">1.交叉编译工具链</a></li>
+        <li class="main active"><a href="#rm">安全的使用rm</a></li>
+            <li><a href="#1">1. 创建一个脚本</a></li>
+            <li><a href="#2-rm">2. 给rm命令起一个别名</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="jz2440">JZ2440开发<a class="headerlink" href="#jz2440" title="Permanent link">#</a></h1>
-<h2 id="1">1.交叉编译工具链<a class="headerlink" href="#1" title="Permanent link">#</a></h2>
-<p>百问网提供的交叉编译工具链是32位的，所以不能再64位Linux系统上运行，比如Ubuntu18.04。</p>
-<p>解决方案：</p>
-<pre><code># 安装32位的库
-sudo apt-get install lib32ncurses5 lib32z1
-</code></pre></div>
+<h1 id="rm">安全的使用rm<a class="headerlink" href="#rm" title="Permanent link">#</a></h1>
+<h2 id="1">1. 创建一个脚本<a class="headerlink" href="#1" title="Permanent link">#</a></h2>
+<p>创建脚本<code>my_rm.sh</code>,该脚本的功能是：将文件移动到回收站。</p>
+<pre><code class="bash"># script to send removed files to trash directory
+mv $@ ~/.local/share/Trash/files          #有$1~$9个数量, $@代表all
+</code></pre>
+
+<h2 id="2-rm">2. 给rm命令起一个别名<a class="headerlink" href="#2-rm" title="Permanent link">#</a></h2>
+<p>打开 <code>.bashrc</code> 文件</p>
+<pre><code># 进入home目录
+cd
+
+# 打开 .bashrc 文件
+vim .bashrc
+</code></pre>
+
+<p>在 <code>.bashrc</code> 文件末尾添加如下内容：</p>
+<pre><code>alias rm=/home/your_name/my_rm.sh
+</code></pre>
+
+<p>使修改生效，使用如下命令或者重启终端：</p>
+<pre><code>source ~/.bashrc
+</code></pre>
+
+<p>现在使用 <code>rm</code> 指令删除的文件，都会先进入回收站，不会直接永久删除。</p></div>
         </div>
 
         <footer class="col-md-12">

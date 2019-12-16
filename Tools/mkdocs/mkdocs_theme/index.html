@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../../img/favicon.ico">
-        <title>3.MkDocs - 主题 - Notebook</title>
+        <title>4.MkDocs - Wiki样式配置 - Notebook</title>
         <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
@@ -23,6 +23,13 @@
         <script src="../../../js/jquery-1.10.2.min.js" defer></script>
         <script src="../../../js/bootstrap-3.0.3.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/c.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/c++.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/nginx.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/shell session.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
@@ -266,44 +273,6 @@
     </ul>
   </li>
                                     
-<li >
-    <a href="../../../Embedded System/ESP8266/">ESP8266</a>
-</li>
-                                    
-  <li class="dropdown-submenu">
-    <a href="#">STM32</a>
-    <ul class="dropdown-menu">
-            
-<li >
-    <a href="../../../Embedded System/STM32/stm32_hal_uart/">STM32串口编程之中断方式</a>
-</li>
-            
-<li >
-    <a href="../../../Embedded System/STM32/stm32_hal_uart/">STM32定时器编程之定时中断</a>
-</li>
-            
-<li >
-    <a href="../../../Embedded System/STM32/stm32_hal_uart/">STM32定时器编程之PWM</a>
-</li>
-            
-<li >
-    <a href="../../../Embedded System/STM32/stm32_spi/">STM32 SPI</a>
-</li>
-            
-<li >
-    <a href="../../../Embedded System/STM32/stm32_io_drive_42stepper_l298n/">STM32控制42步进电机</a>
-</li>
-            
-<li >
-    <a href="../../../Embedded System/STM32/stm32_flash_erase_leveling/">Flash 磨损均衡算法</a>
-</li>
-            
-<li >
-    <a href="../../../Embedded System/STM32/stm32_module_init_like.linux/">初始化函数的另一种写法</a>
-</li>
-    </ul>
-  </li>
-                                    
   <li class="dropdown-submenu">
     <a href="#">Linux</a>
     <ul class="dropdown-menu">
@@ -342,6 +311,10 @@
     </ul>
   </li>
             
+<li >
+    <a href="../../../Embedded System/linux/embedded_linux_dev_env/rm/">安全的使用rm</a>
+</li>
+            
   <li class="dropdown-submenu">
     <a href="#">GNU make</a>
     <ul class="dropdown-menu">
@@ -361,6 +334,40 @@
 </li>
     </ul>
   </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">STM32</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../Embedded System/STM32/stm32_hal_uart/">STM32串口编程之中断方式</a>
+</li>
+            
+<li >
+    <a href="../../../Embedded System/STM32/stm32_hal_uart/">STM32定时器编程之定时中断</a>
+</li>
+            
+<li >
+    <a href="../../../Embedded System/STM32/stm32_hal_uart/">STM32定时器编程之PWM</a>
+</li>
+            
+<li >
+    <a href="../../../Embedded System/STM32/stm32_spi/">STM32 SPI</a>
+</li>
+            
+<li >
+    <a href="../../../Embedded System/STM32/stm32_io_drive_42stepper_l298n/">STM32控制42步进电机</a>
+</li>
+            
+<li >
+    <a href="../../../Embedded System/STM32/stm32_flash_erase_leveling/">Flash 磨损均衡算法</a>
+</li>
+            
+<li >
+    <a href="../../../Embedded System/STM32/stm32_module_init_like.linux/">初始化函数的另一种写法</a>
+</li>
             
 <li >
     <a href="../../../Embedded System/gcc_dynamic_linking_library/">GCC编译动态链接库</a>
@@ -382,6 +389,10 @@
                                     
 <li >
     <a href="../../../Embedded System/zigbee_keys/">Zigbee</a>
+</li>
+                                    
+<li >
+    <a href="../../../Embedded System/ESP8266/">ESP8266</a>
 </li>
                                     
 <li >
@@ -494,19 +505,15 @@
 </li>
             
 <li >
-    <a href="../mkdocs_deploy_githubpages/">2.MkDocs - 部署Github Pages</a>
+    <a href="../mkdocs_deploy_githubpages/">2.MkDocs - 部署到Github Pages</a>
 </li>
             
 <li >
-    <a href="../mkdocs_deploy_nginx/">3.MkDocs - 部署Nginx</a>
+    <a href="../mkdocs_deploy_nginx/">3.MkDocs - 部署到Nginx</a>
 </li>
             
 <li class="active">
-    <a href="./">3.MkDocs - 主题</a>
-</li>
-            
-<li >
-    <a href="../mkdocs_custom/">4.MkDocs - 定制</a>
+    <a href="./">4.MkDocs - Wiki样式配置</a>
 </li>
     </ul>
   </li>
@@ -550,7 +557,7 @@
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../mkdocs_custom/">
+                                <a rel="prev" href="../../embedded_develop_tools/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -565,11 +572,160 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#mkdocs-wiki">MkDocs - Wiki配置</a></li>
+            <li><a href="#1">1.配置主题</a></li>
+            <li><a href="#2">2.代码高亮</a></li>
+            <li><a href="#3wiki">3.WiKi目录结构规划</a></li>
+            <li><a href="#4">4.定制样式</a></li>
+            <li><a href="#5demo">5.在线Demo</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-</div>
+<h1 id="mkdocs-wiki">MkDocs - Wiki配置<a class="headerlink" href="#mkdocs-wiki" title="Permanent link">#</a></h1>
+<p><font size="2pt">往期回顾：</font></p>
+<p><font size="2pt">第一期：<a href="../mkdocs_intro/">MkDocs - 初识</a></font></p>
+<p><font size="2pt">第二期：<a href="../mkdocs_deploy_githubpages/">MkDocs - 部署WiKi站点到Github Pages</a></font></p>
+<p><font size="2pt">第三期：<a href="../mkdocs_deploy_nginx/">MkDocs - 部署WiKi站点到Nginx</a></font></p>
+<hr />
+<h2 id="1">1.配置主题<a class="headerlink" href="#1" title="Permanent link">#</a></h2>
+<p>MkDocs提供了多种主题供你选择。</p>
+<ul>
+<li>
+<p>内置主题 <a href="https://www.mkdocs.org/user-guide/styling-your-docs/#mkdocs">mkdocs</a> 和 <a href="https://www.mkdocs.org/user-guide/styling-your-docs/#readthedocs">readthedocs</a> ；</p>
+</li>
+<li>
+<p><a href="https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes">第三方主题</a></p>
+</li>
+</ul>
+<p>选择你喜欢的主题，根据主题官网提示进行安装，然后将如下内容添加到你的Wiki项目的 <code>mkdocs.yml</code>文件中。</p>
+<pre><code class="yaml">theme:
+  name: 'your_theme_name' # 替换为你选择的主题的名称
+</code></pre>
+
+<h2 id="2">2.代码高亮<a class="headerlink" href="#2" title="Permanent link">#</a></h2>
+<pre><code class="yaml">theme:
+  name: 'your_theme_name'  # 你的主题名称
+  highlightjs: true        # 打开代码高亮
+  hljs_style: github       # 代码高亮风格
+  hljs_languages:          # 编程语言
+    - c
+    - c++
+    - java
+    - python
+</code></pre>
+
+<ul>
+<li>
+<p>highlightjs：使能代码高亮功能，该功能由 <a href="https://highlightjs.org/"><code>highlight.js库</code></a> 提供，代码高亮功能默认是使能的，所以可以省略不写。</p>
+</li>
+<li>
+<p>hljs_style：代码高亮的风格，highlight.js库提供了 <a href="https://highlightjs.org/static/demo/"><code>79种不同的风格</code></a>，默认风格是：github。</p>
+</li>
+<li>
+<p>hljs_languages：highlight.js库默认仅支持23种编程语言，如果你使用的语言不在默认支持中，请添加到这里。</p>
+</li>
+</ul>
+<h2 id="3wiki">3.WiKi目录结构规划<a class="headerlink" href="#3wiki" title="Permanent link">#</a></h2>
+<p>我们希望归类管理Wiki页面，所以可以在 <code>my-wiki/doc</code> 文件夹下建立不同的分类文件夹：</p>
+<pre><code class="vim">my-wiki
+├── docs
+│   ├── c
+│   │   └── c_language.md
+│   ├── c++
+│   │   └── c++_language.md
+│   ├── first.md
+│   ├── index.md
+│   ├── java
+│   │   └── java_language.md
+│   ├── linux
+│   │   ├── linux_app
+│   │   │   └── linux_app.md
+│   │   └── linux_drv
+│   │       └── linux_drv.md
+│   └── python
+│       └── python_language.md
+└── mkdocs.yml
+</code></pre>
+
+<p>然后在 <code>my-wiki/mkdocs.yml</code>中进行如下配置：</p>
+<pre><code>nav:
+    - Home: index.md
+    - First: first.md
+    - C语言: c/c_language.md
+    - C++语言: c++/c++_language.md
+    - Java语言: java/java_language.md
+    - Python语言: python/python_language.md
+    - Linux开发:
+        - Linux驱动开发: linux/linux_drv/linux_drv.md
+        - Linux应用开发: linux/linux_app/linux_app.md
+</code></pre>
+
+<h2 id="4">4.定制样式<a class="headerlink" href="#4" title="Permanent link">#</a></h2>
+<p>虽然MkDocs提供了很多主题供我们选择，如果还是不能完全满足你的需求，那么可以尝试定制你自己喜欢的样式。</p>
+<h3 id="41">4.1 微调已有主题的样式<a class="headerlink" href="#41" title="Permanent link">#</a></h3>
+<p>创建 <code>my-wiki/css/extra.css</code> 文件，并设置你想要的样式（字体样式、字体颜色、字体大小、段落行间距等）：</p>
+<pre><code class="css">h1 {
+  margin-bottom:20px;  # 一级标题底边距为20px
+}
+
+h2 {
+  font-size:20pt;      # 二级标题的字体大小为20pt
+  margin-top:40px;     # 二级标题顶边距为40px
+  margin-bottom:20px;  # 二级标题底边距为20px
+}
+
+h3 {
+  font-size:17pt;      # 二级标题的字体大小为17pt
+  margin-top:25px;     # 二级标题顶边距为25px
+  margin-bottom:20px;  # 二级标题底边距为20px
+}
+
+p {
+  font-family:&quot;Arial&quot;,&quot;Microsoft YaHei&quot;,&quot;黑体&quot;,&quot;宋体&quot;,&quot;sans-serif&quot;; # 段落的字体
+  font-size:13pt;      # 段落字体的大小
+  line-height:200%;    # 段落行间距
+}
+
+ul {
+    line-height:200%;  # 无序列表行间距
+}
+</code></pre>
+
+<p>然后在Wiki配置文件 <code>my-wiki/mkdocs.yml</code> 中添加如下内容：</p>
+<pre><code>extra_css:
+    - css/extra.css
+</code></pre>
+
+<p>更多样式请自行百度搜索CSS网页布局学习。</p>
+<h3 id="42-markdownhtml">4.2 Markdown与HTML语法相结合<a class="headerlink" href="#42-markdownhtml" title="Permanent link">#</a></h3>
+<p>设置文字大小：</p>
+<pre><code>&lt;font size=&quot;2pt&quot;&gt;文字内容&lt;/font&gt;
+</code></pre>
+
+<p>设置文字颜色：</p>
+<pre><code>&lt;font color=&quot;red&quot;&gt;文字内容&lt;/font&gt;
+</code></pre>
+
+<p>设置文字居中显示：</p>
+<pre><code>&lt;center&gt;文字内容&lt;/center&gt;
+</code></pre>
+
+<p>以上HTML语法都可以嵌套使用，比如设置文字居中显示，并且文字为红色：</p>
+<pre><code>&lt;center&gt;&lt;font size=&quot;3pt&quot;&gt;文字内容&lt;/font&gt;&lt;/center&gt;
+</code></pre>
+
+<p>图片居中显示：</p>
+<pre><code>&lt;center&gt;&lt;p&gt;![image](images/image.jpg)&lt;/p&gt;&lt;/center&gt;
+</code></pre>
+
+<p>更多HTML语法请自行百度搜索学习。</p>
+<h2 id="5demo">5.在线Demo<a class="headerlink" href="#5demo" title="Permanent link">#</a></h2>
+<p>在线Demo地址：<a href="https://edgeML.github.io/my-wiki">https://edgeml.github.io/my-wiki</a></p>
+<p>在线Demo源码：<a href="https://github.com/edgeML/my-wiki">https://github.com/edgeML/my-wiki</a></p>
+<hr />
+<p><center><font size="3pt">更多精彩资讯，请扫码关注！</font></center></p>
+<p><center><p><img alt="weixingongzhonghao" src="../../../assets/images/weixingongzhonghao.png" /></p></center></p></div>
         </div>
 
         <footer class="col-md-12">
