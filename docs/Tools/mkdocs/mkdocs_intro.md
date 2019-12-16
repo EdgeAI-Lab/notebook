@@ -1,6 +1,6 @@
 # MkDocs - 初识
 
-简单的说MKDocs就是一个可以将Markdown文件转换成HTML网页文件的Python程序。
+简单的说MKDocs就是一个可以将Markdown文件转换成HTML静态网页文件的Python程序。
 
 本期小编将带领你从零到一创建一个属于你自己的Wiki知识管理系统。
 
@@ -27,17 +27,26 @@ mkdocs, version 1.0.4 from \path\to\python-site-packages\mkdocs(Python3.7)
 
 ## 3.新建一个WiKi
 
+新建一个名为 `my-project`的Wiki项目：
 ```
 mkdocs new my-project
-cd my-project
 ```
-现在你的WiKi看上去将会是这个样子:
 
-![mkdocs_site](../../\assets\images\tools\mkdocs_build_wiki_site\mkdocs_site.png)
+新建WiKi项目其实就是创建了如下所示的目录结构：
 
-* `docs` 文件夹下存放的就是自己写的Markdown文章，系统默认会生成一个index.md文件
+```bash
+my-project
+├── docs
+│   └── index.md
+└── mkdocs.yml
+```
+* `my-project/docs/index.md` 是WiKi网站的首页源文件
+* `my-project/mkdocs.yml` 是WiKi网站的配置文件（主题、导航栏、语言等）
 
-* `mkdocs.yml` 是wiki网站的配置文件（主题、目录、语言等）
+所以执行 `mkdocs new my-project` 命令之后，你就有了一个Wiki所需的最基本的目录结构。
+
+以后我们就通过向 `my-project/docs` 文件夹增减Markdown文件实现Wiki内容的增减；通过修改 `my-project/mkdocs.yml` 文件实现对WiKi的配置。
+
 
 ## 4.预览WiKi
 
@@ -62,7 +71,7 @@ INFO    -  Cleaning site directory
 
 ## 5.添加新内容
 
-### 5.1 添加新的文字内容
+### 5.1 添加新页面（文字内容）
 
 首先在 `my-project/docs` 文件夹下面创建 `first.md` 文件，并使用你喜欢的markdown编辑器写入内容：
 
@@ -83,12 +92,22 @@ nav:
     - Home: index.md
     - First: first.md
 ```
+此时你的WiKi目录结构是这样的：
+
+```
+my-project
+├── docs
+│   ├── first.md
+│   └── index.md
+└── mkdocs.yml
+```
+
 
 保存以上编辑的文件，并刷新预览页面，你将看到如下界面：
 
 ![](../../\assets\images\tools\mkdocs_build_wiki_site\mkdocs_preview_add_content.png)
 
-### 5.2 添加新的图片内容
+### 5.2 添加图片
 
 建立 `my-project/docs/images` 文件夹，并将    `image.jpg` 放入此文件夹。
 
@@ -106,6 +125,17 @@ This is a new page.
 ### 三级标题
 
 ![image](images/image.jpg)
+```
+此时你的WiKi目录结构是这样的：
+
+```
+my-project
+├── docs
+│   ├── first.md
+│   ├── images
+│   │   └── image.jpg
+│   └── index.md
+└── mkdocs.yml
 ```
 
 保存以上编辑文件，然后刷新预览网页，你将看到如下界面：

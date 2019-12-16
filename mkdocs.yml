@@ -71,17 +71,6 @@ nav:
         - ASCII Table: Embedded System/c&c++/ascii_table.md
         - CMake用法: Embedded System\c&c++\cmake_usage.md
 
-      - ESP8266: Embedded System/ESP8266.md
-
-      - STM32: 
-        - STM32串口编程之中断方式: Embedded System/STM32/stm32_hal_uart.md
-        - STM32定时器编程之定时中断: Embedded System/STM32/stm32_hal_uart.md
-        - STM32定时器编程之PWM: Embedded System/STM32/stm32_hal_uart.md
-        - STM32 SPI: Embedded System/STM32/stm32_spi.md
-        - STM32控制42步进电机: Embedded System/STM32/stm32_io_drive_42stepper_l298n.md
-        - Flash 磨损均衡算法: Embedded System/STM32/stm32_flash_erase_leveling.md
-        - 初始化函数的另一种写法: Embedded System/STM32/stm32_module_init_like.linux.md
-
       - Linux:
         - 开发环境相关: 
           - VirtualBox开发环境搭建: Embedded System\linux\embedded_linux_dev_env\virtual_box_env.md
@@ -91,18 +80,31 @@ nav:
           - NFS: Embedded System\linux\embedded_linux_dev_env\nfs.md
           - ARM交叉编译工具: Embedded System\linux\embedded_linux_dev_env\arm_compiler.md
           - Ubuntu启动错误: Embedded System\linux\embedded_linux_dev_env\ubuntu_boot_error.md
+        
+        - 安全的使用rm: Embedded System\linux\embedded_linux_dev_env\rm.md
 
         - GNU make:
           - GNU make中的2种变量: Embedded System\linux\makefile\two_flavors_of_variables.md
 
         - JZ2440开发:
           - 关于交叉编译工具链: Embedded System\linux\jz2440\cross_compile.md
+
+      - STM32: 
+        - STM32串口编程之中断方式: Embedded System/STM32/stm32_hal_uart.md
+        - STM32定时器编程之定时中断: Embedded System/STM32/stm32_hal_uart.md
+        - STM32定时器编程之PWM: Embedded System/STM32/stm32_hal_uart.md
+        - STM32 SPI: Embedded System/STM32/stm32_spi.md
+        - STM32控制42步进电机: Embedded System/STM32/stm32_io_drive_42stepper_l298n.md
+        - Flash 磨损均衡算法: Embedded System/STM32/stm32_flash_erase_leveling.md
+        - 初始化函数的另一种写法: Embedded System/STM32/stm32_module_init_like.linux.md
           
         - GCC编译动态链接库: Embedded System/gcc_dynamic_linking_library.md
         - 常用shell命令: Embedded System/linux_shell_cmd.md
         - Linux Shell脚本编程: Embedded System/linux_shell_program.md
         - GCC&Clang&LLVM的关系: Embedded System/gcc_clang_llvm.md
+
       - Zigbee: Embedded System/zigbee_keys.md
+      - ESP8266: Embedded System/ESP8266.md
       - NanoPC RK3399:  Embedded System/nanopc_m4.md
 
       - Hardware:
@@ -133,10 +135,9 @@ nav:
     - Tools:
       - MkDocs搭建个人WiKi知识管理系统: 
         - 1.MkDocs - 初识: Tools\mkdocs\mkdocs_intro.md
-        - 2.MkDocs - 部署Github Pages: Tools\mkdocs\mkdocs_deploy_githubpages.md
-        - 3.MkDocs - 部署Nginx: Tools\mkdocs\mkdocs_deploy_nginx.md
-        - 3.MkDocs - 主题: Tools\mkdocs\mkdocs_theme.md
-        - 4.MkDocs - 定制: Tools\mkdocs\mkdocs_custom.md
+        - 2.MkDocs - 部署到Github Pages: Tools\mkdocs\mkdocs_deploy_githubpages.md
+        - 3.MkDocs - 部署到Nginx: Tools\mkdocs\mkdocs_deploy_nginx.md
+        - 4.MkDocs - Wiki样式配置: Tools\mkdocs\mkdocs_theme.md
       - 嵌入式开发神兵利器: Tools\embedded_develop_tools.md
       - git command: Tools/git_command.md
       - Shadowsocks: Tools/Shadowsocks.md
@@ -155,25 +156,28 @@ theme:
   # name: 'flatly'
   name: 'united'
   # name: 'simplex'
+
+  # default is en
   language: 'en'
-  palette:
-    primary: 'indigo'
-    accent: 'indigo'
-  font:
-    text: 'Roboto'
-    code: 'Roboto Mono'
-  feature:
-    tabs: true
+
+  # default is true
+  highlightjs: true
+
+  # deafult is github
+  hljs_style: github
+  hljs_languages:
+    - c
+    - c++
+    - nginx
+    - java
+    - python
+    - shell session
+    - yaml
     
 extra:
-  social:
-    - type: 'github'
-      link: 'https://github.com/edgeML'
 # Chinese is not supported  
   search:
     language: 'en'
-
-  theme_inverse: true
       
 # Extensions
 markdown_extensions:
@@ -192,4 +196,3 @@ extra_css:
 
 plugins:
     - search
-    

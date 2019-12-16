@@ -11,13 +11,11 @@ y=2*x
 
 plt.plot(x,y)
 plt.show()
-
 ```
 
 ## 2.为图标添加注释
 
 ```python
-
 import matplotlib.pyplot as plt
 import numpy as np
 import math
