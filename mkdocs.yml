@@ -51,7 +51,7 @@ nav:
       - matplotlib使用: Python/matplotlib.md
       - 三角函数: Python/python_trigonometric.md
       - 录音与播放: Python/python_record_play.md  
-      - CRC16: Python/crc16.md
+      - Python代码片段: Python\snippet.md
       - Python字符串格式化: Python/python_string_format.md
 
 
@@ -61,7 +61,6 @@ nav:
 
       - C/C++: 
         - C内存模型: Embedded System/c&c++/c_memory_layout.md
-        - CRC16: Embedded System/c&c++/crc16.md
         - C宏定义#与##: Embedded System/c&c++/c_micro_jing.md
         - 补码: Embedded System/c&c++/complement.md
         - C指针: Embedded System/c&c++/c_pointer.md
@@ -70,6 +69,7 @@ nav:
         - typedef使用注意: Embedded System/c&c++/typedef_tips.md
         - ASCII Table: Embedded System/c&c++/ascii_table.md
         - CMake用法: Embedded System\c&c++\cmake_usage.md
+        - C代码片段: Embedded System\c&c++\snippet.md
 
       - Linux:
         - 开发环境相关: 
@@ -139,13 +139,12 @@ nav:
         - 3.MkDocs - 部署到Nginx: Tools\mkdocs\mkdocs_deploy_nginx.md
         - 4.MkDocs - Wiki样式配置: Tools\mkdocs\mkdocs_theme.md
       - 嵌入式开发神兵利器: Tools\embedded_develop_tools.md
+      - Markdown中的一些技巧: Tools\markdown.md
       - git command: Tools/git_command.md
       - Shadowsocks: Tools/Shadowsocks.md
       - ShadowsocksR: Tools/ShadowsocksR.md
       - 局域网访问Jupyter Notebook: Tools/JupyterNotebook.md
       - UML: Tools/PlantUML.md
-   
-   
 
 # Copyright
 copyright: 'Copyright &copy; 2019 - 2020 Frank'
