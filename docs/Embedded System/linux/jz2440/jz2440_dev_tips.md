@@ -1,4 +1,4 @@
-# JZ2440开发
+# JZ2440开发Tips
 
 ## 1.交叉编译工具链
 
@@ -9,4 +9,11 @@
 ```
 # 安装32位的库
 sudo apt-get install lib32ncurses5 lib32z1
+```
+
+## 2.内核打补丁
+
+```
+patch -p1 < path/to/patch_file.patch
+cp config_ok .config
 ```

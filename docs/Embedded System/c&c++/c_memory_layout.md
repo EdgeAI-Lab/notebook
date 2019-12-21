@@ -2,6 +2,24 @@
 
 ![test_uml](../../assets/images/c_memory_layout.png)
 
+生成map文件
+
+```
+gcc -Xlinker -Map=output.map test.c
+
+gcc -o test test.c -Wl,-Map,test.map
+```
+
+
+```
+gcc test.c -Wl,-verbose
+```
+
+```
+/DISCARD/ : { *(.note.GNU-stack) *(.gnu_debuglink) (.gnu.lto_) }
+DISCARD关键字用于将指定段舍弃,不出现在输出文件中.
+```
+
 ## 1. 静态区域
 
 ### 1.1. Text

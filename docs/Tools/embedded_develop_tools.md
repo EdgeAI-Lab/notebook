@@ -41,6 +41,11 @@ Windows平台截屏取色录屏工具FastStone Capture。
 [FS Capture下载地址](https://pan.baidu.com/s/1odCv8qPHHsiQkr2utDsiAw)
 
 
+## 5. Windows UVC摄像头 AMCAP
+
+
+
+
 ## x.持续更新中...
 
 神兵利器历练中，敬请关注！
