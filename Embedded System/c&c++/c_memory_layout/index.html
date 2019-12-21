@@ -330,7 +330,11 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../linux/jz2440/cross_compile/">关于交叉编译工具链</a>
+    <a href="../../linux/jz2440/cmake_cross_compile/">CMake交叉编译</a>
+</li>
+            
+<li >
+    <a href="../../linux/jz2440/jz2440_dev_tips/">JZ2440 dev tips</a>
 </li>
     </ul>
   </li>
@@ -383,6 +387,24 @@
             
 <li >
     <a href="../../gcc_clang_llvm/">GCC&Clang&LLVM的关系</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Motor Control</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../motor_control/torque/">转矩</a>
+</li>
+            
+<li >
+    <a href="../../motor_control/dc_motor_driver_chip/">直流刷式电机</a>
+</li>
+            
+<li >
+    <a href="../../motor_control/stepper_motor_driver_chip/">步进电机</a>
 </li>
     </ul>
   </li>
@@ -586,6 +608,19 @@
 
 <h1 id="cmemory-layout">C语言内存分布（Memory Layout）<a class="headerlink" href="#cmemory-layout" title="Permanent link">#</a></h1>
 <p><img alt="test_uml" src="../../../assets/images/c_memory_layout.png" /></p>
+<p>生成map文件</p>
+<pre><code>gcc -Xlinker -Map=output.map test.c
+
+gcc -o test test.c -Wl,-Map,test.map
+</code></pre>
+
+<pre><code>gcc test.c -Wl,-verbose
+</code></pre>
+
+<pre><code>/DISCARD/ : { *(.note.GNU-stack) *(.gnu_debuglink) (.gnu.lto_) }
+DISCARD关键字用于将指定段舍弃,不出现在输出文件中.
+</code></pre>
+
 <h2 id="1">1. 静态区域<a class="headerlink" href="#1" title="Permanent link">#</a></h2>
 <h3 id="11-text">1.1. Text<a class="headerlink" href="#11-text" title="Permanent link">#</a></h3>
 <p>包括代码段（code）和只读数据段（RO）</p>
