@@ -44,6 +44,11 @@ Windows平台截屏取色录屏工具FastStone Capture。
 ## 5. Windows UVC摄像头 AMCAP
 
 
+## 6. VLC
+
+
+## 7. OBS-Studio
+
 
 
 ## x.持续更新中...

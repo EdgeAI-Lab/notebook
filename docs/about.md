@@ -2,7 +2,7 @@
 [`中文请点击这里`](about-zh.md)
 
 ## About Me
-I am a Software Engineer, I konw abou C/C++, Java and Python program language.
+I am a Software Engineer, I konw about C/C++, Java and Python program language.
 I am good at embedded programming for MCU(example: STM32) ,embedded linux and Android.
 
 Now I'm getting into image processing(Use OpenCV), audio and video processing(Use FFMPEG and WebRTC), Embedded Machine Learning.
