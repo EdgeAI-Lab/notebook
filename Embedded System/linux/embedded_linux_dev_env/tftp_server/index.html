@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../../../img/favicon.ico">
-        <title>samba服务配置 - Notebook</title>
+        <title>TFTP服务配置 - EdgeAI-Lab</title>
         <link href="../../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../../css/base.css" rel="stylesheet">
@@ -47,7 +47,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="../../../..">Notebook</a>
+                    <a class="navbar-brand" href="../../../..">EdgeAI-Lab</a>
                 </div>
 
                 <!-- Expanded navigation -->
@@ -289,16 +289,20 @@
     <a href="../ubuntu_get_kernel_tree/">构建内核源码树</a>
 </li>
             
+<li >
+    <a href="../samba_server/">samba服务配置</a>
+</li>
+            
+<li >
+    <a href="../ftp_server/">FTP服务配置</a>
+</li>
+            
 <li class="active">
-    <a href="./">samba服务配置</a>
+    <a href="./">TFTP服务配置</a>
 </li>
             
 <li >
-    <a href="../ftp_server_build/">FTP服务配置</a>
-</li>
-            
-<li >
-    <a href="../nfs/">NFS</a>
+    <a href="../nfs_server/">NFS</a>
 </li>
             
 <li >
@@ -578,17 +582,14 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../ubuntu_get_kernel_tree/">
+                                <a rel="next" href="../ftp_server/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../ftp_server_build/">
+                                <a rel="prev" href="../nfs_server/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/edgeML/notebook/edit/master/docs/Embedded System/linux/embedded_linux_dev_env/samba.md">Edit on Notebook</a>
                             </li>
                     </ul>
                 </div>
@@ -598,149 +599,40 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#samba">Samba</a></li>
-            <li><a href="#_1">一、安装</a></li>
-            <li><a href="#_2">二、配置</a></li>
-            <li><a href="#_3">三、常用指令</a></li>
-            <li><a href="#samba_1">四、创建samba用户</a></li>
-            <li><a href="#windows">五、Windows下注销用户</a></li>
-            <li><a href="#_4">六、参考链接</a></li>
+        <li class="main active"><a href="#tftp">TFTP</a></li>
+            <li><a href="#1-tftp">1. 安装TFTP服务</a></li>
+            <li><a href="#2-tftp">2. 配置TFTP</a></li>
+            <li><a href="#3-tftp">3. 启动TFTP服务</a></li>
+            <li><a href="#4-tftp">4. 检查TFTP运行状态</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="samba">Samba<a class="headerlink" href="#samba" title="Permanent link">#</a></h1>
-<h3 id="_1">一、安装<a class="headerlink" href="#_1" title="Permanent link">#</a></h3>
-<pre><code>sudo apt-get install samba
+<h1 id="tftp">TFTP<a class="headerlink" href="#tftp" title="Permanent link">#</a></h1>
+<p>TFTP: Trivial File Transfer Protocol.</p>
+<p>u-boot中会使用到tftp协议（注意！不是FTP协议）。</p>
+<h2 id="1-tftp">1. 安装TFTP服务<a class="headerlink" href="#1-tftp" title="Permanent link">#</a></h2>
+<pre><code>sudo apt install tftpd-hpa
 </code></pre>
 
-<ul>
-<li>Samba服务默认配置文件头</li>
-</ul>
-<blockquote>
-<p>通过 man 5 smb.conf查看配置文件的详细信息</p>
-<p>"#"注释和";"注释的区别</p>
-</blockquote>
-<pre><code class="bash">
-# Sample configuration file for the Samba suite for Debian GNU/Linux.
-#
-#
-# This is the main Samba configuration file. You should read the
-# smb.conf(5) manual page in order to understand the options listed
-# here. Samba has a huge number of configurable options most of which
-# are not shown in this example
-#
-# Some options that are often worth tuning have been included as
-# commented-out examples in this file.
-#  - When such options are commented with &quot;;&quot;, the proposed setting
-#    differs from the default Samba behaviour
-#  - When commented with &quot;#&quot;, the proposed setting is the default
-#    behaviour of Samba but the option is considered important
-#    enough to be mentioned here
-#
-# NOTE: Whenever you modify this file you should run the command
-# &quot;testparm&quot; to check that you have not made any basic syntactic
-# errors.
-
-
+<h2 id="2-tftp">2. 配置TFTP<a class="headerlink" href="#2-tftp" title="Permanent link">#</a></h2>
+<pre><code>sudo vim /etc/default/tftpd-hpa
 </code></pre>
 
-<h3 id="_2">二、配置<a class="headerlink" href="#_2" title="Permanent link">#</a></h3>
-<p>2.1. 打开Samba配置文件</p>
-<pre><code>sudo vim /etc/samba/smb.conf
+<h2 id="3-tftp">3. 启动TFTP服务<a class="headerlink" href="#3-tftp" title="Permanent link">#</a></h2>
+<pre><code>$ sudo systemctl enable tftpd-hpa
+$ sudo systemctl restart tftpd-hpa
 </code></pre>
 
-<p>2.2. 配置共享Home目录</p>
-<blockquote>
-<p>假如你只有一个samba用户，那么只需要共享Home目录即可满足需求。</p>
-<p>多人使用的Samba服务，请参看2.3节</p>
-</blockquote>
-<pre><code class="bash"># Un-comment the following (and tweak the other settings below to suit)
-# to enable the default home directory shares. This will share each
-# user's home directory as \\server\username
-[homes]
-   comment = Home Directories
-   browseable = no #不允许浏览，其他用户登录时看不到此文件夹
+<pre><code>sudo service tftpd-hpa start
+sudo service tftpd-hpa stop
 
-# By default, the home directories are exported read-only. Change the
-# next parameter to 'no' if you want to be able to write to them.
-   read only = no
-
-# File creation mask is set to 0700 for security reasons. If you want to
-# create files with group=rw permissions, set next parameter to 0775.
-;   create mask = 0700
-
-# Directory creation mask is set to 0700 for security reasons. If you want to
-# create dirs. with group=rw permissions, set next parameter to 0775.
-;   directory mask = 0700
-
-# By default, \\server\username shares can be connected to by anyone
-# with access to the samba server.
-# Un-comment the following parameter to make sure that only &quot;username&quot;
-# can connect to \\server\username
-# This might need tweaking when using external authentication schemes
-;   valid users = %S
-
+sudo service tftpd-hpa restart  // to restart, or use 'stop', or 'start' as needed.
 </code></pre>
 
-<ul>
-<li>"#"注释和";"注释的区别，请参看smb.conf文件头部</li>
-<li>valid users = xxx,yyy,zzz “有效的访问用户” 指的是只有用户xxx,yyy,zzz才可以访问\server\xxx</li>
-<li>valid users = %S 其中%S指的是当前登录的用户</li>
-</ul>
-<p>2.3. 为特定的用户指定共享文件夹</p>
-<pre><code class="bash">
-[xxx's shared folder]
-   comment = Home Directories
-   path = /home/xxx/sharedFolder
-   browseable = no       #不允许浏览，其他用户登录时看不到此文件夹
-   read only = no        #可读写
-   create mask = 0700    #新建文件权限，根据自己需求配置
-   directory mask = 0700 #新建文件夹权限，根据自己需求配置
-   valid users = xxx     #指定有效用户
-
-</code></pre>
-
-<ul>
-<li>通过create mask和directory mask控制文件和文件夹的访问权限</li>
-<li>可使用分组的形式，实现不同用户拥有不同的访问权限</li>
-<li>[Optional]通过Samba服务配置文件write list = user1,user2</li>
-</ul>
-<h3 id="_3">三、常用指令<a class="headerlink" href="#_3" title="Permanent link">#</a></h3>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>在某些电脑上，有时restart配置不能重新生效，只能先stop然后在start，具体原因没有深究</p>
-</div>
-<pre><code>sudo service smbd status       #查看smd服务的状态
-sudo service smbd start        #运行smb服务
-sudo service smbd stop         #停止服务
-sudo service smbd restart      #重启服务，但在实际中一般不采用
-sudo service smbd reload       #重载服务，在实际中较常用，不用停止服务
-
-</code></pre>
-
-<h3 id="samba_1">四、创建samba用户<a class="headerlink" href="#samba_1" title="Permanent link">#</a></h3>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>普通用户不可用，必须使用smbpasswd创建samba用户!</p>
-</div>
-<pre><code>useradd tst1_samba
-sudo smbpasswd -a tst1_samba # -a add user
-</code></pre>
-
-<h3 id="windows">五、Windows下注销用户<a class="headerlink" href="#windows" title="Permanent link">#</a></h3>
-<pre><code>net use * /del
-</code></pre>
-
-<h3 id="_4">六、参考链接<a class="headerlink" href="#_4" title="Permanent link">#</a></h3>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>参考链接，很重要！！！</p>
-</div>
-<ul>
-<li><a href="https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html">smb.conf</a></li>
-<li>man 5 smb.conf</li>
-</ul></div>
+<h2 id="4-tftp">4. 检查TFTP运行状态<a class="headerlink" href="#4-tftp" title="Permanent link">#</a></h2>
+<pre><code>sudo service tftpd-hpa status
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">

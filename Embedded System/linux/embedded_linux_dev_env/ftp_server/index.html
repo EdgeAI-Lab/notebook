@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../../../img/favicon.ico">
-        <title>NFS - Notebook</title>
+        <title>FTP服务配置 - EdgeAI-Lab</title>
         <link href="../../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../../css/base.css" rel="stylesheet">
@@ -47,7 +47,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="../../../..">Notebook</a>
+                    <a class="navbar-brand" href="../../../..">EdgeAI-Lab</a>
                 </div>
 
                 <!-- Expanded navigation -->
@@ -290,15 +290,19 @@
 </li>
             
 <li >
-    <a href="../samba/">samba服务配置</a>
-</li>
-            
-<li >
-    <a href="../ftp_server_build/">FTP服务配置</a>
+    <a href="../samba_server/">samba服务配置</a>
 </li>
             
 <li class="active">
-    <a href="./">NFS</a>
+    <a href="./">FTP服务配置</a>
+</li>
+            
+<li >
+    <a href="../tftp_server/">TFTP服务配置</a>
+</li>
+            
+<li >
+    <a href="../nfs_server/">NFS</a>
 </li>
             
 <li >
@@ -578,17 +582,14 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../ftp_server_build/">
+                                <a rel="next" href="../samba_server/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../arm_compiler/">
+                                <a rel="prev" href="../tftp_server/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/edgeML/notebook/edit/master/docs/Embedded System/linux/embedded_linux_dev_env/nfs.md">Edit on Notebook</a>
                             </li>
                     </ul>
                 </div>
@@ -598,72 +599,52 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#1-nfs">1. 安装NFS服务</a></li>
-        <li class="main "><a href="#2-etcexportsnfs">2. 修改它的配置文件/etc/exports，增加NFS服务访问目录</a></li>
-        <li class="main "><a href="#3-nfs">3. 重启NFS服务</a></li>
-        <li class="main "><a href="#4-nfs">4. 查看NFS服务状态</a></li>
-        <li class="main "><a href="#5-nfs">5. 开发板挂载NFS目录</a></li>
-            <li><a href="#51-linuxlinux">5.1 开发板启动Linux系统后，在Linux系统中挂载</a></li>
-            <li><a href="#52-linuxu-boot">5.2 在linux内核启动时挂载（u-boot中设置启动参数）</a></li>
+        <li class="main active"><a href="#ubuntu1604-64bit-lts">本文实验环境：Ubuntu16.04 64bit LTS</a></li>
+        <li class="main "><a href="#linuxftp">一、首先配置Linux中的FTP服务</a></li>
+        <li class="main "><a href="#1-ftp">1. 安装FTP服务</a></li>
+        <li class="main "><a href="#2-ftp">2. 打开FTP配置文件</a></li>
+        <li class="main "><a href="#3-write_enableyes">3. 将 ” write_enable=YES “前的注释符号“#”去掉，保存退出</a></li>
+        <li class="main "><a href="#4-linux-ip">4. 查看Linux IP地址</a></li>
+        <li class="main "><a href="#5-ftp">5. 启动FTP服务</a></li>
+        <li class="main "><a href="#ftplinux">二、使用FTP工具登陆Linux</a></li>
+        <li class="main "><a href="#_1">更多精彩资讯，请扫码关注。</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="1-nfs">1. 安装NFS服务<a class="headerlink" href="#1-nfs" title="Permanent link">#</a></h1>
-<pre><code>sudo apt-get install nfs-kernel-server
+<h4 id="ubuntu1604-64bit-lts"><strong>本文实验环境：Ubuntu16.04 64bit LTS</strong><a class="headerlink" href="#ubuntu1604-64bit-lts" title="Permanent link">#</a></h4>
+<p>vsftpd - Secure, fast FTP server for UNIX-like systems</p>
+<hr />
+<h3 id="linuxftp">一、首先配置Linux中的FTP服务<a class="headerlink" href="#linuxftp" title="Permanent link">#</a></h3>
+<h3 id="1-ftp">1. 安装FTP服务<a class="headerlink" href="#1-ftp" title="Permanent link">#</a></h3>
+<pre><code>sudo apt-get install vsftpd
 </code></pre>
 
-<h1 id="2-etcexportsnfs">2. 修改它的配置文件/etc/exports，增加NFS服务访问目录<a class="headerlink" href="#2-etcexportsnfs" title="Permanent link">#</a></h1>
-<p><img alt="nfs" src="https://imgconvert.csdnimg.cn/aHR0cDovL2ltZy5ibG9nLmNzZG4ubmV0LzIwMTYwNjIxMTQzNzEzMTIx?x-oss-process=image/format,png" /></p>
-<p>在/etc/exports末尾添加如下内容：  </p>
-<pre><code>/home/book/fhc/nfs *(rw,sync,no_root_squash,no_subtree_check)
+<h3 id="2-ftp">2. 打开FTP配置文件<a class="headerlink" href="#2-ftp" title="Permanent link">#</a></h3>
+<pre><code>sudo vim /etc/vsftpd.conf 
 </code></pre>
 
-<p>以后就可以通过NFS访问目录 /home/book/fhc/nfs，当然你可以添加多个目录。</p>
-<p><strong>参数说明：</strong></p>
-<ul>
-<li>格式：&lt;输出目录&gt; [client1 (选项)] [client2 (选项)]</li>
-</ul>
-<p><strong>Eg:</strong></p>
-<pre><code># 将/home/xxx/nfs目录暴露给NFS客户端192.168.2.100
-/home/xxx/nfs 192.168.2.100/24(rw,sync,no_root_squash,no_subtree_check)
-
-# 将/home/xxx/nfs目录暴露给任意NFS客户端
-/home/xxx/nfs *(rw,sync,no_root_squash,no_subtree_check)
-
+<h3 id="3-write_enableyes">3. 将 ” write_enable=YES “前的注释符号“#”去掉，保存退出<a class="headerlink" href="#3-write_enableyes" title="Permanent link">#</a></h3>
+<p><img alt="vsftpd.conf" src="../../../../assets/images/FTP/ftp_vsftpd_conf.jpg" /></p>
+<h3 id="4-linux-ip">4. 查看Linux IP地址<a class="headerlink" href="#4-linux-ip" title="Permanent link">#</a></h3>
+<pre><code>ifconfig
 </code></pre>
 
-<ul>
-<li>rw：读写权限</li>
-<li>sync：同步模式，内存中数据时时写入磁盘</li>
-<li>no_root_squash：当NFS客户端以root身份访问时，映射为NFS服务器的root用户</li>
-<li>no_subtree_check：不检查父目录权限 </li>
-</ul>
-<h1 id="3-nfs">3. 重启NFS服务<a class="headerlink" href="#3-nfs" title="Permanent link">#</a></h1>
-<pre><code>sudo /etc/init.d/nfs-kernel-server restart
+<p><img alt="ifconfig" src="../../../../assets/images/FTP/ip_config.jpg" /></p>
+<p>如果ifconfig后，没有出现IP地址，请先配置IP，然后继续下面步骤</p>
+<h3 id="5-ftp">5. 启动FTP服务<a class="headerlink" href="#5-ftp" title="Permanent link">#</a></h3>
+<pre><code>sudo service vsftpd restart
+
+# 有时重启不生效，可以先关闭再启动
+sudo service vsftpd stop
+sudo service vsftpd start
 </code></pre>
 
-<h1 id="4-nfs">4. 查看NFS服务状态<a class="headerlink" href="#4-nfs" title="Permanent link">#</a></h1>
-<pre><code>sudo /etc/init.d/nfs-kernel-server status
-</code></pre>
-
-<h1 id="5-nfs">5. 开发板挂载NFS目录<a class="headerlink" href="#5-nfs" title="Permanent link">#</a></h1>
-<h2 id="51-linuxlinux">5.1 开发板启动Linux系统后，在Linux系统中挂载<a class="headerlink" href="#51-linuxlinux" title="Permanent link">#</a></h2>
-<pre><code>mount -t nfs -o nolock 192.168.2.200:/home/book/fhc/nfs /mnt
-</code></pre>
-
-<p>参数介绍：</p>
-<ul>
-<li>mount：Linux系统中挂载文件系统的指令，卸载是umount</li>
-<li>-t nfs：文件系统类型为nfs</li>
-<li>-o nolock：不加锁</li>
-<li>192.168.2.200：nfs服务端IP</li>
-<li>/home/book/fhc/nfs：nfs服务端暴露的文件夹</li>
-<li>/mnt：nfs客户端挂载点</li>
-</ul>
-<h2 id="52-linuxu-boot">5.2 在linux内核启动时挂载（u-boot中设置启动参数）<a class="headerlink" href="#52-linuxu-boot" title="Permanent link">#</a></h2>
-<pre><code>setenv bootargs root=/dev/nfs nfsroot=192.168.10.110:/home/xxx/nfs ip=192.168.10.122 init=/linuxrc console=ttySAC0,115200
-</code></pre></div>
+<h3 id="ftplinux">二、使用FTP工具登陆Linux<a class="headerlink" href="#ftplinux" title="Permanent link">#</a></h3>
+<p>常用FTP工具有很多款，去网上找到你喜欢的就好，下面以“8uftp“工具为例介绍使用方法</p>
+<p><img alt="8uftp" src="../../../../assets/images/FTP/8uftp_ui.jpg" /></p>
+<h2 id="_1">更多精彩资讯，请扫码关注。<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<p><img alt="weixingongzhonghao" src="../../../../assets/images/weixingongzhonghao.png" /></p></div>
         </div>
 
         <footer class="col-md-12">

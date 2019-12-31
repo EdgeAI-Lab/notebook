@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../../../img/favicon.ico">
-        <title>FTP服务配置 - Notebook</title>
+        <title>装载地址和链接地址 - EdgeAI-Lab</title>
         <link href="../../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../../css/base.css" rel="stylesheet">
@@ -47,7 +47,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="../../../..">Notebook</a>
+                    <a class="navbar-brand" href="../../../..">EdgeAI-Lab</a>
                 </div>
 
                 <!-- Expanded navigation -->
@@ -213,7 +213,7 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Embedded <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -282,37 +282,41 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../virtual_box_env/">VirtualBox开发环境搭建</a>
+    <a href="../../embedded_linux_dev_env/virtual_box_env/">VirtualBox开发环境搭建</a>
 </li>
             
 <li >
-    <a href="../ubuntu_get_kernel_tree/">构建内核源码树</a>
+    <a href="../../embedded_linux_dev_env/ubuntu_get_kernel_tree/">构建内核源码树</a>
 </li>
             
 <li >
-    <a href="../samba/">samba服务配置</a>
-</li>
-            
-<li class="active">
-    <a href="./">FTP服务配置</a>
+    <a href="../../embedded_linux_dev_env/samba_server/">samba服务配置</a>
 </li>
             
 <li >
-    <a href="../nfs/">NFS</a>
+    <a href="../../embedded_linux_dev_env/ftp_server/">FTP服务配置</a>
 </li>
             
 <li >
-    <a href="../arm_compiler/">ARM交叉编译工具</a>
+    <a href="../../embedded_linux_dev_env/tftp_server/">TFTP服务配置</a>
 </li>
             
 <li >
-    <a href="../ubuntu_boot_error/">Ubuntu启动错误</a>
+    <a href="../../embedded_linux_dev_env/nfs_server/">NFS</a>
+</li>
+            
+<li >
+    <a href="../../embedded_linux_dev_env/arm_compiler/">ARM交叉编译工具</a>
+</li>
+            
+<li >
+    <a href="../../embedded_linux_dev_env/ubuntu_boot_error/">Ubuntu启动错误</a>
 </li>
     </ul>
   </li>
             
 <li >
-    <a href="../rm/">安全的使用rm</a>
+    <a href="../../embedded_linux_dev_env/rm/">安全的使用rm</a>
 </li>
             
   <li class="dropdown-submenu">
@@ -330,11 +334,11 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../jz2440/cmake_cross_compile/">CMake交叉编译</a>
+    <a href="../cmake_cross_compile/">CMake交叉编译</a>
 </li>
             
 <li >
-    <a href="../../jz2440/jz2440_dev_tips/">JZ2440 dev tips</a>
+    <a href="../jz2440_dev_tips/">JZ2440 dev tips</a>
 </li>
     </ul>
   </li>
@@ -577,19 +581,6 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li >
-                                <a rel="next" href="../samba/">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li >
-                                <a rel="prev" href="../nfs/">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/edgeML/notebook/edit/master/docs/Embedded System/linux/embedded_linux_dev_env/ftp_server_build.md">Edit on Notebook</a>
-                            </li>
                     </ul>
                 </div>
             </div>
@@ -598,47 +589,13 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#ubuntu1604-64bit-lts">本文实验环境：Ubuntu16.04 64bit LTS</a></li>
-        <li class="main "><a href="#linuxftp">一、首先配置Linux中的FTP服务</a></li>
-        <li class="main "><a href="#1-ftp">1. 安装FTP服务</a></li>
-        <li class="main "><a href="#2-ftp">2. 打开FTP配置文件</a></li>
-        <li class="main "><a href="#3-write_enableyes">3. 将 ” write_enable=YES “前的注释符号“#”去掉，保存退出</a></li>
-        <li class="main "><a href="#4-linux-ip">4. 查看Linux IP地址</a></li>
-        <li class="main "><a href="#5-ftp">5. 启动FTP服务</a></li>
-        <li class="main "><a href="#ftplinux">二、使用FTP工具登陆Linux</a></li>
-        <li class="main "><a href="#_1">更多精彩资讯，请扫码关注。</a></li>
+        <li class="main active"><a href="#_1">装载地址和链接地址</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h4 id="ubuntu1604-64bit-lts"><strong>本文实验环境：Ubuntu16.04 64bit LTS</strong><a class="headerlink" href="#ubuntu1604-64bit-lts" title="Permanent link">#</a></h4>
-<hr />
-<h3 id="linuxftp">一、首先配置Linux中的FTP服务<a class="headerlink" href="#linuxftp" title="Permanent link">#</a></h3>
-<h3 id="1-ftp">1. 安装FTP服务<a class="headerlink" href="#1-ftp" title="Permanent link">#</a></h3>
-<pre><code>sudo apt-get install vsftpd
-</code></pre>
-
-<h3 id="2-ftp">2. 打开FTP配置文件<a class="headerlink" href="#2-ftp" title="Permanent link">#</a></h3>
-<pre><code>sudo vim /etc/vsftpd.conf 
-</code></pre>
-
-<h3 id="3-write_enableyes">3. 将 ” write_enable=YES “前的注释符号“#”去掉，保存退出<a class="headerlink" href="#3-write_enableyes" title="Permanent link">#</a></h3>
-<p><img alt="vsftpd.conf" src="../../../../assets/images/FTP/ftp_vsftpd_conf.jpg" /></p>
-<h3 id="4-linux-ip">4. 查看Linux IP地址<a class="headerlink" href="#4-linux-ip" title="Permanent link">#</a></h3>
-<pre><code>ifconfig
-</code></pre>
-
-<p><img alt="ifconfig" src="../../../../assets/images/FTP/ip_config.jpg" /></p>
-<p>如果ifconfig后，没有出现IP地址，请先配置IP，然后继续下面步骤</p>
-<h3 id="5-ftp">5. 启动FTP服务<a class="headerlink" href="#5-ftp" title="Permanent link">#</a></h3>
-<pre><code>sudo service vsftpd restart
-</code></pre>
-
-<h3 id="ftplinux">二、使用FTP工具登陆Linux<a class="headerlink" href="#ftplinux" title="Permanent link">#</a></h3>
-<p>常用FTP工具有很多款，去网上找到你喜欢的就好，下面以“8uftp“工具为例介绍使用方法</p>
-<p><img alt="8uftp" src="../../../../assets/images/FTP/8uftp_ui.jpg" /></p>
-<h2 id="_1">更多精彩资讯，请扫码关注。<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<p><img alt="weixingongzhonghao" src="../../../../assets/images/weixingongzhonghao.png" /></p></div>
+<h1 id="_1">装载地址和链接地址<a class="headerlink" href="#_1" title="Permanent link">#</a></h1>
+<p>链接地址就是运行时地址</p></div>
         </div>
 
         <footer class="col-md-12">
