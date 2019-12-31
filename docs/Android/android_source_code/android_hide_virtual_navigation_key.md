@@ -1,6 +1,6 @@
 # 彻底隐藏虚拟导航键
 
-1.1. 去掉虚拟导航键
+## 1. 去掉虚拟导航键
 
 * 找到frameworks/base/services/core/java/com/android/server/policy/PhoneWindowManager.java中函数setInitialDisplaySize(...)中的代码片段
 
@@ -25,7 +25,7 @@ String navBarOverride = SystemProperties.get("qemu.hw.mainkeys");
 /* modified by fhc 2017-11-24 end */
 ```
 
-1.2. 去掉系统顶部的状态栏和通知栏
+## 2. 去掉系统顶部的状态栏和通知栏
 
 * 屏蔽手势监听
 

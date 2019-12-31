@@ -1,14 +1,15 @@
 # 去掉Android USB设备权限请求对话框
+
 !!! tip
 	注意：还是需要申请USB设备访问权限的，只是不会弹出对话框了
 
-1.1. 打开此文件
+## 1. 打开此文件
 
 ```
 /android/frameworks/base/packages/SystemUI/src/com/android/systemui/usb/UsbPermissionActivity.java
 ```
 
-1.2. 修改代码
+## 2. 修改代码
 
 * 找到这行代码，将其注释掉
 ```c
@@ -16,7 +17,7 @@
 
 ```
 
-1.3. 添加以下代码（根据需求任选一个方案即可）
+## 3. 添加以下代码（根据需求任选一个方案即可）
 
 ```c
 /* 方案一：仅使自己的App不弹出对话框 */

@@ -170,9 +170,9 @@ extra_css:
 
 ## 5.在线Demo
 
-在线Demo地址：[https://edgeml.github.io/my-wiki](https://edgeML.github.io/my-wiki)
+在线Demo地址：[https://edgeai-lab.github.io/my-wiki](https://edgeai-lab.github.io/my-wiki)
 
-在线Demo源码：[https://github.com/edgeML/my-wiki](https://github.com/edgeML/my-wiki)
+在线Demo源码：[https://github.com/EdgeAI-Lab/my-wiki](https://github.com/EdgeAI-Lab/my-wiki)
 
 ----------------------------------------
 

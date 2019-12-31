@@ -1,8 +1,8 @@
-site_name: Notebook
+site_name: EdgeAI-Lab
 
 # Repository
-repo_name: Notebook
-repo_url: https://github.com/edgeML/notebook
+# repo_name: Notebook
+# repo_url: https://github.com/edgeML/notebook
 
 # 404 page
 static_templates:
@@ -75,9 +75,10 @@ nav:
         - 开发环境相关: 
           - VirtualBox开发环境搭建: Embedded System\linux\embedded_linux_dev_env\virtual_box_env.md
           - 构建内核源码树: Embedded System\linux\embedded_linux_dev_env\ubuntu_get_kernel_tree.md
-          - samba服务配置: Embedded System\linux\embedded_linux_dev_env\samba.md
-          - FTP服务配置: Embedded System\linux\embedded_linux_dev_env\ftp_server_build.md
-          - NFS: Embedded System\linux\embedded_linux_dev_env\nfs.md
+          - samba服务配置: Embedded System\linux\embedded_linux_dev_env\samba_server.md
+          - FTP服务配置: Embedded System\linux\embedded_linux_dev_env\ftp_server.md
+          - TFTP服务配置: Embedded System\linux\embedded_linux_dev_env\tftp_server.md
+          - NFS: Embedded System\linux\embedded_linux_dev_env\nfs_server.md
           - ARM交叉编译工具: Embedded System\linux\embedded_linux_dev_env\arm_compiler.md
           - Ubuntu启动错误: Embedded System\linux\embedded_linux_dev_env\ubuntu_boot_error.md
         

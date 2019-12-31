@@ -107,7 +107,7 @@ y_i = 2^(x_i) / sum(2^x_j)
 * https://github.com/BVLC/caffe
 * https://github.com/ARM-software/ML-examples/tree/master/cmsisnn-cifar10
 * https://github.com/ARM-software/CMSIS_5/tree/develop/CMSIS/NN/Examples/ARM/arm_nn_examples/cifar10
-* 项目地址：https://github.com/edgeML/cifar10_image_classifier_on_stm32
+* 项目地址：https://github.com/EdgeAI-Lab/cifar10_image_classifier_on_stm32
 
 
 

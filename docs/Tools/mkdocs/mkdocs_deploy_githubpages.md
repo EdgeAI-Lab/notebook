@@ -90,9 +90,9 @@ https://user_name.github.io/repository_name/
 
 ## 4.在线Demo
 
-在线Demo地址：[https://edgeml.github.io/my-project](https://edgeml.github.io/my-project)
+在线Demo地址：[https://edgeai-lab.github.io/my-project](https://edgeai-lab.github.io/my-project)
 
-在线Demo源码：[https://github.com/edgeML/my-project](https://github.com/edgeML/my-project)
+在线Demo源码：[https://github.com/EdgeAI-Lab/my-project](https://github.com/EdgeAI-Lab/my-project)
 
 
 ----------------------------------------

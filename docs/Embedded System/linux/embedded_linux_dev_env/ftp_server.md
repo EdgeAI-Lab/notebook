@@ -1,6 +1,8 @@
 #### **本文实验环境：Ubuntu16.04 64bit LTS**
 
 
+vsftpd - Secure, fast FTP server for UNIX-like systems
+
 ----------
 ### 一、首先配置Linux中的FTP服务
 
@@ -30,6 +32,10 @@ ifconfig
 ### 5. 启动FTP服务
 ```
 sudo service vsftpd restart
+
+# 有时重启不生效，可以先关闭再启动
+sudo service vsftpd stop
+sudo service vsftpd start
 ```
 
 ### 二、使用FTP工具登陆Linux

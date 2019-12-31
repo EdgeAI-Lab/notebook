@@ -4,24 +4,31 @@
 sudo apt-get install nfs-kernel-server
 ```
 
-# 2. 修改它的配置文件/etc/exports，增加NFS服务访问目录
-![nfs](https://imgconvert.csdnimg.cn/aHR0cDovL2ltZy5ibG9nLmNzZG4ubmV0LzIwMTYwNjIxMTQzNzEzMTIx?x-oss-process=image/format,png)
+# 2. 配置NFS
+
+打开NFS配置文件/etc/exports，该文件中的目录会按照配置要求暴露给指定的NFS客户端。
+
+```shell
+$ sudo vim /etc/exports
+```
 
 在/etc/exports末尾添加如下内容：  
 
 ```
-/home/book/fhc/nfs *(rw,sync,no_root_squash,no_subtree_check)
+/path/to/nfs/ *(rw,sync,no_root_squash,no_subtree_check)
 ```
-
-以后就可以通过NFS访问目录 /home/book/fhc/nfs，当然你可以添加多个目录。
 
 **参数说明：**
 
-* 格式：<输出目录> [client1 (选项)] [client2 (选项)]
+* 格式：<输出目录> [hostname1 (权限配置)]  [hostname2 (权限配置)]
 
-**Eg:**
+* /path/to/nfs/ 要暴露给NFS客户端的目录
+* \* 代表所有，表示暴露给所有的NFS客户端
+* 小括号中的内容是NFS客户端的权限配置
+
+**举例:**
 ```
-# 将/home/xxx/nfs目录暴露给NFS客户端192.168.2.100
+# 将/path/to/nfs/目录暴露给NFS客户端192.168.2.100
 /home/xxx/nfs 192.168.2.100/24(rw,sync,no_root_squash,no_subtree_check)
 
 # 将/home/xxx/nfs目录暴露给任意NFS客户端
@@ -67,3 +74,29 @@ mount -t nfs -o nolock 192.168.2.200:/home/book/fhc/nfs /mnt
 ```
 setenv bootargs root=/dev/nfs nfsroot=192.168.10.110:/home/xxx/nfs ip=192.168.10.122 init=/linuxrc console=ttySAC0,115200
 ```
+
+## 5.3 u-boot中使用NFS
+
+早期的u-boot（2012年）默认支持NFS Version 2（据说最新的2019年是支持NFS Version 3），但是Ubuntu 18.04默认支持的是NFS Version 3和NFS Version 4。
+
+所以为了确保u-boot能够正常的使用NFS，我们需要将Ubuntu 18.04 中的NFS设置为支持Version 2, Version 3 和Version 4。
+
+打开NFS配置文件：
+
+```
+$ sudo vim /etc/default/nfs-kernel-server
+```
+
+在文件末尾添加如下内容：
+
+```
+RPCNFSDOPTS="--nfs-version 2,3,4 --debug --syslog"
+```
+
+检查是否设置成功：
+
+```
+rpcinfo -p localhost
+```
+
+![](../../../assets\images\EmbeddedSystem\linux\embedded_linux_dev_env\nfs\rpcinfo_check_nfs_version.png)

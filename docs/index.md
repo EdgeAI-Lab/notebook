@@ -20,7 +20,7 @@ The current technical column has:
 The site is gradually improving, welcome to continue to pay attention.
 
 ## 1.About Me
-I am a Software Engineer, I konw about C/C++, Java and Python program language.
+I am a Software Engineer, I konw about ARM Assembly, C/C++, Java and Python program language.
 
 I am good at embedded system development: MCU, embedded linux and Android.
 
