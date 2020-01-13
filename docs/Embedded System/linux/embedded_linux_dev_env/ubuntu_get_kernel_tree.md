@@ -10,5 +10,5 @@ uname -r
 
 ```
 sudo apt-get install linux-source
-sudo apt-get install linux-headers-`uanem -r`
+sudo apt-get install linux-headers-`uname -r`
 ```

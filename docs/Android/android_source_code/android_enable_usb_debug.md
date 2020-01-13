@@ -1,5 +1,6 @@
 # 使Android系统默认开启USB调试功能
-1.1. 默认显示 “开发者选项”
+
+## 1. 默认显示 “开发者选项”
 
 * 在packages/apps/Settings/src/com/android/settings/SettingsActivity.java文件的updateTilesList(...)函数中做如下修改：
 
@@ -21,7 +22,7 @@ private void updateTilesList(List<DashboardCategory> target) {
         }
 ```
 
-1.2. 默认允许 “安装未知来源应用”
+## 2. 默认允许 “安装未知来源应用”
 
 * 将frameworks/base/packages/SettingsProvider/res/values/defaults.xml文件中def_install_non_market_apps的值置为true，即可允许 “安装未知来源应用”。
 
@@ -29,7 +30,7 @@ private void updateTilesList(List<DashboardCategory> target) {
 <bool name="def_install_non_market_apps">true</bool>
 ```
 
-1.3. 默认允许USB调试
+## 3. 默认允许USB调试
 
 * 对frameworks/base/services/usb/java/com/android/server/usb/UsbDeviceManager.java的函数systemReady()做如下修改：
 
@@ -69,7 +70,7 @@ private void updateTilesList(List<DashboardCategory> target) {
 
 
 
-1.4. 去掉USB插入时的授权提示对话框
+## 4. 去掉USB插入时的授权提示对话框
 
 * 对frameworks/base/packages/SystemUI/src/com/android/systemui/usb/UsbDebuggingActivity.java的onReceive()函数中做如下修改：
 

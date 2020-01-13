@@ -4,6 +4,11 @@
 * [下载地址EasyDarwin](https://github.com/EasyDarwin/EasyDarwin)
 * 启动EasyDarwin（注意关闭VPN）
 
+后台访问地址：
+```
+http://localhost:10008
+```
+
 ## 2.使用FFMPEG推流
 
 * 单次推流

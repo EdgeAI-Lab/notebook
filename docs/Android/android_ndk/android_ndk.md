@@ -15,13 +15,11 @@ int add(int a,int b)
 {
   return a+b;
 }
-
 ```
 ## 1.1 在Android Studio中将add.c编译为.so文件
 
 * Android Studio中新建JNI工程，然后在CMakeList.txt文件中添加如下内容：
 ```camke
-
 add_library( # Sets the name of the library.
         add
 
@@ -30,7 +28,6 @@ add_library( # Sets the name of the library.
 
         # Provides a relative path to your source file(s).
         add.c)
-
 ```
 在生成的apk文件中可以找到libadd.so文件
 
@@ -39,7 +36,6 @@ add_library( # Sets the name of the library.
 * 在native-lib.cpp中添加如下内容：
 
 ```c++
-
 #ifdef __cplusplus
 extern "C"
 #endif // __cplusplus

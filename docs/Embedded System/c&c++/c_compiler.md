@@ -45,3 +45,18 @@ objdump -d test.o
 ```
 readelf -h test.o
 ```
+
+7. 查看符号表
+
+```
+# 查看符号表
+$ nm test.o
+$ nm a.out
+
+B 该符号在bss段
+T 该符号在text段
+U 该符号未定义
+
+man nm
+
+```

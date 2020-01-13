@@ -46,3 +46,21 @@ unsigned short crc_16(unsigned char *buf, int len)
 	return crc;
 }
 ```
+
+## 2. swap
+
+```c
+void swap(int *a,int *b)
+{
+	*a ^= *b ^= *a ^= *b;
+}
+
+int main()
+{
+	int a = 10;
+	int b = 20;
+
+	swap(&a,&b);
+	return 0;
+}
+```
