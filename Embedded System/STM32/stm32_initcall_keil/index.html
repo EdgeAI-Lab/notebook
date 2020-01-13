@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>STM32 initcall机制-Keil - EdgeAI-Lab</title>
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../../css/extra.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/c.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/c++.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/nginx.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/shell session.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../../..">EdgeAI-Lab</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Android <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Android开机自启</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../Android/android_source_code/android_launcher/">Launcher</a>
+</li>
+            
+<li >
+    <a href="../../../Android/android_source_code/android_broadcast_boot/">开机广播</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Android6.0源码修改</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../Android/android_source_code/android_remove_usb_permission_dialog/">去掉USB权限申请对话框</a>
+</li>
+            
+<li >
+    <a href="../../../Android/android_source_code/android_screen_brightness/">修改屏幕默认亮度</a>
+</li>
+            
+<li >
+    <a href="../../../Android/android_source_code/android_hide_virtual_navigation_key/">彻底隐藏虚拟导航键</a>
+</li>
+            
+<li >
+    <a href="../../../Android/android_source_code/android_enable_usb_debug/">默认开启USB调试功能</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Android应用开发</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../Android/Application/RecycleView/">RecycleView</a>
+</li>
+            
+<li >
+    <a href="../../../Android/android_screen_adapter/android_screen_adapter/">Android 屏幕适配</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Android NDK开发</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../Android/android_ndk/android_ndk/">NDK开发</a>
+</li>
+            
+<li >
+    <a href="../../gcc_clang_llvm/">GCC&Clang&LLVM的关系</a>
+</li>
+            
+<li >
+    <a href="../../../Android/android_ndk/cross-compile_opus_for_android/">交叉编译示例OPUS</a>
+</li>
+            
+<li >
+    <a href="../../../Android/android_ndk/ijkpalyer_for_rtsp_compile/">交叉编译ijkplayer</a>
+</li>
+            
+<li >
+    <a href="../../../Android/android_ndk/android_art/">ART</a>
+</li>
+            
+<li >
+    <a href="../../../Android/android_ndk/android_cmake/">Android CMake知识点</a>
+</li>
+            
+<li >
+    <a href="../../../Android/android_ndk/cross-compile_opencv_for_android/">Android交叉编译OpenCV</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li >
+    <a href="../../../Android/android_compiler_system/android_compile_system/">Android编译系统</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Java</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../Android/java/ubuntu_config_java/">Ubuntu中配置Java</a>
+</li>
+            
+<li >
+    <a href="../../../Android/java/java_ui_swing/">Swing</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">C/C++ <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../c&c++/c_memory_layout/">C内存模型</a>
+</li>
+                                    
+<li >
+    <a href="../../c&c++/c_micro_jing/">C宏定义#与##</a>
+</li>
+                                    
+<li >
+    <a href="../../c&c++/complement/">补码</a>
+</li>
+                                    
+<li >
+    <a href="../../c&c++/c_pointer/">C指针</a>
+</li>
+                                    
+<li >
+    <a href="../../c&c++/c_pragma/">pragma pack()</a>
+</li>
+                                    
+<li >
+    <a href="../../c&c++/pkg_config/">pkg-config</a>
+</li>
+                                    
+<li >
+    <a href="../../c&c++/typedef_tips/">typedef使用注意</a>
+</li>
+                                    
+<li >
+    <a href="../../c&c++/ascii_table/">ASCII Table</a>
+</li>
+                                    
+<li >
+    <a href="../../c&c++/c_operator_precedence/">C操作符优先级</a>
+</li>
+                                    
+<li >
+    <a href="../../c&c++/cmake_usage/">CMake用法</a>
+</li>
+                                    
+<li >
+    <a href="../../c&c++/snippet/">C代码片段</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">STM32 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../stm32_books/">STM32经典书籍</a>
+</li>
+                                    
+<li >
+    <a href="../stm32_boot_configure/">STM32的三种启动方式</a>
+</li>
+                                    
+<li >
+    <a href="../stm32_boot/">STM32的启动流程</a>
+</li>
+                                    
+<li class="active">
+    <a href="./">STM32 initcall机制-Keil</a>
+</li>
+                                    
+<li >
+    <a href="../stm32_initcall_gcc/">STM32 initcall机制-GCC</a>
+</li>
+                                    
+<li >
+    <a href="../debuger_flash_programming/">调试器背后的秘密</a>
+</li>
+                                    
+<li >
+    <a href="../stm32_link_script/">ARM链接脚本</a>
+</li>
+                                    
+<li >
+    <a href="../stm32_elf_bin_file_analysis/">Keil AXF文件和BIN文件分析</a>
+</li>
+                                    
+<li >
+    <a href="../arm_assembly/">ARM汇编</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">STM32外设</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../stm32_hal_uart/">STM32串口编程之中断方式</a>
+</li>
+            
+<li >
+    <a href="../stm32_hal_uart/">STM32定时器编程之定时中断</a>
+</li>
+            
+<li >
+    <a href="../stm32_hal_uart/">STM32定时器编程之PWM</a>
+</li>
+            
+<li >
+    <a href="../stm32_spi/">STM32 SPI</a>
+</li>
+            
+<li >
+    <a href="../stm32_flash_erase_leveling/">Flash 磨损均衡算法</a>
+</li>
+            
+<li >
+    <a href="../stm32_sw_reset/">STM32软件复位</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Motor Control</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../motor_control/torque/">转矩</a>
+</li>
+            
+<li >
+    <a href="../../motor_control/dc_motor_driver_chip/">直流刷式电机</a>
+</li>
+            
+<li >
+    <a href="../../motor_control/stepper_motor_driver_chip/">步进电机</a>
+</li>
+            
+<li >
+    <a href="../stm32_io_drive_42stepper_l298n/">STM32控制42步进电机</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">STM32开发神兵利器</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../tools/jscope_rtt/">JScope RTT模式</a>
+</li>
+            
+<li >
+    <a href="../tools/jscope_hss/">JScope HSS模式</a>
+</li>
+            
+<li >
+    <a href="../tools/rtt/">JLink RTT</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Linux <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">开发环境相关</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../linux/embedded_linux_dev_env/virtual_box_env/">VirtualBox开发环境搭建</a>
+</li>
+            
+<li >
+    <a href="../../linux/embedded_linux_dev_env/build_linux_source_tree_on_ubuntu/">Ubuntu中构建内核源码树</a>
+</li>
+            
+<li >
+    <a href="../../linux/embedded_linux_dev_env/samba_server/">samba服务配置</a>
+</li>
+            
+<li >
+    <a href="../../linux/embedded_linux_dev_env/ftp_server/">FTP服务配置</a>
+</li>
+            
+<li >
+    <a href="../../linux/embedded_linux_dev_env/tftp_server/">TFTP服务配置</a>
+</li>
+            
+<li >
+    <a href="../../linux/embedded_linux_dev_env/nfs_server/">NFS</a>
+</li>
+            
+<li >
+    <a href="../../linux/embedded_linux_dev_env/arm_compiler/">ARM交叉编译工具</a>
+</li>
+            
+<li >
+    <a href="../../linux/embedded_linux_dev_env/ubuntu_boot_error/">Ubuntu启动错误</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">JZ2440开发</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../linux/jz2440/cmake_cross_compile/">CMake交叉编译</a>
+</li>
+            
+<li >
+    <a href="../../linux/jz2440/jz2440_dev_tips/">JZ2440 dev tips</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li >
+    <a href="../../linux/embedded_linux_dev_env/rm/">安全的使用rm</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">GNU make</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../linux/makefile/two_flavors_of_variables/">GNU make中的2种变量</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li >
+    <a href="../../gcc_dynamic_linking_library/">GCC编译动态链接库</a>
+</li>
+                                    
+<li >
+    <a href="../../linux_shell_cmd/">常用shell命令</a>
+</li>
+                                    
+<li >
+    <a href="../../linux_shell_program/">Linux Shell脚本编程</a>
+</li>
+                                    
+<li >
+    <a href="../../gcc_clang_llvm/">GCC&Clang&LLVM的关系</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">RK3399</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../rk3399_cli_connect_wifi/">命令行连接WiFi热点</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Computer Science</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../cs/character_set/">字符集</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Machine Learning</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../ML/ml_basics/">机器学习基础</a>
+</li>
+            
+<li >
+    <a href="../../../ML/tensorflow_install/">Tensorflow安装</a>
+</li>
+            
+<li >
+    <a href="../../../ML/tensorflow_model/">Tensorflow模型转换</a>
+</li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">嵌入式机器学习</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../ML/how_to_run_dl_model_on_stm32/">00：STM32图像分类</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Python</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../Python/matplotlib/">matplotlib使用</a>
+</li>
+            
+<li >
+    <a href="../../../Python/python_trigonometric/">三角函数</a>
+</li>
+            
+<li >
+    <a href="../../../Python/python_record_play/">录音与播放</a>
+</li>
+            
+<li >
+    <a href="../../../Python/snippet/">Python代码片段</a>
+</li>
+            
+<li >
+    <a href="../../../Python/python_string_format/">Python字符串格式化</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Computer Vision</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../Computer Vision/caffe/">caffe</a>
+</li>
+            
+<li >
+    <a href="../../../Computer Vision/cv_library/">cv_library</a>
+</li>
+            
+<li >
+    <a href="../../../Computer Vision/OpenCV4Android_001/">OpenCV4Android</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Multimedia</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../Multimedia/AliyunVOD/get_play_url/">VOD</a>
+</li>
+            
+<li >
+    <a href="../../../Multimedia/optical/">光学知识点</a>
+</li>
+            
+<li >
+    <a href="../../../Multimedia/aac/">AAC编码</a>
+</li>
+            
+<li >
+    <a href="../../../Multimedia/yuv/">彻底理解YUV格式</a>
+</li>
+            
+<li >
+    <a href="../../../Multimedia/av_synchronization/">音视频同步</a>
+</li>
+            
+<li >
+    <a href="../../../Multimedia/nginx/">nginx</a>
+</li>
+            
+<li >
+    <a href="../../../Multimedia/linux_shell_cmd_for_multimedia/">Linux Shell命令</a>
+</li>
+            
+<li >
+    <a href="../../../Multimedia/ffmpeg_compile/">FFMPEG编译</a>
+</li>
+            
+<li >
+    <a href="../../../Multimedia/ffmpeg_command/">FFMPEG命令</a>
+</li>
+            
+<li >
+    <a href="../../../Multimedia/ffmpeg_api/">FFMPEG API</a>
+</li>
+            
+<li >
+    <a href="../../../Multimedia/easydarwin/">EasyDarwin</a>
+</li>
+            
+<li >
+    <a href="../../../Multimedia/pcm/">PCM</a>
+</li>
+            
+<li >
+    <a href="../../../Multimedia/wav_foramt/">WAV</a>
+</li>
+            
+<li >
+    <a href="../../../Multimedia/opus/">OPUS</a>
+</li>
+            
+<li >
+    <a href="../../../Multimedia/Ogg/">Ogg</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Hardware</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../Hardware/battery_work_time/">电池工作时间的计算</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li >
+    <a href="../../ESP8266/">ESP8266</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tools <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">MkDocs搭建个人WiKi知识管理系统</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../Tools/mkdocs/mkdocs_intro/">1.MkDocs - 初识</a>
+</li>
+            
+<li >
+    <a href="../../../Tools/mkdocs/mkdocs_deploy_githubpages/">2.MkDocs - 部署到Github Pages</a>
+</li>
+            
+<li >
+    <a href="../../../Tools/mkdocs/mkdocs_deploy_nginx/">3.MkDocs - 部署到Nginx</a>
+</li>
+            
+<li >
+    <a href="../../../Tools/mkdocs/mkdocs_theme/">4.MkDocs - Wiki样式配置</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li >
+    <a href="../../../Tools/embedded_develop_tools/">嵌入式开发神兵利器</a>
+</li>
+                                    
+<li >
+    <a href="../../../Tools/markdown/">Markdown中的一些技巧</a>
+</li>
+                                    
+<li >
+    <a href="../../../Tools/git_command/">git command</a>
+</li>
+                                    
+<li >
+    <a href="../../../Tools/Shadowsocks/">Shadowsocks</a>
+</li>
+                                    
+<li >
+    <a href="../../../Tools/ShadowsocksR/">ShadowsocksR</a>
+</li>
+                                    
+<li >
+    <a href="../../../Tools/JupyterNotebook/">局域网访问Jupyter Notebook</a>
+</li>
+                                    
+<li >
+    <a href="../../../Tools/PlantUML/">UML</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../stm32_boot/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../stm32_initcall_gcc/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#stm32initcall">STM32上的实现initcall机制</a></li>
+            <li><a href="#1">1. 设计思想</a></li>
+            <li><a href="#2">2. 修改链接脚本</a></li>
+            <li><a href="#3">3. 将指定的函数存放到指定的程序段</a></li>
+            <li><a href="#4">4. 统一调用初始化函数</a></li>
+            <li><a href="#5">5. 使用举例</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="stm32initcall">STM32上的实现initcall机制<a class="headerlink" href="#stm32initcall" title="Permanent link">#</a></h1>
+<p>类似于linux驱动模块框架module_init(init_fun)，该方法在Linux内核中叫做“initcall机制”。</p>
+<h2 id="1">1. 设计思想<a class="headerlink" href="#1" title="Permanent link">#</a></h2>
+<p>利用编译器的特性，在程序编译时将各模块初始化函数顺序存放到内存的指定地址，然后在程序运行时，从这块内存区域中依次调用各模块的初始化函数，自动完成各个模块的初始化工作，增强了程序的高内聚低耦合特性，提高了软件的质量。</p>
+<h3 id="_1">试验环境：<a class="headerlink" href="#_1" title="Permanent link">#</a></h3>
+<ul>
+<li>工具链：Keil5</li>
+<li>开发板：STM32F103ZE</li>
+</ul>
+<hr />
+<h2 id="2">2. 修改链接脚本<a class="headerlink" href="#2" title="Permanent link">#</a></h2>
+<p>修改链接脚本的目的是：新定义一个“程序段”，该段用来存放各个模块的初始化函数（指针）。</p>
+<p>首先我们看一下原本的链接脚本。</p>
+<p>在Keil中新建一个工程，编译后在工程目录下的Objects文件夹中会自动生成一个以.sct结尾的链接脚本，
+其内容如下：</p>
+<pre><code>; *************************************************************
+; *** Scatter-Loading Description File generated by uVision ***
+; *************************************************************
+
+LR_IROM1 0x08000000 0x00080000  {    ; load region size_region
+  ER_IROM1 0x08000000 0x00080000  {  ; load address = execution address
+   *.o (RESET, +First)
+   *(InRoot$$Sections)
+   .ANY (+RO)
+   .ANY (+XO)
+  }
+
+  ; 此区域(RW_IRAM1)使用所有的内存（64KB）
+  RW_IRAM1 0x20000000 0x00010000  {  ; RW data
+   .ANY (+RW +ZI)
+  }
+}
+</code></pre>
+
+<p>下面我们在链接脚本中新增加一个RW_IRAM2段，并且设置RW_IRAM1段大小为48K，RW_IRAM2段大小为16K。</p>
+<p>RW_IRAM2段（0x2000c000~0x00004000）用来顺序存放各模块的初始化函数，该段在STM32运行时会被放到相应的<font color=red>内存区域</font>。</p>
+<p>示例源码如下：</p>
+<pre><code>; *************************************************************
+; *** Scatter-Loading Description File generated by uVision ***
+; *************************************************************
+LR_IROM1 0x08000000 0x00080000  {    ; load region size_region
+  ER_IROM1 0x08000000 0x00080000  {  ; load address = execution address
+   *.o (RESET, +First)
+   *(InRoot$$Sections)
+   .ANY (+RO)
+   .ANY (+XO)
+  }
+
+  ;RW_IRAM1为48K，供应用程序使用
+  RW_IRAM1 0x20000000 0x0000c000  {  ; RW data
+   .ANY (+RW +ZI)
+  }
+
+  ;RW_IRAM2为16K，用于存放各个模块的初始化函数
+  RW_IRAM2 0x2000c000 0x00004000  {  ; RW data
+   *.o(RAMCODE)
+  }
+}
+</code></pre>
+
+<p>对于只读的变量也可以将其存放到Flash，只需将段地址改为Flash的地址（0x08000000~0x00080000）即可。</p>
+<p>更详细的ARM Compiler链接脚本语法，请查阅ARM官方文档：</p>
+<p><a href="http://www.keil.com/support/man/docs/armlink/armlink_pge1362075656353.htm">Scatter File Syntax</a></p>
+<p><font color=red>友情提示：</font>keil中链接脚本的修改方法如下图所示：</p>
+<p><img alt="" src="../../../assets/images/STM32/boot/stm32_boot_from_sram_link_script.png" /></p>
+<p>上述操作之后，链接脚本文件将会在Keil的编辑器中被打开。</p>
+<h2 id="3">3. 将指定的函数存放到指定的程序段<a class="headerlink" href="#3" title="Permanent link">#</a></h2>
+<p>上面我们对STM32的内存进行了分配（链接脚本中的分段），16K大小的RW_IRAM2内存区域将被用来存储初始化函数，
+那么怎么才能将指定的函数放进这个区域呢？</p>
+<h3 id="31">3.1 实现方法<a class="headerlink" href="#31" title="Permanent link">#</a></h3>
+<pre><code class="C">// 初始化函数的原型，函数原型可根据实际需求调整
+typedef void (*init_function_list)(uint8_t taskID);
+
+// 通过MODULE_INIT(func)，func函数在编译时将会被链接到RAMCODE内存区，既我们为初始化函数预先分配的内存区域
+#define _init __attribute__((used, section(&quot;RAMCODE&quot;)))
+#define MODULE_INIT(func) init_function_list _fn_##func _init = func
+</code></pre>
+
+<h3 id="32">3.2 解释<a class="headerlink" href="#32" title="Permanent link">#</a></h3>
+<pre><code class="C">// 将指定的代码放到指定的段
+__attribute__((section(&quot;section_name&quot;)))
+
+// 告诉编译器不要优化该代码，即使它没有被引用
+__attribute__((used))
+
+// 这两个属性可以一起使用
+__attribute__((used, section(&quot;RAMCODE&quot;)))
+
+// 展开宏MODULE_INIT(func)
+// 其实就是声明一个init_function_list类型的函数指针_fn_func；
+// 并且使用__attribute__((used, section(&quot;RAMCODE&quot;)))修饰指针变量_fn_func，使该变量保存在&quot;RAMCODE&quot;段；
+// 然后_fn_func = func。
+init_function_list _fn_func __attribute__((used, section(&quot;RAMCODE&quot;))) =  func
+</code></pre>
+
+<p>更详细的信息请查阅ARM官方文档，相关链接如下：</p>
+<p><a href="http://www.keil.com/support/man/docs/armcc/armcc_chr1359124977848.htm">__attribute__((section("name"))) function attribute</a></p>
+<p><a href="http://www.keil.com/support/man/docs/armcc/armcc_chr1359124978363.htm">__attribute__((used)) function attribute</a></p>
+<h3 id="33">3.3 存放的顺序<a class="headerlink" href="#33" title="Permanent link">#</a></h3>
+<p>因为该方法是利用编译器的特性，所以当有多个<code>MODULE_INIT(func)</code>时，先被编译的将存放在前面（低地址）。</p>
+<p><font color=red>但是模块的初始化有顺序要求怎么办？</font></p>
+<p>有时一个模块的正常使用必须在某个模块初始化之后，比如一个模块需要打印Log，那么Log模块必须在它之前被初始化。
+怎么解决了？</p>
+<p>其实很简单，在调用初始化函数时，我们是根据内存地址顺序调用的，那么将Log模块的初始化函数放在其前面就可以了。</p>
+<p>在Keil中可以这么做：</p>
+<p><img alt="" src="../../../assets/images/STM32/module_init/fun_addr_order.png" /></p>
+<p>还有一种方法就是，分为多个初始化函数程序段，比如：</p>
+<pre><code>RAMCODE1
+RAMCODE2
+RAMCODE3
+RAMCODE4
+</code></pre>
+
+<p>将需要先初始化的模块放到靠前的程序段中。</p>
+<p>在程序运行的时候，先调用<code>RAMCODE1</code>段中的初始化函数，然后调用<code>RAMCODE2</code>段中的初始化函数，依次执行。</p>
+<p><font color=red>小编有话说：</font></p>
+<p><code>MODULE_INIT(func)</code>方法（或者说initcall机制），主要是应用于各个独立模块的初始化，其初衷就是为了降低耦合。如果在设计程序时各个初始化模块依然相互依赖，那么就违背了我们的初衷（即使可以通过编译顺序解决），所以在设计程序时一定要注意。</p>
+<h2 id="4">4. 统一调用初始化函数<a class="headerlink" href="#4" title="Permanent link">#</a></h2>
+<p>将所有的初始化函数都写进特定内存区域后，我们只需知道这个区域的起止地址，就可以统一遍历调用所有的初始化函数，
+从而实现对各个模块的初始化。</p>
+<pre><code class="C">typedef void (*init_function_list)(uint8_t taskID);
+
+void do_init(void)
+{
+    uint8_t taskID = 0;
+    init_function_list *call = (init_function_list *)&amp;Image$$RW_IRAM2$$Base;  // RW_IRAM2段的起始地址
+    init_function_list *end = (init_function_list *)&amp;Image$$RW_IRAM2$$Limit;  // RW_IRAM2段的结束地址
+  do
+    {
+        (*call)(taskID++);
+        call++;
+    }while(call &lt; end);
+}
+</code></pre>
+
+<p>关于ARM链接器标号的更多信息，请查阅ARM官方文档：</p>
+<p><a href="http://www.keil.com/support/man/docs/armlink/armlink_pge1362065952432.htm">Image$$ execution region symbols</a></p>
+<h2 id="5">5. 使用举例<a class="headerlink" href="#5" title="Permanent link">#</a></h2>
+<p>Talk is cheap. Show me the code. </p>
+<p><a href="https://github.com/EdgeAI-Lab/module_init">完整示例工程源码请点击下载</a></p>
+<ul>
+<li>module1.c,module2.c,module3.c 为3个独立的模块，其初始化函数都为内部函数(使用static修饰)，符合高内聚低耦合的软件设计思想</li>
+<li>main.c中，do_init函数直接通过初始化函数的内存地址，对初始化函数逐个进行调用</li>
+</ul>
+<p>简单示例代码如下：</p>
+<ul>
+<li>module1.c</li>
+</ul>
+<pre><code class="C">static void module1_init(uint8_t taskID)
+{
+    // write your code ...
+}
+
+MODULE_INIT(module1_init);
+</code></pre>
+
+<ul>
+<li>module2.c</li>
+</ul>
+<pre><code class="C">static void module2_init(uint8_t taskID)
+{
+    // write your code ...
+}
+
+MODULE_INIT(module2_init);
+</code></pre>
+
+<ul>
+<li>module3.c</li>
+</ul>
+<pre><code class="C">static void module3_init(uint8_t taskID)
+{
+    // write your code ...
+}
+
+MODULE_INIT(module3_init);
+</code></pre>
+
+<ul>
+<li>main.c</li>
+</ul>
+<pre><code class="C">void do_init(void)
+{
+    uint8_t taskID = 0;
+    init_function_list *call = (init_function_list *)&amp;Image$$RW_IRAM2$$Base;
+    init_function_list *end = (init_function_list *)&amp;Image$$RW_IRAM2$$Limit;
+  do
+    {
+        (*call)(taskID++);
+        call++;
+    }while(call &lt; end);
+}
+
+
+int main()
+{
+    // init all module in the function 
+    do_init();
+
+    // write your code ...
+
+    while(1)
+    {
+        // write your code ...
+    }
+}
+</code></pre></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2019 - 2020 Frank</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
