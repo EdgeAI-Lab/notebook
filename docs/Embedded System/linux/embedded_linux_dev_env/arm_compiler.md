@@ -1,24 +1,25 @@
-# ARM芯片的编译器
+# ARM编译器那些事
 
-不同的工具链使用的C库可能不同。
+基于ARM内核的芯片在我们的世界中无处不在，从简单的MCU到高端的应用处理器，各行各业中都有它们的身影。如今ARM生态系统非常繁荣，在这繁荣的背后编译器的作用功不可没。
 
+ARM编译器的供应商主要是ARM公司，IAR公司和GNU开源组织。
 
-## 一、 基于ARM内核的种类进行分类
-
-### 1.1 适用于Cortex-M/R内核的编译器
+## 1. 适用于Cortex-M/R内核的编译器
 
  * 【收费】ARM Compiler(随ARM的IDE发布)： [Arm Development Studio](https://developer.arm.com/tools-and-software/embedded/arm-development-studio) 和 [Keil MDK](https://developer.arm.com/tools-and-software/embedded/keil-mdk)
 
  * 【收费】ARM Compiler(单独发布)：[Arm Compiler](https://developer.arm.com/tools-and-software/embedded/arm-compiler)
 
-* 【收费】IAR编译器仅随IAR的IDE发布：[IAR](https://www.iar.com/iar-embedded-workbench/) 
+* 【收费】IAR编译器仅随IAR的IDE发布：[IAR](https://www.iar.com/iar-embedded-workbench/#!?architecture=Arm&currentTab=editions-and-licensing) 
 
 
 ARM Compiler和IAR属于收费软件，结合ARM和IAR的IDE就能很方便的完成MCU的软件开发，这也是我们平时使用最多的方式。
 
-* [The GNU Toolchain for the Cortex-R/M](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads)
+* 【免费开源】ARM Cortex-M/R GNU工具链 [The GNU Toolchain for the Cortex-R/M](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads)
 
 GNU Toolchain for the Cortex-R/M是基于GCC开发的，免费软件，适用于Cortex-R/M作为内核的MCU。
+
+ST公司STM32CubeIDE就是基于GNU工具链的。
 
 一般它们是这个样子的:
 ```
@@ -30,70 +31,47 @@ arm-none-eabi-as
 ...
 ```
 
-### 1.2 适用于Cortex-A内核的编译器
+## 2. 适用于Cortex-A内核的编译器
 
  * 【收费】ARM Compiler(随ARM的IDE发布)： [Arm Development Studio](https://developer.arm.com/tools-and-software/embedded/arm-development-studio)
 
  * 【收费】ARM Compiler(单独发布)：[Arm Compiler](https://developer.arm.com/tools-and-software/embedded/arm-compiler)
 
-ARM Compiler为收费软件，适用于ARM全系列内核。
+ * 【收费】IAR编译器仅随IAR的IDE发布：[IAR](https://www.iar.com/iar-embedded-workbench/#!?architecture=Arm&currentTab=editions-and-licensing) 
 
- * [The GNU Toolchain for the Cortex-A Family](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-a/downloads)
+ARM Compiler为收费软件，适用于ARM全系列内核。IAR为收费软件，主要支持Cortex-M核，也支持部分Cortex-A核。
 
-GNU Toolchain for the Cortex-A是基于GCC开发的，免费软件，适用于Cortex-A作为内核的处理器。一本分为编译裸机程序的和编译Linux应用程序的（详情参考上面的链接）。
+ * 【免费开源】ARM Cortex-A GNU工具链 [The GNU Toolchain for the Cortex-A Family](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-a/downloads)
 
-```shell
-# 可以编译裸机程序和Linux应用程序
-aarch64-linux-gnu-gcc
+GNU Toolchain for the Cortex-A是基于GCC开发的，免费软件，适用于以Cortex-A作为内核的应用处理器。
 
-# 仅可以编译裸机程序
-
-
-```
-
-* [Android NDK](https://developer.android.google.cn/ndk)
+* 【免费】[Android NDK](https://developer.android.google.cn/ndk)
 
 Android NDK是免费软件，适用于编译Android Native(C/C++)应用程序。
 
+## 3. GNU工具链
 
+GNU工具链免费开源，在业界非常受欢迎。
 
-## 二、 基于编译器的种类进行分类
+针对ARM Cortex-M核进行开发时常用的是Keil和IAR，但是GNU工具链使用的也非常多，比如ST公司新推出的STM32CubeIDE。
 
-### 2.1 ARM Compiler
+但是针对ARM Cortex-A核进行开发时最常用的是GNU编译器，Android NDK使用的就是CNU工具链。
 
- Arm Compiler的发布途径有两种：  
+Cortex-A核一般用于复杂应用，通常都会使用Linux操作系统，所以Cortex-A核的编译器从用途上可分为两种：
 
- * 随ARM的IDE发布： [Arm Development Studio](https://developer.arm.com/tools-and-software/embedded/arm-development-studio) 和 [Keil MDK](https://developer.arm.com/tools-and-software/embedded/keil-mdk)
+* 编译裸机程序的编译器，比如编译Uboot和Linux。
 
- * 单独发布：[Arm Compiler](https://developer.arm.com/tools-and-software/embedded/arm-compiler)
+```
+arm-none-eabi-gcc
+```
 
+* 编译操作系统上应用程序的编译器，比如编译Linux应用程序。
 
-### 2.2 IAR
-* [IAR](https://www.iar.com/iar-embedded-workbench/) 的编译器只随其IDE发布
+```
+arm-none-linux-gnueabihf-gcc
+```
 
-
-
-### 2.3 GCC For ARM
-
-GCC For ARM的发布途径主要有四种：
-
-* [Linaro](https://www.linaro.org/)
-
-* [GNU Toolchain For ARM](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain)
-
-* 使用 [crosstool-ng](http://crosstool-ng.github.io/) 自己编译
-
-* [Android NDK](https://developer.android.google.cn/ndk)
-
-GCC全称为GNU编译器套件(GNU Compiler Collection)。它包括了C、C++、Objective-C、Fortran、Java、Ada、Go语言和D语言的前端，也包括了这些语言的库（如libstdc++、libgcj等等）。  
-
-GCC for ARM 则是基于开源的GCC开发而来，用来编译生成ARM内核可执行文件的编译套件，称之为ARM交叉编译套件/工具链。
-
-由于GCC for ARM的使用非常广泛，种类也比较多，一般通过其命名进行区分。
-
-* GCC for ARM的命名规则
-
-> 注意：其命名规则并不是十分严格规范，大概做个参考吧
+### 3.1 GNU for ARM编译器的命名规则
 
 ```
 arch [-vendor] [-os] [-(gnu)eabi] [-gcc]
@@ -106,37 +84,42 @@ arch [-vendor] [-os] [-(gnu)eabi] [-gcc]
 |os|目标操作系统，没有 os 支持时，也用 none 代替
 |eabi|嵌入式应用二进制接口（Embedded Application Binary Interface）
 
-如果同时没有 vendor 和 os 支持，则只用一个 none 代替。  
+如果同时没有 vendor 和 os 支持，则只用一个 none 代替。
 
 
-举例：
+### 3.2 GNU For ARM的发布途径
 
-* arm-none-eabi-gcc
+GNU For ARM的发布途径主要有四种：
 
-适用于Cortex-M/R内核，比如STM32，编译裸机程序
+* [Linaro](https://www.linaro.org/)
 
-|参数|含义|
-|----|---|
-|arm|内核为arm 32位架构，如Cortex-M/R内核|
-|none|工具链提供商，无目标操作系统，如：STM32程序的编译|
-|eabi|嵌入式应用二进制接口|
-|gcc|目标语言为C语言|
+* [GNU Toolchain For ARM](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain)
 
+* 使用 [crosstool-ng](http://crosstool-ng.github.io/) 自己编译
 
-* aarch64-linux-gnu-gcc
-
-适用于Cortex-A内核，如Cortex-A53，编译裸机程序(boot、kernel等)、Linux应用程序均可
-
-|参数|含义|
-|----|---|
-|aarch64|内核为arm 64位架构，如Cortex-A内核|
-|linux|目标操作系统为Linux|
-|gnu|工具链提供商为GNU|
-|gcc|目标语言为C语言|
+* [Android NDK](https://developer.android.google.cn/ndk)
 
 
-### 2.4 Clang For ARM
+## 4. Clang For ARM
 
 * [Arm Compiler 6](https://developer.arm.com/tools-and-software/embedded/arm-compiler)
 
+现在ARM Compiler 6已经使用Clang作为编译器前端了，在最新版的Keil中就能使用。
+
+![](../../../assets\images\EmbeddedSystem\arm_compiler\keil_arm_compiler6_clang.png)
+
 * [Android NDK](https://developer.android.google.cn/ndk)
+
+目前Android NDK也已经转投Clang。
+
+### 4.1 Clang与GCC的关系
+
+编译器是一套软件，一般分为编译器前端和编译器后端。
+
+* 编译器前端：负责词法分析、语法分析、语义分析和生成中间代码。
+
+* 编译器后端：负责代码优化和生成目标程序。
+
+我们通常说的GCC是一套完整的编译器软件，包括编译器前端和后端。而Clang只是一个编译器前端，Clang由苹果公司开发，据说效率要比GCC高很多，Clang通常使用LLVM作为编译器后端。
+
+![](../../../assets\images\EmbeddedSystem\arm_compiler\gcc_clang.png)

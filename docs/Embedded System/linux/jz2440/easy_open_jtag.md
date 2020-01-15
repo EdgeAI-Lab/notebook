@@ -1,6 +1,6 @@
 # EOP(Easy Open JTAG)
 
-EOP百问科技出品的调试器。
+EOP百问科技出品的调试器，用于下载裸机程序。
 
 EOP的驱动在Windows10下驱动安装十分麻烦，不想折腾可以在Ubuntu上使用EOP（免驱）。
 

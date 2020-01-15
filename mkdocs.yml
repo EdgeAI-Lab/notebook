@@ -53,6 +53,7 @@ nav:
     - STM32: 
         - STM32经典书籍: Embedded System\STM32\stm32_books.md
         - STM32的三种启动方式: Embedded System\STM32\stm32_boot_configure.md
+        - STM32在SRAM中运行代码: Embedded System\STM32\stm32_run_code_in_ram.md
         - STM32的启动流程: Embedded System\STM32\stm32_boot.md
         - STM32 initcall机制-Keil: Embedded System\STM32\stm32_initcall_keil.md
         - STM32 initcall机制-GCC: Embedded System\STM32\stm32_initcall_gcc.md
@@ -92,6 +93,9 @@ nav:
           - Ubuntu启动错误: Embedded System\linux\embedded_linux_dev_env\ubuntu_boot_error.md
         
         - JZ2440开发:
+          - OpenJTAG: Embedded System\linux\jz2440\easy_open_jtag.md
+          - Uboot移植: Embedded System\linux\jz2440\uboot_porting.md
+          - Linux Kernel移植: Embedded System\linux\jz2440\linux_kernel_porting.md
           - CMake交叉编译: Embedded System\linux\jz2440\cmake_cross_compile.md
           - JZ2440 dev tips: Embedded System\linux\jz2440\jz2440_dev_tips.md
 
