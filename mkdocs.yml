@@ -37,13 +37,15 @@ nav:
         - Swing: Android/java/java_ui_swing.md
 
     - C/C++: 
-        - C内存模型: Embedded System/c&c++/c_memory_layout.md
-        - C宏定义#与##: Embedded System/c&c++/c_micro_jing.md
+        - 你需要知道的N个C语言问题:
+          - C内存模型: Embedded System/c&c++/c_memory_layout.md
+          - C宏定义#与##: Embedded System/c&c++/c_micro_jing.md
+          - C指针: Embedded System/c&c++/c_pointer.md
+          - pragma pack(): Embedded System/c&c++/c_pragma.md
+          - typedef使用注意: Embedded System/c&c++/typedef_tips.md
+
         - 补码: Embedded System/c&c++/complement.md
-        - C指针: Embedded System/c&c++/c_pointer.md
-        - pragma pack(): Embedded System/c&c++/c_pragma.md
         - pkg-config: Embedded System/c&c++/pkg_config.md
-        - typedef使用注意: Embedded System/c&c++/typedef_tips.md
         - ASCII Table: Embedded System/c&c++/ascii_table.md
         - C操作符优先级: Embedded System\c&c++\c_operator_precedence.md
         - CMake用法: Embedded System\c&c++\cmake_usage.md
