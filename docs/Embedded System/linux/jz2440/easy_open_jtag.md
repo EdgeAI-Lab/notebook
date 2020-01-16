@@ -6,15 +6,20 @@ EOP的驱动在Windows10下驱动安装十分麻烦，不想折腾可以在Ubunt
 
 [EOP for Ubuntu下载地址](https://pan.baidu.com/s/1Yz_5x_PRXMeIoEhU8I2G-g)
 
+## 1. Ubuntu连接EOP
 
-## 1. 使用方法1
+![](../../../assets\images\EmbeddedSystem\linux\jz2440\oflash_connect_ubuntu.png)
+
+
+## 2. 使用方法1
 
 ```
+# 要写文件的绝对路径
 sudo oflash file_name.bin
 ```
 
 
-## 2.使用方法2
+## 3.使用方法2
 
 
 ```
@@ -22,3 +27,5 @@ sudo oflash
 ```
 
 然后根据指令操作。
+
+![](../../../assets\images\EmbeddedSystem\linux\jz2440\oflash_usage.png)
