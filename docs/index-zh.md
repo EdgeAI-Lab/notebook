@@ -27,7 +27,6 @@
 
 ## 2.了解站长
 * [我的GitHub](https://github.com/edgeML)
-* [我的CSDN博客](https://blog.csdn.net/jiasike)
 * [我的知乎](https://www.zhihu.com/people/fhc2019/activities)
 
 ## 3.联系方式

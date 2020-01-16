@@ -28,7 +28,6 @@ Now I'm getting into image processing(Use OpenCV), audio and video processing(Us
 
 ## 2.Know Me
 * [My GitHub](https://github.com/edgeML)
-* [My CSDN Blog](https://blog.csdn.net/jiasike)
 * [My Zhihu](https://www.zhihu.com/people/fhc2019/activities)
 
 ## 3.Connect Me
