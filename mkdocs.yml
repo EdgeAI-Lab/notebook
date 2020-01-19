@@ -166,10 +166,14 @@ nav:
         - 3.MkDocs - 部署到Nginx: Tools\mkdocs\mkdocs_deploy_nginx.md
         - 4.MkDocs - Wiki样式配置: Tools\mkdocs\mkdocs_theme.md
       - 嵌入式开发神兵利器: Tools\embedded_develop_tools.md
+      - VPN:
+        - Shadowsocks Ubuntu客户端: Tools/VPN/Shadowsocks.md
+        - ShadowsocksR Ubuntu客户端: Tools/VPN/ShadowsocksR.md
+        - ShadowsocksR Ubuntu服务端: Tools\VPN\ShadowsocksR_server_for_ubuntu.md
+
       - Markdown中的一些技巧: Tools\markdown.md
       - git command: Tools/git_command.md
-      - Shadowsocks: Tools/Shadowsocks.md
-      - ShadowsocksR: Tools/ShadowsocksR.md
+
       - 局域网访问Jupyter Notebook: Tools/JupyterNotebook.md
       - UML: Tools/PlantUML.md
 

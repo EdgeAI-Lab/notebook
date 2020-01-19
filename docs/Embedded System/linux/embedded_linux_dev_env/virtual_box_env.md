@@ -96,3 +96,8 @@ sharename   mountpoint   vboxsf   defaults  0   0
 ![](../../../assets\images\EmbeddedSystem\linux\embedded_linux_dev_env\virtual_box_env\sf02.png)
 
 
+## 四、VirtualBox硬盘扩容
+
+```
+.\VBoxManage.exe modifyhd "C:\Users\Administrator\VirtualBox VMs\Ubuntu18.04\Ubuntu18.04.vdi" --resize 51200
+```
