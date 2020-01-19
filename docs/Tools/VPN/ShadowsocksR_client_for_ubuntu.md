@@ -114,4 +114,4 @@ proxychains4 curl www.google.com
 
 Eg: FireFox
 
-![Firefox_Configure_System_Proxy](../assets/images/ssr_firefox.png)
+![Firefox_Configure_System_Proxy](../../assets/images/ssr_firefox.png)

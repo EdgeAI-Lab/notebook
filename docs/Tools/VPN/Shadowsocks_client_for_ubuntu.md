@@ -22,7 +22,7 @@ deb http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu xenial main
 !!! Note
     此处的账号真实有效，需要密码的同学请私信我哦！
 
-![Shadowsocks-qt5](../assets/images/Shadowsocks-QT5_configure.png)
+![Shadowsocks-qt5](../../assets/images/Shadowsocks-QT5_configure.png)
 
 
 ## 3. 配置系统代理
@@ -41,7 +41,7 @@ file:///home/fhc/autoproxy.pac
 
 ## 4. 在浏览器中配置使用系统代理
 
-![Firefox_Configure_System_Proxy](../assets/images/Firefox_configure_system_proxy.png)
+![Firefox_Configure_System_Proxy](../../assets/images/Firefox_configure_system_proxy.png)
 
 ## 5. 命令行使用系统代理
 
