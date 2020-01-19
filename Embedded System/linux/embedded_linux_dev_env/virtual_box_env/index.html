@@ -637,20 +637,30 @@
     <a href="../../../../Tools/embedded_develop_tools/">嵌入式开发神兵利器</a>
 </li>
                                     
+  <li class="dropdown-submenu">
+    <a href="#">VPN</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../../Tools/VPN/Shadowsocks.md">Shadowsocks Ubuntu客户端</a>
+</li>
+            
+<li >
+    <a href="../../../../Tools/VPN/ShadowsocksR.md">ShadowsocksR Ubuntu客户端</a>
+</li>
+            
+<li >
+    <a href="../../../../Tools/VPN/ShadowsocksR_server_for_ubuntu/">ShadowsocksR Ubuntu服务端</a>
+</li>
+    </ul>
+  </li>
+                                    
 <li >
     <a href="../../../../Tools/markdown/">Markdown中的一些技巧</a>
 </li>
                                     
 <li >
     <a href="../../../../Tools/git_command/">git command</a>
-</li>
-                                    
-<li >
-    <a href="../../../../Tools/Shadowsocks/">Shadowsocks</a>
-</li>
-                                    
-<li >
-    <a href="../../../../Tools/ShadowsocksR/">ShadowsocksR</a>
 </li>
                                     
 <li >
@@ -692,6 +702,7 @@
             <li><a href="#virtualboxwindows">一、 VirtualBox与Windows共享剪切板</a></li>
             <li><a href="#virtualbox_1">二、 VirtualBox双网卡配置</a></li>
             <li><a href="#_1">三、共享文件夹配置</a></li>
+            <li><a href="#virtualbox_2">四、VirtualBox硬盘扩容</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -760,7 +771,10 @@ sharename   mountpoint   vboxsf   defaults  0   0
 
 <h3 id="32">3.2 自动挂载<a class="headerlink" href="#32" title="Permanent link">#</a></h3>
 <p>自动挂载到/media目录，且文件的权限是 root vboxsf，使用起来非常不方便，所以不建议使用自动挂载。</p>
-<p><img alt="" src="../../../../assets/images/EmbeddedSystem/linux/embedded_linux_dev_env/virtual_box_env/sf02.png" /></p></div>
+<p><img alt="" src="../../../../assets/images/EmbeddedSystem/linux/embedded_linux_dev_env/virtual_box_env/sf02.png" /></p>
+<h2 id="virtualbox_2">四、VirtualBox硬盘扩容<a class="headerlink" href="#virtualbox_2" title="Permanent link">#</a></h2>
+<pre><code>.\VBoxManage.exe modifyhd &quot;C:\Users\Administrator\VirtualBox VMs\Ubuntu18.04\Ubuntu18.04.vdi&quot; --resize 51200
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">
