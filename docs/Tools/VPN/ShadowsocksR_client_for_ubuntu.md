@@ -1,3 +1,5 @@
+第一次安装时会将"shadowsocksr"文件夹移动到/opt/shadowsocksr，所以非第一次修改配置文件，请到"/opt/shadowsocksr/config.json"
+
 # 1.Clone or download project
 
 ``` bash

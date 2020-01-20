@@ -171,6 +171,10 @@ nav:
         - ShadowsocksR Ubuntu客户端: Tools\VPN\ShadowsocksR_client_for_ubuntu.md
         - ShadowsocksR Ubuntu服务端: Tools\VPN\ShadowsocksR_server_for_ubuntu.md
 
+      - VIM:
+        - VIM插件配置: Tools\VIM\vim_configure.md
+        - VIM使用: Tools\VIM\vim_usage.md 
+
       - Markdown中的一些技巧: Tools\markdown.md
       - git command: Tools/git_command.md
 
