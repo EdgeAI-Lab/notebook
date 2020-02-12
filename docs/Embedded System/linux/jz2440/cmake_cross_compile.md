@@ -6,7 +6,7 @@
 #include<stdio.h>
 int main()
 {
-	printf("Hello ARM CMake!\n");
+	printf("Hello ARM CMake!/n");
 	return 0;
 }
 
@@ -51,15 +51,15 @@ SET(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 
 * camke-gui
 
-![](../../..\assets\images\cmake\cross_compile_cmake_gui_00.png)
+![](../../../assets/images/cmake/cross_compile_cmake_gui_00.png)
 
-![](../../..\assets\images\cmake\cross_compile_cmake_gui_01.png)
+![](../../../assets/images/cmake/cross_compile_cmake_gui_01.png)
 
-![](../../..\assets\images\cmake\cross_compile_cmake_gui_02.png)
+![](../../../assets/images/cmake/cross_compile_cmake_gui_02.png)
 
-![](../../..\assets\images\cmake\cross_compile_cmake_gui_03.png)
+![](../../../assets/images/cmake/cross_compile_cmake_gui_03.png)
 
-![](../../..\assets\images\cmake\cross_compile_cmake_gui_04.png)
+![](../../../assets/images/cmake/cross_compile_cmake_gui_04.png)
 
 
 * 命令行

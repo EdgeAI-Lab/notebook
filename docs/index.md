@@ -5,7 +5,7 @@ Hello! Welcome to my WiKi site.
 
 This is a knowledge management system based on <font color="red">embedded system</font> development. It was meant to be a record of what was learned, but it was also intended to help others.
 
-![](assets\images\happy_boy_origin.jpg)
+![](assets/images/happy_boy_origin.jpg)
 
 The current technical column has:
 

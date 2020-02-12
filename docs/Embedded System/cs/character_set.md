@@ -34,7 +34,7 @@ UTF-8是一种变长的编码方式，一般用 1~4 个字节序列来表示 Uni
 
 4. 从以上UTF-8的编码规则中，可以看出UTF-8是无字节序的（是一个字节一个字节顺序存储的）。
 
-![](../..\assets\images\EmbeddedSystem\cs\utf_8_foramt.jpg)
+![](../../assets/images/EmbeddedSystem/cs/utf_8_foramt.jpg)
 
 ### UTF-8解码过程
 

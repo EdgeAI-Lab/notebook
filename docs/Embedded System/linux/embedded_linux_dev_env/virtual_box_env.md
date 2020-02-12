@@ -7,11 +7,11 @@
 
 ### 1.1 使能共享剪切板和拖拽文件功能
 
-![](../../../assets\images\EmbeddedSystem\linux\embedded_linux_dev_env\virtual_box_env\virtualbox_windows_shared_clipboard.png)
+![](../../../assets/images/EmbeddedSystem/linux/embedded_linux_dev_env/virtual_box_env/virtualbox_windows_shared_clipboard.png)
 
 ### 1.2 安装插件
 
-![](../../../assets\images\EmbeddedSystem\linux\embedded_linux_dev_env\virtual_box_env\virtualbox_install_additions.png)
+![](../../../assets/images/EmbeddedSystem/linux/embedded_linux_dev_env/virtual_box_env/virtualbox_install_additions.png)
 
 ### 1.3 重启Ubuntu
 
@@ -24,7 +24,7 @@
 如果挂载“Guest Additions.iso”光盘后再次挂载，VirtualBox会报错崩溃，并且导致无法再次启动系统。报错信息如下：
 
 ```
-Cannot attach medium 'C:\Program Files\Oracle\VirtualBox\VBoxGuestAdditions.iso'...
+Cannot attach medium 'C:/Program Files/Oracle/VirtualBox/VBoxGuestAdditions.iso'...
 ```
 
 此时使用文本编辑器打开虚拟机文件xxx.vbox，将下面这个删除：
@@ -41,10 +41,10 @@ Cannot attach medium 'C:\Program Files\Oracle\VirtualBox\VBoxGuestAdditions.iso'
 电脑有两块物理网卡，请按照下面步骤操作：
 
 ### 2.1 桥接到无线网卡
-![](../../../assets\images\EmbeddedSystem\linux\embedded_linux_dev_env\virtual_box_env\virtualbox_2_net_adapter01.png)
+![](../../../assets/images/EmbeddedSystem/linux/embedded_linux_dev_env/virtual_box_env/virtualbox_2_net_adapter01.png)
 
 ### 2.2 桥接到有线网卡
-![](../../../assets\images\EmbeddedSystem\linux\embedded_linux_dev_env\virtual_box_env\virtualbox_2_net_adapter02.png)
+![](../../../assets/images/EmbeddedSystem/linux/embedded_linux_dev_env/virtual_box_env/virtualbox_2_net_adapter02.png)
 
 ### 2.3 配置IP
 
@@ -60,7 +60,7 @@ Cannot attach medium 'C:\Program Files\Oracle\VirtualBox\VBoxGuestAdditions.iso'
 
 首先将虚拟机（Guest OS）关闭，然后做如下设置：
 
-![](../../../assets\images\EmbeddedSystem\linux\embedded_linux_dev_env\virtual_box_env\sf01.png)
+![](../../../assets/images/EmbeddedSystem/linux/embedded_linux_dev_env/virtual_box_env/sf01.png)
 
 设置完成后启动虚拟机（Guest OS）
 
@@ -93,11 +93,11 @@ sharename   mountpoint   vboxsf   defaults  0   0
 
 自动挂载到/media目录，且文件的权限是 root vboxsf，使用起来非常不方便，所以不建议使用自动挂载。
 
-![](../../../assets\images\EmbeddedSystem\linux\embedded_linux_dev_env\virtual_box_env\sf02.png)
+![](../../../assets/images/EmbeddedSystem/linux/embedded_linux_dev_env/virtual_box_env/sf02.png)
 
 
 ## 四、VirtualBox硬盘扩容
 
 ```
-.\VBoxManage.exe modifyhd "C:\Users\Administrator\VirtualBox VMs\Ubuntu18.04\Ubuntu18.04.vdi" --resize 51200
+./VBoxManage.exe modifyhd "C:/Users/Administrator/VirtualBox VMs/Ubuntu18.04/Ubuntu18.04.vdi" --resize 51200
 ```

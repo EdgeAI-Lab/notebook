@@ -94,7 +94,7 @@ sudo ./nginx
 
 打开浏览器输入服务器IP地址，如果Nginx正常启动，你将看到如下界面：
 
-![](../../assets\images\tools\mkdocs_build_wiki_site\nginx_start.png)
+![](../../assets/images/tools/mkdocs_build_wiki_site/nginx_start.png)
 
 
 ## 6. 生成静态网站
@@ -113,14 +113,14 @@ mkdocs build
 
 `mkdocs build` 命令执行后，将会在wiki项目目录下生成 `site` 文件夹，该文件夹中包含的就是静态网站。
 
-![](../../assets\images\tools\mkdocs_build_wiki_site\mkdocs_site_folder.png)
+![](../../assets/images/tools/mkdocs_build_wiki_site/mkdocs_site_folder.png)
 
 
 ## 7.将Wiki站点部署到Nginx
 
 将 `site` 文件夹中的内容复制到Nginx服务器上的 `/user/local/nginx/html` 目录下即可。
 
-![](../../assets\images\tools\mkdocs_build_wiki_site\mv_wiki_html_to_server.png)
+![](../../assets/images/tools/mkdocs_build_wiki_site/mv_wiki_html_to_server.png)
 
 
 

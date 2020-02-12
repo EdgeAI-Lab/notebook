@@ -32,7 +32,7 @@
 
 添加宏定义 VECT_TAB_SRAM ：
 
-![](../../assets\images\STM32\boot\set_vtor.png)
+![](../../assets/images/STM32/boot/set_vtor.png)
 
 该宏定义影响的代码：
 
@@ -51,7 +51,7 @@
 
 按照下图所示方式，即可在Keil编辑器中打开链接脚本：
 
-![](../../assets\images\STM32\boot\stm32_boot_from_sram_link_script.png)
+![](../../assets/images/STM32/boot/stm32_boot_from_sram_link_script.png)
 
 打开链接脚本文件后，将内容修改如下：
 
@@ -82,13 +82,13 @@ _WDWORD(0xE000ED08, 0x20000000); // 设置中断向量表偏移
 ```
 按照下图所示方式将该初始化文件配置到Keil中：
 
-![](../../assets\images\STM32\flash_download\debugger_init_file_set.png)
+![](../../assets/images/STM32/flash_download/debugger_init_file_set.png)
 
 ### 1.2.3 修改Keil中的Flash Download设置
 
 因为是直接从SRAM启动并执行程序，不需要对Flash进行操作，所以把Flash相关操作全部去掉。
 
-![](../../assets\images\STM32\boot\stm32_boot_from_sram_set_flash_download.png)
+![](../../assets/images/STM32/boot/stm32_boot_from_sram_set_flash_download.png)
 
 以上就是完整的配置，现在编译项目并点击调试，就能看到程序成功在SRAM中运行了。
 

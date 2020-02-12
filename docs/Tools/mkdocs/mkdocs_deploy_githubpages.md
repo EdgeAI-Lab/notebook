@@ -20,11 +20,11 @@
 
 登录后选择右上角的新建仓库。
 
-![](../../\assets\images\tools\mkdocs_build_wiki_site\github_new_repo.png)
+![](../../assets/images/tools/mkdocs_build_wiki_site/github_new_repo.png)
 
 然后按照提示填写仓库名称等。仓库创建成后，你将看到如下界面：
 
-![](../../\assets\images\tools\mkdocs_build_wiki_site\github_new_repo02.png)
+![](../../assets/images/tools/mkdocs_build_wiki_site/github_new_repo02.png)
 
 获取远程仓库地址备用。
 
@@ -40,7 +40,7 @@ git init
 ```
 本地Git仓库初始化成功后，看上去就像这样：
 
-![mkdocs_site](../../assets\images\tools\mkdocs_build_wiki_site\mkdocs_site_git.png)
+![mkdocs_site](../../assets/images/tools/mkdocs_build_wiki_site/mkdocs_site_git.png)
 
 在本地仓库中添加远程仓库链接
 ```bash
@@ -76,11 +76,11 @@ mkdocs gh-deploy
 
 这是master分支:
 
-![git_master_branch](../../assets\images\tools\mkdocs_build_wiki_site\git_master_branch.png)
+![git_master_branch](../../assets/images/tools/mkdocs_build_wiki_site/git_master_branch.png)
 
 这是gh-pages分支:
 
-![git_gh-pages_branch](../../assets\images\tools\mkdocs_build_wiki_site\git_gh-pages_branch.png)
+![git_gh-pages_branch](../../assets/images/tools/mkdocs_build_wiki_site/git_gh-pages_branch.png)
 
 现在使用类似下面的URL，就可以在互联网中访问你的Wiki站点了。
 

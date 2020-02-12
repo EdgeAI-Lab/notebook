@@ -8,7 +8,7 @@ EOP的驱动在Windows10下驱动安装十分麻烦，不想折腾可以在Ubunt
 
 ## 1. Ubuntu连接EOP
 
-![](../../../assets\images\EmbeddedSystem\linux\jz2440\oflash_connect_ubuntu.png)
+![](../../../assets/images/EmbeddedSystem/linux/jz2440/oflash_connect_ubuntu.png)
 
 
 ## 2. 使用方法1
@@ -28,4 +28,4 @@ sudo oflash
 
 然后根据指令操作。
 
-![](../../../assets\images\EmbeddedSystem\linux\jz2440\oflash_usage.png)
+![](../../../assets/images/EmbeddedSystem/linux/jz2440/oflash_usage.png)

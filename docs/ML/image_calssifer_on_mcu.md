@@ -20,7 +20,7 @@ cd $CAFFE_ROOT
 ./examples/cifar10/create_cifar10.sh
 ```
 成功获取CIFAR-10数据集后在/path/to/caffe/examples/cifar10目录下将会新增三个文件，如下图所示：
-![](../assets\images\cv\cifar_10_on_mcu\caffe_cifar_10_dataset.png)
+![](../assets/images/cv/cifar_10_on_mcu/caffe_cifar_10_dataset.png)
 
 
 ### 2.2 使用ARM官方提供的脚本对模型进行量化

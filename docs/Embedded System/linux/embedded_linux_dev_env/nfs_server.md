@@ -23,7 +23,7 @@ $ sudo vim /etc/exports
 * 格式：<输出目录> [hostname1 (权限配置)]  [hostname2 (权限配置)]
 
 * /path/to/nfs/ 要暴露给NFS客户端的目录
-* \* 代表所有，表示暴露给所有的NFS客户端
+* /* 代表所有，表示暴露给所有的NFS客户端
 * 小括号中的内容是NFS客户端的权限配置
 
 **举例:**
@@ -99,4 +99,4 @@ RPCNFSDOPTS="--nfs-version 2,3,4 --debug --syslog"
 rpcinfo -p localhost
 ```
 
-![](../../../assets\images\EmbeddedSystem\linux\embedded_linux_dev_env\nfs\rpcinfo_check_nfs_version.png)
+![](../../../assets/images/EmbeddedSystem/linux/embedded_linux_dev_env/nfs/rpcinfo_check_nfs_version.png)

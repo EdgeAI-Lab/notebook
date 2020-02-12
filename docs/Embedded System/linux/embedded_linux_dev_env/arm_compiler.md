@@ -106,7 +106,7 @@ GNU For ARM的发布途径主要有四种：
 
 现在ARM Compiler 6已经使用Clang作为编译器前端了，在最新版的Keil中就能使用。
 
-![](../../../assets\images\EmbeddedSystem\arm_compiler\keil_arm_compiler6_clang.png)
+![](../../../assets/images/EmbeddedSystem/arm_compiler/keil_arm_compiler6_clang.png)
 
 * [Android NDK](https://developer.android.google.cn/ndk)
 
@@ -122,4 +122,4 @@ GNU For ARM的发布途径主要有四种：
 
 我们通常说的GCC是一套完整的编译器软件，包括编译器前端和后端。而Clang只是一个编译器前端，Clang由苹果公司开发，据说效率要比GCC高很多，Clang通常使用LLVM作为编译器后端。
 
-![](../../../assets\images\EmbeddedSystem\arm_compiler\gcc_clang.png)
+![](../../../assets/images/EmbeddedSystem/arm_compiler/gcc_clang.png)

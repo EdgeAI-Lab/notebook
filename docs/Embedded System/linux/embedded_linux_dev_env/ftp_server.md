@@ -36,7 +36,7 @@ $ sudo service vsftpd start
 
 推荐使用免费软件[FileZilla](https://filezilla-project.org/)。
 
-![FileZilla](../../../assets\images\EmbeddedSystem\linux\embedded_linux_dev_env\ftp\filezilla.png)
+![FileZilla](../../../assets/images/EmbeddedSystem/linux/embedded_linux_dev_env/ftp/filezilla.png)
 
 
 --------------------------

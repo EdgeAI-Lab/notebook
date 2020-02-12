@@ -7,7 +7,7 @@ Source Insight是一个功能强大的面向项目的编程编辑器，代码浏
 
 [Source Insight官网](https://www.sourceinsight.com)
 
-![](..\assets\images\tools\embedded_dev_tools\si4.png)
+![](../assets/images/tools/embedded_dev_tools/si4.png)
 
 [Source Insight4.0下载地址](https://pan.baidu.com/s/1Bod1YLr2vYDIbGgTr4MXUw)
 
@@ -17,7 +17,7 @@ Windows平台下的二进制文件编辑器。
 
 [WinHex官网](http://www.x-ways.net/winhex/)
 
-![](..\assets\images\tools\embedded_dev_tools\winhex.png)
+![](../assets/images/tools/embedded_dev_tools/winhex.png)
 
 
 [WinHex19.8下载地址](https://pan.baidu.com/s/11NlMRsVt8-N58t3dE6pCtA)
@@ -28,7 +28,7 @@ MindManger是一款非常优秀的思维导图软件。
 
 [MindManger官网](https://www.mindjet.com)
 
-![](..\assets\images\tools\embedded_dev_tools\mindmanger.png)
+![](../assets/images/tools/embedded_dev_tools/mindmanger.png)
 
 
 [MindManger19下载地址](https://pan.baidu.com/s/1Hrh3szbp7Ueue1cEmTUFfw)
@@ -37,7 +37,7 @@ MindManger是一款非常优秀的思维导图软件。
 
 Windows平台截屏取色录屏工具FastStone Capture。
 
-![](../\assets\images\tools\embedded_dev_tools\fs_capture.png)
+![](../assets/images/tools/embedded_dev_tools/fs_capture.png)
 
 
 [FS Capture下载地址](https://pan.baidu.com/s/1CcinCZGb_Y_wiy-tsOs7tQ)
@@ -46,7 +46,7 @@ Windows平台截屏取色录屏工具FastStone Capture。
 ## 5. Windows UVC摄像头 AMCAP
 UVC摄像头操作软件。
 
-![AMCAP9.22](../assets\images\tools\embedded_dev_tools\amcap9.22.png)
+![AMCAP9.22](../assets/images/tools/embedded_dev_tools/amcap9.22.png)
 
 [AMCAP9.22下载地址](https://pan.baidu.com/s/1HBmryq08OVsyo8Wim_y2pQ)
 
@@ -54,7 +54,7 @@ UVC摄像头操作软件。
 
 GIF屏幕录制工具。
 
-![](../assets\images\tools\embedded_dev_tools\screentogif.png)
+![](../assets/images/tools/embedded_dev_tools/screentogif.png)
 
 [ScreenToGif官网下载地址](https://www.screentogif.com/)
 
@@ -64,7 +64,7 @@ GIF屏幕录制工具。
 
 VLC是一款免费开源的多媒体播放器，具有视频播放，视频推流，摄像头预览，屏幕录像等功能。
 
-![](../assets\images\tools\embedded_dev_tools\vlc.png)
+![](../assets/images/tools/embedded_dev_tools/vlc.png)
 
 [VLC官网地址](https://www.videolan.org/vlc/index.html)
 
@@ -72,7 +72,7 @@ VLC是一款免费开源的多媒体播放器，具有视频播放，视频推�
 
 OBS-Studio是一款免费开源的录像和直播推流工具。
 
-![](../assets\images\tools\embedded_dev_tools\obs-studio.png)
+![](../assets/images/tools/embedded_dev_tools/obs-studio.png)
 
 [OBS-Studio官网](https://obsproject.com/)
 

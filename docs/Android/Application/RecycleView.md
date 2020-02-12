@@ -2,13 +2,13 @@
 
 ## 1.新建RecycleViewTest项目：
 
-![ew_project_recycleview](../../assets\images\Android\Application\RecycleView\new_project_recycleview.png)
+![ew_project_recycleview](../../assets/images/Android/Application/RecycleView/new_project_recycleview.png)
 
 ## 2.添加RecycleView库依赖
 
 鼠标右击选择 " Open Module Settings "选项，然后进行如下操作：
 
-![add_androidx_recycleview_dependence](../../assets\images\Android\Application\RecycleView\add_androidx_recycleview_dependence.png)
+![add_androidx_recycleview_dependence](../../assets/images/Android/Application/RecycleView/add_androidx_recycleview_dependence.png)
 
 
 ## 3.创建RecycleView Item布局文件

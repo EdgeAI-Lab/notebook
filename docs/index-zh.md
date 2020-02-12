@@ -4,7 +4,7 @@
 
 这是一个以<font color="red">嵌入式系统开发</font>为主的知识管理系统。本意是用来记录学习到的知识点，但是也希望这些知识能够帮助到其他人。
 
-![](assets\images\happy_boy_origin.jpg)
+![](assets/images/happy_boy_origin.jpg)
 
 目前开设的技术专栏有：
 

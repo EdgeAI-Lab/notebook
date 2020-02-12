@@ -9,8 +9,8 @@
 
 |英文原版|中文译版|
 |-------|-------|
-|![](../../assets\images\STM32\book\the_definitive_guide_to_cortex_m3_m4.jpg)|![](../../assets\images\STM32\book\the_definitive_guide_to_cortex_m3_m4_zh.jpg)|
+|![](../../assets/images/STM32/book/the_definitive_guide_to_cortex_m3_m4.jpg)|![](../../assets/images/STM32/book/the_definitive_guide_to_cortex_m3_m4_zh.jpg)|
 
 ## 2. 《ARM Cortex-M3体系结构与编程》
 
-![](../../assets\images\STM32\book\arm_cortex_m3_structure_app.png)
+![](../../assets/images/STM32/book/arm_cortex_m3_structure_app.png)

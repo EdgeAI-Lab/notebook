@@ -21,11 +21,11 @@
 
 我们来看看传统的编程方式与机器学习这种编程方式有何不同：
 
-![](..\assets\images\ml\how_to_run_dl_model_on_stm32\traditional_programing.png)
+![](../assets/images/ml/how_to_run_dl_model_on_stm32/traditional_programing.png)
 
 传统的编程方式是：使用规则（由程序要编写）和数据生成结果。
 
-![](..\assets\images\ml\how_to_run_dl_model_on_stm32\machine_learning.png)
+![](../assets/images/ml/how_to_run_dl_model_on_stm32/machine_learning.png)
 
 机器学习：与传统的编程方式相反，我们输入的是结果和数据，得到的是规则，这个规则是通过机器学习技术得到的，而不是由程序员编写的。
 
@@ -58,11 +58,11 @@ CIFAR-10数据集由10类32x32的彩色图片组成，一共包含60000张图片
 
 CIFAR-10数据集官网：https://www.cs.toronto.edu/~kriz/cifar.html
 
-![](../\assets\images\ml\how_to_run_dl_model_on_stm32\CIFAR10_images_random.png)
+![](../assets/images/ml/how_to_run_dl_model_on_stm32/CIFAR10_images_random.png)
 
 ### 3.3 项目的输入
 
-![](..\assets\images\ml\how_to_run_dl_model_on_stm32\input_image.png)
+![](../assets/images/ml/how_to_run_dl_model_on_stm32/input_image.png)
 
 一幅宽32像素高32像素的彩色图像，为方便STM32实验操作，事先将图像转换为像素值数组，存放在arm_nnexamples_cifar10_inputs.h中。
 
@@ -70,7 +70,7 @@ CIFAR-10数据集官网：https://www.cs.toronto.edu/~kriz/cifar.html
 
 输出是测试图像所属的类别的概率，概率值最大的就是目标图像的所属类别，输出结果如下图所示：
 
-![](..\assets\images\ml\how_to_run_dl_model_on_stm32\stm32_image_classifier_output_result.png)
+![](../assets/images/ml/how_to_run_dl_model_on_stm32/stm32_image_classifier_output_result.png)
 
 细心的同学可能要问了，为什么这里的输出是127，而不是一个0~1之间的数？
 
@@ -88,14 +88,14 @@ y_i = 2^(x_i) / sum(2^x_j)
 
 编译 -> Debug调试运行 ->  打开Debug (printf) Viewer (View->Serial Windows->Debug (printf) Viewer)
 
-![](..\assets\images\ml\how_to_run_dl_model_on_stm32\arm_nn_cifar_debug.png)
+![](../assets/images/ml/how_to_run_dl_model_on_stm32/arm_nn_cifar_debug.png)
 
 
 ## 4. 使用来自物联网的图片进行测试
 
 首先在互联网下载图片，然后使用脚本对图片尺寸调整为32x32，然后再将32x32图片转换成一维数组供STM32使用。大概过程如下所示：
 
-![](..\assets\images\ml\how_to_run_dl_model_on_stm32\resize_and_convert_array.png)
+![](../assets/images/ml/how_to_run_dl_model_on_stm32/resize_and_convert_array.png)
 
 图片处理的脚本可在本项目Github仓库获取，项目地址：https://github.com/edgeML/cifar10_image_classifier_on_stm32
 

@@ -65,7 +65,7 @@ INFO    -  Cleaning site directory
 
 如果以上步骤都执行成功，你将看到如下界面：
 
-![](../../\assets\images\tools\mkdocs_build_wiki_site\mkdocs_preview.png)
+![](../../assets/images/tools/mkdocs_build_wiki_site/mkdocs_preview.png)
 
 至此，一个wiki系统已经搭建完成，下面我们来学习一下如何向wiki系统中添加新的内容吧!
 
@@ -105,13 +105,13 @@ my-project
 
 保存以上编辑的文件，并刷新预览页面，你将看到如下界面：
 
-![](../../\assets\images\tools\mkdocs_build_wiki_site\mkdocs_preview_add_content.png)
+![](../../assets/images/tools/mkdocs_build_wiki_site/mkdocs_preview_add_content.png)
 
 ### 5.2 添加图片
 
 建立 `my-project/docs/images` 文件夹，并将    `image.jpg` 放入此文件夹。
 
-![](../../\assets\images\tools\mkdocs_build_wiki_site\images_folder.png)
+![](../../assets/images/tools/mkdocs_build_wiki_site/images_folder.png)
 
 然后在 `my-project/docs/first.md` 文件中插入该图片：
 
@@ -140,7 +140,7 @@ my-project
 
 保存以上编辑文件，然后刷新预览网页，你将看到如下界面：
 
-![](../../\assets\images\tools\mkdocs_build_wiki_site\mkdocs_preview_add_image.png)
+![](../../assets/images/tools/mkdocs_build_wiki_site/mkdocs_preview_add_image.png)
 
 
 ## 6.在线Demo

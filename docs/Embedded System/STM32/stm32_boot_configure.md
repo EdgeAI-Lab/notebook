@@ -1,16 +1,16 @@
 # STM32的三种启动方式
 
-![](../../assets\images\STM32\boot\stm32_memory.png)
+![](../../assets/images/STM32/boot/stm32_memory.png)
 
 如上图所示，STM32内部一共有<font color=red>两块物理存储设备</font>（Flash和SRAM）和<font color=red>三块存储区域</font>（Main Flash Memory、System Memory和SRAM）。这三块存储区域也就是STM32的三个启动空间。
 
 这三个启动空间的选择是由引脚BOOT0和BOOT1决定的：
 
-![](../../assets\images\STM32\boot\boot_modes.png)
+![](../../assets/images/STM32/boot/boot_modes.png)
 
 ## 1. 从Main Flash Memory和System Memory启动
 
-![](../../assets\images\STM32\boot\memory_map.png)
+![](../../assets/images/STM32/boot/memory_map.png)
 
 Cortex®-M3 CPU上电后，默认<font color=red>从0x0000 0000地址处取得栈顶地址（MSP），通过ICode bus从0x0000 0004地址处取得PC的值（复位向量）</font>，然后开始执行代码。
 
@@ -94,7 +94,7 @@ mechanism to be able to boot also from SRAM and not only from main Flash memory 
 
 添加宏定义 VECT_TAB_SRAM ：
 
-![](../../assets\images\STM32\boot\set_vtor.png)
+![](../../assets/images/STM32/boot/set_vtor.png)
 
 该宏定义影响的代码：
 
@@ -156,7 +156,7 @@ __Vectors       DCD     __initial_sp               ; Top of Stack
 
 按照下图所示方式，即可在Keil编辑器中打开链接脚本：
 
-![](../../assets\images\STM32\boot\stm32_boot_from_sram_link_script.png)
+![](../../assets/images/STM32/boot/stm32_boot_from_sram_link_script.png)
 
 打开链接脚本文件后，将内容修改如下：
 
@@ -180,7 +180,7 @@ LR_IROM1 0x20000000 0x00005000  { ;装载地址为SRAM首地址
 
 因为是直接从SRAM启动并执行程序，不需要对Flash进行操作，所以把Flash相关操作全部去掉。
 
-![](../../assets\images\STM32\boot\stm32_boot_from_sram_set_flash_download.png)
+![](../../assets/images/STM32/boot/stm32_boot_from_sram_set_flash_download.png)
 
 以上就是完整的配置，现在编译项目并点击调试，就能看到程序成功在SRAM中运行了。
 
