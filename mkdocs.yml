@@ -143,7 +143,6 @@ nav:
         - AAC编码: Multimedia/aac.md
         - 彻底理解YUV格式: Multimedia/yuv.md
         - 音视频同步: Multimedia/av_synchronization.md
-        - nginx: Multimedia/nginx.md
         - Linux Shell命令: Multimedia/linux_shell_cmd_for_multimedia.md
         - FFMPEG编译: Multimedia/ffmpeg_compile.md
         - FFMPEG命令: Multimedia/ffmpeg_command.md
@@ -153,6 +152,10 @@ nav:
         - WAV: Multimedia/wav_foramt.md
         - OPUS: Multimedia/opus.md
         - Ogg: Multimedia/Ogg.md
+
+      - Nginx:
+        - 配置静态网站服务器: Multimedia/nginx_static_site_from_prebuild.md
+        - 配置HLS服务器: Multimedia/nginx_hls_from_source.md
 
       - Hardware:
         - 电池工作时间的计算: Hardware/battery_work_time.md
@@ -172,6 +175,8 @@ nav:
         - ShadowsocksR Ubuntu服务端: Tools\VPN\ShadowsocksR_server_for_ubuntu.md
 
       - VIM:
+        - VIM基础: Tools\VIM\vim_base.md
+        - 使用VIM-Plug配合NERDTree: Tools\VIM\vim_plug_nerdtree.md
         - VIM插件配置: Tools\VIM\vim_configure.md
         - VIM使用: Tools\VIM\vim_usage.md 
 

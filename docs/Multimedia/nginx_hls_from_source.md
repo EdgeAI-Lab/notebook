@@ -1,4 +1,4 @@
-# nginx
+# 配置HLS服务器（从Nginx源码开始）
 
 ## 一、卸载Ubuntu预安装的nginx
 
