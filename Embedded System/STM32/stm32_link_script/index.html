@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../../img/favicon.ico">
-        <title>ARM链接脚本 - EdgeAI-Lab</title>
+        <title>ARM编译器链接脚本 - EdgeAI-Lab</title>
         <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
@@ -188,8 +188,20 @@
 <li >
     <a href="../../c&c++/typedef_tips/">typedef使用注意</a>
 </li>
+            
+<li >
+    <a href="../../c&c++/const_volatile/">const与volatile</a>
+</li>
     </ul>
   </li>
+                                    
+<li >
+    <a href="../../c&c++/c_compiler/">编译器相关</a>
+</li>
+                                    
+<li >
+    <a href="../../c&c++/c_c++_call_each_other/">C与C++相互调用</a>
+</li>
                                     
 <li >
     <a href="../../c&c++/complement/">补码</a>
@@ -249,7 +261,11 @@
 </li>
                                     
 <li class="active">
-    <a href="./">ARM链接脚本</a>
+    <a href="./">ARM编译器链接脚本</a>
+</li>
+                                    
+<li >
+    <a href="../stm32_gnu_link_script/">GNU链接脚本</a>
 </li>
                                     
 <li >
@@ -718,7 +734,7 @@
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../stm32_elf_bin_file_analysis/">
+                                <a rel="prev" href="../stm32_gnu_link_script/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -738,7 +754,8 @@
                 <div class="col-md-9" role="main">
 
 <h1 id="stm32">STM32链接脚本<a class="headerlink" href="#stm32" title="Permanent link">#</a></h1>
-<p>链接器</p>
+<p>装载地址：二进制应用程序文件应该存储的地方</p>
+<p>运行地址：程序运行时应该在的地方</p>
 <h2 id="1keil">1.在keil中查看默认的链接脚本<a class="headerlink" href="#1keil" title="Permanent link">#</a></h2>
 <p>Keil中使用的是ARM编译工具链，其链接脚本是scatter文件。</p>
 <p><img alt="" src="../../../assets/images/STM32/boot/stm32_boot_from_sram_link_script.png" /></p>
