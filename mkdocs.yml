@@ -43,7 +43,10 @@ nav:
           - C指针: Embedded System/c&c++/c_pointer.md
           - pragma pack(): Embedded System/c&c++/c_pragma.md
           - typedef使用注意: Embedded System/c&c++/typedef_tips.md
+          - const与volatile: Embedded System/c&c++/const_volatile.md
 
+        - 编译器相关: Embedded System/c&c++/c_compiler.md
+        - C与C++相互调用: Embedded System/c&c++/c_c++_call_each_other.md
         - 补码: Embedded System/c&c++/complement.md
         - pkg-config: Embedded System/c&c++/pkg_config.md
         - ASCII Table: Embedded System/c&c++/ascii_table.md
@@ -60,7 +63,8 @@ nav:
         - STM32 initcall机制-Keil: Embedded System/STM32/stm32_initcall_keil.md
         - STM32 initcall机制-GCC: Embedded System/STM32/stm32_initcall_gcc.md
         - 调试器背后的秘密: Embedded System/STM32/debuger_flash_programming.md
-        - ARM链接脚本: Embedded System/STM32/stm32_link_script.md
+        - ARM编译器链接脚本: Embedded System/STM32/stm32_link_script.md
+        - GNU链接脚本: Embedded System/STM32/stm32_gnu_link_script.md
         - Keil AXF文件和BIN文件分析: Embedded System/STM32/stm32_elf_bin_file_analysis.md
         - ARM汇编: Embedded System/STM32/arm_assembly.md
 
