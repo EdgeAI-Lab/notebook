@@ -1,4 +1,6 @@
-# SPI简介
+# SPI总线简介
+
+## 1. SPI总线的工作模式
 
 |模式|CPOL|CPHA|
 |----|----|----|
@@ -13,7 +15,9 @@
 * CPHA（Clock Phase）
 
 
-![spi timing](../../assets/images/STM32/SPI/spi_timing.jpg)
+## 2. 实例分析
+
+![spi timing](../assets/images/STM32/SPI/spi_timing.jpg)
 图: MCP3202的SPI通信时序图
 
 * 从图中可以看出SPI空闲时SCLK为低电平，所以CPOL=0

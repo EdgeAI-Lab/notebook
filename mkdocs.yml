@@ -34,6 +34,7 @@ nav:
       
       - Java:
         - Ubuntu中配置Java: Android/java/ubuntu_config_java.md
+        - 命令行编译Java程序: Android/java/java_compile_command_line.md
         - Swing: Android/java/java_ui_swing.md
 
     - C/C++: 
@@ -72,7 +73,7 @@ nav:
           - STM32串口编程之中断方式: Embedded System/STM32/stm32_hal_uart.md
           - STM32定时器编程之定时中断: Embedded System/STM32/stm32_hal_uart.md
           - STM32定时器编程之PWM: Embedded System/STM32/stm32_hal_uart.md
-          - STM32 SPI: Embedded System/STM32/stm32_spi.md
+          - STM32 SPI: Embedded System/spi_bus.md
           - Flash 磨损均衡算法: Embedded System/STM32/stm32_flash_erase_leveling.md
           - STM32软件复位: Embedded System/STM32/stm32_sw_reset.md
 
