@@ -15,7 +15,26 @@
 * CPHA（Clock Phase）
 
 
-## 2. 实例分析
+## 2. SPI 时序
+
+* CPOL=0 CPHA=0
+
+![](../assets/images/STM32/SPI/spi-cpol-0-cpha-0.png)
+
+* CPOL=0 CPHA=1
+
+![](../assets/images/STM32/SPI/spi-cpol-0-cpha-1.png)
+
+* CPOL=1 CPHA=0
+
+![](../assets/images/STM32/SPI/spi-cpol-1-cpha-0.png)
+
+CPOL=1 CPHA=1
+
+![](../assets/images/STM32/SPI/spi-cpol-1-cpha-1.png)
+
+
+## 3. 实例分析
 
 ![spi timing](../assets/images/STM32/SPI/spi_timing.jpg)
 图: MCP3202的SPI通信时序图
