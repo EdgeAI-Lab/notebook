@@ -16,6 +16,9 @@ nav:
         - 修改屏幕默认亮度: Android/android_source_code/android_screen_brightness.md
         - 彻底隐藏虚拟导航键: Android/android_source_code/android_hide_virtual_navigation_key.md
         - 默认开启USB调试功能: Android/android_source_code/android_enable_usb_debug.md
+        - Android应用获取系统权限: Android/android_source_code/android_get_system_permission.md
+        - Android屏蔽权限请求对话框: Android/android_source_code/android_mask_permission_dialog.md
+        - Android定制开机Logo: Android/android_source_code/android_power_logo.md
       
       - Android应用开发:
         - RecycleView: Android/Application/RecycleView.md
