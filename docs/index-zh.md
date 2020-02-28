@@ -26,7 +26,7 @@
 现在我开始涉足图像处理（使用OpenCV），音视频处理（使用FFMPEG和WebRTC）和嵌入式机器学习。
 
 ## 2.了解站长
-* [我的GitHub](https://github.com/edgeML)
+* [我的GitHub](https://github.com/EdgeAI-Lab)
 * [我的知乎](https://www.zhihu.com/people/fhc2019/activities)
 
 ## 3.联系方式

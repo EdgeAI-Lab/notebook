@@ -27,7 +27,7 @@ I am good at embedded system development: MCU, embedded linux and Android.
 Now I'm getting into image processing(Use OpenCV), audio and video processing(Use FFMPEG and WebRTC) and Embedded Machine Learning.
 
 ## 2.Know Me
-* [My GitHub](https://github.com/edgeML)
+* [My GitHub](https://github.com/EdgeAI-Lab)
 * [My Zhihu](https://www.zhihu.com/people/fhc2019/activities)
 
 ## 3.Connect Me
