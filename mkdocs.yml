@@ -39,6 +39,9 @@ nav:
         - Ubuntu中配置Java: Android/java/ubuntu_config_java.md
         - 命令行编译Java程序: Android/java/java_compile_command_line.md
         - Swing: Android/java/java_ui_swing.md
+        - Tools: 
+          - IntelliJ设置Java源码: Android/java/Tools/intelliJ_set_java_code_source.md
+          - IntelliJ添加jar文件: Android/java/Tools/intelliJ_add_library.md
 
     - C/C++: 
         - 你需要知道的N个C语言问题:
