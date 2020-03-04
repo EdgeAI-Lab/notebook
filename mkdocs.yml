@@ -98,6 +98,7 @@ nav:
 
     - Linux:
         - 开发环境相关: 
+          - WSL与Windows共享文件: Embedded System/linux/embedded_linux_dev_env/wsl_shared_folder.md
           - VirtualBox开发环境搭建: Embedded System/linux/embedded_linux_dev_env/virtual_box_env.md
           - Ubuntu中构建内核源码树: Embedded System/linux/embedded_linux_dev_env/build_linux_source_tree_on_ubuntu.md
           - samba服务配置: Embedded System/linux/embedded_linux_dev_env/samba_server.md
@@ -184,6 +185,7 @@ nav:
         - 4.MkDocs - Wiki样式配置: Tools/mkdocs/mkdocs_theme.md
       - 嵌入式开发神兵利器: Tools/embedded_develop_tools.md
       - VPN:
+        - 配置参数: Tools/VPN/ss_parameter.md
         - Shadowsocks Ubuntu客户端: Tools/VPN/Shadowsocks_client_for_ubuntu.md
         - ShadowsocksR Ubuntu客户端: Tools/VPN/ShadowsocksR_client_for_ubuntu.md
         - ShadowsocksR Ubuntu服务端: Tools/VPN/ShadowsocksR_server_for_ubuntu.md
