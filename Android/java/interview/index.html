@@ -394,6 +394,10 @@
     <ul class="dropdown-menu">
             
 <li >
+    <a href="../../../Embedded System/linux/embedded_linux_dev_env/wsl_shared_folder/">WSL与Windows共享文件</a>
+</li>
+            
+<li >
     <a href="../../../Embedded System/linux/embedded_linux_dev_env/virtual_box_env/">VirtualBox开发环境搭建</a>
 </li>
             
@@ -710,6 +714,10 @@
     <ul class="dropdown-menu">
             
 <li >
+    <a href="../../../Tools/VPN/ss_parameter/">配置参数</a>
+</li>
+            
+<li >
     <a href="../../../Tools/VPN/Shadowsocks_client_for_ubuntu/">Shadowsocks Ubuntu客户端</a>
 </li>
             
@@ -781,7 +789,7 @@
         <li class="main active"><a href="#interview">Interview</a></li>
             <li><a href="#1-string-stringbuffer-stringbuilder">1. String, StringBuffer, StringBuilder</a></li>
             <li><a href="#2-class">2. .class文件是如何被加载的</a></li>
-            <li><a href="#3-arraylist-linkedlist">3. ArrayList, LinkedList</a></li>
+            <li><a href="#3-arraylist-linkedlistvector">3. ArrayList, LinkedList，Vector</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -811,15 +819,40 @@ String str = new String(&quot;abc&quot;); //字符串在堆中
 <p>其他的基本和StringBuffer一样。</p>
 <h2 id="2-class">2. .class文件是如何被加载的<a class="headerlink" href="#2-class" title="Permanent link">#</a></h2>
 <p><img alt="" src="../../../assets/images/Android/Java/java_class_loader.png" /></p>
-<h2 id="3-arraylist-linkedlist">3. ArrayList, LinkedList<a class="headerlink" href="#3-arraylist-linkedlist" title="Permanent link">#</a></h2>
+<h2 id="3-arraylist-linkedlistvector">3. ArrayList, LinkedList，Vector<a class="headerlink" href="#3-arraylist-linkedlistvector" title="Permanent link">#</a></h2>
 <ul>
 <li>ArrayList</li>
 </ul>
-<p>ArrayList的底层是数组实现的</p>
+<p>ArrayList的底层是数组实现的，所以获取元素的时候可以通过下标直接获取，时间复杂度是O(1)，但是对元素的操作比较麻烦，比如删除操作需要移动数组的元素</p>
+<p>非线程安全的（可以使用Vector，Vector是线程安全的）</p>
 <ul>
 <li>LinkedList</li>
 </ul>
-<p>LinkedList的底层是链表实现的</p>
+<p>LinkedList的底层是链表实现的，查找费时，时间复杂度是O(n)，插入和删除比较高效</p>
+<p>非线程安全的</p>
+<p>相比于ArrayList，LinkedList占用更多的内存空间</p>
+<ul>
+<li>
+<ol>
+<li>final finally finalize</li>
+</ol>
+</li>
+<li>
+<p>final</p>
+</li>
+</ul>
+<p>用于声明属性，方法和类，表示属性不可以被修改，方法不可以被覆盖，类不能被继承</p>
+<ul>
+<li>finally</li>
+</ul>
+<p>是异常处理语句的一部分，表示总是执行</p>
+<ul>
+<li>finalize()方法</li>
+</ul>
+<p>GC将对象从内存清楚之前，调用此方法做必要的清理工作。</p>
+<p>但是并不保证finalize方法能被及时的调用（垃圾回收的时机并不确定），也不保证finalize方法一定会被执行（程勋可能不会触发GC）</p>
+<p>一般是用于释放非java资源（文件，native方法（malloc）等）</p>
+<p>Vector Hashtable</p>
 <ul>
 <li>
 <ol>
