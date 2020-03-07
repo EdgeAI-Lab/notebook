@@ -22,7 +22,7 @@ CROSS_COMPILE ?= arm-linux-gnueabi-
 
 ```
 find -name "*defconfig"
-``
+```
 
 配置：
 ```
