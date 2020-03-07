@@ -6,7 +6,7 @@
 
 
 * CMake插件主要功能是CMake语法高亮、自动补全
-* CMake Tools的功能主要是结合VSCode IDE使用CMake这个工具，比如生成CMakeLists.txt、构建项目、调试项目等
+* CMake Tools的功能主要是结合VSCode IDE使用CMake这个工具，比如生成CMake项目、构建CMake项目等
 
 
 ## 2.新建CMake项目
