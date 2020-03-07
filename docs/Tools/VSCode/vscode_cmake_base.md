@@ -72,3 +72,7 @@ cmake ..
 
 1. 点击VSCode底部的Debug选项
 2. ```Ctrl+Shift+p```在VSCode的命令面板中选择```CMake:Debug```
+
+## 5.参考链接
+
+[CMake Tools官方文档](https://vector-of-bool.github.io/docs/vscode-cmake-tools/getting_started.html)
