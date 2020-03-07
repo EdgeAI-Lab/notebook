@@ -828,24 +828,21 @@ CROSS_COMPILE ?= arm-linux-gnueabi-
 
 <p>找到默认配置s3c2410_defconfig</p>
 <pre><code>find -name &quot;*defconfig&quot;
-``
-
-配置：
 </code></pre>
 
-<p>make s3c2410_defconfig</p>
-<pre><code>
-编译：
+<p>配置：</p>
+<pre><code>make s3c2410_defconfig
 </code></pre>
 
-<p>make uImage</p>
-<pre><code>
-
+<p>编译：</p>
+<pre><code>make uImage
 </code></pre>
 
-<p>nfs 32000000 192.168.2.200:/home/fhc/linux_driver/nfs/uImage</p>
-<p>tftpboot 32000000 /home/fhc/linux_driver/nfs/uImage
-```</p></div>
+<pre><code>nfs 32000000 192.168.2.200:/home/fhc/linux_driver/nfs/uImage
+
+
+tftpboot 32000000 /home/fhc/linux_driver/nfs/uImage
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">
