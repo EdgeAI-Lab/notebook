@@ -178,6 +178,10 @@ nav:
       - ESP8266: Embedded System/ESP8266.md
 
     - Tools:
+
+      - VSCode:
+        - VSCode与CMake搭配使用之基本配置: Tools/VSCode/vscode_cmake_base.md
+
       - MkDocs搭建个人WiKi知识管理系统: 
         - 1.MkDocs - 初识: Tools/mkdocs/mkdocs_intro.md
         - 2.MkDocs - 部署到Github Pages: Tools/mkdocs/mkdocs_deploy_githubpages.md
