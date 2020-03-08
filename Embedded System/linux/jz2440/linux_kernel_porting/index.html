@@ -436,11 +436,19 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../easy_open_jtag/">OpenJTAG</a>
+    <a href="../easy_open_jtag/">OpenJTAG烧写裸机程序uboot</a>
 </li>
             
 <li >
     <a href="../uboot_porting/">Uboot移植</a>
+</li>
+            
+<li >
+    <a href="../uboot/">Uboot命令</a>
+</li>
+            
+<li >
+    <a href="../write_system_use_uboot/">使用Uboot烧写内核和文件系统</a>
 </li>
             
 <li class="active">
@@ -789,7 +797,7 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../uboot_porting/">
+                                <a rel="next" href="../write_system_use_uboot/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -807,19 +815,15 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#linux-kernel">Linux Kernel</a></li>
-            <li><a href="#2">2.内核打补丁</a></li>
-            <li><a href="#1-config">1. Config</a></li>
+            <li><a href="#1-linux-kernel">1. 使用公板默认配置编译linux kernel</a></li>
+            <li><a href="#2linux-kernel">2.加载linux kernel</a></li>
+            <li><a href="#_1">内核打补丁的方法</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
 <h1 id="linux-kernel">Linux Kernel<a class="headerlink" href="#linux-kernel" title="Permanent link">#</a></h1>
-<h2 id="2">2.内核打补丁<a class="headerlink" href="#2" title="Permanent link">#</a></h2>
-<pre><code>patch -p1 &lt; path/to/patch_file.patch
-cp config_ok .config
-</code></pre>
-
-<h2 id="1-config">1. Config<a class="headerlink" href="#1-config" title="Permanent link">#</a></h2>
+<h2 id="1-linux-kernel">1. 使用公板默认配置编译linux kernel<a class="headerlink" href="#1-linux-kernel" title="Permanent link">#</a></h2>
 <p>修改顶层Makefile，修改如下内容：</p>
 <pre><code>ARCH ?=arm
 
@@ -830,18 +834,30 @@ CROSS_COMPILE ?= arm-linux-gnueabi-
 <pre><code>find -name &quot;*defconfig&quot;
 </code></pre>
 
-<p>配置：</p>
+<p>配置linux kernel：</p>
 <pre><code>make s3c2410_defconfig
 </code></pre>
 
-<p>编译：</p>
+<p>编译linux kernel：</p>
 <pre><code>make uImage
 </code></pre>
 
+<p>编译完成后生成的linux kernel映像文件路径是：arch/arm/boot/uImage</p>
+<h2 id="2linux-kernel">2.加载linux kernel<a class="headerlink" href="#2linux-kernel" title="Permanent link">#</a></h2>
+<p>通过网络从服务器上下载uImage：</p>
 <pre><code>nfs 32000000 192.168.2.200:/home/fhc/linux_driver/nfs/uImage
 
 
 tftpboot 32000000 /home/fhc/linux_driver/nfs/uImage
+</code></pre>
+
+<p>启动linux kernel：</p>
+<pre><code>bootm 32000000
+</code></pre>
+
+<h2 id="_1">内核打补丁的方法<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<pre><code>patch -p1 &lt; path/to/patch_file.patch
+cp config_ok .config
 </code></pre></div>
         </div>
 

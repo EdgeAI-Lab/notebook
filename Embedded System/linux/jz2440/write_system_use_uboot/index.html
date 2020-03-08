@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../../../img/favicon.ico">
-        <title>Uboot移植 - EdgeAI-Lab</title>
+        <title>使用Uboot烧写内核和文件系统 - EdgeAI-Lab</title>
         <link href="../../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../../css/base.css" rel="stylesheet">
@@ -439,16 +439,16 @@
     <a href="../easy_open_jtag/">OpenJTAG烧写裸机程序uboot</a>
 </li>
             
-<li class="active">
-    <a href="./">Uboot移植</a>
+<li >
+    <a href="../uboot_porting/">Uboot移植</a>
 </li>
             
 <li >
     <a href="../uboot/">Uboot命令</a>
 </li>
             
-<li >
-    <a href="../write_system_use_uboot/">使用Uboot烧写内核和文件系统</a>
+<li class="active">
+    <a href="./">使用Uboot烧写内核和文件系统</a>
 </li>
             
 <li >
@@ -797,12 +797,12 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../easy_open_jtag/">
+                                <a rel="next" href="../uboot/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../uboot/">
+                                <a rel="prev" href="../linux_kernel_porting/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -814,44 +814,37 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#uboot">Uboot 移植</a></li>
-            <li><a href="#1">1. 资源下载</a></li>
-            <li><a href="#2">2.配置工具链</a></li>
-            <li><a href="#3-uboot">3. Uboot打补丁</a></li>
-            <li><a href="#4">4. 编译</a></li>
+        <li class="main active"><a href="#uboot">使用Uboot烧写内核和文件系统</a></li>
+            <li><a href="#1flash">1.查看Flash分区情况</a></li>
+            <li><a href="#2">2.烧写内核</a></li>
+            <li><a href="#3">3.烧写文件系统</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="uboot">Uboot 移植<a class="headerlink" href="#uboot" title="Permanent link">#</a></h1>
-<h2 id="1">1. 资源下载<a class="headerlink" href="#1" title="Permanent link">#</a></h2>
-<ul>
-<li>
-<p><a href="https://pan.baidu.com/s/14BdXItENbN85Cx6uWXPjfQ">u-boot 2012.04.01下载</a></p>
-</li>
-<li>
-<p><a href="https://pan.baidu.com/s/1BEk4wALVO8TqOg2dmlTHXw">补丁和交叉编译工具链下载</a></p>
-</li>
-</ul>
-<h2 id="2">2.配置工具链<a class="headerlink" href="#2" title="Permanent link">#</a></h2>
-<p>使用工具链arm-linux-gcc 4.3.2。</p>
-<pre><code># 仅当前环境生效
-export PATH=$PATH:/path/to/4.3.2/bin
+<h1 id="uboot">使用Uboot烧写内核和文件系统<a class="headerlink" href="#uboot" title="Permanent link">#</a></h1>
+<h2 id="1flash">1.查看Flash分区情况<a class="headerlink" href="#1flash" title="Permanent link">#</a></h2>
+<p>在Uboot命令行执行如下命令：</p>
+<pre><code>mtdpart
 </code></pre>
 
-<h2 id="3-uboot">3. Uboot打补丁<a class="headerlink" href="#3-uboot" title="Permanent link">#</a></h2>
-<p>使用JZ2440官方的补丁</p>
-<pre><code>cd uboot_root_dir
+<p>然后就会列出Flash的分区情况。在烧写内核和文件系统的时候，要严格按照这里的分区名称来写。</p>
+<h2 id="2">2.烧写内核<a class="headerlink" href="#2" title="Permanent link">#</a></h2>
+<pre><code>nfs 32000000 192.168.2.200:/home/fhc/linux_driver/nfs/uImage
 
-patch -p1 &lt; path/to/patch_file.patch
+nand erase kernel
+
+nand write.jffs2 32000000 kernel
 </code></pre>
 
-<h2 id="4">4. 编译<a class="headerlink" href="#4" title="Permanent link">#</a></h2>
-<pre><code>make distclean
+<h2 id="3">3.烧写文件系统<a class="headerlink" href="#3" title="Permanent link">#</a></h2>
+<pre><code>// 文件系统的大小不能超过内存的大小，否则下载会出错，所以一般将内存地址设置为内存的起始地址
+nfs 30000000 192.168.2.200:/home/fhc/linux_driver/nfs/fs_qtopia.yaffs2
 
-make smdk2410_config
+nand erase root
 
-make
+// nand write.[文件系统类型jaffs2或者yaff] 文件源的内存地址  flash上的烧写地址  文件源的大小（网络下载后有提示）
+nand write.yaff 30000000 0x00260000 0x791340
 </code></pre></div>
         </div>
 
