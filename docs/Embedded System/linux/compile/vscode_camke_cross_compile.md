@@ -1,6 +1,6 @@
 # VSCode与CMake搭配使用之交叉编译
 
-首先你需要配置VSCode中的CMake插件：[VSCode与CMake搭配使用之基本配置](../vscode_cmake_base.md)，如果你已经配置好了CMake插件，请继续往下看：
+首先你需要配置VSCode中的CMake插件：[VSCode与CMake搭配使用之基本配置](vscode_cmake_base.md)，如果你已经配置好了CMake插件，请继续往下看：
 
 
 ## 1. 在VSCode中设置交叉编译工具
