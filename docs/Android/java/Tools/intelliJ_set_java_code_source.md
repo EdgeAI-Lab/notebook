@@ -5,7 +5,7 @@
 ```
 File -> Project Structure 
 ```
-![](../../../assets/images/Android/Java/intelliJ_java_source_code.png)
+![](../../../assets/images/Android/Java/tools/intelliJ_java_source_code.png)
 
 * 选择正确的JDK Home Path后，ClassPath中的内容会自动更新
 
