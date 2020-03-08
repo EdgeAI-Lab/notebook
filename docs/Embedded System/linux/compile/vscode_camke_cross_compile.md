@@ -20,7 +20,7 @@ vim .local/share/CMakeTools/cmake-tools-kits.json
     "toolchainFile": "/home/fhc/myWorkspace/cmake_project/cmake_cross_complie_base/toolchain.cmake"
 }
 ```
-![](../../../assets\images\tools\vscode\cmake_tools_kits_json.png)
+![](../../../assets/images/tools/vscode/cmake_tools_kits_json.png)
 
 ## 2.创建toolchain.cmake文件
 
@@ -56,7 +56,7 @@ SET(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 
 然后选择我们自己配置的交叉编译器```arm_corss_compiler```：
 
-![](../../../assets\images\tools\vscode\vscode_arm_cross_compiler.png)
+![](../../../assets/images/tools/vscode/vscode_arm_cross_compiler.png)
 
 
 然后根据提示输入项目名称:
