@@ -829,11 +829,14 @@
             <li><a href="#2cmakelisttxt">2.创建CMakeList.txt文件</a></li>
             <li><a href="#3toolchaincmake">3.创建toolchain.cmake文件</a></li>
             <li><a href="#4cmakemakefile">4.执行CMake指令生成Makefile</a></li>
+            <li><a href="#5">5. 编译工程</a></li>
+            <li><a href="#6">6. 设置可执行文件的安装路径</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
 <h1 id="cmake">CMake交叉编译<a class="headerlink" href="#cmake" title="Permanent link">#</a></h1>
+<p><a href="https://cmake.org/cmake/help/v3.6/manual/cmake-toolchains.7.html#cross-compiling-for-linux">CMake官网参考链接</a></p>
 <h2 id="1helloc">1.创建测试文件hello.c<a class="headerlink" href="#1helloc" title="Permanent link">#</a></h2>
 <pre><code class="c">#include&lt;stdio.h&gt;
 int main()
@@ -873,19 +876,38 @@ SET(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 </code></pre>
 
 <h2 id="4cmakemakefile">4.执行CMake指令生成Makefile<a class="headerlink" href="#4cmakemakefile" title="Permanent link">#</a></h2>
-<p>有两种方式：</p>
-<ul>
-<li>camke-gui</li>
-</ul>
+<p>CMake有两种方式可以生成Makefile，下面分别介绍：</p>
+<h3 id="41-cmake-guimakefile">4.1 使用cmake-gui生成Makefile<a class="headerlink" href="#41-cmake-guimakefile" title="Permanent link">#</a></h3>
 <p><img alt="" src="../../../../assets/images/cmake/cross_compile_cmake_gui_00.png" /></p>
 <p><img alt="" src="../../../../assets/images/cmake/cross_compile_cmake_gui_01.png" /></p>
 <p><img alt="" src="../../../../assets/images/cmake/cross_compile_cmake_gui_02.png" /></p>
 <p><img alt="" src="../../../../assets/images/cmake/cross_compile_cmake_gui_03.png" /></p>
 <p><img alt="" src="../../../../assets/images/cmake/cross_compile_cmake_gui_04.png" /></p>
-<ul>
-<li>命令行</li>
-</ul>
+<h3 id="42-makefile">4.2 在命令行中生成Makefile<a class="headerlink" href="#42-makefile" title="Permanent link">#</a></h3>
 <pre><code>cmake -DCMAKE_TOOLCHAIN_FILE=../toolchain/toolchain.cmake ..
+</code></pre>
+
+<h2 id="5">5. 编译工程<a class="headerlink" href="#5" title="Permanent link">#</a></h2>
+<pre><code>mkdir build &amp;&amp; cd build
+
+cmake ..
+
+make
+</code></pre>
+
+<h2 id="6">6. 设置可执行文件的安装路径<a class="headerlink" href="#6" title="Permanent link">#</a></h2>
+<p>编辑CMakeLists.txt文件：</p>
+<pre><code class="cmake">cmake_minimum_required(VERSION 3.0.0)
+project(hello_cmake VERSION 0.1.0)
+
+set(CMAKE_BUILD_TYPE DEBUG)
+set(CMAKE_INSTALL_PREFIX /home/fhc/myWorkspace/cmake_project/cmake_cross_complie_base/build)
+
+add_executable(hello_cmake hello.c)
+
+# DESTINATION指的就是CMAKE_INSTALL_PREFIX
+# 该命令的作用是将编译生成的hello_cmake文件，复制到CMAKE_INSTALL_PREFIX/bin目录下
+install(TARGETS hello_cmake RUNTIME DESTINATION bin)
 </code></pre></div>
         </div>
 

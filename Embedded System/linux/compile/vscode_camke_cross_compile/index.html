@@ -824,14 +824,82 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#vscode-cmake">VSCode CMake交叉编译</a></li>
-        <li class="main "><a href="#vscodecmake">VSCode与CMake搭配使用之交叉编译</a></li>
+        <li class="main active"><a href="#vscodecmake">VSCode与CMake搭配使用之交叉编译</a></li>
+            <li><a href="#1-vscode">1. 在VSCode中设置交叉编译工具</a></li>
+            <li><a href="#2toolchaincmake">2.创建toolchain.cmake文件</a></li>
+            <li><a href="#3-vscodecmake">3. 在VSCode中创建CMake交叉编译工程</a></li>
+            <li><a href="#4">4. 编译项目</a></li>
+            <li><a href="#5">5. 调试</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="vscode-cmake">VSCode CMake交叉编译<a class="headerlink" href="#vscode-cmake" title="Permanent link">#</a></h1>
-<h1 id="vscodecmake">VSCode与CMake搭配使用之交叉编译<a class="headerlink" href="#vscodecmake" title="Permanent link">#</a></h1></div>
+<h1 id="vscodecmake">VSCode与CMake搭配使用之交叉编译<a class="headerlink" href="#vscodecmake" title="Permanent link">#</a></h1>
+<p>首先你需要配置VSCode中的CMake插件：<a href="../vscode_cmake_base.md">VSCode与CMake搭配使用之基本配置</a>，如果你已经配置好了CMake插件，请继续往下看：</p>
+<h2 id="1-vscode">1. 在VSCode中设置交叉编译工具<a class="headerlink" href="#1-vscode" title="Permanent link">#</a></h2>
+<p>打开<code>cmake-tools-kits.json</code>文件：</p>
+<pre><code>vim .local/share/CMakeTools/cmake-tools-kits.json
+</code></pre>
+
+<p>这个文件的作用就是：告诉VSCode当前系统中都有哪些编译器可供使用，一般是CMakeTools插件自动获取到的，但是CMakeTools插件无法自动获取到我们的交叉编译器。</p>
+<p>所以我们手动将交叉编译器添加到<code>cmake-tools-kits.json</code>文件中（必须添加到文件末尾），因为我们使用的是CMake，所以只需将<code>toolchain.cmake</code>文件的路径配置进去就可以了：</p>
+<pre><code class="json">{
+    &quot;name&quot;: &quot;arm_corss_compiler&quot;,
+    &quot;toolchainFile&quot;: &quot;/home/fhc/myWorkspace/cmake_project/cmake_cross_complie_base/toolchain.cmake&quot;
+}
+</code></pre>
+
+<p><img alt="" src="../../../../assets/images/tools/vscode/cmake_tools_kits_json.png" /></p>
+<h2 id="2toolchaincmake">2.创建toolchain.cmake文件<a class="headerlink" href="#2toolchaincmake" title="Permanent link">#</a></h2>
+<p>该文件指明了交叉编译器信息：</p>
+<pre><code>### toolchain.cmake ###
+# this is required
+SET(CMAKE_SYSTEM_NAME Linux)
+
+# specify the cross compiler
+SET(CMAKE_C_COMPILER   /home/fhc/linux_driver/gcc-3.4.5-glibc-2.3.6/bin/arm-linux-gcc)
+SET(CMAKE_CXX_COMPILER /home/fhc/linux_driver/gcc-3.4.5-glibc-2.3.6/bin/arm-linux-g++)
+
+# where is the target environment
+SET(CMAKE_FIND_ROOT_PATH  /home/fhc/linux_driver/gcc-3.4.5-glibc-2.3.6)
+
+# search for programs in the build host directories (not necessary)
+SET(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
+
+# for libraries and headers in the target directories
+SET(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
+SET(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
+</code></pre>
+
+<p>文件创建完成后，在当前目录中执行<code>code .</code>，在VSCode中打开当前文件夹。</p>
+<h2 id="3-vscodecmake">3. 在VSCode中创建CMake交叉编译工程<a class="headerlink" href="#3-vscodecmake" title="Permanent link">#</a></h2>
+<p><code>Ctrl+Shift+p</code>打开VSCode的指令面板，然后输入<code>cmake:q</code>，VSCode会根据输入自动提示，然后选择<code>CMake: Quick Start</code></p>
+<p><img alt="" src="../../../../assets/images/tools/vscode/vscode_cmake_quickstart.png" /></p>
+<p>然后选择我们自己配置的交叉编译器<code>arm_corss_compiler</code>：</p>
+<p><img alt="" src="../../../../assets/images/tools/vscode/vscode_arm_cross_compiler.png" /></p>
+<p>然后根据提示输入项目名称:</p>
+<p><img alt="" src="../../../../assets/images/tools/vscode/vscode_cmake_quickstart_project_name.png" /></p>
+<p>然后选择该项目是创建库还是可执行文件，为了演示方便这里我们选择可执行文件<code>Executable</code>：</p>
+<p><img alt="" src="../../../../assets/images/tools/vscode/vscode_cmake_quickstart_lib_or_exec.png" /></p>
+<p>然后VSCode就会为你生成一个CMake项目，如下所示：</p>
+<p><img alt="" src="../../../../assets/images/tools/vscode/vscode_cmake_quickstart_done.png" /></p>
+<ul>
+<li>build文件夹是<code>cmake</code>指令的输出文件夹</li>
+<li>默认生成的<code>CMakeLists.txt</code>文件</li>
+<li>默认生成的<code>main.cpp</code>文件</li>
+</ul>
+<h2 id="4">4. 编译项目<a class="headerlink" href="#4" title="Permanent link">#</a></h2>
+<p>当然你可以在命令行中执行：</p>
+<pre><code class="shell">cd build
+cmake ..
+</code></pre>
+
+<p>但是VSCode提供了更便捷的方式（点击底部的Build）:</p>
+<p><img alt="" src="../../../../assets/images/tools/vscode/vscode_cmake_build.png" /></p>
+<p>或者在VSCode的命令面板中选择build命令（输入cmake后VSCode会帮你列出所有支持的命令）：</p>
+<p><img alt="" src="../../../../assets/images/tools/vscode/vscode_cmake_commands.png" /></p>
+<h2 id="5">5. 调试<a class="headerlink" href="#5" title="Permanent link">#</a></h2>
+<p>因为是交叉编译，所以调试需要在目标板上安装gdb-server。</p></div>
         </div>
 
         <footer class="col-md-12">
