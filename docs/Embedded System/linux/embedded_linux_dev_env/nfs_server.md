@@ -56,7 +56,7 @@ sudo /etc/init.d/nfs-kernel-server status
 ## 5.1 开发板启动Linux系统后，在Linux系统中挂载
 
 ```
-mount -t nfs -o nolock 192.168.2.200:/home/book/fhc/nfs /mnt
+mount -t nfs -o nolock 192.168.2.200:/home/fhc/linux_driver/nfs /mnt
 ```
 参数介绍：
 
