@@ -1,5 +1,7 @@
 # CMake交叉编译
 
+[CMake官网参考链接](https://cmake.org/cmake/help/v3.6/manual/cmake-toolchains.7.html#cross-compiling-for-linux)
+
 ## 1.创建测试文件hello.c
 
 ```c
@@ -47,9 +49,9 @@ SET(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 
 ## 4.执行CMake指令生成Makefile
 
-有两种方式：
+CMake有两种方式可以生成Makefile，下面分别介绍：
 
-* camke-gui
+### 4.1 使用cmake-gui生成Makefile
 
 ![](../../../assets/images/cmake/cross_compile_cmake_gui_00.png)
 
@@ -62,8 +64,36 @@ SET(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 ![](../../../assets/images/cmake/cross_compile_cmake_gui_04.png)
 
 
-* 命令行
+### 4.2 在命令行中生成Makefile
 
 ```
 cmake -DCMAKE_TOOLCHAIN_FILE=../toolchain/toolchain.cmake ..
+```
+
+## 5. 编译工程
+
+```
+mkdir build && cd build
+
+cmake ..
+
+make
+```
+
+## 6. 设置可执行文件的安装路径
+
+编辑CMakeLists.txt文件：
+
+```cmake
+cmake_minimum_required(VERSION 3.0.0)
+project(hello_cmake VERSION 0.1.0)
+
+set(CMAKE_BUILD_TYPE DEBUG)
+set(CMAKE_INSTALL_PREFIX /home/fhc/myWorkspace/cmake_project/cmake_cross_complie_base/build)
+
+add_executable(hello_cmake hello.c)
+
+# DESTINATION指的就是CMAKE_INSTALL_PREFIX
+# 该命令的作用是将编译生成的hello_cmake文件，复制到CMAKE_INSTALL_PREFIX/bin目录下
+install(TARGETS hello_cmake RUNTIME DESTINATION bin)
 ```
