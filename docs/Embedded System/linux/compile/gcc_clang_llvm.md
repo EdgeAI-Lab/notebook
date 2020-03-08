@@ -1,6 +1,6 @@
 ## GCC、Clang、LLVM
 
-![compiler](../assets/images/compiler.png)
+![compiler](../../../assets/images/compiler.png)
 
 
 
