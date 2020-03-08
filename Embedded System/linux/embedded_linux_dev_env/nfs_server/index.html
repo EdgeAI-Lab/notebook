@@ -432,6 +432,24 @@
   </li>
                                     
   <li class="dropdown-submenu">
+    <a href="#">编译系统</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../compile/cmake_cross_compile/">CMake交叉编译</a>
+</li>
+            
+<li >
+    <a href="../../compile/vscode_cmake_base/">VSCode与CMake搭配使用之基本配置</a>
+</li>
+            
+<li >
+    <a href="../../compile/vscode_camke_cross_compile/">VSCode与CMake搭配使用之交叉编译</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
     <a href="#">JZ2440开发</a>
     <ul class="dropdown-menu">
             
@@ -453,10 +471,6 @@
             
 <li >
     <a href="../../jz2440/linux_kernel_porting/">Linux Kernel移植</a>
-</li>
-            
-<li >
-    <a href="../../jz2440/cmake_cross_compile/">CMake交叉编译</a>
 </li>
             
 <li >
@@ -692,16 +706,6 @@
                                 <ul class="dropdown-menu">
                                     
   <li class="dropdown-submenu">
-    <a href="#">VSCode</a>
-    <ul class="dropdown-menu">
-            
-<li >
-    <a href="../../../../Tools/VSCode/vscode_cmake_base/">VSCode与CMake搭配使用之基本配置</a>
-</li>
-    </ul>
-  </li>
-                                    
-  <li class="dropdown-submenu">
     <a href="#">MkDocs搭建个人WiKi知识管理系统</a>
     <ul class="dropdown-menu">
             
@@ -875,7 +879,7 @@
 
 <h1 id="5-nfs">5. 开发板挂载NFS目录<a class="headerlink" href="#5-nfs" title="Permanent link">#</a></h1>
 <h2 id="51-linuxlinux">5.1 开发板启动Linux系统后，在Linux系统中挂载<a class="headerlink" href="#51-linuxlinux" title="Permanent link">#</a></h2>
-<pre><code>mount -t nfs -o nolock 192.168.2.200:/home/book/fhc/nfs /mnt
+<pre><code>mount -t nfs -o nolock 192.168.2.200:/home/fhc/linux_driver/nfs /mnt
 </code></pre>
 
 <p>参数介绍：</p>
