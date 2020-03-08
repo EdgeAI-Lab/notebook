@@ -1,4 +1,4 @@
-# Linux Shell CMD
+# Linux命令
 
 ##1. dd
 ```shell

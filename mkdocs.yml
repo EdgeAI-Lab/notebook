@@ -97,6 +97,9 @@ nav:
           - JLink RTT: Embedded System/STM32/tools/rtt.md
 
     - Linux:
+        - Linux命令:
+          - Linux常用命令: Embedded System/linux/linux_cmd/linux_cmd.md
+
         - 开发环境相关: 
           - WSL与Windows共享文件: Embedded System/linux/embedded_linux_dev_env/wsl_shared_folder.md
           - VirtualBox开发环境搭建: Embedded System/linux/embedded_linux_dev_env/virtual_box_env.md
@@ -107,11 +110,19 @@ nav:
           - NFS: Embedded System/linux/embedded_linux_dev_env/nfs_server.md
           - ARM交叉编译工具: Embedded System/linux/embedded_linux_dev_env/arm_compiler.md
           - Ubuntu启动错误: Embedded System/linux/embedded_linux_dev_env/ubuntu_boot_error.md
+          - 安全的使用rm: Embedded System/linux/embedded_linux_dev_env/rm.md
         
         - 编译系统:
           - CMake交叉编译: Embedded System/linux/compile/cmake_cross_compile.md
           - VSCode与CMake搭配使用之基本配置: Embedded System/linux/compile/vscode_cmake_base.md
           - VSCode与CMake搭配使用之交叉编译: Embedded System/linux/compile/vscode_camke_cross_compile.md
+          - GNU make中的2种变量: Embedded System/linux/compile/two_flavors_of_variables.md
+          - GCC编译动态链接库: Embedded System/linux/compile/gcc_dynamic_linking_library.md
+          - GCC&Clang&LLVM的关系: Embedded System/linux/compile/gcc_clang_llvm.md
+
+        - Shell编程:
+          - Shell编程基础: Embedded System/linux/shell/linux_shell_program.md
+
 
         - JZ2440开发:
           - OpenJTAG烧写裸机程序uboot: Embedded System/linux/jz2440/easy_open_jtag.md
@@ -120,16 +131,6 @@ nav:
           - 使用Uboot烧写内核和文件系统: Embedded System/linux/jz2440/write_system_use_uboot.md
           - Linux Kernel移植: Embedded System/linux/jz2440/linux_kernel_porting.md
           - JZ2440 dev tips: Embedded System/linux/jz2440/jz2440_dev_tips.md
-
-        - 安全的使用rm: Embedded System/linux/embedded_linux_dev_env/rm.md
-
-        - GNU make:
-          - GNU make中的2种变量: Embedded System/linux/makefile/two_flavors_of_variables.md
-
-        - GCC编译动态链接库: Embedded System/gcc_dynamic_linking_library.md
-        - 常用shell命令: Embedded System/linux_shell_cmd.md
-        - Linux Shell脚本编程: Embedded System/linux_shell_program.md
-        - GCC&Clang&LLVM的关系: Embedded System/gcc_clang_llvm.md
         
         - RK3399:
           - 命令行连接WiFi热点: Embedded System/rk3399_cli_connect_wifi.md
