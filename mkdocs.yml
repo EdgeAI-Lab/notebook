@@ -109,8 +109,10 @@ nav:
           - Ubuntu启动错误: Embedded System/linux/embedded_linux_dev_env/ubuntu_boot_error.md
         
         - JZ2440开发:
-          - OpenJTAG: Embedded System/linux/jz2440/easy_open_jtag.md
+          - OpenJTAG烧写裸机程序uboot: Embedded System/linux/jz2440/easy_open_jtag.md
           - Uboot移植: Embedded System/linux/jz2440/uboot_porting.md
+          - Uboot命令: Embedded System/linux/jz2440/uboot.md
+          - 使用Uboot烧写内核和文件系统: Embedded System/linux/jz2440/write_system_use_uboot.md
           - Linux Kernel移植: Embedded System/linux/jz2440/linux_kernel_porting.md
           - CMake交叉编译: Embedded System/linux/jz2440/cmake_cross_compile.md
           - JZ2440 dev tips: Embedded System/linux/jz2440/jz2440_dev_tips.md
