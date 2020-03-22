@@ -1,12 +1,14 @@
+# SSR Client Configure
+
 第一次安装时会将"shadowsocksr"文件夹移动到/opt/shadowsocksr，所以非第一次修改配置文件，请到"/opt/shadowsocksr/config.json"
 
-# 1.Clone or download project
+## 1.Clone or download project
 
 ``` bash
 ~ $ git clone https://github.com/showzeng/shadowsocksr
 ```
 
-# 2.Usage for single user on linux platform
+## 2.Usage for single user on linux platform
 
 Fill in your configuration file (shadowsocksr/config.json):
 
@@ -69,7 +71,7 @@ Then turn on your terminal and get into "shadowsocksr/" folder. Excute the comma
 
 Once done with that, you can turn on/off shadowsocksR with these simple command at anytime as you wish :p , such as you just open your computer.
 
-# 3.Turn on/off SSR
+## 3.Turn on/off SSR
 
 ``` text
 ~ $ runssr
@@ -79,13 +81,39 @@ Once done with that, you can turn on/off shadowsocksR with these simple command 
 ~ $ stopssr
 ```
 
-# 4.install proxychains4
+## 4. Use proxy in command line
+
+### 4.1 Config the http_proxy and https_proxy environment variable
+
+* configure
+
+```bash
+exprot http_proxy="http://127.0.0.1:1080" 
+export https_proxy="http://127.0.0.1:1080" 
+```
+
+这里的IP地址和端口，分别对应于SSR配置文件config.json中的：
+
+```json
+"local_address": "127.0.0.1",
+"local_port": 1080,
+```
+
+* test
+
+```bash
+curl www.google.com
+```
+
+## 4.2 Proxychains4
+
+* install proxychains4
 
 ```bash
 sudo apt-get install proxychains4
 ```
 
-# 5.configure proxychains4
+* configure proxychains4
 ```bash
 # 打开配置文件
 sudo vim /etc/proxychains4.conf
@@ -95,14 +123,7 @@ socks5 127.0.0.1 1080
 
 ```
 
-### 6. install curl
-```bash
-sudo apt-get install curl
-```
-
-### 7.test
-
-you are success, test it.
+* Test
 
 !!! Warning
     不能用ping命令测试，因为proxychains只支持使用tcp或udp协议的程序。
@@ -112,7 +133,7 @@ you are success, test it.
 proxychains4 curl www.google.com
 ```
 
-# 8. configure the browser
+## 5. configure the browser
 
 Eg: FireFox
 
