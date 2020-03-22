@@ -824,24 +824,24 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#1clone-or-download-project">1.Clone or download project</a></li>
-        <li class="main "><a href="#2usage-for-single-user-on-linux-platform">2.Usage for single user on linux platform</a></li>
-        <li class="main "><a href="#3turn-onoff-ssr">3.Turn on/off SSR</a></li>
-        <li class="main "><a href="#4install-proxychains4">4.install proxychains4</a></li>
-        <li class="main "><a href="#5configure-proxychains4">5.configure proxychains4</a></li>
-            <li><a href="#6-install-curl">6. install curl</a></li>
-            <li><a href="#7test">7.test</a></li>
-        <li class="main "><a href="#8-configure-the-browser">8. configure the browser</a></li>
+        <li class="main active"><a href="#ssr-client-configure">SSR Client Configure</a></li>
+            <li><a href="#1clone-or-download-project">1.Clone or download project</a></li>
+            <li><a href="#2usage-for-single-user-on-linux-platform">2.Usage for single user on linux platform</a></li>
+            <li><a href="#3turn-onoff-ssr">3.Turn on/off SSR</a></li>
+            <li><a href="#4-use-proxy-in-command-line">4. Use proxy in command line</a></li>
+            <li><a href="#42-proxychains4">4.2 Proxychains4</a></li>
+            <li><a href="#5-configure-the-browser">5. configure the browser</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
+<h1 id="ssr-client-configure">SSR Client Configure<a class="headerlink" href="#ssr-client-configure" title="Permanent link">#</a></h1>
 <p>第一次安装时会将"shadowsocksr"文件夹移动到/opt/shadowsocksr，所以非第一次修改配置文件，请到"/opt/shadowsocksr/config.json"</p>
-<h1 id="1clone-or-download-project">1.Clone or download project<a class="headerlink" href="#1clone-or-download-project" title="Permanent link">#</a></h1>
+<h2 id="1clone-or-download-project">1.Clone or download project<a class="headerlink" href="#1clone-or-download-project" title="Permanent link">#</a></h2>
 <pre><code class="bash">~ $ git clone https://github.com/showzeng/shadowsocksr
 </code></pre>
 
-<h1 id="2usage-for-single-user-on-linux-platform">2.Usage for single user on linux platform<a class="headerlink" href="#2usage-for-single-user-on-linux-platform" title="Permanent link">#</a></h1>
+<h2 id="2usage-for-single-user-on-linux-platform">2.Usage for single user on linux platform<a class="headerlink" href="#2usage-for-single-user-on-linux-platform" title="Permanent link">#</a></h2>
 <p>Fill in your configuration file (shadowsocksr/config.json):</p>
 <pre><code class="json">{
     &quot;server&quot;: &quot;0.0.0.0&quot;,
@@ -896,18 +896,43 @@
 </code></pre>
 
 <p>Once done with that, you can turn on/off shadowsocksR with these simple command at anytime as you wish :p , such as you just open your computer.</p>
-<h1 id="3turn-onoff-ssr">3.Turn on/off SSR<a class="headerlink" href="#3turn-onoff-ssr" title="Permanent link">#</a></h1>
+<h2 id="3turn-onoff-ssr">3.Turn on/off SSR<a class="headerlink" href="#3turn-onoff-ssr" title="Permanent link">#</a></h2>
 <pre><code class="text">~ $ runssr
 </code></pre>
 
 <pre><code class="text">~ $ stopssr
 </code></pre>
 
-<h1 id="4install-proxychains4">4.install proxychains4<a class="headerlink" href="#4install-proxychains4" title="Permanent link">#</a></h1>
+<h2 id="4-use-proxy-in-command-line">4. Use proxy in command line<a class="headerlink" href="#4-use-proxy-in-command-line" title="Permanent link">#</a></h2>
+<h3 id="41-config-the-http_proxy-and-https_proxy-environment-variable">4.1 Config the http_proxy and https_proxy environment variable<a class="headerlink" href="#41-config-the-http_proxy-and-https_proxy-environment-variable" title="Permanent link">#</a></h3>
+<ul>
+<li>configure</li>
+</ul>
+<pre><code class="bash">exprot http_proxy=&quot;http://127.0.0.1:1080&quot; 
+export https_proxy=&quot;http://127.0.0.1:1080&quot; 
+</code></pre>
+
+<p>这里的IP地址和端口，分别对应于SSR配置文件config.json中的：</p>
+<pre><code class="json">&quot;local_address&quot;: &quot;127.0.0.1&quot;,
+&quot;local_port&quot;: 1080,
+</code></pre>
+
+<ul>
+<li>test</li>
+</ul>
+<pre><code class="bash">curl www.google.com
+</code></pre>
+
+<h2 id="42-proxychains4">4.2 Proxychains4<a class="headerlink" href="#42-proxychains4" title="Permanent link">#</a></h2>
+<ul>
+<li>install proxychains4</li>
+</ul>
 <pre><code class="bash">sudo apt-get install proxychains4
 </code></pre>
 
-<h1 id="5configure-proxychains4">5.configure proxychains4<a class="headerlink" href="#5configure-proxychains4" title="Permanent link">#</a></h1>
+<ul>
+<li>configure proxychains4</li>
+</ul>
 <pre><code class="bash"># 打开配置文件
 sudo vim /etc/proxychains4.conf
 
@@ -916,12 +941,9 @@ socks5 127.0.0.1 1080
 
 </code></pre>
 
-<h3 id="6-install-curl">6. install curl<a class="headerlink" href="#6-install-curl" title="Permanent link">#</a></h3>
-<pre><code class="bash">sudo apt-get install curl
-</code></pre>
-
-<h3 id="7test">7.test<a class="headerlink" href="#7test" title="Permanent link">#</a></h3>
-<p>you are success, test it.</p>
+<ul>
+<li>Test</li>
+</ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>不能用ping命令测试，因为proxychains只支持使用tcp或udp协议的程序。
@@ -930,7 +952,7 @@ ping用的是ICMP协议，不以tcp或udp为基础，所以用不了。</p>
 <pre><code class="bash">proxychains4 curl www.google.com
 </code></pre>
 
-<h1 id="8-configure-the-browser">8. configure the browser<a class="headerlink" href="#8-configure-the-browser" title="Permanent link">#</a></h1>
+<h2 id="5-configure-the-browser">5. configure the browser<a class="headerlink" href="#5-configure-the-browser" title="Permanent link">#</a></h2>
 <p>Eg: FireFox</p>
 <p><img alt="Firefox_Configure_System_Proxy" src="../../../assets/images/ssr_firefox.png" /></p></div>
         </div>
