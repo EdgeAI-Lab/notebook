@@ -437,6 +437,10 @@
     <ul class="dropdown-menu">
             
 <li>
+    <a href="../../../Embedded%20System/linux/compile/cmake_base/" class="dropdown-item">CMake</a>
+</li>
+            
+<li>
     <a href="../../../Embedded%20System/linux/compile/cmake_cross_compile/" class="dropdown-item">CMake交叉编译</a>
 </li>
             
@@ -852,10 +856,20 @@ $ sudo apt install openjdk[-Tab key-]
 </code></pre>
 
 <h2 id="2java">2.设置Java环境变量<a class="headerlink" href="#2java" title="Permanent link">#</a></h2>
+<ul>
+<li>
+<p>JAVA_HOME和JRE_HOME是约定俗成的，一些常用的软件库，会通过JAVA_HOME和JRE_HOME环境变量取获取java和jre的安装路径，其实你自己写的Java程序可以不用设置这两个环境变量。</p>
+</li>
+<li>
+<p>CLASSPATH是JVM用到的一个环境变量，它用来指示JVM如何搜索class。类似于C语言的头文件路径，是一个目录的集合。</p>
+</li>
+</ul>
 <pre><code class="bash">$ vim /etc/profile
 
 JAVA_HOME=
 JRE_HOME=
+
+CLASSPATH=
 </code></pre>
 
 <h2 id="3java">3.设置系统默认Java版本<a class="headerlink" href="#3java" title="Permanent link">#</a></h2>
