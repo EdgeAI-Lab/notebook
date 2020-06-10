@@ -113,6 +113,7 @@ nav:
           - 安全的使用rm: Embedded System/linux/embedded_linux_dev_env/rm.md
         
         - 编译系统:
+          - CMake: Embedded System/linux/compile/cmake_base.md
           - CMake交叉编译: Embedded System/linux/compile/cmake_cross_compile.md
           - VSCode与CMake搭配使用之基本配置: Embedded System/linux/compile/vscode_cmake_base.md
           - VSCode与CMake搭配使用之交叉编译: Embedded System/linux/compile/vscode_camke_cross_compile.md

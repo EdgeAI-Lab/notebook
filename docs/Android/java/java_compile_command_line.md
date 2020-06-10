@@ -4,7 +4,7 @@
 
 * CLASSPATH
 
-classpath是JVM用到的一个环境变量，它用来指示JVM如何搜索class。类似于C语言的头文件路径，是一个目录的集合。
+CLASSPATH是JVM用到的一个环境变量，它用来指示JVM如何搜索class。类似于C语言的头文件路径，是一个目录的集合。
 
 网上有个写的很清晰的文章：
 
