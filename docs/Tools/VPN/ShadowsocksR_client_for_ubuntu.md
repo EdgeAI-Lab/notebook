@@ -88,7 +88,7 @@ Once done with that, you can turn on/off shadowsocksR with these simple command 
 * configure
 
 ```bash
-exprot http_proxy="http://127.0.0.1:1080" 
+export http_proxy="http://127.0.0.1:1080" 
 export https_proxy="http://127.0.0.1:1080" 
 ```
 
