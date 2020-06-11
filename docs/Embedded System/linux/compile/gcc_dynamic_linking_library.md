@@ -50,11 +50,6 @@ gcc -fpic -shared hello.c -o libhello.so
 * 引用动态链接库libhello.so
 
 ```shell
-# 首先将libhello.so添加到系统默认库搜索目录
-sudo cp libhello.so /usr/lib/
-# 或者
-sudo cp libhello.so /lib/
-
 # 编译test.c
 gcc test.c -L. -lhello -o test
 
