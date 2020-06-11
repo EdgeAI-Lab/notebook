@@ -150,6 +150,14 @@
     <ul class="dropdown-menu">
             
 <li>
+    <a href="../../../../Android/java/java_base/" class="dropdown-item">Java Base</a>
+</li>
+            
+<li>
+    <a href="../../../../Android/java/jni_getting_start/" class="dropdown-item">JNI</a>
+</li>
+            
+<li>
     <a href="../../../../Android/java/ubuntu_config_java/" class="dropdown-item">Ubuntu中配置Java</a>
 </li>
             
@@ -843,6 +851,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#4cmake" class="nav-link">4.使用cmake编译静态链接库</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -915,9 +927,6 @@ int main()
 </ul>
 <pre><code class="shell"># 编译test.c
 gcc test.c -L. -lhello -o test
-
-# 执行
-./test
 </code></pre>
 
 <blockquote>
@@ -999,8 +1008,24 @@ linux-vdso.so.1 (0x0000007fa0ffb000)
 libhello.so =&gt; /home/pi/mydata/libhello.so (0x0000007fa0f80000)
 libc.so.6 =&gt; /lib/aarch64-linux-gnu/libc.so.6 (0x0000007fa0e27000)
 /lib/ld-linux-aarch64.so.1 (0x0000007fa0fd0000)
+</code></pre>
 
+<h2 id="4cmake">4.使用cmake编译静态链接库<a class="headerlink" href="#4cmake" title="Permanent link">#</a></h2>
+<pre><code class="camke">cmake_minimum_required(VERSION 3.10)
 
+project(the_project VERSION 1.0.1)
+
+add_library(hello hello.c)
+</code></pre>
+
+<pre><code class="shell"># compile
+mkdir build &amp;&amp; cd build
+cmake ..
+make
+
+#link
+cd ..
+gcc test.c -Lbuild -lhello
 </code></pre></div>
             </div>
         </div>

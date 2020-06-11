@@ -150,6 +150,14 @@
     <ul class="dropdown-menu">
             
 <li>
+    <a href="../java_base/" class="dropdown-item">Java Base</a>
+</li>
+            
+<li>
+    <a href="../jni_getting_start/" class="dropdown-item">JNI</a>
+</li>
+            
+<li>
     <a href="./" class="dropdown-item active">Ubuntu中配置Java</a>
 </li>
             
@@ -802,7 +810,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../android_compiler_system/android_compile_system/" class="nav-link">
+                                <a rel="prev" href="../jni_getting_start/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -843,6 +851,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#4jdk" class="nav-link">4.查看已安装的jdk所在的目录</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -878,6 +890,10 @@ CLASSPATH=
 
 <h2 id="3java">3.设置系统默认Java版本<a class="headerlink" href="#3java" title="Permanent link">#</a></h2>
 <pre><code class="bash">$ update-alternatives --config java
+</code></pre>
+
+<h2 id="4jdk">4.查看已安装的jdk所在的目录<a class="headerlink" href="#4jdk" title="Permanent link">#</a></h2>
+<pre><code class="shell">readlink -f /usr/bin/java
 </code></pre></div>
             </div>
         </div>
