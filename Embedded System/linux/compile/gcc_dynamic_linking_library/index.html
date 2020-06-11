@@ -467,11 +467,15 @@
   </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Shell编程</a>
+    <a href="#" class="dropdown-item">Linux OS</a>
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../shell/linux_shell_program/" class="dropdown-item">Shell编程基础</a>
+    <a href="../../os/linux_environment_variable/" class="dropdown-item">环境变量</a>
+</li>
+            
+<li>
+    <a href="../../os/linux_shell_program/" class="dropdown-item">Shell编程基础</a>
 </li>
     </ul>
   </li>
@@ -674,11 +678,11 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../../../Multimedia/nginx_static_site_from_prebuild/" class="dropdown-item">配置静态网站服务器</a>
+    <a href="../../../../Network/nginx/nginx_static_site_from_prebuild/" class="dropdown-item">配置静态网站服务器</a>
 </li>
             
 <li>
-    <a href="../../../../Multimedia/nginx_hls_from_source/" class="dropdown-item">配置HLS服务器</a>
+    <a href="../../../../Network/nginx/nginx_hls_from_source/" class="dropdown-item">配置HLS服务器</a>
 </li>
     </ul>
   </li>
@@ -934,24 +938,63 @@ gcc test.c -L. -lhello -o test
 <tbody>
 <tr>
 <td>-L.</td>
-<td>告诉链接器要链接的库文件在当前目录下</td>
+<td>库的搜索路径 - 告诉链接器要链接的库文件在当前目录下</td>
 </tr>
 <tr>
 <td>-lhello</td>
-<td>告诉链接器要链接的库的名字是libhello.so</td>
+<td>库的名字 - 告诉链接器要链接的库的名字是libhello.so</td>
 </tr>
 </tbody>
 </table>
-<p>有时我们并不想使用系统默认的库搜索路径，那么指定添加自己的动态链接库路径，可以这么做：</p>
+<ul>
+<li>执行测试文件</li>
+</ul>
+<pre><code class="shell"># 执行
+./test
+</code></pre>
+
+<p>直接执行将会出现如下错误：</p>
+<pre><code class="shell">./test: error while loading shared libraries: libhello.so: cannot open shared object file: No such file or directory
+</code></pre>
+
+<p>意思是说在执行test程序的时候找不到其依赖的libhello.so库文件。</p>
+<p>这是怎么回事呢？</p>
+<p>Linux系统在执行程序的时候，首先会到系统默认的 /lib 和 /usr/lib 目录取寻找库文件；如果找不到就通过读取 /etc/ld.so.cache 文件获得其他的可搜索路径。</p>
+<p>而 /etc/ld.so.cache 是 ldconfig 程序读取 /etc/ld.so.conf 文件生成的，所以我们把 libhello.so 所在的路径添加到 /etc/ld.so.conf 中，再以root权限运行 ldconfig 程序，更新 /etc/ld.so.cache ，运行时，就可以找到 libhello.so。</p>
+<p>或者直接修改环境变量 LD_LIBRARY_PATH=. 告诉Linux系统执行test程序的时候，请在当前目录寻找依赖库。</p>
+<p>综上所述，我们有3个解决方案：</p>
+<p><code>方案1：</code></p>
+<pre><code class="shell"># 首先将libhello.so添加到系统默认库搜索目录
+sudo cp libhello.so /usr/lib/
+# 或者
+sudo cp libhello.so /lib/
+
+# 编译test.c
+gcc test.c -L. -lhello -o test
+
+# 执行
+./test
+</code></pre>
+
+<p><code>方案2：</code></p>
 <pre><code class="shell"># 打开文件
 sudo vim /etc/ld.so.conf
 
 # 然后在其末尾添加你的动态链接库路径，eg:
-/home/pi/mydata
+/path/to/your_lib_dir
 
 # 使配置生效
 sudo ldconfig
 
+# 编译test.c
+gcc test.c -L. -lhello -o test
+
+# 执行
+./test
+</code></pre>
+
+<p><code>方案3</code></p>
+<pre><code class="shell">LD_LIBRARY_PATH=. ./test
 </code></pre>
 
 <h2 id="3">3.查看程序的依赖库<a class="headerlink" href="#3" title="Permanent link">#</a></h2>
