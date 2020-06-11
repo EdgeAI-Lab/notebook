@@ -121,9 +121,9 @@ nav:
           - GCC编译动态链接库: Embedded System/linux/compile/gcc_dynamic_linking_library.md
           - GCC&Clang&LLVM的关系: Embedded System/linux/compile/gcc_clang_llvm.md
 
-        - Shell编程:
-          - Shell编程基础: Embedded System/linux/shell/linux_shell_program.md
-
+        - Linux OS:
+          - 环境变量: Embedded System/linux/os/linux_environment_variable.md
+          - Shell编程基础: Embedded System/linux/os/linux_shell_program.md
 
         - JZ2440开发:
           - OpenJTAG烧写裸机程序uboot: Embedded System/linux/jz2440/easy_open_jtag.md
@@ -177,8 +177,8 @@ nav:
         - Ogg: Multimedia/Ogg.md
 
       - Nginx:
-        - 配置静态网站服务器: Multimedia/nginx_static_site_from_prebuild.md
-        - 配置HLS服务器: Multimedia/nginx_hls_from_source.md
+        - 配置静态网站服务器: Network/nginx/nginx_static_site_from_prebuild.md 
+        - 配置HLS服务器: Network/nginx/nginx_hls_from_source.md
 
       - Hardware:
         - 电池工作时间的计算: Hardware/battery_work_time.md

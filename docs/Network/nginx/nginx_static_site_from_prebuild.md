@@ -56,6 +56,17 @@ location /video/ {
 }
 ```
 
+## 5.如何访问资源文件
+
+### 5.1 在浏览器访问
+
+在浏览器访问网址: http://192.168.1.156/image/img.png ，其实就是访问服务器上的 /var/www/image/img.png 文件 
+
+### 5.2 使用 wget 下载文件
+
+```shell
+wget http://192.168.1.156/image/img.png
+```
 
 
 
