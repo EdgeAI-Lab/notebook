@@ -52,9 +52,6 @@ gcc -fpic -shared hello.c -o libhello.so
 ```shell
 # 编译test.c
 gcc test.c -L. -lhello -o test
-
-# 执行
-./test
 ```
 > 注意：test.c的位置必须在参数```-L. -lhello```之前
 
@@ -140,7 +137,25 @@ linux-vdso.so.1 (0x0000007fa0ffb000)
 libhello.so => /home/pi/mydata/libhello.so (0x0000007fa0f80000)
 libc.so.6 => /lib/aarch64-linux-gnu/libc.so.6 (0x0000007fa0e27000)
 /lib/ld-linux-aarch64.so.1 (0x0000007fa0fd0000)
-
-
 ```
 
+## 4.使用cmake编译静态链接库
+
+```camke
+cmake_minimum_required(VERSION 3.10)
+
+project(the_project VERSION 1.0.1)
+
+add_library(hello hello.c)
+```
+
+```shell
+# compile
+mkdir build && cd build
+cmake ..
+make
+
+#link
+cd ..
+gcc test.c -Lbuild -lhello
+```

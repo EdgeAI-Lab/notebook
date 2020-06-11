@@ -36,6 +36,8 @@ nav:
       - Android编译系统: Android/android_compiler_system/android_compile_system.md
       
       - Java:
+        - Java Base: Android/java/java_base.md
+        - JNI: Android/java/jni_getting_start.md
         - Ubuntu中配置Java: Android/java/ubuntu_config_java.md
         - 命令行编译Java程序: Android/java/java_compile_command_line.md
         - Swing: Android/java/java_ui_swing.md

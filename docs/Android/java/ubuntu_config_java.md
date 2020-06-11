@@ -31,7 +31,11 @@ CLASSPATH=
 $ update-alternatives --config java
 ```
 
+## 4.查看已安装的jdk所在的目录
 
+```shell
+readlink -f /usr/bin/java
+```
 
 
 
