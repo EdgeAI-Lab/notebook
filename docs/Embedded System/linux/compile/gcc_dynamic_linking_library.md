@@ -139,14 +139,14 @@ libc.so.6 => /lib/aarch64-linux-gnu/libc.so.6 (0x0000007fa0e27000)
 /lib/ld-linux-aarch64.so.1 (0x0000007fa0fd0000)
 ```
 
-## 4.使用cmake编译静态链接库
+## 4.使用cmake编译动态链接库
 
 ```camke
 cmake_minimum_required(VERSION 3.10)
 
 project(the_project VERSION 1.0.1)
 
-add_library(hello hello.c)
+add_library(hello SHARED hello.c)
 ```
 
 ```shell

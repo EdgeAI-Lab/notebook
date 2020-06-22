@@ -1,5 +1,7 @@
 # WAV格式简介
 
+[reference link](http://soundfile.sapp.org/doc/WaveFormat/)
+
 WAV = PCM数据 + WAV文件头
 
 * 数据块的记录方式是little-endian字节顺序
