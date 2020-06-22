@@ -187,6 +187,10 @@ nav:
 
       - ESP8266: Embedded System/ESP8266.md
 
+      - K210:
+        - K210开发环境配置: Embedded System/k210/configure_the_environment.md
+        - MairxPy: Embedded System/k210/mairxpy.md
+
     - Tools:
       - MkDocs搭建个人WiKi知识管理系统: 
         - 1.MkDocs - 初识: Tools/mkdocs/mkdocs_intro.md
