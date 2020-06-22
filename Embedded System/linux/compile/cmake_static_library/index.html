@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../../../img/favicon.ico">
-        <title>Ubuntu中构建内核源码树 - EdgeAI-Lab</title>
+        <title>CMake编译静态链接库 - EdgeAI-Lab</title>
         <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../../css/base.css" rel="stylesheet">
@@ -116,7 +116,7 @@
 </li>
             
 <li>
-    <a href="../../compile/gcc_clang_llvm/" class="dropdown-item">GCC&Clang&LLVM的关系</a>
+    <a href="../gcc_clang_llvm/" class="dropdown-item">GCC&Clang&LLVM的关系</a>
 </li>
             
 <li>
@@ -399,43 +399,43 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../wsl_shared_folder/" class="dropdown-item">WSL与Windows共享文件</a>
+    <a href="../../embedded_linux_dev_env/wsl_shared_folder/" class="dropdown-item">WSL与Windows共享文件</a>
 </li>
             
 <li>
-    <a href="../virtual_box_env/" class="dropdown-item">VirtualBox开发环境搭建</a>
+    <a href="../../embedded_linux_dev_env/virtual_box_env/" class="dropdown-item">VirtualBox开发环境搭建</a>
 </li>
             
 <li>
-    <a href="./" class="dropdown-item active">Ubuntu中构建内核源码树</a>
+    <a href="../../embedded_linux_dev_env/build_linux_source_tree_on_ubuntu/" class="dropdown-item">Ubuntu中构建内核源码树</a>
 </li>
             
 <li>
-    <a href="../samba_server/" class="dropdown-item">samba服务配置</a>
+    <a href="../../embedded_linux_dev_env/samba_server/" class="dropdown-item">samba服务配置</a>
 </li>
             
 <li>
-    <a href="../ftp_server/" class="dropdown-item">FTP服务配置</a>
+    <a href="../../embedded_linux_dev_env/ftp_server/" class="dropdown-item">FTP服务配置</a>
 </li>
             
 <li>
-    <a href="../tftp_server/" class="dropdown-item">TFTP服务配置</a>
+    <a href="../../embedded_linux_dev_env/tftp_server/" class="dropdown-item">TFTP服务配置</a>
 </li>
             
 <li>
-    <a href="../nfs_server/" class="dropdown-item">NFS</a>
+    <a href="../../embedded_linux_dev_env/nfs_server/" class="dropdown-item">NFS</a>
 </li>
             
 <li>
-    <a href="../arm_compiler/" class="dropdown-item">ARM交叉编译工具</a>
+    <a href="../../embedded_linux_dev_env/arm_compiler/" class="dropdown-item">ARM交叉编译工具</a>
 </li>
             
 <li>
-    <a href="../ubuntu_boot_error/" class="dropdown-item">Ubuntu启动错误</a>
+    <a href="../../embedded_linux_dev_env/ubuntu_boot_error/" class="dropdown-item">Ubuntu启动错误</a>
 </li>
             
 <li>
-    <a href="../rm/" class="dropdown-item">安全的使用rm</a>
+    <a href="../../embedded_linux_dev_env/rm/" class="dropdown-item">安全的使用rm</a>
 </li>
     </ul>
   </li>
@@ -449,37 +449,37 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../compile/cmake_base/" class="dropdown-item">CMake基础</a>
+    <a href="../cmake_base/" class="dropdown-item">CMake基础</a>
 </li>
             
 <li>
-    <a href="../../compile/cmake_static_library/" class="dropdown-item">CMake编译静态链接库</a>
+    <a href="./" class="dropdown-item active">CMake编译静态链接库</a>
 </li>
             
 <li>
-    <a href="../../compile/cmake_cross_compile/" class="dropdown-item">CMake交叉编译</a>
+    <a href="../cmake_cross_compile/" class="dropdown-item">CMake交叉编译</a>
 </li>
             
 <li>
-    <a href="../../compile/vscode_cmake_base/" class="dropdown-item">VSCode与CMake搭配使用之基本配置</a>
+    <a href="../vscode_cmake_base/" class="dropdown-item">VSCode与CMake搭配使用之基本配置</a>
 </li>
             
 <li>
-    <a href="../../compile/vscode_camke_cross_compile/" class="dropdown-item">VSCode与CMake搭配使用之交叉编译</a>
+    <a href="../vscode_camke_cross_compile/" class="dropdown-item">VSCode与CMake搭配使用之交叉编译</a>
 </li>
     </ul>
   </li>
             
 <li>
-    <a href="../../compile/two_flavors_of_variables/" class="dropdown-item">GNU make中的2种变量</a>
+    <a href="../two_flavors_of_variables/" class="dropdown-item">GNU make中的2种变量</a>
 </li>
             
 <li>
-    <a href="../../compile/gcc_dynamic_linking_library/" class="dropdown-item">GCC编译动态链接库</a>
+    <a href="../gcc_dynamic_linking_library/" class="dropdown-item">GCC编译动态链接库</a>
 </li>
             
 <li>
-    <a href="../../compile/gcc_clang_llvm/" class="dropdown-item">GCC&Clang&LLVM的关系</a>
+    <a href="../gcc_clang_llvm/" class="dropdown-item">GCC&Clang&LLVM的关系</a>
 </li>
     </ul>
   </li>
@@ -834,12 +834,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../virtual_box_env/" class="nav-link">
+                                <a rel="prev" href="../cmake_base/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../samba_server/" class="nav-link">
+                                <a rel="next" href="../cmake_cross_compile/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -861,36 +861,8 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#ubuntu" class="nav-link">Ubuntu构建内核源码树</a>
+            <li class="nav-item" data-level="1"><a href="#cmake" class="nav-link">CMake生成静态链接库</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#1" class="nav-link">1、列出可用的源码包</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#2linux" class="nav-link">2、安装Linux内核源码</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#3" class="nav-link">3.安装编译源码所需的依赖库</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#3_1" class="nav-link">3.编译源码</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link">安装内核模块</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#_2" class="nav-link">安装内核</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#_3" class="nav-link">启用内核作为引导</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
               </ul>
             </li>
         </ul>
@@ -898,53 +870,44 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="ubuntu">Ubuntu构建内核源码树<a class="headerlink" href="#ubuntu" title="Permanent link">#</a></h1>
-<h2 id="1">1、列出可用的源码包<a class="headerlink" href="#1" title="Permanent link">#</a></h2>
-<pre><code class="shell">sudo apt-cache search linux-source
+<h1 id="cmake">CMake生成静态链接库<a class="headerlink" href="#cmake" title="Permanent link">#</a></h1>
+<ul>
+<li>生成静态库</li>
+</ul>
+<pre><code class="cmake">cmake_minimum_required(VERSION 3.0.0)
+project(LibTest VERSION 0.1.0)
+
+add_library(staticLib STATIC myLib.c)
 </code></pre>
 
-<p>Ubuntu会支持好几个版本的Linux内核</p>
-<h2 id="2linux">2、安装Linux内核源码<a class="headerlink" href="#2linux" title="Permanent link">#</a></h2>
-<pre><code class="shell">sudo apt-get install xx-xx-xx
+<ul>
+<li>静态库测试</li>
+</ul>
+<pre><code class="camke">cmake_minimum_required(VERSION 3.0.0)
+project(LibTest VERSION 0.1.0)
+
+add_executable(LibTest test.c)
+target_link_libraries(LibTest ${CMAKE_SOURCE_DIR}/build/libstaticLib.a)
 </code></pre>
 
-<h2 id="3">3.安装编译源码所需的依赖库<a class="headerlink" href="#3" title="Permanent link">#</a></h2>
-<pre><code>sudo apt-get install build-essential libncurses5-dev libssl-dev
+<ul>
+<li>生成动态库</li>
+</ul>
+<pre><code class="cmake">cmake_minimum_required(VERSION 3.0.0)
+project(LibTest VERSION 0.1.0)
+
+add_library(sharedLib SHARED myLib.c)
 </code></pre>
 
-<p>编译报错的话，注意查看报错信息，少哪个依赖库就安装哪个</p>
-<h2 id="3_1">3.编译源码<a class="headerlink" href="#3_1" title="Permanent link">#</a></h2>
-<pre><code>#清除编译过程中产生的所有中间文件
-sudo make mrproper
+<ul>
+<li>动态库测试</li>
+</ul>
+<pre><code class="camke">cmake_minimum_required(VERSION 3.0.0)
+project(LibTest VERSION 0.1.0)
 
-#清理上一次产生的编译中间文件
-sudo make clean
-
-#配置后生成.config文件
-sudo make menuconfig
-
-#编译源码
-sudo make
-</code></pre>
-
-<h2 id="_1">安装内核模块<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<pre><code>sudo make modules_install
-</code></pre>
-
-<h2 id="_2">安装内核<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
-<pre><code>sudo make install
-</code></pre>
-
-<h2 id="_3">启用内核作为引导<a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
-<p>一旦 make install 命令完成了，就是时候将内核启用来作为引导。使用这个命令来实现：</p>
-<pre><code>sudo update-initramfs -c -k 4.17-rc2
-</code></pre>
-
-<p>当然，你需要将上述内核版本号替换成你编译完的。当命令执行完毕后，使用如下命令来更新 grub：</p>
-<pre><code>sudo update-grub
-</code></pre>
-
-<p>现在你可以重启系统并且选择新安装的内核了。</p></div>
+add_executable(LibTest test.c)
+target_link_libraries(LibTest ${CMAKE_SOURCE_DIR}/build/libstaticLib.so)
+</code></pre></div>
             </div>
         </div>
 

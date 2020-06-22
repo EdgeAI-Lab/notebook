@@ -444,8 +444,16 @@
     <a href="#" class="dropdown-item">编译系统</a>
     <ul class="dropdown-menu">
             
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">CMake</a>
+    <ul class="dropdown-menu">
+            
 <li>
-    <a href="../cmake_base/" class="dropdown-item">CMake</a>
+    <a href="../cmake_base/" class="dropdown-item">CMake基础</a>
+</li>
+            
+<li>
+    <a href="../cmake_static_library/" class="dropdown-item">CMake编译静态链接库</a>
 </li>
             
 <li>
@@ -459,6 +467,8 @@
 <li>
     <a href="../vscode_camke_cross_compile/" class="dropdown-item">VSCode与CMake搭配使用之交叉编译</a>
 </li>
+    </ul>
+  </li>
             
 <li>
     <a href="../two_flavors_of_variables/" class="dropdown-item">GNU make中的2种变量</a>
@@ -865,7 +875,7 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#4cmake" class="nav-link">4.使用cmake编译静态链接库</a>
+            <li class="nav-item" data-level="2"><a href="#4cmake" class="nav-link">4.使用cmake编译动态链接库</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -1024,12 +1034,12 @@ libc.so.6 =&gt; /lib/aarch64-linux-gnu/libc.so.6 (0x0000007fa0e27000)
 /lib/ld-linux-aarch64.so.1 (0x0000007fa0fd0000)
 </code></pre>
 
-<h2 id="4cmake">4.使用cmake编译静态链接库<a class="headerlink" href="#4cmake" title="Permanent link">#</a></h2>
+<h2 id="4cmake">4.使用cmake编译动态链接库<a class="headerlink" href="#4cmake" title="Permanent link">#</a></h2>
 <pre><code class="camke">cmake_minimum_required(VERSION 3.10)
 
 project(the_project VERSION 1.0.1)
 
-add_library(hello hello.c)
+add_library(hello SHARED hello.c)
 </code></pre>
 
 <pre><code class="shell"># compile
