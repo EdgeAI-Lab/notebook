@@ -80,6 +80,10 @@ nav:
         - OS特性: Embedded System/STM32/os_feature.md
         - 在C中使用ARM汇编（GNU）: Embedded System/STM32/use_assembly_in_c.md
 
+        - FreeRTOS:
+          - 任务切换: Embedded System/freertos/task_switch.md
+          - 中断管理: Embedded System/freertos/interrupt_manage.md
+
         - STM32外设:
           - STM32串口编程之中断方式: Embedded System/STM32/stm32_hal_uart.md
           - STM32定时器编程之定时中断: Embedded System/STM32/stm32_hal_uart.md
@@ -142,6 +146,26 @@ nav:
         - RK3399:
           - 命令行连接WiFi热点: Embedded System/rk3399_cli_connect_wifi.md
 
+    - Multimedia:
+        - FFMPEG:
+          - FFMPEG编译: Multimedia/ffmpeg_compile.md
+          - FFMPEG命令: Multimedia/ffmpeg_command.md
+          - FFMPEG API: Multimedia/ffmpeg_api.md
+        - 音视频编码:
+          - 码率、H264 Profile和Level: Multimedia/h264_bitrate_profile_level.md
+          - AAC编码: Multimedia/aac.md
+          - 彻底理解YUV格式: Multimedia/yuv.md
+          - PCM: Multimedia/pcm.md
+          - WAV: Multimedia/wav_foramt.md
+          - OPUS: Multimedia/opus.md
+          - Ogg: Multimedia/Ogg.md
+        - EasyDarwin RTSP Server: Multimedia/easydarwin.md
+        - Aliyun VOD: Multimedia/AliyunVOD/get_play_url.md
+        - 光学知识点: Multimedia/optical.md
+        - 音视频同步: Multimedia/av_synchronization.md
+        - Linux Shell命令: Multimedia/linux_shell_cmd_for_multimedia.md
+
+
     - Other:
       - Computer Science:
         - 字符集: Embedded System/cs/character_set.md
@@ -164,23 +188,6 @@ nav:
         - caffe: Computer Vision/caffe.md
         - cv_library: Computer Vision/cv_library.md
         - OpenCV4Android: Computer Vision/OpenCV4Android_001.md
-
-      - Multimedia:
-        - 码率、H264 Profile和Level: Multimedia/h264_bitrate_profile_level.md
-        - VOD: Multimedia/AliyunVOD/get_play_url.md
-        - 光学知识点: Multimedia/optical.md
-        - AAC编码: Multimedia/aac.md
-        - 彻底理解YUV格式: Multimedia/yuv.md
-        - 音视频同步: Multimedia/av_synchronization.md
-        - Linux Shell命令: Multimedia/linux_shell_cmd_for_multimedia.md
-        - FFMPEG编译: Multimedia/ffmpeg_compile.md
-        - FFMPEG命令: Multimedia/ffmpeg_command.md
-        - FFMPEG API: Multimedia/ffmpeg_api.md
-        - EasyDarwin: Multimedia/easydarwin.md
-        - PCM: Multimedia/pcm.md
-        - WAV: Multimedia/wav_foramt.md
-        - OPUS: Multimedia/opus.md
-        - Ogg: Multimedia/Ogg.md
 
       - Nginx:
         - 配置静态网站服务器: Network/nginx/nginx_static_site_from_prebuild.md 
