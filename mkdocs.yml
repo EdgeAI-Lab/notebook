@@ -127,6 +127,7 @@ nav:
           - GCC&Clang&LLVM的关系: Embedded System/linux/compile/gcc_clang_llvm.md
 
         - Linux OS:
+          - shell中操作串口: Embedded System/linux/os/linux_serial_shell.md
           - 环境变量: Embedded System/linux/os/linux_environment_variable.md
           - Shell编程基础: Embedded System/linux/os/linux_shell_program.md
 
