@@ -222,7 +222,7 @@ nav:
         - VIM插件配置: Tools/VIM/vim_configure.md
         - VIM使用: Tools/VIM/vim_usage.md 
 
-      - VSCode: Tools\vscode\ssh_remote.md
+      - VSCode: Tools/vscode/ssh_remote.md
 
       - Markdown中的一些技巧: Tools/markdown.md
       - git command: Tools/git_command.md
