@@ -108,6 +108,8 @@ nav:
           - Linux常用命令: Embedded System/linux/linux_cmd/linux_cmd.md
 
         - 开发环境相关: 
+          - QEMU:
+            - QEMU安装: Embedded System/linux/embedded_linux_dev_env/qemu/qemu_install.md
           - WSL与Windows共享文件: Embedded System/linux/embedded_linux_dev_env/wsl_shared_folder.md
           - VirtualBox开发环境搭建: Embedded System/linux/embedded_linux_dev_env/virtual_box_env.md
           - Ubuntu中构建内核源码树: Embedded System/linux/embedded_linux_dev_env/build_linux_source_tree_on_ubuntu.md
