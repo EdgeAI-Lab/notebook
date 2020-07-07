@@ -94,7 +94,7 @@ module_exit(hello_exit);
 ```makefile
 obj-m := hello.o
 # it is linux kernel dir
-KERNELDIR := /lib/modules/3.2.31/build
+KERNELDIR := /lib/modules/5.0.0-32-generic/build
 PWD :=$(shell pwd)
   
 modules:  
@@ -123,9 +123,13 @@ sudo  rmmod  hello
 
 * 查看驱动程序的输出
 
-```
-cat  /var/log/syslog  | grep  world
+因为驱动程序中使用的是Linux Kernel的printk函数，所以信息不回直接输出到终端，可以通过下面的程序查看。
 
-Hello,world
-Goodbye,linux  world
+```
+dmesg
+# or
+dmesg | grep Hello
+
+Hello ,Linux Driver!
+Hello Diver Exit !
 ```
