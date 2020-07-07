@@ -887,6 +887,16 @@
 <li >
     <a href="../../../../Tools/PlantUML/">UML</a>
 </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Vincross</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../../vincross/mindsdk_comlile_install.md">mindsdk</a>
+</li>
+    </ul>
+  </li>
                                 </ul>
                             </li>
                         </ul>
@@ -1001,7 +1011,7 @@ module_exit(hello_exit);
 
 <pre><code class="makefile">obj-m := hello.o
 # it is linux kernel dir
-KERNELDIR := /lib/modules/3.2.31/build
+KERNELDIR := /lib/modules/5.0.0-32-generic/build
 PWD :=$(shell pwd)
 
 modules:  
@@ -1033,10 +1043,13 @@ clean:
 <ul>
 <li>查看驱动程序的输出</li>
 </ul>
-<pre><code>cat  /var/log/syslog  | grep  world
+<p>因为驱动程序中使用的是Linux Kernel的printk函数，所以信息不回直接输出到终端，可以通过下面的程序查看。</p>
+<pre><code>dmesg
+# or
+dmesg | grep Hello
 
-Hello,world
-Goodbye,linux  world
+Hello ,Linux Driver!
+Hello Diver Exit !
 </code></pre></div>
         </div>
 
