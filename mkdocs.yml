@@ -36,8 +36,10 @@ nav:
       - Android编译系统: Android/android_compiler_system/android_compile_system.md
       
       - Java:
-        - Gradle: Android/gradle/gradle_getting_start.md
-        - Java Base: Android/java/java_base.md
+        - Gradle: 
+          - 命令行中使用Gradle创建Java App和Java library: Android/gradle/gradle_getting_start.md
+        - Java基础: 
+          - 知识点: Android/java/java_base.md
         - JNI: Android/java/jni_getting_start.md
         - Ubuntu中配置Java: Android/java/ubuntu_config_java.md
         - 命令行编译Java程序: Android/java/java_compile_command_line.md
@@ -224,7 +226,8 @@ nav:
         - VIM插件配置: Tools/VIM/vim_configure.md
         - VIM使用: Tools/VIM/vim_usage.md 
 
-      - VSCode: Tools/vscode/ssh_remote.md
+      - VSCode: 
+        - VSCode通过SSH连接服务器实现远程编辑: Tools/vscode/ssh_remote.md
 
       - Markdown中的一些技巧: Tools/markdown.md
       - git command: Tools/git_command.md
