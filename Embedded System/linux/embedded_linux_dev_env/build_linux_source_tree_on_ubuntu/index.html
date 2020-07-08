@@ -926,7 +926,10 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#ubuntu">Ubuntu构建内核源码树</a></li>
-            <li><a href="#1">1、列出可用的源码包</a></li>
+            <li><a href="#1">1.查看你的系统使用的内核版本</a></li>
+            <li><a href="#2-libmodules-linux">2.在 /lib/modules/ 目录下找到相应的Linux内核源码树</a></li>
+            <li><a href="#3">3.编译一个内核模块验证环境正确性</a></li>
+            <li><a href="#1_1">1、列出可用的源码包</a></li>
             <li><a href="#2">2、查看你的系统使用的内核版本</a></li>
             <li><a href="#3linux">3、安装Linux内核源码</a></li>
             <li><a href="#4">4.安装编译源码所需的依赖库</a></li>
@@ -934,13 +937,48 @@
             <li><a href="#6">6.安装内核模块</a></li>
             <li><a href="#7">7.安装内核</a></li>
             <li><a href="#8">8.启用内核作为引导</a></li>
-            <li><a href="#helloworld">实现一个HelloWorld驱动</a></li>
+            <li><a href="#linux">实现一个最简单的Linux驱动程序</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
 <h1 id="ubuntu">Ubuntu构建内核源码树<a class="headerlink" href="#ubuntu" title="Permanent link">#</a></h1>
-<h2 id="1">1、列出可用的源码包<a class="headerlink" href="#1" title="Permanent link">#</a></h2>
+<p>编译Linux内核模块比如驱动程序是需要Linux内核源码的，并且是编译后的源码。</p>
+<p>换句话说就是：编译Linux内核模块是需要Linux内核源码树的。</p>
+<p>在Ubuntu（PC）中获取Linux源码树有两种方式：</p>
+<ul>
+<li>1.使用Ubuntu系统自带的内核源码树</li>
+<li>2.下载Linux内核源码编译安装</li>
+</ul>
+<blockquote>
+<blockquote>
+<p>方法一：使用Ubuntu系统自带的内核源码树</p>
+</blockquote>
+</blockquote>
+<h2 id="1">1.查看你的系统使用的内核版本<a class="headerlink" href="#1" title="Permanent link">#</a></h2>
+<pre><code class="shell">$ uname -r
+
+4.15.0-74-generic
+</code></pre>
+
+<h2 id="2-libmodules-linux">2.在 /lib/modules/ 目录下找到相应的Linux内核源码树<a class="headerlink" href="#2-libmodules-linux" title="Permanent link">#</a></h2>
+<pre><code class="shell">$ ll /lib/modules/
+
+4.15.0-101-generic/
+4.15.0-106-generic/
+4.15.0-20-generic/
+4.15.0-74-generic/
+4.15.0-76-generic/
+</code></pre>
+
+<h2 id="3">3.编译一个内核模块验证环境正确性<a class="headerlink" href="#3" title="Permanent link">#</a></h2>
+<p><a href="#实现一个最简单的Linux驱动程序">实现一个最简单的Linux驱动程序</a></p>
+<blockquote>
+<blockquote>
+<p>方法二：下载新的Linux内核源码编译安装</p>
+</blockquote>
+</blockquote>
+<h2 id="1_1">1、列出可用的源码包<a class="headerlink" href="#1_1" title="Permanent link">#</a></h2>
 <pre><code class="shell">sudo apt-cache search linux-source
 </code></pre>
 
@@ -991,7 +1029,7 @@ sudo make
 </code></pre>
 
 <p>现在你可以重启系统并且选择新安装的内核了。</p>
-<h2 id="helloworld">实现一个HelloWorld驱动<a class="headerlink" href="#helloworld" title="Permanent link">#</a></h2>
+<h2 id="linux">实现一个最简单的Linux驱动程序<a class="headerlink" href="#linux" title="Permanent link">#</a></h2>
 <pre><code class="c">#include&lt;linux/init.h&gt;
 #include&lt;linux/kernel.h&gt;
 #include&lt;linux/module.h&gt;
