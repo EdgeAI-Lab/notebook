@@ -48,25 +48,6 @@ nav:
           - IntelliJ设置Java源码: Android/java/Tools/intelliJ_set_java_code_source.md
           - IntelliJ添加jar文件: Android/java/Tools/intelliJ_add_library.md
 
-    - C/C++: 
-        - 你需要知道的N个C语言问题:
-          - C内存模型: Embedded System/c&c++/c_memory_layout.md
-          - C宏定义#与##: Embedded System/c&c++/c_micro_jing.md
-          - C指针: Embedded System/c&c++/c_pointer.md
-          - pragma pack(): Embedded System/c&c++/c_pragma.md
-          - typedef使用注意: Embedded System/c&c++/typedef_tips.md
-          - const与volatile: Embedded System/c&c++/const_volatile.md
-
-        - 编译器相关: Embedded System/c&c++/c_compiler.md
-        - C与C++相互调用: Embedded System/c&c++/c_c++_call_each_other.md
-        - 补码: Embedded System/c&c++/complement.md
-        - pkg-config: Embedded System/c&c++/pkg_config.md
-        - ASCII Table: Embedded System/c&c++/ascii_table.md
-        - C操作符优先级: Embedded System/c&c++/c_operator_precedence.md
-        - CMake用法: Embedded System/c&c++/cmake_usage.md
-        - C代码片段: Embedded System/c&c++/snippet.md
-
-
     - STM32: 
         - STM32经典书籍: Embedded System/STM32/stm32_books.md
         - STM32的三种启动方式: Embedded System/STM32/stm32_boot_configure.md
@@ -106,6 +87,24 @@ nav:
           - JLink RTT: Embedded System/STM32/tools/rtt.md
 
     - Linux:
+        - C/C++: 
+          - 你需要知道的N个C语言问题:
+            - C内存模型: Embedded System/c&c++/c_memory_layout.md
+            - C宏定义#与##: Embedded System/c&c++/c_micro_jing.md
+            - C指针: Embedded System/c&c++/c_pointer.md
+            - pragma pack(): Embedded System/c&c++/c_pragma.md
+            - typedef使用注意: Embedded System/c&c++/typedef_tips.md
+            - const与volatile: Embedded System/c&c++/const_volatile.md
+
+          - 编译器相关: Embedded System/c&c++/c_compiler.md
+          - C与C++相互调用: Embedded System/c&c++/c_c++_call_each_other.md
+          - 补码: Embedded System/c&c++/complement.md
+          - pkg-config: Embedded System/c&c++/pkg_config.md
+          - ASCII Table: Embedded System/c&c++/ascii_table.md
+          - C操作符优先级: Embedded System/c&c++/c_operator_precedence.md
+          - CMake用法: Embedded System/c&c++/cmake_usage.md
+          - C代码片段: Embedded System/c&c++/snippet.md
+
         - Linux命令:
           - Linux常用命令: Embedded System/linux/linux_cmd/linux_cmd.md
 
