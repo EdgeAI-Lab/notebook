@@ -893,7 +893,7 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../../../vincross/mindsdk_comlile_install.md">mindsdk</a>
+    <a href="../../../../vincross/mindsdk_comlile_install/">mindsdk</a>
 </li>
     </ul>
   </li>
@@ -926,18 +926,9 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#ubuntu">Ubuntu构建内核源码树</a></li>
-            <li><a href="#1">1.查看你的系统使用的内核版本</a></li>
-            <li><a href="#2-libmodules-linux">2.在 /lib/modules/ 目录下找到相应的Linux内核源码树</a></li>
-            <li><a href="#3">3.编译一个内核模块验证环境正确性</a></li>
-            <li><a href="#1_1">1、列出可用的源码包</a></li>
-            <li><a href="#2">2、查看你的系统使用的内核版本</a></li>
-            <li><a href="#3linux">3、安装Linux内核源码</a></li>
-            <li><a href="#4">4.安装编译源码所需的依赖库</a></li>
-            <li><a href="#5">5.编译源码</a></li>
-            <li><a href="#6">6.安装内核模块</a></li>
-            <li><a href="#7">7.安装内核</a></li>
-            <li><a href="#8">8.启用内核作为引导</a></li>
-            <li><a href="#linux">实现一个最简单的Linux驱动程序</a></li>
+            <li><a href="#1ubuntu">1.使用Ubuntu系统自带的内核源码树</a></li>
+            <li><a href="#2linux">2.下载新的Linux内核源码编译安装</a></li>
+            <li><a href="#3linux">3.实现一个最简单的Linux驱动程序</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -950,18 +941,14 @@
 <li>1.使用Ubuntu系统自带的内核源码树</li>
 <li>2.下载Linux内核源码编译安装</li>
 </ul>
-<blockquote>
-<blockquote>
-<p>方法一：使用Ubuntu系统自带的内核源码树</p>
-</blockquote>
-</blockquote>
-<h2 id="1">1.查看你的系统使用的内核版本<a class="headerlink" href="#1" title="Permanent link">#</a></h2>
+<h2 id="1ubuntu">1.使用Ubuntu系统自带的内核源码树<a class="headerlink" href="#1ubuntu" title="Permanent link">#</a></h2>
+<h3 id="11">1.1 查看你的系统使用的内核版本<a class="headerlink" href="#11" title="Permanent link">#</a></h3>
 <pre><code class="shell">$ uname -r
 
 4.15.0-74-generic
 </code></pre>
 
-<h2 id="2-libmodules-linux">2.在 /lib/modules/ 目录下找到相应的Linux内核源码树<a class="headerlink" href="#2-libmodules-linux" title="Permanent link">#</a></h2>
+<h3 id="12-libmodules-linux">1.2 在 /lib/modules/ 目录下找到相应的Linux内核源码树<a class="headerlink" href="#12-libmodules-linux" title="Permanent link">#</a></h3>
 <pre><code class="shell">$ ll /lib/modules/
 
 4.15.0-101-generic/
@@ -971,33 +958,25 @@
 4.15.0-76-generic/
 </code></pre>
 
-<h2 id="3">3.编译一个内核模块验证环境正确性<a class="headerlink" href="#3" title="Permanent link">#</a></h2>
-<p><a href="#实现一个最简单的Linux驱动程序">实现一个最简单的Linux驱动程序</a></p>
-<blockquote>
-<blockquote>
-<p>方法二：下载新的Linux内核源码编译安装</p>
-</blockquote>
-</blockquote>
-<h2 id="1_1">1、列出可用的源码包<a class="headerlink" href="#1_1" title="Permanent link">#</a></h2>
+<h3 id="13">1.3 编译一个内核模块验证环境正确性<a class="headerlink" href="#13" title="Permanent link">#</a></h3>
+<p><a href="#jump">实现一个最简单的Linux驱动程序</a></p>
+<h2 id="2linux">2.下载新的Linux内核源码编译安装<a class="headerlink" href="#2linux" title="Permanent link">#</a></h2>
+<h3 id="21">2.1 列出可用的源码包<a class="headerlink" href="#21" title="Permanent link">#</a></h3>
 <pre><code class="shell">sudo apt-cache search linux-source
 </code></pre>
 
 <p>Ubuntu会支持好几个版本的Linux内核</p>
-<h2 id="2">2、查看你的系统使用的内核版本<a class="headerlink" href="#2" title="Permanent link">#</a></h2>
-<pre><code class="shell">uname -r
-</code></pre>
-
-<h2 id="3linux">3、安装Linux内核源码<a class="headerlink" href="#3linux" title="Permanent link">#</a></h2>
+<h3 id="22-linux">2.2 安装Linux内核源码<a class="headerlink" href="#22-linux" title="Permanent link">#</a></h3>
 <pre><code class="shell">sudo apt-get install xx-xx-xx
 </code></pre>
 
 <p>安装后的源码在 /usr/src 目录中，是一个压缩包</p>
-<h2 id="4">4.安装编译源码所需的依赖库<a class="headerlink" href="#4" title="Permanent link">#</a></h2>
+<h3 id="23">2.3 安装编译源码所需的依赖库<a class="headerlink" href="#23" title="Permanent link">#</a></h3>
 <pre><code>sudo apt-get install build-essential libncurses5-dev libssl-dev
 </code></pre>
 
 <p>编译报错的话，注意查看报错信息，少哪个依赖库就安装哪个</p>
-<h2 id="5">5.编译源码<a class="headerlink" href="#5" title="Permanent link">#</a></h2>
+<h3 id="24">2.4 编译源码<a class="headerlink" href="#24" title="Permanent link">#</a></h3>
 <pre><code>#清除编译过程中产生的所有中间文件
 sudo make mrproper
 
@@ -1011,15 +990,15 @@ sudo make menuconfig
 sudo make
 </code></pre>
 
-<h2 id="6">6.安装内核模块<a class="headerlink" href="#6" title="Permanent link">#</a></h2>
+<h3 id="25">2.5 安装内核模块<a class="headerlink" href="#25" title="Permanent link">#</a></h3>
 <pre><code>sudo make modules_install
 </code></pre>
 
-<h2 id="7">7.安装内核<a class="headerlink" href="#7" title="Permanent link">#</a></h2>
+<h3 id="26">2.6 安装内核<a class="headerlink" href="#26" title="Permanent link">#</a></h3>
 <pre><code>sudo make install
 </code></pre>
 
-<h2 id="8">8.启用内核作为引导<a class="headerlink" href="#8" title="Permanent link">#</a></h2>
+<h3 id="27">2.7 启用内核作为引导<a class="headerlink" href="#27" title="Permanent link">#</a></h3>
 <p>一旦 make install 命令完成了，就是时候将内核启用来作为引导。使用这个命令来实现：</p>
 <pre><code>sudo update-initramfs -c -k 4.17-rc2
 </code></pre>
@@ -1029,7 +1008,13 @@ sudo make
 </code></pre>
 
 <p>现在你可以重启系统并且选择新安装的内核了。</p>
-<h2 id="linux">实现一个最简单的Linux驱动程序<a class="headerlink" href="#linux" title="Permanent link">#</a></h2>
+<blockquote>
+<p>最后通过一个简单的驱动程序验证环境配置的正确与否</p>
+</blockquote>
+<h2 id="3linux">3.<span id="jump">实现一个最简单的Linux驱动程序</span><a class="headerlink" href="#3linux" title="Permanent link">#</a></h2>
+<ul>
+<li>hello.c</li>
+</ul>
 <pre><code class="c">#include&lt;linux/init.h&gt;
 #include&lt;linux/kernel.h&gt;
 #include&lt;linux/module.h&gt;
@@ -1047,6 +1032,9 @@ module_init(hello_init);
 module_exit(hello_exit);
 </code></pre>
 
+<ul>
+<li>Makefile</li>
+</ul>
 <pre><code class="makefile">obj-m := hello.o
 # it is linux kernel dir
 KERNELDIR := /lib/modules/5.0.0-32-generic/build
