@@ -9,16 +9,16 @@
 * 1.使用Ubuntu系统自带的内核源码树
 * 2.下载Linux内核源码编译安装
 
->> 方法一：使用Ubuntu系统自带的内核源码树
+## 1.使用Ubuntu系统自带的内核源码树
 
-## 1.查看你的系统使用的内核版本
+### 1.1 查看你的系统使用的内核版本
 
 ```shell
 $ uname -r
 
 4.15.0-74-generic
 ```
-## 2.在 /lib/modules/ 目录下找到相应的Linux内核源码树
+### 1.2 在 /lib/modules/ 目录下找到相应的Linux内核源码树
 
 ```shell
 $ ll /lib/modules/
@@ -30,26 +30,21 @@ $ ll /lib/modules/
 4.15.0-76-generic/
 ```
 
-## 3.编译一个内核模块验证环境正确性
+### 1.3 编译一个内核模块验证环境正确性
 
-[实现一个最简单的Linux驱动程序](#实现一个最简单的Linux驱动程序)
+[实现一个最简单的Linux驱动程序](#jump)
 
 
->> 方法二：下载新的Linux内核源码编译安装
+## 2.下载新的Linux内核源码编译安装
 
-## 1、列出可用的源码包
+### 2.1 列出可用的源码包
 ```shell
 sudo apt-cache search linux-source
 ```
 Ubuntu会支持好几个版本的Linux内核
 
-## 2、查看你的系统使用的内核版本
 
-```shell
-uname -r
-```
-
-## 3、安装Linux内核源码
+### 2.2 安装Linux内核源码
 
 ```shell
 sudo apt-get install xx-xx-xx
@@ -57,14 +52,14 @@ sudo apt-get install xx-xx-xx
 
 安装后的源码在 /usr/src 目录中，是一个压缩包
 
-## 4.安装编译源码所需的依赖库
+### 2.3 安装编译源码所需的依赖库
 ```
 sudo apt-get install build-essential libncurses5-dev libssl-dev
 ```
 
 编译报错的话，注意查看报错信息，少哪个依赖库就安装哪个
 
-## 5.编译源码
+### 2.4 编译源码
 
 ```
 #清除编译过程中产生的所有中间文件
@@ -80,19 +75,19 @@ sudo make menuconfig
 sudo make
 ```
 
-## 6.安装内核模块
+### 2.5 安装内核模块
 
 ```
 sudo make modules_install
 ```
 
-## 7.安装内核
+### 2.6 安装内核
 
 ```
 sudo make install
 ```
 
-## 8.启用内核作为引导
+### 2.7 启用内核作为引导
 
 一旦 make install 命令完成了，就是时候将内核启用来作为引导。使用这个命令来实现：
 ```
@@ -108,8 +103,11 @@ sudo update-grub
 现在你可以重启系统并且选择新安装的内核了。
 
 
-## 实现一个最简单的Linux驱动程序
+> 最后通过一个简单的驱动程序验证环境配置的正确与否
 
+## 3.<span id="jump">实现一个最简单的Linux驱动程序</span>
+
+* hello.c
 ```c
 #include<linux/init.h>
 #include<linux/kernel.h>
@@ -128,6 +126,7 @@ module_init(hello_init);
 module_exit(hello_exit);
 ```
 
+* Makefile
 ```makefile
 obj-m := hello.o
 # it is linux kernel dir

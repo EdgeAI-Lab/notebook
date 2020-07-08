@@ -233,7 +233,7 @@ nav:
       - UML: Tools/PlantUML.md
 
       - Vincross:
-        - mindsdk: vincross\mindsdk_comlile_install.md
+        - mindsdk: vincross/mindsdk_comlile_install.md
 
 # Copyright
 copyright: 'Copyright &copy; 2019 - 2020 Frank'
