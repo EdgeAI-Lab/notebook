@@ -40,13 +40,14 @@ nav:
           - 命令行中使用Gradle创建Java App和Java library: Android/gradle/gradle_getting_start.md
         - Java基础: 
           - 知识点: Android/java/java_base.md
-        - JNI: Android/java/jni_getting_start.md
+        - JNI: 
+          - 一个非常好的JNI入门实例: Android/java/jni_getting_start.md
         - Ubuntu中配置Java: Android/java/ubuntu_config_java.md
         - 命令行编译Java程序: Android/java/java_compile_command_line.md
-        - Swing: Android/java/java_ui_swing.md
-        - Tools: 
+        - IntelliJ: 
           - IntelliJ设置Java源码: Android/java/Tools/intelliJ_set_java_code_source.md
           - IntelliJ添加jar文件: Android/java/Tools/intelliJ_add_library.md
+        - Swing: Android/java/java_ui_swing.md
 
     - STM32: 
         - STM32经典书籍: Embedded System/STM32/stm32_books.md
@@ -107,6 +108,7 @@ nav:
 
         - Linux命令:
           - Linux常用命令: Embedded System/linux/linux_cmd/linux_cmd.md
+          - 命令行连接WiFi热点: Embedded System/linux/linux_cmd/cli_connect_wifi.md
 
         - 开发环境相关: 
           - QEMU:
@@ -146,8 +148,9 @@ nav:
           - Linux Kernel移植: Embedded System/linux/jz2440/linux_kernel_porting.md
           - JZ2440 dev tips: Embedded System/linux/jz2440/jz2440_dev_tips.md
         
-        - RK3399:
-          - 命令行连接WiFi热点: Embedded System/rk3399_cli_connect_wifi.md
+        - VSCode:
+          - VSCode编译调试多文件C项目: Embedded System/linux/vscode/vscode_build_c_project.md
+          
 
     - Multimedia:
         - FFMPEG:
