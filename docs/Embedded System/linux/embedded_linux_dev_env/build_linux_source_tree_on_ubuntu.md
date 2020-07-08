@@ -1,5 +1,42 @@
 # Ubuntu构建内核源码树
 
+编译Linux内核模块比如驱动程序是需要Linux内核源码的，并且是编译后的源码。
+
+换句话说就是：编译Linux内核模块是需要Linux内核源码树的。
+
+在Ubuntu（PC）中获取Linux源码树有两种方式：
+
+* 1.使用Ubuntu系统自带的内核源码树
+* 2.下载Linux内核源码编译安装
+
+>> 方法一：使用Ubuntu系统自带的内核源码树
+
+## 1.查看你的系统使用的内核版本
+
+```shell
+$ uname -r
+
+4.15.0-74-generic
+```
+## 2.在 /lib/modules/ 目录下找到相应的Linux内核源码树
+
+```shell
+$ ll /lib/modules/
+
+4.15.0-101-generic/
+4.15.0-106-generic/
+4.15.0-20-generic/
+4.15.0-74-generic/
+4.15.0-76-generic/
+```
+
+## 3.编译一个内核模块验证环境正确性
+
+[实现一个最简单的Linux驱动程序](#实现一个最简单的Linux驱动程序)
+
+
+>> 方法二：下载新的Linux内核源码编译安装
+
 ## 1、列出可用的源码包
 ```shell
 sudo apt-cache search linux-source
@@ -71,7 +108,7 @@ sudo update-grub
 现在你可以重启系统并且选择新安装的内核了。
 
 
-## 实现一个HelloWorld驱动
+## 实现一个最简单的Linux驱动程序
 
 ```c
 #include<linux/init.h>
