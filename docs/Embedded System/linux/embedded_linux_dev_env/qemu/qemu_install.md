@@ -93,3 +93,9 @@ make
 # 
 make install
 ```
+
+## 3.查看qemu支持的虚拟开发板
+
+```
+./aarch64-softmmu/qemu-system-aarch64 -M help
+```
