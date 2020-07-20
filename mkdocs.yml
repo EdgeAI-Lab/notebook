@@ -141,6 +141,9 @@ nav:
           - Shell编程基础: Embedded System/linux/os/linux_shell_program.md
 
         - JZ2440开发:
+          - device tree:
+            - 支持设备树系统移植: Embedded System/linux/jz2440/device_tree/compile_uboot_kernel_with_device_tree.md
+            
           - OpenJTAG烧写裸机程序uboot: Embedded System/linux/jz2440/easy_open_jtag.md
           - Uboot移植: Embedded System/linux/jz2440/uboot_porting.md
           - Uboot命令: Embedded System/linux/jz2440/uboot.md
