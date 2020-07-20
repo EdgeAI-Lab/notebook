@@ -570,6 +570,16 @@
     <a href="#">JZ2440开发</a>
     <ul class="dropdown-menu">
             
+  <li class="dropdown-submenu">
+    <a href="#">device tree</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../linux/jz2440/device_tree/compile_uboot_kernel_with_device_tree/">支持设备树系统移植</a>
+</li>
+    </ul>
+  </li>
+            
 <li >
     <a href="../../linux/jz2440/easy_open_jtag/">OpenJTAG烧写裸机程序uboot</a>
 </li>
@@ -983,7 +993,7 @@ GPIOB_ODR = 2;
 GPIOB_ODR = 3;
 </code></pre>
 
-<p>如果不适用volatile修饰符，并且开启 O3 优化，则编译器可能会将上面的代码优化成：</p>
+<p>如果不使用volatile修饰符，并且开启 O3 优化，则编译器可能会将上面的代码优化成：</p>
 <pre><code class="c">// 编译器会任务前面两个只是中间过程，所以会被优化掉
 // 但是对寄存器的每一次操作都是有现实意义的
 GPIOB_ODR = 3;
