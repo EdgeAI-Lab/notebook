@@ -553,6 +553,10 @@
     <ul class="dropdown-menu">
             
 <li >
+    <a href="../../../os/linux_pitch_file_format/">Linux补丁文件格式</a>
+</li>
+            
+<li >
     <a href="../../../os/linux_serial_shell/">shell中操作串口</a>
 </li>
             
@@ -1019,7 +1023,59 @@
 </tbody>
 </table>
 <h2 id="2ubootkernel">2.编译uboot和kernel<a class="headerlink" href="#2ubootkernel" title="Permanent link">#</a></h2>
-<p>注：文件系统直接使用第一步获取的文件系统即可</p></div>
+<p>注：文件系统直接使用第一步获取的文件系统即可</p>
+<h3 id="21">2.1 工具链环境变量配置<a class="headerlink" href="#21" title="Permanent link">#</a></h3>
+<p>使用哪一个工具链就将其配置到PATH</p>
+<pre><code>export PATH=$PATH:/path/to/your_toolchain_path
+</code></pre>
+
+<h3 id="22-u-boot">2.2 编译u-boot<a class="headerlink" href="#22-u-boot" title="Permanent link">#</a></h3>
+<ul>
+<li>解压u-boot</li>
+</ul>
+<pre><code>tar xjf u-boot-1.1.6.tar.bz2
+</code></pre>
+
+<ul>
+<li>打补丁</li>
+</ul>
+<pre><code>cd u-boot-1.1.6
+
+patch -p1 &lt; ../u-boot-1.1.6_device_tree_for_jz2440.patch
+</code></pre>
+
+<ul>
+<li>配置编译</li>
+</ul>
+<pre><code>make 100ask24x0_config
+make  
+</code></pre>
+
+<h3 id="23-kernel">2.3 编译kernel<a class="headerlink" href="#23-kernel" title="Permanent link">#</a></h3>
+<ul>
+<li>解压内核</li>
+</ul>
+<pre><code> tar -xvf linux-4.19-rc3.tar.gz 
+</code></pre>
+
+<ul>
+<li>打补丁</li>
+</ul>
+<pre><code>cd linux-4.19-rc3                  
+patch -p1 &lt; ../linux-4.19-rc3_device_tree_for_jz2440.patch
+</code></pre>
+
+<ul>
+<li>配置并编译内核</li>
+</ul>
+<pre><code>cp config_ok .config
+
+# arch/arm/boot/uImage
+make uImage
+
+# arch/arm/boot/dts/jz2440.dtb
+make dtbs 
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">
