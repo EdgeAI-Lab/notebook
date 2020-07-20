@@ -26,3 +26,59 @@
 
 注：文件系统直接使用第一步获取的文件系统即可
 
+### 2.1 工具链环境变量配置
+
+使用哪一个工具链就将其配置到PATH
+
+```
+export PATH=$PATH:/path/to/your_toolchain_path
+```
+
+### 2.2 编译u-boot
+
+* 解压u-boot
+
+```
+tar xjf u-boot-1.1.6.tar.bz2
+```
+
+* 打补丁
+```
+cd u-boot-1.1.6
+
+patch -p1 < ../u-boot-1.1.6_device_tree_for_jz2440.patch
+```
+
+* 配置编译
+```
+make 100ask24x0_config
+make  
+```
+
+### 2.3 编译kernel
+
+* 解压内核
+
+```
+ tar -xvf linux-4.19-rc3.tar.gz 
+```
+
+* 打补丁
+
+```
+cd linux-4.19-rc3                  
+patch -p1 < ../linux-4.19-rc3_device_tree_for_jz2440.patch
+```
+
+* 配置并编译内核
+
+```
+cp config_ok .config
+
+# arch/arm/boot/uImage
+make uImage
+
+# arch/arm/boot/dts/jz2440.dtb
+make dtbs 
+```
+
