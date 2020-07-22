@@ -116,6 +116,7 @@ nav:
           - WSL与Windows共享文件: Embedded System/linux/embedded_linux_dev_env/wsl_shared_folder.md
           - VirtualBox开发环境搭建: Embedded System/linux/embedded_linux_dev_env/virtual_box_env.md
           - Ubuntu中构建内核源码树: Embedded System/linux/embedded_linux_dev_env/build_linux_source_tree_on_ubuntu.md
+          - SSH服务器配置: Embedded System/linux/embedded_linux_dev_env/ssh_server.md
           - samba服务配置: Embedded System/linux/embedded_linux_dev_env/samba_server.md
           - FTP服务配置: Embedded System/linux/embedded_linux_dev_env/ftp_server.md
           - TFTP服务配置: Embedded System/linux/embedded_linux_dev_env/tftp_server.md
@@ -140,6 +141,9 @@ nav:
           - shell中操作串口: Embedded System/linux/os/linux_serial_shell.md
           - 环境变量: Embedded System/linux/os/linux_environment_variable.md
           - Shell编程基础: Embedded System/linux/os/linux_shell_program.md
+
+        - Linux设备驱动开发详解:
+          - 书籍配套资源: Embedded System/linux/linux_device_driver_baohua/relate_resource.md
 
         - JZ2440开发:
           - device tree:

@@ -13,8 +13,8 @@
 新版工具链的lib库一般是支持新的芯片，比如cortex A7,A8,A9，并不支持ARM9。
 所以在制作根文件系统、编译APP时我们还得使用比较老的工具链: arm-linux-gcc-4.3.2.tar.bz2
 
-|名称|链接|说明|
-|----|----|---|
+|名称|链接|
+|----|----|
 |arm-linux-gcc-4.3.2|链接：https://pan.baidu.com/s/1aXEAz8ljwMabEOpuhPugsQ 提取码：bfr5|
 |gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabi|链接：https://pan.baidu.com/s/15cBI60LcQzgYAf19ytPnOg 提取码：3tso |
 |u-boot+设备树支持补丁|链接：https://pan.baidu.com/s/1XjDFNuI1y1fFAKRr5GFElQ 提取码：7vi5|
@@ -56,6 +56,21 @@ make
 ```
 
 ### 2.3 编译kernel
+
+* 查看系统中是否有mkimage
+```
+# whereis mkimage
+
+mkimage:
+```
+
+如果系统中没有mkimage，则将 u-boot_root_dir/tools/mkimage 文件（u-boot编译后会生成该文件）复制到 /bin/mkimage 即可。
+
+* 安装依赖文件
+```
+sudo apt-get install flex bison bc
+```
+
 
 * 解压内核
 
