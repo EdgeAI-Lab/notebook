@@ -475,6 +475,10 @@
 </li>
             
 <li >
+    <a href="../../../embedded_linux_dev_env/ssh_server/">SSH服务器配置</a>
+</li>
+            
+<li >
     <a href="../../../embedded_linux_dev_env/samba_server/">samba服务配置</a>
 </li>
             
@@ -566,6 +570,16 @@
             
 <li >
     <a href="../../../os/linux_shell_program/">Shell编程基础</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Linux设备驱动开发详解</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../linux_device_driver_baohua/relate_resource/">书籍配套资源</a>
 </li>
     </ul>
   </li>
@@ -951,7 +965,7 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../../../os/linux_shell_program/">
+                                <a rel="next" href="../../../linux_device_driver_baohua/relate_resource/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -991,34 +1005,28 @@
 <tr>
 <th>名称</th>
 <th>链接</th>
-<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>arm-linux-gcc-4.3.2</td>
 <td>链接：https://pan.baidu.com/s/1aXEAz8ljwMabEOpuhPugsQ 提取码：bfr5</td>
-<td></td>
 </tr>
 <tr>
 <td>gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabi</td>
 <td>链接：https://pan.baidu.com/s/15cBI60LcQzgYAf19ytPnOg 提取码：3tso</td>
-<td></td>
 </tr>
 <tr>
 <td>u-boot+设备树支持补丁</td>
 <td>链接：https://pan.baidu.com/s/1XjDFNuI1y1fFAKRr5GFElQ 提取码：7vi5</td>
-<td></td>
 </tr>
 <tr>
 <td>linux内核+设备树支持补丁</td>
 <td>链接：https://pan.baidu.com/s/1GuUUHSd068xblLH8JAXMAA 提取码：rdft</td>
-<td></td>
 </tr>
 <tr>
 <td>根文件系统</td>
 <td>链接：https://pan.baidu.com/s/11nYC5wFzmget9lHI5b0iBw 提取码：ib2o</td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -1052,6 +1060,21 @@ make
 </code></pre>
 
 <h3 id="23-kernel">2.3 编译kernel<a class="headerlink" href="#23-kernel" title="Permanent link">#</a></h3>
+<ul>
+<li>查看系统中是否有mkimage</li>
+</ul>
+<pre><code># whereis mkimage
+
+mkimage:
+</code></pre>
+
+<p>如果系统中没有mkimage，则将 u-boot_root_dir/tools/mkimage 文件（u-boot编译后会生成该文件）复制到 /bin/mkimage 即可。</p>
+<ul>
+<li>安装依赖文件</li>
+</ul>
+<pre><code>sudo apt-get install flex bison bc
+</code></pre>
+
 <ul>
 <li>解压内核</li>
 </ul>
