@@ -115,12 +115,12 @@ sudo update-grub
 MODULE_LICENSE("Dual BSD/GPL");
 static int hello_init(void)
 {
-	printk(KERN_EMERG "Hello ,Linux Driver!\n");
+	printk(KERN_EMERG "Hello, Linux Driver!\n");
 	return 0;	
 }
 static void hello_exit(void)
 {
-	printk(KERN_EMERG "Hello Diver Exit !\n");	
+	printk(KERN_EMERG "Hello, Diver Exit!\n");	
 }
 module_init(hello_init);
 module_exit(hello_exit);
@@ -130,7 +130,7 @@ module_exit(hello_exit);
 ```makefile
 obj-m := hello.o
 # it is linux kernel dir
-KERNELDIR := /lib/modules/5.0.0-32-generic/build
+KERNELDIR := /lib/modules/$(uname -r)/build
 PWD :=$(shell pwd)
   
 modules:  
