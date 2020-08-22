@@ -153,11 +153,10 @@ nav:
         - JZ2440开发:
           - device tree:
             - 支持设备树系统移植: Embedded System/linux/jz2440/device_tree/compile_uboot_kernel_with_device_tree.md
-            
-          - OpenJTAG烧写裸机程序uboot: Embedded System/linux/jz2440/easy_open_jtag.md
+          
+          - 烧写镜像文件: Embedded System/linux/jz2440/jz2440_download_image_files.md
           - Uboot移植: Embedded System/linux/jz2440/uboot_porting.md
           - Uboot命令: Embedded System/linux/jz2440/uboot.md
-          - 使用Uboot烧写内核和文件系统: Embedded System/linux/jz2440/write_system_use_uboot.md
           - Linux Kernel移植: Embedded System/linux/jz2440/linux_kernel_porting.md
           - JZ2440 dev tips: Embedded System/linux/jz2440/jz2440_dev_tips.md
         
