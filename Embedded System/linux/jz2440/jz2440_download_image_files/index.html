@@ -603,7 +603,7 @@
   </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#">JZ2440开发</a>
+    <a href="#">S3C2440开发</a>
     <ul class="dropdown-menu">
             
   <li class="dropdown-submenu">
@@ -1028,13 +1028,25 @@ sudo oflash file_name.bin
 <p>然后根据指令操作。</p>
 <p><img alt="" src="../../../../assets/images/EmbeddedSystem/linux/jz2440/oflash_usage.png" /></p>
 <h2 id="2uboot">2.使用Uboot烧写内核和文件系统<a class="headerlink" href="#2uboot" title="Permanent link">#</a></h2>
-<h3 id="21-flash">2.1 查看Flash分区情况<a class="headerlink" href="#21-flash" title="Permanent link">#</a></h3>
+<p>我们可以通过NFS（网络文件系统）或者TFTP（Trivial File Transfer Protocol）来烧写内核镜像和文件系统镜像。</p>
+<p>NFS和TFTP系统的搭建请参考：</p>
+<ul>
+<li><a href="Embedded System/linux/embedded_linux_dev_env/nfs_server.md">NFS系统搭建</a></li>
+<li><a href="Embedded System/linux/embedded_linux_dev_env/tftp_server.md">TFTP系统搭建</a></li>
+</ul>
+<h3 id="21-ip">2.1 配置IP<a class="headerlink" href="#21-ip" title="Permanent link">#</a></h3>
+<pre><code>setenv ipaddr 192.168.2.17
+setenv serverip 192.168.2.100
+saveenv
+</code></pre>
+
+<h3 id="22-flash">2.2 查看Flash分区情况<a class="headerlink" href="#22-flash" title="Permanent link">#</a></h3>
 <p>在Uboot命令行执行如下命令：</p>
 <pre><code>mtdpart
 </code></pre>
 
 <p>然后就会列出Flash的分区情况。在烧写内核和文件系统的时候，要严格按照这里的分区名称来写。</p>
-<h3 id="22">2.2 烧写内核<a class="headerlink" href="#22" title="Permanent link">#</a></h3>
+<h3 id="23">2.3 烧写内核<a class="headerlink" href="#23" title="Permanent link">#</a></h3>
 <pre><code>nfs 32000000 192.168.2.200:/home/fhc/linux_driver/nfs/uImage
 
 nand erase kernel
@@ -1042,7 +1054,7 @@ nand erase kernel
 nand write.jffs2 32000000 kernel
 </code></pre>
 
-<h3 id="23">2.3 烧写文件系统<a class="headerlink" href="#23" title="Permanent link">#</a></h3>
+<h3 id="24">2.4 烧写文件系统<a class="headerlink" href="#24" title="Permanent link">#</a></h3>
 <pre><code>// 文件系统的大小不能超过内存的大小，否则下载会出错，所以一般将内存地址设置为内存的起始地址
 nfs 30000000 192.168.2.200:/home/fhc/linux_driver/nfs/fs_qtopia.yaffs2
 
