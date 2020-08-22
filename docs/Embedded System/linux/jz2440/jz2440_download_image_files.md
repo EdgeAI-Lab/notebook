@@ -37,7 +37,22 @@ sudo oflash
 
 ## 2.使用Uboot烧写内核和文件系统
 
-### 2.1 查看Flash分区情况
+我们可以通过NFS（网络文件系统）或者TFTP（Trivial File Transfer Protocol）来烧写内核镜像和文件系统镜像。
+
+NFS和TFTP系统的搭建请参考：
+
+* [NFS系统搭建](Embedded System/linux/embedded_linux_dev_env/nfs_server.md)
+* [TFTP系统搭建](Embedded System/linux/embedded_linux_dev_env/tftp_server.md)
+
+### 2.1 配置IP
+
+```
+setenv ipaddr 192.168.2.17
+setenv serverip 192.168.2.100
+saveenv
+```
+
+### 2.2 查看Flash分区情况
 
 在Uboot命令行执行如下命令：
 ```
@@ -46,7 +61,7 @@ mtdpart
 然后就会列出Flash的分区情况。在烧写内核和文件系统的时候，要严格按照这里的分区名称来写。
 
 
-### 2.2 烧写内核
+### 2.3 烧写内核
 
 ```
 nfs 32000000 192.168.2.200:/home/fhc/linux_driver/nfs/uImage
@@ -56,7 +71,7 @@ nand erase kernel
 nand write.jffs2 32000000 kernel
 ```
 
-### 2.3 烧写文件系统
+### 2.4 烧写文件系统
 
 ```
 // 文件系统的大小不能超过内存的大小，否则下载会出错，所以一般将内存地址设置为内存的起始地址

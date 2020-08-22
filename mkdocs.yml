@@ -149,8 +149,7 @@ nav:
           - 最简单的平台总线设备驱动程序: Embedded System/linux/linux_driver/ld_bus_dev_drv.md
           - 设备树相关: Embedded System/linux/linux_driver/device_tree.md
 
-
-        - JZ2440开发:
+        - S3C2440开发:
           - device tree:
             - 支持设备树系统移植: Embedded System/linux/jz2440/device_tree/compile_uboot_kernel_with_device_tree.md
           
