@@ -17,3 +17,8 @@ sudo apt-get install lib32ncurses5 lib32z1
 patch -p1 < path/to/patch_file.patch
 cp config_ok .config
 ```
+
+## 3.二期驱动配套的系统二进制文件
+
+链接：https://pan.baidu.com/s/13Fciv9sMefD8aqChvrfuyA 
+提取码：abcg 
