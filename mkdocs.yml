@@ -69,6 +69,7 @@ nav:
           - 中断管理: Embedded System/freertos/interrupt_manage.md
 
         - STM32外设:
+          - Systick Timer: Embedded System/STM32/systick_timer.md
           - STM32串口编程之中断方式: Embedded System/STM32/stm32_hal_uart.md
           - STM32定时器编程之定时中断: Embedded System/STM32/stm32_hal_uart.md
           - STM32定时器编程之PWM: Embedded System/STM32/stm32_hal_uart.md
