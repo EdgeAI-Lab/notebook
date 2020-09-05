@@ -127,13 +127,18 @@ nav:
         
         - 编译系统:
           - CMake: 
-            - CMake基础: Embedded System/linux/compile/cmake_base.md
-            - CMake编译静态/动态链接库: Embedded System/linux/compile/cmake_static_library.md
-            - CMake交叉编译: Embedded System/linux/compile/cmake_cross_compile.md
-            - VSCode与CMake搭配使用之基本配置: Embedded System/linux/compile/vscode_cmake_base.md
-            - VSCode与CMake搭配使用之交叉编译: Embedded System/linux/compile/vscode_camke_cross_compile.md
+            - CMake基础: Embedded System/linux/compiler/cmake/cmake_base.md
+            - CMake编译静态和动态链接库: Embedded System/linux/compiler/cmake/cmake_static_library.md
+            - CMake交叉编译: Embedded System/linux/compiler/cmake/cmake_cross_compile.md
+            - VSCode与CMake搭配使用之基本配置: Embedded System/linux/compiler/cmake/vscode_cmake_base.md
+            - VSCode与CMake搭配使用之交叉编译: Embedded System/linux/compiler/cmake/vscode_camke_cross_compile.md
+          - 交叉编译:
+            - 交叉编译的方法: Embedded System/linux/compiler/cross_compile/corss_compile.md
+            - 交叉编译器默认的头文件和库文件搜索路径: Embedded System/linux/compiler/cross_compile/cross_compiler_default_search_path.md
+            - CMake交叉编译: Embedded System/linux/compiler/cmake/cmake_cross_compile.md
+            - VSCode与CMake搭配使用之交叉编译: Embedded System/linux/compiler/cmake/vscode_camke_cross_compile.md
           - GNU make中的2种变量: Embedded System/linux/compile/two_flavors_of_variables.md
-          - GCC编译动态链接库: Embedded System/linux/compile/gcc_dynamic_linking_library.md
+          - GCC编译动态链接库: Embedded System/linux/compiler/gcc/gcc_dynamic_linking_library.md
           - GCC&Clang&LLVM的关系: Embedded System/linux/compile/gcc_clang_llvm.md
 
         - Linux OS:
