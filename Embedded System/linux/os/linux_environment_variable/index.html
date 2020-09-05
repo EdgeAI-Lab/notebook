@@ -129,7 +129,7 @@
 </li>
             
 <li >
-    <a href="../../compile/gcc_clang_llvm/">GCC&Clang&LLVM的关系</a>
+    <a href="../../compile/gcc_clang_llvm.md">GCC&Clang&LLVM的关系</a>
 </li>
             
 <li >
@@ -294,10 +294,6 @@
   <li class="dropdown-submenu">
     <a href="#">STM32外设</a>
     <ul class="dropdown-menu">
-            
-<li >
-    <a href="../../../STM32/systick_timer/">Systick Timer</a>
-</li>
             
 <li >
     <a href="../../../STM32/stm32_hal_uart/">STM32串口编程之中断方式</a>
@@ -521,37 +517,59 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../compile/cmake_base/">CMake基础</a>
+    <a href="../../compiler/cmake/cmake_base/">CMake基础</a>
 </li>
             
 <li >
-    <a href="../../compile/cmake_static_library/">CMake编译静态/动态链接库</a>
+    <a href="../../compiler/cmake/cmake_static_library/">CMake编译静态和动态链接库</a>
 </li>
             
 <li >
-    <a href="../../compile/cmake_cross_compile/">CMake交叉编译</a>
+    <a href="../../compiler/cmake/cmake_cross_compile/">CMake交叉编译</a>
 </li>
             
 <li >
-    <a href="../../compile/vscode_cmake_base/">VSCode与CMake搭配使用之基本配置</a>
+    <a href="../../compiler/cmake/vscode_cmake_base/">VSCode与CMake搭配使用之基本配置</a>
 </li>
             
 <li >
-    <a href="../../compile/vscode_camke_cross_compile/">VSCode与CMake搭配使用之交叉编译</a>
+    <a href="../../compiler/cmake/vscode_camke_cross_compile/">VSCode与CMake搭配使用之交叉编译</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">交叉编译</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../compiler/cross_compile/corss_compile/">交叉编译的方法</a>
+</li>
+            
+<li >
+    <a href="../../compiler/cross_compile/cross_compiler_default_search_path/">交叉编译器默认的头文件和库文件搜索路径</a>
+</li>
+            
+<li >
+    <a href="../../compiler/cmake/cmake_cross_compile/">CMake交叉编译</a>
+</li>
+            
+<li >
+    <a href="../../compiler/cmake/vscode_camke_cross_compile/">VSCode与CMake搭配使用之交叉编译</a>
 </li>
     </ul>
   </li>
             
 <li >
-    <a href="../../compile/two_flavors_of_variables/">GNU make中的2种变量</a>
+    <a href="../../compile/two_flavors_of_variables.md">GNU make中的2种变量</a>
 </li>
             
 <li >
-    <a href="../../compile/gcc_dynamic_linking_library/">GCC编译动态链接库</a>
+    <a href="../../compiler/gcc/gcc_dynamic_linking_library/">GCC编译动态链接库</a>
 </li>
             
 <li >
-    <a href="../../compile/gcc_clang_llvm/">GCC&Clang&LLVM的关系</a>
+    <a href="../../compile/gcc_clang_llvm.md">GCC&Clang&LLVM的关系</a>
 </li>
     </ul>
   </li>
@@ -1009,6 +1027,7 @@
             <li><a href="#2-etcprofile">2. /etc/profile</a></li>
             <li><a href="#3-profile">3. ~/.profile</a></li>
             <li><a href="#4">4. 修改环境变量后，如何使其生效</a></li>
+        <li class="main "><a href="#shell">Shell环境变量</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -1032,7 +1051,20 @@
 <p>用户环境变量，针对shell生效</p>
 <h2 id="4">4. 修改环境变量后，如何使其生效<a class="headerlink" href="#4" title="Permanent link">#</a></h2>
 <pre><code class="shell">source ~/.profile
-</code></pre></div>
+</code></pre>
+
+<p>Variable Types
+When a shell is running, three main types of variables are present −</p>
+<p>Local Variables − A local variable is a variable that is present within the current instance of the shell. It is not available to programs that are started by the shell. They are set at the command prompt.</p>
+<p>Environment Variables − An environment variable is available to any child process of the shell. Some programs need environment variables in order to function correctly. Usually, a shell script defines only those environment variables that are needed by the programs that it runs.</p>
+<p>Shell Variables − A shell variable is a special variable that is set by the shell and is required by the shell in order to function correctly. Some of these variables are environment variables whereas others are local variables.</p>
+<h1 id="shell">Shell环境变量<a class="headerlink" href="#shell" title="Permanent link">#</a></h1>
+<p>bash shell用一个叫作环境变量（ environment variable）的特性来存储有关shell会话和工作环境的信息（这也是它们被称作环境变量的原因）。这项特性允许你在内存中存储数据，以便程序或shell中运行的脚本能够轻松访问到它们。</p>
+<p>在bash shell中，环境变量分为两类：</p>
+<ul>
+<li>全局变量</li>
+<li>局部变量 </li>
+</ul></div>
         </div>
 
         <footer class="col-md-12">
