@@ -31,6 +31,7 @@ add_executable(hello_cmake hello.c)
 ### toolchain.cmake ###
 # this is required
 SET(CMAKE_SYSTEM_NAME Linux)
+set(CMAKE_SYSTEM_PROCESSOR arm)
 
 # specify the cross compiler
 SET(CMAKE_C_COMPILER   /home/fhc/linux_driver/gcc-3.4.5-glibc-2.3.6/bin/arm-linux-gcc)

@@ -147,6 +147,10 @@ nav:
           - 环境变量: Embedded System/linux/os/linux_environment_variable.md
           - Shell编程基础: Embedded System/linux/os/linux_shell_program.md
 
+        - Uboot:
+          - Uboot命令: Embedded System/linux/jz2440/uboot.md
+          - Uboot移植: Embedded System/linux/jz2440/uboot2016_porting.md
+
         - Linux Device Driver:
           - 《Linux设备驱动开发详解》:
             - 书籍配套资源: Embedded System/linux/linux_driver/linux_device_driver_baohua/relate_resource.md
@@ -159,8 +163,7 @@ nav:
             - 支持设备树系统移植: Embedded System/linux/jz2440/device_tree/compile_uboot_kernel_with_device_tree.md
           
           - 烧写镜像文件: Embedded System/linux/jz2440/jz2440_download_image_files.md
-          - Uboot移植: Embedded System/linux/jz2440/uboot_porting.md
-          - Uboot命令: Embedded System/linux/jz2440/uboot.md
+          - Uboot打补丁编译: Embedded System/linux/jz2440/uboot_porting.md
           - Linux Kernel移植: Embedded System/linux/jz2440/linux_kernel_porting.md
           - JZ2440 dev tips: Embedded System/linux/jz2440/jz2440_dev_tips.md
         
