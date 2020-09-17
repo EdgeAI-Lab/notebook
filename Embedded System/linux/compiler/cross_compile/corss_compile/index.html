@@ -597,6 +597,20 @@
   </li>
                                     
   <li class="dropdown-submenu">
+    <a href="#">Uboot</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../jz2440/uboot/">Uboot命令</a>
+</li>
+            
+<li >
+    <a href="../../../jz2440/uboot2016_porting/">Uboot移植</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
     <a href="#">Linux Device Driver</a>
     <ul class="dropdown-menu">
             
@@ -643,11 +657,7 @@
 </li>
             
 <li >
-    <a href="../../../jz2440/uboot_porting/">Uboot移植</a>
-</li>
-            
-<li >
-    <a href="../../../jz2440/uboot/">Uboot命令</a>
+    <a href="../../../jz2440/uboot_porting/">Uboot打补丁编译</a>
 </li>
             
 <li >
@@ -1022,11 +1032,29 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#_1">交叉编译</a></li>
+            <li><a href="#1">1. 什么是交叉编译</a></li>
+            <li><a href="#2-arm">2. ARM交叉编译器的命名规则</a></li>
+            <li><a href="#3-arm">3. 获取ARM交叉编译器的途径</a></li>
+            <li><a href="#4">4. 交叉编译器目录介绍</a></li>
+            <li><a href="#5">5. 交叉编译器的配置选项</a></li>
+            <li><a href="#6-libpng">6. 交叉编译libpng</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-</div>
+<h1 id="_1">交叉编译<a class="headerlink" href="#_1" title="Permanent link">#</a></h1>
+<h2 id="1">1. 什么是交叉编译<a class="headerlink" href="#1" title="Permanent link">#</a></h2>
+<p>交叉编译是相对于本地编译（native build）而言的，我们直接在PC机上编辑、编译、执行程序就是本地编译。但是在嵌入式开发中，由于嵌入式平台的性能受限，无法在嵌入式平台上直接编辑和编译程序，需要在PC机上编辑程序，并使用交叉编译器编译程序，然后将编译出的可执行文件放到嵌入式平台运行。</p>
+<p>本文以ARM平台的交叉编译为例，为大家解读交叉编译的内容。</p>
+<h2 id="2-arm">2. ARM交叉编译器的命名规则<a class="headerlink" href="#2-arm" title="Permanent link">#</a></h2>
+<h2 id="3-arm">3. 获取ARM交叉编译器的途径<a class="headerlink" href="#3-arm" title="Permanent link">#</a></h2>
+<h2 id="4">4. 交叉编译器目录介绍<a class="headerlink" href="#4" title="Permanent link">#</a></h2>
+<h2 id="5">5. 交叉编译器的配置选项<a class="headerlink" href="#5" title="Permanent link">#</a></h2>
+<p>--build=编译该软件所使用的平台
+--host=该软件将运行的平台
+--target=该软件所处理的目标平台</p>
+<h2 id="6-libpng">6. 交叉编译libpng<a class="headerlink" href="#6-libpng" title="Permanent link">#</a></h2></div>
         </div>
 
         <footer class="col-md-12">
