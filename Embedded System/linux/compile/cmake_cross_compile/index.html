@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../../../img/favicon.ico">
-        <title>Subshell - EdgeAI-Lab</title>
+        <title>CMake交叉编译 - EdgeAI-Lab</title>
         <link href="../../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../../css/base.css" rel="stylesheet">
@@ -129,7 +129,7 @@
 </li>
             
 <li >
-    <a href="../../compile/gcc_clang_llvm.md">GCC&Clang&LLVM的关系</a>
+    <a href="../gcc_clang_llvm/">GCC&Clang&LLVM的关系</a>
 </li>
             
 <li >
@@ -296,6 +296,10 @@
     <ul class="dropdown-menu">
             
 <li >
+    <a href="../../../STM32/systick_timer/">Systick Timer</a>
+</li>
+            
+<li >
     <a href="../../../STM32/stm32_hal_uart/">STM32串口编程之中断方式</a>
 </li>
             
@@ -362,7 +366,7 @@
   </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Linux <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -517,59 +521,37 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../compiler/cmake/cmake_base/">CMake基础</a>
+    <a href="../cmake_base/">CMake基础</a>
 </li>
             
 <li >
-    <a href="../../compiler/cmake/cmake_static_library/">CMake编译静态和动态链接库</a>
+    <a href="../cmake_static_library/">CMake编译静态/动态链接库</a>
+</li>
+            
+<li class="active">
+    <a href="./">CMake交叉编译</a>
 </li>
             
 <li >
-    <a href="../../compiler/cmake/cmake_cross_compile/">CMake交叉编译</a>
+    <a href="../vscode_cmake_base/">VSCode与CMake搭配使用之基本配置</a>
 </li>
             
 <li >
-    <a href="../../compiler/cmake/vscode_cmake_base/">VSCode与CMake搭配使用之基本配置</a>
-</li>
-            
-<li >
-    <a href="../../compiler/cmake/vscode_camke_cross_compile/">VSCode与CMake搭配使用之交叉编译</a>
-</li>
-    </ul>
-  </li>
-            
-  <li class="dropdown-submenu">
-    <a href="#">交叉编译</a>
-    <ul class="dropdown-menu">
-            
-<li >
-    <a href="../../compiler/cross_compile/corss_compile/">交叉编译的方法</a>
-</li>
-            
-<li >
-    <a href="../../compiler/cross_compile/cross_compiler_default_search_path/">交叉编译器默认的头文件和库文件搜索路径</a>
-</li>
-            
-<li >
-    <a href="../../compiler/cmake/cmake_cross_compile/">CMake交叉编译</a>
-</li>
-            
-<li >
-    <a href="../../compiler/cmake/vscode_camke_cross_compile/">VSCode与CMake搭配使用之交叉编译</a>
+    <a href="../vscode_camke_cross_compile/">VSCode与CMake搭配使用之交叉编译</a>
 </li>
     </ul>
   </li>
             
 <li >
-    <a href="../../compile/two_flavors_of_variables.md">GNU make中的2种变量</a>
+    <a href="../two_flavors_of_variables/">GNU make中的2种变量</a>
 </li>
             
 <li >
-    <a href="../../compiler/gcc/gcc_dynamic_linking_library/">GCC编译动态链接库</a>
+    <a href="../gcc_dynamic_linking_library/">GCC编译动态链接库</a>
 </li>
             
 <li >
-    <a href="../../compile/gcc_clang_llvm.md">GCC&Clang&LLVM的关系</a>
+    <a href="../gcc_clang_llvm/">GCC&Clang&LLVM的关系</a>
 </li>
     </ul>
   </li>
@@ -579,33 +561,19 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../linux_pitch_file_format/">Linux补丁文件格式</a>
+    <a href="../../os/linux_pitch_file_format/">Linux补丁文件格式</a>
 </li>
             
 <li >
-    <a href="../linux_serial_shell/">shell中操作串口</a>
+    <a href="../../os/linux_serial_shell/">shell中操作串口</a>
 </li>
             
 <li >
-    <a href="../linux_environment_variable/">环境变量</a>
+    <a href="../../os/linux_environment_variable/">环境变量</a>
 </li>
             
 <li >
-    <a href="../linux_shell_program/">Shell编程基础</a>
-</li>
-    </ul>
-  </li>
-                                    
-  <li class="dropdown-submenu">
-    <a href="#">Uboot</a>
-    <ul class="dropdown-menu">
-            
-<li >
-    <a href="../../jz2440/uboot/">Uboot命令</a>
-</li>
-            
-<li >
-    <a href="../../jz2440/uboot2016_porting/">Uboot移植</a>
+    <a href="../../os/linux_shell_program/">Shell编程基础</a>
 </li>
     </ul>
   </li>
@@ -657,7 +625,11 @@
 </li>
             
 <li >
-    <a href="../../jz2440/uboot_porting/">Uboot打补丁编译</a>
+    <a href="../../jz2440/uboot_porting/">Uboot移植</a>
+</li>
+            
+<li >
+    <a href="../../jz2440/uboot/">Uboot命令</a>
 </li>
             
 <li >
@@ -1014,6 +986,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li >
+                                <a rel="next" href="../cmake_static_library/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../vscode_cmake_base/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -1022,11 +1004,91 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#cmake">CMake交叉编译</a></li>
+            <li><a href="#1helloc">1.创建测试文件hello.c</a></li>
+            <li><a href="#2cmakelisttxt">2.创建CMakeList.txt文件</a></li>
+            <li><a href="#3toolchaincmake">3.创建toolchain.cmake文件</a></li>
+            <li><a href="#4cmakemakefile">4.执行CMake指令生成Makefile</a></li>
+            <li><a href="#5">5. 编译工程</a></li>
+            <li><a href="#6">6. 设置可执行文件的安装路径</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-</div>
+<h1 id="cmake">CMake交叉编译<a class="headerlink" href="#cmake" title="Permanent link">#</a></h1>
+<p><a href="https://cmake.org/cmake/help/v3.6/manual/cmake-toolchains.7.html#cross-compiling-for-linux">CMake官网参考链接</a></p>
+<h2 id="1helloc">1.创建测试文件hello.c<a class="headerlink" href="#1helloc" title="Permanent link">#</a></h2>
+<pre><code class="c">#include&lt;stdio.h&gt;
+int main()
+{
+    printf(&quot;Hello ARM CMake!/n&quot;);
+    return 0;
+}
+
+</code></pre>
+
+<h2 id="2cmakelisttxt">2.创建CMakeList.txt文件<a class="headerlink" href="#2cmakelisttxt" title="Permanent link">#</a></h2>
+<pre><code class="cmake">cmake_minimum_required(VERSION 3.0.0)
+project(hello_cmake VERSION 0.1.0)
+
+add_executable(hello_cmake hello.c)
+</code></pre>
+
+<h2 id="3toolchaincmake">3.创建toolchain.cmake文件<a class="headerlink" href="#3toolchaincmake" title="Permanent link">#</a></h2>
+<p>该文件指明了交叉编译器信息</p>
+<pre><code>### toolchain.cmake ###
+# this is required
+SET(CMAKE_SYSTEM_NAME Linux)
+
+# specify the cross compiler
+SET(CMAKE_C_COMPILER   /home/fhc/linux_driver/gcc-3.4.5-glibc-2.3.6/bin/arm-linux-gcc)
+SET(CMAKE_CXX_COMPILER /home/fhc/linux_driver/gcc-3.4.5-glibc-2.3.6/bin/arm-linux-g++)
+
+# where is the target environment
+SET(CMAKE_FIND_ROOT_PATH  /home/fhc/linux_driver/gcc-3.4.5-glibc-2.3.6)
+
+# search for programs in the build host directories (not necessary)
+SET(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
+
+# for libraries and headers in the target directories
+SET(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
+SET(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
+</code></pre>
+
+<h2 id="4cmakemakefile">4.执行CMake指令生成Makefile<a class="headerlink" href="#4cmakemakefile" title="Permanent link">#</a></h2>
+<p>CMake有两种方式可以生成Makefile，下面分别介绍：</p>
+<h3 id="41-cmake-guimakefile">4.1 使用cmake-gui生成Makefile<a class="headerlink" href="#41-cmake-guimakefile" title="Permanent link">#</a></h3>
+<p><img alt="" src="../../../../assets/images/cmake/cross_compile_cmake_gui_00.png" /></p>
+<p><img alt="" src="../../../../assets/images/cmake/cross_compile_cmake_gui_01.png" /></p>
+<p><img alt="" src="../../../../assets/images/cmake/cross_compile_cmake_gui_02.png" /></p>
+<p><img alt="" src="../../../../assets/images/cmake/cross_compile_cmake_gui_03.png" /></p>
+<p><img alt="" src="../../../../assets/images/cmake/cross_compile_cmake_gui_04.png" /></p>
+<h3 id="42-makefile">4.2 在命令行中生成Makefile<a class="headerlink" href="#42-makefile" title="Permanent link">#</a></h3>
+<pre><code>cmake -DCMAKE_TOOLCHAIN_FILE=../toolchain/toolchain.cmake ..
+</code></pre>
+
+<h2 id="5">5. 编译工程<a class="headerlink" href="#5" title="Permanent link">#</a></h2>
+<pre><code>mkdir build &amp;&amp; cd build
+
+cmake ..
+
+make
+</code></pre>
+
+<h2 id="6">6. 设置可执行文件的安装路径<a class="headerlink" href="#6" title="Permanent link">#</a></h2>
+<p>编辑CMakeLists.txt文件：</p>
+<pre><code class="cmake">cmake_minimum_required(VERSION 3.0.0)
+project(hello_cmake VERSION 0.1.0)
+
+set(CMAKE_BUILD_TYPE DEBUG)
+set(CMAKE_INSTALL_PREFIX /home/fhc/myWorkspace/cmake_project/cmake_cross_complie_base/build)
+
+add_executable(hello_cmake hello.c)
+
+# DESTINATION指的就是CMAKE_INSTALL_PREFIX
+# 该命令的作用是将编译生成的hello_cmake文件，复制到CMAKE_INSTALL_PREFIX/bin目录下
+install(TARGETS hello_cmake RUNTIME DESTINATION bin)
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">

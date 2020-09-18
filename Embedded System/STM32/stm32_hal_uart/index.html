@@ -129,7 +129,7 @@
 </li>
             
 <li >
-    <a href="../../linux/compile/gcc_clang_llvm.md">GCC&Clang&LLVM的关系</a>
+    <a href="../../linux/compile/gcc_clang_llvm/">GCC&Clang&LLVM的关系</a>
 </li>
             
 <li >
@@ -294,6 +294,10 @@
   <li class="dropdown-submenu">
     <a href="#">STM32外设</a>
     <ul class="dropdown-menu">
+            
+<li >
+    <a href="../systick_timer/">Systick Timer</a>
+</li>
             
 <li >
     <a href="./">STM32串口编程之中断方式</a>
@@ -517,59 +521,37 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../linux/compiler/cmake/cmake_base/">CMake基础</a>
+    <a href="../../linux/compile/cmake_base/">CMake基础</a>
 </li>
             
 <li >
-    <a href="../../linux/compiler/cmake/cmake_static_library/">CMake编译静态和动态链接库</a>
+    <a href="../../linux/compile/cmake_static_library/">CMake编译静态/动态链接库</a>
 </li>
             
 <li >
-    <a href="../../linux/compiler/cmake/cmake_cross_compile/">CMake交叉编译</a>
+    <a href="../../linux/compile/cmake_cross_compile/">CMake交叉编译</a>
 </li>
             
 <li >
-    <a href="../../linux/compiler/cmake/vscode_cmake_base/">VSCode与CMake搭配使用之基本配置</a>
+    <a href="../../linux/compile/vscode_cmake_base/">VSCode与CMake搭配使用之基本配置</a>
 </li>
             
 <li >
-    <a href="../../linux/compiler/cmake/vscode_camke_cross_compile/">VSCode与CMake搭配使用之交叉编译</a>
-</li>
-    </ul>
-  </li>
-            
-  <li class="dropdown-submenu">
-    <a href="#">交叉编译</a>
-    <ul class="dropdown-menu">
-            
-<li >
-    <a href="../../linux/compiler/cross_compile/corss_compile/">交叉编译的方法</a>
-</li>
-            
-<li >
-    <a href="../../linux/compiler/cross_compile/cross_compiler_default_search_path/">交叉编译器默认的头文件和库文件搜索路径</a>
-</li>
-            
-<li >
-    <a href="../../linux/compiler/cmake/cmake_cross_compile/">CMake交叉编译</a>
-</li>
-            
-<li >
-    <a href="../../linux/compiler/cmake/vscode_camke_cross_compile/">VSCode与CMake搭配使用之交叉编译</a>
+    <a href="../../linux/compile/vscode_camke_cross_compile/">VSCode与CMake搭配使用之交叉编译</a>
 </li>
     </ul>
   </li>
             
 <li >
-    <a href="../../linux/compile/two_flavors_of_variables.md">GNU make中的2种变量</a>
+    <a href="../../linux/compile/two_flavors_of_variables/">GNU make中的2种变量</a>
 </li>
             
 <li >
-    <a href="../../linux/compiler/gcc/gcc_dynamic_linking_library/">GCC编译动态链接库</a>
+    <a href="../../linux/compile/gcc_dynamic_linking_library/">GCC编译动态链接库</a>
 </li>
             
 <li >
-    <a href="../../linux/compile/gcc_clang_llvm.md">GCC&Clang&LLVM的关系</a>
+    <a href="../../linux/compile/gcc_clang_llvm/">GCC&Clang&LLVM的关系</a>
 </li>
     </ul>
   </li>
@@ -592,20 +574,6 @@
             
 <li >
     <a href="../../linux/os/linux_shell_program/">Shell编程基础</a>
-</li>
-    </ul>
-  </li>
-                                    
-  <li class="dropdown-submenu">
-    <a href="#">Uboot</a>
-    <ul class="dropdown-menu">
-            
-<li >
-    <a href="../../linux/jz2440/uboot/">Uboot命令</a>
-</li>
-            
-<li >
-    <a href="../../linux/jz2440/uboot2016_porting/">Uboot移植</a>
 </li>
     </ul>
   </li>
@@ -657,7 +625,11 @@
 </li>
             
 <li >
-    <a href="../../linux/jz2440/uboot_porting/">Uboot打补丁编译</a>
+    <a href="../../linux/jz2440/uboot_porting/">Uboot移植</a>
+</li>
+            
+<li >
+    <a href="../../linux/jz2440/uboot/">Uboot命令</a>
 </li>
             
 <li >
@@ -1033,6 +1005,8 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#stm32-">STM32串口操作-中断</a></li>
+            <li><a href="#txetransmit-data-register-empty">TXE(Transmit data register empty)中断</a></li>
+            <li><a href="#uart-hal">UART HAL层函数使用注意事项</a></li>
             <li><a href="#1cubemx">1.使用CubeMX进行串口配置</a></li>
             <li><a href="#2">2.开启中断</a></li>
     </ul>
@@ -1040,6 +1014,29 @@
                 <div class="col-md-9" role="main">
 
 <h1 id="stm32-">STM32串口操作-中断<a class="headerlink" href="#stm32-" title="Permanent link">#</a></h1>
+<h2 id="txetransmit-data-register-empty">TXE(Transmit data register empty)中断<a class="headerlink" href="#txetransmit-data-register-empty" title="Permanent link">#</a></h2>
+<p>This bit is set by hardware when the content of the TDR register has been transferred into 
+the shift register. An interrupt is generated if the TXEIE bit =1 in the USART_CR1 register. It 
+is cleared by a write to the USART_DR register.
+0: Data is not transferred to the shift register
+1: Data is transferred to the shift register</p>
+<p><img alt="" src="../../../assets/images/STM32/UART/uart_transmit_interrupt.png" /></p>
+<ul>
+<li>
+<p>如果使能了TXE中断，当数据从TDR寄存器传输到shift寄存器时，也就是TDR寄存器为空时，将会触发TXE中断，但是数据并不一定被完全发送出去了，数据被完全发送出去之后，将会产生TC中断（如果使能了TC中断）</p>
+</li>
+<li>
+<p>如果使能了TXE中断，但是没有向USART_DR寄存器写入数据，那么这个中断将不会被清除，将会一直被触发</p>
+</li>
+</ul>
+<h2 id="uart-hal">UART HAL层函数使用注意事项<a class="headerlink" href="#uart-hal" title="Permanent link">#</a></h2>
+<ul>
+<li>参数pData要使用全局变量</li>
+</ul>
+<pre><code class="c">// 参数pData要使用全局变量
+HAL_StatusTypeDef HAL_UART_Transmit_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size)
+</code></pre>
+
 <h2 id="1cubemx">1.使用CubeMX进行串口配置<a class="headerlink" href="#1cubemx" title="Permanent link">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
