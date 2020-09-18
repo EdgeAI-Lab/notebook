@@ -1,5 +1,29 @@
 # STM32串口操作-中断
 
+## TXE(Transmit data register empty)中断
+This bit is set by hardware when the content of the TDR register has been transferred into 
+the shift register. An interrupt is generated if the TXEIE bit =1 in the USART_CR1 register. It 
+is cleared by a write to the USART_DR register.
+0: Data is not transferred to the shift register
+1: Data is transferred to the shift register
+
+![](../../assets/images/STM32/UART/uart_transmit_interrupt.png)
+
+
+* 如果使能了TXE中断，当数据从TDR寄存器传输到shift寄存器时，也就是TDR寄存器为空时，将会触发TXE中断，但是数据并不一定被完全发送出去了，数据被完全发送出去之后，将会产生TC中断（如果使能了TC中断）
+
+* 如果使能了TXE中断，但是没有向USART_DR寄存器写入数据，那么这个中断将不会被清除，将会一直被触发
+
+## UART HAL层函数使用注意事项
+
+* 参数pData要使用全局变量
+
+```c
+// 参数pData要使用全局变量
+HAL_StatusTypeDef HAL_UART_Transmit_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size)
+```
+
+
 ## 1.使用CubeMX进行串口配置
 
 !!! Note
