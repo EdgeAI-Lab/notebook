@@ -10,6 +10,15 @@ u-boot中会使用到tftp协议（注意！不是FTP协议）。
 sudo apt install tftpd-hpa
 ```
 
+```
+# /etc/default/tftpd-hpa
+
+TFTP_USERNAME="tftp"
+TFTP_DIRECTORY="/home/fhc/linux_driver/tftpboot"
+TFTP_ADDRESS=":69"
+TFTP_OPTIONS="--secure"
+```
+
 ## 2. 配置TFTP
 
 ```
