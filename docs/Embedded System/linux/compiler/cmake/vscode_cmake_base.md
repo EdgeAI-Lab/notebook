@@ -21,7 +21,7 @@
 
 然后根据提示输入项目名称:
 
-![](../../../../../assets/images/tools/vscode/vscode_cmake_quickstart_project_name.png)
+![](../../../../assets/images/tools/vscode/vscode_cmake_quickstart_project_name.png)
 
 然后选择该项目是创建库还是可执行文件，为了演示方便这里我们选择可执行文件```Executable```：
 
