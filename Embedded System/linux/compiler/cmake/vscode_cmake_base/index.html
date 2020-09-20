@@ -1049,22 +1049,22 @@
 
 <h1 id="vscodecmake">VSCode与CMake搭配使用之基本配置<a class="headerlink" href="#vscodecmake" title="Permanent link">#</a></h1>
 <h2 id="1vscodecmakecmake-tools">1.首先安装VSCode插件CMake和CMake Tools<a class="headerlink" href="#1vscodecmakecmake-tools" title="Permanent link">#</a></h2>
-<p><img alt="" src="../../../assets/images/tools/vscode/vscode_cmake_plugin.png" /></p>
+<p><img alt="" src="../../../../../assets/images/tools/vscode/vscode_cmake_plugin.png" /></p>
 <ul>
 <li>CMake插件主要功能是CMake语法高亮、自动补全</li>
 <li>CMake Tools的功能主要是结合VSCode IDE使用CMake这个工具，比如生成CMake项目、构建CMake项目等</li>
 </ul>
 <h2 id="2cmake">2.新建CMake项目<a class="headerlink" href="#2cmake" title="Permanent link">#</a></h2>
 <p><code>Ctrl+Shift+p</code>打开VSCode的指令面板，然后输入<code>cmake:q</code>，VSCode会根据输入自动提示，然后选择<code>CMake: Quick Start</code></p>
-<p><img alt="" src="../../../assets/images/tools/vscode/vscode_cmake_quickstart.png" /></p>
+<p><img alt="" src="../../../../../assets/images/tools/vscode/vscode_cmake_quickstart.png" /></p>
 <p>然后选择适合你的编译器（VSCode会将你安装的编译器都罗列出来供你选择。如果你是交叉编译，那么就可以在这里配置你的交叉编译器）,为方便演示这里我们选择<code>GCC7.4.0</code>：</p>
-<p><img alt="" src="../../../assets/images/tools/vscode/vscode_cmake_quickstart_kit.png" /></p>
+<p><img alt="" src="../../../../../assets/images/tools/vscode/vscode_cmake_quickstart_kit.png" /></p>
 <p>然后根据提示输入项目名称:</p>
-<p><img alt="" src="../../../assets/images/tools/vscode/vscode_cmake_quickstart_project_name.png" /></p>
+<p><img alt="" src="../../../../../assets/images/tools/vscode/vscode_cmake_quickstart_project_name.png" /></p>
 <p>然后选择该项目是创建库还是可执行文件，为了演示方便这里我们选择可执行文件<code>Executable</code>：</p>
-<p><img alt="" src="../../../assets/images/tools/vscode/vscode_cmake_quickstart_lib_or_exec.png" /></p>
+<p><img alt="" src="../../../../../assets/images/tools/vscode/vscode_cmake_quickstart_lib_or_exec.png" /></p>
 <p>然后VSCode就会为你生成一个CMake项目，如下所示：</p>
-<p><img alt="" src="../../../assets/images/tools/vscode/vscode_cmake_quickstart_done.png" /></p>
+<p><img alt="" src="../../../../../assets/images/tools/vscode/vscode_cmake_quickstart_done.png" /></p>
 <ul>
 <li>build文件夹是<code>cmake</code>指令的输出文件夹</li>
 <li>默认生成的<code>CMakeLists.txt</code>文件</li>
@@ -1077,17 +1077,17 @@ cmake ..
 </code></pre>
 
 <p>但是VSCode提供了更便捷的方式（点击底部的Build）:</p>
-<p><img alt="" src="../../../assets/images/tools/vscode/vscode_cmake_build.png" /></p>
+<p><img alt="" src="../../../../../assets/images/tools/vscode/vscode_cmake_build.png" /></p>
 <p>或者在VSCode的命令面板中选择build命令（输入cmake后VSCode会帮你列出所有支持的命令）：</p>
-<p><img alt="" src="../../../assets/images/tools/vscode/vscode_cmake_commands.png" /></p>
+<p><img alt="" src="../../../../../assets/images/tools/vscode/vscode_cmake_commands.png" /></p>
 <h2 id="4">4. 调试<a class="headerlink" href="#4" title="Permanent link">#</a></h2>
 <p>首先在源码中打上断点：</p>
-<p><img alt="" src="../../../assets/images/tools/vscode/vscode_cmake_debug_breakpoint.png" /></p>
+<p><img alt="" src="../../../../../assets/images/tools/vscode/vscode_cmake_debug_breakpoint.png" /></p>
 <p>然后配置调试环境：</p>
-<p><img alt="" src="../../../assets/images/tools/vscode/vscode_cmake_debug.png" /></p>
-<p><img alt="" src="../../../assets/images/tools/vscode/vscode_cmake_debug_select_configure.png" /></p>
+<p><img alt="" src="../../../../../assets/images/tools/vscode/vscode_cmake_debug.png" /></p>
+<p><img alt="" src="../../../../../assets/images/tools/vscode/vscode_cmake_debug_select_configure.png" /></p>
 <p>然后就会自动跳入调试界面：</p>
-<p><img alt="" src="../../../assets/images/tools/vscode/vscode_cmake_debug_done.png" /></p>
+<p><img alt="" src="../../../../../assets/images/tools/vscode/vscode_cmake_debug_done.png" /></p>
 <p>下次进入调试有两种方法：</p>
 <ol>
 <li>点击VSCode底部的Debug选项</li>

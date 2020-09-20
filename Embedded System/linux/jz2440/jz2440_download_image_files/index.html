@@ -1064,12 +1064,13 @@ sudo oflash file_name.bin
 <p>然后根据指令操作。</p>
 <p><img alt="" src="../../../../assets/images/EmbeddedSystem/linux/jz2440/oflash_usage.png" /></p>
 <h2 id="2uboot">2.使用Uboot烧写内核和文件系统<a class="headerlink" href="#2uboot" title="Permanent link">#</a></h2>
-<p>我们可以通过NFS（网络文件系统）或者TFTP（Trivial File Transfer Protocol）来烧写内核镜像和文件系统镜像。</p>
+<p>当烧写好Uboot后，我们就可以使用Uboot通过NFS（网络文件系统）或者TFTP（Trivial File Transfer Protocol）来烧写内核镜像和文件系统镜像了。</p>
 <p>NFS和TFTP系统的搭建请参考：</p>
 <ul>
 <li><a href="../../embedded_linux_dev_env/nfs_server/">NFS系统搭建</a></li>
 <li><a href="../../embedded_linux_dev_env/tftp_server/">TFTP系统搭建</a></li>
 </ul>
+<p>NFS或者TFTP服务器搭建好之后，将系统映像文件放入相应的工作目录。</p>
 <h3 id="21-ip">2.1 配置IP<a class="headerlink" href="#21-ip" title="Permanent link">#</a></h3>
 <pre><code>setenv ipaddr 192.168.2.17
 setenv serverip 192.168.2.100
@@ -1097,39 +1098,29 @@ mtdparts: mtdparts=nandflash0:256k@0(bootloader),128k(device_tree),128k(params),
 </code></pre>
 
 <p>然后就会列出Flash的分区情况。在烧写内核和文件系统的时候，要严格按照这里的分区名称来写。</p>
-<h3 id="23-nfs">2.3 使用NFS下载并烧写内核<a class="headerlink" href="#23-nfs" title="Permanent link">#</a></h3>
-<pre><code>nfs 32000000 192.168.2.200:/home/fhc/linux_driver/nfs/uImage
+<h3 id="23">2.3 下载并烧写内核<a class="headerlink" href="#23" title="Permanent link">#</a></h3>
+<pre><code>nfs 30000000 192.168.2.200:/home/fhc/linux_driver/nfs/uImage
+tftp 30000000 uImage
 
 nand erase kernel
 
-nand write.jffs2 32000000 kernel
+nand write.jffs2 30000000 kernel
 </code></pre>
 
-<h3 id="24-nfs">2.4 使用NFS下载并烧写文件系统<a class="headerlink" href="#24-nfs" title="Permanent link">#</a></h3>
+<h3 id="24">2.4 下载并烧写文件系统<a class="headerlink" href="#24" title="Permanent link">#</a></h3>
 <pre><code>// 文件系统的大小不能超过内存的大小，否则下载会出错，所以一般将内存地址设置为内存的起始地址
 nfs 30000000 192.168.2.200:/home/fhc/linux_driver/nfs/fs_qtopia.yaffs2
+tftp 30000000 fs_qtopia.yaffs2
 
 nand erase root
 
-// nand write.[文件系统类型jaffs2或者yaff] 文件源的内存地址  flash上的烧写地址  文件源的大小（网络下载后有提示）
-nand write.yaff 30000000 0x00260000 0x791340
+// nand write.[文件系统类型jaffs2或者yaffs] 文件源的内存地址  flash上的烧写地址  文件源的大小（网络下载后有提示）
+nand write.yaffs 30000000 0x00260000 0x791340
 </code></pre>
 
-<h3 id="25-tftp">2.5 使用TFTP下载并烧写内核<a class="headerlink" href="#25-tftp" title="Permanent link">#</a></h3>
-<pre><code>tftp 32000000 uImage
-
-nand erase kernel
-
-nand write.jffs2 32000000 kernel
-</code></pre>
-
-<h3 id="26-tftp">2.6 使用TFTP下载并烧写文件系统<a class="headerlink" href="#26-tftp" title="Permanent link">#</a></h3>
-<p>```
-// 文件系统的大小不能超过内存的大小，否则下载会出错，所以一般将内存地址设置为内存的起始地址
-tftp 30000000 fs_qtopia.yaffs2</p>
-<p>nand erase root</p>
-<p>// nand write.[文件系统类型jaffs2或者yaff] 文件源的内存地址  flash上的烧写地址  文件源的大小（网络下载后有提示）
-nand </p></div>
+<h3 id="25-0x30000000">2.5 为什么下载地址可以是0x30000000<a class="headerlink" href="#25-0x30000000" title="Permanent link">#</a></h3>
+<p>是由S3C2440这颗芯片的内存控制器决定的，如下图所示：</p>
+<p><img alt="" src="../../../../assets/images/EmbeddedSystem/linux/jz2440/jz2440_memory_address_layout.png" /></p></div>
         </div>
 
         <footer class="col-md-12">
