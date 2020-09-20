@@ -129,7 +129,7 @@
 </li>
             
 <li >
-    <a href="../../compile/gcc_clang_llvm/">GCC&Clang&LLVM的关系</a>
+    <a href="../../compile/gcc_clang_llvm.md">GCC&Clang&LLVM的关系</a>
 </li>
             
 <li >
@@ -521,37 +521,59 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../compile/cmake_base/">CMake基础</a>
+    <a href="../../compiler/cmake/cmake_base/">CMake基础</a>
 </li>
             
 <li >
-    <a href="../../compile/cmake_static_library/">CMake编译静态/动态链接库</a>
+    <a href="../../compiler/cmake/cmake_static_library/">CMake编译静态和动态链接库</a>
 </li>
             
 <li >
-    <a href="../../compile/cmake_cross_compile/">CMake交叉编译</a>
+    <a href="../../compiler/cmake/cmake_cross_compile/">CMake交叉编译</a>
 </li>
             
 <li >
-    <a href="../../compile/vscode_cmake_base/">VSCode与CMake搭配使用之基本配置</a>
+    <a href="../../compiler/cmake/vscode_cmake_base/">VSCode与CMake搭配使用之基本配置</a>
 </li>
             
 <li >
-    <a href="../../compile/vscode_camke_cross_compile/">VSCode与CMake搭配使用之交叉编译</a>
+    <a href="../../compiler/cmake/vscode_camke_cross_compile/">VSCode与CMake搭配使用之交叉编译</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">交叉编译</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../compiler/cross_compile/corss_compile/">交叉编译的方法</a>
+</li>
+            
+<li >
+    <a href="../../compiler/cross_compile/cross_compiler_default_search_path/">交叉编译器默认的头文件和库文件搜索路径</a>
+</li>
+            
+<li >
+    <a href="../../compiler/cmake/cmake_cross_compile/">CMake交叉编译</a>
+</li>
+            
+<li >
+    <a href="../../compiler/cmake/vscode_camke_cross_compile/">VSCode与CMake搭配使用之交叉编译</a>
 </li>
     </ul>
   </li>
             
 <li >
-    <a href="../../compile/two_flavors_of_variables/">GNU make中的2种变量</a>
+    <a href="../../compile/two_flavors_of_variables.md">GNU make中的2种变量</a>
 </li>
             
 <li >
-    <a href="../../compile/gcc_dynamic_linking_library/">GCC编译动态链接库</a>
+    <a href="../../compiler/gcc/gcc_dynamic_linking_library/">GCC编译动态链接库</a>
 </li>
             
 <li >
-    <a href="../../compile/gcc_clang_llvm/">GCC&Clang&LLVM的关系</a>
+    <a href="../../compile/gcc_clang_llvm.md">GCC&Clang&LLVM的关系</a>
 </li>
     </ul>
   </li>
@@ -574,6 +596,20 @@
             
 <li >
     <a href="../../os/linux_shell_program/">Shell编程基础</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Uboot</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../uboot/">Uboot命令</a>
+</li>
+            
+<li >
+    <a href="../uboot2016_porting/">Uboot移植</a>
 </li>
     </ul>
   </li>
@@ -625,11 +661,7 @@
 </li>
             
 <li >
-    <a href="../uboot_porting/">Uboot移植</a>
-</li>
-            
-<li >
-    <a href="../uboot/">Uboot命令</a>
+    <a href="../uboot_porting/">Uboot打补丁编译</a>
 </li>
             
 <li >
@@ -1035,8 +1067,8 @@ sudo oflash file_name.bin
 <p>我们可以通过NFS（网络文件系统）或者TFTP（Trivial File Transfer Protocol）来烧写内核镜像和文件系统镜像。</p>
 <p>NFS和TFTP系统的搭建请参考：</p>
 <ul>
-<li><a href="Embedded System/linux/embedded_linux_dev_env/nfs_server.md">NFS系统搭建</a></li>
-<li><a href="Embedded System/linux/embedded_linux_dev_env/tftp_server.md">TFTP系统搭建</a></li>
+<li><a href="../../embedded_linux_dev_env/nfs_server/">NFS系统搭建</a></li>
+<li><a href="../../embedded_linux_dev_env/tftp_server/">TFTP系统搭建</a></li>
 </ul>
 <h3 id="21-ip">2.1 配置IP<a class="headerlink" href="#21-ip" title="Permanent link">#</a></h3>
 <pre><code>setenv ipaddr 192.168.2.17
@@ -1049,8 +1081,23 @@ saveenv
 <pre><code>mtdpart
 </code></pre>
 
+<pre><code>device nand0 &lt;nandflash0&gt;, # parts = 5
+ #: name                        size            offset          mask_flags
+ 0: bootloader          0x00040000      0x00000000      0
+ 1: device_tree         0x00020000      0x00040000      0
+ 2: params              0x00020000      0x00060000      0
+ 3: kernel              0x00400000      0x00080000      0
+ 4: root                0x0fb80000      0x00480000      0
+
+active partition: nand0,0 - (bootloader) 0x00040000 @ 0x00000000
+
+defaults:
+mtdids  : nand0=nandflash0
+mtdparts: mtdparts=nandflash0:256k@0(bootloader),128k(device_tree),128k(params),4m(kernel),-(root)
+</code></pre>
+
 <p>然后就会列出Flash的分区情况。在烧写内核和文件系统的时候，要严格按照这里的分区名称来写。</p>
-<h3 id="23">2.3 烧写内核<a class="headerlink" href="#23" title="Permanent link">#</a></h3>
+<h3 id="23-nfs">2.3 使用NFS下载并烧写内核<a class="headerlink" href="#23-nfs" title="Permanent link">#</a></h3>
 <pre><code>nfs 32000000 192.168.2.200:/home/fhc/linux_driver/nfs/uImage
 
 nand erase kernel
@@ -1058,7 +1105,7 @@ nand erase kernel
 nand write.jffs2 32000000 kernel
 </code></pre>
 
-<h3 id="24">2.4 烧写文件系统<a class="headerlink" href="#24" title="Permanent link">#</a></h3>
+<h3 id="24-nfs">2.4 使用NFS下载并烧写文件系统<a class="headerlink" href="#24-nfs" title="Permanent link">#</a></h3>
 <pre><code>// 文件系统的大小不能超过内存的大小，否则下载会出错，所以一般将内存地址设置为内存的起始地址
 nfs 30000000 192.168.2.200:/home/fhc/linux_driver/nfs/fs_qtopia.yaffs2
 
@@ -1066,7 +1113,23 @@ nand erase root
 
 // nand write.[文件系统类型jaffs2或者yaff] 文件源的内存地址  flash上的烧写地址  文件源的大小（网络下载后有提示）
 nand write.yaff 30000000 0x00260000 0x791340
-</code></pre></div>
+</code></pre>
+
+<h3 id="25-tftp">2.5 使用TFTP下载并烧写内核<a class="headerlink" href="#25-tftp" title="Permanent link">#</a></h3>
+<pre><code>tftp 32000000 uImage
+
+nand erase kernel
+
+nand write.jffs2 32000000 kernel
+</code></pre>
+
+<h3 id="26-tftp">2.6 使用TFTP下载并烧写文件系统<a class="headerlink" href="#26-tftp" title="Permanent link">#</a></h3>
+<p>```
+// 文件系统的大小不能超过内存的大小，否则下载会出错，所以一般将内存地址设置为内存的起始地址
+tftp 30000000 fs_qtopia.yaffs2</p>
+<p>nand erase root</p>
+<p>// nand write.[文件系统类型jaffs2或者yaff] 文件源的内存地址  flash上的烧写地址  文件源的大小（网络下载后有提示）
+nand </p></div>
         </div>
 
         <footer class="col-md-12">
