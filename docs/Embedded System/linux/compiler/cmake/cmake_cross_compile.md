@@ -54,15 +54,15 @@ CMake有两种方式可以生成Makefile，下面分别介绍：
 
 ### 4.1 使用cmake-gui生成Makefile
 
-![](../../../assets/images/cmake/cross_compile_cmake_gui_00.png)
+![](../../../../assets/images/cmake/cross_compile_cmake_gui_00.png)
 
-![](../../../assets/images/cmake/cross_compile_cmake_gui_01.png)
+![](../../../../assets/images/cmake/cross_compile_cmake_gui_01.png)
 
-![](../../../assets/images/cmake/cross_compile_cmake_gui_02.png)
+![](../../../../assets/images/cmake/cross_compile_cmake_gui_02.png)
 
-![](../../../assets/images/cmake/cross_compile_cmake_gui_03.png)
+![](../../../../assets/images/cmake/cross_compile_cmake_gui_03.png)
 
-![](../../../assets/images/cmake/cross_compile_cmake_gui_04.png)
+![](../../../../assets/images/cmake/cross_compile_cmake_gui_04.png)
 
 
 ### 4.2 在命令行中生成Makefile

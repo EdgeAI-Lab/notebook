@@ -37,12 +37,14 @@ sudo oflash
 
 ## 2.使用Uboot烧写内核和文件系统
 
-我们可以通过NFS（网络文件系统）或者TFTP（Trivial File Transfer Protocol）来烧写内核镜像和文件系统镜像。
+当烧写好Uboot后，我们就可以使用Uboot通过NFS（网络文件系统）或者TFTP（Trivial File Transfer Protocol）来烧写内核镜像和文件系统镜像了。
 
 NFS和TFTP系统的搭建请参考：
 
 * [NFS系统搭建](../embedded_linux_dev_env/nfs_server.md)
 * [TFTP系统搭建](../embedded_linux_dev_env/tftp_server.md)
+
+NFS或者TFTP服务器搭建好之后，将系统映像文件放入相应的工作目录。
 
 ### 2.1 配置IP
 
@@ -78,45 +80,32 @@ mtdparts: mtdparts=nandflash0:256k@0(bootloader),128k(device_tree),128k(params),
 然后就会列出Flash的分区情况。在烧写内核和文件系统的时候，要严格按照这里的分区名称来写。
 
 
-### 2.3 使用NFS下载并烧写内核
+### 2.3 下载并烧写内核
 
 ```
-nfs 32000000 192.168.2.200:/home/fhc/linux_driver/nfs/uImage
+nfs 30000000 192.168.2.200:/home/fhc/linux_driver/nfs/uImage
+tftp 30000000 uImage
 
 nand erase kernel
 
-nand write.jffs2 32000000 kernel
+nand write.jffs2 30000000 kernel
 ```
 
-### 2.4 使用NFS下载并烧写文件系统
+### 2.4 下载并烧写文件系统
 
 ```
 // 文件系统的大小不能超过内存的大小，否则下载会出错，所以一般将内存地址设置为内存的起始地址
 nfs 30000000 192.168.2.200:/home/fhc/linux_driver/nfs/fs_qtopia.yaffs2
-
-nand erase root
-
-// nand write.[文件系统类型jaffs2或者yaff] 文件源的内存地址  flash上的烧写地址  文件源的大小（网络下载后有提示）
-nand write.yaff 30000000 0x00260000 0x791340
-```
-
-### 2.5 使用TFTP下载并烧写内核
-
-```
-tftp 32000000 uImage
-
-nand erase kernel
-
-nand write.jffs2 32000000 kernel
-```
-
-### 2.6 使用TFTP下载并烧写文件系统
-
-```
-// 文件系统的大小不能超过内存的大小，否则下载会出错，所以一般将内存地址设置为内存的起始地址
 tftp 30000000 fs_qtopia.yaffs2
 
 nand erase root
 
-// nand write.[文件系统类型jaffs2或者yaff] 文件源的内存地址  flash上的烧写地址  文件源的大小（网络下载后有提示）
-nand 
+// nand write.[文件系统类型jaffs2或者yaffs] 文件源的内存地址  flash上的烧写地址  文件源的大小（网络下载后有提示）
+nand write.yaffs 30000000 0x00260000 0x791340
+```
+
+### 2.5 为什么下载地址可以是0x30000000
+
+是由S3C2440这颗芯片的内存控制器决定的，如下图所示：
+
+![](../../../assets/images/EmbeddedSystem/linux/jz2440/jz2440_memory_address_layout.png)

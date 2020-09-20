@@ -20,7 +20,7 @@ vim .local/share/CMakeTools/cmake-tools-kits.json
     "toolchainFile": "/home/fhc/myWorkspace/cmake_project/cmake_cross_complie_base/toolchain.cmake"
 }
 ```
-![](../../../assets/images/tools/vscode/cmake_tools_kits_json.png)
+![](../../../../assets/images/tools/vscode/cmake_tools_kits_json.png)
 
 ## 2.创建toolchain.cmake文件
 
@@ -52,24 +52,24 @@ SET(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 
 ```Ctrl+Shift+p```打开VSCode的指令面板，然后输入```cmake:q```，VSCode会根据输入自动提示，然后选择```CMake: Quick Start```
 
-![](../../../assets/images/tools/vscode/vscode_cmake_quickstart.png)
+![](../../../../assets/images/tools/vscode/vscode_cmake_quickstart.png)
 
 然后选择我们自己配置的交叉编译器```arm_corss_compiler```：
 
-![](../../../assets/images/tools/vscode/vscode_arm_cross_compiler.png)
+![](../../../../assets/images/tools/vscode/vscode_arm_cross_compiler.png)
 
 
 然后根据提示输入项目名称:
 
-![](../../../assets/images/tools/vscode/vscode_cmake_quickstart_project_name.png)
+![](../../../../assets/images/tools/vscode/vscode_cmake_quickstart_project_name.png)
 
 然后选择该项目是创建库还是可执行文件，为了演示方便这里我们选择可执行文件```Executable```：
 
-![](../../../assets/images/tools/vscode/vscode_cmake_quickstart_lib_or_exec.png)
+![](../../../../assets/images/tools/vscode/vscode_cmake_quickstart_lib_or_exec.png)
 
 然后VSCode就会为你生成一个CMake项目，如下所示：
 
-![](../../../assets/images/tools/vscode/vscode_cmake_quickstart_done.png)
+![](../../../../assets/images/tools/vscode/vscode_cmake_quickstart_done.png)
 
 * build文件夹是```cmake```指令的输出文件夹
 * 默认生成的```CMakeLists.txt```文件
@@ -86,11 +86,11 @@ cmake ..
 
 但是VSCode提供了更便捷的方式（点击底部的Build）:
 
-![](../../../assets/images/tools/vscode/vscode_cmake_build.png)
+![](../../../../assets/images/tools/vscode/vscode_cmake_build.png)
 
 或者在VSCode的命令面板中选择build命令（输入cmake后VSCode会帮你列出所有支持的命令）：
 
-![](../../../assets/images/tools/vscode/vscode_cmake_commands.png)
+![](../../../../assets/images/tools/vscode/vscode_cmake_commands.png)
 
 ## 5. 调试
 
