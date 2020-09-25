@@ -26,7 +26,7 @@ nav:
 
       - Android NDK开发:
         - NDK开发: Android/android_ndk/android_ndk.md
-        - GCC&Clang&LLVM的关系: Embedded System/linux/compile/gcc_clang_llvm.md
+        - GCC&Clang&LLVM的关系: Embedded System/linux/compiler/gcc_clang_llvm.md
         - 交叉编译示例OPUS: Android/android_ndk/cross-compile_opus_for_android.md
         - 交叉编译ijkplayer: Android/android_ndk/ijkpalyer_for_rtsp_compile.md
         - ART: Android/android_ndk/android_art.md
