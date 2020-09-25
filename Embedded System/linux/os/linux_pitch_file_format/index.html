@@ -225,68 +225,84 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">STM32 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
+  <li class="dropdown-submenu">
+    <a href="#">Application</a>
+    <ul class="dropdown-menu">
+            
 <li >
-    <a href="../../../STM32/stm32_books/">STM32经典书籍</a>
+    <a href="../../../STM32/application/stm32_initcall_keil/">STM32 initcall机制-Keil</a>
 </li>
+            
+<li >
+    <a href="../../../STM32/application/stm32_initcall_gcc/">STM32 initcall机制-GCC</a>
+</li>
+            
+<li >
+    <a href="../../../STM32/application/stm32_flash_erase_leveling/">Flash磨损均衡算法</a>
+</li>
+            
+<li >
+    <a href="../../../STM32/application/stm32_sw_reset/">STM32软件复位</a>
+</li>
+    </ul>
+  </li>
                                     
+  <li class="dropdown-submenu">
+    <a href="#">Master</a>
+    <ul class="dropdown-menu">
+            
 <li >
-    <a href="../../../STM32/stm32_boot_configure/">STM32的三种启动方式</a>
+    <a href="../../../STM32/master/stm32_boot_configure/">STM32的三种启动方式</a>
 </li>
-                                    
+            
 <li >
-    <a href="../../../STM32/stm32_run_code_in_ram/">STM32在SRAM中运行代码</a>
+    <a href="../../../STM32/master/stm32_run_code_in_ram/">STM32在SRAM中运行代码</a>
 </li>
-                                    
+            
 <li >
-    <a href="../../../STM32/stm32_boot/">STM32的启动流程</a>
+    <a href="../../../STM32/master/stm32_boot/">STM32的启动流程</a>
 </li>
-                                    
+            
 <li >
-    <a href="../../../STM32/stm32_initcall_keil/">STM32 initcall机制-Keil</a>
+    <a href="../../../STM32/master/debuger_flash_programming/">调试器背后的秘密</a>
 </li>
-                                    
+            
 <li >
-    <a href="../../../STM32/stm32_initcall_gcc/">STM32 initcall机制-GCC</a>
+    <a href="../../../STM32/master/stm32_link_script/">ARM编译器链接脚本</a>
 </li>
-                                    
+            
 <li >
-    <a href="../../../STM32/debuger_flash_programming/">调试器背后的秘密</a>
+    <a href="../../../STM32/master/stm32_gnu_link_script/">GNU链接脚本</a>
 </li>
-                                    
+            
 <li >
-    <a href="../../../STM32/stm32_link_script/">ARM编译器链接脚本</a>
+    <a href="../../../STM32/master/stm32_elf_bin_file_analysis/">Keil AXF文件和BIN文件分析</a>
 </li>
-                                    
+            
 <li >
-    <a href="../../../STM32/stm32_gnu_link_script/">GNU链接脚本</a>
+    <a href="../../../STM32/master/arm_assembly/">ARM汇编</a>
 </li>
-                                    
+            
 <li >
-    <a href="../../../STM32/stm32_elf_bin_file_analysis/">Keil AXF文件和BIN文件分析</a>
+    <a href="../../../STM32/master/os_feature/">OS特性</a>
 </li>
-                                    
+            
 <li >
-    <a href="../../../STM32/arm_assembly/">ARM汇编</a>
+    <a href="../../../STM32/master/use_assembly_in_c/">在C中使用ARM汇编（GNU）</a>
 </li>
-                                    
-<li >
-    <a href="../../../STM32/os_feature/">OS特性</a>
-</li>
-                                    
-<li >
-    <a href="../../../STM32/use_assembly_in_c/">在C中使用ARM汇编（GNU）</a>
-</li>
+    </ul>
+  </li>
                                     
   <li class="dropdown-submenu">
     <a href="#">FreeRTOS</a>
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../../freertos/task_switch/">任务切换</a>
+    <a href="../../../STM32/freertos/task_switch/">任务切换</a>
 </li>
             
 <li >
-    <a href="../../../freertos/interrupt_manage/">中断管理</a>
+    <a href="../../../STM32/freertos/interrupt_manage/">中断管理</a>
 </li>
     </ul>
   </li>
@@ -296,35 +312,31 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../../STM32/systick_timer/">Systick Timer</a>
+    <a href="../../../STM32/peripheral/systick_timer/">Systick Timer</a>
 </li>
             
 <li >
-    <a href="../../../STM32/stm32_hal_uart/">STM32串口编程之中断方式</a>
+    <a href="../../../STM32/peripheral/stm32_hal_uart/">STM32串口编程之中断方式</a>
 </li>
             
 <li >
-    <a href="../../../STM32/stm32_hal_uart/">STM32定时器编程之定时中断</a>
+    <a href="../../../STM32/peripheral/stm32_hal_uart/">STM32定时器编程之定时中断</a>
 </li>
             
 <li >
-    <a href="../../../STM32/stm32_hal_uart/">STM32定时器编程之PWM</a>
+    <a href="../../../STM32/peripheral/stm32_hal_uart/">STM32定时器编程之PWM</a>
 </li>
             
 <li >
-    <a href="../../../STM32/stm32_generate_n_number_pluse/">STM32定时器之产生固定个数的脉冲</a>
+    <a href="../../../STM32/peripheral/stm32_generate_n_number_pluse/">STM32定时器之产生固定个数的脉冲</a>
+</li>
+            
+<li >
+    <a href="../../../STM32/peripheral/stm32_adc/">STM32ADC</a>
 </li>
             
 <li >
     <a href="../../../spi_bus/">SPI总线</a>
-</li>
-            
-<li >
-    <a href="../../../STM32/stm32_flash_erase_leveling/">Flash磨损均衡算法</a>
-</li>
-            
-<li >
-    <a href="../../../STM32/stm32_sw_reset/">STM32软件复位</a>
 </li>
     </ul>
   </li>
@@ -334,19 +346,19 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../../motor_control/torque/">转矩</a>
+    <a href="../../../STM32/motor_control/torque/">转矩</a>
 </li>
             
 <li >
-    <a href="../../../motor_control/dc_motor_driver_chip/">直流刷式电机</a>
+    <a href="../../../STM32/motor_control/dc_motor_driver_chip/">直流刷式电机</a>
 </li>
             
 <li >
-    <a href="../../../motor_control/stepper_motor_driver_chip/">步进电机</a>
+    <a href="../../../STM32/motor_control/stepper_motor_driver_chip/">步进电机</a>
 </li>
             
 <li >
-    <a href="../../../STM32/stm32_io_drive_42stepper_l298n/">STM32控制42步进电机</a>
+    <a href="../../../STM32/motor_control/stm32_io_drive_42stepper_l298n/">STM32控制42步进电机</a>
 </li>
     </ul>
   </li>
@@ -365,6 +377,10 @@
             
 <li >
     <a href="../../../STM32/tools/rtt/">JLink RTT</a>
+</li>
+            
+<li >
+    <a href="../../../STM32/tools/stm32_books/">STM32经典书籍</a>
 </li>
     </ul>
   </li>
@@ -1090,8 +1106,8 @@ vim diff.patch
 </code></pre>
 
 <h2 id="3">3.补丁头<a class="headerlink" href="#3" title="Permanent link">#</a></h2>
-<pre><code>1 --- 1.txt       2020-07-20 16:45:27.131654289 +0800
-2 +++ 2.txt       2020-07-20 16:46:26.348728016 +0800
+<pre><code>--- 1.txt       2020-07-20 16:45:27.131654289 +0800
++++ 2.txt       2020-07-20 16:46:26.348728016 +0800
 </code></pre>
 
 <p>"---" 表示旧文件（原文件）</p>
@@ -1099,21 +1115,21 @@ vim diff.patch
 <p>补丁头记录了原始文件和修改后的文件的文件名和创建时间。</p>
 <h2 id="4">4.块<a class="headerlink" href="#4" title="Permanent link">#</a></h2>
 <p>补丁中的块是用来说明文件的改动情况。他们通常以<code>@@开始，结束于另一个块的开始或者一个新的补丁头</code>。</p>
-<pre><code class="vim">3 @@ -1,3 +1,4 @@
-4  this is a test
-5 -for patch file format
-6 +for linux patch file format
-7  so let us go!
-8 +learn it
+<pre><code class="vim">@@ -1,3 +1,4 @@
+ this is a test
+-for patch file format
++for linux patch file format
+ so let us go!
++learn it
 </code></pre>
 
 <h2 id="5">5.块的缩进<a class="headerlink" href="#5" title="Permanent link">#</a></h2>
-<pre><code class="vim">3 @@ -1,3 +1,4 @@
-4  this is a test
-5 -for patch file format
-6 +for linux patch file format
-7  so let us go!
-8 +learn it
+<pre><code class="vim">@@ -1,3 +1,4 @@
+ this is a test
+-for patch file format
++for linux patch file format
+ so let us go!
++learn it
 </code></pre>
 
 <p>块会缩进一列，该列有三种情况：</p>
@@ -1139,7 +1155,26 @@ vim diff.patch
 <li>
 <p>以空格开头的行保持不变</p>
 </li>
-</ul></div>
+</ul>
+<p><code>@@ -1,3 +1,4 @@</code>的含义分别是：</p>
+<ul>
+<li>-1,3 原文件，从第1行开始一共显示了3行</li>
+</ul>
+<p>这3行时原文件中有的</p>
+<pre><code class="vim"> this is a test
+-for patch file format
+ so let us go!
+</code></pre>
+
+<ul>
+<li>+1,4 修改后的文件，从第1行开始一共显示了4行</li>
+</ul>
+<p>这4行时原文件中有的</p>
+<pre><code class="vim"> this is a test
++for linux patch file format
+ so let us go!
++learn it
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">
