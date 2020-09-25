@@ -141,7 +141,7 @@ nav:
             - VSCode与CMake搭配使用之交叉编译: Embedded System/linux/compiler/cmake/vscode_camke_cross_compile.md
           - GNU make中的2种变量: Embedded System/linux/compiler/two_flavors_of_variables.md
           - GCC编译动态链接库: Embedded System/linux/compiler/gcc_clang_llvm.md
-          - GCC&Clang&LLVM的关系: Embedded System/linux/compile/gcc_clang_llvm.md
+          - GCC&Clang&LLVM的关系: Embedded System/linux/compiler/gcc_clang_llvm.md
 
         - Linux OS:
           - Linux补丁文件格式: Embedded System/linux/os/linux_pitch_file_format.md
