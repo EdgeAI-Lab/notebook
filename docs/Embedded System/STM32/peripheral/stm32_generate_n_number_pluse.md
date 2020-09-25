@@ -16,7 +16,7 @@
 
 定时器同步介绍：RM手册 15.3.15 Timer synchronization
 
-![](../../assets/images/STM32/timer/stm32_timer_cascade.png)
+![](../../../assets/images/STM32/timer/stm32_timer_cascade.png)
 
 TIM1 TRGO  --> ITR0
 TIM2 TRGO  --> ITR1

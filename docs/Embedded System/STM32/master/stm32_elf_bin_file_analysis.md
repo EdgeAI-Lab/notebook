@@ -2,7 +2,7 @@
 
 ELF文件的格式如下：
 
-![](../../assets/images/STM32/boot/elf_file_fromat.png)
+![](../../../assets/images/STM32/boot/elf_file_fromat.png)
 
 通过```readelf```和```objdump```工具，可以查看ELF文件的信息，比如：
 
@@ -12,14 +12,14 @@ ELF文件的格式如下：
 $ readelf -S test.axf
 ```
 
-![](../../assets/images/STM32/boot/segment_table.png)
+![](../../../assets/images/STM32/boot/segment_table.png)
 
 * 查看ELF文件中各段的内容
 ```
 objdump -s test.axf
 ```
-![](../../assets/images/STM32/boot/segment_content_1.png)
-![](../../assets/images/STM32/boot/segment_content_2.png)
+![](../../../assets/images/STM32/boot/segment_content_1.png)
+![](../../../assets/images/STM32/boot/segment_content_2.png)
 
 更多关于```readelf```和```objdump```工具的信息，可以通过如下指令查看：
 
@@ -92,9 +92,9 @@ Key to Flags:
 
 BSS段头分析：
 
-![](../../assets/images/STM32/boot/elf_bin_analyze.png)
+![](../../../assets/images/STM32/boot/elf_bin_analyze.png)
 
-![](../../assets/images/STM32/boot/elf_bss_content.png)
+![](../../../assets/images/STM32/boot/elf_bss_content.png)
 
 ELF文件中保存的有BSS段信息的描述（地址，大小等各种属性），但是没有BSS的内容，因为BSS段中的所有内容都是0，没有必要保存内容，只需要知道变量的地址即可。
 

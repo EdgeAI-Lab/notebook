@@ -6,7 +6,7 @@
 
 在Keil中一个STM32项目被编译后，会生成一个ELF格式的.axf文件（在项目根目录下的Objects文件夹中），该文件中包含有数据段、代码段、调试段等各种信息，调试程序使用的就是ELF文件，ELF文件的格式如下：
 
-![](../../assets/images/STM32/boot/elf_file_fromat.png)
+![](../../../assets/images/STM32/boot/elf_file_fromat.png)
 
 
 ## 2. BIN文件
@@ -15,7 +15,7 @@
 
 将ELF文件中冗余的数据去掉，就是BIN文件的内容。如下图所示：
 
-![](../../assets/images/STM32/boot/bin_file_content.png)
+![](../../../assets/images/STM32/boot/bin_file_content.png)
 
 ## 3. BSS段
 
@@ -35,7 +35,7 @@ BSS段(Block Started by Symbol)中存放的是初始值为零的全区和静态�
 
 如下图所示，函数开始调用时会有入栈操作指令（当然函数调用结束时会有出栈操作）：
 
-![](../../assets/images/STM32/boot/assembly_push_stack.png)
+![](../../../assets/images/STM32/boot/assembly_push_stack.png)
 
 * 堆
 
@@ -65,7 +65,7 @@ LR_IROM1 0x08000000 0x00010000  {
 }
 ```
 
-![](../../assets/images/STM32/boot/elf_load_run_view.png)
+![](../../../assets/images/STM32/boot/elf_load_run_view.png)
 
 * ELF文件视图：STM32项目编译后，首先会生成ELF文件，ELF文件中包含大量的调试信息，这是程序真正运行时所不需要的。
 
@@ -87,7 +87,7 @@ fromelf.exe --bin --output test.bin test.axf
 
 最终烧写到STM32内部FLash中的内容如下图所示：
 
-![](../../assets/images/STM32/boot/bin_view.png)
+![](../../../assets/images/STM32/boot/bin_view.png)
 
 但是代码段(.text)中为什么会包含这些东西呢？
 

@@ -15,7 +15,7 @@ STM32内部Flash的写寿命大约是1万次，假如我们在其Flash中存储�
 
 * 本实验Flash存储模型如下：
 
-![flash_erase_leveling](../..//assets/images/flash/flash_erase_leveling.png)
+![flash_erase_leveling](../../../assets/images/flash/flash_erase_leveling.png)
 
 
 * 首先将Page60擦除，擦除后Page60页中的数据全为1。
