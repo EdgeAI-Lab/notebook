@@ -73,6 +73,7 @@ nav:
           - STM32串口编程之中断方式: Embedded System/STM32/stm32_hal_uart.md
           - STM32定时器编程之定时中断: Embedded System/STM32/stm32_hal_uart.md
           - STM32定时器编程之PWM: Embedded System/STM32/stm32_hal_uart.md
+          - STM32定时器之产生固定个数的脉冲: Embedded System/STM32/stm32_generate_n_number_pluse.md
           - SPI总线: Embedded System/spi_bus.md
           - Flash磨损均衡算法: Embedded System/STM32/stm32_flash_erase_leveling.md
           - STM32软件复位: Embedded System/STM32/stm32_sw_reset.md
