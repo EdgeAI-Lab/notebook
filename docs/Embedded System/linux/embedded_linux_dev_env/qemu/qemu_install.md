@@ -2,8 +2,11 @@
 
 ## 1. 源码下载方式
 
-[QEMU git仓库地址]( git://git.qemu-project.org/qemu.git)
-[官网下载源码压缩包](https://download.qemu.org/)
+* [QEMU官网下载](https://www.qemu.org/download/#source)
+
+* [QEMU git仓库地址]( git://git.qemu-project.org/qemu.git)
+
+* [官网下载源码压缩包](https://download.qemu.org/)
 
 ## 2. 配置并编译QEMU
 
@@ -66,23 +69,13 @@ Advanced options (experts only):
 mkdir build && cd build
 
 #configure 64 bit
-../configure --target-list=aarch64-softmmu --audio-drv-list=alsa
+../configure --prefix=/path/to/install_dir --target-list=aarch64-softmmu --audio-drv-list=alsa
 
 #configure 32 bit
-../configure --target-list=arm-softmmu --audio-drv-list=alsa
+../configure --prefix=/path/to/install_dir --target-list=arm-softmmu --audio-drv-list=alsa
 ```
 
-如果有如下报错：
 
-```shell
-ERROR: alsa check failed
-       Make sure to have the alsa libs and headers installed.
-```
-
-请安装 libasound2-dev
-```shell
-sudo apt install libasound2-dev
-```
 
 * 编译QEMU
 
@@ -98,4 +91,35 @@ make install
 
 ```
 ./aarch64-softmmu/qemu-system-aarch64 -M help
+```
+
+
+## 4.错误处理
+
+如果有如下报错：
+
+```shell
+ERROR: alsa check failed
+       Make sure to have the alsa libs and headers installed.
+```
+
+请安装 libasound2-dev
+```shell
+sudo apt install libasound2-dev
+```
+
+```
+# 报错信息
+ERROR: glib-2.48 gthread-2.0 is required to compile QEMU
+
+## 解决方案
+sudo apt-get install libglib2.0-dev
+```
+
+```
+# 报错信息
+../meson.build:150:2: ERROR: Dependency "pixman-1" not found, tried pkgconfig
+
+## 解决方案
+sudo apt install libpixman-1-dev
 ```

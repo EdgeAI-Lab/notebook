@@ -49,148 +49,152 @@ nav:
           - IntelliJ添加jar文件: Android/java/Tools/intelliJ_add_library.md
         - Swing: Android/java/java_ui_swing.md
 
-    - STM32: 
-        - STM32经典书籍: Embedded System/STM32/stm32_books.md
-        - STM32的三种启动方式: Embedded System/STM32/stm32_boot_configure.md
-        - STM32在SRAM中运行代码: Embedded System/STM32/stm32_run_code_in_ram.md
-        - STM32的启动流程: Embedded System/STM32/stm32_boot.md
-        - STM32 initcall机制-Keil: Embedded System/STM32/stm32_initcall_keil.md
-        - STM32 initcall机制-GCC: Embedded System/STM32/stm32_initcall_gcc.md
-        - 调试器背后的秘密: Embedded System/STM32/debuger_flash_programming.md
-        - ARM编译器链接脚本: Embedded System/STM32/stm32_link_script.md
-        - GNU链接脚本: Embedded System/STM32/stm32_gnu_link_script.md
-        - Keil AXF文件和BIN文件分析: Embedded System/STM32/stm32_elf_bin_file_analysis.md
-        - ARM汇编: Embedded System/STM32/arm_assembly.md
-        - OS特性: Embedded System/STM32/os_feature.md
-        - 在C中使用ARM汇编（GNU）: Embedded System/STM32/use_assembly_in_c.md
+    - STM32:
+      - Application:
+        - STM32 initcall机制-Keil: Embedded System/STM32/application/stm32_initcall_keil.md
+        - STM32 initcall机制-GCC: Embedded System/STM32/application/stm32_initcall_gcc.md
+        - Flash磨损均衡算法: Embedded System/STM32/application/stm32_flash_erase_leveling.md
+        - STM32软件复位: Embedded System/STM32/application/stm32_sw_reset.md
+    
+      -Master:
+        - STM32的三种启动方式: Embedded System/STM32/master/stm32_boot_configure.md
+        - STM32在SRAM中运行代码: Embedded System/STM32/master/stm32_run_code_in_ram.md
+        - STM32的启动流程: Embedded System/STM32/master/stm32_boot.md
+        - 调试器背后的秘密: Embedded System/STM32/master/debuger_flash_programming.md
+        - ARM编译器链接脚本: Embedded System/STM32/master/stm32_link_script.md
+        - GNU链接脚本: Embedded System/STM32/master/stm32_gnu_link_script.md
+        - Keil AXF文件和BIN文件分析: Embedded System/STM32/master/stm32_elf_bin_file_analysis.md
+        - ARM汇编: Embedded System/STM32/master/arm_assembly.md
+        - OS特性: Embedded System/STM32/master/os_feature.md
+        - 在C中使用ARM汇编（GNU）: Embedded System/STM32/master/use_assembly_in_c.md
 
-        - FreeRTOS:
-          - 任务切换: Embedded System/freertos/task_switch.md
-          - 中断管理: Embedded System/freertos/interrupt_manage.md
+      - FreeRTOS:
+        - 任务切换: Embedded System/STM32/freertos/task_switch.md
+        - 中断管理: Embedded System/STM32/freertos/interrupt_manage.md
 
-        - STM32外设:
-          - Systick Timer: Embedded System/STM32/systick_timer.md
-          - STM32串口编程之中断方式: Embedded System/STM32/stm32_hal_uart.md
-          - STM32定时器编程之定时中断: Embedded System/STM32/stm32_hal_uart.md
-          - STM32定时器编程之PWM: Embedded System/STM32/stm32_hal_uart.md
-          - STM32定时器之产生固定个数的脉冲: Embedded System/STM32/stm32_generate_n_number_pluse.md
-          - SPI总线: Embedded System/spi_bus.md
-          - Flash磨损均衡算法: Embedded System/STM32/stm32_flash_erase_leveling.md
-          - STM32软件复位: Embedded System/STM32/stm32_sw_reset.md
+      - STM32外设:
+        - Systick Timer: Embedded System/STM32/peripheral/systick_timer.md
+        - STM32串口编程之中断方式: Embedded System/STM32/peripheral/stm32_hal_uart.md
+        - STM32定时器编程之定时中断: Embedded System/STM32/peripheral/stm32_hal_uart.md
+        - STM32定时器编程之PWM: Embedded System/STM32/peripheral/stm32_hal_uart.md
+        - STM32定时器之产生固定个数的脉冲: Embedded System/STM32/peripheral/stm32_generate_n_number_pluse.md
+        - STM32ADC: Embedded System/STM32/peripheral/stm32_adc.md
+        - SPI总线: Embedded System/spi_bus.md
 
-        - Motor Control: 
-          - 转矩: Embedded System/motor_control/torque.md
-          - 直流刷式电机: Embedded System/motor_control/dc_motor_driver_chip.md
-          - 步进电机: Embedded System/motor_control/stepper_motor_driver_chip.md
-          - STM32控制42步进电机: Embedded System/STM32/stm32_io_drive_42stepper_l298n.md
+      - Motor Control: 
+        - 转矩: Embedded System/STM32/motor_control/torque.md
+        - 直流刷式电机: Embedded System/STM32/motor_control/dc_motor_driver_chip.md
+        - 步进电机: Embedded System/STM32/motor_control/stepper_motor_driver_chip.md
+        - STM32控制42步进电机: Embedded System/STM32/motor_control/stm32_io_drive_42stepper_l298n.md
 
-        - STM32开发神兵利器:
-          - JScope RTT模式: Embedded System/STM32/tools/jscope_rtt.md
-          - JScope HSS模式: Embedded System/STM32/tools/jscope_hss.md
-          - JLink RTT: Embedded System/STM32/tools/rtt.md
+      - STM32开发神兵利器:
+        - JScope RTT模式: Embedded System/STM32/tools/jscope_rtt.md
+        - JScope HSS模式: Embedded System/STM32/tools/jscope_hss.md
+        - JLink RTT: Embedded System/STM32/tools/rtt.md
+        - STM32经典书籍: Embedded System/STM32/tools/stm32_books.md
 
     - Linux:
-        - C/C++: 
-          - 你需要知道的N个C语言问题:
-            - C内存模型: Embedded System/c&c++/c_memory_layout.md
-            - C宏定义#与##: Embedded System/c&c++/c_micro_jing.md
-            - C指针: Embedded System/c&c++/c_pointer.md
-            - pragma pack(): Embedded System/c&c++/c_pragma.md
-            - typedef使用注意: Embedded System/c&c++/typedef_tips.md
-            - const与volatile: Embedded System/c&c++/const_volatile.md
+      - C/C++: 
+        - 你需要知道的N个C语言问题:
+          - C内存模型: Embedded System/c&c++/c_memory_layout.md
+          - C宏定义#与##: Embedded System/c&c++/c_micro_jing.md
+          - C指针: Embedded System/c&c++/c_pointer.md
+          - pragma pack(): Embedded System/c&c++/c_pragma.md
+          - typedef使用注意: Embedded System/c&c++/typedef_tips.md
+          - const与volatile: Embedded System/c&c++/const_volatile.md
 
-          - 编译器相关: Embedded System/c&c++/c_compiler.md
-          - C与C++相互调用: Embedded System/c&c++/c_c++_call_each_other.md
-          - 补码: Embedded System/c&c++/complement.md
-          - pkg-config: Embedded System/c&c++/pkg_config.md
-          - ASCII Table: Embedded System/c&c++/ascii_table.md
-          - C操作符优先级: Embedded System/c&c++/c_operator_precedence.md
-          - CMake用法: Embedded System/c&c++/cmake_usage.md
-          - C代码片段: Embedded System/c&c++/snippet.md
+        - 编译器相关: Embedded System/c&c++/c_compiler.md
+        - C与C++相互调用: Embedded System/c&c++/c_c++_call_each_other.md
+        - 补码: Embedded System/c&c++/complement.md
+        - pkg-config: Embedded System/c&c++/pkg_config.md
+        - ASCII Table: Embedded System/c&c++/ascii_table.md
+        - C操作符优先级: Embedded System/c&c++/c_operator_precedence.md
+        - CMake用法: Embedded System/c&c++/cmake_usage.md
+        - C代码片段: Embedded System/c&c++/snippet.md
 
-        - Linux命令:
-          - Linux常用命令: Embedded System/linux/linux_cmd/linux_cmd.md
-          - 命令行连接WiFi热点: Embedded System/linux/linux_cmd/cli_connect_wifi.md
+      - Linux命令:
+        - Linux常用命令: Embedded System/linux/linux_cmd/linux_cmd.md
+        - 命令行连接WiFi热点: Embedded System/linux/linux_cmd/cli_connect_wifi.md
 
-        - 开发环境相关: 
-          - QEMU:
-            - QEMU安装: Embedded System/linux/embedded_linux_dev_env/qemu/qemu_install.md
-          - WSL与Windows共享文件: Embedded System/linux/embedded_linux_dev_env/wsl_shared_folder.md
-          - VirtualBox开发环境搭建: Embedded System/linux/embedded_linux_dev_env/virtual_box_env.md
-          - Ubuntu中构建内核源码树: Embedded System/linux/embedded_linux_dev_env/build_linux_source_tree_on_ubuntu.md
-          - SSH服务器配置: Embedded System/linux/embedded_linux_dev_env/ssh_server.md
-          - samba服务配置: Embedded System/linux/embedded_linux_dev_env/samba_server.md
-          - FTP服务配置: Embedded System/linux/embedded_linux_dev_env/ftp_server.md
-          - TFTP服务配置: Embedded System/linux/embedded_linux_dev_env/tftp_server.md
-          - NFS: Embedded System/linux/embedded_linux_dev_env/nfs_server.md
-          - ARM交叉编译工具: Embedded System/linux/embedded_linux_dev_env/arm_compiler.md
-          - Ubuntu启动错误: Embedded System/linux/embedded_linux_dev_env/ubuntu_boot_error.md
-          - 安全的使用rm: Embedded System/linux/embedded_linux_dev_env/rm.md
+      - 开发环境相关: 
+        - QEMU:
+          - QEMU安装: Embedded System/linux/embedded_linux_dev_env/qemu/qemu_install.md
+        - WSL与Windows共享文件: Embedded System/linux/embedded_linux_dev_env/wsl_shared_folder.md
+        - VirtualBox开发环境搭建: Embedded System/linux/embedded_linux_dev_env/virtual_box_env.md
+        - Ubuntu中构建内核源码树: Embedded System/linux/embedded_linux_dev_env/build_linux_source_tree_on_ubuntu.md
+        - SSH服务器配置: Embedded System/linux/embedded_linux_dev_env/ssh_server.md
+        - samba服务配置: Embedded System/linux/embedded_linux_dev_env/samba_server.md
+        - FTP服务配置: Embedded System/linux/embedded_linux_dev_env/ftp_server.md
+        - TFTP服务配置: Embedded System/linux/embedded_linux_dev_env/tftp_server.md
+        - NFS: Embedded System/linux/embedded_linux_dev_env/nfs_server.md
+        - ARM交叉编译工具: Embedded System/linux/embedded_linux_dev_env/arm_compiler.md
+        - Ubuntu启动错误: Embedded System/linux/embedded_linux_dev_env/ubuntu_boot_error.md
+        - 安全的使用rm: Embedded System/linux/embedded_linux_dev_env/rm.md
+      
+      - 编译系统:
+        - CMake: 
+          - CMake基础: Embedded System/linux/compiler/cmake/cmake_base.md
+          - CMake编译静态和动态链接库: Embedded System/linux/compiler/cmake/cmake_static_library.md
+          - CMake交叉编译: Embedded System/linux/compiler/cmake/cmake_cross_compile.md
+          - VSCode与CMake搭配使用之基本配置: Embedded System/linux/compiler/cmake/vscode_cmake_base.md
+          - VSCode与CMake搭配使用之交叉编译: Embedded System/linux/compiler/cmake/vscode_camke_cross_compile.md
+        - 交叉编译:
+          - 交叉编译的方法: Embedded System/linux/compiler/cross_compile/corss_compile.md
+          - 交叉编译器默认的头文件和库文件搜索路径: Embedded System/linux/compiler/cross_compile/cross_compiler_default_search_path.md
+          - CMake交叉编译: Embedded System/linux/compiler/cmake/cmake_cross_compile.md
+          - VSCode与CMake搭配使用之交叉编译: Embedded System/linux/compiler/cmake/vscode_camke_cross_compile.md
+        - GNU make中的2种变量: Embedded System/linux/compiler/two_flavors_of_variables.md
+        - GCC编译动态链接库: Embedded System/linux/compiler/gcc_clang_llvm.md
+        - GCC&Clang&LLVM的关系: Embedded System/linux/compiler/gcc_clang_llvm.md
+
+      - Linux OS:
+        - Linux补丁文件格式: Embedded System/linux/os/linux_pitch_file_format.md
+        - shell中操作串口: Embedded System/linux/os/linux_serial_shell.md
+        - 环境变量: Embedded System/linux/os/linux_environment_variable.md
+        - Shell编程基础: Embedded System/linux/os/linux_shell_program.md
+
+      - Uboot:
+        - Uboot命令: Embedded System/linux/jz2440/uboot.md
+        - Uboot移植: Embedded System/linux/jz2440/uboot2016_porting.md
+
+      - Linux Device Driver:
+        - 《Linux设备驱动开发详解》:
+          - 书籍配套资源: Embedded System/linux/linux_driver/linux_device_driver_baohua/relate_resource.md
+        - 最简单的驱动程序: Embedded System/linux/linux_driver/ld_hello_world.md
+        - 最简单的平台总线设备驱动程序: Embedded System/linux/linux_driver/ld_bus_dev_drv.md
+        - 设备树相关: Embedded System/linux/linux_driver/device_tree.md
+
+      - S3C2440开发:
+        - device tree:
+          - 支持设备树系统移植: Embedded System/linux/jz2440/device_tree/compile_uboot_kernel_with_device_tree.md
         
-        - 编译系统:
-          - CMake: 
-            - CMake基础: Embedded System/linux/compiler/cmake/cmake_base.md
-            - CMake编译静态和动态链接库: Embedded System/linux/compiler/cmake/cmake_static_library.md
-            - CMake交叉编译: Embedded System/linux/compiler/cmake/cmake_cross_compile.md
-            - VSCode与CMake搭配使用之基本配置: Embedded System/linux/compiler/cmake/vscode_cmake_base.md
-            - VSCode与CMake搭配使用之交叉编译: Embedded System/linux/compiler/cmake/vscode_camke_cross_compile.md
-          - 交叉编译:
-            - 交叉编译的方法: Embedded System/linux/compiler/cross_compile/corss_compile.md
-            - 交叉编译器默认的头文件和库文件搜索路径: Embedded System/linux/compiler/cross_compile/cross_compiler_default_search_path.md
-            - CMake交叉编译: Embedded System/linux/compiler/cmake/cmake_cross_compile.md
-            - VSCode与CMake搭配使用之交叉编译: Embedded System/linux/compiler/cmake/vscode_camke_cross_compile.md
-          - GNU make中的2种变量: Embedded System/linux/compiler/two_flavors_of_variables.md
-          - GCC编译动态链接库: Embedded System/linux/compiler/gcc_clang_llvm.md
-          - GCC&Clang&LLVM的关系: Embedded System/linux/compiler/gcc_clang_llvm.md
-
-        - Linux OS:
-          - Linux补丁文件格式: Embedded System/linux/os/linux_pitch_file_format.md
-          - shell中操作串口: Embedded System/linux/os/linux_serial_shell.md
-          - 环境变量: Embedded System/linux/os/linux_environment_variable.md
-          - Shell编程基础: Embedded System/linux/os/linux_shell_program.md
-
-        - Uboot:
-          - Uboot命令: Embedded System/linux/jz2440/uboot.md
-          - Uboot移植: Embedded System/linux/jz2440/uboot2016_porting.md
-
-        - Linux Device Driver:
-          - 《Linux设备驱动开发详解》:
-            - 书籍配套资源: Embedded System/linux/linux_driver/linux_device_driver_baohua/relate_resource.md
-          - 最简单的驱动程序: Embedded System/linux/linux_driver/ld_hello_world.md
-          - 最简单的平台总线设备驱动程序: Embedded System/linux/linux_driver/ld_bus_dev_drv.md
-          - 设备树相关: Embedded System/linux/linux_driver/device_tree.md
-
-        - S3C2440开发:
-          - device tree:
-            - 支持设备树系统移植: Embedded System/linux/jz2440/device_tree/compile_uboot_kernel_with_device_tree.md
-          
-          - 烧写镜像文件: Embedded System/linux/jz2440/jz2440_download_image_files.md
-          - Uboot打补丁编译: Embedded System/linux/jz2440/uboot_porting.md
-          - Linux Kernel移植: Embedded System/linux/jz2440/linux_kernel_porting.md
-          - JZ2440 dev tips: Embedded System/linux/jz2440/jz2440_dev_tips.md
-        
-        - VSCode:
-          - VSCode编译调试多文件C项目: Embedded System/linux/vscode/vscode_build_c_project.md
+        - 烧写镜像文件: Embedded System/linux/jz2440/jz2440_download_image_files.md
+        - Uboot打补丁编译: Embedded System/linux/jz2440/uboot_porting.md
+        - Linux Kernel移植: Embedded System/linux/jz2440/linux_kernel_porting.md
+        - JZ2440 dev tips: Embedded System/linux/jz2440/jz2440_dev_tips.md
+      
+      - VSCode:
+        - VSCode编译调试多文件C项目: Embedded System/linux/vscode/vscode_build_c_project.md
           
 
     - Multimedia:
-        - FFMPEG:
-          - FFMPEG编译: Multimedia/ffmpeg_compile.md
-          - FFMPEG命令: Multimedia/ffmpeg_command.md
-          - FFMPEG API: Multimedia/ffmpeg_api.md
-        - 音视频编码:
-          - 码率、H264 Profile和Level: Multimedia/h264_bitrate_profile_level.md
-          - AAC编码: Multimedia/aac.md
-          - 彻底理解YUV格式: Multimedia/yuv.md
-          - PCM: Multimedia/pcm.md
-          - WAV: Multimedia/wav_foramt.md
-          - OPUS: Multimedia/opus.md
-          - Ogg: Multimedia/Ogg.md
-        - EasyDarwin RTSP Server: Multimedia/easydarwin.md
-        - Aliyun VOD: Multimedia/AliyunVOD/get_play_url.md
-        - 光学知识点: Multimedia/optical.md
-        - 音视频同步: Multimedia/av_synchronization.md
-        - Linux Shell命令: Multimedia/linux_shell_cmd_for_multimedia.md
+      - FFMPEG:
+        - FFMPEG编译: Multimedia/ffmpeg_compile.md
+        - FFMPEG命令: Multimedia/ffmpeg_command.md
+        - FFMPEG API: Multimedia/ffmpeg_api.md
+      - 音视频编码:
+        - 码率、H264 Profile和Level: Multimedia/h264_bitrate_profile_level.md
+        - AAC编码: Multimedia/aac.md
+        - 彻底理解YUV格式: Multimedia/yuv.md
+        - PCM: Multimedia/pcm.md
+        - WAV: Multimedia/wav_foramt.md
+        - OPUS: Multimedia/opus.md
+        - Ogg: Multimedia/Ogg.md
+      - EasyDarwin RTSP Server: Multimedia/easydarwin.md
+      - Aliyun VOD: Multimedia/AliyunVOD/get_play_url.md
+      - 光学知识点: Multimedia/optical.md
+      - 音视频同步: Multimedia/av_synchronization.md
+      - Linux Shell命令: Multimedia/linux_shell_cmd_for_multimedia.md
 
 
     - Other:

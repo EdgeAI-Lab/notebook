@@ -50,8 +50,8 @@ vim diff.patch
 ## 3.补丁头
 
 ```
-1 --- 1.txt       2020-07-20 16:45:27.131654289 +0800
-2 +++ 2.txt       2020-07-20 16:46:26.348728016 +0800
+--- 1.txt       2020-07-20 16:45:27.131654289 +0800
++++ 2.txt       2020-07-20 16:46:26.348728016 +0800
 ```
 "---" 表示旧文件（原文件）
 
@@ -64,23 +64,23 @@ vim diff.patch
 补丁中的块是用来说明文件的改动情况。他们通常以```@@开始，结束于另一个块的开始或者一个新的补丁头```。
 
 ```vim
-3 @@ -1,3 +1,4 @@
-4  this is a test
-5 -for patch file format
-6 +for linux patch file format
-7  so let us go!
-8 +learn it
+@@ -1,3 +1,4 @@
+ this is a test
+-for patch file format
++for linux patch file format
+ so let us go!
++learn it
 ```
 
 ## 5.块的缩进
 
 ```vim
-3 @@ -1,3 +1,4 @@
-4  this is a test
-5 -for patch file format
-6 +for linux patch file format
-7  so let us go!
-8 +learn it
+@@ -1,3 +1,4 @@
+ this is a test
+-for patch file format
++for linux patch file format
+ so let us go!
++learn it
 ```
 
 块会缩进一列，该列有三种情况：
@@ -99,3 +99,27 @@ vim diff.patch
 * 以 "+" 开头的行是要加上的
 
 * 以空格开头的行保持不变
+
+
+```@@ -1,3 +1,4 @@```的含义分别是：
+
+* -1,3 原文件，从第1行开始一共显示了3行
+
+这3行时原文件中有的
+
+```vim
+ this is a test
+-for patch file format
+ so let us go!
+```
+
+* +1,4 修改后的文件，从第1行开始一共显示了4行
+
+这4行时原文件中有的
+
+```vim
+ this is a test
++for linux patch file format
+ so let us go!
++learn it
+```
