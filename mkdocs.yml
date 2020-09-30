@@ -36,6 +36,7 @@ nav:
       - Android编译系统: Android/android_compiler_system/android_compile_system.md
       
       - Java:
+        - 串口操作: Android/java/java_serial.md
         - Gradle: 
           - 命令行中使用Gradle创建Java App和Java library: Android/gradle/gradle_getting_start.md
         - Java基础: 
