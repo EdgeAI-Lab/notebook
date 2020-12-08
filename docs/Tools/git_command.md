@@ -74,10 +74,18 @@ git reset --hard origin/master
 
 ```
 
-* tag
+* tags
 
 ```bash
-git -a v1.0 -m "first version"
+git tag -a v1.0 -m "first version"
+```
+
+```
+# delete local tag
+git tag -d v1.0
+
+# delete remote tag
+git push :refs/tags/v1.0
 ```
 
 * git change the last commit 
