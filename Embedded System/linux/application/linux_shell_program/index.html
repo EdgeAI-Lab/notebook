@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../../../img/favicon.ico">
-        <title>shell中操作串口 - EdgeAI-Lab</title>
+        <title>Linux Shell Script Program - EdgeAI-Lab</title>
         <link href="../../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../../css/base.css" rel="stylesheet">
@@ -390,7 +390,7 @@
   </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Linux <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -607,19 +607,19 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../linux_pitch_file_format/">Linux补丁文件格式</a>
-</li>
-            
-<li class="active">
-    <a href="./">shell中操作串口</a>
+    <a href="../../os/linux_pitch_file_format/">Linux补丁文件格式</a>
 </li>
             
 <li >
-    <a href="../linux_environment_variable/">环境变量</a>
+    <a href="../../os/linux_serial_shell.md">shell中操作串口</a>
 </li>
             
 <li >
-    <a href="../linux_shell_program/">Shell编程基础</a>
+    <a href="../../os/linux_environment_variable/">环境变量</a>
+</li>
+            
+<li >
+    <a href="../../os/linux_shell_program.md">Shell编程基础</a>
 </li>
     </ul>
   </li>
@@ -1042,16 +1042,6 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li >
-                                <a rel="next" href="../linux_pitch_file_format/">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li >
-                                <a rel="prev" href="../linux_environment_variable/">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
                     </ul>
                 </div>
             </div>
@@ -1060,38 +1050,36 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#shell">通过shell操作串口</a></li>
+        <li class="main active"><a href="#linux-shell-script-program">Linux Shell Script Program</a></li>
+            <li><a href="#_1">分支语句</a></li>
+            <li><a href="#_2">顺序执行指令</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="shell">通过shell操作串口<a class="headerlink" href="#shell" title="Permanent link">#</a></h1>
-<pre><code class="shell">#!/bin/bash
+<h1 id="linux-shell-script-program">Linux Shell Script Program<a class="headerlink" href="#linux-shell-script-program" title="Permanent link">#</a></h1>
+<h2 id="_1">分支语句<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<pre><code class="shell">dir=/home/fhc/dir               # dir和=之间不能有空格
 
-while :
-do 
-    echo -e &quot;CMD0001 V002P0500T4000##\r&quot; &gt; /dev/ttyS1
-    sleep 5
-    echo -e &quot;CMD0001 V002P2700T4000##\r&quot; &gt; /dev/ttyS1
-    sleep 5
-done
-</code></pre>
-
-<pre><code class="shell">#!/bin/bash
-
-while :
-do 
-    echo -e &quot;CMD0001 GP002\r&quot; &gt; /dev/ttyS1
-    sleep 0.1
-done
+if [ -d &quot;$dir&quot; ]                # if和[之间必须有一个空格，[和-d之间必须有一个空格，   &quot;$dir&quot;和]之间必须有一个空格
+then                            # then必须另起一行（或者 f [ -d &quot;$dir&quot; ];then ）
+    echo &quot;dir is existed!&quot;
+else
+    echo &quot;dir isn't existed!&quot;
+fi
 </code></pre>
 
 <ul>
-<li>-e 使用转义字符</li>
-<li>echo默认会在末尾添加 \n</li>
-<li>接收串口信息</li>
+<li>-d 判断一个文件夹是否存在</li>
 </ul>
-<pre><code class="shell">cat /dev/ttyS1
+<h2 id="_2">顺序执行指令<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
+<blockquote>
+<p>上一条指令执行完毕才执行下一条指令</p>
+</blockquote>
+<pre><code class="shell"># 将指令的返回值赋给一个变量，这样本条指令执行完毕，才会继续向下执行
+rm_ok=`sudo rm /var/www/html/*` 
+
+cp_ok=`sudo cp xxx xxx`
 </code></pre></div>
         </div>
 

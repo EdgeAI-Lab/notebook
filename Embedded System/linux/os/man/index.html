@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../../../img/favicon.ico">
-        <title>Shell编程基础 - EdgeAI-Lab</title>
+        <title>Linux中的man-pages项目 - EdgeAI-Lab</title>
         <link href="../../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../../css/base.css" rel="stylesheet">
@@ -390,7 +390,7 @@
   </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Linux <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -611,15 +611,15 @@
 </li>
             
 <li >
-    <a href="../linux_serial_shell/">shell中操作串口</a>
+    <a href="../linux_serial_shell.md">shell中操作串口</a>
 </li>
             
 <li >
     <a href="../linux_environment_variable/">环境变量</a>
 </li>
             
-<li class="active">
-    <a href="./">Shell编程基础</a>
+<li >
+    <a href="../linux_shell_program.md">Shell编程基础</a>
 </li>
     </ul>
   </li>
@@ -1042,16 +1042,6 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li >
-                                <a rel="next" href="../linux_environment_variable/">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li >
-                                <a rel="prev" href="../../jz2440/uboot/">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
                     </ul>
                 </div>
             </div>
@@ -1060,37 +1050,136 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#linux-shell-script-program">Linux Shell Script Program</a></li>
-            <li><a href="#_1">分支语句</a></li>
-            <li><a href="#_2">顺序执行指令</a></li>
+        <li class="main active"><a href="#linuxman-pages">Linux中的man-pages项目</a></li>
+            <li><a href="#man-page">man-page</a></li>
+            <li><a href="#man-pages">man-pages的章节</a></li>
+            <li><a href="#man">man命令</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="linux-shell-script-program">Linux Shell Script Program<a class="headerlink" href="#linux-shell-script-program" title="Permanent link">#</a></h1>
-<h2 id="_1">分支语句<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<pre><code class="shell">dir=/home/fhc/dir               # dir和=之间不能有空格
+<h1 id="linuxman-pages">Linux中的man-pages项目<a class="headerlink" href="#linuxman-pages" title="Permanent link">#</a></h1>
+<p>https://www.kernel.org/doc/man-pages/
+https://blog.csdn.net/Wyx_wx/article/details/79507823
+https://www.cyberciti.biz/faq/howto-use-linux-unix-man-pages/</p>
+<p>man 是 manual（手册） 的简写，在命令行执行 "man ls" 既可以出现关于 "ls" 命令或数据的详细操作说明:</p>
+<p><img alt="" src="../../../../assets/images/EmbeddedSystem/linux/os/man_ls.png" /></p>
+<p>其实这些文档都来自于一个叫做man-pages的项目:</p>
+<p><img alt="" src="../../../../assets/images/EmbeddedSystem/linux/os/man-pages-git.png" /></p>
+<p>man-pages项目是一组文档，由一个个的man-page组成，主要用于描述Linux内核和C库（主要是glibc）的API接口函数，以及Linux命令。</p>
+<p><img alt="" src="../../../../assets/images/EmbeddedSystem/linux/os/man-page.png" /></p>
+<h2 id="man-page">man-page<a class="headerlink" href="#man-page" title="Permanent link">#</a></h2>
+<p>一个man-page一般会包含以下信息：</p>
+<table>
+<thead>
+<tr>
+<th>标号</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NAME</td>
+<td>命令名称 + 一个简短的描述，用于简要说明该命令的主要作用</td>
+</tr>
+<tr>
+<td>SYNOPSIS</td>
+<td>简短的命令执行语法简介</td>
+</tr>
+<tr>
+<td>DESCRIPTION</td>
+<td>较为完整的说明</td>
+</tr>
+<tr>
+<td>OPTIONS</td>
+<td>针对 SYNOPSIS 部分中，有列举的所有可用的选项说明</td>
+</tr>
+<tr>
+<td>COMMANDS</td>
+<td>当这个程序在执行的时候，可以在此程序中执行的命令</td>
+</tr>
+<tr>
+<td>FILES</td>
+<td>这个程序或数据所使用或参考或连接到的某些文件</td>
+</tr>
+<tr>
+<td>SEE ALSO</td>
+<td>这个命令或数据有相关的其他说明</td>
+</tr>
+<tr>
+<td>EXAMPLE</td>
+<td>一些可以参考的范例</td>
+</tr>
+<tr>
+<td>BUGS</td>
+<td>是否有相关的错误</td>
+</tr>
+</tbody>
+</table>
+<p>以上这些内容并不一定都会全部出现在每一个man-page中，一般NAME, SYNOPSIS 和 DESCRIPTION是必须的。</p>
+<p><img alt="" src="../../../../assets/images/EmbeddedSystem/linux/os/man-page-content.png" /></p>
+<h2 id="man-pages">man-pages的章节<a class="headerlink" href="#man-pages" title="Permanent link">#</a></h2>
+<p>在man-pages项目中，这些man-page被分为8个章节（section）：</p>
+<p>1: User commands; man-pages includes a very few Section 1 pages that document programs supplied by the GNU C library.
+用户命令，比如ls cd pwd等</p>
+<p>2: System calls documents the system calls provided by the Linux kernel.
+系统调用API, 比如open(), write(), read()等</p>
+<p>3: Library functions documents the functions provided by the standard C library.
+标准C库函数，比如fopen(),fwrite(),fread()等</p>
+<p>4: Devices documents details of various devices, most of which reside in /dev.
+设备说明，这些设备一般位于/dev目录下，比如loop等</p>
+<p>5: Files describes various file formats and filesystems, and includes proc(5), which documents the /proc file system.
+文件格式和文件系统描述</p>
+<p>7: Overviews, conventions, and miscellaneous.
+概述，惯例和杂项</p>
+<p>8: Superuser and system administration commands; man-pages includes a very few Section 8 pages that document programs supplied by the GNU C library.
+系统管理员命令</p>
+<p>我们使用 "man ls" 命令，打开关于 "ls" 的man-page，在左上角和右上角可以看到一个 "LS(1)" ，小括号里的1就表示该man-page是术语第一个章节的。</p>
+<p><img alt="" src="../../../../assets/images/EmbeddedSystem/linux/os/man-page-section.png" /></p>
+<h2 id="man">man命令<a class="headerlink" href="#man" title="Permanent link">#</a></h2>
+<p>建议查询 man page 时的步骤：</p>
+<ol>
+<li>
+<p>如果你对这个要查询的命令不熟悉，首先应查询该命令位于man-pages的哪一个章节</p>
+</li>
+<li>
+<p>如果你确切的知道要查询的命令的名字，可以直接查询该命令所在的章节</p>
+</li>
+</ol>
+<pre><code>$man -f ls
 
-if [ -d &quot;$dir&quot; ]                # if和[之间必须有一个空格，[和-d之间必须有一个空格，   &quot;$dir&quot;和]之间必须有一个空格
-then                            # then必须另起一行（或者 f [ -d &quot;$dir&quot; ];then ）
-    echo &quot;dir is existed!&quot;
-else
-    echo &quot;dir isn't existed!&quot;
-fi
+ls (1)               - list directory contents
 </code></pre>
 
 <ul>
-<li>-d 判断一个文件夹是否存在</li>
+<li>如果你不知道要查询的命令的完整名字，可以使用关键字查找</li>
 </ul>
-<h2 id="_2">顺序执行指令<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
-<blockquote>
-<p>上一条指令执行完毕才执行下一条指令</p>
-</blockquote>
-<pre><code class="shell"># 将指令的返回值赋给一个变量，这样本条指令执行完毕，才会继续向下执行
-rm_ok=`sudo rm /var/www/html/*` 
+<pre><code>$man -k ls
+</code></pre>
 
-cp_ok=`sudo cp xxx xxx`
-</code></pre></div>
+<p>2、然后在对应的章节中查看</p>
+<p>注：章节1可以省略不写</p>
+<pre><code>$man ls
+</code></pre>
+
+<ol>
+<li>
+<p>仔细看一下 DESCRIPTION， 学习一些细节</p>
+</li>
+<li>
+<p>查询关于 OPTIONS 的部分，了解每个选项的意义</p>
+</li>
+<li>
+<p>查看 SEE ALSO 来看一下还有那些东西可以使用</p>
+</li>
+<li>
+<p>查看 FILES 部分的文件来参考</p>
+</li>
+</ol>
+<p>查询特定命令/文件的 man page 说明文件：</p>
+<p>man -f [命令或数据]：</p>
+<p>获取 [命令或数据] 的信息</p>
+<p>下图执行: "man -f cal"</p></div>
         </div>
 
         <footer class="col-md-12">
