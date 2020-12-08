@@ -146,9 +146,9 @@ nav:
 
         - Linux OS:
           - Linux补丁文件格式: Embedded System/linux/os/linux_pitch_file_format.md
-          - shell中操作串口: Embedded System/linux/os/linux_serial_shell.md
+          - shell中操作串口: Embedded System/linux/application/linux_serial_shell.md
           - 环境变量: Embedded System/linux/os/linux_environment_variable.md
-          - Shell编程基础: Embedded System/linux/os/linux_shell_program.md
+          - Shell编程基础: Embedded System/linux/application/linux_shell_program.md
 
         - Uboot:
           - Uboot命令: Embedded System/linux/jz2440/uboot.md
