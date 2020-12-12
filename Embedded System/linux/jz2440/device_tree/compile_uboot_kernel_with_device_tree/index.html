@@ -1125,9 +1125,10 @@
 <ul>
 <li>打补丁</li>
 </ul>
+<p>注意：u-boot-1.1.6_device_tree_for_jz2440.patch这个补丁有Bug，会导致Kernel无法正常启动，不要使用。详情可查看uboot文件夹下的勘误说明。</p>
 <pre><code>cd u-boot-1.1.6
 
-patch -p1 &lt; ../u-boot-1.1.6_device_tree_for_jz2440.patch
+patch -p1 &lt; ../u-boot-1.1.6_device_tree_for_jz2440_add_fdt_20181226.patch
 </code></pre>
 
 <ul>
