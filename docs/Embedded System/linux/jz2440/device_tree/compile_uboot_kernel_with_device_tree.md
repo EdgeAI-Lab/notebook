@@ -43,10 +43,13 @@ tar xjf u-boot-1.1.6.tar.bz2
 ```
 
 * 打补丁
+
+注意：u-boot-1.1.6_device_tree_for_jz2440.patch这个补丁有Bug，会导致Kernel无法正常启动，不要使用。详情可查看uboot文件夹下的勘误说明。
+
 ```
 cd u-boot-1.1.6
 
-patch -p1 < ../u-boot-1.1.6_device_tree_for_jz2440.patch
+patch -p1 < ../u-boot-1.1.6_device_tree_for_jz2440_add_fdt_20181226.patch
 ```
 
 * 配置编译
