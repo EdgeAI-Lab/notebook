@@ -66,6 +66,7 @@ nav:
           - GNU链接脚本: Embedded System/STM32/master/stm32_gnu_link_script.md
           - Keil AXF文件和BIN文件分析: Embedded System/STM32/master/stm32_elf_bin_file_analysis.md
           - ARM汇编: Embedded System/STM32/master/arm_assembly.md
+          - GNU ARM汇编: Embedded System/STM32/master/gnu_assembly.md
           - OS特性: Embedded System/STM32/master/os_feature.md
           - 在C中使用ARM汇编（GNU）: Embedded System/STM32/master/use_assembly_in_c.md
         - FreeRTOS:
@@ -140,8 +141,8 @@ nav:
             - 交叉编译器默认的头文件和库文件搜索路径: Embedded System/linux/compiler/cross_compile/cross_compiler_default_search_path.md
             - CMake交叉编译: Embedded System/linux/compiler/cmake/cmake_cross_compile.md
             - VSCode与CMake搭配使用之交叉编译: Embedded System/linux/compiler/cmake/vscode_camke_cross_compile.md
-          - GNU make中的2种变量: Embedded System/linux/compiler/two_flavors_of_variables.md
-          - GCC编译动态链接库: Embedded System/linux/compiler/gcc_clang_llvm.md
+          - GNU make中的2种变量: Embedded System/linux/compiler/gnu_make_two_flavors_of_variables.md
+          - GCC编译动态链接库: Embedded System/linux/compiler/gcc_dynamic_linking_library.md
           - GCC&Clang&LLVM的关系: Embedded System/linux/compiler/gcc_clang_llvm.md
 
         - Linux OS:
@@ -149,6 +150,9 @@ nav:
           - shell中操作串口: Embedded System/linux/application/linux_serial_shell.md
           - 环境变量: Embedded System/linux/os/linux_environment_variable.md
           - Shell编程基础: Embedded System/linux/application/linux_shell_program.md
+          - man: Embedded System/linux/os/man.md
+          - shell: Embedded System/linux/os/shell.md
+          - subshell: Embedded System/linux/os/subshell.md
 
         - Uboot:
           - Uboot命令: Embedded System/linux/jz2440/uboot.md
@@ -164,6 +168,7 @@ nav:
         - S3C2440开发:
           - device tree:
             - 支持设备树系统移植: Embedded System/linux/jz2440/device_tree/compile_uboot_kernel_with_device_tree.md
+            - Led驱动: Embedded System/linux/jz2440/device_tree/led_drv.md
           
           - 烧写镜像文件: Embedded System/linux/jz2440/jz2440_download_image_files.md
           - Uboot打补丁编译: Embedded System/linux/jz2440/uboot_porting.md
