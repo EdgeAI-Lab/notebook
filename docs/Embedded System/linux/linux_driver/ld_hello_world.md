@@ -1,5 +1,7 @@
 # 实现一个最简单的Linux驱动程序
 
+环境搭建请参考：[在Ubuntu中构建Linux内核源码树](../embedded_linux_dev_env/build_linux_source_tree_on_ubuntu.md)
+
 * hello.c
 ```c
 #include<linux/init.h>
