@@ -4,7 +4,7 @@
 在编译u-boot和kernel时, 我们可以使用新的工具链, 
 只要这个工具链支持ARM9的指令集(armv4)就可以(这通常可以通过编译参数来指定使用特定的指令集).
 工具链可以从某些网站上下载，并不需要自己去制作。
-比如可以访问这个网站: https://releases.linaro.org/components/toolchain/binaries/4.9-2017.01/arm-linux-gnueabi/
+比如可以访问这个网站: [https://releases.linaro.org/components/toolchain/binaries/4.9-2017.01/arm-linux-gnueabi/](https://releases.linaro.org/components/toolchain/binaries/4.9-2017.01/arm-linux-gnueabi/)
 
 下载: gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabi.tar.xz
 
@@ -61,10 +61,9 @@ make
 ### 2.3 编译kernel
 
 * 查看系统中是否有mkimage
-```
-# whereis mkimage
-
-mkimage:
+```bash
+$ whereis mkimage
+mkimage: /usr/bin/mkimage /usr/share/man/man1/mkimage.1.gz
 ```
 
 如果系统中没有mkimage，则将 u-boot_root_dir/tools/mkimage 文件（u-boot编译后会生成该文件）复制到 /bin/mkimage 即可。
