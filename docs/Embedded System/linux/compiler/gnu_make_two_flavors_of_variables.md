@@ -15,7 +15,8 @@ foo = $(bar)
 bar = $(ugh)
 ugh = Huh?
 
-all:;echo $(foo)
+all:
+	echo $(foo)
 ```
 执行结果：
 ```
