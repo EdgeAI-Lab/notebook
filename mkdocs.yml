@@ -150,7 +150,6 @@ nav:
           - shell中操作串口: Embedded System/linux/application/linux_serial_shell.md
           - 环境变量: Embedded System/linux/os/linux_environment_variable.md
           - Shell编程基础: Embedded System/linux/application/linux_shell_program.md
-          - man: Embedded System/linux/os/man.md
           - shell: Embedded System/linux/os/shell.md
           - subshell: Embedded System/linux/os/subshell.md
 
