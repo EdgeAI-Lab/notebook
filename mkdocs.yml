@@ -150,7 +150,7 @@ nav:
           - shell中操作串口: Embedded System/linux/application/linux_serial_shell.md
           - 环境变量: Embedded System/linux/os/linux_environment_variable.md
           - Shell编程基础: Embedded System/linux/application/linux_shell_program.md
-          - shell: Embedded System/linux/os/shell.md
+          - shell: Embedded System/linux/os/shell_cmd.md
           - subshell: Embedded System/linux/os/subshell.md
 
         - Uboot:
@@ -163,6 +163,7 @@ nav:
           - 最简单的驱动程序: Embedded System/linux/linux_driver/ld_hello_world.md
           - 最简单的平台总线设备驱动程序: Embedded System/linux/linux_driver/ld_bus_dev_drv.md
           - 设备树相关: Embedded System/linux/linux_driver/device_tree.md
+          - Linux LCD驱动框架: Embedded System/linux/linux_driver/lcd_driver.md
 
         - S3C2440开发:
           - device tree:
