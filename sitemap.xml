@@ -521,8 +521,13 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>None</loc>
+     <lastmod>2020-12-19</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>None</loc>
+     <lastmod>2020-12-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
