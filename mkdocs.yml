@@ -164,6 +164,7 @@ nav:
           - 最简单的平台总线设备驱动程序: Embedded System/linux/linux_driver/ld_bus_dev_drv.md
           - 设备树相关: Embedded System/linux/linux_driver/device_tree.md
           - Linux LCD驱动框架: Embedded System/linux/linux_driver/lcd_driver.md
+          - Linux中断: Embedded System/linux/linux_driver/linux_irq.md
 
         - S3C2440开发:
           - device tree:
