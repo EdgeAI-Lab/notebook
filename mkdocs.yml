@@ -42,7 +42,8 @@ nav:
         - Java基础: 
           - 知识点: Android/java/java_base.md
         - JNI: 
-          - 一个非常好的JNI入门实例: Android/java/jni_getting_start.md
+          - 一个非常好的JNI入门实例: Android/java/JNI/jni_getting_start.md
+          - JNI原理: Android/java/JNI/java_jni_principle.md
         - Ubuntu中配置Java: Android/java/ubuntu_config_java.md
         - 命令行编译Java程序: Android/java/java_compile_command_line.md
         - IntelliJ: 

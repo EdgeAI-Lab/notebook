@@ -74,5 +74,5 @@ make
 ## 6. Run the Java Program
 
 ```shell
-java -Djava.library.path=. HelloWorld
+java -Djava.library.path=./build HelloWorld
 ```
