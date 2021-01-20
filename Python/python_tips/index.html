@@ -1094,6 +1094,7 @@
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#python-tips">Python tips</a></li>
             <li><a href="#1">1.多线程</a></li>
+            <li><a href="#2">2.串口操作</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -1121,6 +1122,53 @@ if __name__=='__main__':
     for t in threads:
         t.join()
 print (&quot;quit&quot;)
+</code></pre>
+
+<h2 id="2">2.串口操作<a class="headerlink" href="#2" title="Permanent link">#</a></h2>
+<ul>
+<li>安装 pyserial 库</li>
+</ul>
+<pre><code class="shell">pip install pyserial
+</code></pre>
+
+<ul>
+<li>设置并打开串口</li>
+</ul>
+<pre><code class="python">import serial
+
+ser = serial.Serial(&quot;/dev/ttyS4&quot;,115200)
+</code></pre>
+
+<ul>
+<li>串口发送数据</li>
+</ul>
+<pre><code class="python"># 发送字符串
+str = &quot;serial&quot;
+ser.write(str.encode())
+
+# 发送 bytes
+data = [0x55,0xAA,0x5A]
+ser.write(data)
+
+# 发送数字
+num = 100
+ser.write(num.to_bytes(1,&quot;little&quot;)) # 长度1，小端模式
+</code></pre>
+
+<ul>
+<li>串口接收数据</li>
+</ul>
+<pre><code class="python"># 读取一个 bytes
+while read_is_running:
+    bytes = ser.read()
+
+# 读取一个字节
+while read_is_running:
+    byte = ser.read()[0]
+
+# 读取一行
+while read_is_running:
+    byte = ser.readline()
 </code></pre></div>
         </div>
 
