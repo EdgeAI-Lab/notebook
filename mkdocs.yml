@@ -213,6 +213,7 @@ nav:
           - 00：STM32图像分类: ML/how_to_run_dl_model_on_stm32.md
 
       - Python:
+        - Python速查: Python/python_tips.md
         - matplotlib使用: Python/matplotlib.md
         - 三角函数: Python/python_trigonometric.md
         - 录音与播放: Python/python_record_play.md  
