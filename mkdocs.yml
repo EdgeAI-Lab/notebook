@@ -102,6 +102,7 @@ nav:
             - typedef使用注意: Embedded System/c&c++/typedef_tips.md
             - const与volatile: Embedded System/c&c++/const_volatile.md
 
+          - GDB: Embedded System/c&c++/gdb_usage.md
           - 编译器相关: Embedded System/c&c++/c_compiler.md
           - C与C++相互调用: Embedded System/c&c++/c_c++_call_each_other.md
           - 补码: Embedded System/c&c++/complement.md
