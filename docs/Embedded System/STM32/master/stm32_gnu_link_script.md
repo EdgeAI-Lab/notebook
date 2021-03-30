@@ -8,8 +8,6 @@
 [GNU链接脚本](http://www.scoberlin.de/content/media/http/informatik/gcc_docs/ld_3.html)
 
 
-
-
 ## MEMORY command
 
 The linker's default configuration permits allocation of all available memory. You can override this by using the MEMORY command.
@@ -47,3 +45,4 @@ Every section has a virtual address (VMA) and a load address (LMA); see section 
     
   } >RAM AT> FLASH /*运行地址在RAM中，执行地址在FLASH中*/
 ```
+

@@ -93,39 +93,80 @@ fromelf.exe --bin --output test.bin test.axf
 
 ### 5.2 运行视图
 
-设置STM32从FLASH启动，系统会将0x00地址映射到Flash的首地址0x08000000。
+程序运行时，除了代码段和数据段，还有堆、栈、BSS段。
 
-STM32上电后，
+根据《The Definitive Guide to ARM Cortex-M3 and Cortex-M4 Processors》 - Chapter 4.8中的描述： 
 
-又根据《cortex-m3编程手册》，复位时，CPU从0x00000000处获取栈顶指针MSP（默认使用主堆栈），从0x00000004处获取程序计数器PC（复位向量）。则印证了上述说法。
+Cortex®-M3 CPU上电后，默认从0x0000 0000地址处取得栈顶地址（MSP），通过ICode bus从0x0000 0004地址处取得PC的值（复位向量），然后开始执行代码。
 
---------------------------
+![](../../../assets/images/STM32/boot/cortexm3_reset_sequence.png)
+
+* 那么怎么保证编译后的程序，0x0000 0000地址处是栈顶地址（MSP），0x0000 0004地址处是PC的值（复位向量）呢？
+
+依靠的是<b>链接脚本和启动文件</b>。
+
+启动文件：
+
+```armasm
+  .section .isr_vector,"a",%progbits
+  .type g_pfnVectors, %object
+  .size g_pfnVectors, .-g_pfnVectors
 
 
+g_pfnVectors:
 
-
-
-STM32程序编译后生成的是ELF文件 -> bin文件（FLASH） -> 运行时
-
-ELF文件格式
-
-
-下载到Flash中的是bin文件（没有ELF头等多余的）
-
-STM32上电后
-
-## 1.启动代码的作用
-
-2.ARM 汇编 语法简介
-
-```
-My_Fun PROC
-    ADDS R0, R0, R1
-    ENDP
+  .word _estack
+  .word Reset_Handler
+  .word NMI_Handler
+  .word HardFault_Handler
 ```
 
+链接脚本：
 
-3.启动代码分析
+```armasm
+/* Entry Point */
+ENTRY(Reset_Handler)
 
+/* Highest address of the user mode stack */
+_estack = ORIGIN(RAM) + LENGTH(RAM);	/* end of "RAM" Ram type memory */
 
-[SPACE](http://www.keil.com/support/man/docs/aa/aa_st_space.htm)
+_Min_Heap_Size = 0x200 ;	/* required amount of heap  */
+_Min_Stack_Size = 0x400 ;	/* required amount of stack */
+
+/* Memories definition */
+MEMORY
+{
+  RAM    (xrw)    : ORIGIN = 0x20000000,   LENGTH = 64K
+  FLASH    (rx)    : ORIGIN = 0x8000000,   LENGTH = 512K
+}
+
+/* Sections */
+SECTIONS
+{
+  /* The startup code into "FLASH" Rom type memory */
+  .isr_vector :
+  {
+    . = ALIGN(4);
+    KEEP(*(.isr_vector)) /* Startup code */
+    . = ALIGN(4);
+  } >FLASH
+```
+
+在启动文件中定义了isr_vector段，并且isr_vector段中开头两个字就是：
+
+``` armasm
+.word _estack
+.word Reset_Handler
+```
+
+在连接脚本中我们可以看到_estack的定义：
+
+```
+# 其实就是内存的最高地址
+_estack = ORIGIN(RAM) + LENGTH(RAM);	/* end of "RAM" Ram type 
+```
+这样设置的话，栈就是向下生长的。
+
+![](../../../assets/images/STM32/boot/stack_grow.png)
+
+并且在连接脚本中将isr_vector段放在了存储器的首地址，也就是0x00000000地址处，所以0x00000000地址处就是栈顶地址，0x000000004地址处就是复位向量地址。

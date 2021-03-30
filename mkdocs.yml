@@ -68,11 +68,12 @@ nav:
           - Keil AXF文件和BIN文件分析: Embedded System/STM32/master/stm32_elf_bin_file_analysis.md
           - ARM汇编: Embedded System/STM32/master/arm_assembly.md
           - GNU ARM汇编: Embedded System/STM32/master/gnu_assembly.md
+          - CortexM3中断: Embedded System/STM32/master/cortexm3_interrupt.md
           - OS特性: Embedded System/STM32/master/os_feature.md
           - 在C中使用ARM汇编（GNU）: Embedded System/STM32/master/use_assembly_in_c.md
         - FreeRTOS:
           - 任务切换: Embedded System/STM32/freertos/task_switch.md
-          - 中断管理: Embedded System/STM32/freertos/interrupt_manage.md
+          - 中断管理: Embedded System/STM32/freertos/freertos_interrupt_manage.md
           - 任务栈: Embedded System/STM32/freertos/freertos_task_stack.md
           - 互斥体: Embedded System/STM32/freertos/mutexes.md
         - STM32外设:
