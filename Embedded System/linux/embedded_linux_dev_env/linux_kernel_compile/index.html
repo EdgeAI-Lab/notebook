@@ -9,19 +9,14 @@
         
         <link rel="shortcut icon" href="../../../../img/favicon.ico">
         <title>Linux内核编译 - EdgeAI-Lab</title>
-        <link href="../../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
         <link href="../../../../css/extra.css" rel="stylesheet">
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
 
         <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../../../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/c.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/c++.min.js"></script>
@@ -34,826 +29,830 @@
     </head>
 
     <body>
-
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-
-                <!-- Collapsed navigation -->
-                <div class="navbar-header">
-                    <!-- Expander button -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="../../../..">EdgeAI-Lab</a>
-                </div>
+                <a class="navbar-brand" href="../../../..">EdgeAI-Lab</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
                 <!-- Expanded navigation -->
-                <div class="navbar-collapse collapse">
+                <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Android <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Android <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
   <li class="dropdown-submenu">
-    <a href="#">Android开机自启</a>
+    <a href="#" class="dropdown-item">Android开机自启</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../../../Android/android_source_code/android_launcher/">Launcher</a>
+<li>
+    <a href="../../../../Android/android_source_code/android_launcher/" class="dropdown-item">Launcher</a>
 </li>
             
-<li >
-    <a href="../../../../Android/android_source_code/android_broadcast_boot/">开机广播</a>
+<li>
+    <a href="../../../../Android/android_source_code/android_broadcast_boot/" class="dropdown-item">开机广播</a>
 </li>
     </ul>
   </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#">Android6.0源码修改</a>
+    <a href="#" class="dropdown-item">Android6.0源码修改</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../../../Android/android_source_code/android_remove_usb_permission_dialog/">去掉USB权限申请对话框</a>
+<li>
+    <a href="../../../../Android/android_source_code/android_remove_usb_permission_dialog/" class="dropdown-item">去掉USB权限申请对话框</a>
 </li>
             
-<li >
-    <a href="../../../../Android/android_source_code/android_screen_brightness/">修改屏幕默认亮度</a>
+<li>
+    <a href="../../../../Android/android_source_code/android_screen_brightness/" class="dropdown-item">修改屏幕默认亮度</a>
 </li>
             
-<li >
-    <a href="../../../../Android/android_source_code/android_hide_virtual_navigation_key/">彻底隐藏虚拟导航键</a>
+<li>
+    <a href="../../../../Android/android_source_code/android_hide_virtual_navigation_key/" class="dropdown-item">彻底隐藏虚拟导航键</a>
 </li>
             
-<li >
-    <a href="../../../../Android/android_source_code/android_enable_usb_debug/">默认开启USB调试功能</a>
+<li>
+    <a href="../../../../Android/android_source_code/android_enable_usb_debug/" class="dropdown-item">默认开启USB调试功能</a>
 </li>
             
-<li >
-    <a href="../../../../Android/android_source_code/android_get_system_permission/">Android应用获取系统权限</a>
+<li>
+    <a href="../../../../Android/android_source_code/android_get_system_permission/" class="dropdown-item">Android应用获取系统权限</a>
 </li>
             
-<li >
-    <a href="../../../../Android/android_source_code/android_mask_permission_dialog/">Android屏蔽权限请求对话框</a>
+<li>
+    <a href="../../../../Android/android_source_code/android_mask_permission_dialog/" class="dropdown-item">Android屏蔽权限请求对话框</a>
 </li>
             
-<li >
-    <a href="../../../../Android/android_source_code/android_power_logo/">Android定制开机Logo</a>
+<li>
+    <a href="../../../../Android/android_source_code/android_power_logo/" class="dropdown-item">Android定制开机Logo</a>
 </li>
     </ul>
   </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#">Android应用开发</a>
+    <a href="#" class="dropdown-item">Android应用开发</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../../../Android/Application/RecycleView/">RecycleView</a>
+<li>
+    <a href="../../../../Android/Application/RecycleView/" class="dropdown-item">RecycleView</a>
 </li>
             
-<li >
-    <a href="../../../../Android/android_screen_adapter/android_screen_adapter/">Android 屏幕适配</a>
+<li>
+    <a href="../../../../Android/android_screen_adapter/android_screen_adapter/" class="dropdown-item">Android 屏幕适配</a>
 </li>
     </ul>
   </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#">Android NDK开发</a>
+    <a href="#" class="dropdown-item">Android NDK开发</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../../../Android/android_ndk/android_ndk/">NDK开发</a>
+<li>
+    <a href="../../../../Android/android_ndk/android_ndk/" class="dropdown-item">NDK开发</a>
 </li>
             
-<li >
-    <a href="../../compiler/gcc_clang_llvm/">GCC&Clang&LLVM的关系</a>
+<li>
+    <a href="../../compiler/gcc_clang_llvm/" class="dropdown-item">GCC&Clang&LLVM的关系</a>
 </li>
             
-<li >
-    <a href="../../../../Android/android_ndk/cross-compile_opus_for_android/">交叉编译示例OPUS</a>
+<li>
+    <a href="../../../../Android/android_ndk/cross-compile_opus_for_android/" class="dropdown-item">交叉编译示例OPUS</a>
 </li>
             
-<li >
-    <a href="../../../../Android/android_ndk/ijkpalyer_for_rtsp_compile/">交叉编译ijkplayer</a>
+<li>
+    <a href="../../../../Android/android_ndk/ijkpalyer_for_rtsp_compile/" class="dropdown-item">交叉编译ijkplayer</a>
 </li>
             
-<li >
-    <a href="../../../../Android/android_ndk/android_art/">ART</a>
+<li>
+    <a href="../../../../Android/android_ndk/android_art/" class="dropdown-item">ART</a>
 </li>
             
-<li >
-    <a href="../../../../Android/android_ndk/android_cmake/">Android CMake知识点</a>
+<li>
+    <a href="../../../../Android/android_ndk/android_cmake/" class="dropdown-item">Android CMake知识点</a>
 </li>
             
-<li >
-    <a href="../../../../Android/android_ndk/cross-compile_opencv_for_android/">Android交叉编译OpenCV</a>
+<li>
+    <a href="../../../../Android/android_ndk/cross-compile_opencv_for_android/" class="dropdown-item">Android交叉编译OpenCV</a>
 </li>
     </ul>
   </li>
                                     
-<li >
-    <a href="../../../../Android/android_compiler_system/android_compile_system/">Android编译系统</a>
+<li>
+    <a href="../../../../Android/android_compiler_system/android_compile_system/" class="dropdown-item">Android编译系统</a>
 </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#">Java</a>
+    <a href="#" class="dropdown-item">Java</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../../../Android/java/java_serial/">串口操作</a>
+<li>
+    <a href="../../../../Android/java/java_serial/" class="dropdown-item">串口操作</a>
 </li>
             
   <li class="dropdown-submenu">
-    <a href="#">Gradle</a>
+    <a href="#" class="dropdown-item">Gradle</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../../../Android/gradle/gradle_getting_start/">命令行中使用Gradle创建Java App和Java library</a>
+<li>
+    <a href="../../../../Android/gradle/gradle_getting_start/" class="dropdown-item">命令行中使用Gradle创建Java App和Java library</a>
 </li>
     </ul>
   </li>
             
   <li class="dropdown-submenu">
-    <a href="#">Java基础</a>
+    <a href="#" class="dropdown-item">Java基础</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../../../Android/java/java_base/">知识点</a>
+<li>
+    <a href="../../../../Android/java/java_base/" class="dropdown-item">知识点</a>
 </li>
     </ul>
   </li>
             
   <li class="dropdown-submenu">
-    <a href="#">JNI</a>
+    <a href="#" class="dropdown-item">JNI</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../../../Android/java/JNI/jni_getting_start/">一个非常好的JNI入门实例</a>
+<li>
+    <a href="../../../../Android/java/JNI/jni_getting_start/" class="dropdown-item">一个非常好的JNI入门实例</a>
 </li>
             
-<li >
-    <a href="../../../../Android/java/JNI/java_jni_principle/">JNI原理</a>
+<li>
+    <a href="../../../../Android/java/JNI/java_jni_principle/" class="dropdown-item">JNI原理</a>
 </li>
     </ul>
   </li>
             
-<li >
-    <a href="../../../../Android/java/ubuntu_config_java/">Ubuntu中配置Java</a>
+<li>
+    <a href="../../../../Android/java/ubuntu_config_java/" class="dropdown-item">Ubuntu中配置Java</a>
 </li>
             
-<li >
-    <a href="../../../../Android/java/java_compile_command_line/">命令行编译Java程序</a>
+<li>
+    <a href="../../../../Android/java/java_compile_command_line/" class="dropdown-item">命令行编译Java程序</a>
 </li>
             
   <li class="dropdown-submenu">
-    <a href="#">IntelliJ</a>
+    <a href="#" class="dropdown-item">IntelliJ</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../../../Android/java/Tools/intelliJ_set_java_code_source/">IntelliJ设置Java源码</a>
+<li>
+    <a href="../../../../Android/java/Tools/intelliJ_set_java_code_source/" class="dropdown-item">IntelliJ设置Java源码</a>
 </li>
             
-<li >
-    <a href="../../../../Android/java/Tools/intelliJ_add_library/">IntelliJ添加jar文件</a>
+<li>
+    <a href="../../../../Android/java/Tools/intelliJ_add_library/" class="dropdown-item">IntelliJ添加jar文件</a>
 </li>
     </ul>
   </li>
             
-<li >
-    <a href="../../../../Android/java/java_ui_swing/">Swing</a>
+<li>
+    <a href="../../../../Android/java/java_ui_swing/" class="dropdown-item">Swing</a>
 </li>
     </ul>
   </li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">STM32 <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">STM32 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
   <li class="dropdown-submenu">
-    <a href="#">Application</a>
+    <a href="#" class="dropdown-item">Application</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../../STM32/application/stm32_initcall_keil/">STM32 initcall机制-Keil</a>
+<li>
+    <a href="../../../STM32/application/stm32_initcall_keil/" class="dropdown-item">STM32 initcall机制-Keil</a>
 </li>
             
-<li >
-    <a href="../../../STM32/application/stm32_initcall_gcc/">STM32 initcall机制-GCC</a>
+<li>
+    <a href="../../../STM32/application/stm32_initcall_gcc/" class="dropdown-item">STM32 initcall机制-GCC</a>
 </li>
             
-<li >
-    <a href="../../../STM32/application/stm32_flash_erase_leveling/">Flash磨损均衡算法</a>
+<li>
+    <a href="../../../STM32/application/stm32_flash_erase_leveling/" class="dropdown-item">Flash磨损均衡算法</a>
 </li>
             
-<li >
-    <a href="../../../STM32/application/stm32_sw_reset/">STM32软件复位</a>
+<li>
+    <a href="../../../STM32/application/stm32_sw_reset/" class="dropdown-item">STM32软件复位</a>
 </li>
     </ul>
   </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#">Master</a>
+    <a href="#" class="dropdown-item">Master</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../../STM32/master/stm32_boot_configure/">STM32的三种启动方式</a>
+<li>
+    <a href="../../../STM32/master/stm32_boot_configure/" class="dropdown-item">STM32的三种启动方式</a>
 </li>
             
-<li >
-    <a href="../../../STM32/master/stm32_run_code_in_ram/">STM32在SRAM中运行代码</a>
+<li>
+    <a href="../../../STM32/master/stm32_run_code_in_ram/" class="dropdown-item">STM32在SRAM中运行代码</a>
 </li>
             
-<li >
-    <a href="../../../STM32/master/stm32_boot/">STM32的启动流程</a>
+<li>
+    <a href="../../../STM32/master/stm32_boot/" class="dropdown-item">STM32的启动流程</a>
 </li>
             
-<li >
-    <a href="../../../STM32/master/debuger_flash_programming/">调试器背后的秘密</a>
+<li>
+    <a href="../../../STM32/master/debuger_flash_programming/" class="dropdown-item">调试器背后的秘密</a>
 </li>
             
-<li >
-    <a href="../../../STM32/master/stm32_link_script/">ARM编译器链接脚本</a>
+<li>
+    <a href="../../../STM32/master/stm32_link_script/" class="dropdown-item">ARM编译器链接脚本</a>
 </li>
             
-<li >
-    <a href="../../../STM32/master/stm32_gnu_link_script/">GNU链接脚本</a>
+<li>
+    <a href="../../../STM32/master/stm32_gnu_link_script/" class="dropdown-item">GNU链接脚本</a>
 </li>
             
-<li >
-    <a href="../../../STM32/master/stm32_elf_bin_file_analysis/">Keil AXF文件和BIN文件分析</a>
+<li>
+    <a href="../../../STM32/master/stm32_elf_bin_file_analysis/" class="dropdown-item">Keil AXF文件和BIN文件分析</a>
 </li>
             
-<li >
-    <a href="../../../STM32/master/arm_assembly/">ARM汇编</a>
+<li>
+    <a href="../../../STM32/master/arm_assembly/" class="dropdown-item">ARM汇编</a>
 </li>
             
-<li >
-    <a href="../../../STM32/master/gnu_assembly/">GNU ARM汇编</a>
+<li>
+    <a href="../../../STM32/master/gnu_assembly/" class="dropdown-item">GNU ARM汇编</a>
 </li>
             
-<li >
-    <a href="../../../STM32/master/os_feature/">OS特性</a>
+<li>
+    <a href="../../../STM32/master/cortexm3_interrupt/" class="dropdown-item">CortexM3中断</a>
 </li>
             
-<li >
-    <a href="../../../STM32/master/use_assembly_in_c/">在C中使用ARM汇编（GNU）</a>
+<li>
+    <a href="../../../STM32/master/os_feature/" class="dropdown-item">OS特性</a>
+</li>
+            
+<li>
+    <a href="../../../STM32/master/use_assembly_in_c/" class="dropdown-item">在C中使用ARM汇编（GNU）</a>
 </li>
     </ul>
   </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#">FreeRTOS</a>
+    <a href="#" class="dropdown-item">FreeRTOS</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../../STM32/freertos/task_switch/">任务切换</a>
+<li>
+    <a href="../../../STM32/freertos/task_switch/" class="dropdown-item">任务切换</a>
 </li>
             
-<li >
-    <a href="../../../STM32/freertos/interrupt_manage/">中断管理</a>
+<li>
+    <a href="../../../STM32/freertos/freertos_interrupt_manage/" class="dropdown-item">中断管理</a>
+</li>
+            
+<li>
+    <a href="../../../STM32/freertos/freertos_task_stack/" class="dropdown-item">任务栈</a>
+</li>
+            
+<li>
+    <a href="../../../STM32/freertos/mutexes/" class="dropdown-item">互斥体</a>
 </li>
     </ul>
   </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#">STM32外设</a>
+    <a href="#" class="dropdown-item">STM32外设</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../../STM32/peripheral/systick_timer/">Systick Timer</a>
+<li>
+    <a href="../../../STM32/peripheral/systick_timer/" class="dropdown-item">Systick Timer</a>
 </li>
             
-<li >
-    <a href="../../../STM32/peripheral/stm32_hal_uart/">STM32串口编程之中断方式</a>
+<li>
+    <a href="../../../STM32/peripheral/stm32_hal_uart/" class="dropdown-item">STM32串口编程之中断方式</a>
 </li>
             
-<li >
-    <a href="../../../STM32/peripheral/stm32_hal_uart/">STM32定时器编程之定时中断</a>
+<li>
+    <a href="../../../STM32/peripheral/stm32_hal_uart/" class="dropdown-item">STM32定时器编程之定时中断</a>
 </li>
             
-<li >
-    <a href="../../../STM32/peripheral/stm32_hal_uart/">STM32定时器编程之PWM</a>
+<li>
+    <a href="../../../STM32/peripheral/stm32_hal_uart/" class="dropdown-item">STM32定时器编程之PWM</a>
 </li>
             
-<li >
-    <a href="../../../STM32/peripheral/stm32_generate_n_number_pluse/">STM32定时器之产生固定个数的脉冲</a>
+<li>
+    <a href="../../../STM32/peripheral/stm32_generate_n_number_pluse/" class="dropdown-item">STM32定时器之产生固定个数的脉冲</a>
 </li>
             
-<li >
-    <a href="../../../STM32/peripheral/stm32_adc/">STM32ADC</a>
+<li>
+    <a href="../../../STM32/peripheral/stm32_adc/" class="dropdown-item">STM32ADC</a>
 </li>
             
-<li >
-    <a href="../../../spi_bus/">SPI总线</a>
+<li>
+    <a href="../../../spi_bus/" class="dropdown-item">SPI总线</a>
 </li>
     </ul>
   </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#">Motor Control</a>
+    <a href="#" class="dropdown-item">Motor Control</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../../STM32/motor_control/torque/">转矩</a>
+<li>
+    <a href="../../../STM32/motor_control/torque/" class="dropdown-item">转矩</a>
 </li>
             
-<li >
-    <a href="../../../STM32/motor_control/dc_motor_driver_chip/">直流刷式电机</a>
+<li>
+    <a href="../../../STM32/motor_control/dc_motor_driver_chip/" class="dropdown-item">直流刷式电机</a>
 </li>
             
-<li >
-    <a href="../../../STM32/motor_control/stepper_motor_driver_chip/">步进电机</a>
+<li>
+    <a href="../../../STM32/motor_control/stepper_motor_driver_chip/" class="dropdown-item">步进电机</a>
 </li>
             
-<li >
-    <a href="../../../STM32/motor_control/stm32_io_drive_42stepper_l298n/">STM32控制42步进电机</a>
+<li>
+    <a href="../../../STM32/motor_control/stm32_io_drive_42stepper_l298n/" class="dropdown-item">STM32控制42步进电机</a>
 </li>
     </ul>
   </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#">STM32开发神兵利器</a>
+    <a href="#" class="dropdown-item">STM32开发神兵利器</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../../STM32/tools/jscope_rtt/">JScope RTT模式</a>
+<li>
+    <a href="../../../STM32/tools/jscope_rtt/" class="dropdown-item">JScope RTT模式</a>
 </li>
             
-<li >
-    <a href="../../../STM32/tools/jscope_hss/">JScope HSS模式</a>
+<li>
+    <a href="../../../STM32/tools/jscope_hss/" class="dropdown-item">JScope HSS模式</a>
 </li>
             
-<li >
-    <a href="../../../STM32/tools/rtt/">JLink RTT</a>
+<li>
+    <a href="../../../STM32/tools/rtt/" class="dropdown-item">JLink RTT</a>
 </li>
             
-<li >
-    <a href="../../../STM32/tools/stm32_books/">STM32经典书籍</a>
+<li>
+    <a href="../../../STM32/tools/stm32_books/" class="dropdown-item">STM32经典书籍</a>
 </li>
     </ul>
   </li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Linux <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Linux <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
   <li class="dropdown-submenu">
-    <a href="#">C/C++</a>
+    <a href="#" class="dropdown-item">C/C++</a>
     <ul class="dropdown-menu">
             
   <li class="dropdown-submenu">
-    <a href="#">你需要知道的N个C语言问题</a>
+    <a href="#" class="dropdown-item">你需要知道的N个C语言问题</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../../c&c++/c_memory_layout/">C内存模型</a>
+<li>
+    <a href="../../../c%26c%2B%2B/c_memory_layout/" class="dropdown-item">C内存模型</a>
 </li>
             
-<li >
-    <a href="../../../c&c++/c_micro_jing/">C宏定义#与##</a>
+<li>
+    <a href="../../../c%26c%2B%2B/c_micro_jing/" class="dropdown-item">C宏定义#与##</a>
 </li>
             
-<li >
-    <a href="../../../c&c++/c_pointer/">C指针</a>
+<li>
+    <a href="../../../c%26c%2B%2B/c_pointer/" class="dropdown-item">C指针</a>
 </li>
             
-<li >
-    <a href="../../../c&c++/c_pragma/">pragma pack()</a>
+<li>
+    <a href="../../../c%26c%2B%2B/c_pragma/" class="dropdown-item">pragma pack()</a>
 </li>
             
-<li >
-    <a href="../../../c&c++/typedef_tips/">typedef使用注意</a>
+<li>
+    <a href="../../../c%26c%2B%2B/typedef_tips/" class="dropdown-item">typedef使用注意</a>
 </li>
             
-<li >
-    <a href="../../../c&c++/const_volatile/">const与volatile</a>
+<li>
+    <a href="../../../c%26c%2B%2B/const_volatile/" class="dropdown-item">const与volatile</a>
 </li>
     </ul>
   </li>
             
-<li >
-    <a href="../../../c&c++/gdb_usage/">GDB</a>
+<li>
+    <a href="../../../c%26c%2B%2B/gdb_usage/" class="dropdown-item">GDB</a>
 </li>
             
-<li >
-    <a href="../../../c&c++/c_compiler/">编译器相关</a>
+<li>
+    <a href="../../../c%26c%2B%2B/c_compiler/" class="dropdown-item">编译器相关</a>
 </li>
             
-<li >
-    <a href="../../../c&c++/c_c++_call_each_other/">C与C++相互调用</a>
+<li>
+    <a href="../../../c%26c%2B%2B/c_c%2B%2B_call_each_other/" class="dropdown-item">C与C++相互调用</a>
 </li>
             
-<li >
-    <a href="../../../c&c++/complement/">补码</a>
+<li>
+    <a href="../../../c%26c%2B%2B/complement/" class="dropdown-item">补码</a>
 </li>
             
-<li >
-    <a href="../../../c&c++/pkg_config/">pkg-config</a>
+<li>
+    <a href="../../../c%26c%2B%2B/pkg_config/" class="dropdown-item">pkg-config</a>
 </li>
             
-<li >
-    <a href="../../../c&c++/ascii_table/">ASCII Table</a>
+<li>
+    <a href="../../../c%26c%2B%2B/ascii_table/" class="dropdown-item">ASCII Table</a>
 </li>
             
-<li >
-    <a href="../../../c&c++/c_operator_precedence/">C操作符优先级</a>
+<li>
+    <a href="../../../c%26c%2B%2B/c_operator_precedence/" class="dropdown-item">C操作符优先级</a>
 </li>
             
-<li >
-    <a href="../../../c&c++/cmake_usage/">CMake用法</a>
+<li>
+    <a href="../../../c%26c%2B%2B/cmake_usage/" class="dropdown-item">CMake用法</a>
 </li>
             
-<li >
-    <a href="../../../c&c++/snippet/">C代码片段</a>
-</li>
-    </ul>
-  </li>
-                                    
-  <li class="dropdown-submenu">
-    <a href="#">Linux命令</a>
-    <ul class="dropdown-menu">
-            
-<li >
-    <a href="../../linux_cmd/linux_cmd/">Linux常用命令</a>
-</li>
-            
-<li >
-    <a href="../../linux_cmd/cli_connect_wifi/">命令行连接WiFi热点</a>
+<li>
+    <a href="../../../c%26c%2B%2B/snippet/" class="dropdown-item">C代码片段</a>
 </li>
     </ul>
   </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#">开发环境相关</a>
+    <a href="#" class="dropdown-item">Linux命令</a>
     <ul class="dropdown-menu">
             
-  <li class="dropdown-submenu">
-    <a href="#">QEMU</a>
-    <ul class="dropdown-menu">
-            
-<li >
-    <a href="../qemu/qemu_install/">QEMU安装</a>
-</li>
-    </ul>
-  </li>
-            
-<li >
-    <a href="../wsl_shared_folder/">WSL与Windows共享文件</a>
+<li>
+    <a href="../../linux_cmd/linux_cmd/" class="dropdown-item">Linux常用命令</a>
 </li>
             
-<li >
-    <a href="../virtual_box_env/">VirtualBox开发环境搭建</a>
-</li>
-            
-<li >
-    <a href="../build_linux_source_tree_on_ubuntu/">Ubuntu中构建内核源码树</a>
-</li>
-            
-<li >
-    <a href="../ssh_server/">SSH服务器配置</a>
-</li>
-            
-<li >
-    <a href="../samba_server/">samba服务配置</a>
-</li>
-            
-<li >
-    <a href="../ftp_server/">FTP服务配置</a>
-</li>
-            
-<li >
-    <a href="../tftp_server/">TFTP服务配置</a>
-</li>
-            
-<li >
-    <a href="../nfs_server/">NFS</a>
-</li>
-            
-<li >
-    <a href="../arm_compiler/">ARM交叉编译工具</a>
-</li>
-            
-<li >
-    <a href="../ubuntu_boot_error/">Ubuntu启动错误</a>
-</li>
-            
-<li >
-    <a href="../rm/">安全的使用rm</a>
+<li>
+    <a href="../../linux_cmd/cli_connect_wifi/" class="dropdown-item">命令行连接WiFi热点</a>
 </li>
     </ul>
   </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#">编译系统</a>
+    <a href="#" class="dropdown-item">开发环境相关</a>
     <ul class="dropdown-menu">
             
   <li class="dropdown-submenu">
-    <a href="#">CMake</a>
+    <a href="#" class="dropdown-item">QEMU</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../compiler/cmake/cmake_base/">CMake基础</a>
-</li>
-            
-<li >
-    <a href="../../compiler/cmake/cmake_static_library/">CMake编译静态和动态链接库</a>
-</li>
-            
-<li >
-    <a href="../../compiler/cmake/cmake_cross_compile/">CMake交叉编译</a>
-</li>
-            
-<li >
-    <a href="../../compiler/cmake/vscode_cmake_base/">VSCode与CMake搭配使用之基本配置</a>
-</li>
-            
-<li >
-    <a href="../../compiler/cmake/vscode_camke_cross_compile/">VSCode与CMake搭配使用之交叉编译</a>
+<li>
+    <a href="../qemu/qemu_install/" class="dropdown-item">QEMU安装</a>
 </li>
     </ul>
   </li>
             
-  <li class="dropdown-submenu">
-    <a href="#">交叉编译</a>
-    <ul class="dropdown-menu">
-            
-<li >
-    <a href="../../compiler/cross_compile/corss_compile/">交叉编译的方法</a>
+<li>
+    <a href="../wsl_shared_folder/" class="dropdown-item">WSL与Windows共享文件</a>
 </li>
             
-<li >
-    <a href="../../compiler/cross_compile/cross_compiler_default_search_path/">交叉编译器默认的头文件和库文件搜索路径</a>
+<li>
+    <a href="../virtual_box_env/" class="dropdown-item">VirtualBox开发环境搭建</a>
 </li>
             
-<li >
-    <a href="../../compiler/cmake/cmake_cross_compile/">CMake交叉编译</a>
+<li>
+    <a href="../build_linux_source_tree_on_ubuntu/" class="dropdown-item">Ubuntu中构建内核源码树</a>
 </li>
             
-<li >
-    <a href="../../compiler/cmake/vscode_camke_cross_compile/">VSCode与CMake搭配使用之交叉编译</a>
-</li>
-    </ul>
-  </li>
-            
-<li >
-    <a href="../../compiler/gnu_make_two_flavors_of_variables/">GNU make中的2种变量</a>
+<li>
+    <a href="../ssh_server/" class="dropdown-item">SSH服务器配置</a>
 </li>
             
-<li >
-    <a href="../../compiler/gcc/gcc_dynamic_linking_library/">GCC编译动态链接库</a>
+<li>
+    <a href="../samba_server/" class="dropdown-item">samba服务配置</a>
 </li>
             
-<li >
-    <a href="../../compiler/gcc_clang_llvm/">GCC&Clang&LLVM的关系</a>
+<li>
+    <a href="../ftp_server/" class="dropdown-item">FTP服务配置</a>
+</li>
+            
+<li>
+    <a href="../tftp_server/" class="dropdown-item">TFTP服务配置</a>
+</li>
+            
+<li>
+    <a href="../nfs_server/" class="dropdown-item">NFS</a>
+</li>
+            
+<li>
+    <a href="../arm_compiler/" class="dropdown-item">ARM交叉编译工具</a>
+</li>
+            
+<li>
+    <a href="../ubuntu_boot_error/" class="dropdown-item">Ubuntu启动错误</a>
+</li>
+            
+<li>
+    <a href="../rm/" class="dropdown-item">安全的使用rm</a>
 </li>
     </ul>
   </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#">Linux OS</a>
+    <a href="#" class="dropdown-item">编译系统</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../os/linux_pitch_file_format/">Linux补丁文件格式</a>
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">CMake</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../compiler/cmake/cmake_base/" class="dropdown-item">CMake基础</a>
 </li>
             
-<li >
-    <a href="../../application/linux_serial_shell/">shell中操作串口</a>
+<li>
+    <a href="../../compiler/cmake/cmake_static_library/" class="dropdown-item">CMake编译静态和动态链接库</a>
 </li>
             
-<li >
-    <a href="../../os/linux_environment_variable/">环境变量</a>
+<li>
+    <a href="../../compiler/cmake/cmake_cross_compile/" class="dropdown-item">CMake交叉编译</a>
 </li>
             
-<li >
-    <a href="../../application/linux_shell_program/">Shell编程基础</a>
+<li>
+    <a href="../../compiler/cmake/vscode_cmake_base/" class="dropdown-item">VSCode与CMake搭配使用之基本配置</a>
 </li>
             
-<li >
-    <a href="../../os/shell_cmd/">shell</a>
+<li>
+    <a href="../../compiler/cmake/vscode_camke_cross_compile/" class="dropdown-item">VSCode与CMake搭配使用之交叉编译</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">交叉编译</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../compiler/cross_compile/corss_compile/" class="dropdown-item">交叉编译的方法</a>
 </li>
             
-<li >
-    <a href="../../os/subshell/">subshell</a>
+<li>
+    <a href="../../compiler/cross_compile/cross_compiler_default_search_path/" class="dropdown-item">交叉编译器默认的头文件和库文件搜索路径</a>
+</li>
+            
+<li>
+    <a href="../../compiler/cmake/cmake_cross_compile/" class="dropdown-item">CMake交叉编译</a>
+</li>
+            
+<li>
+    <a href="../../compiler/cmake/vscode_camke_cross_compile/" class="dropdown-item">VSCode与CMake搭配使用之交叉编译</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../../compiler/gnu_make_two_flavors_of_variables/" class="dropdown-item">GNU make中的2种变量</a>
+</li>
+            
+<li>
+    <a href="../../compiler/gcc/gcc_dynamic_linking_library/" class="dropdown-item">GCC编译动态链接库</a>
+</li>
+            
+<li>
+    <a href="../../compiler/gcc_clang_llvm/" class="dropdown-item">GCC&Clang&LLVM的关系</a>
 </li>
     </ul>
   </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#">Uboot</a>
+    <a href="#" class="dropdown-item">Linux OS</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../jz2440/uboot/">Uboot命令</a>
+<li>
+    <a href="../../os/linux_pitch_file_format/" class="dropdown-item">Linux补丁文件格式</a>
 </li>
             
-<li >
-    <a href="../../jz2440/uboot2016_porting/">Uboot移植</a>
+<li>
+    <a href="../../application/linux_serial_shell/" class="dropdown-item">shell中操作串口</a>
+</li>
+            
+<li>
+    <a href="../../os/linux_environment_variable/" class="dropdown-item">环境变量</a>
+</li>
+            
+<li>
+    <a href="../../application/linux_shell_program/" class="dropdown-item">Shell编程基础</a>
+</li>
+            
+<li>
+    <a href="../../os/shell_cmd/" class="dropdown-item">shell</a>
+</li>
+            
+<li>
+    <a href="../../os/subshell/" class="dropdown-item">subshell</a>
 </li>
     </ul>
   </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#">Linux Device Driver</a>
+    <a href="#" class="dropdown-item">Uboot</a>
     <ul class="dropdown-menu">
             
-  <li class="dropdown-submenu">
-    <a href="#">《Linux设备驱动开发详解》</a>
-    <ul class="dropdown-menu">
-            
-<li >
-    <a href="../../linux_driver/linux_device_driver_baohua/relate_resource/">书籍配套资源</a>
-</li>
-    </ul>
-  </li>
-            
-<li >
-    <a href="../../linux_driver/ld_hello_world/">最简单的驱动程序</a>
+<li>
+    <a href="../../jz2440/uboot/" class="dropdown-item">Uboot命令</a>
 </li>
             
-<li >
-    <a href="../../linux_driver/ld_bus_dev_drv/">最简单的平台总线设备驱动程序</a>
-</li>
-            
-<li >
-    <a href="../../linux_driver/device_tree/">设备树相关</a>
-</li>
-            
-<li >
-    <a href="../../linux_driver/lcd_driver/">Linux LCD驱动框架</a>
-</li>
-            
-<li >
-    <a href="../../linux_driver/linux_irq/">Linux中断</a>
+<li>
+    <a href="../../jz2440/uboot2016_porting/" class="dropdown-item">Uboot移植</a>
 </li>
     </ul>
   </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#">S3C2440开发</a>
+    <a href="#" class="dropdown-item">Linux Device Driver</a>
     <ul class="dropdown-menu">
             
   <li class="dropdown-submenu">
-    <a href="#">device tree</a>
+    <a href="#" class="dropdown-item">《Linux设备驱动开发详解》</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../jz2440/device_tree/compile_uboot_kernel_with_device_tree/">支持设备树系统移植</a>
-</li>
-            
-<li >
-    <a href="../../jz2440/device_tree/led_drv/">Led驱动</a>
+<li>
+    <a href="../../linux_driver/linux_device_driver_baohua/relate_resource/" class="dropdown-item">书籍配套资源</a>
 </li>
     </ul>
   </li>
             
-<li >
-    <a href="../../jz2440/jz2440_download_image_files/">烧写镜像文件</a>
+<li>
+    <a href="../../linux_driver/ld_hello_world/" class="dropdown-item">最简单的驱动程序</a>
 </li>
             
-<li >
-    <a href="../../jz2440/uboot_porting/">Uboot打补丁编译</a>
+<li>
+    <a href="../../linux_driver/ld_bus_dev_drv/" class="dropdown-item">最简单的平台总线设备驱动程序</a>
 </li>
             
-<li >
-    <a href="../../jz2440/linux_kernel_porting/">Linux Kernel移植</a>
+<li>
+    <a href="../../linux_driver/device_tree/" class="dropdown-item">设备树相关</a>
 </li>
             
-<li >
-    <a href="../../jz2440/jz2440_dev_tips/">JZ2440 dev tips</a>
+<li>
+    <a href="../../linux_driver/lcd_driver/" class="dropdown-item">Linux LCD驱动框架</a>
+</li>
+            
+<li>
+    <a href="../../linux_driver/linux_irq/" class="dropdown-item">Linux中断</a>
 </li>
     </ul>
   </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#">VSCode</a>
+    <a href="#" class="dropdown-item">S3C2440开发</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../vscode/vscode_build_c_project/">VSCode编译调试多文件C项目</a>
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">device tree</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../jz2440/device_tree/compile_uboot_kernel_with_device_tree/" class="dropdown-item">支持设备树系统移植</a>
+</li>
+            
+<li>
+    <a href="../../jz2440/device_tree/led_drv/" class="dropdown-item">Led驱动</a>
+</li>
+    </ul>
+  </li>
+            
+<li>
+    <a href="../../jz2440/jz2440_download_image_files/" class="dropdown-item">烧写镜像文件</a>
+</li>
+            
+<li>
+    <a href="../../jz2440/uboot_porting/" class="dropdown-item">Uboot打补丁编译</a>
+</li>
+            
+<li>
+    <a href="../../jz2440/linux_kernel_porting/" class="dropdown-item">Linux Kernel移植</a>
+</li>
+            
+<li>
+    <a href="../../jz2440/jz2440_dev_tips/" class="dropdown-item">JZ2440 dev tips</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">VSCode</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../vscode/vscode_build_c_project/" class="dropdown-item">VSCode编译调试多文件C项目</a>
 </li>
     </ul>
   </li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Multimedia <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Multimedia <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
   <li class="dropdown-submenu">
-    <a href="#">FFMPEG</a>
+    <a href="#" class="dropdown-item">FFMPEG</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../../../Multimedia/ffmpeg_compile/">FFMPEG编译</a>
+<li>
+    <a href="../../../../Multimedia/ffmpeg_compile/" class="dropdown-item">FFMPEG编译</a>
 </li>
             
-<li >
-    <a href="../../../../Multimedia/ffmpeg_command/">FFMPEG命令</a>
+<li>
+    <a href="../../../../Multimedia/ffmpeg_command/" class="dropdown-item">FFMPEG命令</a>
 </li>
             
-<li >
-    <a href="../../../../Multimedia/ffmpeg_api/">FFMPEG API</a>
+<li>
+    <a href="../../../../Multimedia/ffmpeg_api/" class="dropdown-item">FFMPEG API</a>
 </li>
     </ul>
   </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#">音视频编码</a>
+    <a href="#" class="dropdown-item">音视频编码</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../../../Multimedia/h264_bitrate_profile_level/">码率、H264 Profile和Level</a>
+<li>
+    <a href="../../../../Multimedia/h264_bitrate_profile_level/" class="dropdown-item">码率、H264 Profile和Level</a>
 </li>
             
-<li >
-    <a href="../../../../Multimedia/aac/">AAC编码</a>
+<li>
+    <a href="../../../../Multimedia/aac/" class="dropdown-item">AAC编码</a>
 </li>
             
-<li >
-    <a href="../../../../Multimedia/yuv/">彻底理解YUV格式</a>
+<li>
+    <a href="../../../../Multimedia/yuv/" class="dropdown-item">彻底理解YUV格式</a>
 </li>
             
-<li >
-    <a href="../../../../Multimedia/pcm/">PCM</a>
+<li>
+    <a href="../../../../Multimedia/pcm/" class="dropdown-item">PCM</a>
 </li>
             
-<li >
-    <a href="../../../../Multimedia/wav_foramt/">WAV</a>
+<li>
+    <a href="../../../../Multimedia/wav_foramt/" class="dropdown-item">WAV</a>
 </li>
             
-<li >
-    <a href="../../../../Multimedia/opus/">OPUS</a>
+<li>
+    <a href="../../../../Multimedia/opus/" class="dropdown-item">OPUS</a>
 </li>
             
-<li >
-    <a href="../../../../Multimedia/Ogg/">Ogg</a>
+<li>
+    <a href="../../../../Multimedia/Ogg/" class="dropdown-item">Ogg</a>
 </li>
     </ul>
   </li>
                                     
-<li >
-    <a href="../../../../Multimedia/easydarwin/">EasyDarwin RTSP Server</a>
+<li>
+    <a href="../../../../Multimedia/easydarwin/" class="dropdown-item">EasyDarwin RTSP Server</a>
 </li>
                                     
-<li >
-    <a href="../../../../Multimedia/AliyunVOD/get_play_url/">Aliyun VOD</a>
+<li>
+    <a href="../../../../Multimedia/AliyunVOD/get_play_url/" class="dropdown-item">Aliyun VOD</a>
 </li>
                                     
-<li >
-    <a href="../../../../Multimedia/optical/">光学知识点</a>
+<li>
+    <a href="../../../../Multimedia/optical/" class="dropdown-item">光学知识点</a>
 </li>
                                     
-<li >
-    <a href="../../../../Multimedia/av_synchronization/">音视频同步</a>
+<li>
+    <a href="../../../../Multimedia/av_synchronization/" class="dropdown-item">音视频同步</a>
 </li>
                                     
-<li >
-    <a href="../../../../Multimedia/linux_shell_cmd_for_multimedia/">Linux Shell命令</a>
+<li>
+    <a href="../../../../Multimedia/linux_shell_cmd_for_multimedia/" class="dropdown-item">Linux Shell命令</a>
 </li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Other <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
   <li class="dropdown-submenu">
-    <a href="#">Computer Science</a>
+    <a href="#" class="dropdown-item">Computer Science</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../../cs/character_set/">字符集</a>
+<li>
+    <a href="../../../cs/character_set/" class="dropdown-item">字符集</a>
 </li>
     </ul>
   </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#">Machine Learning</a>
+    <a href="#" class="dropdown-item">Machine Learning</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../../../ML/ml_basics/">机器学习基础</a>
+<li>
+    <a href="../../../../ML/ml_basics/" class="dropdown-item">机器学习基础</a>
 </li>
             
-<li >
-    <a href="../../../../ML/tensorflow_install/">Tensorflow安装</a>
+<li>
+    <a href="../../../../ML/tensorflow_install/" class="dropdown-item">Tensorflow安装</a>
 </li>
             
-<li >
-    <a href="../../../../ML/tensorflow_model/">Tensorflow模型转换</a>
+<li>
+    <a href="../../../../ML/tensorflow_model/" class="dropdown-item">Tensorflow模型转换</a>
 </li>
             
   <li class="dropdown-submenu">
-    <a href="#">嵌入式机器学习</a>
+    <a href="#" class="dropdown-item">嵌入式机器学习</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../../../ML/how_to_run_dl_model_on_stm32/">00：STM32图像分类</a>
+<li>
+    <a href="../../../../ML/how_to_run_dl_model_on_stm32/" class="dropdown-item">00：STM32图像分类</a>
 </li>
     </ul>
   </li>
@@ -861,214 +860,214 @@
   </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#">Python</a>
+    <a href="#" class="dropdown-item">Python</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../../../Python/python_nginx_uwsgi_django/">Django</a>
+<li>
+    <a href="../../../../Python/python_nginx_uwsgi_django/" class="dropdown-item">Django</a>
 </li>
             
-<li >
-    <a href="../../../../Python/python_tips/">Python速查</a>
+<li>
+    <a href="../../../../Python/python_tips/" class="dropdown-item">Python速查</a>
 </li>
             
-<li >
-    <a href="../../../../Python/matplotlib/">matplotlib使用</a>
+<li>
+    <a href="../../../../Python/matplotlib/" class="dropdown-item">matplotlib使用</a>
 </li>
             
-<li >
-    <a href="../../../../Python/python_trigonometric/">三角函数</a>
+<li>
+    <a href="../../../../Python/python_trigonometric/" class="dropdown-item">三角函数</a>
 </li>
             
-<li >
-    <a href="../../../../Python/python_record_play/">录音与播放</a>
+<li>
+    <a href="../../../../Python/python_record_play/" class="dropdown-item">录音与播放</a>
 </li>
             
-<li >
-    <a href="../../../../Python/snippet/">Python代码片段</a>
+<li>
+    <a href="../../../../Python/snippet/" class="dropdown-item">Python代码片段</a>
 </li>
             
-<li >
-    <a href="../../../../Python/python_string_format/">Python字符串格式化</a>
+<li>
+    <a href="../../../../Python/python_string_format/" class="dropdown-item">Python字符串格式化</a>
 </li>
     </ul>
   </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#">Computer Vision</a>
+    <a href="#" class="dropdown-item">Computer Vision</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../../../Computer Vision/caffe/">caffe</a>
+<li>
+    <a href="../../../../Computer%20Vision/caffe/" class="dropdown-item">caffe</a>
 </li>
             
-<li >
-    <a href="../../../../Computer Vision/cv_library/">cv_library</a>
+<li>
+    <a href="../../../../Computer%20Vision/cv_library/" class="dropdown-item">cv_library</a>
 </li>
             
-<li >
-    <a href="../../../../Computer Vision/OpenCV4Android_001/">OpenCV4Android</a>
+<li>
+    <a href="../../../../Computer%20Vision/OpenCV4Android_001/" class="dropdown-item">OpenCV4Android</a>
 </li>
     </ul>
   </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#">Nginx</a>
+    <a href="#" class="dropdown-item">Nginx</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../../../Network/nginx/nginx_static_site_from_prebuild/">配置静态网站服务器</a>
+<li>
+    <a href="../../../../Network/nginx/nginx_static_site_from_prebuild/" class="dropdown-item">配置静态网站服务器</a>
 </li>
             
-<li >
-    <a href="../../../../Network/nginx/nginx_hls_from_source/">配置HLS服务器</a>
+<li>
+    <a href="../../../../Network/nginx/nginx_hls_from_source/" class="dropdown-item">配置HLS服务器</a>
 </li>
     </ul>
   </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#">Hardware</a>
+    <a href="#" class="dropdown-item">Hardware</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../../../Hardware/battery_work_time/">电池工作时间的计算</a>
+<li>
+    <a href="../../../../Hardware/battery_work_time/" class="dropdown-item">电池工作时间的计算</a>
 </li>
             
-<li >
-    <a href="../../../../Hardware/ubs_pd/">USB-PD</a>
+<li>
+    <a href="../../../../Hardware/ubs_pd/" class="dropdown-item">USB-PD</a>
 </li>
     </ul>
   </li>
                                     
-<li >
-    <a href="../../../ESP8266/">ESP8266</a>
+<li>
+    <a href="../../../ESP8266/" class="dropdown-item">ESP8266</a>
 </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#">K210</a>
+    <a href="#" class="dropdown-item">K210</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../../k210/configure_k210_standlone_env/">K210开发环境配置</a>
+<li>
+    <a href="../../../k210/configure_k210_standlone_env/" class="dropdown-item">K210开发环境配置</a>
 </li>
             
-<li >
-    <a href="../../../k210/configure_mairxpy_dev_env/">MairxPy开发环境配置</a>
+<li>
+    <a href="../../../k210/configure_mairxpy_dev_env/" class="dropdown-item">MairxPy开发环境配置</a>
 </li>
             
-<li >
-    <a href="../../../k210/mairxpy_snippet/">MairxPy Snippet</a>
+<li>
+    <a href="../../../k210/mairxpy_snippet/" class="dropdown-item">MairxPy Snippet</a>
 </li>
     </ul>
   </li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tools <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tools <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
   <li class="dropdown-submenu">
-    <a href="#">MkDocs搭建个人WiKi知识管理系统</a>
+    <a href="#" class="dropdown-item">MkDocs搭建个人WiKi知识管理系统</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../../../Tools/mkdocs/mkdocs_intro/">1.MkDocs - 初识</a>
+<li>
+    <a href="../../../../Tools/mkdocs/mkdocs_intro/" class="dropdown-item">1.MkDocs - 初识</a>
 </li>
             
-<li >
-    <a href="../../../../Tools/mkdocs/mkdocs_deploy_githubpages/">2.MkDocs - 部署到Github Pages</a>
+<li>
+    <a href="../../../../Tools/mkdocs/mkdocs_deploy_githubpages/" class="dropdown-item">2.MkDocs - 部署到Github Pages</a>
 </li>
             
-<li >
-    <a href="../../../../Tools/mkdocs/mkdocs_deploy_nginx/">3.MkDocs - 部署到Nginx</a>
+<li>
+    <a href="../../../../Tools/mkdocs/mkdocs_deploy_nginx/" class="dropdown-item">3.MkDocs - 部署到Nginx</a>
 </li>
             
-<li >
-    <a href="../../../../Tools/mkdocs/mkdocs_theme/">4.MkDocs - Wiki样式配置</a>
+<li>
+    <a href="../../../../Tools/mkdocs/mkdocs_theme/" class="dropdown-item">4.MkDocs - Wiki样式配置</a>
 </li>
     </ul>
   </li>
                                     
-<li >
-    <a href="../../../../Tools/embedded_develop_tools/">嵌入式开发神兵利器</a>
+<li>
+    <a href="../../../../Tools/embedded_develop_tools/" class="dropdown-item">嵌入式开发神兵利器</a>
 </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#">VPN</a>
+    <a href="#" class="dropdown-item">VPN</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../../../Tools/VPN/ss_parameter/">配置参数</a>
+<li>
+    <a href="../../../../Tools/VPN/ss_parameter/" class="dropdown-item">配置参数</a>
 </li>
             
-<li >
-    <a href="../../../../Tools/VPN/Shadowsocks_client_for_ubuntu/">Shadowsocks Ubuntu客户端</a>
+<li>
+    <a href="../../../../Tools/VPN/Shadowsocks_client_for_ubuntu/" class="dropdown-item">Shadowsocks Ubuntu客户端</a>
 </li>
             
-<li >
-    <a href="../../../../Tools/VPN/ShadowsocksR_client_for_ubuntu/">ShadowsocksR Ubuntu客户端</a>
+<li>
+    <a href="../../../../Tools/VPN/ShadowsocksR_client_for_ubuntu/" class="dropdown-item">ShadowsocksR Ubuntu客户端</a>
 </li>
             
-<li >
-    <a href="../../../../Tools/VPN/ShadowsocksR_server_for_ubuntu/">ShadowsocksR Ubuntu服务端</a>
-</li>
-    </ul>
-  </li>
-                                    
-  <li class="dropdown-submenu">
-    <a href="#">VIM</a>
-    <ul class="dropdown-menu">
-            
-<li >
-    <a href="../../../../Tools/VIM/vim_base/">VIM基础</a>
-</li>
-            
-<li >
-    <a href="../../../../Tools/VIM/vim_plug_nerdtree/">使用VIM-Plug配合NERDTree</a>
-</li>
-            
-<li >
-    <a href="../../../../Tools/VIM/vim_configure/">VIM插件配置</a>
-</li>
-            
-<li >
-    <a href="../../../../Tools/VIM/vim_usage/">VIM使用</a>
+<li>
+    <a href="../../../../Tools/VPN/ShadowsocksR_server_for_ubuntu/" class="dropdown-item">ShadowsocksR Ubuntu服务端</a>
 </li>
     </ul>
   </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#">VSCode</a>
+    <a href="#" class="dropdown-item">VIM</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../../../Tools/vscode/ssh_remote/">VSCode通过SSH连接服务器实现远程编辑</a>
+<li>
+    <a href="../../../../Tools/VIM/vim_base/" class="dropdown-item">VIM基础</a>
+</li>
+            
+<li>
+    <a href="../../../../Tools/VIM/vim_plug_nerdtree/" class="dropdown-item">使用VIM-Plug配合NERDTree</a>
+</li>
+            
+<li>
+    <a href="../../../../Tools/VIM/vim_configure/" class="dropdown-item">VIM插件配置</a>
+</li>
+            
+<li>
+    <a href="../../../../Tools/VIM/vim_usage/" class="dropdown-item">VIM使用</a>
 </li>
     </ul>
   </li>
                                     
-<li >
-    <a href="../../../../Tools/markdown/">Markdown中的一些技巧</a>
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">VSCode</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../../Tools/vscode/ssh_remote/" class="dropdown-item">VSCode通过SSH连接服务器实现远程编辑</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../../../../Tools/markdown/" class="dropdown-item">Markdown中的一些技巧</a>
 </li>
                                     
-<li >
-    <a href="../../../../Tools/git_command/">git command</a>
+<li>
+    <a href="../../../../Tools/git_command/" class="dropdown-item">git command</a>
 </li>
                                     
-<li >
-    <a href="../../../../Tools/JupyterNotebook/">局域网访问Jupyter Notebook</a>
+<li>
+    <a href="../../../../Tools/JupyterNotebook/" class="dropdown-item">局域网访问Jupyter Notebook</a>
 </li>
                                     
-<li >
-    <a href="../../../../Tools/PlantUML/">UML</a>
+<li>
+    <a href="../../../../Tools/PlantUML/" class="dropdown-item">UML</a>
 </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#">Vincross</a>
+    <a href="#" class="dropdown-item">Vincross</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../../../vincross/mindsdk_comlile_install/">mindsdk</a>
+<li>
+    <a href="../../../../vincross/mindsdk_comlile_install/" class="dropdown-item">mindsdk</a>
 </li>
     </ul>
   </li>
@@ -1076,9 +1075,9 @@
                             </li>
                         </ul>
 
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
@@ -1088,14 +1087,29 @@
         </div>
 
         <div class="container">
-                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#linux">Linux内核编译</a></li>
-    </ul>
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#linux" class="nav-link">Linux内核编译</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
 </div></div>
-                <div class="col-md-9" role="main">
+                    <div class="col-md-9" role="main">
 
 <h1 id="linux">Linux内核编译<a class="headerlink" href="#linux" title="Permanent link">#</a></h1></div>
+            </div>
         </div>
 
         <footer class="col-md-12">
@@ -1110,21 +1124,21 @@
         <script src="../../../../js/base.js" defer></script>
         <script src="../../../../search/main.js" defer></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-    <div class="modal-dialog">
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
             </div>
             <div class="modal-body">
                 <p>
                     From here you can search these documents. Enter
                     your search terms below.
                 </p>
-                <form role="form">
+                <form>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
                 </form>
                 <div id="mkdocs-search-results"></div>
@@ -1133,12 +1147,12 @@
             </div>
         </div>
     </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
             </div>
             <div class="modal-body">
               <table class="table">
