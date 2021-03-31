@@ -60,4 +60,4 @@ const osThreadAttr_t defaultTask_attributes = {
 
 在调试模式下，打开实时变量观察器，可以看到任务栈顶指针的变化（理论上应该能够观察到栈顶指针的变化，但是实际测试发现IDE监测变化效果并不好，看不到栈顶指针的变化）。
 
-![](../../../assets\images\STM32\FreeRTOS\freertos_stack.png)
+![](../../../assets/images/STM32/FreeRTOS/freertos_stack.png)
