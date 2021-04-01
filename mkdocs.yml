@@ -76,6 +76,7 @@ nav:
           - 中断管理: Embedded System/STM32/freertos/freertos_interrupt_manage.md
           - 任务栈: Embedded System/STM32/freertos/freertos_task_stack.md
           - 互斥体: Embedded System/STM32/freertos/mutexes.md
+          - 任务通知: Embedded System/STM32/freertos/freertos_task_notify.md
         - STM32外设:
           - Systick Timer: Embedded System/STM32/peripheral/systick_timer.md
           - STM32串口编程之中断方式: Embedded System/STM32/peripheral/stm32_hal_uart.md
