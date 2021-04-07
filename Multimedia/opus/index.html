@@ -1125,7 +1125,9 @@
 <h1 id="opus">OPUS音频编解码库<a class="headerlink" href="#opus" title="Permanent link">#</a></h1>
 <h2 id="1">1.基本概念<a class="headerlink" href="#1" title="Permanent link">#</a></h2>
 <h3 id="11-frame-size">1.1 Frame Size<a class="headerlink" href="#11-frame-size" title="Permanent link">#</a></h3>
-<p>每通道的采样数，音频的帧以时间为单位，在OPUS中Frame size必须是2.5, 5, 10, 20, 40 or 60 ms</p>
+<p>每通道的采样数，音频的帧以时间为单位，在OPUS中Frame size必须是2.5, 5, 10, 20, 40 or 60 ms，例如：48 kHz采样率，每秒的采样数是48K，那么Frame size的允许值为2.5ms*48=120, 240, 480, 960, 1920, and 2880. </p>
+<p>注意：此处说的采样数，指的就是每秒的采样样本数，并不是每秒能采多少个字节。</p>
+<p><a href="https://opus-codec.org/docs/opus_api-1.3.1/group__opus__encoder.html#gad2d6bf6a9ffb6674879d7605ed073e25">参考链接</a></p>
 <h3 id="12">1.2 小端模式<a class="headerlink" href="#12" title="Permanent link">#</a></h3>
 <p><img alt="int_store" src="../../assets/images/int_store.png" /></p>
 <p>如上图所示，一个整数0x11223344，在内存中、写入文件中、从文件中读出，从字节的角度看，其存储方式是一样的。</p>

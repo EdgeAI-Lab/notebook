@@ -1108,7 +1108,6 @@
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#stm32">STM32调试记录</a></li>
             <li><a href="#drv_uartc-0">drv_uart.c 能够触发串口接收中断，但是收到的数据长度为0</a></li>
-            <li><a href="#_1">任务切换时崩溃</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -1126,10 +1125,7 @@
         HAL_UART_Receive_DMA(&amp;huart2, usart2_rx_buff, USART2_RX_BUFFER_SIZE);
     }
 }
-</code></pre>
-
-<h2 id="_1">任务切换时崩溃<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<p>通常是因为任务栈的空间不够，跟调用者任务和被调用者任务的栈大小都有关系。</p></div>
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">
