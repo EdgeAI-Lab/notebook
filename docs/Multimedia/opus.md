@@ -3,8 +3,11 @@
 ## 1.基本概念
 
 ### 1.1 Frame Size
-每通道的采样数，音频的帧以时间为单位，在OPUS中Frame size必须是2.5, 5, 10, 20, 40 or 60 ms
+每通道的采样数，音频的帧以时间为单位，在OPUS中Frame size必须是2.5, 5, 10, 20, 40 or 60 ms，例如：48 kHz采样率，每秒的采样数是48K，那么Frame size的允许值为2.5ms*48=120, 240, 480, 960, 1920, and 2880. 
 
+注意：此处说的采样数，指的就是每秒的采样样本数，并不是每秒能采多少个字节。
+
+[参考链接](https://opus-codec.org/docs/opus_api-1.3.1/group__opus__encoder.html#gad2d6bf6a9ffb6674879d7605ed073e25)
 
 ### 1.2 小端模式
 

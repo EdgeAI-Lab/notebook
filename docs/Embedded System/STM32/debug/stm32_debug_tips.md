@@ -18,7 +18,3 @@ void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
 	}
 }
 ```
-
-## 任务切换时崩溃
-
-通常是因为任务栈的空间不够，跟调用者任务和被调用者任务的栈大小都有关系。
