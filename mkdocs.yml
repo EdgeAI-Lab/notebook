@@ -240,6 +240,8 @@ nav:
       - Hardware:
         - 电池工作时间的计算: Hardware/battery_work_time.md
         - USB-PD: Hardware/ubs_pd.md
+        - TPS65987D: Hardware/TPS65987D.md
+        - MAX17261电量计: 
 
       - ESP8266: Embedded System/ESP8266.md
 
