@@ -1127,11 +1127,60 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#develop-stm32-using-vscode">Develop STM32 using VSCode</a></li>
+            <li><a href="#1-windows">1. Windows系统环境配置</a></li>
+            <li><a href="#11-make">1.1 make</a></li>
+            <li><a href="#12-debug">1.2 debug</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="develop-stm32-using-vscode">Develop STM32 using VSCode<a class="headerlink" href="#develop-stm32-using-vscode" title="Permanent link">#</a></h1></div>
+<h1 id="develop-stm32-using-vscode">Develop STM32 using VSCode<a class="headerlink" href="#develop-stm32-using-vscode" title="Permanent link">#</a></h1>
+<p>可以通过STM32CubeMX生成Makefile项目，，也可以使用CMake从源码自己构建项目，编译之后，使用VSCode + VSCode插件cortex-debug + OpenOCD进行调试。</p>
+<p>这个过程中最麻烦的就是环境配置，该环境配置在Linux系统中较为容易，在Windows系统中较为繁琐。</p>
+<h2 id="1-windows">1. Windows系统环境配置<a class="headerlink" href="#1-windows" title="Permanent link">#</a></h2>
+<p>以STM32CubeMX生成的Makefile项目为例。</p>
+<h2 id="11-make">1.1 make<a class="headerlink" href="#11-make" title="Permanent link">#</a></h2>
+<p><a href="https://github.com/xpack-dev-tools/windows-build-tools-xpack/releases/tag/v2.12-20190422">make for windows download</a></p>
+<p>下载后解压，然后将make.exe的路径设置到环境变量PATH中：</p>
+<pre><code>C:\Workspace\STM32\vscode_stm32\Build Tools\2.12-20190422-1053\bin
+</code></pre>
+
+<ul>
+<li>
+<p>重启VSCode使环境变量生效（要将所有打开的VSCode实例都关闭才行）</p>
+</li>
+<li>
+<p>打开VSCode中的命令终端，输入make命令，查看make环境是否设置成功</p>
+</li>
+<li>
+<p>make环境设置成功后，就可以直接编译STM32CubeMX生成的项目</p>
+</li>
+</ul>
+<h2 id="12-debug">1.2 debug<a class="headerlink" href="#12-debug" title="Permanent link">#</a></h2>
+<p>首先需要安装VSCode插件Cortex_Debug和OpenOCD。</p>
+<p><a href="https://github.com/ilg-archived/openocd/releases/tag/v0.10.0-12-20190422">OpenOCD for Windows Download</a></p>
+<p>stlink-v2.cfg文件和stm32f1x.cfg文件由OpenOCD提供，在OpenOCD的scripts文件夹中。</p>
+<p>还需要一个MCU的SVD(System View Description format)文件，<a href="https://github.com/posborne/cmsis-svd">STM32 SVD Download</a></p>
+<p>然后在 launch.json 文件中写入配置：</p>
+<pre><code class="json">{
+    &quot;version&quot;: &quot;0.2.0&quot;,
+    &quot;configurations&quot;: [
+        {
+            &quot;name&quot;: &quot;Cortex debug&quot;,
+            &quot;type&quot;: &quot;cortex-debug&quot;,
+            &quot;request&quot;: &quot;launch&quot;,
+            &quot;servertype&quot;: &quot;openocd&quot;,
+            &quot;cwd&quot;: &quot;${workspaceFolder}&quot;,
+            &quot;executable&quot;: &quot;build/test_debug.elf&quot;,
+            &quot;svdFile&quot;: &quot;.vscode/STM32F103xx.svd&quot;,
+            &quot;configFiles&quot;: [
+                &quot;C:/Workspace/STM32/vscode_stm32/OpenOCD/0.10.0-12-20190422-2015/scripts/interface/stlink-v2.cfg&quot;,
+                &quot;.vscode/stm32f1x.cfg&quot;
+            ],
+        },
+    ]
+}
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">
