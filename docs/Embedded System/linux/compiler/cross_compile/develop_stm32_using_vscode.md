@@ -57,6 +57,7 @@ stlink-v2.cfg文件和stm32f1x.cfg文件由OpenOCD提供，在OpenOCD的scripts�
 }
 ```
 
+配置完成之后，点击 F5 键进入调试模式。
 
 
 
