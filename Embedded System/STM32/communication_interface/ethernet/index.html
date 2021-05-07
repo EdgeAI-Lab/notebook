@@ -380,6 +380,10 @@
 <li class="active">
     <a href="./">以太网</a>
 </li>
+            
+<li >
+    <a href="../CAN_bus/">CAN总线</a>
+</li>
     </ul>
   </li>
                                     
@@ -430,6 +434,15 @@
 </li>
     </ul>
   </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">STM8 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../../STM8/adc/">ADC</a>
+</li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -1142,7 +1155,7 @@
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../../motor_control/torque/">
+                                <a rel="prev" href="../CAN_bus/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -1157,6 +1170,7 @@
         <li class="main active"><a href="#_1">以太网接口</a></li>
             <li><a href="#1-osi-and-tcpip-model">1. OSI and TCP/IP Model</a></li>
             <li><a href="#2-mac-and-phy">2. MAC and PHY</a></li>
+            <li><a href="#3-phy">3. 常用的PHY芯片</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -1180,14 +1194,13 @@
 </ul>
 <p><img alt="" src="../../../../assets/images/communication_interface/no_in.png" /></p>
 <p>一般MAC层和PHY层都是由专门的硬件芯片来实现的，TCP/IP协议栈则是由软件实现的，比如lwIP。</p>
+<h2 id="3-phy">3. 常用的PHY芯片<a class="headerlink" href="#3-phy" title="Permanent link">#</a></h2>
 <ul>
-<li>
-<p>常用的PHY芯片</p>
-</li>
-<li>
-<p>LAN8742A: Small Footprint RMII 10/100 Ethernet Transceiver</p>
-</li>
-</ul></div>
+<li>LAN8742A: Small Footprint RMII 10/100 Ethernet Transceiver</li>
+<li>DP83848-EP: Enhanced Product PHYTER extreme temperature single port 10/100 Mb/s Ethernet physical layer</li>
+<li>RTL8211F-CG: Highly Integrated 10/100/1000m Ethernet Transceiver</li>
+</ul>
+<p>一般MCU使用10/100M PHY芯片，Cortex-A核的CPU使用10/100/1000M PHY芯片。</p></div>
         </div>
 
         <footer class="col-md-12">
