@@ -26,6 +26,10 @@ MAC和PHY的组合一般有三种形式：
 
 一般MAC层和PHY层都是由专门的硬件芯片来实现的，TCP/IP协议栈则是由软件实现的，比如lwIP。
 
-* 常用的PHY芯片
+## 3. 常用的PHY芯片
 
 * LAN8742A: Small Footprint RMII 10/100 Ethernet Transceiver
+* DP83848-EP: Enhanced Product PHYTER extreme temperature single port 10/100 Mb/s Ethernet physical layer
+* RTL8211F-CG: Highly Integrated 10/100/1000m Ethernet Transceiver
+
+一般MCU使用10/100M PHY芯片，Cortex-A核的CPU使用10/100/1000M PHY芯片。
