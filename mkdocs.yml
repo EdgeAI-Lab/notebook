@@ -53,6 +53,7 @@ nav:
 
     - STM32:
         - Application:
+          - 自定义通信协议: Embedded System/STM32/application/protocal.md
           - STM32 initcall机制-Keil: Embedded System/STM32/application/stm32_initcall_keil.md
           - STM32 initcall机制-GCC: Embedded System/STM32/application/stm32_initcall_gcc.md
           - Flash磨损均衡算法: Embedded System/STM32/application/stm32_flash_erase_leveling.md
