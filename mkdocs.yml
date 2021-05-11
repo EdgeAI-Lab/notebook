@@ -230,8 +230,11 @@ nav:
 
       - Python:
         - Django: Python/python_nginx_uwsgi_django.md
-        - Python速查: Python/python_tips.md
-        - matplotlib使用: Python/matplotlib.md
+        - Python多线程: Python/python_thread.md
+        - Python串口操作: Python/python_uart.md
+        - matplotlib: 
+          - matplotlib基础: Python/matplotlib/matplotlib_base.md
+          - matplotlib子图: Python/matplotlib/matplotlib_subplot.md
         - 三角函数: Python/python_trigonometric.md
         - 录音与播放: Python/python_record_play.md  
         - Python代码片段: Python/snippet.md

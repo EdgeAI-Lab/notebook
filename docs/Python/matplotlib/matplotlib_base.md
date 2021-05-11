@@ -1,4 +1,4 @@
-# matplotlib库使用指南
+# matplotlib基础
 
 ## 1.画图基础
 
