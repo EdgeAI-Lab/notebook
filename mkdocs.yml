@@ -61,6 +61,7 @@ nav:
       
         - Master:
           - newlib与可重入: Embedded System/STM32/master/newlib_reentrant.md
+          - 如何评价MCU的性能: Embedded System/STM32/master/mcu_performance.md
           - STM32的三种启动方式: Embedded System/STM32/master/stm32_boot_configure.md
           - STM32在SRAM中运行代码: Embedded System/STM32/master/stm32_run_code_in_ram.md
           - STM32的启动流程: Embedded System/STM32/master/stm32_boot.md
@@ -232,6 +233,7 @@ nav:
         - Django: Python/python_nginx_uwsgi_django.md
         - Python多线程: Python/python_thread.md
         - Python串口操作: Python/python_uart.md
+        - Python数据类型转换: Python/data_type_conversion.md
         - matplotlib: 
           - matplotlib基础: Python/matplotlib/matplotlib_base.md
           - matplotlib子图: Python/matplotlib/matplotlib_subplot.md
