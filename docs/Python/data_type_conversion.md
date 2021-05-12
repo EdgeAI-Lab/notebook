@@ -6,7 +6,7 @@
 
 * 使用 struct 软件包
 
-[struct文档](https://docs.python.org/3/library/struct.html)
+[struct文档，其中有数据类型表](https://docs.python.org/3/library/struct.html)
 
 ```python
 import struct
@@ -15,6 +15,9 @@ import struct
 # 将会把1转换成 b'\x01\x00\x00\x00'
 struct.pack("i",1)
 
+# 将一个字节数组转换成一个指signed int 类型的数字
+bs=bytes([0x01,0x00,0x00,0x00])
+struct.unpack("i",bs)
 ```
 
 
