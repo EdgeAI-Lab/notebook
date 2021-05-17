@@ -1194,9 +1194,8 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#develop-stm32-using-vscode">Develop STM32 using VSCode</a></li>
-            <li><a href="#1-windows">1. Windows系统环境配置</a></li>
-            <li><a href="#11-make">1.1 make</a></li>
-            <li><a href="#12-debug">1.2 debug</a></li>
+            <li><a href="#1windows">1.Windows系统环境配置</a></li>
+            <li><a href="#2debug">2.Debug</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -1204,30 +1203,40 @@
 <h1 id="develop-stm32-using-vscode">Develop STM32 using VSCode<a class="headerlink" href="#develop-stm32-using-vscode" title="Permanent link">#</a></h1>
 <p>可以通过STM32CubeMX生成Makefile项目，，也可以使用CMake从源码自己构建项目，编译之后，使用VSCode + VSCode插件cortex-debug + OpenOCD进行调试。</p>
 <p>这个过程中最麻烦的就是环境配置，该环境配置在Linux系统中较为容易，在Windows系统中较为繁琐。</p>
-<h2 id="1-windows">1. Windows系统环境配置<a class="headerlink" href="#1-windows" title="Permanent link">#</a></h2>
-<p>以STM32CubeMX生成的Makefile项目为例。</p>
-<h2 id="11-make">1.1 make<a class="headerlink" href="#11-make" title="Permanent link">#</a></h2>
-<p><a href="https://github.com/xpack-dev-tools/windows-build-tools-xpack/releases/tag/v2.12-20190422">make for windows download</a></p>
-<p>下载后解压，然后将make.exe的路径设置到环境变量PATH中：</p>
-<pre><code>C:\Workspace\STM32\vscode_stm32\Build Tools\2.12-20190422-1053\bin
-</code></pre>
-
+<h2 id="1windows">1.Windows系统环境配置<a class="headerlink" href="#1windows" title="Permanent link">#</a></h2>
+<p>本文以STM32CubeMX生成的Makefile项目为例。所以首先你需要使用STM32CubeMX生成一个Makefile项目。编译这个Makefile项目，需要两个工具：</p>
 <ul>
 <li>
-<p>重启VSCode使环境变量生效（要将所有打开的VSCode实例都关闭才行）</p>
+<p><a href="https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads">ARM交叉编译工具链</a></p>
 </li>
 <li>
-<p>打开VSCode中的命令终端，输入make命令，查看make环境是否设置成功</p>
-</li>
-<li>
-<p>make环境设置成功后，就可以直接编译STM32CubeMX生成的项目</p>
+<p><a href="https://github.com/xpack-dev-tools/windows-build-tools-xpack/releases/tag/v2.12-20190422">make</a></p>
 </li>
 </ul>
-<h2 id="12-debug">1.2 debug<a class="headerlink" href="#12-debug" title="Permanent link">#</a></h2>
-<p>首先需要安装VSCode插件Cortex_Debug和OpenOCD。</p>
-<p><a href="https://github.com/ilg-archived/openocd/releases/tag/v0.10.0-12-20190422">OpenOCD for Windows Download</a></p>
-<p>stlink-v2.cfg文件和stm32f1x.cfg文件由OpenOCD提供，在OpenOCD的scripts文件夹中。</p>
-<p>还需要一个MCU的SVD(System View Description format)文件，<a href="https://github.com/posborne/cmsis-svd">STM32 SVD Download</a></p>
+<p>下载完成后解压，并将其配置到Windows环境变量PATH中，以便于全局访问。</p>
+<pre><code># cross compiler toolchain
+C:\Workspace\STM32\vscode_stm32\gcc-arm-none-eabi-10-2020-q4-major\bin
+
+# make
+C:\Workspace\STM32\vscode_stm32\Build Tools\2.12-20190422-1053\bin
+</code></pre>
+
+<p><strong>注意</strong>：如果你之前打开了VSCode，那么请重启VSCode使环境变量生效（要将所有打开的VSCode实例都关闭才行），然后打开VSCode中的命令终端，输入make命令，如果项目能够被正确编译，说明环境配置是正确的。</p>
+<p>编译完成之后会生成elf可执行文件，改文件包含debug信息，可用于仿真调试。</p>
+<h2 id="2debug">2.Debug<a class="headerlink" href="#2debug" title="Permanent link">#</a></h2>
+<p>仿真调试需要两个工具：</p>
+<ul>
+<li>VSCode插件Cortex_Debug</li>
+<li><a href="https://github.com/ilg-archived/openocd/releases/tag/v0.10.0-12-20190422">OpenOCD</a></li>
+</ul>
+<p>还需要三个配置文件：</p>
+<ul>
+<li>stlink-v2.cfg</li>
+<li>stm32f1x.cfg</li>
+<li>STM32Fxxxxx.svd</li>
+</ul>
+<p>stlink-v2.cfg文件和stm32f1x.cfg文件由OpenOCD提供，在OpenOCD的scripts文件夹中。如果你使用JLink，scripts文件夹中也有相应的文件。</p>
+<p>SVD(System View Description format)文件可以从这里下载 <a href="https://github.com/posborne/cmsis-svd">STM32 SVD Download</a>。</p>
 <p>然后在 launch.json 文件中写入配置：</p>
 <pre><code class="json">{
     &quot;version&quot;: &quot;0.2.0&quot;,
