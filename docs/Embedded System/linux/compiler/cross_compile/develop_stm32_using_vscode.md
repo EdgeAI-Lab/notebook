@@ -4,35 +4,44 @@
 
 这个过程中最麻烦的就是环境配置，该环境配置在Linux系统中较为容易，在Windows系统中较为繁琐。
 
-## 1. Windows系统环境配置
+## 1.Windows系统环境配置
 
-以STM32CubeMX生成的Makefile项目为例。
+本文以STM32CubeMX生成的Makefile项目为例。所以首先你需要使用STM32CubeMX生成一个Makefile项目。编译这个Makefile项目，需要两个工具：
 
-## 1.1 make
+* [ARM交叉编译工具链](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads)
 
-[make for windows download](https://github.com/xpack-dev-tools/windows-build-tools-xpack/releases/tag/v2.12-20190422)
+* [make](https://github.com/xpack-dev-tools/windows-build-tools-xpack/releases/tag/v2.12-20190422)
 
-下载后解压，然后将make.exe的路径设置到环境变量PATH中：
+下载完成后解压，并将其配置到Windows环境变量PATH中，以便于全局访问。
 
 ```
+# cross compiler toolchain
+C:\Workspace\STM32\vscode_stm32\gcc-arm-none-eabi-10-2020-q4-major\bin
+
+# make
 C:\Workspace\STM32\vscode_stm32\Build Tools\2.12-20190422-1053\bin
 ```
 
-* 重启VSCode使环境变量生效（要将所有打开的VSCode实例都关闭才行）
+**注意**：如果你之前打开了VSCode，那么请重启VSCode使环境变量生效（要将所有打开的VSCode实例都关闭才行），然后打开VSCode中的命令终端，输入make命令，如果项目能够被正确编译，说明环境配置是正确的。
 
-* 打开VSCode中的命令终端，输入make命令，查看make环境是否设置成功
+编译完成之后会生成elf可执行文件，改文件包含debug信息，可用于仿真调试。
 
-* make环境设置成功后，就可以直接编译STM32CubeMX生成的项目
+## 2.Debug
 
-## 1.2 debug
+仿真调试需要两个工具：
 
-首先需要安装VSCode插件Cortex_Debug和OpenOCD。
+* VSCode插件Cortex_Debug
+* [OpenOCD](https://github.com/ilg-archived/openocd/releases/tag/v0.10.0-12-20190422)
 
-[OpenOCD for Windows Download](https://github.com/ilg-archived/openocd/releases/tag/v0.10.0-12-20190422)
+还需要三个配置文件：
 
-stlink-v2.cfg文件和stm32f1x.cfg文件由OpenOCD提供，在OpenOCD的scripts文件夹中。
+* stlink-v2.cfg
+* stm32f1x.cfg
+* STM32Fxxxxx.svd
 
-还需要一个MCU的SVD(System View Description format)文件，[STM32 SVD Download](https://github.com/posborne/cmsis-svd)
+stlink-v2.cfg文件和stm32f1x.cfg文件由OpenOCD提供，在OpenOCD的scripts文件夹中。如果你使用JLink，scripts文件夹中也有相应的文件。
+
+SVD(System View Description format)文件可以从这里下载 [STM32 SVD Download](https://github.com/posborne/cmsis-svd)。
 
 然后在 launch.json 文件中写入配置：
 
