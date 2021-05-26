@@ -296,9 +296,6 @@ nav:
       - 局域网访问Jupyter Notebook: Tools/JupyterNotebook.md
       - UML: Tools/PlantUML.md
 
-      - Vincross:
-        - mindsdk: vincross/mindsdk_comlile_install.md
-
 # Copyright
 copyright: 'Copyright &copy; 2019 - 2020 Frank'
     
