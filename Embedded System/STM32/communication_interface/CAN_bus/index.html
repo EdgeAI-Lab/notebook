@@ -1176,7 +1176,7 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../../../vincross/mindsdk_comlile_install/">mindsdk</a>
+    <a href="../../../../vincross/mindsdk_comlile_install.md">mindsdk</a>
 </li>
     </ul>
   </li>
@@ -1209,16 +1209,71 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#can">CAN总线</a></li>
+            <li><a href="#1can">1.CAN总线协议模型</a></li>
+            <li><a href="#2can-node">2.CAN Node</a></li>
+            <li><a href="#3can-physical-layer">3.CAN physical layer</a></li>
+            <li><a href="#4">4.数据链路层</a></li>
+            <li><a href="#_1">参考链接</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
 <h1 id="can">CAN总线<a class="headerlink" href="#can" title="Permanent link">#</a></h1>
-<p>从 OSI 网络模型的角度来看同， 现场总线网络一般只实现了第 1 层（ 物理层）、第 2 层（数据链路层）、第 7 层（应用层）。 因为现场总线通常只包括一个网段， 因此不需要第 3 层（传输层） 和第 4 层（ 网络层），也不需要第 5 层（会话层）第 6 层（描述层）的作用。</p>
-<p>在OSI模型中，CAN标准、CANopen协议之间的关系如下图所示：</p>
-<p><img alt="" src="../../../../assets/images/STM32/can/can_osi.jpg" /></p>
-<p>CAN（ Controller Area Network） 现场总线仅仅定义了第 1 层、 第 2 层（ 见 ISO11898 标准）； 实际设计中，这两层完全由硬件实现，设计人员无需再为此开发相关软件（ Software）或固件（ Firmware）。同时， CAN 只定义物理层和数据链路层， 没有规定应用层， 本身并不完整， 需要一个高层协议来定义CAN 报文中的 11/29 位标识符、 8 字节数据的使用。 而且， 基于 CAN 总线的工业自动化应用中， 越来越需要一个开放的、 标准化的高层协议。这个协议支持各种 CAN 厂商设备的互用性、 互换性， 能够实现在 CAN网络中提供标准的、统一的系统通讯模式，提供设备功能描述方式，执行网络管理功能。</p>
-<p>基于 CAN 的高层协议主要有CAL 协议和基于 CAL 协议扩展的 CANopen 协议。 CANopen协议是 CAN-in-Automation(CiA)定义的标准之一， 并且在发布后不久就获得了广泛的承认。 尤其是在欧洲，CANopen 协议被认为是在基于 CAN 的工业系统中占领导地位的标准。大多数重要的设备类型，例如数字和模拟的输入输出模块、驱动设备、操作设备、控制器、可编程控制器或编码器，都在称为“设备描述”的协议中进行描述；“设备描述” 定义了不同类型的标准设备及其相应的功能。 依靠 CANopen 协议的支持，可以对不同厂商的设备通过总线进行配置。</p></div>
+<p>CAN总线发展至今历经三代：</p>
+<ul>
+<li>Classic CAN（经典CAN，CAN specification 2.0A标准帧/2.0B扩展帧）</li>
+<li>CAN FD（相比于经典CAN，传输速度提高，有效载荷增大）</li>
+<li>CAN XL（第三代CAN，正在研发中，2018年底CiA开始研发CAN XL）</li>
+</ul>
+<p>现在最常见的还是经典CAN，下面是关于经典CAN的一些细节。</p>
+<h2 id="1can">1.CAN总线协议模型<a class="headerlink" href="#1can" title="Permanent link">#</a></h2>
+<p><img alt="" src="../img/CAN/CAN_OSI.png" /></p>
+<p><a href="https://www.can-cia.org/en/can-knowledge/can/systemdesign-can-physicallayer/">image source</a></p>
+<ul>
+<li>
+<p>CAN总线协议只规定了<strong>物理层</strong>和<strong>数据链路层</strong>。这个是ISO国际标准，从下图中可以看到每层具体是属于哪个标准。</p>
+</li>
+<li>
+<p>CAN总线协议的应用层协议由<a href="https://www.can-cia.org/">CiA(CAN in Automation)</a>组织负责制定，目前使用最广泛的是CANopen协议。</p>
+</li>
+<li>
+<p>CAN总线一般只实现了第 1 层（ 物理层）、第 2 层（数据链路层）、第 7 层（应用层）。 因为现场总线通常只包括一个网段， 因此不需要第 3 层（传输层） 和第 4 层（ 网络层），也不需要第 5 层（会话层）第 6 层（描述层）的作用。</p>
+</li>
+<li>
+<p>基于CAN的高层协议主要有CAL协议和基于CAL协议扩展的CANopen协议。CANopen协议是 CAN-in-Automation(CiA)定义的标准之一，并且在发布后不久就获得了广泛的承认。尤其是在欧洲，CANopen协议被认为是在基于CAN的工业系统中占领导地位的标准。大多数重要的设备类型，例如数字和模拟的输入输出模块、驱动设备、操作设备、控制器、可编程控制器或编码器，都在称为“设备描述”的协议中进行描述；“设备描述” 定义了不同类型的标准设备及其相应的功能。 依靠 CANopen 协议的支持，可以对不同厂商的设备通过总线进行配置。</p>
+</li>
+</ul>
+<h2 id="2can-node">2.CAN Node<a class="headerlink" href="#2can-node" title="Permanent link">#</a></h2>
+<p>在实际应用中，CAN控制器（CAN控制器实现了数据链路层的全部功能以及物理层的位定时功能）一般被集成在MCU/MPU中，CAN收发器（物理层）是一个单独集成芯片，比如：PCA82C250。</p>
+<p><img alt="" src="../img/CAN/CAN_Node.png" /></p>
+<h2 id="3can-physical-layer">3.CAN physical layer<a class="headerlink" href="#3can-physical-layer" title="Permanent link">#</a></h2>
+<p>CAN在物理层又分为高速CAN、低速CAN和单线CAN：</p>
+<h3 id="31-iso-11898-2-can">3.1 ISO 11898-2 定义了高速CAN<a class="headerlink" href="#31-iso-11898-2-can" title="Permanent link">#</a></h3>
+<p><img alt="" src="../img/CAN/high_speed_can.png" /></p>
+<p>高速CAN总线在CANH和CANL之间串接120Ω的电阻</p>
+<h3 id="32-iso-11898-3-cancan">3.2 ISO 11898-3 定义了低速CAN，又被称为低速容错CAN<a class="headerlink" href="#32-iso-11898-3-cancan" title="Permanent link">#</a></h3>
+<p><img alt="" src="../img/CAN/low_speed_can.png" /></p>
+<p>低速CAN总线在CANH和CANL上分别串接2.2kΩ的电阻</p>
+<h3 id="33-sae-j2411-can">3.3 SAE J2411 定义了单线CAN<a class="headerlink" href="#33-sae-j2411-can" title="Permanent link">#</a></h3>
+<ul>
+<li>显性电平为4V（接收时高于1.8-2.2V就会被判为显性），隐性电平为0V</li>
+<li>正常通讯模式波特率为33.333Kbps，高速通讯模式的波特率为83.333Kbps</li>
+</ul>
+<h2 id="4">4.数据链路层<a class="headerlink" href="#4" title="Permanent link">#</a></h2>
+<p>CAN网络可以配置为使用两种不同的消息（或“帧”）格式：标准或基本帧格式（在CAN 2.0A和CAN 2.0B中描述）和扩展帧格式（仅由CAN 2.0B描述）。</p>
+<p>两种格式之间的唯一区别是，“CAN基本帧”支持标识符长度为11位，“CAN扩展帧”支持标识符长度为29位，由11位标识符（“基本标识符”）和一个18位扩展（“标识符扩展”）组成。</p>
+<p>CAN基本帧格式和CAN扩展帧格式之间的是通过使用IDE位进行区分的，该位在传输显性时为11位帧，而在传输隐性时使用29位帧。支持扩展帧格式消息的CAN控制器也能够发送和接收CAN基本帧格式信息。所有的帧都以开始位（SOF）作为信息传输的起始。</p>
+<p>CAN有4种帧类型：</p>
+<ul>
+<li>数据帧：包含用于传输的节点数据的帧</li>
+<li>远程帧：请求传输特定标识符的帧</li>
+<li>错误帧：由任何检测到错误的节点发送的帧</li>
+<li>过载帧：在数据帧或远程帧之间插入延迟的帧</li>
+</ul>
+<h3 id="41">4.1 数据帧<a class="headerlink" href="#41" title="Permanent link">#</a></h3>
+<p><a href="https://zh.wikipedia.org/wiki/%E6%8E%A7%E5%88%B6%E5%99%A8%E5%8D%80%E5%9F%9F%E7%B6%B2%E8%B7%AF">请参考维基百科 - 控制器區域網路</a></p>
+<h2 id="_1">参考链接<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<p><a href="https://www.can-cia.org/en/can-knowledge/">CAN Knowledge</a></p></div>
         </div>
 
         <footer class="col-md-12">
