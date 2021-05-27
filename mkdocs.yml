@@ -92,8 +92,8 @@ nav:
           - SPI总线: Embedded System/STM32/communication_interface/spi_bus.md
           - 以太网: Embedded System/STM32/communication_interface/ethernet.md
           - CAN总线: 
-            - CAN Bus: Embedded System/STM32/communication_interface/CAN_bus.md
-            - STM32 CAN接口: Embedded System/STM32/communication_interface/STM32_CAN_Application.md
+            - CAN Bus: Embedded System/STM32/communication_interface/CAN/CAN_bus.md
+            - STM32 CAN接口: Embedded System/STM32/communication_interface/CAN/STM32_CAN_Application.md
             - CANopen: Embedded System/STM32/communication_interface/CAN/CANopen.md
         - Motor Control: 
           - 转矩: Embedded System/STM32/motor_control/torque.md
