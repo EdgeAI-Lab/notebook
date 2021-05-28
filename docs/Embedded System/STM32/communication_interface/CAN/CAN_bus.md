@@ -10,7 +10,7 @@ CAN总线发展至今历经三代：
 
 ## 1.CAN总线协议模型
 
-![](./img/CAN/CAN_OSI.png)
+![](./img/CAN_OSI.png)
 
 [image source](https://www.can-cia.org/en/can-knowledge/can/systemdesign-can-physicallayer/)
 
@@ -27,7 +27,7 @@ CAN总线发展至今历经三代：
 
 在实际应用中，CAN控制器（CAN控制器实现了数据链路层的全部功能以及物理层的位定时功能）一般被集成在MCU/MPU中，CAN收发器（物理层）是一个单独集成芯片，比如：PCA82C250。
 
-![](./img/CAN/CAN_Node.png)
+![](./img/CAN_Node.png)
 
 
 ## 3.CAN physical layer
@@ -36,13 +36,17 @@ CAN在物理层又分为高速CAN、低速CAN和单线CAN：
 
 ### 3.1 ISO 11898-2 定义了高速CAN
 
-![](./img/CAN/high_speed_can.png)
+* recessive 隐性，逻辑1
+* dominant 显性，逻辑0
+* 当CAN总线上A节点发出显性电平，节点B发出隐性电平，那么CAN总线为显性电平
+
+![](./img/high_speed_can.png)
 
 高速CAN总线在CANH和CANL之间串接120Ω的电阻
 
 ### 3.2 ISO 11898-3 定义了低速CAN，又被称为低速容错CAN
 
-![](./img/CAN/low_speed_can.png)
+![](./img/low_speed_can.png)
 
 低速CAN总线在CANH和CANL上分别串接2.2kΩ的电阻
 
@@ -67,6 +71,8 @@ CAN有4种帧类型：
 * 错误帧：由任何检测到错误的节点发送的帧
 * 过载帧：在数据帧或远程帧之间插入延迟的帧
 
+
+远程帧的应用场景是：假设有A和B两个CAN节点，A节点想要获取B节点的数据，那么A节点可以向B节点发送一个远程帧（远程帧中有B节点的ID，没有数据场，DLC字段表示所请求的消息的数据长度，而不是发送的数据长度），B节点收到这个远程帧后，就会向A节点返回数据。
 
 ### 4.1 数据帧
 
