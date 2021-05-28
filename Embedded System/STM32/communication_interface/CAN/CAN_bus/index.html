@@ -1251,7 +1251,7 @@
 </ul>
 <p>现在最常见的还是经典CAN，下面是关于经典CAN的一些细节。</p>
 <h2 id="1can">1.CAN总线协议模型<a class="headerlink" href="#1can" title="Permanent link">#</a></h2>
-<p><img alt="" src="./img/CAN/CAN_OSI.png" /></p>
+<p><img alt="" src="../img/CAN_OSI.png" /></p>
 <p><a href="https://www.can-cia.org/en/can-knowledge/can/systemdesign-can-physicallayer/">image source</a></p>
 <ul>
 <li>
@@ -1269,14 +1269,19 @@
 </ul>
 <h2 id="2can-node">2.CAN Node<a class="headerlink" href="#2can-node" title="Permanent link">#</a></h2>
 <p>在实际应用中，CAN控制器（CAN控制器实现了数据链路层的全部功能以及物理层的位定时功能）一般被集成在MCU/MPU中，CAN收发器（物理层）是一个单独集成芯片，比如：PCA82C250。</p>
-<p><img alt="" src="./img/CAN/CAN_Node.png" /></p>
+<p><img alt="" src="../img/CAN_Node.png" /></p>
 <h2 id="3can-physical-layer">3.CAN physical layer<a class="headerlink" href="#3can-physical-layer" title="Permanent link">#</a></h2>
 <p>CAN在物理层又分为高速CAN、低速CAN和单线CAN：</p>
 <h3 id="31-iso-11898-2-can">3.1 ISO 11898-2 定义了高速CAN<a class="headerlink" href="#31-iso-11898-2-can" title="Permanent link">#</a></h3>
-<p><img alt="" src="./img/CAN/high_speed_can.png" /></p>
+<ul>
+<li>recessive 隐性，逻辑1</li>
+<li>dominant 显性，逻辑0</li>
+<li>当CAN总线上A节点发出显性电平，节点B发出隐性电平，那么CAN总线为显性电平</li>
+</ul>
+<p><img alt="" src="../img/high_speed_can.png" /></p>
 <p>高速CAN总线在CANH和CANL之间串接120Ω的电阻</p>
 <h3 id="32-iso-11898-3-cancan">3.2 ISO 11898-3 定义了低速CAN，又被称为低速容错CAN<a class="headerlink" href="#32-iso-11898-3-cancan" title="Permanent link">#</a></h3>
-<p><img alt="" src="./img/CAN/low_speed_can.png" /></p>
+<p><img alt="" src="../img/low_speed_can.png" /></p>
 <p>低速CAN总线在CANH和CANL上分别串接2.2kΩ的电阻</p>
 <h3 id="33-sae-j2411-can">3.3 SAE J2411 定义了单线CAN<a class="headerlink" href="#33-sae-j2411-can" title="Permanent link">#</a></h3>
 <ul>
@@ -1294,6 +1299,7 @@
 <li>错误帧：由任何检测到错误的节点发送的帧</li>
 <li>过载帧：在数据帧或远程帧之间插入延迟的帧</li>
 </ul>
+<p>远程帧的应用场景是：假设有A和B两个CAN节点，A节点想要获取B节点的数据，那么A节点可以向B节点发送一个远程帧（远程帧中有B节点的ID，没有数据场，DLC字段表示所请求的消息的数据长度，而不是发送的数据长度），B节点收到这个远程帧后，就会向A节点返回数据。</p>
 <h3 id="41">4.1 数据帧<a class="headerlink" href="#41" title="Permanent link">#</a></h3>
 <p><a href="https://zh.wikipedia.org/wiki/%E6%8E%A7%E5%88%B6%E5%99%A8%E5%8D%80%E5%9F%9F%E7%B6%B2%E8%B7%AF">请参考维基百科 - 控制器區域網路</a></p>
 <h2 id="5-can-canopen">5. CAN应用层 - CANopen<a class="headerlink" href="#5-can-canopen" title="Permanent link">#</a></h2>

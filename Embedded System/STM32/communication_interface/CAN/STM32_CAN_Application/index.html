@@ -1234,6 +1234,7 @@
         <li class="main active"><a href="#stm32-can">STM32 CAN接口</a></li>
             <li><a href="#1-can1master-can-and-can2slave-can">1. CAN1(Master CAN) and CAN2(Slave CAN)</a></li>
             <li><a href="#2-can-filter">2. CAN Filter</a></li>
+            <li><a href="#3-stm32-can">3. STM32 CAN操作</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -1246,7 +1247,32 @@
 <p>部分STM32芯片具有双CAN模块，从整体功能上讲，两个CAN是独立的。但是，两个CAN共用过滤器管理模块，对于STM32芯片来讲，该过滤器控制模块由CAN1统一管理，所以即使只是单独使用CAN2进行收发，也须开启CAN1，否则会因为过滤器未能开启，导致单独使用CAN2时无法收发的情形。</p>
 <h2 id="2-can-filter">2. CAN Filter<a class="headerlink" href="#2-can-filter" title="Permanent link">#</a></h2>
 <p><a href="https://blog.csdn.net/jixiangrurui/article/details/39370027">STM32 CAN过滤器</a></p>
-<h2 id="_1"><a class="headerlink" href="#_1" title="Permanent link">#</a></h2></div>
+<p><a href="https://blog.csdn.net/flydream0/article/details/8148791?utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.baidujs&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.baidujs">STM32 CAN过滤器</a></p>
+<p><a href="https://blog.csdn.net/qq_35480173/article/details/98878309?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-0&amp;spm=1001.2101.3001.4242">STM32 CAN过滤器</a></p>
+<ul>
+<li>
+<p>互联型STM32（比如STM30F407）的bxCAN有28个过滤器，其他类型的STM32（比如STM32F103ZE）的bxCAN有14个过滤器。</p>
+</li>
+<li>
+<p>每一个过滤器都有2个32位的寄存器 CAN_FxR0 和 CAN_FxR1</p>
+</li>
+<li>
+<p>这两个32位的寄存器的位宽是可以配置的</p>
+<blockquote>
+<p>One 32-bit filter for the STDID[10:0], EXTID[17:0], IDE and RTR bits.</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>Two 16-bit filters for the STDID[10:0], RTR, IDE and EXTID[17:15] bits.</p>
+</blockquote>
+<h2 id="3-stm32-can">3. STM32 CAN操作<a class="headerlink" href="#3-stm32-can" title="Permanent link">#</a></h2>
+<ul>
+<li>
+<p>配置CAN</p>
+</li>
+<li></li>
+</ul></div>
         </div>
 
         <footer class="col-md-12">
