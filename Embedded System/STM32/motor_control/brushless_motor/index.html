@@ -1236,6 +1236,7 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#_1">无刷电机</a></li>
+            <li><a href="#6">无感无刷电机6步法</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -1250,7 +1251,20 @@
 <p><a href="https://www.ti.com/product/DRV11873">DRV11873无感6步法</a></p>
 <p><a href="https://ww2.mathworks.cn/campaigns/offers/brushless-dc-motors-introduction.html">Matlab无刷直流电机控制简介</a>
 <a href="https://odriverobotics.com/">ODrive</a>
-<a href="https://github.com/simplefoc">SimpleFOC</a></p></div>
+<a href="https://github.com/simplefoc">SimpleFOC</a></p>
+<h2 id="6">无感无刷电机6步法<a class="headerlink" href="#6" title="Permanent link">#</a></h2>
+<p><a href="http://www.elecfans.com/kongzhijishu/sifuyukongzhi/1293967.html">无感无刷电机6步法</a></p>
+<p>无刷无感直流电机多通过反电势来判断转子位置，但在电机转速为零或很低的情况下，检测不到反电势，必须让电机加速到一定速度才可以通过反电动势检测转子位置。通常用三段式启动法，包括三个步骤：预定位、加速、切换。</p>
+<p>预定位：刚开始的时候转子位置是未知的，而启动前需要准确知道转子位置，因此给电机任意二相通电，把电机转子固定到一个已知位置。例如先给AB通电，再给BC通电，给二相通电比起给一相通电的好处是，避免了转子正好与通电相成90度而不能把转子拉到预定位置。</p>
+<p>加速：加速的方法有恒频升压法、恒压升频法、升压升频法。常用的方法是恒频升压法：通过不断改变占空比和换相时间来使转子加速</p>
+<p>切换：转速达到一定值，可以检测到反电动势的时候，就可以通过切换到正常运行状态，选择切换的方法通常有：</p>
+<p>1.可以检测到电机转速，达到预定转速切换；</p>
+<p>2.设定一个加速时间，超过加速时间后切换；</p>
+<p>3.检测到一定次数的反电动势后切换。</p>
+<p>二．换相时间</p>
+<p>换相时间影响到电机的效率，理论上的最佳换相时间是检测到过零点后30度电角度，但过零点后30度电角度准确时间是多长却是难以知道的，只能通过前几次换相时间来进行推断，推断总会有误差，且程序的执行也是需要时间，因此最佳换相时间算法成了一个关注点。在一些算法中，选择检测到过零点后立即换相，在高速的情况下电机效率损失很小。</p>
+<p>三．闭环控制执行时间</p>
+<p>大多数的应用下用开环控制就足以应付，如无人机，然而需要精确速度控制的情况下，需要加入PID闭环控制，常用的有转速单闭环控制、转速电流双闭环控制，在双闭环控制中，通常内环运行频率高于外环运行频率。</p></div>
         </div>
 
         <footer class="col-md-12">
