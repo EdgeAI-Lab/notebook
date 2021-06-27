@@ -3,18 +3,27 @@
 
 无刷电机没有电刷，分为带霍尔传感器的和不带霍尔传感器的，这里的霍尔传感器主要用来定位转子的位置。
 
+* 无感无刷电机通常只有U V W三条线
+* 有感无刷电机除了U V W三条线外，还有Ha Hb Hc VCC GND五条线，Ha Hb Hc是三个霍尔传感器的输出，VCC和GND是霍尔传感器的电源
+
 无刷电机常用的驱动方法有：
 
 * 6步法，比较简单，但是性能没有FOC好
-* FOC
+* FOC，很多实用DRV8301的方案
 
 
-[DRV11873无感6步法](https://www.ti.com/product/DRV11873)
+[DRV11873无感6步法-只能旋转调速不能换向](https://www.ti.com/product/DRV11873)
+[DRV10974正弦波控制-速度反馈-正反转-调速](https://www.ti.com/product/DRV10974)
+
+
+[淘宝DRV11873](https://detail.tmall.com/item.htm?spm=a230r.1.14.8.19465899HrcncU&id=604320055041&cm_id=140105335569ed55e27b&abbucket=14)
 
 [Matlab无刷直流电机控制简介](https://ww2.mathworks.cn/campaigns/offers/brushless-dc-motors-introduction.html)
 [ODrive](https://odriverobotics.com/)
 [SimpleFOC](https://github.com/simplefoc)
 
+
+[淘宝上也有卖带驱动器的无刷电机](https://item.taobao.com/item.htm?spm=a230r.1.14.35.7466181a9zKHSn&id=532666126398&ns=1&abbucket=14#detail)
 
 ## 无感无刷电机6步法
 
