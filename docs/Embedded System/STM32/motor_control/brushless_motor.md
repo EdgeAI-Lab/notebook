@@ -13,7 +13,8 @@
 
 
 [DRV11873无感6步法-只能旋转调速不能换向](https://www.ti.com/product/DRV11873)
-[DRV10974正弦波控制-速度反馈-正反转-调速](https://www.ti.com/product/DRV10974)
+[DRV10974正弦波控制-无感-速度反馈-正反转-调速](https://www.ti.com/product/DRV10974)
+[DRV10987](https://www.ti.com/product/DRV10987)
 
 
 [淘宝DRV11873](https://detail.tmall.com/item.htm?spm=a230r.1.14.8.19465899HrcncU&id=604320055041&cm_id=140105335569ed55e27b&abbucket=14)
