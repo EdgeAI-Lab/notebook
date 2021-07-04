@@ -2,7 +2,7 @@
 
 
 ## 1. CAN1(Master CAN) and CAN2(Slave CAN)
-![](./img/CAN/STM32_Dual_CAN.png)
+![](./img/STM32_Dual_CAN.png)
 
 CAN1口是master mode，而CAN2口是slave mode，
 跟这个SLAVE MODE是没有关系的，这个只是说CAN2是没有自己的过滤器，而是共享了CAN1的过滤器组，所以CAN2就叫SLAVE了。
