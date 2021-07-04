@@ -74,12 +74,6 @@ nav:
           - CortexM3中断: Embedded System/STM32/master/cortexm3_interrupt.md
           - OS特性: Embedded System/STM32/master/os_feature.md
           - 在C中使用ARM汇编（GNU）: Embedded System/STM32/master/use_assembly_in_c.md
-        - FreeRTOS:
-          - 任务切换: Embedded System/STM32/freertos/task_switch.md
-          - 中断管理: Embedded System/STM32/freertos/freertos_interrupt_manage.md
-          - 任务栈: Embedded System/STM32/freertos/freertos_task_stack.md
-          - 互斥体: Embedded System/STM32/freertos/mutexes.md
-          - 任务通知: Embedded System/STM32/freertos/freertos_task_notify.md
         - STM32外设:
           - Systick Timer: Embedded System/STM32/peripheral/systick_timer.md
           - STM32串口编程之中断方式: Embedded System/STM32/peripheral/stm32_hal_uart.md
@@ -111,10 +105,17 @@ nav:
         - STM8:
           - ADC: Embedded System/STM8/adc.md
 
-    - Wireless:
-        - Bluetooth:
-          - Bluetooth Base: Embedded System/wireless/bluetooth/bluetooth_base.md
-          - Bluetooth Stack: Embedded System/wireless/bluetooth/protocal_stack.md
+        - Wireless:
+            - Bluetooth:
+              - Bluetooth Base: Embedded System/wireless/bluetooth/bluetooth_base.md
+              - Bluetooth Stack: Embedded System/wireless/bluetooth/protocal_stack.md
+      - RTOS:
+        - FreeRTOS:
+          - 任务切换: Embedded System/RTOS/freertos/task_switch.md
+          - 中断管理: Embedded System/RTOS/freertos/freertos_interrupt_manage.md
+          - 任务栈: Embedded System/RTOS/freertos/freertos_task_stack.md
+          - 互斥体: Embedded System/RTOS/freertos/mutexes.md
+          - 任务通知: Embedded System/RTOS/freertos/freertos_task_notify.md
 
     - Linux:
         - C/C++: 
