@@ -1251,7 +1251,7 @@
 
 <h1 id="stm32-can">STM32 CAN接口<a class="headerlink" href="#stm32-can" title="Permanent link">#</a></h1>
 <h2 id="1-can1master-can-and-can2slave-can">1. CAN1(Master CAN) and CAN2(Slave CAN)<a class="headerlink" href="#1-can1master-can-and-can2slave-can" title="Permanent link">#</a></h2>
-<p><img alt="" src="./img/CAN/STM32_Dual_CAN.png" /></p>
+<p><img alt="" src="../img/STM32_Dual_CAN.png" /></p>
 <p>CAN1口是master mode，而CAN2口是slave mode，
 跟这个SLAVE MODE是没有关系的，这个只是说CAN2是没有自己的过滤器，而是共享了CAN1的过滤器组，所以CAN2就叫SLAVE了。</p>
 <p>部分STM32芯片具有双CAN模块，从整体功能上讲，两个CAN是独立的。但是，两个CAN共用过滤器管理模块，对于STM32芯片来讲，该过滤器控制模块由CAN1统一管理，所以即使只是单独使用CAN2进行收发，也须开启CAN1，否则会因为过滤器未能开启，导致单独使用CAN2时无法收发的情形。</p>
