@@ -32,6 +32,9 @@
 
 ```
 export PATH=$PATH:/path/to/your_toolchain_path
+
+# eg:
+export PATH=$PATH:/home/fhc/linux_driver/gcc-linaro-4.9.4/bin
 ```
 
 ### 2.2 编译u-boot
