@@ -31,7 +31,7 @@ nand write.jffs2 30000000 device_tree
 
 Uboot和rootfs可以使用已经编译好的Image，因为我们开发驱动驱动程序可以不使用他们，但是驱动开发和设备树编译必须有Linux源码。
 
-Linux源码配置编译的方法可以参考 [为JZ2440准备具有设备树的内核](../compile_uboot_kernel_with_device_tree.md)
+Linux源码配置编译的方法可以参考 [为JZ2440准备具有设备树的内核](compile_uboot_kernel_with_device_tree.md)
 
 新的Linux内核启动后，可能没有配置网络，此时使用ifconfig命令将不会有任何反馈。可直接配置网址：
 
