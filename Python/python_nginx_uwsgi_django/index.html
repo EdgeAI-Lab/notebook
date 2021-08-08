@@ -1038,7 +1038,7 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../Computer Vision/caffe/">caffe</a>
+    <a href="../../Computer Vision/opencv_start/">OpenCV_Start</a>
 </li>
             
 <li >
@@ -1047,6 +1047,10 @@
             
 <li >
     <a href="../../Computer Vision/OpenCV4Android_001/">OpenCV4Android</a>
+</li>
+            
+<li >
+    <a href="../../Computer Vision/caffe/">caffe</a>
 </li>
     </ul>
   </li>
@@ -1242,17 +1246,18 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#django-wbe-appnginx">将Django Wbe APP部署到Nginx服务器</a></li>
-            <li><a href="#1python">1.Python环境设置</a></li>
+            <li><a href="#1django">1.安装Django</a></li>
             <li><a href="#2-django-web-app">2. 创建第一个Django Web App</a></li>
             <li><a href="#3-uwsgi">3. 安装uWSGI</a></li>
-            <li><a href="#4nginx">4.使用Nginx</a></li>
+            <li><a href="#4nginxweb">4.使用Nginx作为静态网页Web服务器</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
 <h1 id="django-wbe-appnginx">将Django Wbe APP部署到Nginx服务器<a class="headerlink" href="#django-wbe-appnginx" title="Permanent link">#</a></h1>
-<h2 id="1python">1.Python环境设置<a class="headerlink" href="#1python" title="Permanent link">#</a></h2>
-<p>这里我们使用python3</p>
+<p><a href="https://tonyteaches.tech/django-nginx-uwsgi-tutorial/">参考连接1</a></p>
+<h2 id="1django">1.安装Django<a class="headerlink" href="#1django" title="Permanent link">#</a></h2>
+<p>首先配置Python，推荐使用python3</p>
 <ul>
 <li>安装python3-venv</li>
 </ul>
@@ -1267,11 +1272,19 @@ $ python3 -m venv home/fhc/python_env/django
 $ source home/fhc/python_env/django/bin/activate
 </code></pre>
 
+<ul>
+<li>安装Django</li>
+</ul>
+<pre><code>pip install django
+</code></pre>
+
 <h2 id="2-django-web-app">2. 创建第一个Django Web App<a class="headerlink" href="#2-django-web-app" title="Permanent link">#</a></h2>
 <ul>
 <li>创建Web App</li>
 </ul>
 <pre><code>$ django-admin.py startproject mysite
+
+# /home/fhc/mysite
 $ cd mysite
 </code></pre>
 
@@ -1289,6 +1302,8 @@ $ cd mysite
 <pre><code class="python">ALLOWED_HOSTS = ['192.168.1.8']
 </code></pre>
 
+<p>刷新网页（http://your_ip:8000/）这次你将会看到正确的Django欢迎页面：</p>
+<p><img alt="" src="../../assets/images/python/web/django_welcome.png" /></p>
 <h2 id="3-uwsgi">3. 安装uWSGI<a class="headerlink" href="#3-uwsgi" title="Permanent link">#</a></h2>
 <ul>
 <li>WSGI原理
@@ -1318,12 +1333,14 @@ pip install uwsgi
 <pre><code>uwsgi --http :8000 --module mysite.wsgi
 </code></pre>
 
-<h2 id="4nginx">4.使用Nginx<a class="headerlink" href="#4nginx" title="Permanent link">#</a></h2>
+<p>如果一切运行正常，刷新网页（http://your_ip:8000/）你将看到正确的Django欢迎页面：</p>
+<p><img alt="" src="../../assets/images/python/web/django_welcome.png" /></p>
+<h2 id="4nginxweb">4.使用Nginx作为静态网页Web服务器<a class="headerlink" href="#4nginxweb" title="Permanent link">#</a></h2>
 <ul>
 <li>Nginx配置</li>
 </ul>
 <p>打开配置文件：</p>
-<pre><code>$ vim /etc/nginx/sites-available/mysite
+<pre><code>$ sudo vim /etc/nginx/sites-available/mysite
 </code></pre>
 
 <p>在配置文件中写入下面的内容：</p>
@@ -1356,8 +1373,83 @@ server {
 }
 </code></pre>
 
+<ul>
+<li>创建/home/fhc/web/mysite/uwsgi_params文件</li>
+</ul>
+<pre><code>uwsgi_param  QUERY_STRING       $query_string;
+uwsgi_param  REQUEST_METHOD     $request_method;
+uwsgi_param  CONTENT_TYPE       $content_type;
+uwsgi_param  CONTENT_LENGTH     $content_length;
+uwsgi_param  REQUEST_URI        $request_uri;
+uwsgi_param  PATH_INFO          $document_uri;
+uwsgi_param  DOCUMENT_ROOT      $document_root;
+uwsgi_param  SERVER_PROTOCOL    $server_protocol;
+uwsgi_param  REQUEST_SCHEME     $scheme;
+uwsgi_param  HTTPS              $https if_not_empty;
+uwsgi_param  REMOTE_ADDR        $remote_addr;
+uwsgi_param  REMOTE_PORT        $remote_port;
+uwsgi_param  SERVER_PORT        $server_port;
+uwsgi_param  SERVER_NAME        $server_name;
+</code></pre>
+
+<ul>
+<li>创建static和media文件夹</li>
+</ul>
+<pre><code>$cd mysite
+$mkdir media
+$mkdir static
+</code></pre>
+
+<p>在settings.py中设置静态文件存储目录为mysite/static:</p>
+<pre><code>import os
+
+...
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, &quot;static/&quot;)
+</code></pre>
+
+<ul>
+<li>在/etc/nginx/sites-enabled/文件夹中创建nginx配置文件的符号链接</li>
+</ul>
+<pre><code>sudo ln -s /etc/nginx/sites-available/mysite.conf /etc/nginx/sites-enabled/
+</code></pre>
+
+<ul>
+<li>重启nginx
+sudo /etc/init.d/nginx restart</li>
+</ul>
 <p>启动：</p>
 <pre><code>uwsgi --socket mysite.sock --module mysite.wsgi --chmod-socket=666
+</code></pre>
+
+<ul>
+<li>产品级uwsgi配置</li>
+</ul>
+<p>在命令传递参数比较繁琐容易出错，可以将这些参数统一写入一个配置文件mysite_uwsgi.ini，方便管理。</p>
+<pre><code>[uwsgi]
+# full path to Django project's root directory
+chdir            = /home/fhc/mysite/
+# Django's wsgi file
+module           = mysite.wsgi
+# full path to python virtual env
+home             = home/fhc/python_env/django
+# enable uwsgi master process
+master          = true
+# maximum number of worker processes
+processes       = 10
+# the socket (use the full path to be safe
+socket          = /home/fhc/mysite/mysite.sock
+# socket permissions
+chmod-socket    = 666
+# clear environment on exit
+vacuum          = true
+# daemonize uwsgi and write messages into given log
+daemonize       = /home/fhc/mysite/uwsgi-emperor.log
+</code></pre>
+
+<p>启动uwsgi时，将改配置文件作为参数传入即可：</p>
+<pre><code>uwsgi --ini mysite_uwsgi.ini
 </code></pre></div>
         </div>
 
