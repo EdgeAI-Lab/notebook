@@ -256,9 +256,10 @@ nav:
         - Python字符串格式化: Python/python_string_format.md
 
       - Computer Vision:
-        - caffe: Computer Vision/caffe.md
+        - OpenCV_Start: Computer Vision/opencv_start.md
         - cv_library: Computer Vision/cv_library.md
         - OpenCV4Android: Computer Vision/OpenCV4Android_001.md
+        - caffe: Computer Vision/caffe.md
 
       - Nginx:
         - 配置静态网站服务器: Network/nginx/nginx_static_site_from_prebuild.md 
