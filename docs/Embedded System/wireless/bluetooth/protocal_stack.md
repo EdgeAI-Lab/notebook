@@ -1,6 +1,9 @@
 # BLE
 
 * [BLE建立连接的过程](https://www.cnblogs.com/iini/p/8972635.html)
+
+* [Android BLE基础](https://blog.csdn.net/kuaiguixs/article/details/90755223)
+
 * [GAP and GATT](https://learn.adafruit.com/introduction-to-bluetooth-low-energy/gap)
 
 * GAP(Generic Access Profile)，主要是用来管理蓝牙设备连接的协议

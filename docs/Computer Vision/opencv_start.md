@@ -242,8 +242,11 @@ target_link_libraries( DisplayImage ${OpenCV_LIBS} )
 $ mkdir build && cd build
 $ cmake ..
 $ make
-$ ./DisplayImage test.png
+$ wget https://docs.opencv.org/master/GCC_CMake_Example_Tutorial.jpg
+$ ./DisplayImage GCC_CMake_Example_Tutorial.jpg
 ```
+
+![](./img/image.png)
 
 ### 2.2 CMakeLists.txt解读
 
