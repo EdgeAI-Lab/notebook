@@ -51,7 +51,7 @@ nav:
           - IntelliJ添加jar文件: Android/java/Tools/intelliJ_add_library.md
         - Swing: Android/java/java_ui_swing.md
 
-    - STM32:
+    - MCU:
         - Application:
           - 自定义通信协议: Embedded System/STM32/application/protocal.md
           - STM32 initcall机制-Keil: Embedded System/STM32/application/stm32_initcall_keil.md
@@ -95,12 +95,11 @@ nav:
           - 直流刷式电机: Embedded System/STM32/motor_control/dc_motor_driver_chip.md
           - 步进电机: Embedded System/STM32/motor_control/stepper_motor_driver_chip.md
           - STM32控制42步进电机: Embedded System/STM32/motor_control/stm32_io_drive_42stepper_l298n.md
-        - STM32开发神兵利器:
+        - 调试工具:
           - OpenOCD: Embedded System/STM32/tools/openocd.md
           - JScope RTT模式: Embedded System/STM32/tools/jscope_rtt.md
           - JScope HSS模式: Embedded System/STM32/tools/jscope_hss.md
           - JLink RTT: Embedded System/STM32/tools/rtt.md
-          - STM32经典书籍: Embedded System/STM32/tools/stm32_books.md
 
         - STM8:
           - ADC: Embedded System/STM8/adc.md
@@ -109,6 +108,8 @@ nav:
             - Bluetooth:
               - Bluetooth Base: Embedded System/wireless/bluetooth/bluetooth_base.md
               - Bluetooth Stack: Embedded System/wireless/bluetooth/protocal_stack.md
+            - UWB:
+              - UWB测距算法: 
     - RTOS:
         - FreeRTOS:
           - 任务切换: Embedded System/RTOS/freertos/task_switch.md
