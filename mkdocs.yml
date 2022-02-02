@@ -239,7 +239,7 @@ nav:
     - Other:
       - Computer Science:
         - 字符集: Embedded System/cs/character_set.md
-        - 非对称加密: mbedded System/cs/RSA.md
+        - 非对称加密: Embedded System/cs/RSA.md
 
       - Machine Learning:
         - 机器学习基础: ML/ml_basics.md

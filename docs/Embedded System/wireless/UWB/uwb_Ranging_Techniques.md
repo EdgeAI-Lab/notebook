@@ -4,12 +4,12 @@
 
 ## 1. Single-Side Two-Way Ranging(SS-TWR)
 
-![](img/ss-tw.png)
+![](img/SS-TW.png)
 
 
 ## 2. Double-Side Two-Way Ranging(DS-TWR)
 
-![](img/ds-tw.png)
+![](img/DS-TW.png)
 
 
 公式推导：
