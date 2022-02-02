@@ -1,5 +1,7 @@
 # UWB测距算法简介
 
+[公式推导：请参考本目录下的uwb测距算法公式推导.doc](resource/uwb测距算法公式推导.doc)
+
 ## 1. Single-Side Two-Way Ranging(SS-TWR)
 
 ![](img/ss-tw.png)
