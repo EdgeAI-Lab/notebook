@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../../../img/favicon.ico">
-        <title>Digital key - EdgeAI-Lab</title>
+        <title>UWB测距算法 - EdgeAI-Lab</title>
         <link href="../../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../../css/base.css" rel="stylesheet">
@@ -229,8 +229,8 @@
   </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">STM32 <b class="caret"></b></a>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">MCU <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
   <li class="dropdown-submenu">
@@ -414,7 +414,7 @@
   </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#">STM32开发神兵利器</a>
+    <a href="#">调试工具</a>
     <ul class="dropdown-menu">
             
 <li >
@@ -431,10 +431,6 @@
             
 <li >
     <a href="../../../STM32/tools/rtt/">JLink RTT</a>
-</li>
-            
-<li >
-    <a href="../../../STM32/tools/stm32_books/">STM32经典书籍</a>
 </li>
     </ul>
   </li>
@@ -466,8 +462,27 @@
 </li>
     </ul>
   </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">UWB</a>
+    <ul class="dropdown-menu">
+            
+<li class="active">
+    <a href="./">UWB测距算法</a>
+</li>
     </ul>
   </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Robot <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../../../Robot/two_wheel_balance_car/">平衡车</a>
+</li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -1231,6 +1246,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li >
+                                <a rel="next" href="../../bluetooth/protocal_stack/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../../../../Robot/two_wheel_balance_car/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -1239,65 +1264,42 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#digital-key">数字车钥匙（Digital Key）</a></li>
-            <li><a href="#1">1. 数字车钥匙系统概述</a></li>
-        <li class="main "><a href="#2">2.移动终端</a></li>
-        <li class="main "><a href="#3">3.车辆端</a></li>
-        <li class="main "><a href="#4">4.后台服务端</a></li>
-        <li class="main "><a href="#_1">钥匙使用</a></li>
-        <li class="main "><a href="#_2">接口要求</a></li>
-        <li class="main "><a href="#_3">参考链接</a></li>
+        <li class="main active"><a href="#uwb">UWB测距算法简介</a></li>
+            <li><a href="#1-single-side-two-way-rangingss-twr">1. Single-Side Two-Way Ranging(SS-TWR)</a></li>
+            <li><a href="#2-double-side-two-way-rangingds-twr">2. Double-Side Two-Way Ranging(DS-TWR)</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="digital-key">数字车钥匙（Digital Key）<a class="headerlink" href="#digital-key" title="Permanent link">#</a></h2>
-<p>车主身份数字化。而这把已经引起广泛关注的数字钥匙，将可作为车联网的关键性基础设施之一，构建起人与车之间可信的识别和连接体系，以进一步实现车人的真正合一，最大程度上削减车联网服务中所需的中间环节和第三方介质。数字车钥匙还可以实现人际流转，可控有序的分离车辆的使用权和所有权。</p>
-<h3 id="1">1. 数字车钥匙系统概述<a class="headerlink" href="#1" title="Permanent link">#</a></h3>
-<p>数字车钥匙系统主要包括三个实体，即移动智能终端（移动终端或手机）、后台服务器与车辆。</p>
-<p><img alt="" src="../img/digital_key.png" /></p>
+<h1 id="uwb">UWB测距算法简介<a class="headerlink" href="#uwb" title="Permanent link">#</a></h1>
+<p><a href="../resource/uwb测距算法公式推导.doc">公式推导：请参考本目录下的uwb测距算法公式推导.doc</a></p>
+<h2 id="1-single-side-two-way-rangingss-twr">1. Single-Side Two-Way Ranging(SS-TWR)<a class="headerlink" href="#1-single-side-two-way-rangingss-twr" title="Permanent link">#</a></h2>
+<p><img alt="" src="img/ss-tw.png" /></p>
+<h2 id="2-double-side-two-way-rangingds-twr">2. Double-Side Two-Way Ranging(DS-TWR)<a class="headerlink" href="#2-double-side-two-way-rangingds-twr" title="Permanent link">#</a></h2>
+<p><img alt="" src="img/ds-tw.png" /></p>
+<p>公式推导：</p>
 <ul>
-<li>移动终端为数字车钥匙的操作实体，用户可通过移动终端实现车辆的开门、启动等操作。</li>
-<li>车辆具备车端数字车钥匙认证系统（也称为DK认证系统），用于实现移动终端与车身控制模块的安全交互。</li>
-<li>后台服务器主要包括移动终端厂商服务器、车企（主机厂）后台服务器、移动服务提供商。后台服务器主要提供数字车钥匙业务管理、核心资产管理与OTA更新等功能。</li>
+<li>Step 1 </li>
 </ul>
-<p>为了数字钥匙的可互操作性，便利性，安全性和隐私保护等，需要一套标准来规范数字车钥匙系统的实现细节。目前有两种规范：</p>
+<p><img alt="" src="../img/1.png" /></p>
 <ul>
-<li>国际车辆数字钥匙标准，由CCC（Car Connectivity Consortium）主导编写 </li>
-<li>国内的车辆数字钥匙标准，由智慧车联产业生态联盟（ICCE）主导编写</li>
+<li>Step 2</li>
 </ul>
-<h2 id="2">2.移动终端<a class="headerlink" href="#2" title="Permanent link">#</a></h2>
-<h2 id="3">3.车辆端<a class="headerlink" href="#3" title="Permanent link">#</a></h2>
-<p>因为NFC与手机的操作系统是分开工作的，所以即使在智能手机电池电量不足的情况下，NFC也会运行并开门</p>
-<h2 id="4">4.后台服务端<a class="headerlink" href="#4" title="Permanent link">#</a></h2>
-<h2 id="_1">钥匙使用<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<p><img alt="" src="../img/2.png" /></p>
 <ul>
-<li>PEPS(Passive Entry Passive Start)</li>
-<li>PKE(Passive Keyless Entry)被动无钥门禁系统</li>
+<li>Step 3</li>
+</ul>
+<p><img alt="" src="../img/3.png" /></p>
+<ul>
 <li>
-<p>PEPS与PKE应该是一样的，只是叫法不同，使用场景是：携带钥匙靠近车辆，直接拉动车辆门把手即可开启车门，携带钥匙进入车内后，直接按动 START按钮 就能启动车辆，全程不需要操作钥匙。</p>
+<p>Step 4
+<img alt="" src="../img/4.png" /></p>
 </li>
 <li>
-<p>RKE(Remote Keyless Entry)遥控门禁系统</p>
+<p>Step 5
+<img alt="" src="../img/5.png" /></p>
 </li>
-<li>PKG(Passive Keyless Go)无钥匙启动</li>
-</ul>
-<p>PESE/PKE RKE</p>
-<h2 id="_2">接口要求<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
-<ul>
-<li>MF: Master File</li>
-<li>ADF: Application Dedicated File</li>
-<li>Lc: Length of command data sent by the application layer</li>
-<li>
-<p>Le: maximum Length of data expected by the application layer</p>
-</li>
-<li>
-<p>FCI:  file control information </p>
-</li>
-<li>FID: File identifier</li>
-</ul>
-<h2 id="_3">参考链接<a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
-<p><a href="https://www.sohu.com/a/345573881_120342230">参考链接</a></p></div>
+</ul></div>
         </div>
 
         <footer class="col-md-12">
