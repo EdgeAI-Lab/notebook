@@ -75,7 +75,7 @@ nav:
           - OS特性: Embedded System/MCU/master/os_feature.md
           - 在C中使用ARM汇编（GNU）: Embedded System/MCU/master/use_assembly_in_c.md
 
-         - 通信接口:
+        - 通信接口:
           - I2C总线: Embedded System/MCU/communication_interface/i2c_bus.md
           - SPI总线: Embedded System/MCU/communication_interface/spi_bus.md
           - 以太网: Embedded System/MCU/communication_interface/ethernet.md
