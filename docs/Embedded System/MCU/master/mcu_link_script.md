@@ -10,7 +10,7 @@
 
 Keil中使用的是ARM编译工具链，其链接脚本是scatter文件。
 
-![](../../../assets/images/STM32/boot/stm32_boot_from_sram_link_script.png)
+![](img/stm32_boot_from_sram_link_script.png)
 
 上述操作之后，默认的链接脚本（scatter文件）将会在Keil的编辑器中被打开，其内容如下所示（以STM32F103C8T6为例）：
 

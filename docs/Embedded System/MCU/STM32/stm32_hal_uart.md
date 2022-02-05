@@ -7,7 +7,7 @@ is cleared by a write to the USART_DR register.
 0: Data is not transferred to the shift register
 1: Data is transferred to the shift register
 
-![](../../../assets/images/STM32/UART/uart_transmit_interrupt.png)
+![](img/UART/uart_transmit_interrupt.png)
 
 
 * 如果使能了TXE中断，当数据从TDR寄存器传输到shift寄存器时，也就是TDR寄存器为空时，将会触发TXE中断，但是数据并不一定被完全发送出去了，数据被完全发送出去之后，将会产生TC中断（如果使能了TC中断）
@@ -29,7 +29,7 @@ HAL_StatusTypeDef HAL_UART_Transmit_IT(UART_HandleTypeDef *huart, uint8_t *pData
 !!! Note
     System Core配置略
 	
-![](../../../assets/images/STM32/UART/usart1_IT_configure.png)
+![](img/UART/usart1_IT_configure.png)
 
 在CubeMX中开启UART global interrupt只会使能NVIC中的相应通道，其他比如UART接收中断，UART空闲中断等需要自己添加代码使能。
 

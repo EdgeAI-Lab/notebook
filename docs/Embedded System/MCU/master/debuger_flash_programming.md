@@ -8,7 +8,7 @@
 
 有时应用程序比较大，不能一次性全部下载到SRAM，所以要将整个应用程序写到Flash中需要多次重复这个过程。
 
-* 参考《Cortex-M3 & M4权威指南》14.7.2节 [下载地址](../tools/stm32_books.md)
+* 参考《Cortex-M3 & M4权威指南》14.7.2节 [下载地址](../books/MCU_books.md)
 * 参考JLinkLog.txt文件（Keil工程根目录下）
 
 ## 1. Keil中Flash编程配置
@@ -17,7 +17,7 @@
 
 如下图所示，Keil中Flash Download的配置分为三个部分。
 
-![](../../../assets/images/STM32/flash_download/keil_flash_download.png)
+![](img/keil_flash_download.png)
 
 
 * Download Function：主要是一些Flash操作，勾选后调试时调试器就行执行相应的动作。调试程序时，先将Flash编程算法下载到SRAM，然后调试器根据此处勾选情况，调用相应的Flash操作函数完成操作。
@@ -33,15 +33,15 @@
 
 按照下图所示的方法，就可以找到Keil中自带的Flash编程算法工程路径。
 
-![](../../../assets/images/STM32/flash_download/flash_algorithm_path.png)
+![](img/flash_algorithm_path.png)
 
 按照上面找到的路径打开，可以看到如下目录结构：
 
-![](../../../assets/images/STM32/flash_download/flash_algorithm_dir.png)
+![](img/flash_algorithm_dir.png)
 
 * STM32F10x文件夹中是Flash编程算法Keil项目。
 
-![](../../../assets/images/STM32/flash_download/flash_algorithm_project.png)
+![](img/flash_algorithm_project.png)
 
 * /*.FLM 预先编译好的EFL文件，后缀FLM只是重命名而已。
 
@@ -131,11 +131,11 @@ DSCR +0           ; Flash设备描述区，+0表示紧挨着PRG区域尾部存�
 ```
 该Flash编程算法，最终在SRAM中的布局如下所示：
 
-![](../../../assets/images/STM32/flash_download/flash_algorithm_ram_layout.png)
+![](img/flash_algorithm_ram_layout.png)
 
 从链接脚本中可以看出，<font color=red>该项目最终编译出的程序是位置无关的（PI）</font>，所以其起始地址可以被任意改变，但是起始地址+Size不能超出SRAM最高地址。
 
-![](../../../assets/images/STM32/flash_download/ram_for_algorithm_change_value.png)
+![](img/ram_for_algorithm_change_value.png)
 
 
 ## 3. 为新的Flash设备创建编程算法

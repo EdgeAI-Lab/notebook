@@ -71,7 +71,7 @@ mechanism to be able to boot also from SRAM and not only from main Flash memory 
 
 2. 将部分代码放到SRAM运行，此时MCU的启动模式可以是从Main Flash Memory启动
 
-3. 关于在SRAM中运行代码，请参考这篇文章：[STM32在SRAM中运行代码](stm32_run_code_in_ram.md)
+3. 关于在SRAM中运行代码，请参考这篇文章：[STM32在SRAM中运行代码](mcu_run_code_in_ram.md)
 
 ### 2.1 那么为什么需要从SRAM启动
 

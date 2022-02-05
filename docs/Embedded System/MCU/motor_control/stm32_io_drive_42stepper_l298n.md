@@ -4,14 +4,18 @@
 
 * 42步进电机指的是“2相4线步进电机”，比如这个电机
 
-![](../../../assets/images/STM32/motor/chihai_42_micro_stepper.jpg)
+![](img/stepper_motor/chihai_42_micro_stepper.jpg)
 
 * 42步进电机的驱动节拍
 
 !!! Tip
     将节拍倒过来，即可实现步进电机反转
 
-![](../../../assets/images/STM32/motor/chihai_42stepper_beat.jpg)
+![](img/stepper_motor/chihai_42stepper_beat.jpg)
+
+从上图可以看出这是一个4拍控制方法，A相和B相会同时通电，每一拍电机会旋转90度，这种控制方式也被成为全步模式。
+
+![](img/stepper_motor/full_step_driving.png)
 
 * 把节拍整理成一个表格，方便查阅
 
@@ -41,7 +45,7 @@ step4: A-B-
 !!! Warning 
     L298N驱动5V电机时，需要将+12V 和 +5V 端口一起接5V电源
 
-![](../../../assets/images/STM32/motor/l298n_5v_motor.png)
+![](img/stepper_motor/l298n_5v_motor.png)
 
 ## 3. 驱动程序
 

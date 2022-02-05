@@ -1,3 +1,3 @@
 # OpenOCD
 
-![](../../../assets/images/STM32/tools/OpenOCD.jpg)
+![](img/open_ocd/OpenOCD.jpg)

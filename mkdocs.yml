@@ -1,4 +1,4 @@
-site_name: EdgeAI-Lab
+site_name: EdgeAI Lab
 
 # Repository
 # repo_name: Notebook
@@ -85,17 +85,17 @@ nav:
             - CANopen: Embedded System/MCU/communication_interface/CAN/CANopen.md
         
         - STM32:
-          - Systick Timer: Embedded System/MCU/STM32/peripheral/systick_timer.md
-          - STM32串口编程之中断方式: Embedded System/MCU/STM32/peripheral/stm32_hal_uart.md
-          - STM32定时器编程之定时中断: Embedded System/MCU/STM32/peripheral/stm32_hal_uart.md
-          - STM32定时器编程之PWM: Embedded System/MCU/STM32/peripheral/stm32_hal_uart.md
-          - STM32定时器之产生固定个数的脉冲: Embedded System/MCU/STM32/peripheral/stm32_generate_n_number_pluse.md
-          - STM32ADC: Embedded System/MCU/STM32/peripheral/stm32_adc.md
+          - Systick Timer: Embedded System/MCU/STM32/systick_timer.md
+          - STM32串口编程之中断方式: Embedded System/MCU/STM32/stm32_hal_uart.md
+          - STM32定时器编程之定时中断: Embedded System/MCU/STM32/stm32_hal_uart.md
+          - STM32定时器编程之PWM: Embedded System/MCU/STM32/stm32_hal_uart.md
+          - STM32定时器之产生固定个数的脉冲: Embedded System/MCU/STM32/stm32_generate_n_number_pluse.md
+          - STM32ADC: Embedded System/MCU/STM32/stm32_adc.md
 
         - STM8:
           - ADC: Embedded System/MCU/STM8/adc.md
 
-        - ESP8266: Embedded System/MCU/ESP8266.md
+        - ESP8266: Embedded System/MCU/ESP8266/ESP8266.md
 
         - K210:
           - K210开发环境配置: Embedded System/MCU/k210/configure_k210_standlone_env.md
@@ -326,7 +326,7 @@ nav:
       - UML: Tools/PlantUML.md
 
 # Copyright
-copyright: 'Copyright &copy; 2019 - 2020 Frank'
+copyright: 'Copyright &copy; 2019 - 2022 EdgeAI Lab'
     
 # Configuration
 theme:

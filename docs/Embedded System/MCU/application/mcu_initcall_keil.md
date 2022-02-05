@@ -79,7 +79,7 @@ LR_IROM1 0x08000000 0x00080000  {    ; load region size_region
 
 <font color=red>友情提示：</font>keil中链接脚本的修改方法如下图所示：
 
-![](../../../assets/images/STM32/boot/stm32_boot_from_sram_link_script.png)
+![](img/boot/stm32_boot_from_sram_link_script.png)
 
 上述操作之后，链接脚本文件将会在Keil的编辑器中被打开。
 
@@ -138,7 +138,7 @@ init_function_list _fn_func __attribute__((used, section("RAMCODE"))) =  func
 
 在Keil中可以这么做：
 
-![](../../../assets/images/STM32/module_init/fun_addr_order.png)
+![](img/module_init/fun_addr_order.png)
 
 还有一种方法就是，分为多个初始化函数程序段，比如：
 
