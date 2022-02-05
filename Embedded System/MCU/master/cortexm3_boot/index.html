@@ -1298,11 +1298,11 @@
 <p>让我们从编译后说起（以STM32为例）。</p>
 <h2 id="1-elf">1. ELF文件<a class="headerlink" href="#1-elf" title="Permanent link">#</a></h2>
 <p>在Keil中一个STM32项目被编译后，会生成一个ELF格式的.axf文件（在项目根目录下的Objects文件夹中），该文件中包含有数据段、代码段、调试段等各种信息，调试程序使用的就是ELF文件，ELF文件的格式如下：</p>
-<p><img alt="" src="../../../../assets/images/STM32/boot/elf_file_fromat.png" /></p>
+<p><img alt="" src="../../../assets/images/STM32/boot/elf_file_fromat.png" /></p>
 <h2 id="2-bin">2. BIN文件<a class="headerlink" href="#2-bin" title="Permanent link">#</a></h2>
 <p>但是最终通过JLink下载到STM32内部Flash的不是ELF文件而是BIN文件，BIN文件中是纯粹的指令代码和数据，没有其他冗余的数据。</p>
 <p>将ELF文件中冗余的数据去掉，就是BIN文件的内容。如下图所示：</p>
-<p><img alt="" src="../../../../assets/images/STM32/boot/bin_file_content.png" /></p>
+<p><img alt="" src="../../../assets/images/STM32/boot/bin_file_content.png" /></p>
 <h2 id="3-bss">3. BSS段<a class="headerlink" href="#3-bss" title="Permanent link">#</a></h2>
 <p>BSS段(Block Started by Symbol)中存放的是初始值为零的全区和静态变量。</p>
 <p>但是因为BSS段内容全为零，所以<font color=red>在ELF文件和BIN文件中均不包含BSS段的内容，只保存有BSS段的地址和大小信息</font>。</p>
@@ -1314,7 +1314,7 @@
 </ul>
 <p>栈是一块由系统专用的内存空间，在发生函数调用时存储函数的局部变量和参数，<font color=red>在Keil中栈的初始化是由ARM C库完成的。栈的操作由CPU自动完成</font>（C语言中的函数调用被编译为汇编时，就会有相应的出入栈操作指令）。</p>
 <p>如下图所示，函数开始调用时会有入栈操作指令（当然函数调用结束时会有出栈操作）：</p>
-<p><img alt="" src="../../../../assets/images/STM32/boot/assembly_push_stack.png" /></p>
+<p><img alt="" src="../../../assets/images/STM32/boot/assembly_push_stack.png" /></p>
 <ul>
 <li>堆</li>
 </ul>
@@ -1337,7 +1337,7 @@
 }
 </code></pre>
 
-<p><img alt="" src="../../../../assets/images/STM32/boot/elf_load_run_view.png" /></p>
+<p><img alt="" src="../../../assets/images/STM32/boot/elf_load_run_view.png" /></p>
 <ul>
 <li>
 <p>ELF文件视图：STM32项目编译后，首先会生成ELF文件，ELF文件中包含大量的调试信息，这是程序真正运行时所不需要的。</p>
@@ -1358,13 +1358,13 @@ fromelf.exe --bin --output test.bin test.axf
 <p>下载器与keil配合使用时，可以直接使用ELF文件烧写Flash，这是因为从ELF文件到BIN文件的过程是由Keil自动完成的。</p>
 <h3 id="51-bin">5.1 装载（BIN文件）视图<a class="headerlink" href="#51-bin" title="Permanent link">#</a></h3>
 <p>最终烧写到STM32内部FLash中的内容如下图所示：</p>
-<p><img alt="" src="../../../../assets/images/STM32/boot/bin_view.png" /></p>
+<p><img alt="" src="../../../assets/images/STM32/boot/bin_view.png" /></p>
 <p>但是代码段(.text)中为什么会包含这些东西呢？</p>
 <h3 id="52">5.2 运行视图<a class="headerlink" href="#52" title="Permanent link">#</a></h3>
 <p>程序运行时，除了代码段和数据段，还有堆、栈、BSS段。</p>
 <p>根据《The Definitive Guide to ARM Cortex-M3 and Cortex-M4 Processors》 - Chapter 4.8中的描述： </p>
 <p>Cortex®-M3 CPU上电后，默认从0x0000 0000地址处取得栈顶地址（MSP），通过ICode bus从0x0000 0004地址处取得PC的值（复位向量），然后开始执行代码。</p>
-<p><img alt="" src="../../../../assets/images/STM32/boot/cortexm3_reset_sequence.png" /></p>
+<p><img alt="" src="../../../assets/images/STM32/boot/cortexm3_reset_sequence.png" /></p>
 <ul>
 <li>那么怎么保证编译后的程序，0x0000 0000地址处是栈顶地址（MSP），0x0000 0004地址处是PC的值（复位向量）呢？</li>
 </ul>
@@ -1423,7 +1423,7 @@ _estack = ORIGIN(RAM) + LENGTH(RAM);    /* end of &quot;RAM&quot; Ram type
 </code></pre>
 
 <p>这样设置的话，栈就是向下生长的。</p>
-<p><img alt="" src="../../../../assets/images/STM32/boot/stack_grow.png" /></p>
+<p><img alt="" src="../../../assets/images/STM32/boot/stack_grow.png" /></p>
 <p>并且在连接脚本中将isr_vector段放在了存储器的首地址，也就是0x00000000地址处，所以0x00000000地址处就是栈顶地址，0x000000004地址处就是复位向量地址。</p></div>
         </div>
 

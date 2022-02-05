@@ -1358,7 +1358,7 @@ LR_IROM1 0x08000000 0x00080000  {    ; load region size_region
 <p>更详细的ARM Compiler链接脚本语法，请查阅ARM官方文档：</p>
 <p><a href="http://www.keil.com/support/man/docs/armlink/armlink_pge1362075656353.htm">Scatter File Syntax</a></p>
 <p><font color=red>友情提示：</font>keil中链接脚本的修改方法如下图所示：</p>
-<p><img alt="" src="../../../../assets/images/STM32/boot/stm32_boot_from_sram_link_script.png" /></p>
+<p><img alt="" src="../../../assets/images/STM32/boot/stm32_boot_from_sram_link_script.png" /></p>
 <p>上述操作之后，链接脚本文件将会在Keil的编辑器中被打开。</p>
 <h2 id="3">3. 将指定的函数存放到指定的程序段<a class="headerlink" href="#3" title="Permanent link">#</a></h2>
 <p>上面我们对STM32的内存进行了分配（链接脚本中的分段），16K大小的RW_IRAM2内存区域将被用来存储初始化函数，

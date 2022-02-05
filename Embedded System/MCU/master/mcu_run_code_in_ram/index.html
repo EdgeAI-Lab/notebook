@@ -1324,7 +1324,7 @@
 <p>采用上述方法，无论STM32的启动模式是从Flash启动还是从SRAM启动，代码均可以在SRAM中运行，但是程序复位后不能重新运行。因为我们在调试器初始化文件中配置的栈指针、PC指针和中断向量表偏移地址只有在启动调试的时候才会执行配置。</p>
 <h3 id="122">1.2.2 设置中断向量表偏移<a class="headerlink" href="#122" title="Permanent link">#</a></h3>
 <p>添加宏定义 VECT_TAB_SRAM ：</p>
-<p><img alt="" src="../../../../assets/images/STM32/boot/set_vtor.png" /></p>
+<p><img alt="" src="../../../assets/images/STM32/boot/set_vtor.png" /></p>
 <p>该宏定义影响的代码：</p>
 <pre><code class="c">// system_stm32f10x.c
 // SystemInit()
@@ -1338,7 +1338,7 @@
 
 <h3 id="121_1">1.2.1 修改链接脚本<a class="headerlink" href="#121_1" title="Permanent link">#</a></h3>
 <p>按照下图所示方式，即可在Keil编辑器中打开链接脚本：</p>
-<p><img alt="" src="../../../../assets/images/STM32/boot/stm32_boot_from_sram_link_script.png" /></p>
+<p><img alt="" src="../../../assets/images/STM32/boot/stm32_boot_from_sram_link_script.png" /></p>
 <p>打开链接脚本文件后，将内容修改如下：</p>
 <pre><code>; 以STM32F103C8T6为例
 ; 从SRAM启动终端向量表（RESET段）必须位于启动空间的0地址
@@ -1366,7 +1366,7 @@ _WDWORD(0xE000ED08, 0x20000000); // 设置中断向量表偏移
 <p><img alt="" src="../../../../assets/images/STM32/flash_download/debugger_init_file_set.png" /></p>
 <h3 id="123-keilflash-download">1.2.3 修改Keil中的Flash Download设置<a class="headerlink" href="#123-keilflash-download" title="Permanent link">#</a></h3>
 <p>因为是直接从SRAM启动并执行程序，不需要对Flash进行操作，所以把Flash相关操作全部去掉。</p>
-<p><img alt="" src="../../../../assets/images/STM32/boot/stm32_boot_from_sram_set_flash_download.png" /></p>
+<p><img alt="" src="../../../assets/images/STM32/boot/stm32_boot_from_sram_set_flash_download.png" /></p>
 <p>以上就是完整的配置，现在编译项目并点击调试，就能看到程序成功在SRAM中运行了。</p>
 <h2 id="2-sram">2. 将指定的代码放到SRAM运行<a class="headerlink" href="#2-sram" title="Permanent link">#</a></h2>
 <p>http://emb.hqyj.com/Column/20198162.html</p>

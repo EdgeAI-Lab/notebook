@@ -1293,12 +1293,12 @@
 
 <h1 id="mcu">MCU的三种启动方式<a class="headerlink" href="#mcu" title="Permanent link">#</a></h1>
 <p>以STM32为例，对MCU常见的三种启动方式进行说明。</p>
-<p><img alt="" src="../../../../assets/images/STM32/boot/stm32_memory.png" /></p>
+<p><img alt="" src="../img/stm32_memory.png" /></p>
 <p>如上图所示，STM32内部一共有<font color=red>两块物理存储设备</font>（Flash和SRAM）和<font color=red>三块存储区域</font>（Main Flash Memory、System Memory和SRAM）。这三块存储区域也就是STM32的三个启动空间。</p>
 <p>这三个启动空间的选择是由引脚BOOT0和BOOT1决定的：</p>
-<p><img alt="" src="../../../../assets/images/STM32/boot/boot_modes.png" /></p>
+<p><img alt="" src="../img/boot_modes.png" /></p>
 <h2 id="1-main-flash-memorysystem-memory">1. 从Main Flash Memory和System Memory启动<a class="headerlink" href="#1-main-flash-memorysystem-memory" title="Permanent link">#</a></h2>
-<p><img alt="" src="../../../../assets/images/STM32/boot/memory_map.png" /></p>
+<p><img alt="" src="../img/memory_map.png" /></p>
 <p>Cortex®-M3 CPU上电后，默认<font color=red>从0x0000 0000地址处取得栈顶地址（MSP），通过ICode bus从0x0000 0004地址处取得PC的值（复位向量）</font>，然后开始执行代码。</p>
 <p>因为ICode bus只能访问代码区域（0x0000 0000 ~ 0x1FFF FFFF），所以启动空间必须在代码区域。</p>
 <p>STM32内部Flash就位于代码区域，并且通过 “ 存储器别名（memory alias） ”技术，可以将STM32的Main Flash Memory的地址空间0x0800 0000 ~ 0x0801 FFFF映射到0x0000 0000 ~ 0x0001 FFFF，对于System memory也是同样的道理。所以STM32可以从Main Flash Memory和System memory启动。</p>
@@ -1350,7 +1350,7 @@ mechanism to be able to boot also from SRAM and not only from main Flash memory 
 </li>
 </ol>
 <h3 id="21-sram">2.1 那么为什么需要从SRAM启动<a class="headerlink" href="#21-sram" title="Permanent link">#</a></h3>
-<p>可能的原因有以下几点（参考资料《ARM Cortex M3 &amp; M4权威指南》15.7节 <a href="../tools/stm32_books.md">下载地址</a>）：</p>
+<p>可能的原因有以下几点（参考资料《ARM Cortex M3 &amp; M4权威指南》15.7节 <a href="../../books/MCU_books/">下载地址</a>）：</p>
 <ol>
 <li>
 <p>所使用的设备可能具有OTP ROM（仅可进行一次编程），因此在最终确定前，是不会将程序编程到芯片中的。</p>
@@ -1371,7 +1371,7 @@ mechanism to be able to boot also from SRAM and not only from main Flash memory 
 <p>将引脚BOOT0，BOOT1都设置为1，将STM32配置为从SRAM启动。</p>
 <h3 id="122">1.2.2 设置中断向量表偏移<a class="headerlink" href="#122" title="Permanent link">#</a></h3>
 <p>添加宏定义 VECT_TAB_SRAM ：</p>
-<p><img alt="" src="../../../../assets/images/STM32/boot/set_vtor.png" /></p>
+<p><img alt="" src="../img/set_vtor.png" /></p>
 <p>该宏定义影响的代码：</p>
 <pre><code class="c">// system_stm32f10x.c
 // SystemInit()
@@ -1424,7 +1424,7 @@ __Vectors       DCD     __initial_sp               ; Top of Stack
 
 <h4 id="124">1.2.4 修改链接脚本<a class="headerlink" href="#124" title="Permanent link">#</a></h4>
 <p>按照下图所示方式，即可在Keil编辑器中打开链接脚本：</p>
-<p><img alt="" src="../../../../assets/images/STM32/boot/stm32_boot_from_sram_link_script.png" /></p>
+<p><img alt="" src="../img/stm32_boot_from_sram_link_script.png" /></p>
 <p>打开链接脚本文件后，将内容修改如下：</p>
 <pre><code>; 以STM32F103C8T6为例
 ; 从SRAM启动终端向量表（RESET段）必须位于启动空间的0地址
@@ -1443,7 +1443,7 @@ LR_IROM1 0x20000000 0x00005000  { ;装载地址为SRAM首地址
 
 <h4 id="125-keilflash-download">1.2.5 修改Keil中的Flash Download设置<a class="headerlink" href="#125-keilflash-download" title="Permanent link">#</a></h4>
 <p>因为是直接从SRAM启动并执行程序，不需要对Flash进行操作，所以把Flash相关操作全部去掉。</p>
-<p><img alt="" src="../../../../assets/images/STM32/boot/stm32_boot_from_sram_set_flash_download.png" /></p>
+<p><img alt="" src="../img/stm32_boot_from_sram_set_flash_download.png" /></p>
 <p>以上就是完整的配置，现在编译项目并点击调试，就能看到程序成功在SRAM中运行了。</p>
 <p>关闭调试后，只要STM32不断电，SRAM中的程序就可以一直运行，并且按下复位键后程序会重新运行。</p></div>
         </div>
