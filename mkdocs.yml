@@ -141,6 +141,8 @@ nav:
           - 互斥体: Embedded System/RTOS/freertos/mutexes.md
           - 任务通知: Embedded System/RTOS/freertos/freertos_task_notify.md
 
+        - 多核系统: Embedded System/RTOS/multiple-processor_systems.md
+
     - Linux:
         - C/C++: 
           - 你需要知道的N个C语言问题:

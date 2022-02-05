@@ -1,5 +1,11 @@
 # STM32使用L298N驱动42步进电机
 
+* 步进电机控制理论
+
+[参考链接1](https://www.monolithicpower.cn/stepper-motors-basics-types-uses)
+[参考链接1](https://www.moons.com.cn/article/cn-techschool-stepmotor-00006-step-motor-basics)
+[参考链接1](https://blog.csdn.net/mbs520/article/details/105409790)
+
 ## 1. 名词解释
 
 * 42步进电机指的是“2相4线步进电机”，比如这个电机
