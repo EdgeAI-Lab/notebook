@@ -15,7 +15,7 @@ CoreMark基准测试被认为比Dhrystone更具有实际价值。
 
 STM32的CoreMark和Dhrystone基准测试结果：
 
-![](image/stm32mainstream_benchmark.jpg)
+![](img/stm32mainstream_benchmark.jpg)
 
 
 ## 2.自己给MCU跑分(CoreMark)
@@ -24,6 +24,6 @@ STM32的CoreMark和Dhrystone基准测试结果：
 
 barebones文件夹中是MCU需要移植改动的文件。
 
-![](image/coremark.png)
+![](img/coremark.png)
 
 
