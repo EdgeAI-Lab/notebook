@@ -1,4 +1,4 @@
-# STM32上的实现initcall机制
+# MCU上实现initcall机制
 
 类似于linux驱动模块框架module_init(init_fun)，该方法在Linux内核中叫做“initcall机制”。
 

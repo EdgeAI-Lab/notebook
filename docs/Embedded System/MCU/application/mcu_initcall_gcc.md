@@ -1,4 +1,4 @@
-# STM32 initcall机制
+# MCU上实现initcall机制
 
 GNU Linker
 

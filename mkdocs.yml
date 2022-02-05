@@ -52,64 +52,81 @@ nav:
         - Swing: Android/java/java_ui_swing.md
 
     - MCU:
-        - Application:
-          - 自定义通信协议: Embedded System/STM32/application/protocal.md
-          - STM32 initcall机制-Keil: Embedded System/STM32/application/stm32_initcall_keil.md
-          - STM32 initcall机制-GCC: Embedded System/STM32/application/stm32_initcall_gcc.md
-          - Flash磨损均衡算法: Embedded System/STM32/application/stm32_flash_erase_leveling.md
-          - STM32软件复位: Embedded System/STM32/application/stm32_sw_reset.md
+        - 应用:
+          - 自定义通信协议: Embedded System/MCU/application/protocal.md
+          - MCU上实现initcall机制-Keil: Embedded System/MCU/application/mcu_initcall_keil.md
+          - MCU上initcall机制-GCC: Embedded System/MCU/application/mcu_initcall_gcc.md
+          - Flash磨损均衡算法: Embedded System/MCU/application/flash_erase_leveling.md
+          - Cortex-M3软件复位: Embedded System/MCU/application/cortexm3_sw_reset.md
       
-        - Master:
-          - newlib与可重入: Embedded System/STM32/master/newlib_reentrant.md
-          - 如何评价MCU的性能: Embedded System/STM32/master/mcu_performance.md
-          - STM32的三种启动方式: Embedded System/STM32/master/stm32_boot_configure.md
-          - STM32在SRAM中运行代码: Embedded System/STM32/master/stm32_run_code_in_ram.md
-          - STM32的启动流程: Embedded System/STM32/master/stm32_boot.md
-          - 调试器背后的秘密: Embedded System/STM32/master/debuger_flash_programming.md
-          - ARM编译器链接脚本: Embedded System/STM32/master/stm32_link_script.md
-          - GNU链接脚本: Embedded System/STM32/master/stm32_gnu_link_script.md
-          - Keil AXF文件和BIN文件分析: Embedded System/STM32/master/stm32_elf_bin_file_analysis.md
-          - ARM汇编: Embedded System/STM32/master/arm_assembly.md
-          - GNU ARM汇编: Embedded System/STM32/master/gnu_assembly.md
-          - CortexM3中断: Embedded System/STM32/master/cortexm3_interrupt.md
-          - OS特性: Embedded System/STM32/master/os_feature.md
-          - 在C中使用ARM汇编（GNU）: Embedded System/STM32/master/use_assembly_in_c.md
-        - STM32外设:
-          - Systick Timer: Embedded System/STM32/peripheral/systick_timer.md
-          - STM32串口编程之中断方式: Embedded System/STM32/peripheral/stm32_hal_uart.md
-          - STM32定时器编程之定时中断: Embedded System/STM32/peripheral/stm32_hal_uart.md
-          - STM32定时器编程之PWM: Embedded System/STM32/peripheral/stm32_hal_uart.md
-          - STM32定时器之产生固定个数的脉冲: Embedded System/STM32/peripheral/stm32_generate_n_number_pluse.md
-          - STM32ADC: Embedded System/STM32/peripheral/stm32_adc.md
-        - 通信接口:
-          - I2C总线: Embedded System/STM32/communication_interface/i2c_bus.md
-          - SPI总线: Embedded System/STM32/communication_interface/spi_bus.md
-          - 以太网: Embedded System/STM32/communication_interface/ethernet.md
+        - 进阶:
+          - newlib与可重入: Embedded System/MCU/master/newlib_reentrant.md
+          - 如何评价MCU的性能: Embedded System/MCU/master/mcu_performance.md
+          - MCU的三种启动方式: Embedded System/MCU/master/mcu_boot_configure.md
+          - 在SRAM中运行代码: Embedded System/MCU/master/mcu_run_code_in_ram.md
+          - Cortex-M3的启动流程: Embedded System/MCU/master/cortexm3_boot.md
+          - 调试器背后的秘密: Embedded System/MCU/master/debuger_flash_programming.md
+          - ARM编译器链接脚本: Embedded System/MCU/master/mcu_link_script.md
+          - GNU链接脚本: Embedded System/MCU/master/mcu_gnu_link_script.md
+          - Keil AXF文件和BIN文件分析: Embedded System/MCU/master/mcu_elf_bin_file_analysis.md
+          - ARM汇编: Embedded System/MCU/master/arm_assembly.md
+          - GNU ARM汇编: Embedded System/MCU/master/gnu_assembly.md
+          - Cortex-M3中断: Embedded System/MCU/master/cortexm3_interrupt.md
+          - OS特性: Embedded System/MCU/master/os_feature.md
+          - 在C中使用ARM汇编（GNU）: Embedded System/MCU/master/use_assembly_in_c.md
+
+         - 通信接口:
+          - I2C总线: Embedded System/MCU/communication_interface/i2c_bus.md
+          - SPI总线: Embedded System/MCU/communication_interface/spi_bus.md
+          - 以太网: Embedded System/MCU/communication_interface/ethernet.md
           - CAN总线: 
-            - CAN Bus: Embedded System/STM32/communication_interface/CAN/CAN_bus.md
-            - STM32 CAN接口: Embedded System/STM32/communication_interface/CAN/STM32_CAN_Application.md
-            - CANopen: Embedded System/STM32/communication_interface/CAN/CANopen.md
-        - Motor Control: 
-          - 转矩: Embedded System/STM32/motor_control/torque.md
-          - 无刷电机: Embedded System/STM32/motor_control/brushless_motor.md
-          - 直流刷式电机: Embedded System/STM32/motor_control/dc_motor_driver_chip.md
-          - 步进电机: Embedded System/STM32/motor_control/stepper_motor_driver_chip.md
-          - STM32控制42步进电机: Embedded System/STM32/motor_control/stm32_io_drive_42stepper_l298n.md
-        - 调试工具:
-          - OpenOCD: Embedded System/STM32/tools/openocd.md
-          - JScope RTT模式: Embedded System/STM32/tools/jscope_rtt.md
-          - JScope HSS模式: Embedded System/STM32/tools/jscope_hss.md
-          - JLink RTT: Embedded System/STM32/tools/rtt.md
+            - CAN Bus: Embedded System/MCU/communication_interface/CAN/CAN_bus.md
+            - STM32 CAN接口: Embedded System/MCU/communication_interface/CAN/STM32_CAN_Application.md
+            - CANopen: Embedded System/MCU/communication_interface/CAN/CANopen.md
+        
+        - STM32:
+          - Systick Timer: Embedded System/MCU/STM32/peripheral/systick_timer.md
+          - STM32串口编程之中断方式: Embedded System/MCU/STM32/peripheral/stm32_hal_uart.md
+          - STM32定时器编程之定时中断: Embedded System/MCU/STM32/peripheral/stm32_hal_uart.md
+          - STM32定时器编程之PWM: Embedded System/MCU/STM32/peripheral/stm32_hal_uart.md
+          - STM32定时器之产生固定个数的脉冲: Embedded System/MCU/STM32/peripheral/stm32_generate_n_number_pluse.md
+          - STM32ADC: Embedded System/MCU/STM32/peripheral/stm32_adc.md
 
         - STM8:
-          - ADC: Embedded System/STM8/adc.md
+          - ADC: Embedded System/MCU/STM8/adc.md
+
+        - ESP8266: Embedded System/MCU/ESP8266.md
+
+        - K210:
+          - K210开发环境配置: Embedded System/MCU/k210/configure_k210_standlone_env.md
+          - MairxPy开发环境配置: Embedded System/MCU/k210/configure_mairxpy_dev_env.md
+          - MairxPy Snippet: Embedded System/MCU/k210/mairxpy_snippet.md
+
+        - NXP S32K1xx:
+          - S32K1xx CAN模块: Embedded System/MCU/NXP/S32K144_CAN.md
+       
+        - Motor Control: 
+          - 转矩: Embedded System/MCU/motor_control/torque.md
+          - 无刷电机: Embedded System/MCU/motor_control/brushless_motor.md
+          - 直流刷式电机: Embedded System/MCU/motor_control/dc_motor_driver_chip.md
+          - 步进电机: Embedded System/MCU/motor_control/stepper_motor_driver_chip.md
+          - STM32控制42步进电机: Embedded System/MCU/motor_control/stm32_io_drive_42stepper_l298n.md
+
+        - 安全:
+          - ARM TrustZone: Embedded System/MCU/secure/trustzone.md
 
         - Wireless:
             - Bluetooth:
-              - Bluetooth Base: Embedded System/wireless/bluetooth/bluetooth_base.md
-              - Bluetooth Stack: Embedded System/wireless/bluetooth/protocal_stack.md
+              - Bluetooth Base: Embedded System/MCU/wireless/bluetooth/bluetooth_base.md
+              - Bluetooth Stack: Embedded System/MCU/wireless/bluetooth/protocal_stack.md
             - UWB:
-              - UWB测距算法: Embedded System/wireless/UWB/uwb_Ranging_Techniques.md
+              - UWB测距算法: Embedded System/MCU/wireless/UWB/uwb_Ranging_Techniques.md
+        
+        - 调试工具:
+          - OpenOCD: Embedded System/MCU/mcu_debug_tools/openocd.md
+          - JScope RTT模式: Embedded System/MCU/mcu_debug_tools/jscope_rtt.md
+          - JScope HSS模式: Embedded System/MCU/mcu_debug_tools/jscope_hss.md
+          - JLink RTT: Embedded System/MCU/mcu_debug_tools/rtt.md
     
     - Robot:
         - 平衡车: Robot/two_wheel_balance_car.md
@@ -277,12 +294,7 @@ nav:
         - TPS65987D: Hardware/TPS65987D.md
         - MAX17261电量计: Hardware/max17261.md
 
-      - ESP8266: Embedded System/ESP8266.md
-
-      - K210:
-        - K210开发环境配置: Embedded System/k210/configure_k210_standlone_env.md
-        - MairxPy开发环境配置: Embedded System/k210/configure_mairxpy_dev_env.md
-        - MairxPy Snippet: Embedded System/k210/mairxpy_snippet.md
+      
 
     - Tools:
       - MkDocs搭建个人WiKi知识管理系统: 

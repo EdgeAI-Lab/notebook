@@ -1,4 +1,7 @@
-# STM32的三种启动方式
+# MCU的三种启动方式
+
+以STM32为例，对MCU常见的三种启动方式进行说明。
+
 
 ![](../../../assets/images/STM32/boot/stm32_memory.png)
 

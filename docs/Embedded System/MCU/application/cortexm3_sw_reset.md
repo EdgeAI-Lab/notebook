@@ -1,4 +1,6 @@
-# STM32软件复位
+# Cortex-M3软件复位
+
+可通过调用CMSIS软件库和编写汇编代码这两种方式来实现软件复位。
 
 ## 1.调用库函数
 
@@ -6,11 +8,14 @@
 
 https://blog.csdn.net/anbaixiu/article/details/81155688
 
+* 先关闭中断，再复位
+
 ```c
 __set_FAULTMASK(1); // 关闭所有中断
 NVIC_SystemReset(); // 设置
 ```
 
+* 关中断操作实现源码
 ```c
 // cmsis_armcc.h
 
@@ -21,7 +26,7 @@ __STATIC_INLINE void __set_FAULTMASK(uint32_t faultMask)
 }
 ```
 
-
+* 复位实现源码
 ```c
 // core_cm3.h
 
