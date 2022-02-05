@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../../../img/favicon.ico">
-        <title>Keil AXF文件和BIN文件分析 - EdgeAI-Lab</title>
+        <title>Keil AXF文件和BIN文件分析 - EdgeAI Lab</title>
         <link href="../../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../../css/base.css" rel="stylesheet">
@@ -47,7 +47,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="../../../..">EdgeAI-Lab</a>
+                    <a class="navbar-brand" href="../../../..">EdgeAI Lab</a>
                 </div>
 
                 <!-- Expanded navigation -->
@@ -362,27 +362,27 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../STM32/peripheral/systick_timer/">Systick Timer</a>
+    <a href="../../STM32/systick_timer/">Systick Timer</a>
 </li>
             
 <li >
-    <a href="../../STM32/peripheral/stm32_hal_uart/">STM32串口编程之中断方式</a>
+    <a href="../../STM32/stm32_hal_uart/">STM32串口编程之中断方式</a>
 </li>
             
 <li >
-    <a href="../../STM32/peripheral/stm32_hal_uart/">STM32定时器编程之定时中断</a>
+    <a href="../../STM32/stm32_hal_uart/">STM32定时器编程之定时中断</a>
 </li>
             
 <li >
-    <a href="../../STM32/peripheral/stm32_hal_uart/">STM32定时器编程之PWM</a>
+    <a href="../../STM32/stm32_hal_uart/">STM32定时器编程之PWM</a>
 </li>
             
 <li >
-    <a href="../../STM32/peripheral/stm32_generate_n_number_pluse/">STM32定时器之产生固定个数的脉冲</a>
+    <a href="../../STM32/stm32_generate_n_number_pluse/">STM32定时器之产生固定个数的脉冲</a>
 </li>
             
 <li >
-    <a href="../../STM32/peripheral/stm32_adc/">STM32ADC</a>
+    <a href="../../STM32/stm32_adc/">STM32ADC</a>
 </li>
     </ul>
   </li>
@@ -398,7 +398,7 @@
   </li>
                                     
 <li >
-    <a href="../../ESP8266.md">ESP8266</a>
+    <a href="../../ESP8266/ESP8266/">ESP8266</a>
 </li>
                                     
   <li class="dropdown-submenu">
@@ -1291,7 +1291,7 @@
 
 <h1 id="elfbin">ELF文件和BIN文件<a class="headerlink" href="#elfbin" title="Permanent link">#</a></h1>
 <p>ELF文件的格式如下：</p>
-<p><img alt="" src="../../../assets/images/STM32/boot/elf_file_fromat.png" /></p>
+<p><img alt="" src="../img/elf_file_fromat.png" /></p>
 <p>通过<code>readelf</code>和<code>objdump</code>工具，可以查看ELF文件的信息，比如：</p>
 <ul>
 <li>查看ELF文件中的 “ 段头表 ” 内容</li>
@@ -1299,15 +1299,15 @@
 <pre><code>$ readelf -S test.axf
 </code></pre>
 
-<p><img alt="" src="../../../assets/images/STM32/boot/segment_table.png" /></p>
+<p><img alt="" src="../img/segment_table.png" /></p>
 <ul>
 <li>查看ELF文件中各段的内容</li>
 </ul>
 <pre><code>objdump -s test.axf
 </code></pre>
 
-<p><img alt="" src="../../../assets/images/STM32/boot/segment_content_1.png" />
-<img alt="" src="../../../assets/images/STM32/boot/segment_content_2.png" /></p>
+<p><img alt="" src="../img/segment_content_1.png" />
+<img alt="" src="../img/segment_content_2.png" /></p>
 <p>更多关于<code>readelf</code>和<code>objdump</code>工具的信息，可以通过如下指令查看：</p>
 <pre><code>readelf -h
 
@@ -1364,8 +1364,8 @@ Key to Flags:
 </code></pre>
 
 <p>BSS段头分析：</p>
-<p><img alt="" src="../../../assets/images/STM32/boot/elf_bin_analyze.png" /></p>
-<p><img alt="" src="../../../assets/images/STM32/boot/elf_bss_content.png" /></p>
+<p><img alt="" src="../img/elf_bin_analyze.png" /></p>
+<p><img alt="" src="../img/elf_bss_content.png" /></p>
 <p>ELF文件中保存的有BSS段信息的描述（地址，大小等各种属性），但是没有BSS的内容，因为BSS段中的所有内容都是0，没有必要保存内容，只需要知道变量的地址即可。</p>
 <p>但是不论是ELF文件，还是BIN文件中，必须保存BSS段的地址和大小，以便于STM32启动时将BSS段清零。</p>
 <p>事实上，在ELF文件和BIN文件中，BSS段的内容就是BSS段的地址和大小</p></div>
@@ -1373,7 +1373,7 @@ Key to Flags:
 
         <footer class="col-md-12">
             <hr>
-                <p>Copyright &copy; 2019 - 2020 Frank</p>
+                <p>Copyright &copy; 2019 - 2022 EdgeAI Lab</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>

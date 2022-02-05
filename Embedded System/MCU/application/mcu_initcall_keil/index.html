@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../../../img/favicon.ico">
-        <title>MCU上实现initcall机制-Keil - EdgeAI-Lab</title>
+        <title>MCU上实现initcall机制-Keil - EdgeAI Lab</title>
         <link href="../../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../../css/base.css" rel="stylesheet">
@@ -47,7 +47,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="../../../..">EdgeAI-Lab</a>
+                    <a class="navbar-brand" href="../../../..">EdgeAI Lab</a>
                 </div>
 
                 <!-- Expanded navigation -->
@@ -362,27 +362,27 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../STM32/peripheral/systick_timer/">Systick Timer</a>
+    <a href="../../STM32/systick_timer/">Systick Timer</a>
 </li>
             
 <li >
-    <a href="../../STM32/peripheral/stm32_hal_uart/">STM32串口编程之中断方式</a>
+    <a href="../../STM32/stm32_hal_uart/">STM32串口编程之中断方式</a>
 </li>
             
 <li >
-    <a href="../../STM32/peripheral/stm32_hal_uart/">STM32定时器编程之定时中断</a>
+    <a href="../../STM32/stm32_hal_uart/">STM32定时器编程之定时中断</a>
 </li>
             
 <li >
-    <a href="../../STM32/peripheral/stm32_hal_uart/">STM32定时器编程之PWM</a>
+    <a href="../../STM32/stm32_hal_uart/">STM32定时器编程之PWM</a>
 </li>
             
 <li >
-    <a href="../../STM32/peripheral/stm32_generate_n_number_pluse/">STM32定时器之产生固定个数的脉冲</a>
+    <a href="../../STM32/stm32_generate_n_number_pluse/">STM32定时器之产生固定个数的脉冲</a>
 </li>
             
 <li >
-    <a href="../../STM32/peripheral/stm32_adc/">STM32ADC</a>
+    <a href="../../STM32/stm32_adc/">STM32ADC</a>
 </li>
     </ul>
   </li>
@@ -398,7 +398,7 @@
   </li>
                                     
 <li >
-    <a href="../../ESP8266.md">ESP8266</a>
+    <a href="../../ESP8266/ESP8266/">ESP8266</a>
 </li>
                                     
   <li class="dropdown-submenu">
@@ -1358,7 +1358,7 @@ LR_IROM1 0x08000000 0x00080000  {    ; load region size_region
 <p>更详细的ARM Compiler链接脚本语法，请查阅ARM官方文档：</p>
 <p><a href="http://www.keil.com/support/man/docs/armlink/armlink_pge1362075656353.htm">Scatter File Syntax</a></p>
 <p><font color=red>友情提示：</font>keil中链接脚本的修改方法如下图所示：</p>
-<p><img alt="" src="../../../assets/images/STM32/boot/stm32_boot_from_sram_link_script.png" /></p>
+<p><img alt="" src="../img/boot/stm32_boot_from_sram_link_script.png" /></p>
 <p>上述操作之后，链接脚本文件将会在Keil的编辑器中被打开。</p>
 <h2 id="3">3. 将指定的函数存放到指定的程序段<a class="headerlink" href="#3" title="Permanent link">#</a></h2>
 <p>上面我们对STM32的内存进行了分配（链接脚本中的分段），16K大小的RW_IRAM2内存区域将被用来存储初始化函数，
@@ -1399,7 +1399,7 @@ init_function_list _fn_func __attribute__((used, section(&quot;RAMCODE&quot;))) 
 怎么解决了？</p>
 <p>其实很简单，在调用初始化函数时，我们是根据内存地址顺序调用的，那么将Log模块的初始化函数放在其前面就可以了。</p>
 <p>在Keil中可以这么做：</p>
-<p><img alt="" src="../../../../assets/images/STM32/module_init/fun_addr_order.png" /></p>
+<p><img alt="" src="../img/module_init/fun_addr_order.png" /></p>
 <p>还有一种方法就是，分为多个初始化函数程序段，比如：</p>
 <pre><code>RAMCODE1
 RAMCODE2
@@ -1505,7 +1505,7 @@ int main()
 
         <footer class="col-md-12">
             <hr>
-                <p>Copyright &copy; 2019 - 2020 Frank</p>
+                <p>Copyright &copy; 2019 - 2022 EdgeAI Lab</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>

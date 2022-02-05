@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../../../img/favicon.ico">
-        <title>I2C总线 - EdgeAI-Lab</title>
+        <title>I2C总线 - EdgeAI Lab</title>
         <link href="../../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../../css/base.css" rel="stylesheet">
@@ -47,7 +47,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="../../../..">EdgeAI-Lab</a>
+                    <a class="navbar-brand" href="../../../..">EdgeAI Lab</a>
                 </div>
 
                 <!-- Expanded navigation -->
@@ -362,27 +362,27 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../STM32/peripheral/systick_timer/">Systick Timer</a>
+    <a href="../../STM32/systick_timer/">Systick Timer</a>
 </li>
             
 <li >
-    <a href="../../STM32/peripheral/stm32_hal_uart/">STM32串口编程之中断方式</a>
+    <a href="../../STM32/stm32_hal_uart/">STM32串口编程之中断方式</a>
 </li>
             
 <li >
-    <a href="../../STM32/peripheral/stm32_hal_uart/">STM32定时器编程之定时中断</a>
+    <a href="../../STM32/stm32_hal_uart/">STM32定时器编程之定时中断</a>
 </li>
             
 <li >
-    <a href="../../STM32/peripheral/stm32_hal_uart/">STM32定时器编程之PWM</a>
+    <a href="../../STM32/stm32_hal_uart/">STM32定时器编程之PWM</a>
 </li>
             
 <li >
-    <a href="../../STM32/peripheral/stm32_generate_n_number_pluse/">STM32定时器之产生固定个数的脉冲</a>
+    <a href="../../STM32/stm32_generate_n_number_pluse/">STM32定时器之产生固定个数的脉冲</a>
 </li>
             
 <li >
-    <a href="../../STM32/peripheral/stm32_adc/">STM32ADC</a>
+    <a href="../../STM32/stm32_adc/">STM32ADC</a>
 </li>
     </ul>
   </li>
@@ -398,7 +398,7 @@
   </li>
                                     
 <li >
-    <a href="../../ESP8266.md">ESP8266</a>
+    <a href="../../ESP8266/ESP8266/">ESP8266</a>
 </li>
                                     
   <li class="dropdown-submenu">
@@ -1297,23 +1297,23 @@
 <h2 id="1i2c">1.I2C设备地址<a class="headerlink" href="#1i2c" title="Permanent link">#</a></h2>
 <p>I2C设备地址为7 bit+R/W标志(b1101000x)，其中x为0是读，x为1是写。</p>
 <h2 id="2startstop">2.Start和Stop<a class="headerlink" href="#2startstop" title="Permanent link">#</a></h2>
-<p><img alt="" src="../img/i2c_start_stop.png" /></p>
+<p><img alt="" src="../img/i2c/i2c_start_stop.png" /></p>
 <h2 id="3ack">3.ACK<a class="headerlink" href="#3ack" title="Permanent link">#</a></h2>
 <p>第8个CLK高电平结束后，I2C Master释放SDA总线（I2C总线空闲时电平为高），此时I2C Slave将SDA拉低并保持到第9个CLK采样完成，表示应答。</p>
-<p><img alt="" src="../img/i2c_ack.png" /></p>
+<p><img alt="" src="../img/i2c/i2c_ack.png" /></p>
 <h2 id="4data-transfer">4.Data Transfer<a class="headerlink" href="#4data-transfer" title="Permanent link">#</a></h2>
 <p>CLK高电平时数据采样，CLK低电平时数据变化。</p>
 <p>当SCL为低电平时，SDA上的数据允许发生改变；当SCL为高电平时，将会对SDA上的数据进行采集，此时不允许SDA上的数据发生变化。</p>
-<p><img alt="" src="../img/i2c_transfer.png" /></p>
+<p><img alt="" src="../img/i2c/i2c_transfer.png" /></p>
 <p>I2C设备一般都支持单字节传输，有的I2C设备也会支持多字节传输。</p>
-<p><img alt="" src="../img/i2c_single_byte_write.png" />
-<img alt="" src="../img/i2c_burst_write.png" />
-<img alt="" src="../img/i2c_read.png" /></p></div>
+<p><img alt="" src="../img/i2c/i2c_single_byte_write.png" />
+<img alt="" src="../img/i2c/i2c_burst_write.png" />
+<img alt="" src="../img/i2c/i2c_read.png" /></p></div>
         </div>
 
         <footer class="col-md-12">
             <hr>
-                <p>Copyright &copy; 2019 - 2020 Frank</p>
+                <p>Copyright &copy; 2019 - 2022 EdgeAI Lab</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>

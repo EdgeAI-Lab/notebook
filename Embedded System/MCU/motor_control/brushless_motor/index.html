@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../../../img/favicon.ico">
-        <title>无刷电机 - EdgeAI-Lab</title>
+        <title>无刷电机 - EdgeAI Lab</title>
         <link href="../../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../../css/base.css" rel="stylesheet">
@@ -47,7 +47,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="../../../..">EdgeAI-Lab</a>
+                    <a class="navbar-brand" href="../../../..">EdgeAI Lab</a>
                 </div>
 
                 <!-- Expanded navigation -->
@@ -362,27 +362,27 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../STM32/peripheral/systick_timer/">Systick Timer</a>
+    <a href="../../STM32/systick_timer/">Systick Timer</a>
 </li>
             
 <li >
-    <a href="../../STM32/peripheral/stm32_hal_uart/">STM32串口编程之中断方式</a>
+    <a href="../../STM32/stm32_hal_uart/">STM32串口编程之中断方式</a>
 </li>
             
 <li >
-    <a href="../../STM32/peripheral/stm32_hal_uart/">STM32定时器编程之定时中断</a>
+    <a href="../../STM32/stm32_hal_uart/">STM32定时器编程之定时中断</a>
 </li>
             
 <li >
-    <a href="../../STM32/peripheral/stm32_hal_uart/">STM32定时器编程之PWM</a>
+    <a href="../../STM32/stm32_hal_uart/">STM32定时器编程之PWM</a>
 </li>
             
 <li >
-    <a href="../../STM32/peripheral/stm32_generate_n_number_pluse/">STM32定时器之产生固定个数的脉冲</a>
+    <a href="../../STM32/stm32_generate_n_number_pluse/">STM32定时器之产生固定个数的脉冲</a>
 </li>
             
 <li >
-    <a href="../../STM32/peripheral/stm32_adc/">STM32ADC</a>
+    <a href="../../STM32/stm32_adc/">STM32ADC</a>
 </li>
     </ul>
   </li>
@@ -398,7 +398,7 @@
   </li>
                                     
 <li >
-    <a href="../../ESP8266.md">ESP8266</a>
+    <a href="../../ESP8266/ESP8266/">ESP8266</a>
 </li>
                                     
   <li class="dropdown-submenu">
@@ -1296,10 +1296,13 @@
 <li>无感无刷电机通常只有U V W三条线</li>
 <li>有感无刷电机除了U V W三条线外，还有Ha Hb Hc VCC GND五条线，Ha Hb Hc是三个霍尔传感器的输出，VCC和GND是霍尔传感器的电源</li>
 </ul>
+<p>也可以使用磁编码器代替霍尔传感器，实现更高精度的位置控制，目前高精度伺服电机都是使用的磁编码器。</p>
+<p><img alt="" src="../img/BLDC/BLDC_00.jpg" />
+<img alt="" src="../img/BLDC/BLDC_01.png" /></p>
 <p>无刷电机常用的驱动方法有：</p>
 <ul>
 <li>6步法，比较简单，但是性能没有FOC好</li>
-<li>FOC，很多实用DRV8301的方案</li>
+<li>FOC，很多使用DRV8301的方案</li>
 </ul>
 <p><a href="https://www.ti.com/product/DRV11873">DRV11873无感6步法-只能旋转调速不能换向</a>
 <a href="https://www.ti.com/product/DRV10974">DRV10974正弦波控制-无感-速度反馈-正反转-调速</a>
@@ -1326,7 +1329,7 @@
 
         <footer class="col-md-12">
             <hr>
-                <p>Copyright &copy; 2019 - 2020 Frank</p>
+                <p>Copyright &copy; 2019 - 2022 EdgeAI Lab</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>

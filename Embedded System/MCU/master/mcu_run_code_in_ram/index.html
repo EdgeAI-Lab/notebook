@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../../../img/favicon.ico">
-        <title>在SRAM中运行代码 - EdgeAI-Lab</title>
+        <title>在SRAM中运行代码 - EdgeAI Lab</title>
         <link href="../../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../../css/base.css" rel="stylesheet">
@@ -47,7 +47,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="../../../..">EdgeAI-Lab</a>
+                    <a class="navbar-brand" href="../../../..">EdgeAI Lab</a>
                 </div>
 
                 <!-- Expanded navigation -->
@@ -362,27 +362,27 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../STM32/peripheral/systick_timer/">Systick Timer</a>
+    <a href="../../STM32/systick_timer/">Systick Timer</a>
 </li>
             
 <li >
-    <a href="../../STM32/peripheral/stm32_hal_uart/">STM32串口编程之中断方式</a>
+    <a href="../../STM32/stm32_hal_uart/">STM32串口编程之中断方式</a>
 </li>
             
 <li >
-    <a href="../../STM32/peripheral/stm32_hal_uart/">STM32定时器编程之定时中断</a>
+    <a href="../../STM32/stm32_hal_uart/">STM32定时器编程之定时中断</a>
 </li>
             
 <li >
-    <a href="../../STM32/peripheral/stm32_hal_uart/">STM32定时器编程之PWM</a>
+    <a href="../../STM32/stm32_hal_uart/">STM32定时器编程之PWM</a>
 </li>
             
 <li >
-    <a href="../../STM32/peripheral/stm32_generate_n_number_pluse/">STM32定时器之产生固定个数的脉冲</a>
+    <a href="../../STM32/stm32_generate_n_number_pluse/">STM32定时器之产生固定个数的脉冲</a>
 </li>
             
 <li >
-    <a href="../../STM32/peripheral/stm32_adc/">STM32ADC</a>
+    <a href="../../STM32/stm32_adc/">STM32ADC</a>
 </li>
     </ul>
   </li>
@@ -398,7 +398,7 @@
   </li>
                                     
 <li >
-    <a href="../../ESP8266.md">ESP8266</a>
+    <a href="../../ESP8266/ESP8266/">ESP8266</a>
 </li>
                                     
   <li class="dropdown-submenu">
@@ -1304,7 +1304,7 @@
 <p>通常我们会使用调试器将程序直接下载到SRAM中，然后依靠调试器的初始化文件配置栈指针、PC指针和中断向量表偏移地址，从而实现在SRAM中运行代码。</p>
 <p>一个简单的补救方法是：直接在Keil中手动修改SP和PC指针。</p>
 <h3 id="11-sram">1.1 那么为什么需要从SRAM启动<a class="headerlink" href="#11-sram" title="Permanent link">#</a></h3>
-<p>可能的原因有以下几点（参考资料《ARM Cortex M3 &amp; M4权威指南》15.7节 <a href="../tools/stm32_books.md">下载地址</a>）：</p>
+<p>可能的原因有以下几点（参考资料《ARM Cortex M3 &amp; M4权威指南》15.7节 <a href="../../books/MCU_books/">下载地址</a>）：</p>
 <ol>
 <li>
 <p>所使用的设备可能具有OTP ROM（仅可进行一次编程），因此在最终确定前，是不会将程序编程到芯片中的。</p>
@@ -1324,7 +1324,7 @@
 <p>采用上述方法，无论STM32的启动模式是从Flash启动还是从SRAM启动，代码均可以在SRAM中运行，但是程序复位后不能重新运行。因为我们在调试器初始化文件中配置的栈指针、PC指针和中断向量表偏移地址只有在启动调试的时候才会执行配置。</p>
 <h3 id="122">1.2.2 设置中断向量表偏移<a class="headerlink" href="#122" title="Permanent link">#</a></h3>
 <p>添加宏定义 VECT_TAB_SRAM ：</p>
-<p><img alt="" src="../../../assets/images/STM32/boot/set_vtor.png" /></p>
+<p><img alt="" src="../img/set_vtor.png" /></p>
 <p>该宏定义影响的代码：</p>
 <pre><code class="c">// system_stm32f10x.c
 // SystemInit()
@@ -1338,7 +1338,7 @@
 
 <h3 id="121_1">1.2.1 修改链接脚本<a class="headerlink" href="#121_1" title="Permanent link">#</a></h3>
 <p>按照下图所示方式，即可在Keil编辑器中打开链接脚本：</p>
-<p><img alt="" src="../../../assets/images/STM32/boot/stm32_boot_from_sram_link_script.png" /></p>
+<p><img alt="" src="../img/stm32_boot_from_sram_link_script.png" /></p>
 <p>打开链接脚本文件后，将内容修改如下：</p>
 <pre><code>; 以STM32F103C8T6为例
 ; 从SRAM启动终端向量表（RESET段）必须位于启动空间的0地址
@@ -1363,10 +1363,10 @@ _WDWORD(0xE000ED08, 0x20000000); // 设置中断向量表偏移
 </code></pre>
 
 <p>按照下图所示方式将该初始化文件配置到Keil中：</p>
-<p><img alt="" src="../../../../assets/images/STM32/flash_download/debugger_init_file_set.png" /></p>
+<p><img alt="" src="../img/debugger_init_file_set.png" /></p>
 <h3 id="123-keilflash-download">1.2.3 修改Keil中的Flash Download设置<a class="headerlink" href="#123-keilflash-download" title="Permanent link">#</a></h3>
 <p>因为是直接从SRAM启动并执行程序，不需要对Flash进行操作，所以把Flash相关操作全部去掉。</p>
-<p><img alt="" src="../../../assets/images/STM32/boot/stm32_boot_from_sram_set_flash_download.png" /></p>
+<p><img alt="" src="../img/stm32_boot_from_sram_set_flash_download.png" /></p>
 <p>以上就是完整的配置，现在编译项目并点击调试，就能看到程序成功在SRAM中运行了。</p>
 <h2 id="2-sram">2. 将指定的代码放到SRAM运行<a class="headerlink" href="#2-sram" title="Permanent link">#</a></h2>
 <p>http://emb.hqyj.com/Column/20198162.html</p>
@@ -1375,7 +1375,7 @@ _WDWORD(0xE000ED08, 0x20000000); // 设置中断向量表偏移
 
         <footer class="col-md-12">
             <hr>
-                <p>Copyright &copy; 2019 - 2020 Frank</p>
+                <p>Copyright &copy; 2019 - 2022 EdgeAI Lab</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
