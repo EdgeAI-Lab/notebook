@@ -127,6 +127,8 @@ nav:
           - JScope RTT模式: Embedded System/MCU/mcu_debug_tools/jscope_rtt.md
           - JScope HSS模式: Embedded System/MCU/mcu_debug_tools/jscope_hss.md
           - JLink RTT: Embedded System/MCU/mcu_debug_tools/rtt.md
+
+        - 无人机开源资源汇总: Embedded System/MCU/dron_open_source.md
     
     - Robot:
         - 平衡车: Robot/two_wheel_balance_car.md
