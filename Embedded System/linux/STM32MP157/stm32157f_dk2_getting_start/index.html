@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../../../img/favicon.ico">
-        <title>STM32MP157F-DK2 Getting Start - EdgeAI Lab</title>
+        <title>STM32MP157-DK2 Getting Start - EdgeAI Lab</title>
         <link href="../../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../../css/base.css" rel="stylesheet">
@@ -567,7 +567,7 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Linux <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -877,6 +877,20 @@
             
 <li >
     <a href="../../linux_driver/linux_irq/">Linux中断</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">STM32MP157</a>
+    <ul class="dropdown-menu">
+            
+<li class="active">
+    <a href="./">STM32MP157-DK2 Getting Start</a>
+</li>
+            
+<li >
+    <a href="../stm32mp157_application_getting_start/">STM32MP157-DK2 Application Getting Start</a>
 </li>
     </ul>
   </li>
@@ -1295,6 +1309,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li >
+                                <a rel="next" href="../../linux_driver/linux_irq/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../stm32mp157_application_getting_start/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -1309,6 +1333,7 @@
             <li><a href="#21">2.1 设置开发板为下载模式</a></li>
             <li><a href="#22-stm32cubeprog">2.2 使用STM32CubeProg下载系统文件到开发板</a></li>
             <li><a href="#3">3.使用命令行烧写系统</a></li>
+            <li><a href="#3stm32mp157-dk2-wifi">3.设置STM32MP157-DK2 wifi联网</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -1384,6 +1409,18 @@ To put this raw image on sdcard:
 (mmcblk0 can be replaced by:
      sdX if it's a device dedicated to receive the raw image 
           (where X can be a, b, c, d, e)
+</code></pre>
+
+<h2 id="3stm32mp157-dk2-wifi">3.设置STM32MP157-DK2 wifi联网<a class="headerlink" href="#3stm32mp157-dk2-wifi" title="Permanent link">#</a></h2>
+<p>使用串口或者有线网口登录系统，然后使用下面的命令连接WiFi：</p>
+<pre><code>$ export SSID=&quot;CMCC-24AH&quot;
+$ export PASSWORD=&quot;cxh87f324&quot;
+
+$ ifconfig wlan0 up
+$ wpa_passphrase ${SSID} ${PASSWORD} &gt; ${SSID}.conf
+$ wpa_supplicant -i wlan0 -c ${SSID}.conf -B
+$ dhclient wlan0
+$ ifconfig
 </code></pre></div>
         </div>
 
