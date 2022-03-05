@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../../../img/favicon.ico">
-        <title>STM32MP157F-DK2 - EdgeAI Lab</title>
+        <title>STM32MP157F-DK2 Getting Start - EdgeAI Lab</title>
         <link href="../../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../../css/base.css" rel="stylesheet">
@@ -1303,43 +1303,88 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#stm32mp157f-dk2">STM32MP157F-DK2</a></li>
+        <li class="main active"><a href="#stm32mp157f-dk2-getting-start">STM32MP157F-DK2 Getting Start</a></li>
             <li><a href="#1-stm32mp1-openstlinux-starter-package">1. STM32MP1 OpenSTLinux Starter Package</a></li>
+            <li><a href="#2-stm32cubeprog">2. 使用STM32CubeProg烧写系统</a></li>
+            <li><a href="#21">2.1 设置开发板为下载模式</a></li>
+            <li><a href="#22-stm32cubeprog">2.2 使用STM32CubeProg下载系统文件到开发板</a></li>
+            <li><a href="#3">3.使用命令行烧写系统</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="stm32mp157f-dk2">STM32MP157F-DK2<a class="headerlink" href="#stm32mp157f-dk2" title="Permanent link">#</a></h1>
-<p><a href="https://wiki.stmicroelectronics.cn/stm32mpu/wiki/Main_Page">STM32 MPU wiki</a></p>
+<h1 id="stm32mp157f-dk2-getting-start">STM32MP157F-DK2 Getting Start<a class="headerlink" href="#stm32mp157f-dk2-getting-start" title="Permanent link">#</a></h1>
+<ul>
+<li><a href="https://wiki.stmicroelectronics.cn/stm32mpu/wiki/Main_Page">Reference STM32 MPU wiki</a></li>
+</ul>
 <h2 id="1-stm32mp1-openstlinux-starter-package">1. STM32MP1 OpenSTLinux Starter Package<a class="headerlink" href="#1-stm32mp1-openstlinux-starter-package" title="Permanent link">#</a></h2>
 <p>Starter Package就是直接提供刷机镜像文件，通过USB配合STM32CubeProg烧写到板子。</p>
 <ul>
 <li><a href="https://www.st.com/content/my_st_com/en/products/embedded-software/mcu-mpu-embedded-software/stm32-embedded-software/stm32-mpu-openstlinux-distribution/stm32mp1starter.license=1640785070785.product=STM32MP15Starter.version=3.1.0.html">Starter Package下载地址</a></li>
 </ul>
-<h3 id="11">1.1 烧写方法<a class="headerlink" href="#11" title="Permanent link">#</a></h3>
+<h2 id="2-stm32cubeprog">2. 使用STM32CubeProg烧写系统<a class="headerlink" href="#2-stm32cubeprog" title="Permanent link">#</a></h2>
 <ul>
 <li><a href="https://wiki.stmicroelectronics.cn/stm32mpu/wiki/Getting_started/STM32MP1_boards/STM32MP157x-DK2/Let%27s_start/Populate_the_target_and_boot_the_image">详细步骤可以参考这里</a></li>
 </ul>
 <p>下面简单介绍下：</p>
+<h2 id="21">2.1 设置开发板为下载模式<a class="headerlink" href="#21" title="Permanent link">#</a></h2>
+<p><img alt="" src="../img/STM32MP157C-DK2_jumper_flash.jpg" /></p>
+<h2 id="22-stm32cubeprog">2.2 使用STM32CubeProg下载系统文件到开发板<a class="headerlink" href="#22-stm32cubeprog" title="Permanent link">#</a></h2>
+<ol>
+<li>
+<p>通过CN7（USB Type C）连接开发板和电脑，然后在STM32CubeProg中选择USB接口，点击“Connect”，使其连接到开发板</p>
+</li>
+<li>
+<p>点击“Open File”选项卡，选择<code>FlashLayout_sdcard_stm32mp157x-dk2-trusted.tsv</code>文件，该文件的路径为：</p>
+</li>
+</ol>
+<pre><code>STM32MP15-Ecosystem-v3.1.0/Starter-Package/stm32mp1-openstlinux-5.10-dunfell-mp1-21-11-17/images/stm32mp1/flashlayout_st-image-weston/trusted
+</code></pre>
+
+<p><img alt="" src="../img/STM32CubePro_DK2_TSV_and_Binary.png" /></p>
+<ol>
+<li>点击“Browse”按钮，选择[Starter_Pack_Path]/images/stm32mp1文件夹：</li>
+</ol>
+<pre><code>STM32MP15-Ecosystem-v3.1.0/Starter-Package/stm32mp1-openstlinux-5.10-dunfell-mp1-21-11-17/images/stm32mp1
+</code></pre>
+
+<ol>
+<li>点击“Download”按钮，STM32CubeProg将会自动完成下载任务</li>
+</ol>
+<h2 id="3">3.使用命令行烧写系统<a class="headerlink" href="#3" title="Permanent link">#</a></h2>
+<p>经过测试使用STM32CubeProg烧写系统很容易失败，原因大概是出现在USB通信上，目前（2022.1.10）ST官方没有给出具体的原因。</p>
+<p>使用STM32CubeProg烧写系统，本质是将系统文件通过USB接口，然后借助STM32MP157芯片本身，将系统文件烧写到SDK。</p>
+<p>所以直接将系统文件烧写进SD卡，即可解决该问题。</p>
 <ul>
-<li>设置开发板为下载模式
-<img alt="" src="../img/STM32MP157C-DK2_jumper_flash.jpg" /></li>
-<li>
-<p>在STM32CubeProg中设置要下载的文件</p>
-</li>
-<li>
-<p>Connect USB</p>
-</li>
-<li>
-<p>Select the "Open File" tab and choose the "FlashLayout_sdcard_stm32mp157x-dk2-trusted.tsv" file in the Starter Package installation folder ("$HOME/STM32MPU_workspace/STM32MP15-Ecosystem-v3.1.0/Starter-Package/stm32mp1-openstlinux-5.10-dunfell-mp1-21-11-17/images/stm32mp1/flashlayout_st-image-weston/trusted")</p>
-</li>
-<li>
-<p>Fill the "Binaries Path" by browsing to the $[Starter_Pack_Path]/images/stm32mp1 folder.</p>
-</li>
-<li>
-<p>Click Download</p>
-</li>
-</ul></div>
+<li><a href="https://wiki.st.com/stm32mpu/wiki/How_to_populate_the_SD_card_with_dd_command">Reference STM32 Wiki</a></li>
+</ul>
+<p>下面简单介绍命令行下烧写方法：</p>
+<ol>
+<li>使用ST提供的脚本<code>create_sdcard_from_flashlayout.sh</code>生成命令行烧写文件，该脚本存在的路径为：</li>
+</ol>
+<pre><code>Starter-Package/stm32mp1-openstlinux-5.10-dunfell-mp1-21-11-17/images/stm32mp1/scripts/create_sdcard_from_flashlayout.sh
+</code></pre>
+
+<p>脚本使用方法：</p>
+<pre><code>./create_sdcard_from_flashlayout.sh ../flashlayout_st-image-weston/FlashLayout_sdcard_stm32mp157F-dk2-trusted.tsv 
+</code></pre>
+
+<p>该脚本执行完成，将会生成 xxx.raw 文件，使用dd命令将该文件烧写到SD卡即可</p>
+<pre><code>RAW IMAGE generated: ../flashlayout_st-image-weston/../flashlayout_st-image-weston_FlashLayout_sdcard_stm32mp157f-dk2-trusted.raw
+</code></pre>
+
+<p>烧写到SD卡：</p>
+<pre><code>WARNING: before to use the command dd, please umount all the partitions
+    associated to SDCARD.
+    sudo umount `lsblk --list | grep mmcblk0 | grep part | gawk '{ print $7 }' | tr '\n' ' '`
+
+To put this raw image on sdcard:
+    sudo dd if=../flashlayout_st-image-weston/../flashlayout_st-image-weston_FlashLayout_sdcard_stm32mp157c-ev1-trusted.raw of=/dev/mmcblk0 bs=8M conv=fdatasync
+
+(mmcblk0 can be replaced by:
+     sdX if it's a device dedicated to receive the raw image 
+          (where X can be a, b, c, d, e)
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">
