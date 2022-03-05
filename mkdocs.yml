@@ -128,20 +128,20 @@ nav:
           - JScope HSS模式: Embedded System/MCU/mcu_debug_tools/jscope_hss.md
           - JLink RTT: Embedded System/MCU/mcu_debug_tools/rtt.md
 
+        - RTOS:
+          - FreeRTOS:
+            - 任务切换: Embedded System/RTOS/freertos/task_switch.md
+            - 中断管理: Embedded System/RTOS/freertos/freertos_interrupt_manage.md
+            - 任务栈: Embedded System/RTOS/freertos/freertos_task_stack.md
+            - 互斥体: Embedded System/RTOS/freertos/mutexes.md
+            - 任务通知: Embedded System/RTOS/freertos/freertos_task_notify.md
+
+          - 多核系统: Embedded System/RTOS/multiple-processor_systems.md
+
         - 无人机开源资源汇总: Embedded System/MCU/dron_open_source.md
     
     - Robot:
         - 平衡车: Robot/two_wheel_balance_car.md
-
-    - RTOS:
-        - FreeRTOS:
-          - 任务切换: Embedded System/RTOS/freertos/task_switch.md
-          - 中断管理: Embedded System/RTOS/freertos/freertos_interrupt_manage.md
-          - 任务栈: Embedded System/RTOS/freertos/freertos_task_stack.md
-          - 互斥体: Embedded System/RTOS/freertos/mutexes.md
-          - 任务通知: Embedded System/RTOS/freertos/freertos_task_notify.md
-
-        - 多核系统: Embedded System/RTOS/multiple-processor_systems.md
 
     - Linux:
         - C/C++: 
@@ -223,6 +223,10 @@ nav:
           - Linux LCD驱动框架: Embedded System/linux/linux_driver/lcd_driver.md
           - Linux中断: Embedded System/linux/linux_driver/linux_irq.md
 
+        - STM32MP157:
+            - STM32MP157-DK2 Getting Start: Embedded System/linux/STM32MP157/stm32157f_dk2_getting_start.md
+            - STM32MP157-DK2 Application Getting Start: Embedded System/linux/STM32MP157/stm32mp157_application_getting_start.md
+            
         - S3C2440开发:
           - device tree:
             - 支持设备树系统移植: Embedded System/linux/jz2440/device_tree/compile_uboot_kernel_with_device_tree.md
@@ -297,10 +301,14 @@ nav:
         - USB-PD: Hardware/ubs_pd.md
         - TPS65987D: Hardware/TPS65987D.md
         - MAX17261电量计: Hardware/max17261.md
+      - SolidWorks:
+        - Soldworks启动错误No_License: Solidworks/crack/no_license_startup.md
 
       
 
     - Tools:
+      - 电脑使用问题:
+        - 文件关联的启动程序错误: Tools/about_pc/pc_file_associated_porgram_error.md
       - MkDocs搭建个人WiKi知识管理系统: 
         - 1.MkDocs - 初识: Tools/mkdocs/mkdocs_intro.md
         - 2.MkDocs - 部署到Github Pages: Tools/mkdocs/mkdocs_deploy_githubpages.md
