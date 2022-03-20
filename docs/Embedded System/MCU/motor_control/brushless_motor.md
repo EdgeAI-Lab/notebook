@@ -18,23 +18,23 @@
 * FOC，很多使用DRV8301的方案
 
 
-[DRV11873无感6步法-只能旋转调速不能换向](https://www.ti.com/product/DRV11873)
-[DRV10974正弦波控制-无感-速度反馈-正反转-调速](https://www.ti.com/product/DRV10974)
-[DRV10987](https://www.ti.com/product/DRV10987)
+* [DRV11873无感6步法-只能旋转调速不能换向](https://www.ti.com/product/DRV11873)
+* [DRV10974正弦波控制-无感-速度反馈-正反转-调速](https://www.ti.com/product/DRV10974)
+* [DRV10987](https://www.ti.com/product/DRV10987)
 
 
-[淘宝DRV11873](https://detail.tmall.com/item.htm?spm=a230r.1.14.8.19465899HrcncU&id=604320055041&cm_id=140105335569ed55e27b&abbucket=14)
+* [淘宝DRV11873](https://detail.tmall.com/item.htm?spm=a230r.1.14.8.19465899HrcncU&id=604320055041&cm_id=140105335569ed55e27b&abbucket=14)
 
-[Matlab无刷直流电机控制简介](https://ww2.mathworks.cn/campaigns/offers/brushless-dc-motors-introduction.html)
-[ODrive](https://odriverobotics.com/)
-[SimpleFOC](https://github.com/simplefoc)
+* [Matlab无刷直流电机控制简介](https://ww2.mathworks.cn/campaigns/offers/brushless-dc-motors-introduction.html)
+* [ODrive](https://odriverobotics.com/)
+* [SimpleFOC](https://github.com/simplefoc)
 
 
-[淘宝上也有卖带驱动器的无刷电机](https://item.taobao.com/item.htm?spm=a230r.1.14.35.7466181a9zKHSn&id=532666126398&ns=1&abbucket=14#detail)
+* [淘宝上也有卖带驱动器的无刷电机](https://item.taobao.com/item.htm?spm=a230r.1.14.35.7466181a9zKHSn&id=532666126398&ns=1&abbucket=14#detail)
 
 ## 无感无刷电机6步法
 
-[无感无刷电机6步法](http://www.elecfans.com/kongzhijishu/sifuyukongzhi/1293967.html)
+* [无感无刷电机6步法](http://www.elecfans.com/kongzhijishu/sifuyukongzhi/1293967.html)
 
 无刷无感直流电机多通过反电势来判断转子位置，但在电机转速为零或很低的情况下，检测不到反电势，必须让电机加速到一定速度才可以通过反电动势检测转子位置。通常用三段式启动法，包括三个步骤：预定位、加速、切换。
 
