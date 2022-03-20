@@ -1345,18 +1345,34 @@
 <p>无刷电机常用的驱动方法有：</p>
 <ul>
 <li>6步法，比较简单，但是性能没有FOC好</li>
-<li>FOC，很多使用DRV8301的方案</li>
-</ul>
-<p><a href="https://www.ti.com/product/DRV11873">DRV11873无感6步法-只能旋转调速不能换向</a>
-<a href="https://www.ti.com/product/DRV10974">DRV10974正弦波控制-无感-速度反馈-正反转-调速</a>
-<a href="https://www.ti.com/product/DRV10987">DRV10987</a></p>
+<li>
+<p>FOC，很多使用DRV8301的方案</p>
+</li>
+<li>
+<p><a href="https://www.ti.com/product/DRV11873">DRV11873无感6步法-只能旋转调速不能换向</a></p>
+</li>
+<li><a href="https://www.ti.com/product/DRV10974">DRV10974正弦波控制-无感-速度反馈-正反转-调速</a></li>
+<li>
+<p><a href="https://www.ti.com/product/DRV10987">DRV10987</a></p>
+</li>
+<li>
 <p><a href="https://detail.tmall.com/item.htm?spm=a230r.1.14.8.19465899HrcncU&amp;id=604320055041&amp;cm_id=140105335569ed55e27b&amp;abbucket=14">淘宝DRV11873</a></p>
-<p><a href="https://ww2.mathworks.cn/campaigns/offers/brushless-dc-motors-introduction.html">Matlab无刷直流电机控制简介</a>
-<a href="https://odriverobotics.com/">ODrive</a>
-<a href="https://github.com/simplefoc">SimpleFOC</a></p>
+</li>
+<li>
+<p><a href="https://ww2.mathworks.cn/campaigns/offers/brushless-dc-motors-introduction.html">Matlab无刷直流电机控制简介</a></p>
+</li>
+<li><a href="https://odriverobotics.com/">ODrive</a></li>
+<li>
+<p><a href="https://github.com/simplefoc">SimpleFOC</a></p>
+</li>
+<li>
 <p><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.35.7466181a9zKHSn&amp;id=532666126398&amp;ns=1&amp;abbucket=14#detail">淘宝上也有卖带驱动器的无刷电机</a></p>
+</li>
+</ul>
 <h2 id="6">无感无刷电机6步法<a class="headerlink" href="#6" title="Permanent link">#</a></h2>
-<p><a href="http://www.elecfans.com/kongzhijishu/sifuyukongzhi/1293967.html">无感无刷电机6步法</a></p>
+<ul>
+<li><a href="http://www.elecfans.com/kongzhijishu/sifuyukongzhi/1293967.html">无感无刷电机6步法</a></li>
+</ul>
 <p>无刷无感直流电机多通过反电势来判断转子位置，但在电机转速为零或很低的情况下，检测不到反电势，必须让电机加速到一定速度才可以通过反电动势检测转子位置。通常用三段式启动法，包括三个步骤：预定位、加速、切换。</p>
 <p>预定位：刚开始的时候转子位置是未知的，而启动前需要准确知道转子位置，因此给电机任意二相通电，把电机转子固定到一个已知位置。例如先给AB通电，再给BC通电，给二相通电比起给一相通电的好处是，避免了转子正好与通电相成90度而不能把转子拉到预定位置。</p>
 <p>加速：加速的方法有恒频升压法、恒压升频法、升压升频法。常用的方法是恒频升压法：通过不断改变占空比和换相时间来使转子加速</p>
