@@ -8,4 +8,4 @@
 
 对于电机来说，其输出的力矩是一定的，所以力臂越长，力臂末端输出的力就会越小，拉动负载的能力就会越弱。
 
-![torque](../../../assets/images/MotorControl/torque.jpg)
+![torque](img/torque.jpg)
