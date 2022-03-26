@@ -1,6 +1,8 @@
 
 # 无刷电机
 
+## 1.无刷电机简介
+
 无刷电机没有电刷，分为带霍尔传感器的和不带霍尔传感器的，这里的霍尔传感器主要用来定位转子的位置。
 
 * 无感无刷电机通常只有U V W三条线
@@ -12,19 +14,26 @@
 ![](img/BLDC/BLDC_01.png)
 
 
-无刷电机常用的驱动方法有：
+## 2.无刷电机常用的驱动方法
 
 * 6步法，比较简单，但是性能没有FOC好
 * FOC，很多使用DRV8301的方案
 
-
+## 3.无刷电机驱动IC简介
 * [DRV11873无感6步法-只能旋转调速不能换向](https://www.ti.com/product/DRV11873)
 * [DRV10974正弦波控制-无感-速度反馈-正反转-调速](https://www.ti.com/product/DRV10974)
 * [DRV10987](https://www.ti.com/product/DRV10987)
 
+* TI MCF8316A集成无感FOC
+* [MCF8316A 40-V max, 8-A peak, sensorless FOC control 3-phase BLDC motor driver](https://www.ti.com/product/MCF8316A)
+
+
+
 
 * [淘宝DRV11873](https://detail.tmall.com/item.htm?spm=a230r.1.14.8.19465899HrcncU&id=604320055041&cm_id=140105335569ed55e27b&abbucket=14)
 
+
+## 4.无刷电机学习资源
 * [Matlab无刷直流电机控制简介](https://ww2.mathworks.cn/campaigns/offers/brushless-dc-motors-introduction.html)
 * [ODrive](https://odriverobotics.com/)
 * [SimpleFOC](https://github.com/simplefoc)
@@ -32,7 +41,7 @@
 
 * [淘宝上也有卖带驱动器的无刷电机](https://item.taobao.com/item.htm?spm=a230r.1.14.35.7466181a9zKHSn&id=532666126398&ns=1&abbucket=14#detail)
 
-## 无感无刷电机6步法
+## 5.无感无刷电机6步法介绍
 
 * [无感无刷电机6步法](http://www.elecfans.com/kongzhijishu/sifuyukongzhi/1293967.html)
 
