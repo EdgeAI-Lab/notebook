@@ -105,13 +105,6 @@ nav:
         - NXP S32K1xx:
           - S32K1xx CAN模块: Embedded System/MCU/NXP/S32K144_CAN.md
        
-        - Motor Control: 
-          - 转矩: Embedded System/MCU/motor_control/torque.md
-          - 无刷电机: Embedded System/MCU/motor_control/brushless_motor.md
-          - 直流刷式电机: Embedded System/MCU/motor_control/dc_motor_driver_chip.md
-          - 步进电机: Embedded System/MCU/motor_control/stepper_motor_driver_chip.md
-          - STM32控制42步进电机: Embedded System/MCU/motor_control/stm32_io_drive_42stepper_l298n.md
-
         - 安全:
           - ARM TrustZone: Embedded System/MCU/secure/trustzone.md
 
@@ -141,6 +134,13 @@ nav:
         - 无人机开源资源汇总: Embedded System/MCU/dron_open_source.md
     
     - Robot:
+        - Motor Control: 
+          - 转矩: Robot/motor_control/torque.md
+          - 无刷电机: Robot/motor_control/brushless_motor.md
+          - 直流刷式电机: Robot/motor_control/dc_motor_driver_chip.md
+          - 步进电机: Robot/motor_control/stepper_motor_driver_chip.md
+          - STM32控制42步进电机: Robot/motor_control/stm32_io_drive_42stepper_l298n.md
+
         - 平衡车: Robot/two_wheel_balance_car.md
 
     - Linux:
