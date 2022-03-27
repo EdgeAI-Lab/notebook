@@ -134,6 +134,9 @@ nav:
         - 无人机开源资源汇总: Embedded System/MCU/dron_open_source.md
     
     - Robot:
+        - Moveit:
+          - Moveit Getting Start: Robot/moveit/moveit_getting_start.md
+
         - Motor Control: 
           - 转矩: Robot/motor_control/torque.md
           - 无刷电机: Robot/motor_control/brushless_motor.md
