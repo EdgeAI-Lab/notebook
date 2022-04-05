@@ -2,6 +2,8 @@
 
 * [Reference STM32 MPU wiki](https://wiki.stmicroelectronics.cn/stm32mpu/wiki/Main_Page)
 
+* [STM32MP157 SDK](https://www.st.com/en/embedded-software/stm32-mpu-openstlinux-distribution.html)
+
 ## 1. STM32MP1 OpenSTLinux Starter Package
 
 Starter Package就是直接提供刷机镜像文件，通过USB配合STM32CubeProg烧写到板子。

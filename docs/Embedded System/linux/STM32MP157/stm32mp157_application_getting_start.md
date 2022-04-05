@@ -7,7 +7,7 @@
 Developer Package主要是提供了交叉编译环境，可以编译应用程序，然后在STM32MP157-DK2开发板上运行。
 
 
-使用Yocto_SDK，下载地址：
+使用Yocto_SDK（其实就是交叉编译工具），下载地址：
 
 * [Developer Package下载地址](https://www.st.com/content/my_st_com/en/products/embedded-software/mcu-mpu-embedded-software/stm32-embedded-software/stm32-mpu-openstlinux-distribution/stm32mp1dev.license=1646465148472.product=STM32MP1Dev.version=3.1.0.html)
 

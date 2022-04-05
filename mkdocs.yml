@@ -166,9 +166,10 @@ nav:
           - CMake用法: Embedded System/c&c++/cmake_usage.md
           - C代码片段: Embedded System/c&c++/snippet.md
 
-        - Linux命令:
-          - Linux常用命令: Embedded System/linux/linux_cmd/linux_cmd.md
-          - 命令行连接WiFi热点: Embedded System/linux/linux_cmd/cli_connect_wifi.md
+        - Linux系统设置:
+          - Linux常用命令: Embedded System/linux/linux_system_use/linux_cmd.md
+          - 命令行连接WiFi热点: Embedded System/linux/linux_system_use/cli_connect_wifi.md
+          - Linux 开机脚本启动顺序: Embedded System/linux/linux_system_use/linux_script_start_squence.md
 
         - 开发环境相关: 
           - QEMU:
@@ -229,7 +230,7 @@ nav:
         - STM32MP157:
             - STM32MP157-DK2 Getting Start: Embedded System/linux/STM32MP157/stm32157f_dk2_getting_start.md
             - STM32MP157-DK2 Application Getting Start: Embedded System/linux/STM32MP157/stm32mp157_application_getting_start.md
-            
+            - STM32MP157-DK2 Rebuild Kernel Getting Start: Embedded System/linux/STM32MP157/stm32mp157_rebuild_kernel_getting_start.md
         - S3C2440开发:
           - device tree:
             - 支持设备树系统移植: Embedded System/linux/jz2440/device_tree/compile_uboot_kernel_with_device_tree.md
@@ -265,6 +266,9 @@ nav:
 
 
     - Other:
+      - Algorithm:
+        - 最小二乘法（最小平方法）: Algorithm/least-squares.md
+
       - Computer Science:
         - 字符集: Embedded System/cs/character_set.md
         - 非对称加密: Embedded System/cs/RSA.md
