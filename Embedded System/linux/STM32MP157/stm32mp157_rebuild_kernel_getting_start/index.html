@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../../../img/favicon.ico">
-        <title>Linux常用命令 - EdgeAI Lab</title>
+        <title>STM32MP157-DK2 Rebuild Kernel Getting Start - EdgeAI Lab</title>
         <link href="../../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../../css/base.css" rel="stylesheet">
@@ -654,15 +654,19 @@
   </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#">Linux命令</a>
+    <a href="#">Linux系统设置</a>
     <ul class="dropdown-menu">
             
-<li class="active">
-    <a href="./">Linux常用命令</a>
+<li >
+    <a href="../../linux_system_use/linux_cmd/">Linux常用命令</a>
 </li>
             
 <li >
-    <a href="../cli_connect_wifi/">命令行连接WiFi热点</a>
+    <a href="../../linux_system_use/cli_connect_wifi/">命令行连接WiFi热点</a>
+</li>
+            
+<li >
+    <a href="../../linux_system_use/linux_script_start_squence/">Linux 开机脚本启动顺序</a>
 </li>
     </ul>
   </li>
@@ -896,11 +900,15 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../STM32MP157/stm32157f_dk2_getting_start/">STM32MP157-DK2 Getting Start</a>
+    <a href="../stm32157f_dk2_getting_start/">STM32MP157-DK2 Getting Start</a>
 </li>
             
 <li >
-    <a href="../../STM32MP157/stm32mp157_application_getting_start/">STM32MP157-DK2 Application Getting Start</a>
+    <a href="../stm32mp157_application_getting_start/">STM32MP157-DK2 Application Getting Start</a>
+</li>
+            
+<li class="active">
+    <a href="./">STM32MP157-DK2 Rebuild Kernel Getting Start</a>
 </li>
     </ul>
   </li>
@@ -1032,6 +1040,16 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Algorithm</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../../Algorithm/least-squares/">最小二乘法（最小平方法）</a>
+</li>
+    </ul>
+  </li>
                                     
   <li class="dropdown-submenu">
     <a href="#">Computer Science</a>
@@ -1320,12 +1338,12 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../../../c&c++/snippet/">
+                                <a rel="next" href="../stm32mp157_application_getting_start/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../cli_connect_wifi/">
+                                <a rel="prev" href="../../jz2440/device_tree/compile_uboot_kernel_with_device_tree/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -1337,99 +1355,54 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#linux">Linux命令</a></li>
-            <li><a href="#1-dd">1. dd</a></li>
-            <li><a href="#2-rm">2. rm</a></li>
-            <li><a href="#3">3. 硬盘相关</a></li>
-            <li><a href="#4">4. 网络传输相关命令</a></li>
-            <li><a href="#5">5.网络管理</a></li>
+        <li class="main active"><a href="#rebuild-linux-kernel">Rebuild Linux kernel</a></li>
+            <li><a href="#1">1. 配置交叉编译环境</a></li>
+            <li><a href="#2-linux">2. 解压Linux内核源码并打上补丁</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="linux">Linux命令<a class="headerlink" href="#linux" title="Permanent link">#</a></h1>
-<h2 id="1-dd">1. dd<a class="headerlink" href="#1-dd" title="Permanent link">#</a></h2>
-<pre><code class="shell">
-sudo dd if=/xx/xx/xx.img of=/dev/sdc bs=512M
+<h1 id="rebuild-linux-kernel">Rebuild Linux kernel<a class="headerlink" href="#rebuild-linux-kernel" title="Permanent link">#</a></h1>
+<p>编译Linux Kernel需要使用Developer SDK，Developer SDK分为两部分：</p>
+<ul>
+<li>
+<p><a href="https://www.st.com/content/st_com/en/products/embedded-software/mcu-mpu-embedded-software/stm32-embedded-software/stm32-mpu-openstlinux-distribution/stm32mp1dev.html#get-software">STM32MP1Dev Linux源码包</a></p>
+</li>
+<li>
+<p><a href="https://www.st.com/content/st_com/en/products/embedded-software/mcu-mpu-embedded-software/stm32-embedded-software/stm32-mpu-openstlinux-distribution/stm32mp1dev.html#get-software">Yocto_SDK 交叉编译器</a></p>
+</li>
+</ul>
+<h2 id="1">1. 配置交叉编译环境<a class="headerlink" href="#1" title="Permanent link">#</a></h2>
+<p>下载Developer SDK中的Yocto_SDK，按照安装提示进行操作：</p>
+<pre><code>$&gt; source /home/fhc/cross_compiler/environment-setup-cortexa7t2hf-neon-vfpv4-ostl-linux-gnueabi
+</code></pre>
 
+<p>安装依赖：</p>
+<pre><code>$&gt; sudo apt-get update
+$&gt; sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath socat cpio python3 python3-pip python3-pexpect xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev pylint3 pylint xterm
+$&gt; sudo apt-get install make xsltproc docbook-utils fop dblatex xmlto
+$&gt; sudo apt-get install libmpc-dev libgmp-dev
+</code></pre>
+
+<h2 id="2-linux">2. 解压Linux内核源码并打上补丁<a class="headerlink" href="#2-linux" title="Permanent link">#</a></h2>
+<ul>
+<li>解压Linux Kernel</li>
+</ul>
+<pre><code>$&gt; cd stm32mp1-openstlinux-5.10-dunfell-mp1-21-11-17/sources/arm-ostl-linux-gnueabi/linux-stm32mp-5.10.61-stm32mp-r2-r0
+$&gt; tar xvf linux-5.10.61.tar.xz
 </code></pre>
 
 <ul>
-<li>if -- input file</li>
-<li>of -- output file</li>
+<li>打补丁</li>
 </ul>
-<h2 id="2-rm">2. rm<a class="headerlink" href="#2-rm" title="Permanent link">#</a></h2>
-<pre><code class="shell"># 除file之外的文件全部删除
-rm -f !(file)
-
-# 除file1,file2,...之外的文件全部删除
-rm -f !(file1|file2|...)
+<pre><code>$&gt; cd linux-5.10.61
+$&gt; for p in `ls -1 ../*.patch`; do patch -p1 &lt; $p; done
 </code></pre>
 
-<h2 id="3">3. 硬盘相关<a class="headerlink" href="#3" title="Permanent link">#</a></h2>
-<ul>
-<li>硬盘分区格式化</li>
-</ul>
-<pre><code class="bash"># 分区
-sudo fdisk /dev/sdx
-
-# 格式化
-sudo mkfs.vfat /dev/sdx
-
+<pre><code>apt-get install libyaml-dev libpython2.7-dev
 </code></pre>
 
-<ul>
-<li>查看硬盘容量使用情况</li>
-</ul>
-<pre><code class="bash"># 查看硬盘容量使用情况 -h --human-readable
-df -hl /dev/sda1
-
-# 查看文件或者文件夹的大小
-du -hl xxx
-
-
-
-</code></pre>
-
-<h2 id="4">4. 网络传输相关命令<a class="headerlink" href="#4" title="Permanent link">#</a></h2>
-<ul>
-<li>wget</li>
-</ul>
-<pre><code class="bash">wget https://ftp.gnu.org/gnu/wget/wget-latest.tar.gz
-
-# 匿名登录FTP服务器并下载文件
-wget ftp://192.168.10.100/fhc/wuhuanWiki/site.zip
-
-# 使用用户名密码登录并下载文件
-wget ftp://username:paswword@192.168.10.100/fhc/wuhuanWiki/site.zip
-
-</code></pre>
-
-<ul>
-<li>scp</li>
-</ul>
-<pre><code class="bash">
-scp source_file username@host:/path
-
-</code></pre>
-
-<h2 id="5">5.网络管理<a class="headerlink" href="#5" title="Permanent link">#</a></h2>
-<ul>
-<li>wifi连接相关操作</li>
-</ul>
-<pre><code class="shell">
-# 安装nmcli网络管理工具
-sudo apt-get install nmcli
-
-# 打开或者关闭wifi
-sudo nmcli r wifi on/off
-
-# 扫描附近wifi热点
-sudo nmcli dev wifi
-
-# 连接到指定的wifi热点
-sudo nmcli dev wifi connect &quot;SSID&quot; password &quot;PASSWORD&quot; ifname wlan0
-
+<pre><code>sudo apt-get install libssl-dev 
 </code></pre></div>
         </div>
 

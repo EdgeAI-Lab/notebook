@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../../../img/favicon.ico">
-        <title>命令行连接WiFi热点 - EdgeAI Lab</title>
+        <title>Linux常用命令 - EdgeAI Lab</title>
         <link href="../../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../../css/base.css" rel="stylesheet">
@@ -654,15 +654,19 @@
   </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#">Linux命令</a>
+    <a href="#">Linux系统设置</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../linux_cmd/">Linux常用命令</a>
+<li class="active">
+    <a href="./">Linux常用命令</a>
 </li>
             
-<li class="active">
-    <a href="./">命令行连接WiFi热点</a>
+<li >
+    <a href="../cli_connect_wifi/">命令行连接WiFi热点</a>
+</li>
+            
+<li >
+    <a href="../linux_script_start_squence/">Linux 开机脚本启动顺序</a>
 </li>
     </ul>
   </li>
@@ -902,6 +906,10 @@
 <li >
     <a href="../../STM32MP157/stm32mp157_application_getting_start/">STM32MP157-DK2 Application Getting Start</a>
 </li>
+            
+<li >
+    <a href="../../STM32MP157/stm32mp157_rebuild_kernel_getting_start/">STM32MP157-DK2 Rebuild Kernel Getting Start</a>
+</li>
     </ul>
   </li>
                                     
@@ -1032,6 +1040,16 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Algorithm</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../../Algorithm/least-squares/">最小二乘法（最小平方法）</a>
+</li>
+    </ul>
+  </li>
                                     
   <li class="dropdown-submenu">
     <a href="#">Computer Science</a>
@@ -1320,12 +1338,12 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../linux_cmd/">
+                                <a rel="next" href="../../../c&c++/snippet/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../../embedded_linux_dev_env/qemu/qemu_install/">
+                                <a rel="prev" href="../cli_connect_wifi/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -1337,62 +1355,99 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#linuxwifi">Linux命令行连接WiFi</a></li>
-            <li><a href="#1-nmcliwifi">1. 使用nmcli命令连接WiFi</a></li>
-            <li><a href="#2-wap_xxxwifi">2. 用wap_xxx命令连接WiFi</a></li>
+        <li class="main active"><a href="#linux">Linux命令</a></li>
+            <li><a href="#1-dd">1. dd</a></li>
+            <li><a href="#2-rm">2. rm</a></li>
+            <li><a href="#3">3. 硬盘相关</a></li>
+            <li><a href="#4">4. 网络传输相关命令</a></li>
+            <li><a href="#5">5.网络管理</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="linuxwifi">Linux命令行连接WiFi<a class="headerlink" href="#linuxwifi" title="Permanent link">#</a></h1>
-<h2 id="1-nmcliwifi">1. 使用nmcli命令连接WiFi<a class="headerlink" href="#1-nmcliwifi" title="Permanent link">#</a></h2>
-<ul>
-<li>切换到root账户</li>
-</ul>
-<pre><code>$ su root
+<h1 id="linux">Linux命令<a class="headerlink" href="#linux" title="Permanent link">#</a></h1>
+<h2 id="1-dd">1. dd<a class="headerlink" href="#1-dd" title="Permanent link">#</a></h2>
+<pre><code class="shell">
+sudo dd if=/xx/xx/xx.img of=/dev/sdc bs=512M
+
 </code></pre>
 
 <ul>
-<li>查看网络设备列表</li>
+<li>if -- input file</li>
+<li>of -- output file</li>
 </ul>
-<pre><code>$ nmcli dev
+<h2 id="2-rm">2. rm<a class="headerlink" href="#2-rm" title="Permanent link">#</a></h2>
+<pre><code class="shell"># 除file之外的文件全部删除
+rm -f !(file)
+
+# 除file1,file2,...之外的文件全部删除
+rm -f !(file1|file2|...)
 </code></pre>
 
-<p>注意，如果列出的设备状态是 unmanaged 的，说明网络设备不受NetworkManager管理，你需要清空 /etc/network/interfaces下的网络设置,然后重启.</p>
+<h2 id="3">3. 硬盘相关<a class="headerlink" href="#3" title="Permanent link">#</a></h2>
 <ul>
-<li>开启WiFi</li>
+<li>硬盘分区格式化</li>
 </ul>
-<pre><code>$ nmcli r wifi on
+<pre><code class="bash"># 分区
+sudo fdisk /dev/sdx
+
+# 格式化
+sudo mkfs.vfat /dev/sdx
+
 </code></pre>
 
 <ul>
-<li>扫描附近的 WiFi 热点</li>
+<li>查看硬盘容量使用情况</li>
 </ul>
-<pre><code>$ nmcli dev wifi
+<pre><code class="bash"># 查看硬盘容量使用情况 -h --human-readable
+df -hl /dev/sda1
+
+# 查看文件或者文件夹的大小
+du -hl xxx
+
+
+
+</code></pre>
+
+<h2 id="4">4. 网络传输相关命令<a class="headerlink" href="#4" title="Permanent link">#</a></h2>
+<ul>
+<li>wget</li>
+</ul>
+<pre><code class="bash">wget https://ftp.gnu.org/gnu/wget/wget-latest.tar.gz
+
+# 匿名登录FTP服务器并下载文件
+wget ftp://192.168.10.100/fhc/wuhuanWiki/site.zip
+
+# 使用用户名密码登录并下载文件
+wget ftp://username:paswword@192.168.10.100/fhc/wuhuanWiki/site.zip
+
 </code></pre>
 
 <ul>
-<li>连接到指定的 WiFi 热点</li>
+<li>scp</li>
 </ul>
-<pre><code>$ nmcli dev wifi connect &quot;SSID&quot; password &quot;PASSWORD&quot; ifname wlan0
+<pre><code class="bash">
+scp source_file username@host:/path
+
 </code></pre>
 
-<p>请将 SSID和 PASSWORD 替换成实际的 WiFi名称和密码。
-连接成功后，下次开机，WiFi 也会自动连接。</p>
-<p>假如NetworkManager无法运行：</p>
-<pre><code>Error: NetworkManager is not running.
-</code></pre>
+<h2 id="5">5.网络管理<a class="headerlink" href="#5" title="Permanent link">#</a></h2>
+<ul>
+<li>wifi连接相关操作</li>
+</ul>
+<pre><code class="shell">
+# 安装nmcli网络管理工具
+sudo apt-get install nmcli
 
-<p>可以尝试使用wap_xxx指令，使用方法如下：</p>
-<h2 id="2-wap_xxxwifi">2. 用wap_xxx命令连接WiFi<a class="headerlink" href="#2-wap_xxxwifi" title="Permanent link">#</a></h2>
-<pre><code>$ export SSID=&quot;VincrossGuest&quot;
-$ export PASSWORD=&quot;vincross&quot;
+# 打开或者关闭wifi
+sudo nmcli r wifi on/off
 
-$ ifconfig wlan1 up
-$ wpa_passphrase ${SSID} ${PASSWORD} &gt; /etc/wpa_supplicant/${SSID}.conf
-$ wpa_supplicant -i wlan1 -c /etc/wpa_supplicant/${SSID}.conf -B
-$ dhclient wlan1
-$ ifconfig
+# 扫描附近wifi热点
+sudo nmcli dev wifi
+
+# 连接到指定的wifi热点
+sudo nmcli dev wifi connect &quot;SSID&quot; password &quot;PASSWORD&quot; ifname wlan0
+
 </code></pre></div>
         </div>
 
