@@ -8,6 +8,8 @@
 * 无感无刷电机通常只有U V W三条线
 * 有感无刷电机除了U V W三条线外，还有Ha Hb Hc VCC GND五条线，Ha Hb Hc是三个霍尔传感器的输出，VCC和GND是霍尔传感器的电源
 
+![](img/BLDC_With_Hall.jpg)
+
 也可以使用磁编码器代替霍尔传感器，实现更高精度的位置控制，目前高精度伺服电机都是使用的磁编码器。
 
 ![](img/BLDC/BLDC_00.jpg)
