@@ -114,6 +114,7 @@ nav:
               - Bluetooth Stack: Embedded System/MCU/wireless/bluetooth/protocal_stack.md
             - UWB:
               - UWB测距算法: Embedded System/MCU/wireless/UWB/uwb_Ranging_Techniques.md
+              - UWB定位算法: Embedded System/MCU/wireless/UWB/uwb_location_algorithm.md
         
         - 调试工具:
           - OpenOCD: Embedded System/MCU/mcu_debug_tools/openocd.md
