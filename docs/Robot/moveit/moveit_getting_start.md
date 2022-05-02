@@ -29,6 +29,8 @@ locale  # verify settings
 
 ```
 apt-cache policy | grep universe
+
+# will output
  500 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 Packages
      release v=20.04,o=Ubuntu,a=focal,n=focal,l=Ubuntu,c=universe,b=amd64
 ```
@@ -46,7 +48,22 @@ sudo add-apt-repository universe
 
 # authorize GPG key with apt
 sudo apt update && sudo apt install curl gnupg lsb-release
+
+# 这一步是从github下载ros.key，并重命名为ros-archieve-keyring.gpg放到 /usr/share/keyrings/ 目录下
+# 可以自己从浏览器下载ros.key
 sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+
+# 以上骤可能需要科学上网
+赛风 -> 设置 -> 本地代理端口 -> HTTP/HTTPS(1080),允许网络下的其他设备使用该代理
+export http_proxy="http://pc_ip:108" 
+export https_proxy="http://pc_ip:1080" 
+
+# 但是sudo curl加上sudo科学上网不能生效（export设置环境变量的问题），可以使用如下命令解决：
+
+wget https://raw.githubusercontent.com/ros/rosdistro/master/ros.key
+mv ros.key /usr/share/keyrings/ros-archive-keyring.gpg
+
+
 
 # add the repository to your sources list
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(source /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
