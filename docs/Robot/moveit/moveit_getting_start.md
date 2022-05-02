@@ -64,7 +64,7 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-a
 赛风 -> 设置 -> 本地代理端口 -> HTTP/HTTPS(1080),允许网络下的其他设备使用该代理
 
 ```
-export http_proxy="http://pc_ip:108" 
+export http_proxy="http://pc_ip:1080" 
 export https_proxy="http://pc_ip:1080" 
 ```
 
