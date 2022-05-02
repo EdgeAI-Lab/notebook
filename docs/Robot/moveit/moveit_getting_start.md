@@ -4,6 +4,8 @@
 
 ## 1. 使用Debian Packages安装ROS
 
+> 注意：ROS对Ubuntu系统的版本是有要求的，比如最新的ROS 2 Galactic Geochelone要求的Ubuntu版本是Ubuntu Linux - Focal Fossa (20.04)，最好是按照ROS官方要求的版本进行安装，否则可能会出现各种奇怪问题。
+
 * ROS可以通过官方预编译的二进制安装包安装，也可以通过源码编译安装
 * 一般支持AMD64、ARM64和ARM32架构
 * [The target platforms ](https://github.com/ros-infrastructure/rep/blob/master/rep-2000.rst)
@@ -53,21 +55,27 @@ sudo apt update && sudo apt install curl gnupg lsb-release
 # 可以自己从浏览器下载ros.key
 sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
 
-# 以上骤可能需要科学上网
-赛风 -> 设置 -> 本地代理端口 -> HTTP/HTTPS(1080),允许网络下的其他设备使用该代理
-export http_proxy="http://pc_ip:108" 
-export https_proxy="http://pc_ip:1080" 
-
-# 但是sudo curl加上sudo科学上网不能生效（export设置环境变量的问题），可以使用如下命令解决：
-
-wget https://raw.githubusercontent.com/ros/rosdistro/master/ros.key
-mv ros.key /usr/share/keyrings/ros-archive-keyring.gpg
-
-
-
 # add the repository to your sources list
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(source /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 ```
+
+以上骤可能需要科学上网
+
+赛风 -> 设置 -> 本地代理端口 -> HTTP/HTTPS(1080),允许网络下的其他设备使用该代理
+
+```
+export http_proxy="http://pc_ip:108" 
+export https_proxy="http://pc_ip:1080" 
+```
+
+在/etc/sudoers文件中添加如下内容，使sudo命令也能科学上网：
+
+```
+Defaults:%sudo env_keep += "http_proxy https_proxy no_proxy"
+```
+
+![](img/etc_sudoers.png)
+
 
 ### 1.3 安装ROS 2 Packages
 
