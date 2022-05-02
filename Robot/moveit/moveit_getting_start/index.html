@@ -681,6 +681,14 @@
   </li>
             
 <li>
+    <a href="../../../Embedded%20System/linux/embedded_linux_dev_env/ubuntu_change_sw_source/" class="dropdown-item">Ubuntu软件源设置</a>
+</li>
+            
+<li>
+    <a href="../../../Embedded%20System/linux/embedded_linux_dev_env/ubuntu_configure/" class="dropdown-item">Ubuntu系统使用配置</a>
+</li>
+            
+<li>
     <a href="../../../Embedded%20System/linux/embedded_linux_dev_env/wsl_shared_folder/" class="dropdown-item">WSL与Windows共享文件</a>
 </li>
             
@@ -1435,7 +1443,7 @@ echo &quot;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/
 </code></pre>
 <p>以上骤可能需要科学上网</p>
 <p>赛风 -&gt; 设置 -&gt; 本地代理端口 -&gt; HTTP/HTTPS(1080),允许网络下的其他设备使用该代理</p>
-<pre><code>export http_proxy=&quot;http://pc_ip:108&quot; 
+<pre><code>export http_proxy=&quot;http://pc_ip:1080&quot; 
 export https_proxy=&quot;http://pc_ip:1080&quot; 
 </code></pre>
 <p>在/etc/sudoers文件中添加如下内容，使sudo命令也能科学上网：</p>

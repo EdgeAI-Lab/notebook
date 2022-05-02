@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../../../img/favicon.ico">
-        <title>Ubuntu更换软件源 - EdgeAI Lab</title>
+        <title>Ubuntu软件源设置 - EdgeAI Lab</title>
         <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../../css/base.css" rel="stylesheet">
@@ -572,7 +572,7 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Linux <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -679,6 +679,14 @@
 </li>
     </ul>
   </li>
+            
+<li>
+    <a href="./" class="dropdown-item active">Ubuntu软件源设置</a>
+</li>
+            
+<li>
+    <a href="../ubuntu_configure/" class="dropdown-item">Ubuntu系统使用配置</a>
+</li>
             
 <li>
     <a href="../wsl_shared_folder/" class="dropdown-item">WSL与Windows共享文件</a>
@@ -1332,6 +1340,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../qemu/qemu_install/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../ubuntu_configure/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -1361,8 +1379,10 @@
 
 <h1 id="ubuntu">Ubuntu更换软件源<a class="headerlink" href="#ubuntu" title="Permanent link">#</a></h1>
 <p>新安装的Ubuntu系统，默认的软件源是国外的，下载的速度会很慢，所以让我们来把Ubuntu的软件软件源设置成国内的吧。</p>
-<pre><code>Setting -&gt; Software &amp; Updates -&gt; Ubuntu Software -&gt; Download from
-</code></pre></div>
+<pre><code>Setting -&gt; Software &amp; Updates -&gt; Ubuntu Software -&gt; Download from -&gt; Other -&gt; Select Best Server
+</code></pre>
+<p><img alt="" src="../img/ubuntu_software00.png" /></p>
+<p><img alt="" src="../img/ubuntu_software01.png" /></p></div>
             </div>
         </div>
 
