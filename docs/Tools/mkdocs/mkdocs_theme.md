@@ -18,7 +18,13 @@ MkDocs提供了多种主题供你选择。
 
 * [第三方主题](https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes)
 
-选择你喜欢的主题，根据主题官网提示进行安装，然后将如下内容添加到你的Wiki项目的 `mkdocs.yml`文件中。
+选择你喜欢的主题，根据主题官网提示进行安装，比如:
+
+```
+pip install mkdocs-bootswatch
+```
+
+然后将如下内容添加到你的Wiki项目的 `mkdocs.yml`文件中。
 
 ```yaml
 theme:
