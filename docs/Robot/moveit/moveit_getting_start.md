@@ -1,6 +1,29 @@
 # Moveit Getting Start
 
+* [更改Ubuntu软件源加快apt-get软件下载速度](../linux/embedded_linux_dev_env/ubuntu_change_sw_source.md)
+
 * [Moveit Tutorials](https://moveit.picknik.ai/galactic/doc/tutorials/getting_started/getting_started.html)
+
+## 0. 科学上网准备
+
+* 赛风 -> 设置 -> 本地代理端口 -> HTTP/HTTPS(1080),允许网络下的其他设备使用该代理
+
+```
+export http_proxy="http://pc_ip:1080" 
+export https_proxy="http://pc_ip:1080" 
+```
+
+* 在/etc/sudoers文件中添加如下内容，使sudo命令也能科学上网：
+
+```
+sudo chmod +w /etc/sudoers
+sudo vim /etc/sudoers
+
+# add
+Defaults:%sudo env_keep += "http_proxy https_proxy no_proxy"
+```
+
+![](img/etc_sudoers.png)
 
 ## 1. 使用Debian Packages安装ROS
 
@@ -58,24 +81,6 @@ sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o
 # add the repository to your sources list
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(source /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 ```
-
-以上骤可能需要科学上网
-
-赛风 -> 设置 -> 本地代理端口 -> HTTP/HTTPS(1080),允许网络下的其他设备使用该代理
-
-```
-export http_proxy="http://pc_ip:1080" 
-export https_proxy="http://pc_ip:1080" 
-```
-
-在/etc/sudoers文件中添加如下内容，使sudo命令也能科学上网：
-
-```
-Defaults:%sudo env_keep += "http_proxy https_proxy no_proxy"
-```
-
-![](img/etc_sudoers.png)
-
 
 ### 1.3 安装ROS 2 Packages
 
@@ -171,6 +176,36 @@ cd ~/ws_moveit2
 colcon build --mixin release
 ```
 
+如果遇到如下编译错误：
+
+[has no member named ‘future’ when building moveit2_tutorials ](https://github.com/ros-planning/moveit2_tutorials/issues/350)
+
+```
+Finished <<< launch_param_builder [3.20s]
+--- stderr: moveit2_tutorials                             
+/home/fernando/ws_moveit2/src/moveit2_tutorials/doc/examples/planning_scene_ros_api/src/planning_scene_ros_api_tutorial.cpp: In function ‘int main(int, char**)’:
+/home/fernando/ws_moveit2/src/moveit2_tutorials/doc/examples/planning_scene_ros_api/src/planning_scene_ros_api_tutorial.cpp:164:77: error: ‘using SharedFuture = class std::shared_future<std::shared_ptr<moveit_msgs::srv::ApplyPlanningScene_Response_<std::allocator<void> > > >’ {aka ‘class std::shared_future<std::shared_ptr<moveit_msgs::srv::ApplyPlanningScene_Response_<std::allocator<void> > > >’} has no member named ‘future’
+  164 |   response_future = planning_scene_diff_client->async_send_request(request).future.share();
+      |                                                                             ^~~~~~
+make[2]: *** [doc/examples/planning_scene_ros_api/CMakeFiles/planning_scene_ros_api_tutorial.dir/build.make:63: doc/examples/planning_scene_ros_api/CMakeFiles/planning_scene_ros_api_tutorial.dir/src/planning_scene_ros_api_tutorial.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:380: doc/examples/planning_scene_ros_api/CMakeFiles/planning_scene_ros_api_tutorial.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2
+---
+Failed   <<< moveit2_tutorials [6.32s, exited with code 2]
+```
+
+解决方法如下：
+
+[](https://github.com/ros-planning/moveit2_tutorials/pull/198/files/3f80be1144b62d7616dfe8c01c0856ae65e7c20c)
+
+* doc/examples/planning_scene_ros_api/src/planning_scene_ros_api_tutorial.cpp 第164行，修改如下：
+
+```
+response_future = planning_scene_diff_client->async_send_request(request);
+```
+
+尝试切换到galactic分支也不好使
+
 * 设置环境变量
 
 ```
@@ -195,3 +230,23 @@ ros2 launch moveit2_tutorials demo.launch.py rviz_tutorial:=true
 * 现在你会在RViz中看到 Panda robot
 
 ![](img/rviz_start.png)
+
+## 3.2 检查如下几个参数的设置
+
+* Displays -> Global Options -> Fixed Frame: /panda_link0
+* MotionPlanning -> Robot Description: robot_description
+* MotionPlanning -> Planning Scene Topic: /monitored_planning_scene
+* MotionPlanning -> Planned Path -> Trajectory Topic: /display_planned_path
+
+以上四个参数一般是默认值，下面这些参数一般需要手动修改下：
+
+* MotionPlanning -> Planning Request -> Planning Group: panda_arm
+
+* 取消选择 MotionPlanning -> Scene Robot -> Show Robot Visual
+* 选中MotionPlanning -> Planning Request -> Query Start State
+* 选中MotionPlanning -> Planning Request -> Query Goal State
+* MotionPlanning -> Planning Path -> State Display Time: 0.05s
+* 选中MotionPlanning -> Planning Path -> Loop Animation
+* 选中MotionPlanning -> Planning Path -> Show Trail
+
+如上参数设置完毕后，点击Plan即可看见仿真结果。
