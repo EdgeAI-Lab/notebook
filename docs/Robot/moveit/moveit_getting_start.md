@@ -6,7 +6,7 @@
 
 ### 0.1 更改Ubuntu软件源，加快apt-get软件下载速度
 
-[](../../Embedded%20System/linux/embedded_linux_dev_env/ubuntu_change_sw_source.md)
+[点击查看设置方法](../../Embedded%20System/linux/embedded_linux_dev_env/ubuntu_change_sw_source.md)
 
 ### 0.2 科学上网
 
@@ -180,7 +180,7 @@ cd ~/ws_moveit2
 colcon build --mixin release
 ```
 
-如果遇到如下编译错误：
+如果遇到如下编译错误（2022-05）：
 
 [has no member named ‘future’ when building moveit2_tutorials ](https://github.com/ros-planning/moveit2_tutorials/issues/350)
 
@@ -208,7 +208,7 @@ Failed   <<< moveit2_tutorials [6.32s, exited with code 2]
 response_future = planning_scene_diff_client->async_send_request(request);
 ```
 
-尝试切换到galactic分支也不好使
+> 注意：切换到galactic分支也不行，没有深究其原因
 
 * 设置环境变量
 
