@@ -1,10 +1,14 @@
 # Moveit Getting Start
 
-* [更改Ubuntu软件源加快apt-get软件下载速度](../linux/embedded_linux_dev_env/ubuntu_change_sw_source.md)
+* [Moveit Tutorials on Office Site](https://moveit.picknik.ai/galactic/doc/tutorials/getting_started/getting_started.html)
 
-* [Moveit Tutorials](https://moveit.picknik.ai/galactic/doc/tutorials/getting_started/getting_started.html)
+## 0. 准备
 
-## 0. 科学上网准备
+### 0.1 更改Ubuntu软件源，加快apt-get软件下载速度
+
+[](../../Embedded%20System/linux/embedded_linux_dev_env/ubuntu_change_sw_source.md)
+
+### 0.2 科学上网
 
 * 赛风 -> 设置 -> 本地代理端口 -> HTTP/HTTPS(1080),允许网络下的其他设备使用该代理
 
