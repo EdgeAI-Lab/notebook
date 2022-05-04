@@ -1403,7 +1403,7 @@
 </ul>
 <h2 id="0">0. 准备<a class="headerlink" href="#0" title="Permanent link">#</a></h2>
 <h3 id="01-ubuntuapt-get">0.1 更改Ubuntu软件源，加快apt-get软件下载速度<a class="headerlink" href="#01-ubuntuapt-get" title="Permanent link">#</a></h3>
-<p><a href="../../../Embedded%20System/linux/embedded_linux_dev_env/ubuntu_change_sw_source/"></a></p>
+<p><a href="../../../Embedded%20System/linux/embedded_linux_dev_env/ubuntu_change_sw_source/">点击查看设置方法</a></p>
 <h3 id="02">0.2 科学上网<a class="headerlink" href="#02" title="Permanent link">#</a></h3>
 <ul>
 <li>赛风 -&gt; 设置 -&gt; 本地代理端口 -&gt; HTTP/HTTPS(1080),允许网络下的其他设备使用该代理</li>
@@ -1536,7 +1536,7 @@ vcs import &lt; moveit2_tutorials/moveit2_tutorials.repos
 <pre><code>cd ~/ws_moveit2
 colcon build --mixin release
 </code></pre>
-<p>如果遇到如下编译错误：</p>
+<p>如果遇到如下编译错误（2022-05）：</p>
 <p><a href="https://github.com/ros-planning/moveit2_tutorials/issues/350">has no member named ‘future’ when building moveit2_tutorials </a></p>
 <pre><code>Finished &lt;&lt;&lt; launch_param_builder [3.20s]
 --- stderr: moveit2_tutorials                             
@@ -1557,7 +1557,9 @@ Failed   &lt;&lt;&lt; moveit2_tutorials [6.32s, exited with code 2]
 </ul>
 <pre><code>response_future = planning_scene_diff_client-&gt;async_send_request(request);
 </code></pre>
-<p>尝试切换到galactic分支也不好使</p>
+<blockquote>
+<p>注意：切换到galactic分支也不行，没有深究其原因</p>
+</blockquote>
 <ul>
 <li>设置环境变量</li>
 </ul>
