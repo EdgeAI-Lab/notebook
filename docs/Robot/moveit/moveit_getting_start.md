@@ -246,11 +246,11 @@ ros2 launch moveit2_tutorials demo.launch.py rviz_tutorial:=true
 
 * MotionPlanning -> Planning Request -> Planning Group: panda_arm
 
-* 取消选择 MotionPlanning -> Scene Robot -> Show Robot Visual
-* 选中MotionPlanning -> Planning Request -> Query Start State
-* 选中MotionPlanning -> Planning Request -> Query Goal State
-* MotionPlanning -> Planning Path -> State Display Time: 0.05s
-* 选中MotionPlanning -> Planning Path -> Loop Animation
-* 选中MotionPlanning -> Planning Path -> Show Trail
+* 取消选择 MotionPlanning -> Scene Robot -> Show Robot Visual（不显示机械臂本体）
+* 选中MotionPlanning -> Planning Request -> Query Start State（机械臂的起始姿态-A点）
+* 选中MotionPlanning -> Planning Request -> Query Goal State（机械臂的目标姿态-B点）
+* 修改值MotionPlanning -> Planning Path -> State Display Time: 0.05s（这个是仿真执行的速度，速度太快不便于观察，故修改为0.05s）
+* 选中MotionPlanning -> Planning Path -> Loop Animation（循环播放仿真过程）
+* 选中MotionPlanning -> Planning Path -> Show Trail（显示A到B之间的轨迹点）
 
 如上参数设置完毕后，点击Plan即可看见仿真结果。
