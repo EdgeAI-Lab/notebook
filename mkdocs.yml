@@ -271,6 +271,9 @@ nav:
 
 
     - Other:
+      - Information Security:
+        - PKI: Information Security/PKI.md
+
       - Algorithm:
         - 最小二乘法（最小平方法）: Algorithm/least-squares.md
 

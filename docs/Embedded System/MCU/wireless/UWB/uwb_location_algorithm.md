@@ -9,6 +9,13 @@ UWB的定位是基于距离值计算得到的。常用的UWB测距方法有：
 * TDOA
 * AOA
 
+[UWB技术简介](https://www.bilibili.com/video/BV1t5411J7Ph?spm_id_from=333.337.search-card.all.click)
+
+* UWB的脉冲是2ns，所以能分辨大于60cm的多径效应
+
+[NXP介绍UWB测距方法](https://www.bilibili.com/video/BV14K411F7P5?spm_id_from=333.337.search-card.all.click)
+
+[多径效应](https://www.bilibili.com/video/BV1Qy4y1t7cZ/?spm_id_from=333.788.recommend_more_video.1)
 
 ## 1. 基本定位算法
 
