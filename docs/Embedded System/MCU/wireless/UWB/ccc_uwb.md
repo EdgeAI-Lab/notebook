@@ -1,0 +1,5 @@
+# CCC UWB数字车钥匙相关问题汇总
+
+## 1. URSK
+
+交易时（AUTH0）车辆端产生交易标识符（transaction_identifier这是一个随机数）,并以AUTH0的payload发送到设备端，然后车辆和设备端各自由transaction_identifier生成UWB_Session_Id（transaction_identifier的后4个字节），UWB_Session_Id将被用来索引URSK

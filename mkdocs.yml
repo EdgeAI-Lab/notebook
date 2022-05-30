@@ -114,6 +114,9 @@ nav:
               - Bluetooth Base: Embedded System/MCU/wireless/bluetooth/bluetooth_base.md
               - Bluetooth Stack: Embedded System/MCU/wireless/bluetooth/protocal_stack.md
             - UWB:
+              - 纽扣电池: Embedded System/MCU/wireless/UWB/coin_cell.md
+              - UWB基础: Embedded System/MCU/wireless/UWB/uwb_base.md
+              - CCC UWB: Embedded System/MCU/wireless/UWB/ccc_uwb.md
               - UWB物理层: Embedded System/MCU/wireless/UWB/uwb_physical_layer.md
               - UWB测距算法: Embedded System/MCU/wireless/UWB/uwb_Ranging_Techniques.md
               - UWB定位算法: Embedded System/MCU/wireless/UWB/uwb_location_algorithm.md
