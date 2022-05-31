@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../../../../img/favicon.ico">
-        <title>UWB物理层 - EdgeAI Lab</title>
+        <title>dbm - EdgeAI Lab</title>
         <link href="../../../../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../../../css/base.css" rel="stylesheet">
@@ -457,7 +457,7 @@
 </li>
             
 <li>
-    <a href="../dbm/" class="dropdown-item">dbm</a>
+    <a href="./" class="dropdown-item active">dbm</a>
 </li>
             
 <li>
@@ -469,7 +469,7 @@
 </li>
             
 <li>
-    <a href="./" class="dropdown-item active">UWB物理层</a>
+    <a href="../uwb_physical_layer/" class="dropdown-item">UWB物理层</a>
 </li>
             
 <li>
@@ -1383,12 +1383,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../ccc_uwb/" class="nav-link">
+                                <a rel="prev" href="../coin_cell/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../uwb_Ranging_Techniques/" class="nav-link">
+                                <a rel="next" href="../uwb_base/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -1410,8 +1410,20 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#uwb" class="nav-link">UWB物理层</a>
+            <li class="nav-item" data-level="1"><a href="#dbmw" class="nav-link">dbm与W转换技巧</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#1" class="nav-link">1. 一个基准：</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#2-2" class="nav-link">2. 2个原则：</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#3" class="nav-link">3. 计算技巧：</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -1419,21 +1431,61 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="uwb">UWB物理层<a class="headerlink" href="#uwb" title="Permanent link">#</a></h1>
+<h1 id="dbmw">dbm与W转换技巧<a class="headerlink" href="#dbmw" title="Permanent link">#</a></h1>
+<p><a href="https://baijiahao.baidu.com/s?id=1665195078174423592&amp;wfr=spider&amp;for=pc">参考</a></p>
+<p>dBm是一个表示功率绝对值的值（也可以认为是以1mW功率为基准的一个比值），计算公式为：10log（功率值/1mw）。这里我们介绍一种将dBm转换为W的口算方法，这一方法总结起来就是 “1个基准”和“2个原则”。</p>
+<h2 id="1">1. 一个基准：<a class="headerlink" href="#1" title="Permanent link">#</a></h2>
+<p>30dBm＝1W</p>
+<h2 id="2-2">2. 2个原则：<a class="headerlink" href="#2-2" title="Permanent link">#</a></h2>
 <ul>
-<li>
-<p><a href="https://blogs.keysight.com/blogs/tech/rfmw.entry.html/2021/07/28/an_overview_of_ieee-J7ac.html">An Overview of the IEEE 802.15.4 HRP UWB Standard</a></p>
-</li>
-<li>
-<p><a href="https://blog.csdn.net/chenxy_bwave/article/details/123829228">UWB-IEEE802.15.4z/HRP ToF测距的安全性分析</a></p>
-</li>
-<li>
-<p><a href="https://arxiv.org/pdf/2202.02190.pdf">An Overview of UWB Standards</a></p>
-</li>
-<li>
-<p><a href="https://arxiv.org/search/?query=UWB&amp;searchtype=all&amp;source=header">Arxiv - ... results for all: UWB</a></p>
-</li>
-</ul></div>
+<li>原则一：＋3dB，功率乘2倍；－3dB，功率乘1/2</li>
+</ul>
+<p>例如：</p>
+<pre><code>33dBm＝30dBm+3dBm＝1W×2=2W
+27dBm＝30dBm－3dBm＝1W×1/2=0.5W
+</code></pre>
+<ul>
+<li>原则二：＋10dBm，功率乘10倍；－10dBm，功率乘1/10</li>
+</ul>
+<p>例如：</p>
+<pre><code>40dBm＝30dBm+10dBm＝1W×10=10W
+20dBm＝30dBm－10dBm＝1W×0.1=0.1W
+</code></pre>
+<p>以上可以简单的记作：30是基准，等于1W整，互换不算难，口算最简便。加3乘以2，加10乘以10；减3除以2，减10除以10。</p>
+<p>几乎所有整数的dBm都可用以上的“1个基准”和“2个原则”转换为W。</p>
+<p>例1：</p>
+<pre><code>44dBm=?W
+44dBm=30dBm+10dBm+10dBm－3dBm－3dBm
+　　 =1W×10×10×1/2×1/2 =25W
+</code></pre>
+<p>例2：</p>
+<pre><code>32dBm=?W
+32dBm=30dBm+3dBm+3dBm+3dBm+3dBm－10dBm
+　　 =1W×2×2×2×2×0.1=1.6W
+</code></pre>
+<h2 id="3">3. 计算技巧：<a class="headerlink" href="#3" title="Permanent link">#</a></h2>
+<ul>
+<li>+1dBm和+2dBm的计算技巧</li>
+</ul>
+<pre><code>+1dBm=+10dBm－3dBm－3dBm－3dBm
+　　 =X×10×1/2×1/2×1/2
+=X×1.25
+
++2dBm=－10dBm+3dBm+3dBm+3dBm+3dBm
+　　 =X×0.1×2×2×2×2=X×1.6w
+</code></pre>
+<p>在计算中，有时候也可以根据上面的规律变换为－1dBm和－2dBm。</p>
+<pre><code>－1dBm=－10dBm+3dBm+3dBm+3dBm
+　　　 =X×0.1×2×2×2=X×0.8
+
+－2dBm=－3dBm+1dBm
+　　　=X×1/2×1.25
+　　　=X×0.625
+</code></pre>
+<p>例3：</p>
+<pre><code>51dBm=30dBm+10dBm+10dBm+1dBm
+=1W×10×10×1.25
+</code></pre></div>
             </div>
         </div>
 
