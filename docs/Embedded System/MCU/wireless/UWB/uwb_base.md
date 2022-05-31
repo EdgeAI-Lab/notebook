@@ -1,5 +1,8 @@
 # UWB基础
 
+IEEE802.15.4z标准于2020年年底正式发布，定义了LRP(High Rate Pulse repetition)、HRP(High Rate Pulse repetition)两种UWB模式，其中LRP是新追加的，而HRP则是继承了IEEE802.15.4a的模式，但是追加了更多的新的特性。
+
+
 ## 1. 参考资料
 
 [UWB技术及其在汽车和消费领域的应用趋势（第一讲）](https://www.bilibili.com/video/BV19V411y7et/?spm_id_from=333.788.recommend_more_video.-1)
