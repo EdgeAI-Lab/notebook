@@ -64,3 +64,239 @@ int main()
 	return 0;
 }
 ```
+
+## 3. 双向链表
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+
+typedef struct _list_t{
+    struct _list_t *prev,*next;
+}list_t;
+
+
+typedef struct _data_t{
+    int a;
+    list_t list;
+}data_t;
+
+
+#define list_entry(ptr,type,member) \
+   ((type *) ((unsigned long)(ptr) - (unsigned long)(&(((type *)0)->member))))
+
+void list_init(list_t *head)
+{
+    head->prev = head;
+    head->next = head;
+}    
+
+
+void _list_add(list_t *new,list_t *prev,list_t *next)
+{
+    prev->next = new;
+    next->prev = new;
+    new->prev = prev;
+    new->next = next;
+}
+
+void list_add(list_t *new,list_t *head)
+{
+    _list_add(new,head,head->next);
+}
+
+
+void _list_delete(list_t *prev,list_t *next)
+{
+    prev->next = next;
+    next->prev = prev;
+}
+
+void list_delete(list_t *entry)
+{
+    _list_delete(entry->prev,entry->next);
+
+    // release the entry
+}
+
+
+void list_loop_backward(list_t *head)
+{
+    list_t *p = head->next;
+
+    data_t *temp = NULL;
+
+    while(p!=head)
+    {
+        temp = list_entry(p,data_t,list);
+        printf("%d\n",temp->a);
+        p = p->next;
+    }
+
+}
+
+
+void list_loop_forward(list_t *head)
+{
+    list_t *p = head->prev;
+
+    data_t *temp = NULL;
+
+    while(p!=head)
+    {
+        temp = list_entry(p,data_t,list);
+        printf("%d\n",temp->a);
+        p = p->prev;
+    }
+}
+
+void list_loop_recursion(list_t *first,list_t *head)
+{
+    if(first==head)
+    {
+        return;
+    }
+
+    printf("%d\n", list_entry(first,data_t,list)->a);
+    list_loop_recursion(first->next,head);
+
+}
+
+
+
+int main()
+{
+    int i = 0;
+
+    data_t d0,d1,d2,d3,d4,d5;
+
+    data_t *head = &d0;
+
+    d0.a=888;
+    d1.a=100;
+    d2.a=200;
+    d3.a=300;
+    d4.a=400;
+    d5.a=500;
+
+   
+    list_init(&(head->list));
+
+
+    list_add(&(d1.list),&(head->list));
+    list_add(&(d2.list),&(head->list));
+    list_add(&(d3.list),&(head->list));
+    list_add(&(d4.list),&(head->list));
+    list_add(&(d5.list),&(head->list));
+
+    list_loop_backward(&(head->list));
+
+    printf("--------------------\n");
+
+    list_loop_forward(&(head->list));
+
+    list_delete(&(d3.list));
+
+    printf("--------------------\n");
+
+    list_loop_forward(&(head->list));
+    
+    printf("-------------recursion-------\n");
+
+    list_loop_recursion(&(d5.list),&(head->list));
+    
+    return 0;
+}
+```
+
+## 4. 二叉树
+
+```c
+#include <stdio.h>
+
+typedef struct _list_t{
+    struct _list_t *left,*right;
+}list_t;
+
+
+typedef struct _data_t{
+    int a;
+    list_t list;
+}data_t;
+
+
+#define list_entry(ptr,type,member) \
+  (type *)((char *)(ptr) - ((char *)(&((type *)0)->member)))
+
+
+void binary_tree_init(list_t *head)
+{
+    head->left=head->right=NULL;
+}
+
+
+void binary_tree_add(list_t *new,int value,list_t **head)
+{
+    if((*head)==NULL)
+    {
+        (*head) = new;        
+        return;
+    }
+
+
+    if(value==1)
+    {
+        binary_tree_add(new,1,&((*head)->left));
+    }
+    else
+    {
+        binary_tree_add(new,2,&((*head)->right));
+    }
+
+}
+
+void print_binary_tree(list_t *head)
+{
+    if(head==NULL)
+    {
+        return;
+    }
+
+    printf("%d\n",(list_entry(head,data_t,list))->a);
+
+    print_binary_tree(head->left);
+
+}
+
+
+int main()
+{
+
+    data_t d0,d1,d2,d3,d4,d5;
+
+    d0.a=888;
+    d1.a=100;
+    d2.a=200;
+    d3.a=300;
+    d4.a=400;
+    d5.a=500;
+
+
+    data_t *head = &d0;
+
+    binary_tree_init(&(head->list));
+
+    
+    binary_tree_add(&(d1.list),1,(list_t **)(&(head->list)));
+    binary_tree_add(&(d2.list),1,(list_t **)(&(head->list)));
+    binary_tree_add(&(d3.list),1,(list_t **)(&(head->list)));
+    binary_tree_add(&(d4.list),1,(list_t **)(&(head->list)));
+    binary_tree_add(&(d5.list),1,(list_t **)(&(head->list)));
+    
+
+    print_binary_tree(&(head->list));
+
+    return 0;
+}
+```
