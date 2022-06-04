@@ -124,6 +124,7 @@ nav:
         
         - 调试工具:
           - OpenOCD: Embedded System/MCU/mcu_debug_tools/openocd.md
+          - 自制ST-Link: Embedded System/MCU/mcu_debug_tools/st_link_diy.md
           - JScope RTT模式: Embedded System/MCU/mcu_debug_tools/jscope_rtt.md
           - JScope HSS模式: Embedded System/MCU/mcu_debug_tools/jscope_hss.md
           - JLink RTT: Embedded System/MCU/mcu_debug_tools/rtt.md
