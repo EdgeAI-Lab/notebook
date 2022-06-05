@@ -142,6 +142,9 @@ nav:
         - 无人机开源资源汇总: Embedded System/MCU/dron_open_source.md
     
     - Robot:
+        - ROS:
+          - ROS Getting Start: Robot/ROS/ros_getting_start.md
+
         - Moveit:
           - Moveit Getting Start: Robot/moveit/moveit_getting_start.md
 
