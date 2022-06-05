@@ -1,8 +1,9 @@
 # ROS入门教程
 
-[有条件请ROS参考官方教程](https://docs.ros.org/en/foxy/Tutorials.html)，下面的是笔者自己的学习记录。
+[ROS参考官方教程](https://docs.ros.org/en/foxy/Tutorials.html)，下面的是笔者自己的学习记录。
 
-!!! Note 本文使用的ROS版本是foxy，Ubuntu版本是20.04，foxy是ROS的LTS版本性能稳定，太新的版本可能会出现意想不到的问题。
+!!! Note 
+本文使用的ROS版本是foxy，Ubuntu版本是20.04，foxy是ROS的LTS版本性能稳定，太新的版本可能会出现意想不到的问题。
 
 ## 1. 安装ROS
 
@@ -11,21 +12,15 @@
 * [Moveit Getting Start - web](../moveit/moveit_getting_start.md) 
 * [Moveit Getting Start - B站](https://www.bilibili.com/video/BV1fT4y1z7fG/)
 
-## 2. Configuring your ROS 2 environment
-
-* Source the setup files
+## 2. 配置ROS2环境变量
 
 ```
 source /opt/ros/foxy/setup.bash
 ```
 
-## 3. Introducing turtlesim and rqt
+## 3. 安装turtlesim
 
 对于ROS来说turtlesim是一个非常简单的仿真，但是使用它足以向初学者说明ROS底层的运行机制（nodes, topic, services），所以turtlesim通常是ROS入门的第一课。
-
-rqt是ROS2的一个GUI工具，rqt提供能做的事情在命令行中都能做，但是rqt提供的更友好的图形化操作方式。
-
-### 3.1 安装turtlesim
 
 ```
 sudo apt update
@@ -48,7 +43,7 @@ turtlesim turtle_teleop_key
 turtlesim turtlesim_node
 ```
 
-### 3.2 启动turtlesim
+## 4. 启动turtlesim
 
 ```
 ros2 run turtlesim turtlesim_node
@@ -67,7 +62,7 @@ ros2 run turtlesim turtlesim_node
 
 在turtlesim_node中可以生成多只乌龟，启动turtlesim的同时将会自动生成一只乌龟，从上面命令行信息可以看出默认生成的乌龟的名字是turtle1。
 
-### 3.3 使用turtlesim
+## 5. 使用turtlesim
 
 * turtlesim_node其实是ROS的一个节点，该节点可以控制乌龟移动
 
@@ -90,7 +85,9 @@ ros2 service list
 ros2 action list
 ```
 
-### 3.4 安装rqt
+## 6. 安装rqt
+
+rqt是ROS2的一个GUI工具，rqt提供能做的事情在命令行中都能做，但是rqt提供的更友好的图形化操作方式。
 
 ```
 sudo apt update
@@ -98,9 +95,11 @@ sudo apt update
 sudo apt install ~nros-foxy-rqt*
 ```
 
-### 3.5 使用rqt
+## 7. 使用rqt
 
-* 运行rqt
+### 7.1 运行rqt
+
+在命令行使用rqt命令，即可运行rqt：
 
 ```
 rqt
@@ -117,19 +116,22 @@ rqt
 
 点击service对应的下三角将可以看到turtlesim node的所有服务，如果没有显示完整的服务列表，请点击重载（reload）按钮。
 
-* 尝试spawn服务
+### 7.2 尝试spawn服务
 
 调用spawn服务将会在turtlesim中新生成一个乌龟。
 
 ![](img/spawn1.png)
 
-x,y指的是新生成乌龟的坐标位置，name string指的是新生成乌龟的名字，turtlesim默认生成的乌龟名字是turtle1，名字不能重复，所以这里我们取名为turtle2。
+* x,y指的是新生成乌龟的坐标位置
+* name string指的是新生成乌龟的名字
+* turtlesim默认生成的乌龟名字是turtle1
+* 名字不能重复，所以这里我们取名为turtle2
 
 参数设置好之后，点击Call按钮，你将会看到在turtlesim界面中新生成了一只乌龟turtle2。
 
 ![](img/spawn2.png)
 
-* 使用set_pen服务
+### 7.3 使用set_pen服务
 
 小乌龟在移动的同时会绘制出移动轨迹，set_pen服务就是用来设置该轨迹的画笔的参数，比如画笔的颜色、粗细等。
 
@@ -139,7 +141,7 @@ x,y指的是新生成乌龟的坐标位置，name string指的是新生成乌龟
 
 ![](img/set_pen1.png)
 
-### 3.5 Remapping（重映射）
+## 8. Remapping（重映射）
 
 上面我们使用rqt的spawn服务新生成了一只乌龟turtle2，那么如何去控制turtle2呢？
 
