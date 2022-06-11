@@ -493,6 +493,10 @@
 </li>
             
 <li>
+    <a href="../../MCU/mcu_debug_tools/st_link_diy/" class="dropdown-item">自制ST-Link</a>
+</li>
+            
+<li>
     <a href="../../MCU/mcu_debug_tools/jscope_rtt/" class="dropdown-item">JScope RTT模式</a>
 </li>
             
@@ -550,6 +554,16 @@
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Robot <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">ROS</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../Robot/ROS/ros_getting_start/" class="dropdown-item">ROS Getting Start</a>
+</li>
+    </ul>
+  </li>
                                     
   <li class="dropdown-submenu">
     <a href="#" class="dropdown-item">Moveit</a>
@@ -1424,6 +1438,14 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#3" class="nav-link">3. 双向链表</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#4" class="nav-link">4. 二叉树</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -1488,6 +1510,236 @@ int main()
     int b = 20;
 
     swap(&amp;a,&amp;b);
+    return 0;
+}
+</code></pre>
+<h2 id="3">3. 双向链表<a class="headerlink" href="#3" title="Permanent link">#</a></h2>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+
+typedef struct _list_t{
+    struct _list_t *prev,*next;
+}list_t;
+
+
+typedef struct _data_t{
+    int a;
+    list_t list;
+}data_t;
+
+
+#define list_entry(ptr,type,member) \
+   ((type *) ((unsigned long)(ptr) - (unsigned long)(&amp;(((type *)0)-&gt;member))))
+
+void list_init(list_t *head)
+{
+    head-&gt;prev = head;
+    head-&gt;next = head;
+}    
+
+
+void _list_add(list_t *new,list_t *prev,list_t *next)
+{
+    prev-&gt;next = new;
+    next-&gt;prev = new;
+    new-&gt;prev = prev;
+    new-&gt;next = next;
+}
+
+void list_add(list_t *new,list_t *head)
+{
+    _list_add(new,head,head-&gt;next);
+}
+
+
+void _list_delete(list_t *prev,list_t *next)
+{
+    prev-&gt;next = next;
+    next-&gt;prev = prev;
+}
+
+void list_delete(list_t *entry)
+{
+    _list_delete(entry-&gt;prev,entry-&gt;next);
+
+    // release the entry
+}
+
+
+void list_loop_backward(list_t *head)
+{
+    list_t *p = head-&gt;next;
+
+    data_t *temp = NULL;
+
+    while(p!=head)
+    {
+        temp = list_entry(p,data_t,list);
+        printf(&quot;%d\n&quot;,temp-&gt;a);
+        p = p-&gt;next;
+    }
+
+}
+
+
+void list_loop_forward(list_t *head)
+{
+    list_t *p = head-&gt;prev;
+
+    data_t *temp = NULL;
+
+    while(p!=head)
+    {
+        temp = list_entry(p,data_t,list);
+        printf(&quot;%d\n&quot;,temp-&gt;a);
+        p = p-&gt;prev;
+    }
+}
+
+void list_loop_recursion(list_t *first,list_t *head)
+{
+    if(first==head)
+    {
+        return;
+    }
+
+    printf(&quot;%d\n&quot;, list_entry(first,data_t,list)-&gt;a);
+    list_loop_recursion(first-&gt;next,head);
+
+}
+
+
+
+int main()
+{
+    int i = 0;
+
+    data_t d0,d1,d2,d3,d4,d5;
+
+    data_t *head = &amp;d0;
+
+    d0.a=888;
+    d1.a=100;
+    d2.a=200;
+    d3.a=300;
+    d4.a=400;
+    d5.a=500;
+
+
+    list_init(&amp;(head-&gt;list));
+
+
+    list_add(&amp;(d1.list),&amp;(head-&gt;list));
+    list_add(&amp;(d2.list),&amp;(head-&gt;list));
+    list_add(&amp;(d3.list),&amp;(head-&gt;list));
+    list_add(&amp;(d4.list),&amp;(head-&gt;list));
+    list_add(&amp;(d5.list),&amp;(head-&gt;list));
+
+    list_loop_backward(&amp;(head-&gt;list));
+
+    printf(&quot;--------------------\n&quot;);
+
+    list_loop_forward(&amp;(head-&gt;list));
+
+    list_delete(&amp;(d3.list));
+
+    printf(&quot;--------------------\n&quot;);
+
+    list_loop_forward(&amp;(head-&gt;list));
+
+    printf(&quot;-------------recursion-------\n&quot;);
+
+    list_loop_recursion(&amp;(d5.list),&amp;(head-&gt;list));
+
+    return 0;
+}
+</code></pre>
+<h2 id="4">4. 二叉树<a class="headerlink" href="#4" title="Permanent link">#</a></h2>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+typedef struct _list_t{
+    struct _list_t *left,*right;
+}list_t;
+
+
+typedef struct _data_t{
+    int a;
+    list_t list;
+}data_t;
+
+
+#define list_entry(ptr,type,member) \
+  (type *)((char *)(ptr) - ((char *)(&amp;((type *)0)-&gt;member)))
+
+
+void binary_tree_init(list_t *head)
+{
+    head-&gt;left=head-&gt;right=NULL;
+}
+
+
+void binary_tree_add(list_t *new,int value,list_t **head)
+{
+    if((*head)==NULL)
+    {
+        (*head) = new;        
+        return;
+    }
+
+
+    if(value==1)
+    {
+        binary_tree_add(new,1,&amp;((*head)-&gt;left));
+    }
+    else
+    {
+        binary_tree_add(new,2,&amp;((*head)-&gt;right));
+    }
+
+}
+
+void print_binary_tree(list_t *head)
+{
+    if(head==NULL)
+    {
+        return;
+    }
+
+    printf(&quot;%d\n&quot;,(list_entry(head,data_t,list))-&gt;a);
+
+    print_binary_tree(head-&gt;left);
+
+}
+
+
+int main()
+{
+
+    data_t d0,d1,d2,d3,d4,d5;
+
+    d0.a=888;
+    d1.a=100;
+    d2.a=200;
+    d3.a=300;
+    d4.a=400;
+    d5.a=500;
+
+
+    data_t *head = &amp;d0;
+
+    binary_tree_init(&amp;(head-&gt;list));
+
+
+    binary_tree_add(&amp;(d1.list),1,(list_t **)(&amp;(head-&gt;list)));
+    binary_tree_add(&amp;(d2.list),1,(list_t **)(&amp;(head-&gt;list)));
+    binary_tree_add(&amp;(d3.list),1,(list_t **)(&amp;(head-&gt;list)));
+    binary_tree_add(&amp;(d4.list),1,(list_t **)(&amp;(head-&gt;list)));
+    binary_tree_add(&amp;(d5.list),1,(list_t **)(&amp;(head-&gt;list)));
+
+
+    print_binary_tree(&amp;(head-&gt;list));
+
     return 0;
 }
 </code></pre></div>
