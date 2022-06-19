@@ -6,7 +6,7 @@
 
 ![](assets/images/happy_boy_origin.jpg)
 
-目前开设的技术专栏有：
+目前涉及的主要内容有：
 
 * 嵌入式系统
 * 直流电机控制

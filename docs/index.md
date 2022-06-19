@@ -7,7 +7,7 @@ This is a knowledge management system based on <font color="red">embedded system
 
 ![](assets/images/happy_boy_origin.jpg)
 
-The current technical column has:
+At present, the main contents involved are:
 
 * Embedded System
 * Motor Control
