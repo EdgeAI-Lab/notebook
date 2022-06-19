@@ -9,22 +9,15 @@ This is a knowledge management system based on <font color="red">embedded system
 
 The current technical column has:
 
-* Android
-* Machine Learning
-* Python
 * Embedded System
-* Computer Vision
-* Multimedia
-* Tools
+* Motor Control
 
 The site is gradually improving, welcome to continue to pay attention.
 
 ## 1.About Me
 I am a Software Engineer, I konw about ARM Assembly, C/C++, Java and Python program language.
 
-I am good at embedded system development: MCU, embedded linux and Android.
-
-Now I'm getting into image processing(Use OpenCV), audio and video processing(Use FFMPEG and WebRTC) and Embedded Machine Learning.
+I am good at embedded system development: MCU, embedded linux and Motor Control.
 
 ## 2.Know Me
 * [My GitHub](https://github.com/EdgeAI-Lab)

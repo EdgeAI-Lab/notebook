@@ -8,22 +8,15 @@
 
 目前开设的技术专栏有：
 
-* Android
-* 机器学习
-* Python
 * 嵌入式系统
-* 计算机视觉
-* 多媒体
-* 工具
+* 直流电机控制
 
 本站目前正在逐步完善中，欢迎持续关注！
 
 ## 1.关于站长
 我是一名软件工程师，熟悉ARM汇编、C/C++、Java和Python编程语言。
 
-擅长嵌入式系统开发：MCU、嵌入式Linux和Android。
-
-现在我开始涉足图像处理（使用OpenCV），音视频处理（使用FFMPEG和WebRTC）和嵌入式机器学习。
+擅长嵌入式系统开发：MCU、嵌入式Linux和直流电机控制。
 
 ## 2.了解站长
 * [我的GitHub](https://github.com/EdgeAI-Lab)
