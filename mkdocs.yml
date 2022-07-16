@@ -234,6 +234,7 @@ nav:
           - Uboot移植: Embedded System/linux/jz2440/uboot2016_porting.md
 
         - Linux Device Driver:
+          - Linux驱动框架原理: Embedded System/linux/linux_driver/linux_driver_framework.md
           - 《Linux设备驱动开发详解》:
             - 书籍配套资源: Embedded System/linux/linux_driver/linux_device_driver_baohua/relate_resource.md
           - 最简单的驱动程序: Embedded System/linux/linux_driver/ld_hello_world.md
