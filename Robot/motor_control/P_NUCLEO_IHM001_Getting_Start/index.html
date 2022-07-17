@@ -1434,6 +1434,14 @@
             
             <li class="nav-item" data-level="1"><a href="#stp-nucleo_ihm001-getting-start" class="nav-link">ST电机开发套件P-NUCLEO_IHM001 Getting Start</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#1" class="nav-link">1. 硬件基本情况</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#2-sm-pmsm-vs-im-pmsm" class="nav-link">2. SM-PMSM vs IM-PMSM</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -1442,13 +1450,23 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="stp-nucleo_ihm001-getting-start">ST电机开发套件P-NUCLEO_IHM001 Getting Start<a class="headerlink" href="#stp-nucleo_ihm001-getting-start" title="Permanent link">#</a></h1>
+<p><a href="../html/ST%20Motor%20Profiler%20Board%20Configuration.html">Board Configuration</a></p>
+<h2 id="1">1. 硬件基本情况<a class="headerlink" href="#1" title="Permanent link">#</a></h2>
 <p><a href="https://www.stmicroelectronics.com.cn/en/evaluation-tools/p-nucleo-ihm001.html#">P-NUCLEO_IHM001</a></p>
 <p>Three-phase motor Bull-Running model BR2804-1700 kV：
 * Magnetic Struct: SM-PMSM
 * Pole Pairs: 7
-* Max Speed: 14.9krpm
-* Nominal Volatge: 11.65V
-* Nominal Current: 748.309mApk</p></div>
+* Max Speed: 12540rpm
+* Nominal Volatge: 11.1V
+* Max DC Current: 5A</p>
+<p><img alt="" src="../img/BLDC/BR2804-1700.jpg" /></p>
+<h2 id="2-sm-pmsm-vs-im-pmsm">2. SM-PMSM vs IM-PMSM<a class="headerlink" href="#2-sm-pmsm-vs-im-pmsm" title="Permanent link">#</a></h2>
+<ul>
+<li>SM: surface permanenr magnet  表贴永磁体</li>
+<li>IM: interior permanent magnet 内嵌永磁体</li>
+</ul>
+<p>SM-PMSM与IM-PMSM的区别就在于转子上的永磁体是表贴的还是内嵌的，如下图：</p>
+<p><img alt="" src="../img/BLDC/IPM_SPM_Motor.png" /></p></div>
             </div>
         </div>
 
