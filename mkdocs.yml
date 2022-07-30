@@ -323,6 +323,7 @@ nav:
         - 配置HLS服务器: Network/nginx/nginx_hls_from_source.md
 
       - Hardware:
+        - 电压驱动型与电流驱动型的区别: Hardware/voltage_vs_current_drive_type.md
         - 电池工作时间的计算: Hardware/battery_work_time.md
         - USB-PD: Hardware/ubs_pd.md
         - TPS65987D: Hardware/TPS65987D.md
