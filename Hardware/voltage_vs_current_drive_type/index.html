@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>PS初级知识 - EdgeAI Lab</title>
+        <title>电压驱动型与电流驱动型的区别 - EdgeAI Lab</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -1086,7 +1086,7 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Other <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -1245,27 +1245,27 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../Hardware/voltage_vs_current_drive_type/" class="dropdown-item">电压驱动型与电流驱动型的区别</a>
+    <a href="./" class="dropdown-item active">电压驱动型与电流驱动型的区别</a>
 </li>
             
 <li>
-    <a href="../../Hardware/battery_work_time/" class="dropdown-item">电池工作时间的计算</a>
+    <a href="../battery_work_time/" class="dropdown-item">电池工作时间的计算</a>
 </li>
             
 <li>
-    <a href="../../Hardware/ubs_pd/" class="dropdown-item">USB-PD</a>
+    <a href="../ubs_pd/" class="dropdown-item">USB-PD</a>
 </li>
             
 <li>
-    <a href="../../Hardware/TPS65987D/" class="dropdown-item">TPS65987D</a>
+    <a href="../TPS65987D/" class="dropdown-item">TPS65987D</a>
 </li>
             
 <li>
-    <a href="../../Hardware/max17261/" class="dropdown-item">MAX17261电量计</a>
+    <a href="../max17261/" class="dropdown-item">MAX17261电量计</a>
 </li>
             
 <li>
-    <a href="../../Hardware/inductance_gnd/" class="dropdown-item">电感铺地</a>
+    <a href="../inductance_gnd/" class="dropdown-item">电感铺地</a>
 </li>
     </ul>
   </li>
@@ -1408,6 +1408,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../Network/nginx/nginx_hls_from_source/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../battery_work_time/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -1426,8 +1436,12 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#ps" class="nav-link">PS初级知识</a>
+            <li class="nav-item" data-level="1"><a href="#_1" class="nav-link">电压驱动型器件与电流驱动型器件</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#_2" class="nav-link">电流驱动和电压驱动有什么区别</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -1435,9 +1449,25 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="ps">PS初级知识<a class="headerlink" href="#ps" title="Permanent link">#</a></h1>
+<h1 id="_1">电压驱动型器件与电流驱动型器件<a class="headerlink" href="#_1" title="Permanent link">#</a></h1>
 <ul>
-<li>标尺快捷键 - Ctrl+R</li>
+<li><a href="https://www.eefocus.com/e/512271">电流驱动和电压驱动有什么区别</a></li>
+</ul>
+<p>电压驱动的如：场效应管，因为它的内阻很大，加电压控制时电流很小，近似为零，所以可以理解成：电压驱动；电流驱动的如：普通的NPN、PNP型三极管，因为它的内阻较小，加电压控制时电流相对较大（一般小功率的都有100uA以上，大功率的可达20mA以上），所以可以理解成：电流驱动；接下来，详细为你说下电流驱动和电压驱动有什么区别。</p>
+<h2 id="_2">电流驱动和电压驱动有什么区别<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
+<ul>
+<li>
+<p>1、从电压方面：
+输入电压基本是一个确定值，提高电流可以改变亮度，减小电流降低亮度，那么就把它确定为电流型器件。</p>
+</li>
+<li>
+<p>2、从电流方面：
+电压低了连亮都不亮。亮了以后电流很小，那么就把它确定为电压型器件。</p>
+</li>
+<li>
+<p>3、从接受性方面：
+器件接受电压的变化输入后，它的外部特性改变大，还是接受电流输入变化后，它的外部特性改变大。</p>
+</li>
 </ul></div>
             </div>
         </div>
