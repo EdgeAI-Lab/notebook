@@ -148,6 +148,9 @@ nav:
         - Moveit:
           - Moveit Getting Start: Robot/moveit/moveit_getting_start.md
 
+        - Gazebo:
+           - Gazebo Getting Start: Robot/Gazebo/gazebo_getting_start.md
+
         - Motor Control: 
           - SVPWM: Robot/motor_control/svpwm.md
           - 转矩: Robot/motor_control/torque.md
