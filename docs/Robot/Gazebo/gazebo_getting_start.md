@@ -58,3 +58,19 @@ gazebo
 * http://models.gazebosim.org/与[https://github.com/osrf/gazebo_models](https://github.com/osrf/gazebo_models)相同
 
 * [https://app.gazebosim.org/dashboard](https://app.gazebosim.org/dashboard)可以在线下载模型
+
+## 3.真机环境试用Ignition Gazebo和Classic Gazebo
+
+* 在真机环境下Ignition Gazebo可以正常启动，显示颜色也是正常的，就是物体旋转报错，目前没有找到解决方案，没有做太复杂的事情，就是加载官网提供的模型，简单使用一下。
+
+* 在真机环境下Classic Gazebo启动运行正常，但是加载机器狗模型的时候闪退（虚拟机中也是闪退），简单试用感觉跟虚拟机中表现相当。
+
+* Gazebo整体感觉不是很稳当，BUG比较多，感觉还是Webots好用。
+
+## 4. WSL2 环境使用Gazebo
+
+目前启动后，黑屏（连外网下载资源？），后续再研究
+
+安装WSL2 Ubuntu可以参考：[Install Ubuntu on WSL2 on Windows 11 with GUI support](https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-11-with-gui-support#1-overview)
+
+没有安装GUI支持时，也能启动Gazebo（黑屏），安装GUI支持后还是黑屏

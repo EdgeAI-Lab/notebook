@@ -340,6 +340,7 @@ nav:
 
     - Tools:
       - 电脑使用问题:
+        - 安装Windows11系统: Tools/reinstall_pc_os/install_win11.md
         - 文件关联的启动程序错误: Tools/about_pc/pc_file_associated_porgram_error.md
       - MkDocs搭建个人WiKi知识管理系统: 
         - 1.MkDocs - 初识: Tools/mkdocs/mkdocs_intro.md
