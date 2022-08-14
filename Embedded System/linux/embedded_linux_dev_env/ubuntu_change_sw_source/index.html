@@ -1304,6 +1304,10 @@
     <ul class="dropdown-menu">
             
 <li>
+    <a href="../../../../Tools/reinstall_pc_os/install_win11/" class="dropdown-item">安装Windows11系统</a>
+</li>
+            
+<li>
     <a href="../../../../Tools/about_pc/pc_file_associated_porgram_error/" class="dropdown-item">文件关联的启动程序错误</a>
 </li>
     </ul>
@@ -1448,6 +1452,14 @@
             
             <li class="nav-item" data-level="1"><a href="#ubuntu" class="nav-link">Ubuntu更换软件源</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#1" class="nav-link">1.通过图像界面更换软件源</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#2" class="nav-link">2. 通过命令行更换软件源</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -1457,10 +1469,32 @@
 
 <h1 id="ubuntu">Ubuntu更换软件源<a class="headerlink" href="#ubuntu" title="Permanent link">#</a></h1>
 <p>新安装的Ubuntu系统，默认的软件源是国外的，下载的速度会很慢，所以让我们来把Ubuntu的软件软件源设置成国内的吧。</p>
+<h2 id="1">1.通过图像界面更换软件源<a class="headerlink" href="#1" title="Permanent link">#</a></h2>
+<p>该方式操作简单，系统会自动选择出最合适的软件源。</p>
 <pre><code>Setting -&gt; Software &amp; Updates -&gt; Ubuntu Software -&gt; Download from -&gt; Other -&gt; Select Best Server
 </code></pre>
 <p><img alt="" src="../img/ubuntu_software00.png" /></p>
-<p><img alt="" src="../img/ubuntu_software01.png" /></p></div>
+<p><img alt="" src="../img/ubuntu_software01.png" /></p>
+<h2 id="2">2. 通过命令行更换软件源<a class="headerlink" href="#2" title="Permanent link">#</a></h2>
+<p>该方式需要我们自己寻找合适的软件源，然后手动更新。</p>
+<ul>
+<li><a href="https://developer.aliyun.com/mirror/">阿里云开源软件镜像站-进入网站后选择自己使用的系统，比如：Ubuntu</a></li>
+<li><a href="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/">清华大学开源软件镜像站</a></li>
+</ul>
+<pre><code>sudo vim /etc/apt/sources.list
+</code></pre>
+<p>将：</p>
+<pre><code>archive.ubuntu.com
+</code></pre>
+<p>替换为：</p>
+<pre><code>mirrors.aliyun.com
+</code></pre>
+<p>或者：</p>
+<pre><code>mirrors.tuna.tsinghua.edu.cn
+</code></pre>
+<p>vim中首先进入命令模式（:），然后输入批量替换命令：</p>
+<pre><code>:%s/archive.ubuntu.com/mirrors.aliyun.com/g
+</code></pre></div>
             </div>
         </div>
 

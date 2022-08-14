@@ -1304,6 +1304,10 @@
     <ul class="dropdown-menu">
             
 <li>
+    <a href="../../../Tools/reinstall_pc_os/install_win11/" class="dropdown-item">安装Windows11系统</a>
+</li>
+            
+<li>
     <a href="../../../Tools/about_pc/pc_file_associated_porgram_error/" class="dropdown-item">文件关联的启动程序错误</a>
 </li>
     </ul>
@@ -1456,6 +1460,14 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#3ignition-gazeboclassic-gazebo" class="nav-link">3.真机环境试用Ignition Gazebo和Classic Gazebo</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#4-wsl2-gazebo" class="nav-link">4. WSL2 环境使用Gazebo</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -1501,7 +1513,23 @@
 <li>
 <p><a href="https://app.gazebosim.org/dashboard">https://app.gazebosim.org/dashboard</a>可以在线下载模型</p>
 </li>
-</ul></div>
+</ul>
+<h2 id="3ignition-gazeboclassic-gazebo">3.真机环境试用Ignition Gazebo和Classic Gazebo<a class="headerlink" href="#3ignition-gazeboclassic-gazebo" title="Permanent link">#</a></h2>
+<ul>
+<li>
+<p>在真机环境下Ignition Gazebo可以正常启动，显示颜色也是正常的，就是物体旋转报错，目前没有找到解决方案，没有做太复杂的事情，就是加载官网提供的模型，简单使用一下。</p>
+</li>
+<li>
+<p>在真机环境下Classic Gazebo启动运行正常，但是加载机器狗模型的时候闪退（虚拟机中也是闪退），简单试用感觉跟虚拟机中表现相当。</p>
+</li>
+<li>
+<p>Gazebo整体感觉不是很稳当，BUG比较多，感觉还是Webots好用。</p>
+</li>
+</ul>
+<h2 id="4-wsl2-gazebo">4. WSL2 环境使用Gazebo<a class="headerlink" href="#4-wsl2-gazebo" title="Permanent link">#</a></h2>
+<p>目前启动后，黑屏（连外网下载资源？），后续再研究</p>
+<p>安装WSL2 Ubuntu可以参考：<a href="https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-11-with-gui-support#1-overview">Install Ubuntu on WSL2 on Windows 11 with GUI support</a></p>
+<p>没有安装GUI支持时，也能启动Gazebo（黑屏），安装GUI支持后还是黑屏</p></div>
             </div>
         </div>
 
