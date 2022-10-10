@@ -112,6 +112,7 @@ nav:
             - Bluetooth:
               - CC2642_Getting_Start: Embedded System/MCU/wireless/bluetooth/CC2642/CC2642_Getting_Start.md
               - CC2642 OAD: Embedded System/MCU/wireless/bluetooth/CC2642/CC2642_OAD.md
+              - CC2642创建新BLE IAR工程: Embedded System/MCU/wireless/bluetooth/CC2642/create_new_iar_project.md
               - BLE地址: Embedded System/MCU/wireless/bluetooth/BLE_Address.md
               - BLE安全: Embedded System/MCU/wireless/bluetooth/ble_sm.md
               - Bluetooth Base: Embedded System/MCU/wireless/bluetooth/bluetooth_base.md
