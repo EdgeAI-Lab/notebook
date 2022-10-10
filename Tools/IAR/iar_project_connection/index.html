@@ -1590,7 +1590,7 @@
 
 </code></pre>
 <ul>
-<li><code>name="App"</code>就是IAR中的工程名称</li>
+<li><code>name="App"</code>就是IAR中的工程根目录下的第一层文件夹</li>
 </ul>
 <pre><code class="language-xml">&lt;iarProjectConnection version=&quot;1.2&quot; name=&quot;App&quot; oneShot=&quot;true&quot;
     xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
@@ -1621,7 +1621,7 @@
     &lt;/defines&gt;
 </code></pre>
 <ul>
-<li><code>&lt;files&gt;</code>中的是IAR工程中的文件，<code>&lt;group&gt;</code>就是IAR的group也就是一个文件夹，<code>&lt;group&gt;</code>中的文件都会出现在IAR工程的该文件夹里，其他文件则会在工程名文件夹也就是<code>App</code>文件夹根目录下</li>
+<li><code>&lt;files&gt;</code>中的是IAR工程中的文件，<code>&lt;group&gt;</code>就是IAR的group也就是一个文件夹，<code>&lt;group&gt;</code>中的文件都会出现在IAR工程的该文件夹里，其他文件则会在<code>App</code>文件夹下</li>
 </ul>
 <pre><code class="language-xml">&lt;files&gt;
         &lt;path reference=&quot;$PROJ_DIR$/Board.html&quot;&gt;$SIMPLELINK_CC13XX_CC26XX_SDK_INSTALL_DIR$/source/ti/boards/CC26X2R1_LAUNCHXL/Board.html&lt;/path&gt;
