@@ -109,7 +109,7 @@
 ```
 
 
-* ```name="App"```就是IAR中的工程名称
+* ```name="App"```就是IAR中的工程根目录下的第一层文件夹
 ```xml
 <iarProjectConnection version="1.2" name="App" oneShot="true"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -142,7 +142,7 @@
     </defines>
 ```
 
-* ```<files>```中的是IAR工程中的文件，```<group>```就是IAR的group也就是一个文件夹，```<group>```中的文件都会出现在IAR工程的该文件夹里，其他文件则会在工程名文件夹也就是```App```文件夹根目录下
+* ```<files>```中的是IAR工程中的文件，```<group>```就是IAR的group也就是一个文件夹，```<group>```中的文件都会出现在IAR工程的该文件夹里，其他文件则会在```App```文件夹下
 ```xml
 <files>
         <path reference="$PROJ_DIR$/Board.html">$SIMPLELINK_CC13XX_CC26XX_SDK_INSTALL_DIR$/source/ti/boards/CC26X2R1_LAUNCHXL/Board.html</path>
