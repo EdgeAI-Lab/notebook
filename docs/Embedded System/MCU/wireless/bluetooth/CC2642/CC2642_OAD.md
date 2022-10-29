@@ -10,20 +10,28 @@
 * 2-pin cJTAG and JTAG debugging（不支持SWD接口），比较新的JLINK应该是支持cJTAG接口的
 
 
-[参考链接](https://software-dl.ti.com/simplelink/esd/simplelink_cc13x2_26x2_sdk/5.10.00.48/exports/docs/ble5stack/ble_user_guide/html/ble-stack-oad/setting-up-environment.html)
+* 重要！请阅读：[BLE Enhanced (OAD) Fundamentals](https://dev.ti.com/tirex/explore/node?node=A__ADzuT3lecGawPgH5gTa69Q__com.ti.SIMPLELINK_ACADEMY_CC13XX_CC26XX_SDK__AfkT0vQ__LATEST)
 
 ## 2. OAD(Over tO Air Download)
 
+具有OAD功能的BLE程序，其Flash布局由三部分组成：
+
+* BIM + CCFG
+* persistent app + Stack，persistent_app是永久存储在Flash上的（相对于OAD可升级而言），其的作用是完成应用程序的升级（类似于MCU中常说的自定义升级BootLoader）
+* User app + Stack，User app是用户程序，也就是OAD升级的目标
+
+
 ![](img/cc26x2_oad_onchip_flash_layout.png)
 
-## 2.1 BIM(Boot Image Manager)
+## 2.1 BIM(Boot Image Manager) & CCFG
 
 这部分大小是固定的。
 
-## 2.2 OAD_IMG_A
+## 2.2 OAD_IMG_A(persistent_app 的起始地址)
+* OAD_IMG_A ~ (DEVICE_SIZE-BIM_SIZE)这块Flash区域就是用来存放 persistent_app 的，persistent_app是永久存储在Flash上的（相对于OAD可升级而言），其的作用是完成应用程序的升级（类似于MCU中常说的自定义升级BootLoader）
 * OAD_IMG_A 是Persistent application的起始地址，该地址的实际值需要根据具体的应用来决定，通过连接脚本中Flash的划分来决定；
 * HDR_START是连接脚本中的变量名
-* 我们可以参看下Demo工程中的连接脚本：simplelink_cc13xx_cc26xx_sdk_6_20_00_29\examples\rtos\CC26X2R1_LAUNCHXL\ble5stack\persistent_app\\tirtos7\ticlang\cc13x2_cc26x2_app_tirtos7.cmd
+* 我们可以参看下Demo工程中的连接脚本：```simplelink_cc13xx_cc26xx_sdk_6_20_00_29\examples\rtos\CC26X2R1_LAUNCHXL\ble5stack\persistent_app\\tirtos7\ticlang\cc13x2_cc26x2_app_tirtos7.cmd```
 
 ```
 ...
@@ -69,10 +77,12 @@
 
 ```
 
-## 2.3 OAD_IMG_B
+* 从上面的链接脚本中的```#define IMG_A_FLASH_START          0x00038000  // 224K``` 可以得知Persistent App的烧写地址是0x38000
 
+## 2.3 OAD_IMG_B（User App 的结束地址）
 
-* OAD_IMG_B是应用程序（我们自己写的）的结束地址，这个地址也是可变的，程序大就往上，程序小就往下
+* 0x00 ~ (OAD_IMG_A-1)这块Flash区域就是用来存储用户程序的，也就是OAD升级的目标
+* OAD_IMG_B是用户程序的结束地址，这个地址也是可变的，程序大就往上，程序小就往下
 * Avaliable User Application Space应该就是指OAD_IMG_B是可变的，所以这部分可能用得上，也可能是空置的，最大就是到OAD_IMG_A，
 * FLASH_END是连接脚本中的变量名称
-* 
+* 其连接脚本请参考```simplelink_cc13xx_cc26xx_sdk_6_20_00_29\examples\rtos\CC26X2R1_LAUNCHXL\ble5stack\simple_peripheral_oad_onchip\tirtos7\ticlang\cc13x2_cc26x2_app_tirtos7.cmd```
