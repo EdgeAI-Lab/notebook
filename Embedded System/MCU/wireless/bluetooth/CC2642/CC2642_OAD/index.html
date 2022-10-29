@@ -1490,15 +1490,15 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#21-bimboot-image-manager" class="nav-link">2.1 BIM(Boot Image Manager)</a>
+            <li class="nav-item" data-level="2"><a href="#21-bimboot-image-manager-ccfg" class="nav-link">2.1 BIM(Boot Image Manager) &amp; CCFG</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#22-oad_img_a" class="nav-link">2.2 OAD_IMG_A</a>
+            <li class="nav-item" data-level="2"><a href="#22-oad_img_apersistent_app" class="nav-link">2.2 OAD_IMG_A(persistent_app 的起始地址)</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#23-oad_img_b" class="nav-link">2.3 OAD_IMG_B</a>
+            <li class="nav-item" data-level="2"><a href="#23-oad_img_buser-app" class="nav-link">2.3 OAD_IMG_B（User App 的结束地址）</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -1518,18 +1518,29 @@
 <li>256KB of ROM for protocols and library functions</li>
 <li>8KB of cache SRAM</li>
 <li>80KB of ultra-low leakage SRAM with parity for high-reliability operation</li>
-<li>2-pin cJTAG and JTAG debugging（不支持SWD接口），比较新的JLINK应该是支持cJTAG接口的</li>
+<li>
+<p>2-pin cJTAG and JTAG debugging（不支持SWD接口），比较新的JLINK应该是支持cJTAG接口的</p>
+</li>
+<li>
+<p>重要！请阅读：<a href="https://dev.ti.com/tirex/explore/node?node=A__ADzuT3lecGawPgH5gTa69Q__com.ti.SIMPLELINK_ACADEMY_CC13XX_CC26XX_SDK__AfkT0vQ__LATEST">BLE Enhanced (OAD) Fundamentals</a></p>
+</li>
 </ul>
-<p><a href="https://software-dl.ti.com/simplelink/esd/simplelink_cc13x2_26x2_sdk/5.10.00.48/exports/docs/ble5stack/ble_user_guide/html/ble-stack-oad/setting-up-environment.html">参考链接</a></p>
 <h2 id="2-oadover-to-air-download">2. OAD(Over tO Air Download)<a class="headerlink" href="#2-oadover-to-air-download" title="Permanent link">#</a></h2>
-<p><img alt="" src="../img/cc26x2_oad_onchip_flash_layout.png" /></p>
-<h2 id="21-bimboot-image-manager">2.1 BIM(Boot Image Manager)<a class="headerlink" href="#21-bimboot-image-manager" title="Permanent link">#</a></h2>
-<p>这部分大小是固定的。</p>
-<h2 id="22-oad_img_a">2.2 OAD_IMG_A<a class="headerlink" href="#22-oad_img_a" title="Permanent link">#</a></h2>
+<p>具有OAD功能的BLE程序，其Flash布局由三部分组成：</p>
 <ul>
+<li>BIM + CCFG</li>
+<li>persistent app + Stack，persistent_app是永久存储在Flash上的（相对于OAD可升级而言），其的作用是完成应用程序的升级（类似于MCU中常说的自定义升级BootLoader）</li>
+<li>User app + Stack，User app是用户程序，也就是OAD升级的目标</li>
+</ul>
+<p><img alt="" src="../img/cc26x2_oad_onchip_flash_layout.png" /></p>
+<h2 id="21-bimboot-image-manager-ccfg">2.1 BIM(Boot Image Manager) &amp; CCFG<a class="headerlink" href="#21-bimboot-image-manager-ccfg" title="Permanent link">#</a></h2>
+<p>这部分大小是固定的。</p>
+<h2 id="22-oad_img_apersistent_app">2.2 OAD_IMG_A(persistent_app 的起始地址)<a class="headerlink" href="#22-oad_img_apersistent_app" title="Permanent link">#</a></h2>
+<ul>
+<li>OAD_IMG_A ~ (DEVICE_SIZE-BIM_SIZE)这块Flash区域就是用来存放 persistent_app 的，persistent_app是永久存储在Flash上的（相对于OAD可升级而言），其的作用是完成应用程序的升级（类似于MCU中常说的自定义升级BootLoader）</li>
 <li>OAD_IMG_A 是Persistent application的起始地址，该地址的实际值需要根据具体的应用来决定，通过连接脚本中Flash的划分来决定；</li>
 <li>HDR_START是连接脚本中的变量名</li>
-<li>我们可以参看下Demo工程中的连接脚本：simplelink_cc13xx_cc26xx_sdk_6_20_00_29\examples\rtos\CC26X2R1_LAUNCHXL\ble5stack\persistent_app\tirtos7\ticlang\cc13x2_cc26x2_app_tirtos7.cmd</li>
+<li>我们可以参看下Demo工程中的连接脚本：<code>simplelink_cc13xx_cc26xx_sdk_6_20_00_29\examples\rtos\CC26X2R1_LAUNCHXL\ble5stack\persistent_app\\tirtos7\ticlang\cc13x2_cc26x2_app_tirtos7.cmd</code></li>
 </ul>
 <pre><code>...
 
@@ -1573,12 +1584,16 @@
 ...
 
 </code></pre>
-<h2 id="23-oad_img_b">2.3 OAD_IMG_B<a class="headerlink" href="#23-oad_img_b" title="Permanent link">#</a></h2>
 <ul>
-<li>OAD_IMG_B是应用程序（我们自己写的）的结束地址，这个地址也是可变的，程序大就往上，程序小就往下</li>
+<li>从上面的链接脚本中的<code>#define IMG_A_FLASH_START          0x00038000  // 224K</code> 可以得知Persistent App的烧写地址是0x38000</li>
+</ul>
+<h2 id="23-oad_img_buser-app">2.3 OAD_IMG_B（User App 的结束地址）<a class="headerlink" href="#23-oad_img_buser-app" title="Permanent link">#</a></h2>
+<ul>
+<li>0x00 ~ (OAD_IMG_A-1)这块Flash区域就是用来存储用户程序的，也就是OAD升级的目标</li>
+<li>OAD_IMG_B是用户程序的结束地址，这个地址也是可变的，程序大就往上，程序小就往下</li>
 <li>Avaliable User Application Space应该就是指OAD_IMG_B是可变的，所以这部分可能用得上，也可能是空置的，最大就是到OAD_IMG_A，</li>
 <li>FLASH_END是连接脚本中的变量名称</li>
-<li></li>
+<li>其连接脚本请参考<code>simplelink_cc13xx_cc26xx_sdk_6_20_00_29\examples\rtos\CC26X2R1_LAUNCHXL\ble5stack\simple_peripheral_oad_onchip\tirtos7\ticlang\cc13x2_cc26x2_app_tirtos7.cmd</code></li>
 </ul></div>
             </div>
         </div>
