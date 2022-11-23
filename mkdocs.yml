@@ -118,6 +118,7 @@ nav:
               - Bluetooth Base: Embedded System/MCU/wireless/bluetooth/bluetooth_base.md
               - Bluetooth Stack: Embedded System/MCU/wireless/bluetooth/protocal_stack.md
             - UWB:
+              - NCJ29D5D MACRangingAPP Keil Error: Embedded System/MCU/wireless/UWB/ncj29d5d_mac_keil.md
               - 纽扣电池: Embedded System/MCU/wireless/UWB/coin_cell.md
               - dbm: Embedded System/MCU/wireless/UWB/dbm.md
               - UWB基础: Embedded System/MCU/wireless/UWB/uwb_base.md
