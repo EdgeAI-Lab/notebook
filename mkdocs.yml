@@ -345,6 +345,8 @@ nav:
       
 
     - Tools:
+      - CMSIS-DAP:
+        - DAPLink Getting Start: Tools/CMSIS_DAP/daplink_gettind_start.md
       - IAR:
         - IAR Projection Connection: Tools/IAR/iar_project_connection.md
       - 电脑使用问题:
