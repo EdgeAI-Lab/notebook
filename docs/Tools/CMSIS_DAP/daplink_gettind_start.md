@@ -17,6 +17,13 @@
 
 ## 3. Compiler DAPLink sorce code
 
+* install project-generator
+
+```bash
+pip install project-generator
+```
+
+
 * set python virtual env
 
 ```bash
@@ -65,9 +72,7 @@ $ python tools/progen_compile.py  --clean -v --parallel stm32f103xb_stm32f103rb_
 $ pip install pyocd
 ```
 
-* permission to access USB devices for Linux System
-
-* [https://github.com/pyocd/pyOCD](https://github.com/pyocd/pyOCD)
+* permission to access USB devices for Linux System ([https://github.com/pyocd/pyOCD](https://github.com/pyocd/pyOCD))
 
 ```bash
 $ sudo cp pyOCD/udev/*.rules /etc/udev/rules.d
