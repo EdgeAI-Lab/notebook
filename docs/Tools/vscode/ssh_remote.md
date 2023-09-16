@@ -1,7 +1,8 @@
 # VSCode通过SSH连接服务器实现远程编辑
 
-* 安装Remote-SSH插件
+* 首选服务器端要安装SSH服务并启动，方法参考： [SSH服务器搭建](../../Embedded%20System/linux/embedded_linux_dev_env/ssh_server.md)
 
+* 在VSCode中安装Remote-SSH插件
 
 * 添加配置文件
 

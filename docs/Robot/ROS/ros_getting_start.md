@@ -3,6 +3,7 @@
 [ROS参考官方教程](https://docs.ros.org/en/foxy/Tutorials.html)，下面的是笔者自己的学习记录。
 
 !!! Note 
+
 本文使用的ROS版本是foxy，Ubuntu版本是20.04，foxy是ROS的LTS版本性能稳定，太新的版本可能会出现意想不到的问题。
 
 ## 1. 安装ROS
