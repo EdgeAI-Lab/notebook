@@ -6,6 +6,12 @@
 
 [P-NUCLEO_IHM001](https://www.stmicroelectronics.com.cn/en/evaluation-tools/p-nucleo-ihm001.html#)
 
+Controller:
+* NUCLEO-F302R8 board
+
+Driver:
+* X-NUCLEO-IHM07M1 board
+
 Three-phase motor Bull-Running model BR2804-1700 kV：
 * Magnetic Struct: SM-PMSM
 * Pole Pairs: 7

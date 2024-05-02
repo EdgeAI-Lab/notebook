@@ -228,7 +228,9 @@ ros2 launch moveit2_tutorials demo.launch.py rviz_tutorial:=true
 ![](img/rviz_empty.png)
 
 * 点击Add按钮，添加“MotionPlanning” 作为显示类型
+
 ![](img/rviz_click_add.png)
+
 ![](img/rviz_plugin_motion_planning_add.png)
 
 * 现在你会在RViz中看到 Panda robot

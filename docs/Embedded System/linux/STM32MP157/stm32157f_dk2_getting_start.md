@@ -21,6 +21,11 @@ Starter Package就是直接提供刷机镜像文件，通过USB配合STM32CubePr
 
 ## 2.2 使用STM32CubeProg下载系统文件到开发板
 
+![](./img/STM32MP157C-DK2_with_power_stlink_flasher_ethernet.png)
+
+* USB OTG USB接口用来下载Linux固件
+* ST-Link USB接口被用做log打印
+
 1. 通过CN7（USB Type C）连接开发板和电脑，然后在STM32CubeProg中选择USB接口，点击“Connect”，使其连接到开发板
 
 2. 点击“Open File”选项卡，选择```FlashLayout_sdcard_stm32mp157x-dk2-trusted.tsv```文件，该文件的路径为：
