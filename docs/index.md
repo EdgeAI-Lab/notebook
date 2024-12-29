@@ -1,5 +1,5 @@
 # WiKi Intro
-[中文请点击这里](index-zh)
+[中文请点击这里](index-zh.md)
 
 Hello! Welcome to my WiKi site.
 

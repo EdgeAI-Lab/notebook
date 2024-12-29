@@ -164,6 +164,7 @@ nav:
           - 步进电机: Robot/motor_control/stepper_motor_driver_chip.md
           - STM32控制42步进电机: Robot/motor_control/stm32_io_drive_42stepper_l298n.md
           - P_NUCLEO_IHM001 Getting Start: Robot/motor_control/P_NUCLEO_IHM001_Getting_Start.md 
+          - 42 Stepper Motor theory: Robot/motor_control/stepper_motor_theory.md
 
         - 平衡车: Robot/two_wheel_balance_car.md
 
