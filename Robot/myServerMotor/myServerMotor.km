@@ -1,0 +1,95 @@
+{
+    "root": {
+        "data": {
+            "id": "d750tur0r1s0",
+            "created": 1737185398311,
+            "text": "MainTopic"
+        },
+        "children": [
+            {
+                "data": {
+                    "id": "d750uguqg6g0",
+                    "created": 1737185446425,
+                    "text": "BOM"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "d750vkatnk00",
+                            "created": 1737185532292,
+                            "text": "AS5600 ￥2.04 + 6mm diameter magnet  ￥0.5"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "d750vkzn22o0",
+                            "created": 1737185533793,
+                            "text": "TMI8620 ￥1"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "d750vljd1so0",
+                            "created": 1737185534985,
+                            "text": "7 type motor ￥59"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "d750z4pxgz40",
+                            "created": 1737185811834,
+                            "text": "STM8S003F3 ￥1"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "d751uet2o6g0",
+                            "created": 1737188263081,
+                            "text": "HX7533-12V to 3.3V ￥0.2"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "d752el9ez1c0",
+                            "created": 1737189844413,
+                            "text": "PCB ￥1.2"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "d750uhjssp40",
+                    "created": 1737185447940,
+                    "text": "AS5600"
+                },
+                "children": []
+            },
+            {
+                "data": {
+                    "id": "d750vckq62g0",
+                    "created": 1737185515477,
+                    "text": "TMI8620SP"
+                },
+                "children": []
+            },
+            {
+                "data": {
+                    "id": "d750yrvm7080",
+                    "created": 1737185783879,
+                    "text": "7 type motor"
+                },
+                "children": []
+            }
+        ]
+    },
+    "template": "right",
+    "theme": "fresh-green",
+    "version": "1.4.43"
+}
