@@ -25,3 +25,34 @@ p {
 ul {
 	line-height:200%;
 }
+
+/*
+ * 三级导航：二级分组展开为内联列表。
+ * 主题自带的做法是在 >=992px 时把子菜单设为 position: fixed 的飞出层，
+ * 但 Bootstrap 5 的 Popper 会给下拉菜单加 transform，fixed 元素因此以菜单为
+ * 定位基准而不是视口，飞出层会跑到屏幕外，表现为“点了没反应”；同时父级
+ * dropdown 的 overflow-y:auto 也会裁剪它。这里改为内联展开，避免定位问题。
+ */
+.dropdown-submenu > .dropdown-menu {
+	position: static !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	border: 0 !important;
+	background-color: transparent;
+	box-shadow: none;
+	max-height: none !important;
+	overflow: visible !important;
+}
+
+.dropdown-submenu > .dropdown-menu > li > a {
+	padding-left: 2.25rem;
+	font-size: 0.925em;
+}
+
+.dropdown-submenu > a::after {
+	transition: transform 0.15s ease;
+}
+
+.dropdown-submenu > a.open::after {
+	transform: rotate(90deg);
+}
