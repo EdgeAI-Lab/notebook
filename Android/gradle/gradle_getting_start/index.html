@@ -42,6 +42,26 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">About</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../about/" class="dropdown-item">About Me</a>
+</li>
+                                    
+<li>
+    <a href="../../../about-zh/" class="dropdown-item">站长介绍</a>
+</li>
+                                    
+<li>
+    <a href="../../../index-zh/" class="dropdown-item">本站简介</a>
+</li>
+                                </ul>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Android</a>
                                 <ul class="dropdown-menu">
@@ -147,6 +167,16 @@
 </li>
                                     
   <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">性能优化</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../android_performance_optimizaton/android_memory_optimization/" class="dropdown-item">Android 内存优化</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
     <a href="#" class="dropdown-item">Java</a>
     <ul class="dropdown-menu">
             
@@ -154,29 +184,13 @@
     <a href="../../java/java_serial/" class="dropdown-item">串口操作</a>
 </li>
             
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Gradle</a>
-    <ul class="dropdown-menu">
-            
 <li>
     <a href="./" class="dropdown-item active" aria-current="page">命令行中使用Gradle创建Java App和Java library</a>
 </li>
-    </ul>
-  </li>
-            
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Java基础</a>
-    <ul class="dropdown-menu">
             
 <li>
-    <a href="../../java/java_base/" class="dropdown-item">知识点</a>
+    <a href="../../java/java_base/" class="dropdown-item">Java基础：知识点</a>
 </li>
-    </ul>
-  </li>
-            
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">JNI</a>
-    <ul class="dropdown-menu">
             
 <li>
     <a href="../../java/JNI/jni_getting_start/" class="dropdown-item">一个非常好的JNI入门实例</a>
@@ -185,8 +199,6 @@
 <li>
     <a href="../../java/JNI/java_jni_principle/" class="dropdown-item">JNI原理</a>
 </li>
-    </ul>
-  </li>
             
 <li>
     <a href="../../java/ubuntu_config_java/" class="dropdown-item">Ubuntu中配置Java</a>
@@ -196,10 +208,6 @@
     <a href="../../java/java_compile_command_line/" class="dropdown-item">命令行编译Java程序</a>
 </li>
             
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">IntelliJ</a>
-    <ul class="dropdown-menu">
-            
 <li>
     <a href="../../java/Tools/intelliJ_set_java_code_source/" class="dropdown-item">IntelliJ设置Java源码</a>
 </li>
@@ -207,11 +215,13 @@
 <li>
     <a href="../../java/Tools/intelliJ_add_library/" class="dropdown-item">IntelliJ添加jar文件</a>
 </li>
-    </ul>
-  </li>
             
 <li>
     <a href="../../java/java_ui_swing/" class="dropdown-item">Swing</a>
+</li>
+            
+<li>
+    <a href="../../java/JavaFX/javafx_learning/" class="dropdown-item">JavaFX 学习笔记</a>
 </li>
     </ul>
   </li>
@@ -325,23 +335,17 @@
     <a href="../../../Embedded%20System/MCU/communication_interface/ethernet/" class="dropdown-item">以太网</a>
 </li>
             
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">CAN总线</a>
-    <ul class="dropdown-menu">
-            
 <li>
-    <a href="../../../Embedded%20System/MCU/communication_interface/CAN/CAN_bus/" class="dropdown-item">CAN Bus</a>
+    <a href="../../../Embedded%20System/MCU/communication_interface/CAN/CAN_bus/" class="dropdown-item">CAN总线：CAN Bus</a>
 </li>
             
 <li>
-    <a href="../../../Embedded%20System/MCU/communication_interface/CAN/STM32_CAN_Application/" class="dropdown-item">STM32 CAN接口</a>
+    <a href="../../../Embedded%20System/MCU/communication_interface/CAN/STM32_CAN_Application/" class="dropdown-item">CAN总线：STM32 CAN接口</a>
 </li>
             
 <li>
-    <a href="../../../Embedded%20System/MCU/communication_interface/CAN/CANopen/" class="dropdown-item">CANopen</a>
+    <a href="../../../Embedded%20System/MCU/communication_interface/CAN/CANopen/" class="dropdown-item">CAN总线：CANopen</a>
 </li>
-    </ul>
-  </li>
     </ul>
   </li>
                                     
@@ -354,11 +358,7 @@
 </li>
             
 <li>
-    <a href="../../../Embedded%20System/MCU/STM32/stm32_hal_uart/" class="dropdown-item">STM32串口编程之中断方式</a>
-</li>
-            
-<li>
-    <a href="../../../Embedded%20System/MCU/STM32/stm32_hal_uart/" class="dropdown-item">STM32串口编程之中断方式</a>
+    <a href="../../../Embedded%20System/MCU/STM32/stm32_tim_dma/" class="dropdown-item">STM32定时器编程之定时中断</a>
 </li>
             
 <li>
@@ -372,6 +372,14 @@
 <li>
     <a href="../../../Embedded%20System/MCU/STM32/stm32_adc/" class="dropdown-item">STM32ADC</a>
 </li>
+            
+<li>
+    <a href="../../../Embedded%20System/MCU/STM32/stm32_pwm/" class="dropdown-item">STM32定时器编程之PWM</a>
+</li>
+            
+<li>
+    <a href="../../../Embedded%20System/MCU/STM32/debug/stm32_debug_tips/" class="dropdown-item">STM32 调试记录</a>
+</li>
     </ul>
   </li>
                                     
@@ -381,6 +389,14 @@
             
 <li>
     <a href="../../../Embedded%20System/MCU/STM8/adc/" class="dropdown-item">ADC</a>
+</li>
+            
+<li>
+    <a href="../../../Embedded%20System/MCU/STM8/bugs/" class="dropdown-item">STM8 BUGS</a>
+</li>
+            
+<li>
+    <a href="../../../Embedded%20System/MCU/STM8/servo_doudong/" class="dropdown-item">STM8 舵机抖动</a>
 </li>
     </ul>
   </li>
@@ -431,28 +447,28 @@
     <a href="#" class="dropdown-item">Wireless</a>
     <ul class="dropdown-menu">
             
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Bluetooth</a>
-    <ul class="dropdown-menu">
-            
 <li>
-    <a href="../../../Embedded%20System/MCU/wireless/bluetooth/CC2642/CC2642_Getting_Start/" class="dropdown-item">CC2642_Getting_Start</a>
+    <a href="../../../Embedded%20System/MCU/wireless/bluetooth/CC2642/CC2642_Getting_Start/" class="dropdown-item">Bluetooth：CC2642_Getting_Start</a>
 </li>
             
 <li>
-    <a href="../../../Embedded%20System/MCU/wireless/bluetooth/CC2642/CC2642_OAD/" class="dropdown-item">CC2642 OAD</a>
+    <a href="../../../Embedded%20System/MCU/wireless/bluetooth/CC2642/CC2642_OAD/" class="dropdown-item">Bluetooth：CC2642 OAD</a>
 </li>
             
 <li>
-    <a href="../../../Embedded%20System/MCU/wireless/bluetooth/CC2642/create_new_iar_project/" class="dropdown-item">CC2642创建新BLE IAR工程</a>
+    <a href="../../../Embedded%20System/MCU/wireless/bluetooth/CC2642/create_new_iar_project/" class="dropdown-item">Bluetooth：CC2642创建新BLE IAR工程</a>
 </li>
             
 <li>
-    <a href="../../../Embedded%20System/MCU/wireless/bluetooth/BLE_Address/" class="dropdown-item">BLE地址</a>
+    <a href="../../../Embedded%20System/MCU/wireless/bluetooth/BLE_Address/" class="dropdown-item">Bluetooth：BLE地址</a>
 </li>
             
 <li>
-    <a href="../../../Embedded%20System/MCU/wireless/bluetooth/ble_sm/" class="dropdown-item">BLE安全</a>
+    <a href="../../../Embedded%20System/MCU/wireless/bluetooth/ble_sm/" class="dropdown-item">Bluetooth：BLE安全</a>
+</li>
+            
+<li>
+    <a href="../../../Embedded%20System/MCU/wireless/bluetooth/ble_retransmit/" class="dropdown-item">Bluetooth：BLE重传</a>
 </li>
             
 <li>
@@ -462,23 +478,17 @@
 <li>
     <a href="../../../Embedded%20System/MCU/wireless/bluetooth/protocal_stack/" class="dropdown-item">Bluetooth Stack</a>
 </li>
-    </ul>
-  </li>
-            
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">UWB</a>
-    <ul class="dropdown-menu">
             
 <li>
-    <a href="../../../Embedded%20System/MCU/wireless/UWB/ncj29d5d_mac_keil/" class="dropdown-item">NCJ29D5D MACRangingAPP Keil Error</a>
+    <a href="../../../Embedded%20System/MCU/wireless/UWB/ncj29d5d_mac_keil/" class="dropdown-item">UWB：NCJ29D5D MACRangingAPP Keil Error</a>
 </li>
             
 <li>
-    <a href="../../../Embedded%20System/MCU/wireless/UWB/coin_cell/" class="dropdown-item">纽扣电池</a>
+    <a href="../../../Embedded%20System/MCU/wireless/UWB/coin_cell/" class="dropdown-item">UWB：纽扣电池</a>
 </li>
             
 <li>
-    <a href="../../../Embedded%20System/MCU/wireless/UWB/dbm/" class="dropdown-item">dbm</a>
+    <a href="../../../Embedded%20System/MCU/wireless/UWB/dbm/" class="dropdown-item">UWB：dbm</a>
 </li>
             
 <li>
@@ -500,8 +510,6 @@
 <li>
     <a href="../../../Embedded%20System/MCU/wireless/UWB/uwb_location_algorithm/" class="dropdown-item">UWB定位算法</a>
 </li>
-    </ul>
-  </li>
     </ul>
   </li>
                                     
@@ -535,31 +543,29 @@
     <a href="#" class="dropdown-item">RTOS</a>
     <ul class="dropdown-menu">
             
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">FreeRTOS</a>
-    <ul class="dropdown-menu">
-            
 <li>
-    <a href="../../../Embedded%20System/RTOS/freertos/task_switch/" class="dropdown-item">任务切换</a>
+    <a href="../../../Embedded%20System/RTOS/freertos/task_switch/" class="dropdown-item">FreeRTOS：任务切换</a>
 </li>
             
 <li>
-    <a href="../../../Embedded%20System/RTOS/freertos/freertos_interrupt_manage/" class="dropdown-item">中断管理</a>
+    <a href="../../../Embedded%20System/RTOS/freertos/multi_thread/" class="dropdown-item">FreeRTOS：多线程</a>
 </li>
             
 <li>
-    <a href="../../../Embedded%20System/RTOS/freertos/freertos_task_stack/" class="dropdown-item">任务栈</a>
+    <a href="../../../Embedded%20System/RTOS/freertos/freertos_interrupt_manage/" class="dropdown-item">FreeRTOS：中断管理</a>
 </li>
             
 <li>
-    <a href="../../../Embedded%20System/RTOS/freertos/mutexes/" class="dropdown-item">互斥体</a>
+    <a href="../../../Embedded%20System/RTOS/freertos/freertos_task_stack/" class="dropdown-item">FreeRTOS：任务栈</a>
 </li>
             
 <li>
-    <a href="../../../Embedded%20System/RTOS/freertos/freertos_task_notify/" class="dropdown-item">任务通知</a>
+    <a href="../../../Embedded%20System/RTOS/freertos/mutexes/" class="dropdown-item">FreeRTOS：互斥体</a>
 </li>
-    </ul>
-  </li>
+            
+<li>
+    <a href="../../../Embedded%20System/RTOS/freertos/freertos_task_notify/" class="dropdown-item">FreeRTOS：任务通知</a>
+</li>
             
 <li>
     <a href="../../../Embedded%20System/RTOS/multiple-processor_systems/" class="dropdown-item">多核系统</a>
@@ -570,6 +576,16 @@
 <li>
     <a href="../../../Embedded%20System/MCU/dron_open_source/" class="dropdown-item">无人机开源资源汇总</a>
 </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">书籍</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../Embedded%20System/MCU/books/MCU_books/" class="dropdown-item">MCU 经典书籍</a>
+</li>
+    </ul>
+  </li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
@@ -586,12 +602,34 @@
     </ul>
   </li>
                                     
+<li>
+    <a href="../../../Robot/ROS/Q%26A/" class="dropdown-item">ROS Q&A</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">机器人学</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../Robot/robotics/robotics/" class="dropdown-item">机器人学</a>
+</li>
+            
+<li>
+    <a href="../../../Robot/kinematics/kinematics/" class="dropdown-item">机器人运动学</a>
+</li>
+    </ul>
+  </li>
+                                    
   <li class="dropdown-submenu">
     <a href="#" class="dropdown-item">Moveit</a>
     <ul class="dropdown-menu">
             
 <li>
     <a href="../../../Robot/moveit/moveit_getting_start/" class="dropdown-item">Moveit Getting Start</a>
+</li>
+            
+<li>
+    <a href="../../../Robot/moveit/MoveIt%20Setup%20Assistant/" class="dropdown-item">MoveIt Setup Assistant</a>
 </li>
     </ul>
   </li>
@@ -615,11 +653,31 @@
 </li>
             
 <li>
+    <a href="../../../Robot/motor_control/FOC/foc_model/" class="dropdown-item">FOC 模型</a>
+</li>
+            
+<li>
+    <a href="../../../Robot/motor_control/FOC/simulink_models/clark%26park_transforms/" class="dropdown-item">FOC：Clark 与 Park 变换</a>
+</li>
+            
+<li>
+    <a href="../../../Robot/motor_control/FOC/svpwm/svpwm/" class="dropdown-item">FOC 中的 SVPWM</a>
+</li>
+            
+<li>
     <a href="../../../Robot/motor_control/torque/" class="dropdown-item">转矩</a>
 </li>
             
 <li>
     <a href="../../../Robot/motor_control/brushless_motor/" class="dropdown-item">无刷电机</a>
+</li>
+            
+<li>
+    <a href="../../../Robot/motor_control/370motor/" class="dropdown-item">370 电机</a>
+</li>
+            
+<li>
+    <a href="../../../Robot/motor_control/BLDC/" class="dropdown-item">无刷电机（BLDC）</a>
 </li>
             
 <li>
@@ -657,35 +715,41 @@
     <a href="#" class="dropdown-item">C/C++</a>
     <ul class="dropdown-menu">
             
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">你需要知道的N个C语言问题</a>
-    <ul class="dropdown-menu">
-            
 <li>
-    <a href="../../../Embedded%20System/c%26c%2B%2B/c_memory_layout/" class="dropdown-item">C内存模型</a>
+    <a href="../../../Embedded%20System/c%26c%2B%2B/c_memory_layout/" class="dropdown-item">你需要知道的N个C语言问题：C内存模型</a>
 </li>
             
 <li>
-    <a href="../../../Embedded%20System/c%26c%2B%2B/c_micro_jing/" class="dropdown-item">C宏定义#与##</a>
+    <a href="../../../Embedded%20System/c%26c%2B%2B/memory_align/" class="dropdown-item">内存对齐</a>
 </li>
             
 <li>
-    <a href="../../../Embedded%20System/c%26c%2B%2B/c_pointer/" class="dropdown-item">C指针</a>
+    <a href="../../../Embedded%20System/c%26c%2B%2B/c_micro_jing/" class="dropdown-item">你需要知道的N个C语言问题：C宏定义#与##</a>
 </li>
             
 <li>
-    <a href="../../../Embedded%20System/c%26c%2B%2B/c_pragma/" class="dropdown-item">pragma pack()</a>
+    <a href="../../../Embedded%20System/c%26c%2B%2B/c_pointer/" class="dropdown-item">你需要知道的N个C语言问题：C指针</a>
 </li>
             
 <li>
-    <a href="../../../Embedded%20System/c%26c%2B%2B/typedef_tips/" class="dropdown-item">typedef使用注意</a>
+    <a href="../../../Embedded%20System/c%26c%2B%2B/c_pragma/" class="dropdown-item">你需要知道的N个C语言问题：pragma pack()</a>
 </li>
             
 <li>
-    <a href="../../../Embedded%20System/c%26c%2B%2B/const_volatile/" class="dropdown-item">const与volatile</a>
+    <a href="../../../Embedded%20System/c%26c%2B%2B/typedef_tips/" class="dropdown-item">你需要知道的N个C语言问题：typedef使用注意</a>
 </li>
-    </ul>
-  </li>
+            
+<li>
+    <a href="../../../Embedded%20System/c%26c%2B%2B/const_volatile/" class="dropdown-item">你需要知道的N个C语言问题：const与volatile</a>
+</li>
+            
+<li>
+    <a href="../../../Embedded%20System/c%26c%2B%2B/data_structure_algorithm.md/double_linked_list/" class="dropdown-item">你需要知道的N个C语言问题：双向链表</a>
+</li>
+            
+<li>
+    <a href="../../../Embedded%20System/c%26c%2B%2B/data_structure_algorithm.md/generate_prime/" class="dropdown-item">你需要知道的N个C语言问题：生成质数</a>
+</li>
             
 <li>
     <a href="../../../Embedded%20System/c%26c%2B%2B/gdb_usage/" class="dropdown-item">GDB</a>
@@ -747,15 +811,17 @@
     <a href="#" class="dropdown-item">开发环境相关</a>
     <ul class="dropdown-menu">
             
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">QEMU</a>
-    <ul class="dropdown-menu">
-            
 <li>
     <a href="../../../Embedded%20System/linux/embedded_linux_dev_env/qemu/qemu_install/" class="dropdown-item">QEMU安装</a>
 </li>
-    </ul>
-  </li>
+            
+<li>
+    <a href="../../../Embedded%20System/linux/embedded_linux_dev_env/linux_kernel_compile/" class="dropdown-item">Linux 内核编译</a>
+</li>
+            
+<li>
+    <a href="../../../Embedded%20System/linux/embedded_linux_dev_env/ubuntu_get_kernel_tree/" class="dropdown-item">Ubuntu 内核源码树</a>
+</li>
             
 <li>
     <a href="../../../Embedded%20System/linux/embedded_linux_dev_env/vmware/" class="dropdown-item">VMware</a>
@@ -775,6 +841,14 @@
             
 <li>
     <a href="../../../Embedded%20System/linux/embedded_linux_dev_env/virtual_box_env/" class="dropdown-item">VirtualBox开发环境搭建</a>
+</li>
+            
+<li>
+    <a href="../../../Embedded%20System/linux/embedded_linux_dev_env/virtual_box_disk_expand/" class="dropdown-item">VirtualBox 硬盘扩容</a>
+</li>
+            
+<li>
+    <a href="../../../Embedded%20System/linux/embedded_linux_dev_env/vscode_remote_dev/" class="dropdown-item">使用 VSCode 远程开发</a>
 </li>
             
 <li>
@@ -819,10 +893,6 @@
     <a href="#" class="dropdown-item">编译系统</a>
     <ul class="dropdown-menu">
             
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">CMake</a>
-    <ul class="dropdown-menu">
-            
 <li>
     <a href="../../../Embedded%20System/linux/compiler/cmake/cmake_base/" class="dropdown-item">CMake基础</a>
 </li>
@@ -842,19 +912,13 @@
 <li>
     <a href="../../../Embedded%20System/linux/compiler/cmake/vscode_camke_cross_compile/" class="dropdown-item">VSCode与CMake搭配使用之交叉编译</a>
 </li>
-    </ul>
-  </li>
-            
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">交叉编译</a>
-    <ul class="dropdown-menu">
             
 <li>
-    <a href="../../../Embedded%20System/linux/compiler/cross_compile/cmake_stm32/" class="dropdown-item">cmake-stm32</a>
+    <a href="../../../Embedded%20System/linux/compiler/cross_compile/cmake_stm32/" class="dropdown-item">交叉编译：cmake-stm32</a>
 </li>
             
 <li>
-    <a href="../../../Embedded%20System/linux/compiler/cross_compile/develop_stm32_using_vscode/" class="dropdown-item">VSCode-STM32</a>
+    <a href="../../../Embedded%20System/linux/compiler/cross_compile/develop_stm32_using_vscode/" class="dropdown-item">交叉编译：VSCode-STM32</a>
 </li>
             
 <li>
@@ -866,24 +930,8 @@
 </li>
             
 <li>
-    <a href="../../../Embedded%20System/linux/compiler/cmake/cmake_cross_compile/" class="dropdown-item">CMake交叉编译</a>
+    <a href="../../../Embedded%20System/linux/debug/arm_linux_gdb_debug/" class="dropdown-item">Debug：ARM-Linux GDB远程调试</a>
 </li>
-            
-<li>
-    <a href="../../../Embedded%20System/linux/compiler/cmake/vscode_camke_cross_compile/" class="dropdown-item">VSCode与CMake搭配使用之交叉编译</a>
-</li>
-    </ul>
-  </li>
-            
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Debug</a>
-    <ul class="dropdown-menu">
-            
-<li>
-    <a href="../../../Embedded%20System/linux/debug/arm_linux_gdb_debug/" class="dropdown-item">ARM-Linux GDB远程调试</a>
-</li>
-    </ul>
-  </li>
             
 <li>
     <a href="../../../Embedded%20System/linux/compiler/gnu_make_two_flavors_of_variables/" class="dropdown-item">GNU make中的2种变量</a>
@@ -891,10 +939,6 @@
             
 <li>
     <a href="../../../Embedded%20System/linux/compiler/gcc/gcc_dynamic_linking_library/" class="dropdown-item">GCC编译动态链接库</a>
-</li>
-            
-<li>
-    <a href="../../../Embedded%20System/linux/compiler/gcc_clang_llvm/" class="dropdown-item">GCC&Clang&LLVM的关系</a>
 </li>
     </ul>
   </li>
@@ -912,6 +956,10 @@
 </li>
             
 <li>
+    <a href="../../../Embedded%20System/linux/application/linux_c_serial/" class="dropdown-item">C 语言操作串口</a>
+</li>
+            
+<li>
     <a href="../../../Embedded%20System/linux/os/linux_environment_variable/" class="dropdown-item">环境变量</a>
 </li>
             
@@ -925,6 +973,14 @@
             
 <li>
     <a href="../../../Embedded%20System/linux/os/subshell/" class="dropdown-item">subshell</a>
+</li>
+            
+<li>
+    <a href="../../../Embedded%20System/linux/kernel/multi_core/" class="dropdown-item">Linux多核</a>
+</li>
+            
+<li>
+    <a href="../../../Embedded%20System/linux/kernel/sync/" class="dropdown-item">Linux内核同步</a>
 </li>
     </ul>
   </li>
@@ -944,6 +1000,40 @@
   </li>
                                     
   <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">S3C2440开发</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../Embedded%20System/linux/jz2440/load_address_link_address/" class="dropdown-item">装载地址和运行地址</a>
+</li>
+            
+<li>
+    <a href="../../../Embedded%20System/linux/jz2440/device_tree/compile_uboot_kernel_with_device_tree/" class="dropdown-item">device tree：支持设备树系统移植</a>
+</li>
+            
+<li>
+    <a href="../../../Embedded%20System/linux/jz2440/device_tree/led_drv/" class="dropdown-item">device tree：Led驱动</a>
+</li>
+            
+<li>
+    <a href="../../../Embedded%20System/linux/jz2440/jz2440_download_image_files/" class="dropdown-item">烧写镜像文件</a>
+</li>
+            
+<li>
+    <a href="../../../Embedded%20System/linux/jz2440/uboot_porting/" class="dropdown-item">Uboot打补丁编译</a>
+</li>
+            
+<li>
+    <a href="../../../Embedded%20System/linux/jz2440/linux_kernel_porting/" class="dropdown-item">Linux Kernel移植</a>
+</li>
+            
+<li>
+    <a href="../../../Embedded%20System/linux/jz2440/jz2440_dev_tips/" class="dropdown-item">JZ2440 dev tips</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
     <a href="#" class="dropdown-item">Linux Device Driver</a>
     <ul class="dropdown-menu">
             
@@ -951,18 +1041,16 @@
     <a href="../../../Embedded%20System/linux/linux_driver/linux_driver_framework/" class="dropdown-item">Linux驱动框架原理</a>
 </li>
             
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">《Linux设备驱动开发详解》</a>
-    <ul class="dropdown-menu">
-            
 <li>
-    <a href="../../../Embedded%20System/linux/linux_driver/linux_device_driver_baohua/relate_resource/" class="dropdown-item">书籍配套资源</a>
+    <a href="../../../Embedded%20System/linux/linux_driver/linux_device_driver_baohua/relate_resource/" class="dropdown-item">《Linux设备驱动开发详解》：书籍配套资源</a>
 </li>
-    </ul>
-  </li>
             
 <li>
     <a href="../../../Embedded%20System/linux/linux_driver/ld_hello_world/" class="dropdown-item">最简单的驱动程序</a>
+</li>
+            
+<li>
+    <a href="../../../Embedded%20System/linux/linux_driver/pinctrl_gpio/" class="dropdown-item">Linux 驱动 pinctrl 和 GPIO 子系统</a>
 </li>
             
 <li>
@@ -1002,47 +1090,15 @@
   </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">S3C2440开发</a>
-    <ul class="dropdown-menu">
-            
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">device tree</a>
-    <ul class="dropdown-menu">
-            
-<li>
-    <a href="../../../Embedded%20System/linux/jz2440/device_tree/compile_uboot_kernel_with_device_tree/" class="dropdown-item">支持设备树系统移植</a>
-</li>
-            
-<li>
-    <a href="../../../Embedded%20System/linux/jz2440/device_tree/led_drv/" class="dropdown-item">Led驱动</a>
-</li>
-    </ul>
-  </li>
-            
-<li>
-    <a href="../../../Embedded%20System/linux/jz2440/jz2440_download_image_files/" class="dropdown-item">烧写镜像文件</a>
-</li>
-            
-<li>
-    <a href="../../../Embedded%20System/linux/jz2440/uboot_porting/" class="dropdown-item">Uboot打补丁编译</a>
-</li>
-            
-<li>
-    <a href="../../../Embedded%20System/linux/jz2440/linux_kernel_porting/" class="dropdown-item">Linux Kernel移植</a>
-</li>
-            
-<li>
-    <a href="../../../Embedded%20System/linux/jz2440/jz2440_dev_tips/" class="dropdown-item">JZ2440 dev tips</a>
-</li>
-    </ul>
-  </li>
-                                    
-  <li class="dropdown-submenu">
     <a href="#" class="dropdown-item">VSCode</a>
     <ul class="dropdown-menu">
             
 <li>
     <a href="../../../Embedded%20System/linux/vscode/vscode_build_c_project/" class="dropdown-item">VSCode编译调试多文件C项目</a>
+</li>
+            
+<li>
+    <a href="../../../Embedded%20System/linux/vscode/vscode_cmake_base/" class="dropdown-item">VSCode 与 CMake 搭配使用之基本配置</a>
 </li>
     </ul>
   </li>
@@ -1075,6 +1131,14 @@
     <ul class="dropdown-menu">
             
 <li>
+    <a href="../../../Multimedia/Multimedia/" class="dropdown-item">Multimedia 索引</a>
+</li>
+            
+<li>
+    <a href="../../../Multimedia/streaming_protocol/" class="dropdown-item">音视频流协议</a>
+</li>
+            
+<li>
     <a href="../../../Multimedia/h264_bitrate_profile_level/" class="dropdown-item">码率、H264 Profile和Level</a>
 </li>
             
@@ -1100,6 +1164,10 @@
             
 <li>
     <a href="../../../Multimedia/Ogg/" class="dropdown-item">Ogg</a>
+</li>
+            
+<li>
+    <a href="../../../Multimedia/Player/tencent_vod/" class="dropdown-item">腾讯 VOD</a>
 </li>
     </ul>
   </li>
@@ -1140,6 +1208,30 @@
   </li>
                                     
   <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">UI Design</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../UI%20Design/ps_note/" class="dropdown-item">PS 初级知识</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">vincross</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../vincross/ultrasonic/" class="dropdown-item">超声波</a>
+</li>
+            
+<li>
+    <a href="../../../vincross/xmos_mic_array/XVF3100/" class="dropdown-item">XMOS XVF3100</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
     <a href="#" class="dropdown-item">Algorithm</a>
     <ul class="dropdown-menu">
             
@@ -1164,11 +1256,35 @@
   </li>
                                     
   <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Rust</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../Embedded%20System/rust/rust_basic/" class="dropdown-item">Rust 基础</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">产品构思</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../Embedded%20System/product/idea/" class="dropdown-item">植物机器人</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
     <a href="#" class="dropdown-item">Machine Learning</a>
     <ul class="dropdown-menu">
             
 <li>
     <a href="../../../ML/ml_basics/" class="dropdown-item">机器学习基础</a>
+</li>
+            
+<li>
+    <a href="../../../ML/caffe_temp/" class="dropdown-item">Caffe 相关</a>
 </li>
             
 <li>
@@ -1179,15 +1295,13 @@
     <a href="../../../ML/tensorflow_model/" class="dropdown-item">Tensorflow模型转换</a>
 </li>
             
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">嵌入式机器学习</a>
-    <ul class="dropdown-menu">
+<li>
+    <a href="../../../ML/how_to_run_dl_model_on_stm32/" class="dropdown-item">嵌入式机器学习：00：STM32图像分类</a>
+</li>
             
 <li>
-    <a href="../../../ML/how_to_run_dl_model_on_stm32/" class="dropdown-item">00：STM32图像分类</a>
+    <a href="../../../ML/image_calssifer_on_mcu/" class="dropdown-item">ML On MCU</a>
 </li>
-    </ul>
-  </li>
     </ul>
   </li>
                                     
@@ -1211,10 +1325,6 @@
     <a href="../../../Python/data_type_conversion/" class="dropdown-item">Python数据类型转换</a>
 </li>
             
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">matplotlib</a>
-    <ul class="dropdown-menu">
-            
 <li>
     <a href="../../../Python/matplotlib/matplotlib_base/" class="dropdown-item">matplotlib基础</a>
 </li>
@@ -1222,8 +1332,6 @@
 <li>
     <a href="../../../Python/matplotlib/matplotlib_subplot/" class="dropdown-item">matplotlib子图</a>
 </li>
-    </ul>
-  </li>
             
 <li>
     <a href="../../../Python/python_trigonometric/" class="dropdown-item">三角函数</a>
@@ -1240,8 +1348,24 @@
 <li>
     <a href="../../../Python/python_string_format/" class="dropdown-item">Python字符串格式化</a>
 </li>
+            
+<li>
+    <a href="../../../Python/python_packages/" class="dropdown-item">Python包管理</a>
+</li>
     </ul>
   </li>
+                                    
+<li>
+    <a href="../../../Python/isdecimal_isdigit_isnumeric/" class="dropdown-item">isdecimal_isdigit_isnumeric</a>
+</li>
+                                    
+<li>
+    <a href="../../../Python/python_tips/" class="dropdown-item">Python tips</a>
+</li>
+                                    
+<li>
+    <a href="../../../Python/tensorflow_install_on_windows/" class="dropdown-item">安装Tensorflow</a>
+</li>
                                     
   <li class="dropdown-submenu">
     <a href="#" class="dropdown-item">Computer Vision</a>
@@ -1264,6 +1388,10 @@
 </li>
     </ul>
   </li>
+                                    
+<li>
+    <a href="../../../Computer%20Vision/opencv_something/" class="dropdown-item">OpenCV 杂项</a>
+</li>
                                     
   <li class="dropdown-submenu">
     <a href="#" class="dropdown-item">Nginx</a>
@@ -1288,7 +1416,15 @@
 </li>
             
 <li>
+    <a href="../../../Hardware/communication_theory/" class="dropdown-item">通信原理</a>
+</li>
+            
+<li>
     <a href="../../../Hardware/battery_work_time/" class="dropdown-item">电池工作时间的计算</a>
+</li>
+            
+<li>
+    <a href="../../../Hardware/battery/" class="dropdown-item">电池</a>
 </li>
             
 <li>
@@ -1359,6 +1495,10 @@
 <li>
     <a href="../../../Tools/about_pc/pc_file_associated_porgram_error/" class="dropdown-item">文件关联的启动程序错误</a>
 </li>
+            
+<li>
+    <a href="../../../Tools/WSL/wsl/" class="dropdown-item">WSL 使用</a>
+</li>
     </ul>
   </li>
                                     
@@ -1368,6 +1508,10 @@
             
 <li>
     <a href="../../../Tools/mkdocs/mkdocs_intro/" class="dropdown-item">1.MkDocs - 初识</a>
+</li>
+            
+<li>
+    <a href="../../../Tools/mkdocs/mkdocs_custom/" class="dropdown-item">MkDocs 定制</a>
 </li>
             
 <li>
@@ -1453,6 +1597,16 @@
 <li>
     <a href="../../../Tools/git_command/" class="dropdown-item">git command</a>
 </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Hexo</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../Tools/hexo/" class="dropdown-item">Hexo</a>
+</li>
+    </ul>
+  </li>
                                     
 <li>
     <a href="../../../Tools/JupyterNotebook/" class="dropdown-item">局域网访问Jupyter Notebook</a>
@@ -1558,6 +1712,7 @@
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="../../../js/base.js"></script>
+        <script src="../../../js/nav-submenu.js"></script>
         <script src="../../../search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
